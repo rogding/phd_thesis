@@ -10,7 +10,7 @@ TBD
 Roger Ding
 ### Date
 TBD
-### Advisors
+### Advisor(s)
 F. Barry Dunning, Thomas C. Killian
 ### Degree
 Doctor of Philosophy
