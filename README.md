@@ -1,5 +1,23 @@
-# phd_thesis
+# Ph.D. thesis LaTeX files
+LaTeX files for producing my Ph.D. thesis in Applied Physics. 
 
+Locations of the official document:
+* TBD
+
+## Title
+TBD
+### Author
+Roger Ding
+### Date
+TBD
+### Advisors
+F. Barry Dunning, Thomas C. Killian
+### Degree
+Doctor of Philosophy
+### Abstract
+TBD
+### Citation
+TBD
 
 # Rice University PhD Thesis LaTeX template
 The LaTeX PhD thesis template files are located at [PhD Thesis LaTeX template 2008](https://scholarship.rice.edu/handle/1911/21747).
