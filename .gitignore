@@ -1,6 +1,9 @@
 ## Tools
 *.bat
 
+## Extra files
+thesis_main.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
