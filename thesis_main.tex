@@ -1,62 +1,87 @@
 \documentclass[12pt]{ruthesis}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{latexsym}
-\usepackage{graphics}
-\usepackage{epsfig,epsf,rotating}
-\usepackage{subfigure}
-%\usepackage{pictex}
-\usepackage{epsf}
-%\usepackage{cite}
-\usepackage{theorem}
-\newtheorem{proposition}{Proposition}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage[]{siunitx}
 
-\theoremheaderfont{\itshape} {\theoremstyle{break}
-\newtheorem{Fact}{Fact}[chapter]} \theoremstyle{break}
-\newtheorem{Lem}{Lemma}[chapter] \theoremstyle{break}
-\newtheorem{Thm}{Theorem}[chapter] {\theoremstyle{plain}
-  \theorembodyfont{\rmfamily}  \newtheorem{Prf}{Proof}[chapter]}
-{\theoremstyle{plain}
-  \theorembodyfont{\rmfamily}  \newtheorem{Def}{Definition}[chapter]}
+% Footnotes are continuously labeled (e.g. without regard for sections, chapters, etc.). 
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\interfootnotelinepenalty=10000 %Supposed to keep footnotes from being split
 
-\title{Sphere detection and LDPC decoding algorithms and architectures for wireless systems}
-\ctitle{Sphere detection and LDPC decoding algorithms and architectures for wireless systems}
-\author{Predrag Radosavljevic}
-\department{Electrical and Computer Engineering}
-\school{Rice University}
+% Additional options
+\DeclareSIUnit\atoms{atoms}
+
+% Macros
+\newcommand{\tsup}{\textsuperscript}													% superscript outside math mode.
+\newcommand{\tsub}{\textsubscript}														% subscript outside math mode.
+\newcommand{\Sr}[1]{\tsup{#1}\textnormal{Sr}}											% {}^{xx}Sr outside math mode.
+\newcommand{\Srion}[1]{\textnormal{Sr}\tsup{#1}}										% {}Sr^{xx} outside math mode.
+\newcommand{\Li}[1]{\tsup{#1}\textnormal{Li}}											% {}^{xx}Li outside math mode.
+\newcommand{\SLJ}[3]{\tsup{#1}\textnormal{#2}\tsub{#3}}
+\newcommand{\SLJF}[4]{\tsup{#1}\textnormal{#2}\tsub{#3}\textnormal{, }{F = {#4}}}
+\newcommand{\nSLJ}[4]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}}
+\newcommand{\nSLJm}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{m_J = {#5}}}
+\newcommand{\nSLJF}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{F = {#5}}}
+
+\title{PhD Thesis Title Here}
+\author{Roger Ding}
+\department{Applied Physics}
+\school{William Marsh Rice University}
 \degree{Doctor of Philosophy}
 
-\committee {
-        Joseph R. Cavallaro, Chair \\
-        Professor of Electrical and Computer Engineering and Computer Science \and
-        Behnaam Aazhang \\
-        J.S. Abercrombie Professor of Electrical and Computer Engineering \and
-        Scott Rixner\\
-        Associate Professor of Electrical and Computer Engineering and Computer Science \and
-        Ashutosh Sabharwal\\
-        Assistant Professor of Electrical and Computer Engineering
+\committee{
+	F. Barry Dunning, Advisor \\
+	Sam and Helen Worden Professor of Physics
+	\and
+	Thomas C. Killian, Co-advisor \\
+	Professor of Physics and Astronomy
+	\and
+	Junichiro Kono \\
+	Professor of Electrical and Computer Engineering \\
+	Professor of Physics and Astronomy
 }
 
 \address{Houston, Texas}
-\donemonth{April} \doneyear{2008} \makeindex
+\donemonth{April}
+\doneyear{2008}
+\makeindex
+
 \begin{document}
 
-  \begin{frontmatter}
-   \pagenumbering{roman}
-   %\makecover
-   \maketitle
-   \include{abstract/abstract}
-   \include{acknowledgment/acknowledgment}
-   \tableofcontents
-   \listoffigures
-   \listoftables
-%   \include{ded}
-  \end{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front-matter
+
+\begin{frontmatter}
+	\pagenumbering{roman}
+	%\makecover
+	\maketitle
+	\include{abstract/abstract}
+	\include{acknowledgment/acknowledgment}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+\end{frontmatter}
+
+
 \pagenumbering{arabic}
 
 \linespacing{1.7}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapters
+
 \include{chapters/introduction/introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
 
 \appendix
 
@@ -68,6 +93,10 @@
 %\addcontentsline{toc} {chapter}{\numberline {}Bibliography}{}
 %\include{biblio}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+
 \bibliographystyle{ieeetr}
 \bibliography{bibliography}
+
 \end{document}
