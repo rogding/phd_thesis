@@ -1,5 +1,5 @@
 pdflatex thesis_main.tex
-bibtex thesis_main
+biber thesis_main
 makeglossaries thesis_main
 pdflatex thesis_main.tex
 pdflatex thesis_main.tex

@@ -10,6 +10,9 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage[]{siunitx}
+\usepackage[style=phys,
+			articletitle=false,biblabel=brackets,
+			chaptertitle=false,pageranges=false]{biblatex}
 
 % Footnotes are continuously labeled (e.g. without regard for sections, chapters, etc.). 
 \usepackage{chngcntr}
@@ -18,6 +21,7 @@
 
 % Additional options
 \DeclareSIUnit\atoms{atoms}
+\addbibresource{bibliography.bib}
 
 % Macros
 \newcommand{\tsup}{\textsuperscript}													% superscript outside math mode.
@@ -100,7 +104,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 
-\bibliographystyle{ieeetr}
-\bibliography{bibliography}
+%\bibliographystyle{ieeetr}
+%\bibliography{bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
 
 \end{document}
