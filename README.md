@@ -4,19 +4,19 @@ LaTeX files for producing my Ph.D. thesis in Applied Physics.
 Locations of the official document:
 * TBD
 
-## Title
+#### Title
 TBD
-### Author
+#### Author
 Roger Ding
-### Date
+#### Date
 TBD
-### Advisor(s)
+#### Advisor(s)
 F. Barry Dunning, Thomas C. Killian
-### Degree
+#### Degree
 Doctor of Philosophy
-### Abstract
+#### Abstract
 TBD
-### Citation
+#### Citation
 TBD
 
 # Rice University PhD Thesis LaTeX template
