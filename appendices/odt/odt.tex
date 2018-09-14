@@ -1,0 +1,106 @@
+\chapter{Optical dipole traps}
+%\label{ap:SrProperties}
+
+TO DO:
+
+Go through Gaussian beams section and use widetilde command for complex values/functions. 
+
+\section{Gaussian beams}
+
+Since we almost exclusively work with Gaussian laser beams, it will be instructive to derive the intensity for a Gaussian beam.
+The derivation presented below for the intensity distribution of a Gaussian beams mostly follows from the one presented in \cite{sie_1986} which itself references \cite{kol_1966}. 
+
+\subsection{Paraxial wave equation}
+
+Starting from the wave equation for the electric field ${\vec{E} = E \left(x,y,z,t\right) \hat{e}}$ for some polarization $\hat{e}$
+\begin{align}
+	\label{eq:wave_eq}
+	\frac{1}{c^2} \partial_{tt} E = \nabla^2 E = \partial_{xx}E + \partial_{yy}E + \partial_{zz}E
+\end{align}
+where ${c=\lambda f = \omega/k}$.
+Choosing the $z$-axis as the direction of propagation and assuming ${E\left(x,y,z,t\right) = u\left(x,y,z\right)\exp\left[-\iu\left(k z - \omega t\right)\right]}$, \cref{eq:wave_eq} can be written as
+\begin{align}
+	\label{eq:paraxial_wave_eq}
+	0 = \partial_{xx}u + \partial_{yy}u + \partial_{zz}u -\iu 2 k \partial_{z}u \approx \partial_{xx}u + \partial_{yy}u -\iu 2 k \partial_{z}u
+\end{align}
+where the paraxial approximation ${\abs{\partial_{zz}u} \ll \abs{2 k \partial_{z}u}, \abs{\partial_{xx}u}, \abs{\partial_{yy}u}}$ was made which assumes the envelope of the electric field varies ``slowly'' with respect to $z$.
+\cref{eq:paraxial_wave_eq} is generally referred to as the ``paraxial wave equation''.
+
+\subsubsection{Separating in rectangular coordinates}
+
+Assuming the symmetry of the beam is along the $x$- and $y$-axis, \cref{eq:paraxial_wave_eq} can be further separated. 
+Writing ${u\left(x,y,z\right)}=u_{x}\left(x,z\right)u_{y}\left(y,z\right)$, with $u_{x}$ ($u_{y}$) representing the envelope along $x$-axis ($y$-axis), and inserting in to \cref{eq:paraxial_wave_eq} leads to
+\begin{align}
+	\label{eq:sep_paraxial_wave_eq}
+	0 = u_{x}\left(\partial_{yy}u_{y} - \iu 2 k \partial_{z}u_{y}\right) + u_{y}\left(\partial_{xx}u_{x} - \iu 2 k \partial_{z}u_{x}\right)
+\end{align}
+The trivial solution is avoided by requiring ${u_{m} \neq 0}$ for ${m \in \left\{x,y\right\}}$, meaning the terms in parenthesis must equal zero. 
+Without loss of generality, we only need to solve ${0 = \partial_{xx}u_{x} - \iu 2 k \partial_{z}u_{x}}$.
+
+\subsection{Solving ${0 = \partial_{xx}u_{x} - \iu 2 k \partial_{z}u_{x}}$}
+
+Assuming the trial solution ${u_{x}\left(x,z\right) = A\left(z\right) \exp\left[-\iu k \frac{x^2}{2q\left(z\right)}\right]}$, where $A\left(z\right)$ and $q\left(z\right)$ can be complex, and collecting terms in powers of $x$
+\begin{align}
+	0 = -\iu q \left(A + 2 q A^\prime\right) + k x^2 A \left(q^\prime - 1\right)
+\end{align}
+Requiring ${A\left(z\right), q\left(z\right) \neq 0}$ means the terms in the parentheses must be zero
+\begin{align}
+	0 &= q^\prime - 1 		\label{eq:q_prime}	\\
+	0 &= A + 2 q A^\prime	\label{eq:A_prime}
+\end{align}
+
+\subsubsection{Solving \cref{eq:q_prime} and \cref{eq:A_prime}}
+
+With the condition ${q\left(0\right) = q_0}$, \cref{eq:q_prime} is easily solved
+\begin{align}
+	\frac{dq}{dz} = 1 \implies q\left(z\right) = q_0 + z
+\end{align}
+Knowing $q\left(z\right)$ and taking ${A\left(0\right) = A_0}$, 
+\begin{align}
+	\frac{dA}{dz} = -\frac{A}{2q} = -\frac{A}{2\left(q_0 + z\right)} \implies A\left(z\right) = A_0 \sqrt{\frac{q_0}{q_0 + z}} = A_0 \sqrt{\frac{q_0}{q\left(z\right)}}
+\end{align}
+
+\subsubsection{Complex beam parameter $q\left(z\right)$}
+
+The complex beam parameter $q\left(z\right)$ can be related the real-valued radius of curvature $R\left(z\right)$ and beam waist $w\left(z\right)$ by the definition ${\frac{1}{q\left(z\right)} \equiv \frac{1}{R\left(z\right)} - \iu \frac{\lambda}{\pi w^2\left(z\right)}}$. At the beam waist $z=0$, we take $R\left(0\right)$ to be infinite and can relate ${q\left(0\right) = q_0}$ to ${w\left(0\right)=w_0}$, 
+\begin{align}
+	\frac{1}{\widetilde{q_0}} = -\iu \frac{\lambda}{\pi w_0^2} \implies \widetilde{q_0} = \iu \frac{\pi w_0^2}{\lambda} = \iu z_R
+\end{align}
+where ${z_R \equiv \frac{\pi w_0^2}{\lambda}}$ is the Rayleigh range. From this, it follows 
+\begin{align}
+	\frac{1}{z + \iu z_R}	&= \frac{1}{R\left(z\right)} - \iu \frac{\lambda}{\pi w^2\left(z\right)}	\nonumber \\
+	z + \iu z_R				&= \frac{\pi^2 R w^4}{\pi^2 w^4 + \lambda^2 R^2} + \iu\frac{\pi \lambda R^2 w^2}{\pi^2 w^4 + \lambda^2 R^2}
+\end{align}
+Equating the real and imaginary parts gives
+\begin{align}
+	R\left(z\right)		&= z + \frac{z_R^2}{z}	\\
+	w^2\left(z\right)	&= w_0^2 \left[1+\left(\frac{z}{z_R}\right)^2\right]
+\end{align}
+
+\subsubsection{Getting the (unnormalized) solution}
+
+Putting all the parts together gives
+\begin{align}
+	\widetilde{u}_{x}\left(x,z\right) = \widetilde{A}_0 \frac{1}{\sqrt{1 - \iu \frac{z}{z_R}}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R\left(z\right)} - \iu\frac{\lambda}{\pi w^2\left(z\right)}\right)\right]
+\end{align}
+Normalization follows the usual procedure,
+\begin{align}
+	\int_{-\infty}^{\infty} \widetilde{u}_{x}^{*}\widetilde{u}_{x} \,dx
+		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \int_{-\infty}^{\infty} \exp\left[-\frac{2 x^2}{w^2(z)}\right] \,dx \nonumber \\
+		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \sqrt{\frac{\pi}{2}} w(z) \nonumber \\
+		&= \abs{\widetilde{A}_0}^2 \sqrt{\frac{\pi}{2}} w_0
+\end{align}
+Therefore,
+\begin{align}
+	\abs{\widetilde{A}_0}^2 = \sqrt{\frac{2}{\pi}}\frac{1}{w_0}
+\end{align}
+As a result, 
+\begin{align}
+	\widetilde{u}_{x}(x,z)
+		&= \pm \left(\frac{2}{\pi}\right)^{1/4} \frac{1}{\sqrt{w_0\left(1 - \iu \frac{z}{z_R}\right)}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z)} - \iu\frac{\lambda}{\pi w^2(z)}\right)\right]
+\end{align}
+
+
+**************************
+
+Interesting discussions about astigmatic Gaussian beams are discussed in \cite{ark_1969, kws_2013}. 

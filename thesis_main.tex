@@ -3,13 +3,15 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{physics}
 \usepackage{multirow}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{braket}
+%\usepackage{braket}
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage[]{siunitx}
+\usepackage[]{cleveref}
 \usepackage[style=phys,
 			articletitle=false,
 			biblabel=brackets,
@@ -25,6 +27,11 @@
 \DeclareSIUnit\atoms{atoms}
 \addbibresource{bibliography.bib}
 
+% cleveref options
+\crefname{equation}{Eq.}{Equations}
+%\crefname{pluralequation}{Eqs.}{Equations}
+
+
 % Macros
 \newcommand{\tsup}{\textsuperscript}													% superscript outside math mode.
 \newcommand{\tsub}{\textsubscript}														% subscript outside math mode.
@@ -36,6 +43,8 @@
 \newcommand{\nSLJ}[4]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}}
 \newcommand{\nSLJm}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{m_J = {#5}}}
 \newcommand{\nSLJF}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{F = {#5}}}
+
+\newcommand{\iu}{{i\mkern1mu}}
 
 \title{PhD Thesis Title Here}
 \author{Roger Ding}
@@ -92,7 +101,7 @@
 \appendix
 
 \include{appendices/sr_properties/sr_properties}
-
+\include{appendices/odt/odt}
 \include{appendices/tips_n_tricks/tips_n_tricks}
 
 %\include{append-a}
