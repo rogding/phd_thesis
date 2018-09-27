@@ -1,5 +1,4 @@
 \documentclass[12pt]{ruthesis}
-\usepackage{svg}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -13,10 +12,21 @@
 \usepackage[]{siunitx}
 \usepackage[]{cleveref}
 \usepackage[style=phys,
-			articletitle=false,
+			articletitle=true,
 			biblabel=brackets,
 			chaptertitle=false,
-			pageranges=false]{biblatex}
+			pageranges=false,
+			backend=biber]{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Various options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{chapters/introduction/},
+			  {chapters/experiment/},
+			  {chapters/spectroscopy/},
+			  {appendices/sr_properties/},
+			  {appendices/odt/},
+			  {appendices/tips_n_tricks/}}
 
 % Footnotes are continuously labeled (e.g. without regard for sections, chapters, etc.). 
 \usepackage{chngcntr}
@@ -31,20 +41,29 @@
 \crefname{equation}{Eq.}{Equations}
 %\crefname{pluralequation}{Eqs.}{Equations}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
 
-% Macros
-\newcommand{\tsup}{\textsuperscript}													% superscript outside math mode.
-\newcommand{\tsub}{\textsubscript}														% subscript outside math mode.
-\newcommand{\Sr}[1]{\tsup{#1}\textnormal{Sr}}											% {}^{xx}Sr outside math mode.
-\newcommand{\Srion}[1]{\textnormal{Sr}\tsup{#1}}										% {}Sr^{xx} outside math mode.
-\newcommand{\Li}[1]{\tsup{#1}\textnormal{Li}}											% {}^{xx}Li outside math mode.
-\newcommand{\SLJ}[3]{\tsup{#1}\textnormal{#2}\tsub{#3}}
-\newcommand{\SLJF}[4]{\tsup{#1}\textnormal{#2}\tsub{#3}\textnormal{, }{F = {#4}}}
-\newcommand{\nSLJ}[4]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}}
-\newcommand{\nSLJm}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{m_J = {#5}}}
-\newcommand{\nSLJF}[5]{{#1}\textnormal{ }\SLJ{#2}{#3}{#4}\textnormal{, }{F = {#5}}}
+\newcommand{\Srii}{Sr \RomanNumeralCaps{2}}
 
-\newcommand{\iu}{{i\mkern1mu}}
+\newcommand{\tsup}{\textsuperscript}								% superscript outside math mode.
+\newcommand{\tsub}{\textsubscript}									% subscript outside math mode.
+\newcommand{\Sr}[1]{\tsup{#1}\text{Sr}}								% ^{8x}Sr outside math mode.
+\newcommand{\Srion}[2]{\Sr{#1}\tsup{#2}}							% ^{8x}Sr^{x+} outside math mode.
+\newcommand{\Li}[1]{\tsup{#1}{Li}}									% ^{xx}Li outside math mode.
+\newcommand{\SLJ}[3]{\tsup{#1}{#2}\tsub{#3}}
+\newcommand{\SLJF}[4]{\SLJ{#1}{#2}{#3}{,\,}{F = {#4}}}
+\newcommand{\nSLJ}[4]{({#1}){\,}\SLJ{#2}{#3}{#4}}
+\newcommand{\nSLJF}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{F = {#5}}}
+%\newcommand{\nSLJm}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{m_J = {#5}}}
+
+\newcommand{\iu}{{i\mkern1mu}}	% i for imaginary unit
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Front-matter details
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{PhD Thesis Title Here}
 \author{Roger Ding}
@@ -66,13 +85,14 @@
 
 \address{Houston, Texas}
 \donemonth{April}
-\doneyear{2008}
+\doneyear{2019}
 \makeindex
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Front-matter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Front-matter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frontmatter}
 	\pagenumbering{roman}
@@ -85,20 +105,21 @@
 	\listoftables
 \end{frontmatter}
 
-
 \pagenumbering{arabic}
 
 \linespacing{1.7}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Chapters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{chapters/introduction/introduction}
 \include{chapters/experiment/experiment}
 \include{chapters/spectroscopy/spectroscopy}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
 
@@ -114,8 +135,9 @@
 %\addcontentsline{toc} {chapter}{\numberline {}Bibliography}{}
 %\include{biblio}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\bibliographystyle{ieeetr}
 %\bibliography{bibliography}
