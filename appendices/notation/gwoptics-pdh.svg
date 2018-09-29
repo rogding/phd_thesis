@@ -16,11 +16,11 @@
    height="10.086449mm"
    viewBox="0 0 8.7354898 10.086449"
    version="1.1"
-   id="svg11756"
+   id="svg6628"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="gwoptics-pid.svg">
+   sodipodi:docname="gwoptics-pdh.svg">
   <defs
-     id="defs11750">
+     id="defs6622">
     <radialGradient
        inkscape:collect="always"
        xlink:href="#radialGradient5556"
@@ -66,11 +66,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="15.839192"
-     inkscape:cx="34.313259"
-     inkscape:cy="23.918836"
+     inkscape:zoom="11.2"
+     inkscape:cx="-4.675285"
+     inkscape:cy="20.853542"
      inkscape:document-units="mm"
-     inkscape:current-layer="g5527"
+     inkscape:current-layer="g5536"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -82,7 +82,7 @@
      inkscape:window-y="-9"
      inkscape:window-maximized="1" />
   <metadata
-     id="metadata11753">
+     id="metadata6625">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -97,14 +97,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(167.59464,-166.363)">
+     transform="translate(-112.04892,-123.3794)">
     <g
        style="display:inline;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
        id="g5553"
-       transform="matrix(0.26458333,0,0,0.26458333,-167.59464,166.14747)">
+       transform="matrix(0.26458333,0,0,0.26458333,112.04892,123.37954)">
       <g
          id="g5527">
         <radialGradient
@@ -114,13 +114,13 @@
            r="17.2227"
            cy="19.060499"
            cx="16.320299"
-           id="radialGradient11739">
+           id="radialGradient6611">
           <stop
-             id="stop11735"
+             id="stop6607"
              style="stop-color:#FFFFFF"
              offset="0" />
           <stop
-             id="stop11737"
+             id="stop6609"
              style="stop-color:#A0A0A0"
              offset="1" />
           <a:midPointStop
@@ -135,21 +135,24 @@
         </radialGradient>
         <polygon
            id="polygon5534"
-           points="0.375,0.649 32.266,19.062 0.375,37.472 "
+           points="32.266,19.062 0.375,37.472 0.375,0.649 "
            i:knockout="Off"
-           style="fill:url(#radialGradient5570);fill-opacity:1;stroke:#000000;stroke-width:0.75"
-           transform="translate(0,0.81512802)" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
-           x="2.3946862"
-           y="23.268505"
-           id="text7267"><tspan
-             sodipodi:role="line"
-             id="tspan7265"
-             x="2.3946862"
-             y="23.268505"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333302px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">PID</tspan></text>
+           style="fill:url(#radialGradient5570);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
+        <g
+           id="g5536"
+           i:knockout="Off">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+             x="1.1508713"
+             y="22.453377"
+             id="text7267"><tspan
+               sodipodi:role="line"
+               id="tspan7265"
+               x="1.1508713"
+               y="22.453377"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333302px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">PDH</tspan></text>
+        </g>
       </g>
     </g>
   </g>

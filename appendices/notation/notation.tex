@@ -2,20 +2,31 @@
 
 \section{Symbols used in Optical Diagrams}
 
-\begin{table}[!htbp]
+\Cref{tab:opt_sym} shows the various symbols used in the optical diagrams and their meanings. 
+The idea for this table came from seeing one in \cite{barker_phd}.
+\cref{tab:opt_sym}
+
+\begin{sidewaystable}
 	\centering
-	\begin{tabular}{cC{3cm}cC{3cm}}
-		\hline
-		Object      	& Symbol											& Object								& Symbol										\\	\hline	\hline
-		Laser       	& \adjustimage{valign=m}{gwoptics-laser.eps}		& Half-wave plate (HWP, $\lambda/2$)	& \adjustimage{valign=m}{gwoptics-hwp.eps}		\\	
-		Isolator    	& \adjustimage{valign=m}{gwoptics-isolator.eps}		& Quarter-wave plate (QWP, $\lambda/4$)	& \adjustimage{valign=m}{gwoptics-qwp.eps}		\\	
-		Mirrors			& \adjustimage{valign=m}{gwoptics-mirrors.eps}		& Non-polarizing beam splitter (BS)		& \adjustimage{valign=m}{gwoptics-bs.eps}		\\
-		Lenses			& \adjustimage{valign=m}{gwoptics-lenses.eps}		& Polarizing beam splitter (PBS)		& \adjustimage{valign=m}{gwoptics-pbs.eps}		\\
-		PZT mirrors		& \adjustimage{valign=m}{gwoptics-pztmirrors.eps}	& Acousto-optic modulator (AOM)			& \adjustimage{valign=m}{gwoptics-aom.eps}		\\
-		Beam dump		& \adjustimage{valign=m}{gwoptics-dump.eps}			& Electro-optic modulator (EOM)			& \adjustimage{valign=m}{gwoptics-eom.eps}		\\
-		PID servo		& \adjustimage{valign=m}{gwoptics-pid.eps}			& Fiber coupler							& \adjustimage{valign=m}{gwoptics-coupler.eps}	\\
-		PDH module		& 													& Polarization-maintaining (PM) fiber	& \adjustimage{valign=m}{gwoptics-pmfiber.eps}	\\
-						& 													& Single-mode (SM) fiber				& \adjustimage{valign=m}{gwoptics-smfiber.eps}	\\
+	\begin{tabular}{@{}cC{1.25in}cC{1.25in}@{}}
+		\toprule
+		Object      							& Symbol												& Object								& Symbol										\\
+		\midrule
+		Laser       							& \adjustimage{valign=m}{gwoptics-laser.eps}			& Acousto-optic modulator (AOM)			& \adjustimage{valign=m}{gwoptics-aom.eps}		\\
+		Isolator    							& \adjustimage{valign=m}{gwoptics-isolator.eps}			& Electro-optic modulator (EOM)			& \adjustimage{valign=m}{gwoptics-eom.eps}		\\
+		Lenses									& \adjustimage{valign=m}{gwoptics-lenses.eps}			& Fiber coupler							& \adjustimage{valign=m}{gwoptics-coupler.eps}	\\
+		Mirrors									& \adjustimage{valign=m}{gwoptics-mirrors.eps}			& Polarization-maintaining (PM) fiber	& \adjustimage{valign=m}{gwoptics-pmfiber.eps}	\\
+		Flipper mirror							& \adjustimage{valign=m}{gwoptics-flipper.eps}			& Single-mode (SM) fiber				& \adjustimage{valign=m}{gwoptics-smfiber.eps}	\\
+		PZT mirrors								& \adjustimage{valign=m}{gwoptics-pztmirrors.eps}		& 										& 												\\
+		Half-wave plate (HWP) ($\lambda/2$)		& \adjustimage{valign=m}{gwoptics-hwp.eps}				& 										& 												\\
+		Quarter-wave plate (QWP) ($\lambda/4$)	& \adjustimage{valign=m}{gwoptics-qwp.eps}				& 										& 												\\
+		Non-polarizing beam splitters (BS)		& \adjustimage{valign=m}{gwoptics-bs.eps}				& 										& 												\\
+		Polarizing beam splitter (PBS)			& \adjustimage{valign=m}{gwoptics-pbs.eps}				& 										& 												\\
+		Beam dump								& \adjustimage{valign=m}{gwoptics-dump.eps}				& 										& 												\\
+		PID servo								& \adjustimage{valign=m}{gwoptics-pid.eps}				& 										& 												\\
+		PDH module								& \adjustimage{valign=m}{gwoptics-pdh.eps}				& 										& 												\\
+		Photodetector							& \adjustimage{valign=m}{gwoptics-photodetector.eps}	& 										& 												\\
+		\bottomrule
 	\end{tabular}
-	\caption{I got the idea for this appendix from \cite{barker_phd}.}
-\end{table}
+	\caption{\label{tab:opt_sym}Most of the optical component symbols used in this thesis. The symbols are from \cite{gwoptics}.}
+\end{sidewaystable}
