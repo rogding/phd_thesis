@@ -68,6 +68,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Making a command equivalent to \adjustimage but for svg
+\newcommand{\adjustsvg}[2]{\adjustbox{#1}{\includesvg{#2}}}
+
 \newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
 
 \newcommand{\Sri}{Sr \RomanNumeralCaps{1}}
