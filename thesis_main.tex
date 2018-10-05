@@ -29,6 +29,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Various options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{bibliography.bib}
+
 \graphicspath{{chapters/introduction/},
 			  {chapters/experiment/},
 			  {chapters/spectroscopy/},
@@ -52,12 +54,14 @@
 
 % Additional options
 \DeclareSIUnit\atoms{atoms}
-\addbibresource{bibliography.bib}
 
-% cleveref options
-\crefname{equation}{Eq.}{Equations}
-%\crefname{table}{Table}{Tables}
-%\crefname{pluralequation}{Eqs.}{Equations}
+% cleveref options (\Cref{} for start of sentence, \cref{} for abbreviation).
+\Crefname{equation}{Equation}{Equations}
+\crefname{equation}{Eq.}{Eqs.}
+\Crefname{figure}{Figure}{Figures}
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{table}{Table}{Tables}
+\crefname{table}{Tab.}{Tab.}
 
 % Allows setting l, c, r column widths (needs tabularx)
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
