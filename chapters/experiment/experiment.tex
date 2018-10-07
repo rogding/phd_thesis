@@ -1,12 +1,33 @@
-\chapter{Strontium Rydberg Experiment}
+\chapter{Strontium Rydberg experiment}
 \label{ch:experiment}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat bibendum condimentum. Nunc non placerat quam. Nulla ullamcorper diam elit, id hendrerit erat faucibus at. In tincidunt, velit non egestas lacinia, nulla arcu ornare tortor, et lobortis nulla eros at odio. Aliquam vel aliquet tortor, eu semper diam. Nulla vestibulum dui vel mauris scelerisque, ultrices dapibus ex condimentum. Phasellus quam justo, molestie sed porta ac, posuere pellentesque est. In viverra, nibh non ullamcorper blandit, elit ex porttitor nisl, et commodo elit magna nec magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus, urna nec tempus ultrices, quam magna blandit augue, nec vestibulum sapien felis non sem. Ut et tincidunt ante.
+Section intro about the Rydberg experiment.
 
-\section{Versatile red MOT system}
-\label{sec:redmotsystem}
+\section{Vacuum system}
 
-Stuff about versatile red MOT system.
+We follow a pretty conventional strontium laser cooling system which uses an oven to produce an atomic beam of strontium which is then slowed by a spin-flip Zeeman slower. 
+Similar setups are described in \cite{stellmer2013.phd, barker2016.phd}.
+
+Stuff about the Rydberg vaucum system here. 
+Some information about the Rydberg vacuum system can be found in \cite{camargo2015.ms, ding2016.ms}. 
+
+Blah, blah, blah....
+
+\section{Versatile blue MOT system}
+
+Section about Zeeman slower and blue cooling setup. Some details about our blue cooling system can be found in \cite{camargo2015.ms, ding2016.ms}. 
+After having to send back our Newport TLB-18xx for repairs, we decided to fiber couple the injection path for the Zeeman and MOT slave lasers. 
+Fiber coupling allowed us to quickly fix injection lock issues by optimizing the reverse coupling of rejected light from the slave lasers (which counterpropagate the path of the injection light) through the fiber. 
+
+\begin{sidewaysfigure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=\paperwidth, height=\paperheight]{blue_MOT_system.svg}
+	\caption{\label{fig:blue_MOT_system}**Placeholder**Simplified diagram of the blue MOT system.}
+\end{sidewaysfigure}
+
+\section{Multi-isotope red MOT system}
+
+Some details about our narrow line cooling system can be found in \cite{ding2016.ms}.
 
 \Cref{fig:red_MOT_system} shows what the red MOT system looks like when set up for trapping any combination of isotopes. 
 In practice, we don't always have all the red MOT AOMs lined up, typically only keeping the AOMs necessary for trapping the isotope(s) for a particular experiment while the other red MOT AOMs are used to generate various other beams (e.g., spectroscopy, ``blow away'', etc.).
@@ -19,3 +40,47 @@ In practice, we don't always have all the red MOT AOMs lined up, typically only 
 
 Without using a fiber combiner, we're able to devote a lot of power to the red MOT for each isotope, enabling us to use large red MOT beams. 
 The drawbacks is that we're much more sensitive to misalignments and the ugly intensity profiles out of the diodes leads to strange red MOT shapes. 
+
+****
+Image of \Sr{84} and \Sr{87} red MOTs.
+****
+
+
+\section{Optical dipole trap}
+
+Optical dipole traps work by ...... \cite{gri1999.odt}.
+
+Since the $\nSLJ{5s^2}{1}{S}{0}$ electrons are paired, it has a negligible magnetic moment meaning we cannot magnetically trap ground state strontium atoms.
+As a result, we use optical traps to confine and evaporatively cool ground state strontium atoms. 
+
+In our setup, we've used both free-space and fibered optical dipole traps but due to having to replace and realign the high-power IR lasers multiple times, we ended up sticking with the fibered systems due to them not losing alignment.
+The drawback to the fibered ODT systems is that it's difficult to couple more than about \SI{5}{\W} through continuously without thermal effects degrading the coupling efficiency.
+We get around this issue by only having the ODT on at high powers during the transfer from the red MOT before quickly moving in to the evaporation. 
+
+\section{UV laser system}
+
+This section details the laser system we use to produce \SI{319}{\nm} radiation for two-photon excitation to a Rydberg state. 
+Our system for generating the \SI{638}{\nm} radiation is similar to the one described in \cite{mie2014.OE.22.011182}.
+
+Depending on the experiment, whether we want the ability to tune over multiple gigahertz with \SI{\sim 500}{\kHz} linewidth or a laser with a narrower linewidth (\SI{250}{\kHz}), we use either a Koheras Basik BMY10PztSPm or NP Photonics RFLM-50-3-1064.53-1-S-0 ``Rock''. 
+The \SI{1064}{\nm} seed is then amplified by an IPG YAR-15K-1064-LP-SF fiber amplifier to about \SI{7.5}{\W}. 
+
+The amplified \SI{1064}{\nm} radiation pumps an Argos (now Lockheed Martin) 2400 CW optical parametric oscillator (OPO) which uses a periodically-poled lithium niobate (PPLN) crystal. 
+The crystal first converts $\lambda_\text{pump}=\SI{1064}{\nm}$ to \SI{1.6}{\um} and \SI{3.2}{\um} photons. 
+Sum frequency generation then combines a \SI{1064}{\nm} photon with a \SI{1.6}{\um} photon to produce the \SI{638}{\nm} output. 
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{uv_system.svg}
+	\caption{\label{fig:uv_system}Diagram of the laser system used to produce \SI{318}{\nm} for exciting strontium Rydberg atoms. Diagram of the Argos internals based on the one in \cite{mor2013.RSI.84.013102}.}
+\end{figure}
+
+The \SI{7.5}{\W} of \SI{1064}{\nm} gets converted to about **\SI{1.5}{\W}** of \SI{638}{\nm}. 
+The Toptica SHG Pro frequency doubles the \SI{638}{\nm} to produce about **\SI{\sim 100}{\mW}** of \SI{319}{\nm} depending how well we optimize the doubling efficiency. 
+
+Depending on the seed we use, we observe linewidths of about **\SI{500}{\kHz} (\SI{< 200}{\kHz})** with the Koheras (Rock).
+
+\begin{align}
+	\frac{1}{\SI{1064}{\nm}} &= \frac{1}{\SI{1.6}{\um}} + \frac{1}{\SI{3.2}{\um}} \\
+	\frac{1}{\SI{638}{\nm}} &= \frac{1}{\SI{1064}{\nm}} + \frac{1}{\SI{1.6}{\um}}
+\end{align}
