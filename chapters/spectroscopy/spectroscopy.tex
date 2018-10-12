@@ -13,3 +13,58 @@ A modern paper is \cite{rob2018.PRA.97.022508}.
 
 
 Following similar derivations by.
+
+\section{Experiment}
+
+\subsection{Two-photon Rydberg excitation}
+
+We excite atoms to the Rydberg state using a two-photon transition.
+
+$\nSLJF{5s^2}{1}{S}{0}{9/2}$
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=1in]{spectroscopy/three-level_system.svg}
+	\caption{\label{fig:three-level_system}Three-level diagram representing a two-photon excitation to a Rydberg state.}
+\end{figure}
+
+The bare atomic Hamiltonian for this system can be expressed as 
+\begin{equation}
+	H_\text{A}
+		= \omega_r \dyad{r} + \hbar \omega_e \dyad{e} + \hbar \omega_g \dyad{g}
+		= \hbar	\begin{pmatrix}
+					\omega_r	& 0			& 0	\\
+					0			& \omega_e	& 0	\\
+					0			& 0			& \omega_g
+				\end{pmatrix}
+\end{equation}
+The atom-field interaction can be written as 
+\begin{equation}
+	H_\text{AF}
+		= \frac{\hbar}{2}\left(\Omega_1 \operatorname{e}^{-\iu \omega_1 t} \dyad{g}{e} + \Omega_2 \operatorname{e}^{-\iu \omega_2 t} \dyad{e}{r} \right)+ \text{h.c}
+		=	\frac{\hbar}{2}	\begin{pmatrix}
+				0												& \Omega_2 \operatorname{e}^{-\iu \omega_2 t}		& 0	\\
+				\Omega_2^\ast \operatorname{e}^{\iu \omega_2 t}	& 0													& \Omega_1 \operatorname{e}^{-\iu \omega_1 t}	\\
+				0												& \Omega_1^\ast \operatorname{e}^{\iu \omega_1 t}	& 0
+			\end{pmatrix}
+\end{equation}
+Using the unitary (?) transformation
+\begin{equation}
+	U	=	\begin{pmatrix}
+				\operatorname{e}^{-\iu (\Omega_1 + \Omega_2) t}	& 0													& 0	\\
+				0												& \operatorname{e}^{-\iu \Omega_1 t}					& 0	\\
+				0												& 0													& 1
+			\end{pmatrix}
+\end{equation}
+the total Hamiltonian $H = H_\text{A} + H_\text{AF}$ can be written as
+\begin{equation}
+	\widetilde{H}
+		= U^\dag H U - \iu \hbar U^\dag \dv{U}{t}
+		= \hbar	\begin{pmatrix}
+					-\Delta_r						& \flatfrac{\Omega_2}{2}		& 0			\\
+					\flatfrac{\Omega_2^\ast}{2}		& -\Delta_e						& \flatfrac{\Omega_1}{2}	\\
+					0								& \flatfrac{\Omega_1^\ast}{2}	& \omega_g
+				\end{pmatrix}
+\end{equation}
+where $\Delta_e = \omega_1 - \omega_e$ is the detuning from the intermediate state and $\Delta_r = \omega_r - (\omega_1 + \omega_2)$ is the total detuning from the Rydberg state. 
+To simplify things, we can take $\omega_g = 0$.
