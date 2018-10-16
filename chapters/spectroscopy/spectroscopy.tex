@@ -5,11 +5,71 @@ It turns out that the hyperfine interaction in \Sr{87} is not negligible as the 
 We then rediscovered some papers from the 1980's which explained the shifted \SLJ{1}{S}{0} spectra in \Sr{87} by including the mixing of states with the same $F$. 
 Previous work was accomplished mostly through the \nSLJ{5s5p}{1}{P}{1} state or from the metastable \nSLJ{5s5p}{3}{P}{2} states, our work appears to be the first measurements of the \Sr{87} hyperfine Rydberg states through the \nSLJ{5s5p}{3}{P}{1} intermediate state. 
 
+We measured \Sr{87} hyperfine Rydberg spectra using a two-photon excitation through the intermediate $\nSLJ{5s5p}{3}{P}{1}$ states and presented the work in \cite{din2018.PRA.98.042505}.
+
+\section{Ionization limit of \Sr{87}}
+
 \section{Rydberg states of hyperfine split cores}
 
 A modern paper is \cite{rob2018.PRA.97.022508}. 
 
+To calculate the effects of hyperfine interactions on the Rydberg spectra of \Sr{87}, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., \Sr{88}) and then apply the hyperfine interaction to obtain the lines for \Sr{87}.
+The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{din2018.PRA.98.042505}.
 
+\subsection{Incorporating hyperfine interaction}
+
+**Work on this section about getting from 2-electron Hamiltonian to effective Rydberg Hamiltonian for 5sns states.**
+
+The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{bei1983.PRL.51.771}
+\begin{equation}
+	H	= H_{0,1} + H_{0,2} + \frac{1}{r_{12}} + \xi_{nl} \vec{s} \cdot \vec{l} + a_{ms} \vec{s} \cdot \vec{I}
+\end{equation}
+where $H_{0,i}$ is the Coulomb attraction for the {$i$th} electron to the \Sr{++} core, $\flatfrac{1}{r_{12}}$ is the Coulomb repulsion between the two electrons, $\xi_{nl}$ is the magnitude of the spin-orbit interaction, and $a_{ms}$ is the magnetic dipole interaction of the inner $s$ electron.
+For \Sr{88}, $I=0$ so we can write the Hamiltonian as
+\begin{equation}
+	H_{0}(88) = H
+\end{equation}
+where the appropriate mass-scaled values are used and includes the spin-orbit and spin-other-orbit interactions. 
+The hyperfine interaction for \Sr{87} can be included as
+\begin{equation}
+	H(87) = H_{0}(88,87) + V_\text{hf}
+\end{equation}
+
+For two-electron systems, the hyperfine interaction can be expressed as
+\begin{equation}
+	V_\text{hf} = a_{ms} \left(\hat{\bm{s}}_{1} + \hat{\bm{s}}_{2}\right) \cdot \hat{\bm{I}} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}
+\end{equation}
+where $\hat{\bm{s}}_{i}$ is the spin of the {$i$th} electron. 
+
+For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$** and should be negligible for high-lying states. 
+We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
+Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
+\begin{equation}
+	\hat{V}_\text{hf} \simeq \frac{a_{ms}}{2} \left(\hat{s}_{\text{in},+} \hat{I}_{-} + \hat{s}_{\text{in},-} \hat{I}_{+} + 2\hat{s}_{\text{in},z} \hat{I}_{z}\right)
+\end{equation}
+with the usual ladder operators $J_{\pm}=J_{x} \pm J_{y}$. 
+
+\subsection{$S$-states}
+
+For $S$ states, the singlet states can be written as
+\begin{equation}
+	\ket{\nSLJ{5sns}{1}{S}{0}} = \frac{1}{2} \left(\ket{5s;ns} + \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} - \ket{\downarrow;\uparrow}\right)
+\end{equation}
+Similarly, the three triplet $S$-states can be written as
+\begin{align}
+	\ket{\nSLJm{5sns}{3}{S}{1}{+1}}	&= \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\uparrow;\uparrow}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{0}}	&= \frac{1}{2} \left(\ket{5s;ns} - \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} + \ket{\downarrow;\uparrow}\right)	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}	&= \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\downarrow;\downarrow}
+\end{align}
+Due to the hyperfine interaction, $J$ and $I$ are no longer good quantum numbers so we use $F = J + I$.
+Therefore, we can use the Clebsch–Gordan coefficients to determine basis states in terms of $\ket{F, m_F}$.
+\begin{align}
+	\ket{\nSLJFm{5sns}{3}{S}{1}{7/2}{m_F}}	&= \sum\limits_{-m_J}^{m_J} \sum\limits_{-m_I}^{m_I} \ket{\nSLJm{5sns}{3}{S}{1}{m_J}} \ket{I, m_I}
+\end{align}
+
+\subsection{$D$-states}
+
+Stuff about D-states. 
 
 
 Following similar derivations by.
@@ -68,18 +128,6 @@ the total Hamiltonian $H = H_\text{A} + H_\text{AF}$ can be written as
 \end{equation}
 where $\Delta_e = \omega_1 - \omega_e$ is the detuning from the intermediate state and $\Delta_r = \omega_r - (\omega_1 + \omega_2)$ is the total detuning from the Rydberg state. 
 To simplify things, we can take $\omega_g = 0$.
-
-\section{Theoretical calculations}
-
-Talk about what to expect due to hyperfine mixing. 
-
-\subsection{S-states}
-
-Stuff about S-states. 
-
-\subsection{D-states}
-
-Stuff about D-states. 
 
 \section{Experimental setup}
 

@@ -31,23 +31,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addbibresource{bibliography.bib}
 
-\graphicspath{{chapters/introduction/},
-			  {chapters/experiment/},
-			  {chapters/magic_trap/},
-			  {chapters/},
-			  {appendices/notation/},
-			  {appendices/sr_properties/},
-			  {appendices/odt/},
-			  {appendices/tips_n_tricks/}}
+\graphicspath{{chapters/},
+			  {appendices/}}
 
-\svgpath{{chapters/introduction/},
-		 {chapters/experiment/},
-		 {chapters/magic_trap/},
-		 {chapters/},
-		 {appendices/notation/},
-		 {appendices/sr_properties/},
-		 {appendices/odt/},
-		 {appendices/tips_n_tricks/}}
+\svgpath{{chapters/},
+		 {appendices/}}
 
 % Footnotes are continuously labeled (e.g. without regard for sections, chapters, etc.). 
 \usepackage{chngcntr}
@@ -91,10 +79,25 @@
 \newcommand{\SLJm}[4]{\SLJ{#1}{#2}{#3}{,\,}{m_J = {#4}}}
 \newcommand{\SLJF}[4]{\SLJ{#1}{#2}{#3}{,\,}{F = {#4}}}
 \newcommand{\nSLJ}[4]{({#1}){\,}\SLJ{#2}{#3}{#4}}
+\newcommand{\nSLJm}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{m_J = {#5}}}
 \newcommand{\nSLJF}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{F = {#5}}}
-%\newcommand{\nSLJm}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{m_J = {#5}}}
+\newcommand{\nSLJFm}[6]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{F = {#5}}{,\,}{m_F = {#6}}}
 
 \newcommand{\iu}{{i\mkern1mu}}	% i for imaginary unit
+
+
+% 3j, 6j symbols
+\newcommand{\threej}[6]{
+	\begin{pmatrix}
+		#1 & #2 & #3 \\
+		#4 & #5 & #6 
+	\end{pmatrix}}
+
+\newcommand{\sixj}[6]{
+	\begin{Bmatrix}
+		#1 & #2 & #3 \\
+		#4 & #5 & #6 
+	\end{Bmatrix}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Front-matter details
