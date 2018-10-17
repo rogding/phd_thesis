@@ -17,3 +17,129 @@ From here, it's pretty easy to obtain the transformed Hamiltonian $\widetilde{H}
 	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \widetilde{H} \ket*{\widetilde{\psi}}
 \end{align}
 where $\widetilde{H} = U^\dag H U - \iu \hbar U^\dag \dot{U}$ for the transformed state $\ket*{\widetilde{\psi}} = U^\dag \ket*{\psi}$.
+
+TO DO:
+
+Go through Gaussian beams section and use widetilde command for complex values/functions. 
+
+\section{Gaussian beams}
+
+Since we almost exclusively work with Gaussian laser beams in the lab, I found it instructive to derive the intensity for an elliptical Gaussian beam.
+The derivation below mostly follows from the one presented in \cite{siegman1986}.
+
+%\subsection{Paraxial wave equation}
+
+We start with the wave equation for the electric field $\bm{E} = \widetilde{E}(x,y,z,t) \hat{e}$ where $\hat{e}$ is the unit polarization vector, $\widetilde{E}$ is the complex amplitude, and $c=\lambda f = \omega/k$
+\begin{align}
+	\label{eq:wave_eq}
+	\frac{1}{c^2} \partial_{tt}\widetilde{E}
+		= \nabla^2\widetilde{E}
+		= \partial_{xx}\widetilde{E} + \partial_{yy}\widetilde{E} + \partial_{zz}\widetilde{E}
+\end{align}
+Choosing the $z$-axis as the direction of propagation, the time dependence can be removed by assuming $\widetilde{E}(x,y,z,t) = \widetilde{u}(x,y,z)\exp\left[-\iu (k z - \omega t)\right]$
+\begin{align}
+	\label{eq:paraxial_wave_eq}
+	0 = \partial_{xx}\widetilde{u} + \partial_{yy}\widetilde{u} + \partial_{zz}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u} \approx \partial_{xx}u + \partial_{yy}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u}
+\end{align}
+Here, the paraxial approximation $\abs{\partial_{zz}\widetilde{u}} \ll \abs{2 k \partial_{z}\widetilde{u}}, \abs{\partial_{xx}\widetilde{u}}, \abs{\partial_{yy}\widetilde{u}m}$ was made which assumes the envelope of the electric field varies ``slowly'' along $z$.
+\cref{eq:paraxial_wave_eq} is generally referred to as the ``paraxial wave equation''.
+
+%\subsubsection{Separating in rectangular coordinates}
+
+For a beam with symmetry along the $x$- and $y$-axis, the paraxial wave equation can be further separated by writing $\widetilde{u}(x,y,z) = \widetilde{u}_{x}(x,z) \widetilde{u}_{y}(y,z)$ where $\widetilde{u}_{x}$ ($\widetilde{u}_{y}$) represents the envelope along the $x$-axis ($y$-axis).
+Inserting this in to \cref{eq:paraxial_wave_eq} leads to
+\begin{align}
+	\label{eq:sep_paraxial_wave_eq}
+	0 = u_{x}\left(\partial_{yy}u_{y} - \iu 2 k \partial_{z}u_{y}\right) + u_{y}\left(\partial_{xx}u_{x} - \iu 2 k \partial_{z}u_{x}\right)
+\end{align}
+Requiring $\widetilde{u}_{x}, \widetilde{u}_{y} \neq 0$ avoids the trivial solution meaning the terms in parentheses must be zero. 
+We only need to solve for $\widetilde{u}_{x}$ since the solution for $\widetilde{u}_{y}$ will be similar.
+
+\subsection{Solving $0 = \partial_{xx}\widetilde{u}_{x} - \iu 2 k \partial_{z}\widetilde{u}_{x}$}
+
+Using the trial solution $\widetilde{u}_{x}(x,z) = \widetilde{A}(z) \exp\left[-\iu k \frac{x^2}{2\widetilde{q}(z)}\right]$, where $\widetilde{A}(z)$ and $\widetilde{q}(z)$ can be complex, and collecting terms in powers of $x$
+\begin{align}
+	0 = -\iu \widetilde{q} \left(\widetilde{A} + 2 q \widetilde{A}^\prime\right) + k \widetilde{A} \left(\widetilde{q}^\prime - 1\right) x^2
+\end{align}
+Requiring $\widetilde{A}(z), \widetilde{q}(z) \neq 0$ means the terms in the parentheses must be zero
+\begin{align}
+	0 &= \widetilde{q}^\prime - 1 								\label{eq:q_prime}	\\
+	0 &= \widetilde{A} + 2 \widetilde{q} \widetilde{A}^\prime	\label{eq:A_prime}
+\end{align}
+With the condition $\widetilde{q}(0) = \widetilde{q}_0$, \cref{eq:q_prime} is easily solved
+\begin{align}
+	\label{eq:q_sol}
+	\frac{d\widetilde{q}}{dz} = 1 \implies \widetilde{q}\left(z\right) = z + \widetilde{q}_0
+\end{align}
+Plugging \cref{eq:q_sol} into \cref{eq:A_prime} and taking $\widetilde{A}(0) = \widetilde{A}_0$
+\begin{align}
+	\frac{d\widetilde{A}}{dz} = -\frac{\widetilde{A}}{2\widetilde{q}}
+		= -\frac{\widetilde{A}}{2\left(\widetilde{q}_0 + z\right)} \implies \widetilde{A}(z)
+		= \widetilde{A}_0 \sqrt{\frac{\widetilde{q}_0}{\widetilde{q}_0 + z}}
+		= \widetilde{A}_0 \sqrt{\frac{\widetilde{q}_0}{\widetilde{q}(z)}}
+\end{align}
+
+%\subsubsection{Complex beam parameter $\widetilde{q}(z)$}
+
+The complex beam parameter $\widetilde{q}(z)$ can be related the real-valued radius of curvature $R(z)$ and spot size $w(z)$ by the definition $\frac{1}{\widetilde{q}(z)} \equiv \frac{1}{R(z)} - \iu \frac{\lambda}{\pi w^2(z)}$.
+At the beam waist, taken to be at $z=0$, $R(0) \rightarrow \infty$ so we can relate $\widetilde{q}(0) = \widetilde{q}_0$ to $w(0) = w_0$, 
+\begin{align}
+	\frac{1}{\widetilde{q_0}} = -\iu \frac{\lambda}{\pi w_0^2} \implies \widetilde{q_0} = \iu \frac{\pi w_0^2}{\lambda} = \iu z_R
+\end{align}
+where ${z_R \equiv \frac{\pi w_0^2}{\lambda}}$ is the Rayleigh length.
+From this, it follows 
+\begin{align}
+	\frac{1}{z + \iu z_R}
+		&= \frac{1}{R} - \iu \frac{\lambda}{\pi w^2}	\nonumber \\
+	z + \iu z_R	
+		&= \left(\frac{\pi w^2}{\lambda}\right)^2 \frac{R}{R^2 + \left(\frac{\pi w^2}{\lambda}\right)^2} 
+			+ \iu \left(\frac{\pi w^2}{\lambda}\right) \frac{R^2}{R^2 + \left(\frac{\pi w^2}{\lambda}\right)^2}
+\end{align}
+Equating the real and imaginary parts gives
+\begin{align}
+	R(z)	&= z + \frac{z_R^2}{z}	\\
+	w^2(z)	&= w_0^2 \left[1+\left(\frac{z}{z_R}\right)^2\right]
+\end{align}
+
+%\subsubsection{The (unnormalized) solution}
+
+Putting all the parts together gives the (unnormalized) solution
+\begin{align}
+	\widetilde{u}_{x}(x,z) = \widetilde{A}_0 \frac{1}{\sqrt{1 - \iu \frac{z}{z_R}}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z)} - \iu\frac{\lambda}{\pi w^2(z)}\right)\right]
+\end{align}
+To normalize, we follow the usual procedure to find $|\widetilde{A}_0|$
+\begin{align}
+	1	&= \int_{-\infty}^{\infty} \widetilde{u}_{x}^{*}\widetilde{u}_{x} \,dx \nonumber \\
+		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \int_{-\infty}^{\infty} \exp\left[-\frac{2 x^2}{w^2(z)}\right] \,dx \nonumber \\
+		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \sqrt{\frac{\pi}{2}} w(z) \nonumber \\
+		&= \abs{\widetilde{A}_0}^2 \sqrt{\frac{\pi}{2}} w_0
+\end{align}
+Therefore the solution for the $x$-axis is
+\begin{align}
+	\abs{\widetilde{A}_0}^2 = \sqrt{\frac{2}{\pi}}\frac{1}{w_0} \implies \abs{\widetilde{A}_0} = \pm \left(\frac{2}{\pi}\right)^{1/4} \frac{1}{\sqrt{w_0}}
+\end{align}
+Taking the positive value for $\abs{\widetilde{A}_0}$ gives the normalized solution for the envelope along the $x$-axis
+\begin{align}
+	\widetilde{u}_{x}(x,z)
+		&= \left(\frac{2}{\pi}\right)^{1/4} \frac{1}{\sqrt{w_0\left(1 - \iu \frac{z}{z_R}\right)}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z)} - \iu\frac{\lambda}{\pi w^2(z)}\right)\right]
+\end{align}
+
+\subsection{Normalized solution}
+
+(**the parts below get messy and need to be worked on.)
+
+A general solution $\widetilde{u}(x,y,z)$ with $x$-waist ($y$-waist) of $w_{x,0}$ ($w_{y,0}$) at $z_{x,0}$ ($z_{y,0}$)
+\begin{align}
+	\label{eq:E_sol}
+	\widetilde{u}(x,y,z)
+		=& \widetilde{u}_x(x-x_0,z) \widetilde{u}_y(y-y_0,z) \exp\left[-\iu (k z - \omega t)\right] \nonumber \\
+		=& \left(\frac{2}{\pi}\right)^{1/2}
+			\frac{1}{\sqrt{w_{x,0}\left(1 - \iu \frac{z-z_{x,0}}{z_{x,R}}\right)}} \frac{1}{\sqrt{w_{y,0}\left(1 - \iu \frac{z-z_{y,0}}{z_{y,R}}\right)}} \nonumber \\
+		& \times \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z-z_{x,0})} - \iu\frac{\lambda}{\pi w^2(z-z_{x,0})}\right)\right] \nonumber \\
+		& \times \exp\left[-\iu (k {z-z_{x,0}} - \omega t)\right] \nonumber \\
+\end{align}
+
+
+**************************
+
+Interesting discussions about astigmatic Gaussian beams are discussed in \cite{arn1969.AO.8.1687, koc2013.AO.52.6030}. 
