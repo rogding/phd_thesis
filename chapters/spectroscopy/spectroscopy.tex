@@ -7,8 +7,6 @@ Previous work was accomplished mostly through the \nSLJ{5s5p}{1}{P}{1} state or 
 
 We measured \Sr{87} hyperfine Rydberg spectra using a two-photon excitation through the intermediate $\nSLJ{5s5p}{3}{P}{1}$ states and presented the work in \cite{din2018.PRA.98.042505}.
 
-\section{Ionization limit of \Sr{87}}
-
 \section{Rydberg states of hyperfine split cores}
 
 A modern paper is \cite{rob2018.PRA.97.022508}. 
@@ -16,8 +14,42 @@ A modern paper is \cite{rob2018.PRA.97.022508}.
 To calculate the effects of hyperfine interactions on the Rydberg spectra of \Sr{87}, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., \Sr{88}) and then apply the hyperfine interaction to obtain the lines for \Sr{87}.
 The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{din2018.PRA.98.042505}.
 
+\section{Ionization limit of \Sr{87}}
+
+Bosonic isotopes of strontium have no nuclear spin (i.e., $I=0$) meaning their ionization limits converge to a single $\nSLJ{5s^2}{2}{S}{1/2}$ state of \Srion{}{+}.
+This is not the case for \Sr{87} which has $I=9/2$. 
+Much like the case for alkali atoms, the nonzero nuclear spin of \Srion{87}{+} interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
+The magnetic dipole interaction can be written as
+\begin{equation}
+	\ev{W} = A \ev{\hat{\bm{I}} \cdot \hat{\bm{S}}} = \frac{A}{2} \left(F\left(F+1\right) - I\left(I+1\right) - S\left(S+1\right)\right)
+\end{equation}
+where $\vec{\bm{F}} = \vec{\bm{J}} + \vec{\bm{I}}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
+\citeauthor{sun1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
+
+Considering the reported \Sr{87} ionization limit of \SI{45932.2861(10)}{\per\cm} from \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} is well above that of \Sr{88}, this suggests that it's likely the ionization limit corresponding $\nSLJF{5s}{2}{S}{1/2}{4}$ state of \Srion{87}{+}.
+Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
+This value is used for the analysis below.
+
+\subsection{Mass-scaled ionization limit of \Sr{87}}
+
+Alternatively, an ionization limit for \Sr{87} assuming $I=0$ can be obtained by mass-scaling the ionization limits of \Sr{88}, \Sr{86}, and \Sr{84}. 
+Using the ionization values for the bosonic isotopes given in **cite appendix**, mass-scaling gives an ionization limit for \Sr{87} (assuming $I=0$) of **\SI{45932.19497+-0.00022}{\per\cm}** for \Sr{87} (assuming $I=0$) (see \cref{fig:Eion-mass-scaled}).
+This value agrees well with the calculated value above for an assumed \Sr{87} with no nuclear spin.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=4in]{spectroscopy/Eion-mass-scaled.svg}
+	\caption{\label{fig:Eion-mass-scaled}Mass-scaled $E_\text{ion}$.}
+\end{figure}
+
 \subsection{Incorporating hyperfine interaction}
 
+
+**************
+**************
+
+
+**************
+**************
 **Work on this section about getting from 2-electron Hamiltonian to effective Rydberg Hamiltonian for 5sns states.**
 
 The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{bei1983.PRL.51.771}
@@ -135,7 +167,33 @@ Stuff about doing the experiment.
 
 \subsection{Calibrating the WA-1500}
 
-Stuff about calibrating the EXFO WA-1500 wavemeter. 
+Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
+We initially attempted to calibrate the wavemeter by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I}) which has the {P65 (7–4)} line at \SI{15 672.517398 (25)}{\per\cm} \cite{san1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
+We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell, matching similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}). 
+A longer cell and a more advanced detection scheme may have provided the signal we needed since \citeauthor{san1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection.
+
+Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E} and \SI{646}{\nm} \cite{rad1995.PRA.52.4462}). 
+As hinted at above, the \SI{646}{\nm} source is used by the Hulet lab for narrow line cooling of \Li{6} on the \SI{323}{\nm} transition.
+Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us run a fiber between the Killian and Hulet labs and borrow some light from their system in order to calibrate our wavemeter. 
+
+\begin{table}[]
+	\centering
+	\begin{tabular}{@{}cccccc@{}}
+		\toprule
+		Wavelength						& Atom		& Transition	& Measured [\si{\per\cm}]	& Reported [\si{\per\cm}]	& Ref                                                   \\
+		\midrule
+		\SI{646}{\nm} (\SI{323}{\nm})	& \Li{6}	&				& xxx (yyy)					& xxx (yyy)					& \cite{rad1995.PRA.52.4462}                            \\
+		\SI{671}{\nm}					& \Li{6}	&				& zzz						& qqee						& \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E} \\
+		\SI{689}{\nm}					& \Sr{88}	&				& qqqqq						& 4848						&                                                       \\
+		\bottomrule
+	\end{tabular}
+	\caption{\label{tab:wavemeter}Values used to calibrate the WA-1500.}
+\end{table}
+
+**Add footnote: at the time, the best reference for the \SI{323}{\nm} transition we could find was by \citeauthor{rad1995.PRA.52.4462} although there should be some upcoming measurements using frequency combs (cite papers mentioning doing this)**
+
+
+
 
 \section{Results}
 
