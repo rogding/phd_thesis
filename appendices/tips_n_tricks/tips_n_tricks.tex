@@ -28,3 +28,15 @@ Our current transfer cavity has an FSR of about **\SI{300}{\MHz}** which means t
 
 **Using the new synthesizer, blah, blah, blah, we no longer have to switch EOM sidebands every FSR/2. 
 If we want to scan a few GHz (limited by the synthesizer and RF amplifier ranges) we just need to hop over sideband crossings.**
+
+\section{Winding coils on aluminum U-channels}
+
+I learned from my undergraduate days that winding magnetic field coils on aluminum U-channels without doing something about the corners very likely leads to short circuits since the wires are typically thinly coated with an insulating layer so that they can be wound as tightly as possible.
+When designing the trim coils for this experiment, I purposefully left gaps between the right-angle U-channels so that I could later round them off. 
+I first filled in the gaps with J-B Weld HighHeat epoxy putty and rounded them off before adding a few layers of polyimide (i.e., Kapton) tape as extra insurance. 
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=\textwidth]{tips_n_tricks/winding_coils/winding_coils.svg}
+	\caption{\label{fig:winding_coils}Winding coils on aluminum U-channel forms. (Left) The bare aluminum U-channel forms with the rounded corners. (Right) Adding extra electrical insulation with polyimide tape on all sides of U-channel.}
+\end{figure}
