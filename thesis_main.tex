@@ -45,8 +45,11 @@
 \interfootnotelinepenalty=10000 %Supposed to keep footnotes from being split
 
 % Additional options
+\sisetup{per-mode=fraction,
+		 fraction-function=\flatfrac}
 \DeclareSIUnit\atoms{atoms}
 \DeclareSIUnit\inch{in}
+\DeclareSIUnit\gauss{G}
 
 % cleveref options (\Cref{} for start of sentence, \cref{} for abbreviation).
 \Crefname{equation}{Equation}{Equations}

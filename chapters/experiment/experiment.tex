@@ -17,9 +17,10 @@ Some information about the Rydberg vacuum system can be found in \cite{camargo20
 
 Stuff about magnetic field coils?
 
-\section{Laser systems}
-
 \subsection{Dual MOT coils}
+
+One of the things we did differently from the Neutral experiment is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
+This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
 
 \subsection{Trim coils}
 
@@ -29,10 +30,33 @@ The ``Z-axis'' coil pair produces a field perpendicular to the table surface.
 
 Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height. 
 
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
+	\caption{\label{fig:trim_coils}Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
+\end{figure}
+
 The vertical (Z-axis) coils were would on forms around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
 The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
 In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
+
+\subsection{Electric field system and charged particle detection}
+
+Stuff about the scaffold and copper electric field plates. SIMION simulations?
+
+\subsection{Charged particle detection}
+
+Stuff about MCP.
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
+	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
+\end{figure}
+
+
+\section{Laser systems}
 
 \section{Versatile blue MOT system}
 
@@ -66,8 +90,7 @@ The drawbacks is that we're much more sensitive to misalignments and the ugly in
 Image of \Sr{84} and \Sr{87} red MOTs.
 ****
 
-
-\subsection{Optical dipole trap}
+\section{Optical dipole trap}
 
 Optical dipole traps work by ...... \cite{gri1999.odt}.
 
@@ -111,3 +134,9 @@ Depending on the seed we use, we observe linewidths of about **\SI{500}{\kHz} (\
 	\frac{1}{\SI{1064}{\nm}} &= \frac{1}{\SI{1.6}{\um}} + \frac{1}{\SI{3.2}{\um}} \\
 	\frac{1}{\SI{638}{\nm}} &= \frac{1}{\SI{1064}{\nm}} + \frac{1}{\SI{1.6}{\um}}
 \end{align}
+
+\section{Electric field ionization and detection}
+
+Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. 
+
+** picture of the electric field plates and mcp **
