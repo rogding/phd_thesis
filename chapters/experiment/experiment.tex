@@ -7,11 +7,11 @@ Section intro about the Rydberg experiment.
 
 We follow a pretty conventional strontium laser cooling system which uses an oven to produce an atomic beam of strontium which is then slowed by a spin-flip Zeeman slower. 
 Similar setups are described in \cite{stellmer2013.phd, barker2016.phd}.
+The most noticeable feature is the fact that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
+Keeping the working height at this height significantly reduced the need to build a rigid supporting structure to hold the vacuum system above the table as well as the necessary periscopes for the laser beams (although using fibers would mitigate this issue). 
+The downside is that it's much more difficult to set up optics below the vacuum chamber, e.g., for the vertical MOT or dipole trap beams. 
 
-Stuff about the Rydberg vaucum system here. 
 Some information about the Rydberg vacuum system can be found in \cite{camargo2015.ms, ding2016.ms}. 
-
-Blah, blah, blah....
 
 \section{Magnetic field coils}
 
@@ -22,6 +22,17 @@ Stuff about magnetic field coils?
 \subsection{Dual MOT coils}
 
 \subsection{Trim coils}
+
+The trim coils are used to cancel out stray magnetic fields as well as apply bias fields. 
+The two horizontal pairs of rectangular coils are oriented such that the ``X-axis'' produce a field towards or away from the MCP with the ``Y-axis'' perpendicular. 
+The ``Z-axis'' coil pair produces a field perpendicular to the table surface. 
+
+Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height. 
+
+The vertical (Z-axis) coils were would on forms around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
+The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
+In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
+We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
 
 \section{Versatile blue MOT system}
 
