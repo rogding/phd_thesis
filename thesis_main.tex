@@ -1,4 +1,13 @@
-\documentclass[12pt]{ruthesis}
+%Requires the memoir class 
+\documentclass[twoside,11pt]{memoir}
+
+%\usepackage{mathptmx}  % Times New Roman, but if you have Garamond 
+                        % then use it;
+                        % you are writing a book, not a newspaper column
+
+\DoubleSpacing			% memoir's double spacing
+\usepackage{rice}		% rice thesis package 
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{array}
@@ -15,7 +24,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[inkscapelatex=false]{svg}
-\usepackage[hyperfootnotes=true]{hyperref}
+\usepackage[hyperfootnotes=true,
+			colorlinks=false]{hyperref}
 \usepackage{color}
 \usepackage{bm}
 \usepackage[]{siunitx}
@@ -31,13 +41,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Various options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \addbibresource{bibliography.bib}
 
-\graphicspath{{chapters/},
-			  {appendices/}}
+\graphicspath{{chapters/},{appendices/}}
 
-\svgpath{{chapters/},
-		 {appendices/}}
+\svgpath{{chapters/},{appendices/}}
 
 % Footnotes are continuously labeled (e.g. without regard for sections, chapters, etc.). 
 \usepackage{chngcntr}
@@ -109,52 +118,61 @@
 %%%%	Front-matter details
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{An Apparatus for Studying Strontium Rydberg Physics}
-\author{Roger Ding}
-\department{Applied Physics}
-\school{William Marsh Rice University}
-\degree{Doctor of Philosophy}
-
-\committee{
-	F. Barry Dunning, Advisor \\
-	Sam and Helen Worden Professor of Physics
-	\and
-	Thomas C. Killian, Co-advisor \\
-	Professor of Physics and Astronomy
-	\and
-	Junichiro Kono \\
-	Professor of Electrical and Computer Engineering \\
-	Professor of Physics and Astronomy
-	\and
-	Han Pu \\
-	Professor of Physics and Astronomy
-}
-
-\address{Houston, Texas}
-\donemonth{April}
-\doneyear{2019}
-\makeindex
+\DoubleSpacing
 
 \begin{document}
 
+\maxtocdepth{subsection}	% put everything into the ToC
+\pagestyle{plain}			% pagestyle for the prelims
+
+\frontmatter
+\thetitlepage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%	Front-matter
+%%%%	Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frontmatter}
-	\pagenumbering{roman}
-	%\makecover
-	\maketitle
-	\include{abstract/abstract}
-	\include{acknowledgment/acknowledgment}
-	\tableofcontents
-	\listoffigures
-	\listoftables
-\end{frontmatter}
+\riceabstract
+\pagestyle{empty}			% Rice requires no page numbering in the abstract
+%\include{abstract/abstract}
 
-\pagenumbering{arabic}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat bibendum condimentum. Nunc non placerat quam. Nulla ullamcorper diam elit, id hendrerit erat faucibus at. 
+In tincidunt, velit non egestas lacinia, nulla arcu ornare tortor, et lobortis nulla eros at odio. 
+Aliquam vel aliquet tortor, eu semper diam. Nulla vestibulum dui vel mauris scelerisque, ultrices dapibus ex condimentum. 
+Phasellus quam justo, molestie sed porta ac, posuere pellentesque est. 
+In viverra, nibh non ullamcorper blandit, elit ex porttitor nisl, et commodo elit magna nec magna. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus, urna nec tempus ultrices, quam magna blandit augue, nec vestibulum sapien felis non sem. 
+Ut et tincidunt ante.
 
-\linespacing{1.7}
+\pagestyle{plain}			% Restore page numbering.
+
+% put your acknowledgments here 
+%\riceacknowledgments
+%\include{acknowledgment/acknowledgment}
+
+%% \setdedication{ text } % if you want a dedication
+%\ricededication
+
+%\tableofcontents
+\tableofcontents*			% The starred version does not add "Table of Contents" 
+							% to the Table of Contents
+							% I prefer it this way
+
+% I don't find these two particularly useful
+%% \listoffigures			% if you want to include a list of figures  
+%% \listoftables			% if you want to include a list of tables
+
+%% if you have more prelim sections, then
+%%%% \clearpage
+%%%% \pagestyle{plain}
+%%%% \prelimtitle   text % for sections after the ToC, etc, before main text
+
+\mainmatter
+\pagestyle{rice}
+
+%% Change the spacing between paragraphs, I prefered this for readability 
+\let\oldparskip\parskip
+\setlength{\parskip}{0.8em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Chapters
@@ -179,21 +197,13 @@
 \include{appendices/tips_n_tricks/tips_n_tricks}
 \include{appendices/derivations/derivations}
 
-%\include{append-a}
-%\appendix
-%\addcontentsline{toc} {chapter}{\numberline {}Appendix A}
-%\include{append-a}
-%\include{append-b}
-%\addcontentsline{toc} {chapter}{\numberline {}Bibliography}{}
-%\include{biblio}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\bibliographystyle{ieeetr}
 %\bibliography{bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
 \end{document}
