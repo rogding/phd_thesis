@@ -37,6 +37,7 @@
 			chaptertitle=false,
 			pageranges=false,
 			backend=biber]{biblatex}
+\usepackage{caption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Various options
@@ -54,8 +55,7 @@
 \interfootnotelinepenalty=10000 %Supposed to keep footnotes from being split
 
 % Additional options
-\sisetup{per-mode=fraction,
-		 fraction-function=\flatfrac}
+%\sisetup{per-mode=fraction, fraction-function=\flatfrac}
 \DeclareSIUnit\atoms{atoms}
 \DeclareSIUnit\inch{in}
 \DeclareSIUnit\gauss{G}
@@ -128,31 +128,26 @@
 \frontmatter
 \thetitlepage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Abstract
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \riceabstract
 \pagestyle{empty}			% Rice requires no page numbering in the abstract
 %\include{abstract/abstract}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat bibendum condimentum. Nunc non placerat quam. Nulla ullamcorper diam elit, id hendrerit erat faucibus at. 
-In tincidunt, velit non egestas lacinia, nulla arcu ornare tortor, et lobortis nulla eros at odio. 
-Aliquam vel aliquet tortor, eu semper diam. Nulla vestibulum dui vel mauris scelerisque, ultrices dapibus ex condimentum. 
-Phasellus quam justo, molestie sed porta ac, posuere pellentesque est. 
-In viverra, nibh non ullamcorper blandit, elit ex porttitor nisl, et commodo elit magna nec magna. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus, urna nec tempus ultrices, quam magna blandit augue, nec vestibulum sapien felis non sem. 
-Ut et tincidunt ante.
+Abstract goes here. 
 
 \pagestyle{plain}			% Restore page numbering.
 
+%%%%	Acknowledgments
 % put your acknowledgments here 
-%\riceacknowledgments
-%\include{acknowledgment/acknowledgment}
+\riceacknowledgments
 
+Acknowledgements go here. 
+
+%%%%	Dedication
 %% \setdedication{ text } % if you want a dedication
 %\ricededication
 
+%%%%	Table of contents
 %\tableofcontents
 \tableofcontents*			% The starred version does not add "Table of Contents" 
 							% to the Table of Contents
