@@ -5,6 +5,9 @@
 misc/
 svg-inkscape/
 
+## Include everything within following oflders
+!/appendices/sr_data/rydberg_lines/*
+
 ## Extra files
 thesis_main.pdf
 
