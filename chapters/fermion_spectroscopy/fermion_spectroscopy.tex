@@ -16,6 +16,23 @@ The theoretical approach presented below follows the one Shuhei Yoshida presents
 
 \section{Ionization limit of \Sr{87}}
 
+The first indication that the Rydberg levels of \Sr{87} was not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} for \Sr{87} is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
+Using the ionization limits for the bosons and the atomic masses of the isotopes, a mass-scaled ionization limit for an assumed $I=0$ \Sr{87} can be estimated to be **\SI{45932.19870+-0.00035}{\per\cm}**. 
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio=true, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.svg}
+	\caption{\label{fig:Eion-mass-scaled}Mass-scaled $E_\text{ion}$.}
+\end{figure}
+
+**********************************
+
+Considering the reported \Sr{87} ionization limit of \SI{45932.2861(10)}{\per\cm} from \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} is well above that of \Sr{88}, this suggests that it's likely the ionization limit corresponding $\nSLJF{5s}{2}{S}{1/2}{4}$ state of \Srion{87}{+}.
+Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
+This value is used for the analysis below.
+
+***********************************************
+
 Bosonic isotopes of strontium have no nuclear spin (i.e., $I=0$) meaning their ionization limits converge to a single $\nSLJ{5s^2}{2}{S}{1/2}$ state of \Srion{}{+}.
 This is not the case for \Sr{87} which has $I=9/2$. 
 Much like the case for alkali atoms, the nonzero nuclear spin of \Srion{87}{+} interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
@@ -23,23 +40,8 @@ The magnetic dipole interaction can be written as
 \begin{equation}
 	\ev{W} = A \ev{\hat{\bm{I}} \cdot \hat{\bm{S}}} = \frac{A}{2} \left(F\left(F+1\right) - I\left(I+1\right) - S\left(S+1\right)\right)
 \end{equation}
-where $\vec{\bm{F}} = \vec{\bm{J}} + \vec{\bm{I}}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
+where $\bm{F} = \bm{J} + \bm{I}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
 \citeauthor{sun1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
-
-Considering the reported \Sr{87} ionization limit of \SI{45932.2861(10)}{\per\cm} from \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} is well above that of \Sr{88}, this suggests that it's likely the ionization limit corresponding $\nSLJF{5s}{2}{S}{1/2}{4}$ state of \Srion{87}{+}.
-Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
-This value is used for the analysis below.
-
-\subsection{Mass-scaled ionization limit of \Sr{87}}
-
-Alternatively, an ionization limit for \Sr{87} assuming $I=0$ can be obtained by mass-scaling the ionization limits of \Sr{88}, \Sr{86}, and \Sr{84}. 
-Using the ionization values for the bosonic isotopes given in **cite appendix**, mass-scaling gives an ionization limit for \Sr{87} (assuming $I=0$) of **\SI{45932.19497+-0.00022}{\per\cm}** for \Sr{87} (assuming $I=0$) (see \cref{fig:Eion-mass-scaled}).
-This value agrees well with the calculated value above for an assumed \Sr{87} with no nuclear spin.
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio=true, width=4in]{fermion_spectroscopy/Eion-mass-scaled.svg}
-	\caption{\label{fig:Eion-mass-scaled}Mass-scaled $E_\text{ion}$.}
-\end{figure}
 
 \subsection{Incorporating hyperfine interaction}
 
