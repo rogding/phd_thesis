@@ -16,8 +16,20 @@ The theoretical approach presented below follows the one Shuhei Yoshida presents
 
 \section{Ionization limit of \Sr{87}}
 
-The first indication that the Rydberg levels of \Sr{87} was not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} for \Sr{87} is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
-Using the ionization limits for the bosons and the atomic masses of the isotopes, a mass-scaled ionization limit for an assumed $I=0$ \Sr{87} can be estimated to be **\SI{45932.19870+-0.00035}{\per\cm}**. 
+The first indication that the Rydberg levels of \Sr{87} were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} for \Sr{87} is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
+This suggests that the reported ionization limit is for the $\nSLJF{5s}{2}{S}{1/2}{4}$ state of \Srion{87}{+}.
+Like the case for alkali atoms, the nonzero nuclear spin of \Srion{87}{+} interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
+The magnetic dipole interaction can be written as
+\begin{equation}
+	\ev{W} = A \ev{\hat{\bm{I}} \cdot \hat{\bm{S}}} = \frac{A}{2} \left(F\left(F+1\right) - I\left(I+1\right) - S\left(S+1\right)\right)
+\end{equation}
+where $\bm{F} = \bm{J} + \bm{I}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
+\citeauthor{sun1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
+Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
+This value is used for the analysis below.
+
+As a check, we can use the ionization limits for the bosons and the atomic masses of the isotopes to obtain a mass-scaled ionization limit for \Sr{87}.
+The value estimated using this method is **\SI{45932.19870+-0.00035}{\per\cm}**. 
 
 \begin{figure}[htbp]
 	\centering
@@ -25,33 +37,8 @@ Using the ionization limits for the bosons and the atomic masses of the isotopes
 	\caption{\label{fig:Eion-mass-scaled}Mass-scaled $E_\text{ion}$.}
 \end{figure}
 
-**********************************
+\subsection{Incorporating hyperfine interaction in Rydberg levels}
 
-Considering the reported \Sr{87} ionization limit of \SI{45932.2861(10)}{\per\cm} from \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} is well above that of \Sr{88}, this suggests that it's likely the ionization limit corresponding $\nSLJF{5s}{2}{S}{1/2}{4}$ state of \Srion{87}{+}.
-Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
-This value is used for the analysis below.
-
-***********************************************
-
-Bosonic isotopes of strontium have no nuclear spin (i.e., $I=0$) meaning their ionization limits converge to a single $\nSLJ{5s^2}{2}{S}{1/2}$ state of \Srion{}{+}.
-This is not the case for \Sr{87} which has $I=9/2$. 
-Much like the case for alkali atoms, the nonzero nuclear spin of \Srion{87}{+} interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
-The magnetic dipole interaction can be written as
-\begin{equation}
-	\ev{W} = A \ev{\hat{\bm{I}} \cdot \hat{\bm{S}}} = \frac{A}{2} \left(F\left(F+1\right) - I\left(I+1\right) - S\left(S+1\right)\right)
-\end{equation}
-where $\bm{F} = \bm{J} + \bm{I}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
-\citeauthor{sun1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
-
-\subsection{Incorporating hyperfine interaction}
-
-
-**************
-**************
-
-
-**************
-**************
 **Work on this section about getting from 2-electron Hamiltonian to effective Rydberg Hamiltonian for 5sns states.**
 
 The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{bei1983.PRL.51.771}
@@ -103,10 +90,9 @@ Therefore, we can use the Clebsch–Gordan coefficients to determine basis state
 
 \subsection{$D$-states}
 
-Stuff about D-states. 
+** Stuff about D-states. **
 
-
-Following similar derivations by.
+** Following similar derivations (outlined by Shuhei Yoshida). **
 
 \section{Experimental method}
 
@@ -117,14 +103,14 @@ Approximately \num{1E6} atoms at \SI{\sim 2}{\mu\K} are captured before turning 
 
 Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized \SI{689}{\nm} and \SI{319}{\nm} excitation laser beams.
 Depending on which intermediate $F^{\prime}$ state we use, this scheme allows us to produce Rydberg atoms in the $F^{\prime\prime} = F^{\prime} \pm \left\{0,1\right\}$
-\begin{equation}
+\begin{equation*}
 	\nSLJF{5s^2}{1}{S}{0}{9/2}
 		\rightarrow \nSLJF{5s5p}{3}{P}{1}{F^{\prime}}
 		\rightarrow	\begin{cases}
 						\nSLJF{5sns}{3}{S}{1}{F^{\prime} \pm 0,1}	\\
 						\nSLJF{5snd}{3}{D}{1,2,3}{F^{\prime} \pm 0,1}
 					\end{cases}
-\end{equation}
+\end{equation*}
 These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated.
 The typical detunings of the \SI{689}{\nm} laser were $\Delta_{9/2} \sim \SI{36}{MHz}$ and $\Delta_{11/2} \sim \SI{12}{\MHz}$. 
 The \SI{689}{\nm} laser was chopped into **(10–20)-us-long** pulses to generate temporally localized groups of Rydberg atoms. 
@@ -146,7 +132,7 @@ Additional details about how we scanned the UV laser frequency is given in \Cref
 
 Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
 We initially attempted to calibrate the wavemeter by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I}) which has the {P65 (7–4)} line at \SI{15 672.517398 (25)}{\per\cm} \cite{san1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
-We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell, matching similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}). 
+We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}).}.
 A longer cell and a more advanced detection scheme may have provided the signal we needed since \citeauthor{san1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection. A setup similar to the one in \cite{hua2018.AO.57.2102} may work as well.
 
 Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E} and \SI{646}{\nm} \cite{rad1995.PRA.52.4462}). 
@@ -158,16 +144,16 @@ Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us ru
 	\makebox[\textwidth][c]{
 	\begin{tabular}{@{}ccccccc@{}}
 		\toprule
-		$\lambda$ [\si{\nm}]	& Atom						& Lower state									& Upper state								& Measured [\si{\per\cm}]	& Reported [\si{\per\cm}]			& Ref																							\\
+		$\lambda$ [\si{\nm}]	& Atom						& Lower state									& Upper state								& Reported [\si{\per\cm}]			& Measured [\si{\per\cm}]	& Ref																							\\
 		\midrule
-		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJF{2s}{2}{S}{1/2}{3/2}$}	& \multirow{2}{*}{$\nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1792(9)}		& \num{30925.1703(10)}				& \multirow{2}{*}{\cite{rad1995.PRA.52.4462,san2011.PRL.107.023001,san2012.PRL.109.259901E}}	\\
-		(\num{646})				&							&												&											& (\num{15462.5896(5)})		& (\num{15462.5851(5)})				&                                                       										\\
-		\num{671}				& \Li{6}					& $\nSLJF{2s}{2}{S}{1/2}{3/2}$					& $\nSLJ{2p}{2}{P}{3/2}$					& \num{14903.63391(33)}		& \num{14903.6320617+-0.0000007}	& \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E}											\\
-		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$					& \num{14504.34224(35)}		& \num{14504.33824159+-0.00000033}	& \cite{fer2003.PRL.91.243002,san2010.JPCRD.39.033103}											\\
+		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJF{2s}{2}{S}{1/2}{3/2}$}	& \multirow{2}{*}{$\nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703(10)}				& \num{30925.1792(9)}		& \multirow{2}{*}{\cite{rad1995.PRA.52.4462,san2011.PRL.107.023001,san2012.PRL.109.259901E}}	\\
+		(\num{646})				&							&												&											& (\num{15462.5851(5)})				& (\num{15462.5896(5)})		&                                                       										\\
+		\num{671}				& \Li{6}					& $\nSLJF{2s}{2}{S}{1/2}{3/2}$					& $\nSLJ{2p}{2}{P}{3/2}$					& \num{14903.6320617+-0.0000007}	& \num{14903.63391(33)}		& \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E}											\\
+		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$					& \num{14504.33824159+-0.00000033}	& \num{14504.34224(35)}		& \cite{fer2003.PRL.91.243002,san2010.JPCRD.39.033103}											\\
 		\bottomrule
 	\end{tabular}
 	}
-	\caption{\label{tab:wavemeter}Values used to calibrate the WA-1500 on a single day (2018/03/09), within ~2 hours, to reduce day-to-day environmental changes)**. Reported values for \Li{6} were given with respect to the center-of-gravity of the lower $\nSLJ{5s}{2}{S}{1/2}$ state so I included the shift to the $F=3/2$ state. **Still need to calculate HF shifted values for \Li{6}.**}
+	\caption{\label{tab:wavemeter}Values used to calibrate the WA-1500 on a single day (2018/03/09) within ~2 hours to reduce day-to-day environmental changes)**. Reported values for \Li{6} were given with respect to the center-of-gravity of the lower $\nSLJ{5s}{2}{S}{1/2}$ state so I included the shift to the $F=3/2$ state. **Still need to calculate HF shifted values for \Li{6}.**}
 \end{table}
 
 \Cref{fig:wm_fit} shows the difference between our measured energies and the reported energies. 
