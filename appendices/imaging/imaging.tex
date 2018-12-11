@@ -1,3 +1,30 @@
-\chapter{Imaging strontium}
+\chapter{Absorption imaging of strontium}
 
-Section talking about modeling the imaging of \Sr{87} for different B-fields, detunings, etc.
+Our main diagnostic tool is absorption imaging where the atoms are illuminated with resonant light and an image of their shadow is recorded. 
+From these images, the main properties we can extract are the atom number and the temperature. 
+Therefore it's important to know how the electronic structure of strontium affects how many photons are scattered. 
+All our absorption images are done using the strong $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition at \SI{461}{\nm}. 
+
+The calculation of the scattering cross section was originally presented in \cite{mickelson2010.phd} using a rate equation model. 
+\citeauthor{barker2016.phd} took it a step further and calculated the scattering cross section using the optical Bloch equations and found it to be effectively the same as using rate equations. 
+
+\section{Imaging \Sr{84}, \Sr{86}, and \Sr{88}}
+
+The bosonic isotopes have no nuclear spin ($I=0$) so their absorption cross section is relatively simple. 
+
+The resonant absorption cross section for a single polarization is given by \cite{steck_qao_notes}
+\begin{equation*}
+	\sigma_0 = \frac{\lambda_0^2}{2 \pi} = \SI{3.38036E-14}{\square\m\per\s}
+\end{equation*}
+where $\lambda_0 = \SI{460.862}{\nm}$. ** Use cross section with matrix elements. **
+
+*** ****
+
+
+
+\section{Imaging \Sr{87}}
+
+Due to the hyperfine structure, the scattering cross section for \Sr{87} is not as straightforward as for the bosons since as the atoms scatter light, they can be optically pumped between different $m_F$ states which have different coupling strengths to the excited $m_F^\prime$ levels. 
+
+The calculation of the \Sr{87} scattering cross section was originally presented in \cite{mickelson2010.phd} using a rate equation model. 
+\citeauthor{barker2016.phd} took it a step further and calculated the scattering cross section using the optical Bloch equations and found it to be effectively the same as using rate equations. 
