@@ -34,7 +34,7 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
 	\caption{\label{fig:trim_coils}Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
 \end{figure}
 
@@ -53,7 +53,7 @@ Fiber coupling allowed us to quickly fix injection lock issues by optimizing the
 
 \begin{sidewaysfigure}[htbp]
 	\centering
-	\includesvg[keepaspectratio=true, width=\paperwidth, height=\paperheight]{experiment/blue_system.svg}
+	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/blue_system.svg}
 	\caption{\label{fig:blue_system}**Placeholder**Simplified diagram of the blue MOT system.}
 \end{sidewaysfigure}
 
@@ -66,7 +66,7 @@ In practice, we don't always have all the red MOT AOMs lined up, typically only 
 
 \begin{sidewaysfigure}[htbp]
 	\centering
-	\includesvg[keepaspectratio=true, width=\paperwidth, height=\paperheight]{experiment/red_system.svg}
+	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/red_system.svg}
 	\caption{\label{fig:red_system}Simplified diagram of the red MOT system (when everything is put together) for multi-isotope trapping. The master laser frequency is referenced to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}.}
 \end{sidewaysfigure}
 
@@ -100,6 +100,12 @@ Our first ODT laser was a Coherent Verdi IR - essentially a \SI{1064}{\nm} versi
 That worked ok until it died due to an electrical surge (?). 
 At which point we moved to using a Nufern NuAmp \SI{50}{\W} fiber amplifier laser.
 
+\subsection{Fiber-coupled ODTs}
+
+Having the fiber-coulped sheet trap saved our ass as we've had to switch out the high-power laser multiple times (from the Coherent Verdi-IR, Nufern NuAmp, to IPG, back to Nufern NuAmp. 
+
+For the high-power \SI{1064}{\nm} fibers, we've had good experiences using PMJ-A3AHPC,A3AHPC-1064-6/125-3AS-\textit{L}-1\footnote{These fibers are air-gapped and have an endcap on the ends which allows the beam to expand before entering/exiting the fiber, reducing hte power density. The adjustable fiber tip positions allow for optimization of coupling efficiency in to the fiber.} from OZ Optics. 
+
 \section{Making and detecting Rydberg atoms}
 
 \subsection{UV laser system}
@@ -116,7 +122,7 @@ Sum frequency generation then combines a \SI{1064}{\nm} photon with a \SI{1.6}{\
 
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{experiment/uv_system.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system.svg}
 	\caption{\label{fig:uv_system}Diagram of the laser system used to produce \SI{318}{\nm} for exciting strontium Rydberg atoms. Diagram of the Argos internals based on the one in \cite{mor2013.RSI.84.013102}.}
 \end{figure}
 
@@ -144,6 +150,6 @@ Stuff about MCP.
 
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio=true, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
 	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
 \end{figure}
