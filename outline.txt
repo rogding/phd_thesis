@@ -1,0 +1,71 @@
+-Introduction:
+	-Motivation.
+	-Backstory of the experiment.
+		-We originally wanted to do Rydberg dressing. 
+
+-The Rydberg apparatus:
+	-Physical apparatus.
+		-Vacuum system.
+			-Show multiple views.
+			-Maybe document various manufacturers/vendors/supplies used for future reference.
+		-X-, Y-, Z-trim coils.
+			-Show Zeeman shift spectra to determine coil G/V conversion.
+	
+	-Making cold gases of strontium:
+		-Dual MOT oils. 
+			-CAD drawing showing how the coils are set up.
+			-Some stuff about how the coils were assembled?
+
+		-1st stage cooling: blue MOT:
+			-461 nm laser system/layout.
+			
+		-2nd stage cooling: red MOT:
+			-689 nm laser system/layout.
+			
+		-ODT system:
+			-1064 nm laser system/layout.
+
+	-Making and detecting Rydberg atoms.
+		-UV laser system.
+		-Charged particle detection.
+			-Leave most of the details for Joe's thesis.
+
+-689 nm "magic" dimple trap.
+	-Idea behind the isotope-dependent optical trapping.
+	-Testing with 84Sr.
+		-Calculated trap potential.
+		-Absorption image of 84Sr BEC with and without dimple.
+	-Preliminary results sympathetically cooling 88Sr with 86Sr.
+		-Calculated trap potentials.
+		-Possibly made dual 88Sr and 86Sr BECs, but not conclusive.
+
+-Spectroscopy of 87Sr triplet Rydberg states.
+	-General idea of how the hyperfine shifts are calculated using data from isotopes without hyperfine structure.
+		-Hyperfine shifted ionization limits.
+	-Experimental method.
+		-Two-photon Rydberg excitation and detection scheme.
+			-Counterpropagating 689 nm and 320 nm cross-linearly polarized.
+			-Calibrating WA-1500 wavemeter.
+	-Data.
+	-Results.
+		-Comparison with recently reported data from other groups.
+
+-Rydberg molecules
+	-Show spin-polarization effectiveness. 
+		-Use counterpropagating crossed-linearly-polarized beams.
+
+-Conclusion.
+
+-Appendix A: Notation and definitions.
+
+-Appendix B: Strontium data.
+	-Maybe include a table of Rydberg energies?
+
+-Appendix C: Derivations.
+	-Gaussian beams.
+	-Absorption imaging of bosons vs. fermions.
+	-Density distributions.
+
+-Appendix D: Tips and tricks.
+
+-Bibliography.
