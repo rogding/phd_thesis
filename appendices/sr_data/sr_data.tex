@@ -1,41 +1,95 @@
 \chapter{Strontium Data}
 
-\section{Physical properties}
+This appendix contains some relevant values for strontium used throughout this thesis. 
+
+\section{Physical Properties}
 
 There are four naturally occurring stable isotopes of strontium.
 
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering
-	\begin{tabular}{@{}ccc@{}}
+	\begin{tabular}{@{}cccc@{}}
 		\toprule
-		Isotope	& Atomic mass {[\si{\amu}]}	& Natural abundance {[\si{\percent}]}	\\
+		Isotope	& {$I$}		& Atomic mass {[\si{\amu}]}			& Natural abundance {[\si{\percent}]}	\\
 		\midrule
-		\Sr{88}	& \num{87.905612256+-0.000000006}	& \num{82.58(35)}				\\
-		\Sr{87}	& \num{86.908877496+-0.000000005}	& \num{7.00(20)}				\\
-		\Sr{86}	& \num{85.909260726+-0.000000006}	& \num{9.86(20)}				\\
-		\Sr{84}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}					\\
+		\Sr{88}	& \num{0}	& \num{87.905612256+-0.000000006}	& \num{82.58(35)}						\\
+		\Sr{87}	& \num{9/2}	& \num{86.908877496+-0.000000005}	& \num{7.00(20)}						\\
+		\Sr{86}	& \num{0}	& \num{85.909260726+-0.000000006}	& \num{9.86(20)}						\\
+		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}							\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:sr_phys_prop}Some physical properties of strontium \cite{Wang2017.CPC.41.030003}.}
+	\caption{\label{tab:sr_phys_prop}Some physical properties of four naturally occuring isotopes of strontium \cite{nist_edi, CIAAW2017.atomic_weights, Wang2017.CPC.41.030003}.}
 \end{table}
 
-\section{Nuclear and electronic properties}
+\section{Electronic properties}
 
-There are four naturally occurring stable isotopes of strontium: three bosons \Sr{88}, \Sr{86}, \Sr{84} with $I=0$ and a fermion \Sr{87} with $I=9/2$. 
+Strontium has two principal transitions from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, one at \SI{461}{\nm} and another at \SI{689}{\nm}. 
+The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging while the \SI{689}{nm} transition is used for the red MOT and spectroscopy. 
 
-\begin{table}[htbp]
+\begin{table}[H]
 	\centering
-	\begin{tabular}{@{}cccccc@{}}
+	\begin{tabular}{@{}ccccc@{}}
 		\toprule
-		Isotope	& $I$		& $E_\text{ion}$ {[\si{\per\cm}]} \cite{blt_1982,san_2010} 	& Initial state {(\Sri)}		& Final state {(\Srii)}				\\
+		Isotope						& Lower level									& Upper level					& $\Delta E_\text{iso}$	& Ref	\\
 		\midrule
-		\Sr{88}	& \num{0}	& \num{45932.1982(10)}										& $\nSLJ{5s^2}{1}{S}{0}$		& $\nSLJ{5s}{2}{S}{1/2}$		\\
-		\Sr{87}	& \num{9/2}	& \num{45932.2861(10)}										& $\nSLJF{5s^2}{1}{S}{0}{9/2}$	& $\nSLJF{5s}{2}{S}{1/2}{4}$	\\
-		\Sr{86}	& \num{0}	& \num{45932.1912(10)}										& $\nSLJ{5s^2}{1}{S}{0}$		& $\nSLJ{5s}{2}{S}{1/2}$		\\
-		\Sr{84}	& \num{0}	& \num{45932.1833(10)}										& $\nSLJ{5s^2}{1}{S}{0}$		& $\nSLJ{5s}{2}{S}{1/2}$		\\
+		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
+		\Sr{87}						& $\nSLJF{5s^2}{1}{S}{0}{9/2}$					& $\nSLJF{5s5p}{1}{P}{1}{7/2}$	&						&		\\
+									&												& $\nSLJF{5s5p}{1}{P}{1}{11/2}$	&						&		\\
+									&												& $\nSLJF{5s5p}{1}{P}{1}{9/2}$	&						&		\\
+		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:sr_nuc_prop}Nuclear properties of strontium from \cite{nist_edi}.}
+	\caption{\label{tab:blue_isotope_shift}Blue transition frequencies.}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{@{}ccclc@{}}
+		\toprule
+		Isotope						& Lower level									& Upper level										& \multicolumn{1}{c}{Frequency [\si{kHz}]}	& Ref.																\\
+		\midrule
+		\multirow{4}{*}{\Sr{88}}	& \multirow{4}{*}{$\nSLJ{5s^2}{1}{S}{0}$}		& \multirow{4}{*}{$\nSLJ{5s5p}{3}{P}{1}$}			& \num{434829121311 +- 10}					& \cite{Sansonetti2010.JPCRD.39.033103, Ferrari2003.PRL.91.243002}	\\
+									&												&													& \num{434829121300 +- 20}					& \cite{Courtillot2005.EPJD.33.161}									\\
+									&												&													& \num{434829121312.334 +- 0.039}			& \cite{Ido2005.PRL.94.153001}										\\
+									&												&													& \num{434829121313 +- 20}					& \cite{Hui2015.CPB.24.1.013201}									\\
+		\midrule
+		\multirow{6}{*}{\Sr{87}}	& \multirow{2}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{2}{*}{$\nSLJF{5s5p}{3}{P}{1}{7/2}$}		& \num{434830473270 +- 55}					& \cite{Sansonetti2010.JPCRD.39.033103, Courtillot2005.EPJD.33.161}	\\
+									&												&													& \num{434830473218 +- 55}					& \cite{Hui2015.CPB.24.1.013201}									\\ \cline{2-5}
+									& \multirow{2}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{2}{*}{$\nSLJF{5s5p}{3}{P}{1}{9/2}$}		& \num{434829343010 +- 50}					& \cite{Sansonetti2010.JPCRD.39.033103, Courtillot2005.EPJD.33.161}	\\
+									&												&													& \num{434829342986 +- 65}					& \cite{Hui2015.CPB.24.1.013201}									\\ \cline{2-5}
+									& \multirow{2}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{2}{*}{$\nSLJF{5s5p}{3}{P}{1}{11/2}$}	& \num{434827879860 +-55}					& \cite{Sansonetti2010.JPCRD.39.033103, Courtillot2005.EPJD.33.161}	\\
+									&												&													& \num{434827879826 +- 60}					& \cite{Hui2015.CPB.24.1.013201}									\\
+		\midrule
+		\multirow{2}{*}{\Sr{86}}	& \multirow{2}{*}{$\nSLJ{5s^2}{1}{S}{0}$}		& \multirow{2}{*}{$\nSLJ{5s5p}{3}{P}{1}$}			& \num{434828957494 +- 10}					& \cite{Sansonetti2010.JPCRD.39.033103, Ferrari2003.PRL.91.243002}	\\
+									&												&													& \num{434828957493 +- 25}					& \cite{Hui2015.CPB.24.1.013201}									\\
+		\midrule
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$							& \num{434828769718 +- 111}					& \cite{Hui2015.CPB.24.1.013201}									\\
+		\bottomrule
+	\end{tabular}
+	\caption{\label{tab:red_isotope_shift}Frequencies of the \SI{689}{\nm} {$\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$} transition.}
+\end{table}
+
+\section{Rydberg Properties}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{@{}ccclc@{}}
+		\toprule
+		Isotope						& Initial state {(\Sri)}						& Final state {(\Srii)}								& \multicolumn{1}{c}{$I_S$ [\si{\per\cm}]}	& Ref.															\\
+		\midrule
+		\multirow{2}{*}{\Sr{88}}	& \multirow{2}{*}{$\nSLJ{5s^2}{1}{S}{0}$}		& \multirow{2}{*}{$\nSLJ{5s}{2}{S}{1/2}$}			& \num{45932.1982(10)}						& \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}	\\
+									&												&													& \num{45932.20024+-0.00033}				& \cite{Couturier2019.PRA.99.022503}							\\
+		\midrule
+		\multirow{2}{*}{\Sr{87}}	& \multirow{2}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& $\nSLJF{5s}{2}{S}{1/2}{4}$						& \num{45932.2861(10)}						& \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}	\\
+									&												& $\nSLJ{5s}{2}{S}{1/2}$							& \num{45932.1956}							& \cite{Ding2018.PRA.98.042505}									\\
+		\midrule
+		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$							& \num{45932.1912(10)}						& \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}	\\
+		\midrule
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s}{2}{S}{1/2}$							& \num{45932.1833(10)}						& \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}	\\
+		\bottomrule
+	\end{tabular}
+	\caption{\label{tab:ionization_limits}Ionization limits of the various strontium isotopes. ** Double check \Sr{87} ionization limits and state designations! **}
 \end{table}
 
 \subsection{Mass-scaled \Sr{87} ionization limit}
@@ -51,79 +105,9 @@ In particular, the coupling of the single valence electron to the $I=9/2$ nuclea
 
 The hyperfine splitting of the $\SLJ{2}{S}{1/2}$ was measured to be \SI{5002368.363(57)}{\kHz}, meaning the magnetic hyperfine constant was determined to be $A = \SI{-1000473.673(11)}{\kHz}$. 
 
-\section{Electronic properties}
+\subsection{Mass-corrected Rydberg constant ({$R_{\text{Sr}}$})}
 
-Strontium has two principal transitions from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, one at \SI{461}{\nm} and another at \SI{689}{\nm}. 
-The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging while the \SI{689}{nm} transition is used for the red MOT and spectroscopy. 
-
-\begin{table}[htbp]
-	\centering
-	\begin{tabular}{@{}ccccc@{}}
-		\toprule
-		Isotope						& Lower level									& Upper level					& $\Delta E_\text{iso}$	& Ref	\\
-		\midrule
-		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
-		\Sr{87}						& $\nSLJF{5s^2}{1}{S}{0}{9/2}$					& $\nSLJF{5s5p}{1}{P}{1}{7/2}$	&						&		\\
-									&												& $\nSLJF{5s5p}{1}{P}{1}{11/2}$	&						&		\\
-									&												& $\nSLJF{5s5p}{1}{P}{1}{9/2}$	&						&		\\
-		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
-		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
-		\bottomrule
-	\end{tabular}
-	\caption{\label{tab:blue_isotope_shift}xxxxxxxx.}
-\end{table}
-
-*************************************************
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-Isotope 	& Lower level    				& Upper level 					& Frequency {[}kHz{]} 	& References 						\\ \hline
-\Sr{88} 	& $\nSLJ{5s^2}{1}{S}{0}$ 		& $\nSLJ{5s5p}{1}{P}{1}$ 		&                     	& 						           	\\ \hline
-\Sr{87} 	& $\nSLJF{5s^2}{1}{S}{0}{9/2}$ 	& $\nSLJF{5s5p}{1}{P}{1}{7/2}$ 	&                     	& 									\\
-			& $\nSLJF{5s^2}{1}{S}{0}{9/2}$ 	& $\nSLJF{5s5p}{1}{P}{1}{9/2}$ 	&                     	& 									\\
-			& $\nSLJF{5s^2}{1}{S}{0}{9/2}$ 	& $\nSLJF{5s5p}{1}{P}{1}{11/2}$ &                     	&									\\ \hline
-\Sr{86} 	& $\nSLJ{5s^2}{1}{S}{0}$ 		& $\nSLJ{5s5p}{1}{P}{1}$ 		&                     	& 									\\ \hline
-\Sr{84} 	& $\nSLJ{5s^2}{1}{S}{0}$ 		& $\nSLJ{5s5p}{1}{P}{1}$ 		&                     	&			 						\\ \hline
-\end{tabular}
-\caption{Isotopic transition frequencies of the 461 nm line.}
-\label{blue_iso_freq}
-\end{table}
-
-\subsection{Strontium isotope shifts}
-
-Strontium has two principal transitions from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, one at \SI{461}{\nm} and another at \SI{689}{\nm}. 
-
-\subsection{689 nm transition}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|l|}
-\hline
-Isotope						& Lower level									& Upper level										& \multicolumn{1}{c|}{Frequency [\si{kHz}]}							\\ \hline
-\multirow{5}{*}{\Sr{88}}	& \multirow{5}{*}{$\nSLJ{5s^2}{1}{S}{0}$}		& \multirow{5}{*}{$\nSLJ{5s5p}{3}{P}{1}$}			& \num{434829121311 +- 10} \cite{Sansonetti_2010, Ferrari_2003}		\\ %\cline{4-4}
-							&												&													& \num{434829121300 +- 20} \cite{Courtillot_2005}					\\ %\cline{4-4}
-							&												&													& \num{434829121312.334 +- 0.039} \cite{Ido_2005}					\\ %\cline{4-4}
-							&												&													& \num{434829121313 +- 20} \cite{Hui_2015}							\\ \cline{4-4}
-							&												&													& \num{434829121312.334 +- 0.039}									\\ \hline
-\multirow{9}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{3}{*}{$\nSLJF{5s5p}{3}{P}{1}{7/2}$}		& \num{434830473270 +- 55} \cite{Sansonetti_2010, Courtillot_2005}	\\ %\cline{4-4}
-							&												&													& \num{434830473218 +- 55} \cite{Hui_2015}							\\ \cline{4-4}
-							&												&													& \num{434830473244 +- 39}											\\ \cline{2-4}
-							& \multirow{3}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{3}{*}{$\nSLJF{5s5p}{3}{P}{1}{9/2}$}		& \num{434829343010 +- 50} \cite{Sansonetti_2010, Courtillot_2005}	\\ %\cline{4-4}
-							&												&													& \num{434829342986 +- 65} \cite{Hui_2015}							\\ \cline{4-4}
-							&												&													& \num{434829343001 +- 40}											\\ \cline{2-4}
-							& \multirow{3}{*}{$\nSLJF{5s^2}{1}{S}{0}{9/2}$}	& \multirow{3}{*}{$\nSLJF{5s5p}{3}{P}{1}{11/2}$}	& \num{434827879860 +-55} \cite{Sansonetti_2010, Courtillot_2005}	\\ %\cline{4-4}
-							&												&													& \num{434827879826 +- 60} \cite{Hui_2015}							\\ \cline{4-4}
-							&												&													& \num{434827879844 +- 41}											\\ \hline
-\multirow{3}{*}{\Sr{86}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}		& \multirow{3}{*}{$\nSLJ{5s5p}{3}{P}{1}$}			& \num{434828957494 +- 10} \cite{Sansonetti_2010, Ferrari_2003}		\\ %\cline{4-4}
-							&												&													& \num{434828957493 +- 25} \cite{Hui_2015}							\\ \cline{4-4}
-							&												&													& \num{434828957493.9 +- 9.3}**										\\ \hline
-\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$							& \num{434828769718 +- 111} \cite{Hui_2015}							\\ \hline
-\end{tabular}
-\caption{Absolute transition frequencies of the 689 nm intercombination line.}
-\label{red_iso_freq}
-\end{table}
+Using the value of the Rydberg constant {$R_\infty = \SI{109737.31568508(65)}{\per\cm}$}, electron mass {$m_e = \SI{9.10938356(11)E-31}{\kg}$}, {$\si{\amu} = \SI{1.660539040(20)E-27}{\kg}$} \cite{Mohr2016.RMP.88.035009}, and the masses of the strontium atoms, the mass-corrected Rydberg constants are
 
 \section{Data presented in \cite{din2018.PRA.98.042505}}
 
