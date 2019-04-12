@@ -15,7 +15,8 @@
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{booktabs}
-\usepackage{longtable}
+\usepackage{longtable} % for 'longtable' environment
+\usepackage{pdflscape} % for 'landscape' environment
 \usepackage{tablefootnote}
 \usepackage{mathtools}
 \usepackage{physics}
@@ -81,8 +82,8 @@
 
 \newcommand{\RomanNumeralCaps}[1]{\MakeUppercase{\romannumeral #1}}
 
-\newcommand{\Sri}{Sr \RomanNumeralCaps{1}}
-\newcommand{\Srii}{Sr \RomanNumeralCaps{2}}
+\newcommand{\Sri}{Sr\RomanNumeralCaps{1}}
+\newcommand{\Srii}{Sr\RomanNumeralCaps{2}}
 
 \newcommand{\tsup}{\textsuperscript}								% superscript outside math mode.
 \newcommand{\tsub}{\textsubscript}									% subscript outside math mode.

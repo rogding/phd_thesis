@@ -7,6 +7,7 @@ This appendix contains some relevant values for strontium used throughout this t
 There are four naturally occurring stable isotopes of strontium.
 
 \begin{table}[H]
+	\caption{\label{tab:sr_phys_prop}Some physical properties of four naturally occuring isotopes of strontium \cite{nist_edi, CIAAW2017.atomic_weights, Wang2017.CPC.41.030003}.}
 	\centering
 	\begin{tabular}{@{}cccc@{}}
 		\toprule
@@ -18,7 +19,6 @@ There are four naturally occurring stable isotopes of strontium.
 		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}							\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:sr_phys_prop}Some physical properties of four naturally occuring isotopes of strontium \cite{nist_edi, CIAAW2017.atomic_weights, Wang2017.CPC.41.030003}.}
 \end{table}
 
 \section{Electronic properties}
@@ -27,6 +27,7 @@ Strontium has two principal transitions from the $\nSLJ{5s^2}{1}{S}{0}$ ground s
 The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging while the \SI{689}{nm} transition is used for the red MOT and spectroscopy. 
 
 \begin{table}[H]
+	\caption{\label{tab:blue_isotope_shift}Blue transition frequencies.}
 	\centering
 	\begin{tabular}{@{}ccccc@{}}
 		\toprule
@@ -40,10 +41,10 @@ The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging whi
 		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{1}{P}{1}$		&						&		\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:blue_isotope_shift}Blue transition frequencies.}
 \end{table}
 
 \begin{table}[H]
+	\caption{\label{tab:red_isotope_shift}Frequencies of the \SI{689}{\nm} {$\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$} transition.}
 	\centering
 	\begin{tabular}{@{}ccclc@{}}
 		\toprule
@@ -67,12 +68,14 @@ The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging whi
 		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$							& \num{434828769718 +- 111}					& \cite{Hui2015.CPB.24.1.013201}									\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:red_isotope_shift}Frequencies of the \SI{689}{\nm} {$\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$} transition.}
 \end{table}
 
 \section{Rydberg Properties}
 
+This section contains some values of the relevant properties of strontium Rydberg atoms. 
+
 \begin{table}[H]
+	\caption{\label{tab:ionization_limits}Ionization limits of the various strontium isotopes. ** Double check \Sr{87} ionization limits and state designations! **}
 	\centering
 	\begin{tabular}{@{}ccclc@{}}
 		\toprule
@@ -89,7 +92,6 @@ The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging whi
 		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s}{2}{S}{1/2}$							& \num{45932.1833(10)}						& \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}	\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:ionization_limits}Ionization limits of the various strontium isotopes. ** Double check \Sr{87} ionization limits and state designations! **}
 \end{table}
 
 \subsection{Mass-scaled \Sr{87} ionization limit}
@@ -109,23 +111,30 @@ The hyperfine splitting of the $\SLJ{2}{S}{1/2}$ was measured to be \SI{5002368.
 
 Using the value of the Rydberg constant {$R_\infty = \SI{109737.31568508(65)}{\per\cm}$}, electron mass {$m_e = \SI{9.10938356(11)E-31}{\kg}$}, {$\si{\amu} = \SI{1.660539040(20)E-27}{\kg}$} \cite{Mohr2016.RMP.88.035009}, and the masses of the strontium atoms, the mass-corrected Rydberg constants are
 
-\section{Data presented in \cite{din2018.PRA.98.042505}}
+\section{Data presented in \cite{Ding2018.PRA.98.042505}}
 
-The tables below contain the measurements of the \Sr{87} Rydberg energies and splittings presented in \cite{din2018.PRA.98.042505}.
+The tables below contain the measurements of the \Sr{87} Rydberg energies and splittings presented in \cite{Ding2018.PRA.98.042505}.
 
+\begingroup
 \SingleSpacing
 \begin{longtable}[c]{@{}ccccccccc@{}}
+	\caption{\label{tab:data-s-state}
+		Experimentally measured and calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
+		$\Delta E_\text{expt}$ and $\Delta E_\text{theor}$ are the measured and predicted separations from the $\nSLJF{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
+		The uncertainties shown include both the statistical and systematic uncertainties in the wavemeter calibration.} \\
 	\toprule
-	Series	& $n$					& Term				& $F$		& $E_\text{expt}$ [\si{\per\cm}]	& $\Delta E_\text{expt}$ [\si{\GHz}]	& $E_\text{theor}$	[\si{\per\cm}]	& $\Delta E_\text{theor}$ [\si{\GHz}]	\\*
+	Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
 	\midrule
 	\endfirsthead
-	\multicolumn{8}{c}{{\bfseries Table \thetable\ continued from previous page}} \\
+	\multicolumn{8}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page.}}	\\
 	\toprule
-	Series	& $n$					& Term				& $F$		& $E_\text{expt}$ [\si{\per\cm}]	& $\Delta E_\text{expt}$ [\si{\GHz}]	& $E_\text{theor}$	[\si{\per\cm}]	& $\Delta E_\text{theor}$ [\si{\GHz}]	\\*
+	Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
 	\midrule
 	\endhead
 	\bottomrule
+	\multicolumn{8}{r}{\textit{Continued on next page.}}	\\
 	\endfoot
+	\bottomrule
 	\endlastfoot
 	$5sns$	& $40$					& $\SLJ{1}{S}{0}$	& $9/2$		& \num{45850.8762+-0.0021}			& \num{16.35+-0.08}						& \num{45850.8702}					& \num{16.22}							\\
 			& $60$					& 					&			& \num{45898.1444+-0.0022}			& \num{7.28+-0.09}						& \num{45898.1421}					& \num{7.26}							\\
@@ -185,16 +194,16 @@ The tables below contain the measurements of the \Sr{87} Rydberg energies and sp
 			& $90$					& 					&			& \num{45917.4982+-0.0019}			&										& \num{45917.4967}					& 										\\
 			& $94$					& 					&			& \num{45918.7600+-0.0021}			&										& \num{45918.7590}					& 										\\
 			& $98$					& 					&			& \num{45919.8662+-0.0022}			&										& \num{45919.8646}					& 										\\
-			& $99$					& 					&			& \num{45920.1210+-0.0022}			&										& \num{45920.1196}					& 										\\*
-	\bottomrule
-	\caption{\label{tab:data-s-state}
-		Experimentally measured and calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
-		$\Delta E_\text{expt}$ and $\Delta E_\text{theor}$ are the measured and predicted separations from the $\nSLJF{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
-		The uncertainties shown include both the statistical and systematic uncertainties in the wavemeter calibration.}
+			& $99$					& 					&			& \num{45920.1210+-0.0022}			&										& \num{45920.1196}					& 										\\
 \end{longtable}
 \DoubleSpacing
+\endgroup
 
 \begin{table}[!htbp]
+	\caption{\label{tab:data-d-state}
+		Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for ${n=\text{\numlist{50;60;\sim98}}}$. 
+		The splittings $\Delta E_\text{expt}$ between those lines that could be measured during a single FSR scan of the \SI{319}{\nm} laser frequency (delineated by the horizontal lines) or, for ${n \sim 98}$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
+		For the ${n=\text{\numrange[range-phrase = --]{98}{99}}}$ scan, all differences are referenced to the $\nSLJF{5sns}{3}{S}{1}{11/2}$ level.}
 	\centering
 	\begin{tabular}{@{}cccccccc@{}}
 		\toprule
@@ -242,10 +251,6 @@ The tables below contain the measurements of the \Sr{87} Rydberg energies and sp
 		$5sns$	& $99$	& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45920.1210+-0.0022}			& \num{7639+-6}							& \num{45920.1196}					& \num{7643}							\\
 		\bottomrule
 	\end{tabular}
-	\caption{\label{tab:data-d-state}
-		Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for ${n=\text{\numlist{50;60;\sim98}}}$. 
-		The splittings $\Delta E_\text{expt}$ between those lines that could be measured during a single FSR scan of the \SI{319}{\nm} laser frequency (delineated by the horizontal lines) or, for ${n \sim 98}$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
-		For the ${n=\text{\numrange[range-phrase = --]{98}{99}}}$ scan, all differences are referenced to the $\nSLJF{5sns}{3}{S}{1}{11/2}$ level.}
 \end{table}
 
 \subsection{Data from papers}
@@ -256,41 +261,122 @@ Collect \Sr{87} data from other papers (mostly Beigang et al).
 
 ** Section for strontium quantum defects? **
 
+\begin{landscape}
+\SingleSpacing
 \begin{longtable}[c]{@{}cccccccc@{}}
+	\caption{\label{my-label}Compiled data of experimentally measured $\nSLJ{5sns}{3}{S}{1}$ states.} \\
 	\toprule
-	Series & $n$  & Term & E [/cm] ref1 & E [/cm] ref2 & E [/cm] ref3 & E [/cm] \cite{cou2018} & Avg. \\*
+	Series & $n$  & Term & $E$ [\si{\per\cm}] ref1 & $E$ [\si{\per\cm}] ref2 & $E$ [\si{\per\cm}] ref3 & $E$ [\si{\per\cm}] ref4 & $E$ [\si{\per\cm}] \cite{Couturier2019.PRA.99.022503} \\
 	\midrule
 	\endfirsthead
-	\multicolumn{8}{c}{{\bfseries Table \thetable\ continued from previous page}} \\
+	\multicolumn{8}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page.}}	\\
 	\toprule
-	Series & $n$  & Term & E [/cm] ref1 & E [/cm] ref2 & E [/cm] ref3 & E [/cm] \cite{cou2018} & Avg. \\*
+	Series & $n$  & Term & $E$ [\si{\per\cm}] ref1 & $E$ [\si{\per\cm}] ref2 & $E$ [\si{\per\cm}] ref3 & $E$ [\si{\per\cm}] ref4 & $E$ [\si{\per\cm}] \cite{Couturier2019.PRA.99.022503} \\
 	\midrule
 	\endhead
 	\bottomrule
+	\multicolumn{8}{r}{\textit{Continued on next page.}}	\\
 	\endfoot
-	\endlastfoot
-	5sns   & 13 & 3S1  & a            & b            & b            & 1341500517   &      \\
-	5sns   & 14 & 3S1  & d            & d            & d            &              &      \\
-	5sns   & 15 & 3S1  &              &              &              &              &      \\
-	5sns   & 16 & 3S1  &              &              &              &              &      \\
-	5sns   & 17 & 3S1  &              &              &              &              &      \\
-	5sns   & 18 & 3S1  &              &              &              &              &      \\
-	5sns   & 19 & 3S1  &              &              &              &              &      \\
-	5sns   & 20 & 3S1  &              &              &              &              &      \\
-	5sns   & 21 & 3S1  &              &              &              &              &      \\
-	5sns   & 22 & 3S1  &              &              &              &              &      \\
-	5sns   & 23 & 3S1  &              &              &              & 1368473584   &      \\
-	5sns   & 13 & 3S1  & a            & b            & b            & 1341500517   &      \\
-	5sns   & 14 & 3S1  & d            & d            & d            &              &      \\
-	5sns   & 15 & 3S1  &              &              &              &              &      \\
-	5sns   & 16 & 3S1  &              &              &              &              &      \\
-	5sns   & 17 & 3S1  &              &              &              &              &      \\
-	5sns   & 18 & 3S1  &              &              &              &              &      \\
-	5sns   & 19 & 3S1  &              &              &              &              &      \\
-	5sns   & 20 & 3S1  &              &              &              &              &      \\
-	5sns   & 21 & 3S1  &              &              &              &              &      \\
-	5sns   & 22 & 3S1  &              &              &              &              &      \\
-	5sns   & 23 & 3S1  &              &              &              & 1368473584   &      \\*
 	\bottomrule
-	\caption{\label{my-label}My caption}
+	\endlastfoot
+		$5sns$	& $13$	& $\SLJ{3}{S}{1}$	&             &             & 	            & 			   & \num{44747.64062(33)}	\\
+		$5sns$	& $14$	& $\SLJ{3}{S}{1}$	&             &             & 	            &              &      \\
+		$5sns$	& $15$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $16$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $17$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $18$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $19$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $20$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $21$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $22$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $23$	& $\SLJ{3}{S}{1}$	&              &              &              &				 &      \\
+		$5sns$	& $24$	& $\SLJ{3}{S}{1}$	&             &             &             &				 &      \\
+		$5sns$	& $25$	& $\SLJ{3}{S}{1}$	&             &             &             &              &      \\
+		$5sns$	& $26$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $27$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $28$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $29$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $30$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $31$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $32$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $33$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $34$	& $\SLJ{3}{S}{1}$	&              &              &              & 				  &      \\
+		$5sns$	& $35$	& $\SLJ{3}{S}{1}$	&             &             &             & 				  &      \\
+		$5sns$	& $36$	& $\SLJ{3}{S}{1}$	&             &             &             &              &      \\
+		$5sns$	& $37$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $38$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $39$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $40$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $41$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $42$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $43$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $44$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $45$	& $\SLJ{3}{S}{1}$	&              &              &              & 			   &      \\
+		$5sns$	& $46$	& $\SLJ{3}{S}{1}$	&             &             &             & 			   &      \\
+		$5sns$	& $47$	& $\SLJ{3}{S}{1}$	&             &             &             &              &      \\
+		$5sns$	& $48$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $49$	& $\SLJ{3}{S}{1}$	&              &              &              &              &      \\
+		$5sns$	& $50$	& $\SLJ{3}{S}{1}$	&              &              &              &              & \num{45881.72972(33)}	\\
 \end{longtable}
+\DoubleSpacing
+\end{landscape}
+
+\begin{landscape}
+\SingleSpacing
+\begin{longtable}[c]{@{}cccccccc@{}}
+	\caption{\label{my-label}Compiled data of experimentally measured $\nSLJ{5snd}{1}{D}{2}$ $\nSLJ{5snd}{3}{D}{$J$}$ states.} \\
+	\toprule
+	Series & $n$  & Term & $E$ [\si{\per\cm}] ref1 & $E$ [\si{\per\cm}] ref2 & $E$ [\si{\per\cm}] ref3 & $E$ [\si{\per\cm}] ref4 & $E$ [\si{\per\cm}] \cite{Couturier2019.PRA.99.022503} \\
+	\midrule
+	\endfirsthead
+	\multicolumn{8}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}	\\
+	\toprule
+	Series & $n$  & Term & $E$ [\si{\per\cm}] ref1 & $E$ [\si{\per\cm}] ref2 & $E$ [\si{\per\cm}] ref3 & $E$ [\si{\per\cm}] ref4 & $E$ [\si{\per\cm}] \cite{Couturier2019.PRA.99.022503} \\
+	\midrule
+	\endhead
+	\bottomrule
+	\multicolumn{8}{r}{\textit{Continued on next page}}	\\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+		$5snd$   & $13$ & $\SLJ{3}{D}{1}$  &             &             &             & 			   & 	\\
+		$5snd$   & $14$ & $\SLJ{3}{D}{1}$  &             &             &             &              &      \\
+		$5snd$   & $15$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $16$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $17$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $18$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $19$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $20$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $21$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $22$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $23$ & $\SLJ{3}{D}{1}$  &              &              &              & 			   &      \\
+		$5snd$   & $24$ & $\SLJ{3}{D}{1}$  &             &             &             & 			   &      \\
+		$5snd$   & $25$ & $\SLJ{3}{D}{1}$  &             &             &             &              &      \\
+		$5snd$   & $26$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $27$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $28$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $29$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $30$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $31$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $32$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $33$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $34$ & $\SLJ{3}{D}{1}$  &              &              &              &				&      \\
+		$5snd$   & $35$ & $\SLJ{3}{D}{1}$  &             &             &             &				&      \\
+		$5snd$   & $36$ & $\SLJ{3}{D}{1}$  &             &             &             &              &      \\
+		$5snd$   & $37$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $38$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $39$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $40$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $41$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $42$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $43$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $44$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $45$ & $\SLJ{3}{D}{1}$  &              &              &              & 			   &      \\
+		$5snd$   & $46$ & $\SLJ{3}{D}{1}$  &             &             &             & 				   &      \\
+		$5snd$   & $47$ & $\SLJ{3}{D}{1}$  &             &             &             &              &      \\
+		$5snd$   & $48$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $49$ & $\SLJ{3}{D}{1}$  &              &              &              &              &      \\
+		$5snd$   & $50$ & $\SLJ{3}{D}{1}$  &              &              &              &              & 	\\
+\end{longtable}
+\DoubleSpacing
+\end{landscape}
