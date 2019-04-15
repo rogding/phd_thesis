@@ -1,9 +1,46 @@
 \chapter{Magic Trap}
 
-Stuff about magic trap.
+This project ended up being more of a technical exploration where we wanted to see if we could make \Sr{88} Bose–Einstein condensates (BECs) quickly.
+Due to the near zero {\Sr{88}-\Sr{88}} scattering length ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}), making \Sr{88} BECs typically requires sympathetic cooling with another isotope \cite{Mickelson2010.PRA.81.051601, Stellmer2013.PRA.87.013611}. 
+But due to the wide range of strontium scattering lengths, a trap optimized for one isotope is unlikely to work well for another isotope (e.g., \Sr{88} needs to be collected at high-density whereas \Sr{86} needs to be kept at low density). 
 
-Wanting to exploit inter- and intra-isotope scattering lengths. 
+This necessitates the two isotopes being trapped in two different trapping geometries. 
+Since optical trapping scales as {$\flatfrac{\Gamma}{\Delta}$}, one method for doing so is to take advantage of the {$\nSLJ{5s^2}{1}{S}{0} - \nSLJ{5s5p}{3}{P}{1}$} intercombination line which posses a narrow linewidth ({$\flatfrac{\Gamma}{2\pi} = \SI{7.5}{\kHz}$}) and large isotope shifts ({$\flatfrac{\Delta_{\text{isotope}}}{2\pi} \sim \SI{100}{\MHz}$}).
 
-\section{Preliminary conclusions}
+\section{Evaporative Cooling Strontium}
+
+\begin{table}[H]
+	\caption{\label{tab:sr_scattering_lengths_short}{$s$-wave} scattering lengths of strontium. See \cref{tab:sr_scattering_lengths_long} for a detailed table.}
+	\centering
+	\begin{tabular}{@{}cccc@{}}
+		\toprule
+		Isotope	& {$I$}		& Atomic mass {[\si{\amu}]}			& Natural abundance {[\si{\percent}]}	\\
+		\midrule
+		\Sr{88}	& \num{0}	& \num{87.905612256+-0.000000006}	& \num{82.58(35)}						\\
+		\Sr{87}	& \num{9/2}	& \num{86.908877496+-0.000000005}	& \num{7.00(20)}						\\
+		\Sr{86}	& \num{0}	& \num{85.909260726+-0.000000006}	& \num{9.86(20)}						\\
+		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}							\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The {\Sr{88}-\Sr{88}} scattering length is approximately zero ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}) which means the atoms do not thermalize as the optical trap depth is lowered.
+
+The first BECs of \Sr{88} were obtained by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
+The {$a_{88-87} = \SI{55}{\bohr}$} is respectable but it seems like optimum evaporative cooling occurs when the scattering length is around \SI{100}{\bohr} (e.g., \Sr{84}, {\textsuperscript{87}Rb} \cite{Anderson1995.Science.269.5221.198}, etc. ** CHECK !! **)
+
+\section{Trap Design}
+
+Considering
+
+\section{Testing with \Sr{84}}
+
+
+\section{Sympathetically cooling \Sr{88} with \Sr{86}}
+
+Sympathetically cooling of \Sr{88} with \Sr{86} was first reported by \citeauthor{Poli2005.PRA.71.061403} but they had difficulty reaching quantum degeneracy.
+
+
+\section{Preliminary Conclusions}
 
 We don't currently have the capability to conclusively determine whether a doubly-degenerate BEC was formed. Blah, blah, blah.
