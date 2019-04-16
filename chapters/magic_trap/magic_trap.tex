@@ -9,17 +9,25 @@ Since optical trapping scales as {$\flatfrac{\Gamma}{\Delta}$}, one method for d
 
 \section{Evaporative Cooling Strontium}
 
+Although there have been some recent developments towards producing quantum degenerate gases without evaporative cooling which take advantage of narrow atomic transitions \cite{Stellmer2013.PRL.110.263003} or using Raman sideband cooling \cite{Hu2017.Science.aan5614}, the majority of the experiments predominately perform (forced) evaporative cooling to reach quantum degeneracy. 
+Evaporative cooling works by removing the hot ``tail'' of the atomic velocity distribution after which collisions between atoms rethermalize to a lower temperature. 
+Due to the requirements for collisions, the feasibility of evaporative cooling is highly dependent on the scattering length of the atoms. 
+\Cref{tab:sr_scattering_lengths_compact} gives the various scattering lengths for strontium.
+
 \begin{table}[H]
-	\caption{\label{tab:sr_scattering_lengths_short}{$s$-wave} scattering lengths of strontium. See \cref{tab:sr_scattering_lengths_long} for a detailed table.}
+	\caption{
+		\label{tab:sr_scattering_lengths_compact}
+			{$s$-wave} scattering lengths of strontium from \cite{Stein2010.EPJD.57.171} given in \si{\bohr}.
+			See \cref{tab:sr_scattering_lengths_long} for a detailed table.}
 	\centering
-	\begin{tabular}{@{}cccc@{}}
+	\begin{tabular}{@{}ccccc@{}}
 		\toprule
-		Isotope	& {$I$}		& Atomic mass {[\si{\amu}]}			& Natural abundance {[\si{\percent}]}	\\
+		Isotope	& \Sr{88}			& \Sr{87}			& \Sr{86}			& \Sr{84}			\\
 		\midrule
-		\Sr{88}	& \num{0}	& \num{87.905612256+-0.000000006}	& \num{82.58(35)}						\\
-		\Sr{87}	& \num{9/2}	& \num{86.908877496+-0.000000005}	& \num{7.00(20)}						\\
-		\Sr{86}	& \num{0}	& \num{85.909260726+-0.000000006}	& \num{9.86(20)}						\\
-		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}							\\
+		\Sr{88}	& \num{-2.00(27)}	& \num{54.819(92)}	& \num{97.374(69)}	& \num{1658(54)}	\\
+		\Sr{87}	& \num{54.819(92)}	& \num{96.198(68)}	& \num{162.25(21)}	& \num{-57.61(61)}	\\
+		\Sr{86}	& \num{97.374(69)}	& \num{162.25(21)}	& \num{798(12)}		& \num{ 31.65(14)}	\\
+		\Sr{84}	& \num{1658(54)}	& \num{-57.61(61)}	& \num{31.65(14)}	& \num{122.762(92)}	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -29,9 +37,18 @@ The {\Sr{88}-\Sr{88}} scattering length is approximately zero ({$a_{88-88}\SI{-1
 The first BECs of \Sr{88} were obtained by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
 The {$a_{88-87} = \SI{55}{\bohr}$} is respectable but it seems like optimum evaporative cooling occurs when the scattering length is around \SI{100}{\bohr} (e.g., \Sr{84}, {\textsuperscript{87}Rb} \cite{Anderson1995.Science.269.5221.198}, etc. ** CHECK !! **)
 
+\subsection{Choosing \Sr{86} as the Coolant}
+
 \section{Trap Design}
 
-Considering
+The trap geometry also influences how evaporative cooling proceeds due to the density dependences of the elastic and inelastic collision rates where elastic collisions redistribute the energy and results in thermalization whereas inelastic collisions lead to losses (** Add more details!! **).
+
+In order to form BECs of \Sr{86}, evaporative was performed at low density in a large-volume trap \cite{Stellmer2010.82.041602, Stellmer2013.PRA.87.013611}.
+On the other hand, \Sr{88} BECs were achieved through sympathetic cooling with \Sr{87} in a tight trapping geometry. 
+Therefore, we want the different isotopes to experience different confining potentials:
+-\Sr{86} only experiences a large-volume trap.
+-\Sr{88} and \Sr{87} experiences a tight-confining potential.
+
 
 \section{Testing with \Sr{84}}
 
