@@ -1,4 +1,4 @@
-\chapter{Magic Trap}
+\chapter{Isotope-Dependent Optical Trapping}
 
 This project ended up being more of a technical exploration where we wanted to see if we could make \Sr{88} Bose–Einstein condensates (BECs) quickly.
 Due to the near zero {\Sr{88}-\Sr{88}} scattering length ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}), making \Sr{88} BECs typically requires sympathetic cooling with another isotope \cite{Mickelson2010.PRA.81.051601, Stellmer2013.PRA.87.013611}. 
@@ -7,12 +7,22 @@ But due to the wide range of strontium scattering lengths, a trap optimized for 
 This necessitates the two isotopes being trapped in two different trapping geometries. 
 Since optical trapping scales as {$\flatfrac{\Gamma}{\Delta}$}, one method for doing so is to take advantage of the {$\nSLJ{5s^2}{1}{S}{0} - \nSLJ{5s5p}{3}{P}{1}$} intercombination line which posses a narrow linewidth ({$\flatfrac{\Gamma}{2\pi} = \SI{7.5}{\kHz}$}) and large isotope shifts ({$\flatfrac{\Delta_{\text{isotope}}}{2\pi} \sim \SI{100}{\MHz}$}).
 
-\section{Evaporative Cooling Strontium}
+\section{Challenges in Producing Quantum Degenerate Gases of \Sr{88} and \Sr{87}}
 
 Although there have been some recent developments towards producing quantum degenerate gases without evaporative cooling which take advantage of narrow atomic transitions \cite{Stellmer2013.PRL.110.263003} or using Raman sideband cooling \cite{Hu2017.Science.aan5614}, the majority of the experiments predominately perform (forced) evaporative cooling to reach quantum degeneracy. 
 Evaporative cooling works by removing the hot ``tail'' of the atomic velocity distribution after which collisions between atoms rethermalize to a lower temperature. 
 Due to the requirements for collisions, the feasibility of evaporative cooling is highly dependent on the scattering length of the atoms. 
 \Cref{tab:sr_scattering_lengths_compact} gives the various scattering lengths for strontium.
+
+Being able to quickly produce \Sr{88} BECs are nearly ``perfect'' non-interacting Bosons with no nuclear spin. 
+Early attempts at making \Sr{88} BECs failed due to the near zero {$s$-wave} scattering length and it was difficult to evaporative cool this isotope (** REFERENCES? **).
+The first BECs of \Sr{88} were obtained by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
+The {$a_{88-87} = \SI{55}{\bohr}$} is respectable but it seems like optimum evaporative cooling occurs when the scattering length is around \SI{100}{\bohr} (e.g., \Sr{84}, {\textsuperscript{87}Rb} \cite{Anderson1995.Science.269.5221.198}, etc. ** CHECK !! **)
+Considering that \Sr{88} BECs are typically very small (** ADD REFERENCE AND/OR CALCULATION **) due to the slightly negative {$s$-wave} scattering length, there's interest in studying how the Rydberg electron couples to a BEC \cite{Balewski2013.Nature.12592} and, as $n$ increase, ion-BEC interactions \cite{Kleinbach2018.PRL.120.193401} without needing electrodes for an ion trap.
+The small \Sr{88} BEC is almost non-interacting also makes it a great candidate for observing three-dimensional solitons \cite{Maucher2011.PRL.106.170401} as it should be easier to Rydberg dress the entire BEC and there's less mean field interaction energy.
+
+There's also interest in degenerate Fermi gases (DFG) of \Sr{87} due to its large nuclear spin ($I=\flatfrac{9}{2}$) for qubit registers \cite{Gorshkov2009.PRL.102.110503} and quantum simulation/{$SU\left(N\right)$} magnetism \cite{Gorshkov2010.NPhys.1535, Hazzard2012.PRA.85.041604, Pagano2014.NPhys.2878, Hofrichter2016.PRX.6.021030, Ozawa2018.PRL.121.225303} (** CHECK SOURCES/READ A FEW OF THEM **).
+
 
 \begin{table}[h]
 	\caption{
@@ -34,10 +44,19 @@ Due to the requirements for collisions, the feasibility of evaporative cooling i
 
 The {\Sr{88}-\Sr{88}} scattering length is approximately zero ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}) which means the atoms do not thermalize as the optical trap depth is lowered.
 
-The first BECs of \Sr{88} were obtained by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
-The {$a_{88-87} = \SI{55}{\bohr}$} is respectable but it seems like optimum evaporative cooling occurs when the scattering length is around \SI{100}{\bohr} (e.g., \Sr{84}, {\textsuperscript{87}Rb} \cite{Anderson1995.Science.269.5221.198}, etc. ** CHECK !! **)
+Since \Sr{87} is a fermion, a spin-polarized gas stops colliding (and hence thermalizing) once Pauli blockade sets in (** ELABORATE ADD DETAILS **). 
 
-\subsection{Choosing \Sr{86} as the Coolant}
+Early attempts at making \Sr{86} BECs were done in relatively tight optical traps (** CHECK \cite{Ferrari2006.PRA.73.023408} **).
+Bose-Einstein condensation of \Sr{86} requires evaporation to occur at low density due to the large $a_{86-86}=\SI{798(12)}{\bohr}$ {$s$-wave} scattering length \cite{Stellmer2010.82.041602, Stellmer2013.PRA.87.013611}. 
+
+\section{Isotope-Dependent Optical Trapping}
+
+As previously mentioned, making \Sr{88} BECs requires sympathetic cooling (** ADD SOURCES **) due to $a_{88-88}=\SI{-2(1)}{\bohr}$. 
+Making an \Sr{87} DFG is possible due to its ten spin states \cite{DeSalvo2010.PRL.105.030402} but producing a spin-polarized DFG also requires sympathetic cooling as identical fermions no longer collide \cite{Stellmer2013.PRA.87.013611} (** PROBABLY INCLUDE OTHER SOURCES AS WELL **).
+Although having abysmal abundance, \Sr{84} has a nice {$s$-wave} scattering length of $a_{84-84}=\SI{122.762(92)}{\bohr}$ and is generally quite easy to make \Sr{84} BECs using the magnetic trap to capture enough atoms.
+
+It's here that we note \Sr{86} has relatively nice {$s$-wave} scattering lengths with \Sr{88} ($a_{88-86}=\SI{97.374(69)}{\bohr}$) and \Sr{87} ($a_{87-86}=\SI{162.25(21)}{\bohr}$).
+Coupled with it's plentiful abundance, \Sr{86} looks to be an ideal cooling for sympathetic cooling if the challenges of the large $a_{86-86}=\SI{798(12)}{\bohr}$ can be overcome.
 
 \section{Trap Design}
 
@@ -50,6 +69,12 @@ Therefore, we want the different isotopes to experience different confining pote
 -\Sr{88} and \Sr{87} experiences a tight-confining potential.
 
 The magic dimple would only provide transverse confinement with the sample temperature predominately set by the vertical trap depth of the horizontal \SI{1064}{\nm} sheet trap. 
+
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{magic_trap/dimple_setup/dimple_setup.svg}
+	\caption{\label{fig:dimple_setup}Setup of the \SI{689}{\nm} dimple.}
+\end{figure}
 
 \subsection{Lock-In Power Control}
 
