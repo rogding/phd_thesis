@@ -13,11 +13,11 @@ We measured $\Sr{87}$ hyperfine Rydberg spectra using a two-photon excitation th
 A modern paper is \cite{rob2018.PRA.97.022508}. 
 
 To calculate the effects of hyperfine interactions on the Rydberg spectra of $\Sr{87}$, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., $\Sr{88}$) and then apply the hyperfine interaction to obtain the lines for $\Sr{87}$.
-The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{din2018.PRA.98.042505}.
+The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{Ding2018.PRA.98.042505}.
 
 \section{Ionization limit of $\Sr{87}$}
 
-The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{bei1982.OC.42.19,san2010.JPCRD.39.033103} for $\Sr{87}$ is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
+The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} for $\Sr{87}$ is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
 This suggests that the reported ionization limit is for the $\nSLJF{5s}{2}{S}{1/2}{4}$ state of $\Srion{87}{+}$.
 Like the case for alkali atoms, the nonzero nuclear spin of $\Srion{87}{+}$ interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
 The magnetic dipole interaction can be written as
@@ -35,7 +35,9 @@ The value estimated using this method is **\SI{45932.19870+-0.00035}{\per\cm}**.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.svg}
-	\caption{\label{fig:Eion-mass-scaled}Mass-scaled $E_\text{ion}$.}
+	\caption{
+		\label{fig:Eion-mass-scaled}
+		Mass-scaled $E_\text{ion}$.}
 \end{figure}
 
 \subsection{Incorporating hyperfine interaction in Rydberg levels}
@@ -124,7 +126,9 @@ Any resultant Stark shifts should therefore be at most a few megahertz even at $
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/exp_setup.svg}
-	\caption{\label{fig:exp_setup}Experimental setup for performing \Sr{87} triplet Rydberg spectroscopy.}
+	\caption{
+		\label{fig:exp_setup}
+		Experimental setup for performing \Sr{87} triplet Rydberg spectroscopy.}
 \end{figure}
 
 Additional details about how we scanned the UV laser frequency is given in \Cref{ap:scanning_uv_laser}.
@@ -132,29 +136,31 @@ Additional details about how we scanned the UV laser frequency is given in \Cref
 \subsection{Calibrating the WA-1500}
 
 Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
-We initially attempted to calibrate the wavemeter by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I}) which has the {P65 (7–4)} line at \SI{15 672.517398 (25)}{\per\cm} \cite{san1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
+We initially attempted to calibrate the wavemeter by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I}) which has the {P65 (7–4)} line at \SI{15 672.517398 (25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
 We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}).}.
-A longer cell and a more advanced detection scheme may have provided the signal we needed since \citeauthor{san1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection. A setup similar to the one in \cite{hua2018.AO.57.2102} may work as well.
+A longer cell and a more advanced detection scheme may have provided the signal we needed since \citeauthor{Sansonetti1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection. A setup similar to the one in \cite{Huang2018.AO.57.2102} may work as well.
 
-Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E} and \SI{646}{\nm} \cite{rad1995.PRA.52.4462}). 
+Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901} and \SI{646}{\nm} \cite{Radziemski1995.PRA.52.4462}). 
 As hinted at above, the \SI{646}{\nm} source is used by the Hulet lab for narrow line cooling of \Li{6} on the \SI{323}{\nm} transition.
 Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us run a fiber between the Killian and Hulet labs and borrow some light from their system in order to calibrate our wavemeter. 
 
 \begin{table}[htbp]
+	\caption{
+		\label{tab:wavemeter}Values used to calibrate the WA-1500 on a single day (2018/03/09) within ~2 hours to reduce day-to-day environmental changes)**. Reported values for \Li{6} were given with respect to the center-of-gravity of the lower $\nSLJ{5s}{2}{S}{1/2}$ state so I included the shift to the $F=3/2$ state.
+		**Still need to calculate HF shifted values for \Li{6}.**}
 	\centering
 	\makebox[\textwidth][c]{
 	\begin{tabular}{@{}ccccccc@{}}
 		\toprule
 		$\lambda$ [\si{\nm}]	& Atom						& Lower state									& Upper state								& Reported [\si{\per\cm}]			& Measured [\si{\per\cm}]	& Ref																							\\
 		\midrule
-		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJF{2s}{2}{S}{1/2}{3/2}$}	& \multirow{2}{*}{$\nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703(10)}				& \num{30925.1792(9)}		& \multirow{2}{*}{\cite{rad1995.PRA.52.4462,san2011.PRL.107.023001,san2012.PRL.109.259901E}}	\\
+		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJF{2s}{2}{S}{1/2}{3/2}$}	& \multirow{2}{*}{$\nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703(10)}				& \num{30925.1792(9)}		& \multirow{2}{*}{\cite{Radziemski1995.PRA.52.4462, Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901}}	\\
 		(\num{646})				&							&												&											& (\num{15462.5851(5)})				& (\num{15462.5896(5)})		&                                                       										\\
-		\num{671}				& \Li{6}					& $\nSLJF{2s}{2}{S}{1/2}{3/2}$					& $\nSLJ{2p}{2}{P}{3/2}$					& \num{14903.6320617+-0.0000007}	& \num{14903.63391(33)}		& \cite{san2011.PRL.107.023001,san2012.PRL.109.259901E}											\\
-		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$					& \num{14504.33824159+-0.00000033}	& \num{14504.34224(35)}		& \cite{fer2003.PRL.91.243002,san2010.JPCRD.39.033103}											\\
+		\num{671}				& \Li{6}					& $\nSLJF{2s}{2}{S}{1/2}{3/2}$					& $\nSLJ{2p}{2}{P}{3/2}$					& \num{14903.6320617+-0.0000007}	& \num{14903.63391(33)}		& \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901}											\\
+		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$					& \num{14504.33824159+-0.00000033}	& \num{14504.34224(35)}		& \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}											\\
 		\bottomrule
 	\end{tabular}
 	}
-	\caption{\label{tab:wavemeter}Values used to calibrate the WA-1500 on a single day (2018/03/09) within ~2 hours to reduce day-to-day environmental changes)**. Reported values for \Li{6} were given with respect to the center-of-gravity of the lower $\nSLJ{5s}{2}{S}{1/2}$ state so I included the shift to the $F=3/2$ state. **Still need to calculate HF shifted values for \Li{6}.**}
 \end{table}
 
 \Cref{fig:wm_fit} shows the difference between our measured energies and the reported energies. 
@@ -173,7 +179,7 @@ To check for slow drifts in the wavemeter (e.g., due to environmental changes), 
 	\caption{\label{fig:wm_drift}Long-term wavemeter drifts.}
 \end{figure}
 
-**Add footnote: at the time, the best reference for the \SI{323}{\nm} transition we could find was by \citeauthor{rad1995.PRA.52.4462} although there should be some upcoming measurements using frequency combs (cite papers mentioning doing this)**
+**Add footnote: at the time, the best reference for the \SI{323}{\nm} transition we could find was by \citeauthor{Radziemski1995.PRA.52.4462} although there should be some upcoming measurements using frequency combs (cite papers mentioning doing this)**
 
 \subsection{Two-photon Rydberg excitation spectrum}
 
