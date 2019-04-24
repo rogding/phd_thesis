@@ -35,7 +35,9 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
-	\caption{\label{fig:trim_coils}Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
+	\caption{
+		\label{fig:trim_coils}
+		Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
 \end{figure}
 
 The vertical (Z-axis) coils were would on forms around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
@@ -56,6 +58,49 @@ Fiber coupling allowed us to quickly fix injection lock issues by optimizing the
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/blue_system.svg}
 	\caption{\label{fig:blue_system}**Placeholder**Simplified diagram of the blue MOT system.}
 \end{sidewaysfigure}
+
+\subsection{Magnetic Trap and Repumping}
+
+As mentioned in the blue MOT section above, the ${\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}}$ is not completely closed with about ${1:\num{50000}}$ decays following the ${\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}}$.
+About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and can be excited again.
+The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about ** xxx s**; effectively removing them from the blue MOT. 
+Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states can become trapped in the quadrupole magnetic field of the blue MOT.
+This decay path, initially seen as a ``loss'' ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
+The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
+For details of our magnetic trap, see \cite{Camargo2015.MS}.
+
+\subsection{\SI{481}{\nm} Repumping System}
+
+In order to recover atoms from the metastable reservoir, several methods have been devised which drive transitions to various excited states\footnote{
+	\begin{itemize}
+		\item \SI{707}{\nm} and \SI{679}{\nm} lasers to drive ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ and ${\nSLJ{5s5p}{3}{P}{0} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ transitions, respectively \cite{Barker2015.PRA.92.043418, Campbell2017.PhD} ** probably also reference multiple theses**. 
+		\item \SI{3011.8}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s4d}{3}{D}{2}}$ \cite{Mickelson2009.JPB.42.235001}.
+		\item \SI{496.93}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s5d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
+		\item \SI{403.35}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
+		\item \SI{481.323}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}}$ transition \cite{Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}.
+	\end{itemize}
+}.
+Our current \SI{481}{\nm} repumper system is shown in \cref{fig:repumper_system}. 
+The \SI{481}{\nm} light is provided by a Toptica DL 100\footnote{The laser is equipped with a {LD-0488-0060-1} diode.} which outputs about ** \SI{10}{\mW} ** of power. 
+For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} which has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas}.
+Originally, when the lab was working with a single isotope, simply tuning the lock point to maximize repumping efficiency of the isotope of interest was good enough (typically \Sr{84} since it's the least abundant).
+Now that we routinely work with multiple isotopes and mixtures, a free-space electro-optic modulator (EOM) was added to to add sidebands to the \SI{481}{\nm} light in order to address multiple isotopes and the hyperfine shift of \Sr{87}.
+The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Heider1977.PRA.16.1371} and the hyperfine shift of the upper $\nSLJ{5p^2}{3}{P}{2}$ doubly-excited is expected to be small **because of the lack of an {$s$-electron}\footnote{I.e., the magnetic dipole hyperfine contribution comes from the $\delta(r)$....} CHECK **.
+
+In principle, it should be possible to lock to a hollow cathode lamp (HCL) due to collisions populating enough metastable atoms to perform spectroscopy on \cite{Norcia2016.RSI.87.023110}.
+Instead of using an HCL, we plan on using a ``super lock'' \cite{Lindsay1991.RSI.62.1656, Jaffe1993.RSI.64.2475, Zhao1998.RSI.69.3737, Subhankar2019.RSI.90.043115} (see Appendix xxxx for future upgrade plans) since we already have a stable \SI{689}{\nm} reference laser (although we could also lock to a stabilized HeNe).
+We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.043103} but ultimately decided against it as our wavemeter's accuracy is lacking, its sampling rate a bit too slow, and we needed the wavemeter for other tasks (e.g., finding Rydberg lines). 
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/repumper_system/repumper_system.svg}
+	\caption{
+		\label{fig:repumper_system}
+		Simplified diagram of our current \SI{481}{\nm} repumper laser system.
+		A portion of the light form the \SI{481}{\nm} external cavity diode laser (ECDL) is used to lock to a Doppler-broadened \Te{130}{2} line in a cell heated to about \SI{555}{\celsius}.
+		The rest of the light is sent through a free-space electro-optic modulator (EOM) at about \SI{565}{\MHz} which is used to apply sidebands to the light in order to address the various isotopes and hyperfine states.
+		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
+\end{figure}
 
 \subsection{Multi-isotope red MOT system}
 
@@ -79,7 +124,7 @@ Image of \Sr{84} and \Sr{87} red MOTs.
 
 \subsection{Optical dipole trap}
 
-Optical dipole traps work by ...... \cite{gri1999.odt}.
+Optical dipole traps work by ...... \cite{Grimm1999.arXiv.9902072}.
 
 Since the $\nSLJ{5s^2}{1}{S}{0}$ electrons are paired, it has a negligible magnetic moment meaning we cannot magnetically trap ground state strontium atoms.
 As a result, we use optical traps to confine and evaporatively cool ground state strontium atoms. 
@@ -90,9 +135,8 @@ We get around this issue by only having the ODT on at high powers during the tra
 
 We started with a free-spaced crossed-beam optical dipole trap (XODT) with waists of about $\SI{60}{\um} \times \SI{60}{\um}$. 
 This trap was a bit tight but worked well for making \num{100000} BECs of \Sr{84}. 
-We found that loading was improved if the trap was artificially widened by driving the AOM with three slightly different frequencies before turning the sideband frequencies down and evaporating \cite{camargo2017.phd}.
+We found that loading was improved if the trap was artificially widened by driving the AOM with three slightly different frequencies before turning the sideband frequencies down and evaporating \cite{Camargo2017.PhD}.
 After going through three ODT lasers, we stuck with the sheet trap and vertical crossing trap because they were fiber coupled. 
-
 
 \subsection{A tale of three lasers}
 
