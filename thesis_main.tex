@@ -94,11 +94,17 @@
 \newcommand{\Te}[2]{\tsup{#1}{Te}\tsub{#2}}							% ^{xx}Te_{yy} outside math mode.
 
 \newcommand{\SLJ}[3]{\tsup{#1}{#2}\tsub{#3}}
+\newcommand{\SLJM}[4]{\SLJ{#1}{#2}{#3}{,\,}{#4}}
 \newcommand{\SLJm}[4]{\SLJ{#1}{#2}{#3}{,\,}{m_J = {#4}}}
-\newcommand{\SLJF}[4]{\SLJ{#1}{#2}{#3}{,\,}{F = {#4}}}
+\newcommand{\SLJF}[4]{\SLJ{#1}{#2}{#3}{,\,}{#4}}
+\newcommand{\SLJf}[4]{\SLJ{#1}{#2}{#3}{,\,}{F = {#4}}}
+
 \newcommand{\nSLJ}[4]{({#1}){\,}\SLJ{#2}{#3}{#4}}
-\newcommand{\nSLJm}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{m_J = {#5}}}
-\newcommand{\nSLJF}[5]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{F = {#5}}}
+\newcommand{\nSLJM}[5]{\nSLJM{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\nSLJm}[5]{\nSLJm{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\nSLJF}[5]{\nSLJF{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\nSLJf}[5]{\nSLJf{#1}{#2}{#3}{#4}{#5}}
+
 \newcommand{\nSLJFm}[6]{\nSLJ{#1}{#2}{#3}{#4}{,\,}{F = {#5}}{,\,}{m_F = {#6}}}
 
 \newcommand{\CG}[3]{C^{#3}_{#1;#2}}

@@ -152,9 +152,50 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 \begin{equation}
 	\hat{V}_\text{hf} \simeq \frac{a_{5s}}{2} \left(\hat{s}_{\text{in},+}\hat{I}_{-} + \hat{s}_{\text{in},-}\hat{I}_{+} + 2\hat{s}_{\text{in},z}\hat{I}_{z}\right)
 \end{equation}
-with the usual ladder operators ${\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}}$ and ${\hat{J}_{\pm}\ket{J,m_J}=\hbar\sqrt{J\left(J+1\right)-m_J\left(m_J\pm1\right)} \ket{J,m_J\pm1}}$.
+with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$ and $\hat{J}_{\pm}\ket{J,m_J}=\sqrt{J\left(J+1\right)-m_J\left(m_J\pm1\right)} \ket{J,m_J\pm1}$.
 
-\subsection{{$5sns$-series} {$S$~states}}
+\subsection{{$5sns$-series} $S$~states}
+
+Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can express the pure hyperfine $S$~states as
+\begin{align}
+	& \ket{\left(n\SLJ{1}{S}{0}\right)F=I,m_F}		=	\sum_{m_J} \sum_{m_I} \CG{0,0}{I,m_I}{I,m_F} \ket{0,0} \ket{I,m_I}	= \ket{n\SLJ{1}{S}{0}} \ket{I,m_F}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I+1,m_F}	=	\sum \CG{J=1,m_J=1}{I,m_I}{F=I+1,m_F} \ket{J=1,m_J} \ket{I+1,m_I}					= \ket{n\SLJ{1}{S}{0},m_J}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I,m_F}		=	\sum \CG{J=1,m_J=0}{I,m_I}{F=I,m_F}	\ket{J=1,m_J} \ket{I,m_I} \\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I-1,m_F}	=	\sum \CG{J=1,m_J=-1}{I,m_I}{F=I-1,m_F} \ket{J=1,m_J} \ket{I-1,m_I}
+\end{align}
+
+
+
+***************************************
+
+
+Since the hyperfine interaction couples $\bm{J}=\bm{L}+\bm{S}=\bm{S}$\footnote{Since $L=0$ for $S$~states.} and $\bm{I}$, we work with the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}$.
+Using Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$, we can decompose the $\ket{F,m_F}$ states
+
+
+
+***************************************
+
+
+Starting with the with pure $\nSLJ{5sns}{1}{S}{0} = \ket{\nSLJ{n}{1}{S}{0}}$ and $\nSLJ{5sns}{3}{S}{1} = \ket{\nSLJ{n}{3}{S}{1}}$ singly-excited $S$~states, the nuclear spin can be incorporated 
+
+
+*******************************
+
+
+Using Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$, we can decompose the $\ket{F,m_F}$ states
+\begin{align}
+	& \ket{\left(n\SLJ{1}{S}{0}\right)F=I,m_F}		=	\sum_{m_J} \sum_{m_I} \CG{0,0}{I,m_I}{I,m_F} \ket{0,0} \ket{I,m_I}	= \ket{n\SLJ{1}{S}{0}} \ket{I,m_F}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I+1,m_F}	=	\sum \CG{J=1,m_J=1}{I,m_I}{F=I+1,m_F} \ket{J=1,m_J} \ket{I+1,m_I}					= \ket{n\SLJ{1}{S}{0},m_J}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I,m_F}		=	\sum \CG{J=1,m_J=0}{I,m_I}{F=I,m_F}	\ket{J=1,m_J} \ket{I,m_I} \\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I-1,m_F}	=	\sum \CG{J=1,m_J=-1}{I,m_I}{F=I-1,m_F} \ket{J=1,m_J} \ket{I-1,m_I}
+\end{align}
+
+
+
+
+
+
 
 Calculating the matrix elements of the hyperfine operator.
 For $S$ states, the pure singlet and triplet states can be written as
@@ -198,19 +239,30 @@ Now that we know all the relevant states, we can calculate the effect of $\hat{V
 	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{-1}}^{0}	=	\frac{a_{5s}}{2} 
 \end{align}
 
-** segue? Maybe move this up before deriving the matrix elements for 9/2 mixing **
-Using Clebsch–Gordan coefficients $\CG{J_1,m_{J_1}}{J_1,m_{J_2}}{J,m_J}=\braket{J_1,m_{J_{1}};J_2,m_{J_{2}}}{J,m_J}$, we can decompose the $\ket{F,m_F}$ states
-\begin{align}
-	& \ket{\left(n\SLJ{1}{S}{0}\right)F=I,m_F}		=	\sum_{m_J} \sum_{m_I} \CG{J=0,m_J=0}{I,m_I}{F=I,m_F} \ket{J=0,m_J=0} \ket{I,m_I}	= \ket{n\SLJ{1}{S}{0}} \ket{I,m_F}	\\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I+1,m_F}	=	\sum \CG{J=1,m_J=1}{I,m_I}{F=I+1,m_F} \ket{J=1,m_J} \ket{I+1,m_I}	\\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I,m_F}		=	\sum \CG{J=1,m_J=0}{I,m_I}{F=I,m_F}	\ket{J=1,m_J} \ket{I,m_I} \\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I-1,m_F}	=	\sum \CG{J=1,m_J=-1}{I,m_I}{F=I-1,m_F} \ket{J=1,m_J} \ket{I-1,m_I}
-\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{$D$-states}
 
 Move details of derivation here?
 
+
+**************************************************
+
+**************************************************
+
+**************************************************
 
 \section{Density distributions}
 
