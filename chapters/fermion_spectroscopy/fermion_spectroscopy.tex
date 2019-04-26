@@ -77,20 +77,31 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
 Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
 
-\subsection{Singly-Excited $S$-states}
+\subsection{Singly-Excited {$S$-states}}
 
-Assuming there are no perturbers (** see \cite{Vaillant2014.JPB.47.155001} ? **), we make the approximation that the inner electron is in the $5s$-state whereas the other electron is in the $ns$-state. 
+Assuming there are no perturbers (** see \cite{Vaillant2014.JPB.47.155001} ? **), we make the approximation that the inner electron is in the $5s$-state whereas the other electron is in the {$ns$-state}. 
 
-For $S$ states, the singlet states can be written as
+For $S$ states, the pure singlet states can be written as
 \begin{equation}
-	\ket{\nSLJ{5sns}{1}{S}{0}} = \frac{1}{2} \left(\ket{5s;ns} + \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} - \ket{\downarrow;\uparrow}\right)
+	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{0} = \frac{1}{2} \left(\ket{5s;ns} + \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} - \ket{\downarrow;\uparrow}\right)
 \end{equation}
-Similarly, the three triplet $S$-states can be written as
+Similarly, the pure triplet $S$-states can be written as
 \begin{align}
-	\ket{\nSLJm{5sns}{3}{S}{1}{+1}}	&= \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\uparrow;\uparrow}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{0}}	&= \frac{1}{2} \left(\ket{5s;ns} - \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} + \ket{\downarrow;\uparrow}\right)	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}	&= \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\downarrow;\downarrow}
+	&\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\uparrow;\uparrow}	\\
+	&\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{0} = \frac{1}{2} \left(\ket{5s;ns} - \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} + \ket{\downarrow;\uparrow}\right)	\\
+	&\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\downarrow;\downarrow}
 \end{align}
+To incorporate the nuclear spin, we multiply the above states by $\ket{I, m_I}$.
+Due to the hyperfine interaction, $J$ and $I$ are no longer good quantum numbers so we use $\vec{F} = \vec{J} + \vec{I}$.
+
+
+*************
+
+*************
+
+*************
+
+
 Due to the hyperfine interaction, $J$ and $I$ are no longer good quantum numbers so we use $F = J + I$.
 Therefore, we can use the Clebsch–Gordan coefficients to determine basis states in terms of $\ket{F, m_F}$.
 \begin{align}
@@ -233,11 +244,11 @@ To check for this effect, we use the density matrix method **Lindblad operator**
 
 **Show example spectra with ``ghost'' on-resonance counts.**
 
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, height=2in]{fermion_spectroscopy/three-level_system.svg}
-	\caption{\label{fig:three-level_system}Three-level diagram representing a two-photon excitation to a Rydberg state with $\ket{g}$, $\ket{e}$, and $\ket{r}$ representing the ground, intermediate, and Rydberg states, respectively. The detunings from the intermediate (Rydberg) state is $\Delta_e$ ($\Delta_r$). Couplings between states are represented by $\Omega_1 \exp(-\iu \omega_1 t)$ ($\Omega_2 \exp(-\iu \omega_2 t)$) for the \SI{689}{\nm} (\SI{319}{\nm}) lasers.}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\includesvg[keepaspectratio, height=2in]{fermion_spectroscopy/three-level_system.svg}
+%	\caption{\label{fig:three-level_system}Three-level diagram representing a two-photon excitation to a Rydberg state with $\ket{g}$, $\ket{e}$, and $\ket{r}$ representing the ground, intermediate, and Rydberg states, respectively. The detunings from the intermediate (Rydberg) state is $\Delta_e$ ($\Delta_r$). Couplings between states are represented by $\Omega_1 \exp(-\iu \omega_1 t)$ ($\Omega_2 \exp(-\iu \omega_2 t)$) for the \SI{689}{\nm} (\SI{319}{\nm}) lasers.}
+%\end{figure}
 
 The bare atomic Hamiltonian for this system can be expressed as 
 \begin{equation}

@@ -2,38 +2,6 @@
 
 Random derivations I needed for my thesis so I included them here. 
 
-\section{Unitary transformation}
-
-For a unitary transformation $U$ where $\ket*{\psi} = U \ket*{\widetilde{\psi}}$, the Schr\"{o}dinger equation becomes
-\begin{equation}
-	\iu \hbar \ket*{\dot{\psi}} = H \ket*{\psi}
-		\rightarrow \iu \hbar \pdv{t} \left(U \ket*{\widetilde{\psi}}\right) = H \left(U \ket*{\widetilde{\psi}}\right)
-\end{equation}
-From here, it's pretty easy to obtain the transformed Hamiltonian $\widetilde{H}$
-\begin{align}
-	\iu \hbar \left(\dot{U} \ket*{\widetilde{\psi}} + U \ket*{\dot{\widetilde{\psi}}}\right) &= H U \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar U \ket*{\dot{\widetilde{\psi}}} &= H U \ket*{\widetilde{\psi}} - \iu \hbar \dot{U} \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \left(U^\dag H U - \iu \hbar U^\dag \dot{U}\right) \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \widetilde{H} \ket*{\widetilde{\psi}}
-\end{align}
-where $\widetilde{H} = U^\dag H U - \iu \hbar U^\dag \dot{U}$ for the transformed state $\ket*{\widetilde{\psi}} = U^\dag \ket*{\psi}$.
-
-TO DO:
-
-Go through Gaussian beams section and use widetilde command for complex values/functions. 
-
-\section{Hyperfine Mixing}
-
-Derivation of the hyperfine mixing coefficients.
-
-\subsection{$S$-states}
-
-Move details of derivation here?
-
-\subsection{$D$-states}
-
-Move details of derivation here?
-
 \section{Gaussian Beams}
 
 Since we almost exclusively work with Gaussian laser beams in the lab, I found it instructive to derive the intensity for an elliptical Gaussian beam.
@@ -155,6 +123,94 @@ A general solution $\widetilde{u}(x,y,z)$ with $x$-waist ($y$-waist) of $w_{x,0}
 **************************
 
 Interesting discussions about astigmatic Gaussian beams are discussed in \cite{arn1969.AO.8.1687, koc2013.AO.52.6030}. 
+
+\section{Unitary transformation}
+
+For a unitary transformation $U$ where $\ket*{\psi} = U \ket*{\widetilde{\psi}}$, the Schr\"{o}dinger equation becomes
+\begin{equation}
+	\iu \hbar \ket*{\dot{\psi}} = H \ket*{\psi}
+		\rightarrow \iu \hbar \pdv{t} \left(U \ket*{\widetilde{\psi}}\right) = H \left(U \ket*{\widetilde{\psi}}\right)
+\end{equation}
+From here, it's pretty easy to obtain the transformed Hamiltonian $\widetilde{H}$
+\begin{align}
+	\iu \hbar \left(\dot{U} \ket*{\widetilde{\psi}} + U \ket*{\dot{\widetilde{\psi}}}\right) &= H U \ket*{\widetilde{\psi}}	\nonumber \\
+	\iu \hbar U \ket*{\dot{\widetilde{\psi}}} &= H U \ket*{\widetilde{\psi}} - \iu \hbar \dot{U} \ket*{\widetilde{\psi}}	\nonumber \\
+	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \left(U^\dag H U - \iu \hbar U^\dag \dot{U}\right) \ket*{\widetilde{\psi}}	\nonumber \\
+	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \widetilde{H} \ket*{\widetilde{\psi}}
+\end{align}
+where $\widetilde{H} = U^\dag H U - \iu \hbar U^\dag \dot{U}$ for the transformed state $\ket*{\widetilde{\psi}} = U^\dag \ket*{\psi}$.
+
+TO DO:
+
+Go through Gaussian beams section and use widetilde command for complex values/functions. 
+
+\section{Hyperfine Mixing}
+
+**Derivation of the hyperfine mixing coefficients.**
+
+Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
+\begin{equation}
+	\hat{V}_\text{hf} \simeq \frac{a_{5s}}{2} \left(\hat{s}_{\text{in},+}\hat{I}_{-} + \hat{s}_{\text{in},-}\hat{I}_{+} + 2\hat{s}_{\text{in},z}\hat{I}_{z}\right)
+\end{equation}
+with the usual ladder operators ${\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}}$ and ${\hat{J}_{\pm}\ket{J,m_J}=\hbar\sqrt{J\left(J+1\right)-m_J\left(m_J\pm1\right)} \ket{J,m_J\pm1}}$.
+
+\subsection{{$5sns$-series} {$S$~states}}
+
+Calculating the matrix elements of the hyperfine operator.
+For $S$ states, the pure singlet and triplet states can be written as
+\begin{align}
+	& \ket{n\SLJm{1}{S}{0}{0}}^{0} = \frac{1}{2} \left(\ket{5s;ns} + \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} - \ket{\downarrow;\uparrow}\right) \\
+	& \ket{n\SLJm{3}{S}{1}{1}}^{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\uparrow;\uparrow}	\\
+	& \ket{n\SLJm{3}{S}{1}{0}}^{0} = \frac{1}{2} \left(\ket{5s;ns} - \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} + \ket{\downarrow;\uparrow}\right)	\\
+	& \ket{n\SLJm{3}{S}{1}{-1}}^{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\downarrow;\downarrow}
+\end{align}
+To obtain include the nuclear spin, the above states are multiplied by $\ket{I,m_I}$.
+
+** CHECK BELOW **
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{1}{S}{0}{0}}^0	=	-\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}												\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{1}{S}{0}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{1}{S}{0}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{0}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{1}}^0	=	-\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} - \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)	\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{1}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{1}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}													\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{1}{S}{0}{0}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} + \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)		\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	-\frac{1}{2} \ket{n\SLJm{3}{S}{1}{-1}}^{0}
+\end{align}
+
+For the $\hat{I}$ operators, 
+\begin{align}
+	& \hat{I}_{+} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I+1\right)} \ket{I,m_I+1}	\\
+	& \hat{I}_{-} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I-1\right)} \ket{I,m_I-1}	\\
+	& \hat{I}_{z} \ket{I,m_I}	=	m_I \ket{I,m_I}
+\end{align}
+
+Now that we know all the relevant states, we can calculate the effect of $\hat{V}_\text{hf}$ on each state. 
+** For simplicity, we used the stretched states $\ket{I=F, m_I=F}$ (provide a better argument?) **
+\begin{align}
+	& \hat{V}_\text{hf}\ket{n\SLJm{1}{S}{0}{0}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{1}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{0}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{-1}}^{0}	=	\frac{a_{5s}}{2} 
+\end{align}
+
+** segue? Maybe move this up before deriving the matrix elements for 9/2 mixing **
+Using Clebsch–Gordan coefficients $\CG{J_1,m_{J_1}}{J_1,m_{J_2}}{J,m_J}=\braket{J_1,m_{J_{1}};J_2,m_{J_{2}}}{J,m_J}$, we can decompose the $\ket{F,m_F}$ states
+\begin{align}
+	& \ket{\left(n\SLJ{1}{S}{0}\right)F=I,m_F}		=	\sum_{m_J} \sum_{m_I} \CG{J=0,m_J=0}{I,m_I}{F=I,m_F} \ket{J=0,m_J=0} \ket{I,m_I}	= \ket{n\SLJ{1}{S}{0}} \ket{I,m_F}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I+1,m_F}	=	\sum \CG{J=1,m_J=1}{I,m_I}{F=I+1,m_F} \ket{J=1,m_J} \ket{I+1,m_I}	\\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I,m_F}		=	\sum \CG{J=1,m_J=0}{I,m_I}{F=I,m_F}	\ket{J=1,m_J} \ket{I,m_I} \\
+	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I-1,m_F}	=	\sum \CG{J=1,m_J=-1}{I,m_I}{F=I-1,m_F} \ket{J=1,m_J} \ket{I-1,m_I}
+\end{align}
+
+\subsection{$D$-states}
+
+Move details of derivation here?
+
 
 \section{Density distributions}
 
