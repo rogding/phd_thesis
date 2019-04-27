@@ -156,14 +156,16 @@ with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$ and 
 
 \subsection{{$5sns$-series} $S$~states}
 
-Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can express the pure hyperfine $S$~states as
-\begin{align}
-	& \ket{\left(\nSLJ{n}{1}{S}{0}\right)F=I,m_F}	=	\\
-	& \ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I+1,m_F}	=	\\
-	& \ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I,m_F}	=	\\
-	& \ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I-1,m_F}	=	\\
-\end{align}
-
+Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can expand the pure hyperfine $S$~states with Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$
+\begin{flalign}
+	\ket{\left(\nSLJ{n}{1}{S}{0}\right)F=I,m_F}		&{}={}	\ket{\nSLJM{n}{1}{S}{0}{m_J=0}} \ket{I,m_I=m_F}													\\
+	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I+1,m_F}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}		\\
+	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I,m_F}		&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m-J}		\\
+	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I-1,m_F}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}
+\end{flalign}
 
 
 ***************************************
