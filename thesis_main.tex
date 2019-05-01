@@ -73,6 +73,68 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%	Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% See: https://tex.stackexchange.com/questions/142178/proper-clickable-hyperlinks-with-biblatex-natbib-and-hyperref-author-yea?noredirect=1&lq=1
+% thanks to https://tex.stackexchange.com/a/26684/22939
+\DeclareCiteCommand{\citejournal}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \usebibmacro{journal}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citebooktitle}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+    \usebibmacro{booktitle}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\citeintitle}% Based on \citetitle from biblatex.def
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexfield{indextitle}}
+     {}%
+   \iffieldundef{journaltitle}
+     {\iffieldundef{booktitle}
+        {\iffieldundef{maintitle}
+          {\printfield[citetitle]{labeltitle}}% Behave like \citetitle if no "main" title
+          {\printtext[maintitle]{\printfield[titlecase]{maintitle}}}}
+        {\printtext[booktitle]{\printfield[titlecase]{booktitle}}}}
+     {\printtext[journaltitle]{\printfield[titlecase]{journaltitle}}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+%  Thanks to [Audrey](https://tex.stackexchange.com/a/108349/22939)
+\DeclareCiteCommand{\citetitle}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexfield{indextitle}}
+     {}%
+   \printtext[bibhyperref]{\printfield[citetitle]{labeltitle}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+%  Thanks to [Audrey](https://tex.stackexchange.com/a/75916/22939)
+  \DeclareCiteCommand{\citeauthor}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printtext[bibhyperref]{\printnames{labelname}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Macros

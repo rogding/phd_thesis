@@ -1,13 +1,11 @@
 \chapter{Derivations}
 
-Random derivations I needed for my thesis so I included them here. 
+Random derivations are presented below: partly for completeness and partly because I don't want to have to re-derive them in the future.
 
 \section{Gaussian Beams}
 
-Since we almost exclusively work with Gaussian laser beams in the lab, I found it instructive to derive the intensity for an elliptical Gaussian beam.
-The derivation below mostly follows from the one presented in \cite{siegman1986}.
-
-%\subsection{Paraxial wave equation}
+Since we (almost) exclusively work with Gaussian laser beams in the lab, I found it instructive to derive the intensity for an astigmatic, elliptical Gaussian beam.
+The derivation below mostly follows from the ones presented in \cite{Siegman1986,Arnaud1969.AO.8.1687}.
 
 We start with the wave equation for the electric field $\bm{E} = \widetilde{E}(x,y,z,t) \hat{e}$ where $\hat{e}$ is the unit polarization vector, $\widetilde{E}$ is the complex amplitude, and $c=\lambda f = \omega/k$
 \begin{align}
@@ -21,12 +19,10 @@ Choosing the $z$-axis as the direction of propagation, the time dependence can b
 	\label{eq:paraxial_wave_eq}
 	0 = \partial_{xx}\widetilde{u} + \partial_{yy}\widetilde{u} + \partial_{zz}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u} \approx \partial_{xx}u + \partial_{yy}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u}
 \end{align}
-Here, the paraxial approximation $\abs{\partial_{zz}\widetilde{u}} \ll \abs{2 k \partial_{z}\widetilde{u}}, \abs{\partial_{xx}\widetilde{u}}, \abs{\partial_{yy}\widetilde{u}m}$ was made which assumes the envelope of the electric field varies ``slowly'' along $z$.
+Here, the paraxial approximation $\abs{\partial_{zz}\widetilde{u}} \ll \abs{2 k \partial_{z}\widetilde{u}}, \abs{\partial_{xx}\widetilde{u}}, \abs{\partial_{yy}\widetilde{u}}$ was made which assumes the envelope of the electric field varies ``slowly'' along $z$.
 \cref{eq:paraxial_wave_eq} is generally referred to as the ``paraxial wave equation''.
 
-%\subsubsection{Separating in rectangular coordinates}
-
-For a beam with symmetry along the $x$- and $y$-axis, the paraxial wave equation can be further separated by writing $\widetilde{u}(x,y,z) = \widetilde{u}_{x}(x,z) \widetilde{u}_{y}(y,z)$ where $\widetilde{u}_{x}$ ($\widetilde{u}_{y}$) represents the envelope along the $x$-axis ($y$-axis).
+Working in rectangular coordinates, a beam with symmetry along the $x$- and $y$-axis, the paraxial wave equation can be further separated by writing $\widetilde{u}(x,y,z) = \widetilde{u}_{x}(x,z) \widetilde{u}_{y}(y,z)$ where $\widetilde{u}_{x}$ and $\widetilde{u}_{y}$ represent the electric field envelopes along the $x$-axis and $y$-axis, respectively.
 Inserting this in to \cref{eq:paraxial_wave_eq} leads to
 \begin{align}
 	\label{eq:sep_paraxial_wave_eq}
@@ -122,7 +118,7 @@ A general solution $\widetilde{u}(x,y,z)$ with $x$-waist ($y$-waist) of $w_{x,0}
 
 **************************
 
-Interesting discussions about astigmatic Gaussian beams are discussed in \cite{arn1969.AO.8.1687, koc2013.AO.52.6030}. 
+Interesting discussions about astigmatic Gaussian beams are discussed in \cite{Arnaud1969.AO.8.1687,Kochkina2013.AO.52.6030}.
 
 \section{Unitary transformation}
 
