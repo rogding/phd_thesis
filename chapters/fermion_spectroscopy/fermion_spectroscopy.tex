@@ -192,46 +192,38 @@ The wavelength of the \SI{638}{\nm} laser was measured with an EXFO WA-1500 wave
 \subsection{Calibrating the EXFO WA-1500 Wavemeter}
 
 Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
-We initially attempted to calibrate it by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I\tsub{2}}) which has the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
-We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}).}.
-A longer cell and a more sensitive detection scheme may have provided the signal we needed since \citeauthor{Sansonetti1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection. A setup similar to the one in \cite{Huang2018.AO.57.2102} may work as well.
+We initially attempted to calibrate it by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I\tsub{2}}) which has the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, near the $n=39$ and $n=40$ Rydberg lines.
+We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason Nguyen and Henry Luo in Randy Hulet's lab when they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}.}.
+A longer cell and a more sensitive detection method may have provided the signal we needed since most {\tsup{127}I\tsub{2}} spectroscopy setups in this wavelength range used cells longer than \SI{30}{\cm} and lock-in detection\cite{Sansonetti1997.JOSAB.14.1913, Huang2018.AO.57.2102}.
 
-Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901} and \SI{646}{\nm} \cite{Radziemski1995.PRA.52.4462}). 
-As hinted at above, the \SI{646}{\nm} source is used by the Hulet lab for narrow line cooling of \Li{6} on the \SI{323}{\nm} transition.
+Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} and \SI{646}{\nm}). 
+As hinted at above, the \SI{646}{\nm} source is used by the Hulet lab for narrow line cooling of \Li{6} on the \SI{323}{\nm} transition \cite{Duarte2011.PRA.84.061406}.
 Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us run a fiber between the Killian and Hulet labs and borrow some light from their system in order to calibrate our wavemeter. 
-
-A wavemeter (EXFO WA-1500) was used to measure the wavelength of the \SI{638}{\nm} output from the OPO and hence determine the Rydberg state energies with a resolution-limited statistical uncertainty ($\sigma_\mathrm{stat}$) of about \SI{\pm 15}{\MHz} ($\SI{\pm 30}{\MHz}$) at \SI{638}{\nm} (\SI{319}{\nm}). 
-In order to estimate systematic offsets in the wavemeter, the frequencies of lasers locked to atomic transitions in \Sr{88} (${\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}}$ at \SI{689}{\nm} \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}) and in \Li{6} (${\nSLJF{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{2p}{2}{P}{3/2}}$ at \SI{671}{\nm} and ${\nSLJF{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{3p}{2}{P}{3/2}}$ at $\SI{646}{\nm}/2=\SI{323}{\nm}$ \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901, Radziemski1995.PRA.52.4462}). 
-The measured wavelengths were then compared to the published values for the same transitions and the differences, $\delta$, between the measured and published frequencies are shown in Fig.~\ref{fig:wm_cal}. 
-A linear fit yields a correction of \SI{\approx 140}{\MHz} at \SI{638}{\nm}. 
-In an attempt to estimate the systematic uncertainty in this calibration factor, a Monte Carlo sampling was adopted in which linear fits to points drawn at random from the Gaussian uncertainty distributions appropriate to each point in the calibration were repeated, resulting in a systematic uncertainty ($\sigma_\mathrm{sys}$) of about \SI{\pm 25}{\MHz} ($\SI{\pm 50}{\MHz}$) at \SI{638}{\nm} (\SI{319}{\nm}). 
-To check for drifts in the wavemeter calibration, each \SI{638}{\nm} wavelength measurement was followed by a reference measurement of the \SI{689}{\nm} master laser. 
-As shown in the inset in Fig.~\ref{fig:wm_cal}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty. 
-Whereas our wavemeter limits the measurements of individual term energies to \SI{\sim 60}{\MHz}, line separations can be measured to kilohertz-level accuracies when scanning within a single free spectral range (FSR) of the transfer cavity, and to megahertz-level accuracies when piecing together scans over successive FSRs.
-
+The wavemeter measurements of those three wavelengths were performed within about \SI{2}{\hour} to reduce sensitivity to day-to-day environmental changes and are presented in \cref{tab:wavemeter_calibration}.
+All measurements of the Rydberg lines are accompanied by a \SI{689}{\nm} calibration measurement under the assumption that the differences between the \SI{689}{\nm} and \SI{638}{\nm} wavelengths are less sensitive to the environment than the absolute values reported by the wavemeter.
 \begin{table}[htbp]
 	\caption{
-		\label{tab:wavemeter}Values used to calibrate the WA-1500 on a single day (2018/03/09) within ~2 hours to reduce day-to-day environmental changes)**. Reported values for \Li{6} were given with respect to the center-of-gravity of the lower $\nSLJ{5s}{2}{S}{1/2}$ state so I included the shift to the $F=3/2$ state.
-		**Still need to calculate HF shifted values for \Li{6}.**}
+		\label{tab:wavemeter_calibration}
+		Values used to calibrate the WA-1500 on a single day (2018/03/09) within about \SI{2}{\hour}. 
+		The value of the \SI{689}{\nm} transition in \Sr{88} \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}.
+		The values of the \SI{671}{\nm} and \SI{323}{\nm} (\SI{646}{\nm}) transitions in \Li{6} were taken from \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901, Radziemski1995.PRA.52.4462}.}
 	\centering
 	\makebox[\textwidth][c]{
-	\begin{tabular}{@{}ccccccc@{}}
+	\begin{tabular}{@{}ccccc@{}}
 		\toprule
-		$\lambda$ [\si{\nm}]	& Atom						& Lower state									& Upper state								& Reported [\si{\per\cm}]			& Measured [\si{\per\cm}]	& Ref																							\\
+		$\lambda$ [\si{\nm}]	& Atom						& Transition																		& Reference [\si{\per\cm}]			& Measured [\si{\per\cm}]		\\
 		\midrule
-		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJF{2s}{2}{S}{1/2}{3/2}$}	& \multirow{2}{*}{$\nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703(10)}				& \num{30925.1792(9)}		& \multirow{2}{*}{\cite{Radziemski1995.PRA.52.4462, Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901}}	\\
-		(\num{646})				&							&												&											& (\num{15462.5851(5)})				& (\num{15462.5896(5)})		&                                                       										\\
-		\num{671}				& \Li{6}					& $\nSLJF{2s}{2}{S}{1/2}{3/2}$					& $\nSLJ{2p}{2}{P}{3/2}$					& \num{14903.6320617+-0.0000007}	& \num{14903.63391(33)}		& \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901}											\\
-		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0}$						& $\nSLJ{5s5p}{3}{P}{1}$					& \num{14504.33824159+-0.00000033}	& \num{14504.34224(35)}		& \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}											\\
+		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$							& \num{14504.33824159+-0.00000033}	& \num{14504.34224+-0.00035}	\\
+		\num{671}				& \Li{6}					& $\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{2p}{2}{P}{3/2}$						& \num{14903.6295242+-0.0000007}	& \num{14903.63391+-0.00033}	\\
+		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703+-0.0010}			& \num{30925.1792+-0.0010}		\\
+		(\num{646})				&							&																					& (\num{15462.5851+-0.0005})		& (\num{15462.5896+-0.0005})	\\
 		\bottomrule
 	\end{tabular}
 	}
 \end{table}
-
-\Cref{fig:wm_fit} shows the difference between our measured energies and the reported energies. 
-To check for slow drifts in the wavemeter (e.g., due to environmental changes), we also measured the wavelength of the \SI{689}{\nm} for each measurement of the \SI{638}{\nm} photon energy.
-\Cref{fig:wm_drift} shows the deviation of the \SI{689}{\nm} measurements overtime, showing relatively little long-term drifts. 
-
+The values in \cref{tab:wavemeter_calibration} were used to calculate the offset $\delta = \nu_{\text{measured}} - \nu_{\text{reference}}$ between our measured values and published values and is plotted in \cref{fig:wm_fit}.
+A linear fit yields a correction of \SI{\approx 140}{\MHz} at \SI{638}{\nm}. 
+A Monte Carlo sampling was adopted in which linear fits to points drawn at random from the Gaussian uncertainty distributions appropriate to each point in the calibration were repeated, resulting in a systematic uncertainty ($\sigma_\mathrm{sys}$) of about \SI{\pm 25}{\MHz} ($\SI{\pm 50}{\MHz}$) at \SI{638}{\nm} (\SI{319}{\nm}). 
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/wavemeter_calibration/wm_fit.svg}
@@ -240,9 +232,12 @@ To check for slow drifts in the wavemeter (e.g., due to environmental changes), 
 		Linear fit to find wavemeter systematic offset.}
 \end{figure}
 
+To check for drifts in the wavemeter calibration, each \SI{638}{\nm} wavelength measurement was followed by a reference measurement of the \SI{689}{\nm} master laser. 
+As shown in the inset in \cref{fig:wm_cal}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty. 
+Whereas our wavemeter limits the measurements of individual term energies to \SI{\sim 60}{\MHz}, line separations can be measured to kilohertz-level accuracies when scanning within a single free spectral range (FSR) of the transfer cavity, and to megahertz-level accuracies when piecing together scans over successive FSRs.
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
+	\includesvg[keepaspectratio, width=5in]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
 	\caption{
 		\label{fig:wm_drift}
 		Long-term wavemeter drifts.}
