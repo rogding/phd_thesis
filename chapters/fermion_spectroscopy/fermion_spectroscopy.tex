@@ -64,7 +64,7 @@ The hyperfine interaction for \Sr{87} can be included as
 
 For two-electron systems, the hyperfine interaction can be expressed as
 \begin{equation}
-	V_\text{hf} = a_{ms} \left(\hat{\bm{s}}_{1} + \hat{\bm{s}}_{2}\right) \cdot \hat{\bm{I}} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}
+	\hat{V}_\text{hf} = a_{ms} \left(\hat{\bm{s}}_{1} + \hat{\bm{s}}_{2}\right) \cdot \hat{\bm{I}} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}
 \end{equation}
 where $\hat{\bm{s}}_{i}$ is the spin of the {$i$th} electron. 
 
@@ -72,6 +72,7 @@ For singly-excited states, the hyperfine interaction of the ``outer'' electron w
 We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
 Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
 \begin{equation}
+	\label{eq:V_hf}
 	\hat{V}_\text{hf} \simeq \frac{a_{ms}}{2} \left(\hat{s}_{\text{in},+} \hat{I}_{-} + \hat{s}_{\text{in},-} \hat{I}_{+} + 2\hat{s}_{\text{in},z} \hat{I}_{z}\right)
 \end{equation}
 with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
@@ -79,34 +80,56 @@ Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it 
 
 \subsection{Singly-Excited {$S$-states}}
 
-Assuming there are no perturbers (** see \cite{Vaillant2014.JPB.47.155001} ? **), we make the approximation that the inner electron is in the $5s$-state whereas the other electron is in the {$ns$-state}. 
+In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
+A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
+** I need to actually do the derivation.... **
 
-For $S$ states, the pure singlet states can be written as
+Assuming there are no perturbing states, ** a reasonable assumption for $n \gtrsim 12$ for the {$\nSLJ{5sns}{1}{S}{0}$-series} and $n \gtrsim 7$ for the {$\nSLJ{5sns}{3}{S}{1}$-series} \cite{Vaillant2014.JPB.47.155001} **, we start with the pure singly-excited $\ket{\nSLJF{n}{1}{S}{0}{F}}^0$ and $\ket{\nSLJF{n}{3}{S}{1}{F}}^0$ hyperfine states.
+Since $\hat{V}_\text{hf}$ has rotational symmetry, it only mixes states with the same $F$.
+Therefore, we work with the basis states
+\begin{align}
+	& \ket{\nSLJf{n}{3}{S}{1}{I+1}}	= \ket{\nSLJf{n}{3}{S}{1}{I+1}}^0																		\\
+	& \ket{\nSLJf{n}{1}{S}{0}{I}}	= -\widetilde{\beta} \ket{\nSLJF{n}{3}{S}{1}{F}}^0 + \widetilde{\alpha} \ket{\nSLJF{n}{1}{S}{0}{F}}^0	\\
+	& \ket{\nSLJf{n}{3}{S}{1}{I}}	= \widetilde{\alpha} \ket{\nSLJF{n}{3}{S}{1}{F}}^0 + \widetilde{\beta} \ket{\nSLJF{n}{1}{S}{0}{F}}^0	\\
+	& \ket{\nSLJf{n}{3}{S}{1}{I-1}}	= \ket{\nSLJf{n}{3}{S}{1}{I-1}}^0
+\end{align}
+with $\widetilde{\alpha}$ and $\widetilde{\beta}$ are mixing coefficients. 
+*** Need to figure out how to show that the mixing coefficients are equal to xxx maybe cite Lurio paper \cite{Lurio1962.PR.126.1758} ? ***
+Using these basis states, we can compute the matrix elements of \cref{eq:V_hf}
 \begin{equation}
-	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{0} = \frac{1}{2} \left(\ket{5s;ns} + \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} - \ket{\downarrow;\uparrow}\right)
+	\mel{\nSLJf{n}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{n}{3}{S}{1}{I+1}} = \frac{1}{2} a_{5s} I \simeq \SI{-2.251}{\GHz}
 \end{equation}
-Similarly, the pure triplet $S$-states can be written as
+\begin{equation}
+	\mel{\nSLJf{n}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{n}{3}{S}{1}{I-1}} = -\frac{1}{2} a_{5s} \left(I+1\right) \simeq \SI{2.751}{\GHz}
+\end{equation}
 \begin{align}
-	&\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\uparrow;\uparrow}	\\
-	&\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{0} = \frac{1}{2} \left(\ket{5s;ns} - \ket{ns;5s}\right) \left(\ket{\uparrow;\downarrow} + \ket{\downarrow;\uparrow}\right)	\\
-	&\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{0} = \frac{1}{\sqrt{2}} \left(\ket{5s;ns} - \ket{ns;5s}\right) \ket{\downarrow;\downarrow}
+	\hat{V}_\text{hf} \ket{\nSLJf{n}{1}{S}{0}{I}}	&{}={}	\hat{V}_\text{hf} \left(\ket{xxxx}^0 + \ket{yyyy}^0\right)					\notag	\\
+													&{}={}	\frac{1}{2} a_{ms} \sqrt{I\left(I+1\right)} \ket{\nSLJf{n}{3}{S}{1}{I}}	\\
+	\hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I}}	&{}={}	\hat{V}_\text{hf} \left(\ket{xxxx}^0 + \ket{yyyy}^0\right)					\notag	\\
+													&{}={}	-\frac{1}{2} a_{ms} \left(** figure this out **\right)
 \end{align}
-To incorporate the nuclear spin, we multiply the above states by $\ket{I, m_I}$.
-Due to the hyperfine interaction, $J$ and $I$ are no longer good quantum numbers so we use $\vec{F} = \vec{J} + \vec{I}$.
-
-
-*************
-
-*************
-
-*************
-
-
-Due to the hyperfine interaction, $J$ and $I$ are no longer good quantum numbers so we use $F = J + I$.
-Therefore, we can use the Clebsch–Gordan coefficients to determine basis states in terms of $\ket{F, m_F}$.
+Therefore the $\hat{V}_\text{hf}$ can be written, in matrix form, as
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								I	& 0							& 0							& 0						\\ 
+								0	& 0							& \sqrt{I\left(I+1\right)}	& 0						\\ 
+								0	& \sqrt{I\left(I+1\right)}	& -1						& 0						\\ 
+								0	& 0							& 0							& -\left(I+1\right)
+							\end{pmatrix}
+\end{equation}
+** Specify basis states here!! **
+Since $\hat{V}_\text{hf}$ is block-diagonal, we only need to diagonalize the $F=I$ mixed states which gives the eigenstates
 \begin{align}
-	\ket{\nSLJFm{5sns}{3}{S}{1}{7/2}{m_F}}	&= \sum\limits_{-m_J}^{m_J} \sum\limits_{-m_I}^{m_I} \ket{\nSLJm{5sns}{3}{S}{1}{m_J}} \ket{I, m_I}
+	\ket{??}	&{}={}	\frac{1}{\sqrt{2I+1}} \left(\sqrt{I+1}\ket{??} + \sqrt{I}\ket{??}\right)		\\
+	\ket{??}	&{}={}	\frac{1}{\sqrt{2I+1}} \left(-\sqrt{I}\ket{??} + \sqrt{I+1}\ket{??}\right)
 \end{align}
+with eigenenergies
+\begin{align}
+	E_{1}	&{}={}	\frac{1}{4} \left(2\left(E_{1}+E_{3}\right) - a_{ms} + \sqrt{4\left(E_{1}-E_{3}\right)^2 + 4 a_{ms} \left(E_{1}-E_{3}\right) + a_{ms}^{2} \left(2I+1\right)^2} \right)	\\
+	E_{3}	&{}={}	\frac{1}{4} \left(2\left(E_{1}+E_{3}\right) - a_{ms} - \sqrt{4\left(E_{1}-E_{3}\right)^2 + 4 a_{ms} \left(E_{1}-E_{3}\right) + a_{ms}^{2} \left(2I+1\right)^2} \right)
+\end{align}
+
 
 \subsubsection{{$n$-mixing}}
 
@@ -137,26 +160,7 @@ A schematic diagram of the present experimental arrangement is presented in \cre
 The cooling and trapping of strontium is described in detail elsewhere \cite{Xu2003.JOSAB.20.968, Nagel2003.PRA.67.011401, Mukaiyama2003.PRL.90.113002, DeSalvo2010.PRL.105.030402, Stellmer2013.PRA.87.013611}.
 Briefly, starting from a Zeeman slowed atomic beam, \Sr{87} atoms are first cooled and trapped using the blue MOT.
 The atoms are then further cooled in a narrow-line red MOT.
-Approximately \num{1E6} atoms at \SI{\sim 2}{\mu\K} are captured before turning off all trapping fields for spectroscopy measurements
-
-Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized \SI{689}{\nm} and \SI{319}{\nm} excitation laser beams.
-Depending on which intermediate $F^{\prime}$ state we use, this scheme allows us to produce Rydberg atoms in the $F^{\prime\prime} = F^{\prime} \pm \left\{0,1\right\}$
-\begin{equation*}
-	\nSLJF{5s^2}{1}{S}{0}{9/2}
-		\rightarrow {\nSLJ{5s5p}{3}{P}{1}{,\,}{F^{\prime}=\flatfrac{9}{2}{,} \flatfrac{11}{2}}}
-		\rightarrow	\begin{cases}
-						{\nSLJ{5sns}{3}{S}{1}{,\,}{F^{\prime\prime} = F^{\prime}\pm 0,1}}	\\
-						{\nSLJ{5snd}{3}{D}{1,2,3}{,\,}{F^{\prime\prime} = F^{\prime}\pm 0,1}}
-					\end{cases}
-\end{equation*}
-These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated.
-The typical detunings of the \SI{689}{\nm} laser were $\Delta_{9/2} \sim \SI{36}{MHz}$ and $\Delta_{11/2} \sim \SI{12}{\MHz}$. 
-The \SI{689}{\nm} laser was chopped into **(10–20)-us-long** pulses to generate temporally localized groups of Rydberg atoms. 
-The number of Rydberg atoms produced by each pulse was determined by using the electrodes in Fig. 4(c) to generate a ramped electric field sufficient to ionize the Rydberg atoms. 
-The resulting electrons were directed towards, and detected by, a microchannel plate (MCP) whose output was fed into a multichannel scalar (MCS).
-Typically 100–500 measurement cycles were performed before loading a new sample and changing the \SI{319}{\nm} laser frequency. 
-Spectroscopic measurements at high $n$ using \Sr{84} showed that the stray fields in the trapping region were less than \SI{10}{\mV\per\cm}. 
-Any resultant Stark shifts should therefore be at most a few megahertz even at $n \sim 90$.
+Approximately \SI{1E6}{atoms} at \SI{\sim 2}{\mu\K} are captured before turning off all trapping fields for spectroscopy measurements.
 
 \begin{figure}[htbp]
 	\centering
@@ -169,16 +173,26 @@ Any resultant Stark shifts should therefore be at most a few megahertz even at $
 		{(c)} Arrangement of the electrodes used for ionizing Rydberg atoms and guiding the electrons towards the MCP detector.}
 \end{figure}
 
+Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized \SI{689}{\nm} and \SI{319}{\nm} excitation laser beams which drive transitions to the $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg levels via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2\text{ or }11/2}$ states.
+These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated.
+The typical detunings of the \SI{689}{\nm} laser, with respect to the intermediate states, were $\Delta_{9/2} \sim \SI{36}{MHz}$ and $\Delta_{11/2} \sim \SI{12}{\MHz}$, respectively. 
+The \SI{689}{\nm} laser was chopped into {\SIrange[range-phrase=--]{10}{20}{\us}-long} pulses to generate temporally localized groups of Rydberg atoms. 
+The number of Rydberg atoms produced by each pulse was determined by using the electrodes in \cref{fig:spectroscopy_exp_setup_c} to generate a ramped electric field sufficient to ionize the Rydberg atoms. 
+The resulting electrons were directed towards, and detected by, a microchannel plate (MCP) whose output was fed into a multichannel scalar (MCS).
+Typically \numrange[range-phrase=--]{100}{500} measurement cycles were performed before loading a new sample and changing the \SI{319}{\nm} laser frequency. 
+Spectroscopic measurements at high~$n$ using \Sr{84} showed that the stray fields in the trapping region were less than \SI{10}{\mV\per\cm}. 
+Any resultant Stark shifts should therefore be at most a few megahertz even at $n \sim 90$.
+
 The \SI{319}{\nm} radiation was generated by frequency doubling the output of a \SI{638}{\nm} optical parametric oscillator (OPO). 
 A sample of the output is sent though a broadband fiber electro-optic modulator (fEOM) from which one of the sidebands was locked to a transfer cavity, allowing the \SI{319}{\nm} laser to be scanned over multiple gigahertz.
-The transfer cavity was stabilized using a \SI{689}{\nm} master laser locked to the ${\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}}$ transition in \Sr{88}. 
+The transfer cavity was stabilized using a \SI{689}{\nm} master laser locked to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{88}. 
 The linewidth of the \SI{319}{\nm} laser is estimated to be \SI[input-comparators=\lesssim]{\lesssim500}{\kHz} based on the narrowest observed spectroscopic features.
-Additional details about how we scanned the UV laser frequency is given in \Cref{ap:scanning_uv_laser}.
+The wavelength of the \SI{638}{\nm} laser was measured with an EXFO WA-1500 wavemeter. 
 
-\subsection{Calibrating the WA-1500}
+\subsection{Calibrating the EXFO WA-1500 Wavemeter}
 
 Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
-We initially attempted to calibrate the wavemeter by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I\tsub{2}}) which has the {P65 (7–4)} line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
+We initially attempted to calibrate it by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I\tsub{2}}) which has the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, close to the **$n=40$ Rydberg line in \Sr{88}**.
 We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason and Henry in Randy Hulet's lab (they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}).}.
 A longer cell and a more sensitive detection scheme may have provided the signal we needed since \citeauthor{Sansonetti1997.JOSAB.14.1913} used a \SI{30}{\cm} long cell and lock-in detection. A setup similar to the one in \cite{Huang2018.AO.57.2102} may work as well.
 

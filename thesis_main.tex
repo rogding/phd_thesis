@@ -38,6 +38,7 @@
 			pageranges=false,
 			backend=biber]{biblatex}
 \usepackage{caption}
+%\usepackage{subcaption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Various options
@@ -67,11 +68,15 @@
 \crefname{figure}{Fig.}{Figs.}
 \Crefname{table}{Table}{Tables}
 \crefname{table}{Tab.}{Tab.}
+%\Crefname{appendix}{Appendix}{Appendices}
+%\crefname{appendix}{App.}{Apps.}
 
 % Allows setting l, c, r column widths (needs tabularx)
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\sisetup{range-units=brackets}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Definitions
