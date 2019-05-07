@@ -3,32 +3,24 @@
 We didn't set out to map out the triplet series of $\Sr{87}$ Rydberg states, but when we first started looking for $\Sr{87}$ $\SLJ{3}{S}{}$ and $\SLJ{3}{D}{}$ Rydberg states, we observed spectra which didn't line up with their predicted locations using the known quantum defects. 
 It turns out that the hyperfine interaction in $\Sr{87}$ is not negligible as the Rydberg states approach the $\Srion{87}{+}$ hyperfine split core. 
 We then rediscovered some papers from the 1980's which explained the shifted $\SLJ{1}{S}{0}$ spectra in $\Sr{87}$ by including the mixing of states with the same $F$. 
-Previous work was accomplished mostly through the $\nSLJ{5s5p}{1}{P}{1}$ state or from the metastable $\nSLJ{5s5p}{3}{P}{2}$ states, our work appears to be the first measurements of the $\Sr{87}$ hyperfine Rydberg states through the $\nSLJ{5s5p}{3}{P}{1}$ intermediate state. 
+Previous spectroscopic work was mostly through the $\nSLJ{5s5p}{1}{P}{1}$ state or from the metastable $\nSLJ{5s5p}{3}{P}{2}$ states so our work appears to be the first measurements of the $\Sr{87}$ hyperfine Rydberg states through the $\nSLJ{5s5p}{3}{P}{1}$ intermediate state. 
 **Should probably state the previous sentence as something like ``the first direct measurement of 87Sr triplet Rydberg states''.**
 
 We measured $\Sr{87}$ hyperfine Rydberg spectra using a two-photon excitation through the intermediate $\nSLJ{5s5p}{3}{P}{1}$ states and presented the work in \cite{Ding2018.PRA.98.042505}.
 This thesis contains a bit of a reanalysis from my point of view but the results remain largely unchanged from the published paper. 
+To save some space, the tables of measured \Sr{87} Rydberg energies are placed in the appendix (see \cref{tab:data-s-state,tab:data-d-state}).
 
-To save some space, the tables of measured \Sr{87} Rydberg energies are placed in the appendix: see \Cref{tab:data-s-state} and \Cref{tab:data-d-state}.
+\section{Ionization limit of $\Sr{87}$ Rydberg States}
 
-\section{Rydberg States of Hyperfine Cplit cores}
-
-A modern paper is \cite{Robicheaux2018.PRA.97.022508}. 
-
-To calculate the effects of hyperfine interactions on the Rydberg spectra of $\Sr{87}$, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., $\Sr{88}$) and then apply the hyperfine interaction to obtain the lines for $\Sr{87}$.
-The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{Ding2018.PRA.98.042505}.
-
-\section{Ionization limit of $\Sr{87}$}
-
-The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} for $\Sr{87}$ is well above that of all the bosonic isotopes (see \cref{tab:sr_nuc_prop}). 
-This suggests that the reported ionization limit is for the $\nSLJF{5s}{2}{S}{1/2}{4}$ state of $\Srion{87}{+}$.
-Like the case for alkali atoms, the nonzero nuclear spin of $\Srion{87}{+}$ interacts with the spin of the remaining $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
+The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} for $\Sr{87}$ is well above that of all the bosonic isotopes (see \cref{tab:ionization_limits}). 
+This suggests that the reported ionization limit is for the $\nSLJf{5s}{2}{S}{1/2}{4}$ state of $\Srion{87}{+}$.
+Similar to the case for alkali atoms, the nonzero nuclear spin of $\Srion{87}{+}$ interacts with the spin of the inner $5s$ electron and splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=4,5$ components.
 The magnetic dipole interaction can be written as
 \begin{equation}
 	\ev{W} = A \ev{\hat{\bm{I}} \cdot \hat{\bm{S}}} = \frac{A}{2} \left(F\left(F+1\right) - I\left(I+1\right) - S\left(S+1\right)\right)
 \end{equation}
 where $\bm{F} = \bm{J} + \bm{I}$ and $S=s=1/2$ since core electrons of \Srion{87}{+} form a closed shell. 
-\citeauthor{sun1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
+\citeauthor{Sunaoshi1993.HI.78.241} measured the $F=4,5$ hyperfine splitting in \Srion{87}{+} to be $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$. 
 Since the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2})= \SI{45932.1943+-0.0010}{\per\cm}$.
 This value is used for the analysis below.
 
@@ -42,6 +34,13 @@ The value estimated using this method is **\SI{45932.19870+-0.00035}{\per\cm}**.
 		\label{fig:Eion-mass-scaled}
 		Mass-scaled $E_\text{ion}$.}
 \end{figure}
+
+\section{Rydberg States of Hyperfine Cplit cores}
+
+A modern paper is \cite{Robicheaux2018.PRA.97.022508}. 
+
+To calculate the effects of hyperfine interactions on the Rydberg spectra of $\Sr{87}$, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., $\Sr{88}$) and then apply the hyperfine interaction to obtain the lines for $\Sr{87}$.
+The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{Ding2018.PRA.98.042505}.
 
 \subsection{Incorporating hyperfine interaction in Rydberg levels}
 
@@ -151,6 +150,90 @@ As see in Fig. xx, the strongest {$n$-mixing} occurs for $\Delta n = \pm 1$ with
 ** Stuff about D-states. **
 
 ** Following similar derivations (outlined by Shuhei Yoshida). **
+
+Similar to the $S$-states, we find the matrix elements of $\hat{V}_\text{hf}$ starting with pure states. 
+A further complication of the $D$-states is that spin-orbit interactions lead to a breakdown of $LS$ coupling even in the bosons (with $I=0$), leading to mixing between the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states ** \cite{Esherick1977.PRA.15.1920, Sun1989.JPB.22.2887} - check that these make sense **. 
+To account for this mixing, the $D$ states for $I=0$ (i.e., the eigenstates of $H_0\left(88, m_{87}\right)$) are expanded in terms of pure states
+\begin{align}
+	\ket{\nSLJ{5snd}{1}{D}{2}}	&{}={}	\cos\theta \ket{\nSLJ{n^{*}_{1}}{1}{D}{2}} + \sin\theta \ket{\nSLJ{n^{*}_{1}}{3}{D}{2}}	\\
+	\ket{\nSLJ{5snd}{3}{D}{2}}	&{}={}	-\sin\theta \ket{\nSLJ{n^{*}_{3}}{1}{D}{2}} + \cos\theta \ket{\nSLJ{n^{*}_{3}}{3}{D}{2}}
+\end{align}
+The singlet-triplet mixing is known to be strong around $n=15$ ** \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang982.PRL.48.290} - also check these**. 
+For higher $n$, on the other hand, the singlet-triplet mixing becomes nearly $n$ independent and $\theta$ is estimated to converge towards $\theta \sim \num{-0.14}$.
+(The TAE calculation yields a similar value, $\theta \sim \num{-0.16}$.)
+As will be shown later, the current experimental data can be well reproduced when $\theta$ is set to \num{-0.14} and this value is used in the following calculations. 
+
+\subsubsection{${F=I+3}$}
+
+There is a single state:
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms} I
+\end{equation}
+
+\subsubsection{${F=I+2}$}
+
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								0									& \sqrt{\frac{2}{3}}I					& -\sqrt{\frac{I\left(I+3\right)}{3}}	\\
+								\sqrt{\frac{2}{3}}I					& \frac{I}{3}							& \frac{\sqrt{2I\left(I+3\right)}}{3}	\\
+								-\sqrt{\frac{I\left(I+3\right)}{3}}	& \frac{\sqrt{2I\left(I+3\right)}}{3}	& \frac{2}{3}I-1
+							\end{pmatrix}
+\end{equation}
+
+\subsubsection{${F=I+1}$}
+
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								0										& \sqrt{\frac{3I\left(I+2\right)}{10}}I			& \frac{I-2}{\sqrt{6}}												& -\sqrt{\frac{2\left(2I-1\right)\left(2I+5\right)}{15}}			\\
+								\sqrt{\frac{3I\left(I+2\right)}{10}}I	& -\frac{I}{2}									& \frac{3}{2}\sqrt{\frac{I\left(I+2\right)}{5}}						& 0																	\\
+								\frac{I-2}{\sqrt{6}}					& \frac{3}{2}\sqrt{\frac{I\left(I+2\right)}{5}}	& \frac{I-2}{6}														& \frac{2}{3}\sqrt{\frac{\left(2I-1\right)\left(2I+5\right)}{5}}	\\
+								0										& 0												& \frac{2}{3}\sqrt{\frac{\left(2I-1\right)\left(2I+5\right)}{5}}	& \frac{I-5}{3}
+							\end{pmatrix}
+\end{equation}
+
+\subsubsection{${F=I}$}
+
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								0														& \sqrt{\frac{\left(2I-1\right)\left(2I+3\right)}{10}}				& -\sqrt{\frac{2}{3}}												& -\sqrt{\frac{3\left(I-1\right)\left(I+2\right)}{5}}	\\
+								\sqrt{\frac{\left(2I-1\right)\left(2I+3\right)}{10}}	& \frac{1}{2}														& \frac{1}{2}\sqrt{\frac{3\left(2I-1\right)\left(2I+3\right)}{5}}	& 0														\\
+								-\sqrt{\frac{3}{2}}										& \frac{1}{2}\sqrt{\frac{3\left(2I-1\right)\left(2I+3\right)}{5}}	& 0																	& \sqrt{\frac{2\left(I-1\right)\left(I+2\right)}{5}}	\\
+								-\sqrt{\frac{3\left(I-1\right)\left(I+2\right)}{5}}		& 0																	& \sqrt{\frac{2\left(I-1\right)\left(I+2\right)}{5}}				& -2
+							\end{pmatrix}
+\end{equation}
+
+\subsubsection{${F=I-1}$}
+
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								0														& \sqrt{\frac{2\left(I^2-1\right)}{10}}				& -\frac{I+3}{\sqrt{6}}												& -\sqrt{\frac{2\left(2I-3\right)\left(2I+3\right)}{15}}			\\
+								\sqrt{\frac{2\left(I^2-1\right)}{10}}					& \frac{I+1}{2}										& \frac{3}{2}\sqrt{\frac{I^2-1}{5}}									& 0																	\\
+								-\frac{I+3}{\sqrt{6}}									& \frac{3}{2}\sqrt{\frac{I^2-1}{5}}					& -\frac{I+3}{6}													& \frac{2}{3}\sqrt{\frac{\left(2I-3\right)\left(2I+3\right)}{5}}	\\
+								-\sqrt{\frac{2\left(2I-3\right)\left(2I+3\right)}{15}}	& 0													& \frac{2}{3}\sqrt{\frac{\left(2I-3\right)\left(2I+3\right)}{5}}	& -\frac{I+6}{3}
+							\end{pmatrix}
+\end{equation}
+
+\subsubsection{${F=I-2}$}
+
+\begin{equation}
+	\hat{V}_\text{hf}	=	\frac{1}{2} a_{ms}
+							\begin{pmatrix}
+								0													& \sqrt{\frac{2}{3}}\left(I+1\right)	& -\sqrt{\frac{\left(I+1\right)\left(I-2\right)}{3}}	\\
+								\sqrt{\frac{2}{3}}\left(I+1\right)					& -\frac{1}{3}\left(I+1\right)			& \frac{\sqrt{2I\left(I+3\right)}}{3}	\\
+								-\sqrt{\frac{\left(I+1\right)\left(I-2\right)}{3}}	& \frac{\sqrt{2I\left(I+3\right)}}{3}	& -\frac{1}{3}\left(2I+5\right)
+							\end{pmatrix}
+\end{equation}
+
+\subsubsection{${F=I-3}$}
+
+There is a single state:
+\begin{equation}
+	\hat{V}_\text{hf}	=	-\frac{1}{2} a_{ms} \left(I+1\right)
+\end{equation}
 
 \section{Experimental Method}
 
