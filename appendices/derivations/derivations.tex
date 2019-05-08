@@ -140,61 +140,59 @@ TO DO:
 
 Go through Gaussian beams section and use widetilde command for complex values/functions. 
 
-\section{Hyperfine Mixing}
+\section{Hyperfine Mixing Matrix Elements}
 \label{sec:hyperfine_mixing_derivation}
+This section contains an extended derivation of the hyperfine mixing presented in \cref{sec:rydberg_hyperfine_mixing}. 
+The derivation presented below was originally done by Shuhei Yoshida.
 
-**Derivation of the hyperfine mixing coefficients.**
-
-Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
+From \cref{sec:rydberg_hyperfine_mixing}, we can approximate the hyperfine interaction of singly-excited Rydberg states (where the inner electron is in the $5s$ state) as
+\begin{equation}
+	\hat{V}_\text{hf}	\simeq	a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}
+\end{equation}
+Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$ and $\hat{J}_{\pm}\ket{J,m_J}=\sqrt{J\left(J+1\right)-m_J\left(m_J\pm1\right)} \ket{J,m_J\pm1}$ gives
 \begin{equation}
 	\hat{V}_\text{hf} \simeq \frac{a_{5s}}{2} \left(\hat{s}_{\text{in},+}\hat{I}_{-} + \hat{s}_{\text{in},-}\hat{I}_{+} + 2\hat{s}_{\text{in},z}\hat{I}_{z}\right)
 \end{equation}
-with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$ and $\hat{J}_{\pm}\ket{J,m_J}=\sqrt{J\left(J+1\right)-m_J\left(m_J\pm1\right)} \ket{J,m_J\pm1}$.
 
-\subsection{{$5sns$-series} $S$~states}
+\subsubsection{Singly Excited Singlet and Triplet Spin States}
 
-Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can expand the pure hyperfine $S$~states with Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$
-\begin{flalign}
-	\ket{\left(\nSLJ{n}{1}{S}{0}\right)F=I,m_F}		&{}={}	\ket{\nSLJM{n}{1}{S}{0}{m_J=0}} \ket{I,m_I=m_F}													\\
-	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I+1,m_F}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
-													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}		\\
-	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I,m_F}		&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
-													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m-J}		\\
-	\ket{\left(\nSLJ{n}{3}{S}{1}\right)F=I-1,m_F}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
-													&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\nSLJM{n}{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}
-\end{flalign}
+Before going to the derivations, it will be helpful to know the singlet and triplet spin wave functions for two electron systems.
+Using $\ket{+}$ ($\ket{-}$) for spin-up (spin-down), the singlet and triplet wave functions are  (see e.g., \cite{Sakurai2010})
+\begin{align}
+	\ket{S=0,m_J=0}		&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} - \ket{-;+}\right)	\\
+	\ket{S=1,m_J=1}		&{}={}	\ket{+;+}											\\
+	\ket{S=1,m_J=0}		&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} + \ket{-;+}\right)	\\
+	\ket{S=1,m_J=-1}	&{}={}	\ket{-;-}
+\end{align}
+Note that the two electrons are labeled $\ket{s_1;s_2}$.
+
+For a singly excited Rydberg states with the ``inner'' electron in the $\ket{ms}$ state and the Rydberg electron in the $\ket{nl}$ state, the $LS$-coupled $\SLJ{$2S+1$}{L}{$J$}$ Rydberg states can be written as
+\begin{align}
+	\ket{\nSLJ{msns}{1}{L}{$J$}}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl} + \ket{nl;ms}\right) \ket{S=0,m_S=0}				\notag	\\
+									&{}={}	\frac{1}{2} \left(\ket{ms;nl} + \ket{nl;ms}\right) \left(\ket{+;-} - \ket{-;+}\right)	\\
+	\ket{\nSLJ{msns}{3}{L}{$J$}}	&{}={}
+\end{align}
+
+\subsection{Singly excited $S$ states}
+
+Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can use Clebsch–Gordan coefficients\footnote{I use the following notation for Clebsch–Gordan coefficients: $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.} to expand $\ket{F,m_F}$ into the $\ket{J,m_J}\ket{I,m_I}$ basis
+\begin{align}
+	\ket{\SLJfM{1}{S}{0}{I}{m_F}}	&{}={}	\ket{\SLJM{1}{S}{0}{m_J=0}} \ket{I,m_I=m_F}													\\
+	\ket{\SLJfM{3}{S}{1}{I+1}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}		\\
+	\ket{\SLJfM{3}{S}{1}{I}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}		\\
+	\ket{\SLJfM{3}{S}{1}{I-1}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}
+\end{align}
+** Clarify the following sentence: ** Since $F$ is a good quantum number of $\hat{V}_\text{hf}$, it only mixes states of the same $F$ and $m_F$.
 
 
-***************************************
+We can expand $\ket{J,m_J}$ in to $\ket{L,m_L}\ket{S,m_S}=\ket{0,0}\ket{S,m_S}$
 
-
-Since the hyperfine interaction couples $\bm{J}=\bm{L}+\bm{S}=\bm{S}$\footnote{Since $L=0$ for $S$~states.} and $\bm{I}$, we work with the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}$.
-Using Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$, we can decompose the $\ket{F,m_F}$ states
-
-
-
-***************************************
-
-
-Starting with the with pure $\nSLJ{5sns}{1}{S}{0} = \ket{\nSLJ{n}{1}{S}{0}}$ and $\nSLJ{5sns}{3}{S}{1} = \ket{\nSLJ{n}{3}{S}{1}}$ singly-excited $S$~states, the nuclear spin can be incorporated 
 
 
 *******************************
-
-
-Using Clebsch–Gordan coefficients $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$, we can decompose the $\ket{F,m_F}$ states
-\begin{align}
-	& \ket{\left(n\SLJ{1}{S}{0}\right)F=I,m_F}		=	\sum_{m_J} \sum_{m_I} \CG{0,0}{I,m_I}{I,m_F} \ket{0,0} \ket{I,m_I}	= \ket{n\SLJ{1}{S}{0}} \ket{I,m_F}	\\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I+1,m_F}	=	\sum \CG{J=1,m_J=1}{I,m_I}{F=I+1,m_F} \ket{J=1,m_J} \ket{I+1,m_I}					= \ket{n\SLJ{1}{S}{0},m_J}	\\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I,m_F}		=	\sum \CG{J=1,m_J=0}{I,m_I}{F=I,m_F}	\ket{J=1,m_J} \ket{I,m_I} \\
-	& \ket{\left(n\SLJ{3}{S}{1}\right)F=I-1,m_F}	=	\sum \CG{J=1,m_J=-1}{I,m_I}{F=I-1,m_F} \ket{J=1,m_J} \ket{I-1,m_I}
-\end{align}
-
-
-
-
-
-
 
 Calculating the matrix elements of the hyperfine operator.
 For $S$ states, the pure singlet and triplet states can be written as

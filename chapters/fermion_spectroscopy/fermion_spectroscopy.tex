@@ -43,6 +43,7 @@ To calculate the effects of hyperfine interactions on the Rydberg spectra of $\S
 The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{Ding2018.PRA.98.042505}.
 
 \subsection{Incorporating hyperfine interaction in Rydberg levels}
+\label{sec:rydberg_hyperfine_mixing}
 
 **Work on this section about getting from 2-electron Hamiltonian to effective Rydberg Hamiltonian for 5sns states.**
 
@@ -276,7 +277,7 @@ The wavelength of the \SI{638}{\nm} laser was measured with an EXFO WA-1500 wave
 
 Since we rely on the wavemeter to determine the absolute energy of the \SI{638}{\nm} photon, we want to characterize potential systematic offsets. 
 We initially attempted to calibrate it by looking for a Doppler-free spectrum of molecular iodine ({\tsup{127}I\tsub{2}}) which has the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, near the $n=39$ and $n=40$ Rydberg lines.
-We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason Nguyen and Henry Luo in Randy Hulet's lab when they were looking to use the iodine cell to lock their \SI{646}{\nm} laser for a **\Li{7}** UV MOT \cite{dua2011.PRA.84.061406}.}.
+We didn't have much luck finding narrow Doppler-free signals scanning the \SI{638}{\nm} laser through a our iodine cell\footnote{This matches similar experiences according to Jason Nguyen and Henry Luo in Randy Hulet's lab when they were looking to use an iodine cell to lock their \SI{646}{\nm} laser for a \Li{6} UV MOT \cite{Duarte2011.PRA.84.061406}.}.
 A longer cell and a more sensitive detection method may have provided the signal we needed since most {\tsup{127}I\tsub{2}} spectroscopy setups in this wavelength range used cells longer than \SI{30}{\cm} and lock-in detection\cite{Sansonetti1997.JOSAB.14.1913, Huang2018.AO.57.2102}.
 
 Although the iodine spectroscopy didn't work out, we were able to obtain a calibration of our wavemeter's systematics by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} (\SI{689}{\nm}) and \Li{6} (\SI{671}{\nm} and \SI{646}{\nm}). 
@@ -312,7 +313,8 @@ A Monte Carlo sampling was adopted in which linear fits to points drawn at rando
 	\includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/wavemeter_calibration/wm_fit.svg}
 	\caption{
 		\label{fig:wm_fit}
-		Linear fit to find wavemeter systematic offset.}
+		Wavelength dependence of the offset $\delta$ between the measured and published transition frequencies used to calibrate the wavemeter. 
+		The black line shows the linear fit used to obtain the offset at \SI{638}{\nm} and the shaded region the uncertainty in the wavemeter calibration obtained from Monte Carlo simulations.}
 \end{figure}
 
 To check for drifts in the wavemeter calibration, each \SI{638}{\nm} wavelength measurement was followed by a reference measurement of the \SI{689}{\nm} master laser. 
@@ -323,7 +325,8 @@ Whereas our wavemeter limits the measurements of individual term energies to \SI
 	\includesvg[keepaspectratio, width=5in]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
 	\caption{
 		\label{fig:wm_drift}
-		Long-term wavemeter drifts.}
+		Compiled measurements of the wavemeter offset of the \SI{689}{\nm} transition.
+		The data comes from the \SI{689}{\nm} reference measurements paired with each \SI{638}{\nm} measurement.}
 \end{figure}
 
 **Add footnote: at the time, the best reference for the \SI{323}{\nm} transition we could find was by \citeauthor{Radziemski1995.PRA.52.4462} although there should be some upcoming measurements using frequency combs (cite papers mentioning doing this)**
