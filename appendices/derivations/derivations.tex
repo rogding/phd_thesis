@@ -3,6 +3,7 @@
 Random derivations are presented below: partly for completeness and partly because I don't want to have to re-derive them in the future.
 
 \section{Gaussian Beams}
+\label{sec:gaussian_beams}
 
 Since we work (almost) exclusively with Gaussian laser beams in the laboratory, I found it instructive to derive the intensity for an astigmatic, elliptical Gaussian beam.
 The derivation presented below mostly follows from ones presented in \cite{Siegman1986, Kogelnik1966.AO.5.1550, Arnaud1969.AO.8.1687}.
@@ -91,6 +92,8 @@ With $\abs{\widetilde{A}_0}^2 = \sqrt{2/\pi}/w_0$, the solution for $\abs{\widet
 
 \subsubsection{Complete Solution}
 
+*** Need a smoother way to work in power $P$ ***
+
 Now that we know the normalized solutions $\abs{\widetilde{u}_{i}\qty(i,z)}^2$, we can write the intensity $I\qty(x,y,z) = \abs{\vb{E}\qty(x,y,z)}^2 = \abs{\widetilde{u}_{x}\qty(x,z)}^2 \abs{\widetilde{u}_{y}\qty(y,z)}^2$ for a beam with total power $P$ as
 \begin{equation}
 	I\qty(x,y,z)	=	\frac{2 P}{\pi} \frac{1}{w_{x}\qty(z) w_{y}\qty(z)} \exp[-\frac{2 x^2}{w^{2}_{x}\qty(z)} - \frac{2 y^2}{w^{2}_{y}\qty(z)}]
@@ -111,29 +114,37 @@ For a circular ($w_{0,x} = w_{0,y} = w_{0}$), non-astigmatic ($z_{0,x} = z_{0,y}
 		=	I_{0} \qty(\frac{w_{0}}{w\qty(z)})^{2} \exp[-\frac{2 \qty(x^2 + y^2)}{w^{2}\qty(z)}]
 \end{equation}
 for peak intensity $I_{0} = 2 P/\pi w_{0}^{2}$.
+Changing to cylindrical coordinates with $r^2 = x^2 + y^2$ gives the more familiar intensity distribution
+\begin{equation}
+	I\qty(r,z)	=	I_{0} \qty(\frac{w_{0}}{w\qty(z)})^{2} \exp[-\frac{2 r^2}{w^{2}\qty(z)}]
+\end{equation}
 
 \section{Unitary transformation}
 
-For a unitary transformation $U$ where $\ket*{\psi} = U \ket*{\widetilde{\psi}}$, the Schr\"{o}dinger equation becomes
+Following the derivation in \cite{Steck.QuantumAtomOptics}, we derive how to obtain the transformed Hamiltonian for states related by the unitary transformation $U$ where $\ket*{\widetilde{\psi}} = U \ket*{\psi}$.
+Starting from the Schr\"{o}dinger equation, 
 \begin{equation}
-	\iu \hbar \ket*{\dot{\psi}} = H \ket*{\psi}
-		\rightarrow \iu \hbar \pdv{t} \left(U \ket*{\widetilde{\psi}}\right) = H \left(U \ket*{\widetilde{\psi}}\right)
+	\iu \hbar \ket*{\dot{\psi}}
+		=			H \ket*{\psi}
+		\implies	\iu \hbar \pdv{t}\qty(U^\dag \ket*{\widetilde{\psi}})	=	H \qty(U^\dag \ket*{\widetilde{\psi}})
 \end{equation}
-From here, it's pretty easy to obtain the transformed Hamiltonian $\widetilde{H}$
+Working through the algebra, we obtain the transformed Hamiltonian $\widetilde{H}$
 \begin{align}
-	\iu \hbar \left(\dot{U} \ket*{\widetilde{\psi}} + U \ket*{\dot{\widetilde{\psi}}}\right) &= H U \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar U \ket*{\dot{\widetilde{\psi}}} &= H U \ket*{\widetilde{\psi}} - \iu \hbar \dot{U} \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \left(U^\dag H U - \iu \hbar U^\dag \dot{U}\right) \ket*{\widetilde{\psi}}	\nonumber \\
-	\iu \hbar \ket*{\dot{\widetilde{\psi}}} &= \widetilde{H} \ket*{\widetilde{\psi}}
+	\iu \hbar \qty(\dot{U}^{\dag} \ket*{\widetilde{\psi}} + U^{\dag} \ket*{\dot{\widetilde{\psi}}})
+			&{}={}	H U^{\dag} \ket*{\widetilde{\psi}}	\notag	\\
+	\iu \hbar U^{\dag} \ket*{\dot{\widetilde{\psi}}}
+			&{}={}	H U^{\dag} \ket*{\widetilde{\psi}} - \iu \hbar \dot{U}^{\dag} \ket*{\widetilde{\psi}}	\notag	\\
+	\iu \hbar \ket*{\dot{\widetilde{\psi}}}
+			&{}={}	U H U^{\dag} \ket*{\widetilde{\psi}} - \iu \hbar U \dot{U}^{\dag} \ket*{\widetilde{\psi}}	\notag	\\
+	\iu \hbar \ket*{\dot{\widetilde{\psi}}}
+			&{}={}	\widetilde{H} \ket*{\widetilde{\psi}}
 \end{align}
-where $\widetilde{H} = U^\dag H U - \iu \hbar U^\dag \dot{U}$ for the transformed state $\ket*{\widetilde{\psi}} = U^\dag \ket*{\psi}$.
-
-TO DO:
-
-Go through Gaussian beams section and use widetilde command for complex values/functions. 
+where $\widetilde{H} = U H U^{\dag} - \iu \hbar U \dot{U}^{\dag} = U H U^{\dag} + \iu \hbar \dot{U} U^{\dag}$.
+The last part was obtained using $\partial_{t} \qty(U^{\dag} U) = \partial_{t} \qty(1) = 0$.
 
 \section{Hyperfine Mixing Matrix Elements}
 \label{sec:hyperfine_mixing_derivation}
+
 This section contains an extended derivation of the hyperfine mixing presented in \cref{sec:rydberg_hyperfine_mixing}. 
 The derivation presented below was originally done by Shuhei Yoshida.
 

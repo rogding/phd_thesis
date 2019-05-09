@@ -1,5 +1,48 @@
-\chapter{Optical dipole traps}
+\chapter{Optical Dipole Traps}
 
-Talk about ODT stuff here. 
+Put ODT details here.
 
-Maybe show CAD models for sheet trap?
+\section{Optical Dipole Potential}
+
+**** The derivation below loosely follows that found in \cite{Steck.QuantumAtomOptics, Ludlow2008.PhD} ****
+
+For a two-level atom with ground (excited) state $\ket{g}$ ($\ket{e}$) with energy $E_{g} = \hbar \omega_{g}$ ($E_{e} = \hbar \omega_{e}$), the atomic Hamiltonian $H_{A}$ can be written as
+\begin{equation}
+	H_{A}	=	\hbar
+				\begin{pmatrix}
+					\omega_{e}	&	0			\\
+					0			&	\omega_{g}
+				\end{pmatrix}
+\end{equation}
+** Somehow introduce $\vb{d}\cdot\vb{E} \rightarrow \Omega \exp(-\iu \omega_{L} t)$ **
+Introducing a laser at frequency $\omega$ which couples $\ket{g}$ and $\ket{e}$ and can be represented by
+\begin{equation}
+	H_{AF}	=	\frac{\hbar}{2}
+				\begin{pmatrix}
+					0							&	\Omega \cos(\omega t)	\\
+					\Omega^{*} \cos(\omega t)	&	0
+				\end{pmatrix}
+\end{equation}
+Using the unitary transformation
+\begin{equation}
+	U	=	\begin{pmatrix}
+				\me^{\iu \omega t}	&	0	\\
+				0					&	1
+			\end{pmatrix}
+\end{equation}
+the total (transformed) Hamiltonian for the system can be written as
+\begin{equation}
+	\widetilde{H}	=		\hbar
+							\begin{pmatrix}
+								-\Delta												&	\frac{\Omega}{2} \qty(1 + \me^{\iu 2 \omega t})	\\
+								\frac{\Omega^{*}}{2} \qty(1 + \me^{-\iu 2 \omega t})	&	\omega_{g}
+							\end{pmatrix}
+					\approx	\hbar
+							\begin{pmatrix}
+								-\Delta					&	\frac{\Omega}{2}	\\
+								\frac{\Omega^{*}}{2}	&	\omega_{g}
+							\end{pmatrix}
+\end{equation}
+where $\Delta \equiv \omega - \omega_{e}$ and the rotating wave approximation (RWA) was made ** clarify why/how the RWA is done **.
+
+For $\Delta \gg \Omega$, ..... continue deriving...
