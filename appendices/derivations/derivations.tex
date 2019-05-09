@@ -86,25 +86,31 @@ To normalize, we follow the usual procedure for finding $\abs{\widetilde{A}_0}^{
 \end{equation}
 With $\abs{\widetilde{A}_0}^2 = \sqrt{2/\pi}/w_0$, the solution for $\abs{\widetilde{u}_{x}\qty(x,z)}$ is
 \begin{equation}
-	\abs{\widetilde{u}_{x}\qty(x,z)}^2	=	\sqrt{\frac{2}{\pi}} \frac{1}{w\qty(z)} \exp[-\frac{2 x^2}{w^2(z)}]
+	\abs{\widetilde{u}_{x}\qty(x,z)}^2	=	\sqrt{\frac{2}{\pi}} \frac{1}{w\qty(z)} \exp[-\frac{2 x^2}{w^2\qty(z)}]
 \end{equation}
 
 \subsubsection{Complete Solution}
 
-Since $\widetilde{u}_{x}\qty(x,z)$ and $\widetilde{u}_{y}\qty(y,z)$ are both normalized for all $z$, we can set the $x$-axis and $y$-axis beam waists independently.
-Letting $z_{x,0}$ and $z_{y,0}$ be the locations of the $x$-axis and $y$-axis waists, the complete solution can be written as
-
-**********************
-
-**********************
-
-**********************
-
+Now that we know the normalized solutions $\abs{\widetilde{u}_{i}\qty(i,z)}^2$, we can write the intensity $I\qty(x,y,z) = \abs{\vb{E}\qty(x,y,z)}^2 = \abs{\widetilde{u}_{x}\qty(x,z)}^2 \abs{\widetilde{u}_{y}\qty(y,z)}^2$ for a beam with total power $P$ as
 \begin{equation}
-	\left|\widetilde{u}\left(x,y,z\right)\right|^2
-		=	\frac{2}{\pi} \frac{1}{w_{x}(z) w_{y}(z)} \exp\left[-\frac{2x}{w_{x}(z)^2} -\frac{2y}{w_{y}(z)^2}\right]
+	I\qty(x,y,z)	=	\frac{2 P}{\pi} \frac{1}{w_{x}\qty(z) w_{y}\qty(z)} \exp[-\frac{2 x^2}{w^{2}_{x}\qty(z)} - \frac{2 y^2}{w^{2}_{y}\qty(z)}]
 \end{equation}
-where $w_{i}(z) = w(z-z_{i,0})$ for $i \in \{x,y\}$.
+where 
+\begin{align}
+	w_{i}^{2}\qty(z)	&{}={}	w_{0,i}^{2} \qty[1 + \frac{\qty(z-z_{0,i})^2}{z_{R,i}^{2}}]	\\
+	z_{R,i}				&{}={}	\frac{\pi w_{0,i}^{2}}{\lambda}
+\end{align}
+for the $i$-axis beam waist radius $w_{0,i}^{2}$ and location $z_{0,i}$.
+
+\subsection{Circular Gaussian Beam}
+
+For a circular ($w_{0,x} = w_{0,y} = w_{0}$), non-astigmatic ($z_{0,x} = z_{0,y} = z_{0}$) Gaussian beam, $w_{x}\qty(z) = w_{y}\qty(z) = w\qty(z)$ so the intensity can be written as
+\begin{equation}
+	I\qty(x,y,z)
+		=	\frac{2 P}{\pi} \frac{1}{w^{2}\qty(z)} \exp[-\frac{2 \qty(x^2 + y^2)}{w^{2}\qty(z)}]
+		=	I_{0} \qty(\frac{w_{0}}{w\qty(z)})^{2} \exp[-\frac{2 \qty(x^2 + y^2)}{w^{2}\qty(z)}]
+\end{equation}
+for peak intensity $I_{0} = 2 P/\pi w_{0}^{2}$.
 
 \section{Unitary transformation}
 
