@@ -4,121 +4,107 @@ Random derivations are presented below: partly for completeness and partly becau
 
 \section{Gaussian Beams}
 
-Since we (almost) exclusively work with Gaussian laser beams in the lab, I found it instructive to derive the intensity for an astigmatic, elliptical Gaussian beam.
-The derivation below mostly follows from the ones presented in \cite{Siegman1986,Arnaud1969.AO.8.1687}.
+Since we work (almost) exclusively with Gaussian laser beams in the laboratory, I found it instructive to derive the intensity for an astigmatic, elliptical Gaussian beam.
+The derivation presented below mostly follows from ones presented in \cite{Siegman1986, Kogelnik1966.AO.5.1550, Arnaud1969.AO.8.1687}.
 
-We start with the wave equation for the electric field $\bm{E} = \widetilde{E}(x,y,z,t) \hat{e}$ where $\hat{e}$ is the unit polarization vector, $\widetilde{E}$ is the complex amplitude, and $c=\lambda f = \omega/k$
-\begin{align}
+\subsubsection{Paraxial Wave Equation}
+
+For an arbitrary electric field $\vb{E} = \widetilde{E}\qty(x,y,z,t) \vu{e}$, where $\vu{e}$ is the unit polarization vector and $\widetilde{E}$ is the complex amplitude, the wave equation gives
+\begin{equation}
 	\label{eq:wave_eq}
 	\frac{1}{c^2} \partial_{tt}\widetilde{E}
-		= \nabla^2\widetilde{E}
-		= \partial_{xx}\widetilde{E} + \partial_{yy}\widetilde{E} + \partial_{zz}\widetilde{E}
-\end{align}
-Choosing the $z$-axis as the direction of propagation, the time dependence can be removed by assuming $\widetilde{E}(x,y,z,t) = \widetilde{u}(x,y,z)\exp\left[-\iu (k z - \omega t)\right]$
-\begin{align}
+		=	\laplacian \widetilde{E}
+		=	\partial_{xx}\widetilde{E} + \partial_{yy}\widetilde{E} + \partial_{zz}\widetilde{E}
+\end{equation}
+As usual, $c=\lambda f=\omega/k$. 
+Choosing the $z$-axis as the direction of propagation, the time dependence can be removed by assuming $\widetilde{E}\qty(x,y,z,t) = \widetilde{u}\qty(x,y,z)\exp[-\iu \qty(k z - \omega t)]$
+\begin{equation}
 	\label{eq:paraxial_wave_eq}
-	0 = \partial_{xx}\widetilde{u} + \partial_{yy}\widetilde{u} + \partial_{zz}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u} \approx \partial_{xx}u + \partial_{yy}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u}
-\end{align}
-Here, the paraxial approximation $\abs{\partial_{zz}\widetilde{u}} \ll \abs{2 k \partial_{z}\widetilde{u}}, \abs{\partial_{xx}\widetilde{u}}, \abs{\partial_{yy}\widetilde{u}}$ was made which assumes the envelope of the electric field varies ``slowly'' along $z$.
-\cref{eq:paraxial_wave_eq} is generally referred to as the ``paraxial wave equation''.
+	0	=		\partial_{xx}\widetilde{u} + \partial_{yy}\widetilde{u} + \partial_{zz}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u}
+		\approx	\partial_{xx}\widetilde{u} + \partial_{yy}\widetilde{u} -\iu 2 k \partial_{z}\widetilde{u}
+\end{equation}
+Here, the paraxial approximation $\abs{\partial_{zz}\widetilde{u}} \ll \abs{2 k \partial_{z}\widetilde{u}}, \abs{\partial_{xx}\widetilde{u}}, \abs{\partial_{yy}\widetilde{u}}$ was made which assumes the envelope of the electric field $\widetilde{u}\qty(x,y,z)$ varies ``slowly'' along $z$\footnote{\cref{eq:paraxial_wave_eq} is generally referred to as the ``paraxial wave equation''.}.
 
-Working in rectangular coordinates, a beam with symmetry along the $x$- and $y$-axis, the paraxial wave equation can be further separated by writing $\widetilde{u}(x,y,z) = \widetilde{u}_{x}(x,z) \widetilde{u}_{y}(y,z)$ where $\widetilde{u}_{x}$ and $\widetilde{u}_{y}$ represent the electric field envelopes along the $x$-axis and $y$-axis, respectively.
+\subsubsection{Working in Rectangular Coordinates}
+
+Choosing the rectangular coordinate axes such that the beam is symmetric about the $x$-axis and $y$-axis, the paraxial wave equation can be further separated by writing $\widetilde{u}\qty(x,y,z) = \widetilde{u}_{x}\qty(x,z) \widetilde{u}_{y}\qty(y,z)$ where $\widetilde{u}_{i}\qty(x_{i},z)$ represent the electric field envelopes along the $x_{i}$-axis. 
 Inserting this in to \cref{eq:paraxial_wave_eq} leads to
-\begin{align}
-	\label{eq:sep_paraxial_wave_eq}
-	0 = u_{x}\left(\partial_{yy}u_{y} - \iu 2 k \partial_{z}u_{y}\right) + u_{y}\left(\partial_{xx}u_{x} - \iu 2 k \partial_{z}u_{x}\right)
-\end{align}
-Requiring $\widetilde{u}_{x}, \widetilde{u}_{y} \neq 0$ avoids the trivial solution meaning the terms in parentheses must be zero. 
-We only need to solve for $\widetilde{u}_{x}$ since the solution for $\widetilde{u}_{y}$ will be similar.
+\begin{equation}
+	\label{eq:transverse_paraxial_wave_eq}
+	0	=	\widetilde{u}_{x}\qty(\partial_{yy}\widetilde{u}_{y} - \iu 2 k \partial_{z}\widetilde{u}_{y})
+			+ \widetilde{u}_{y}\qty(\partial_{xx}\widetilde{u}_{x} - \iu 2 k \partial_{z}\widetilde{u}_{x})
+\end{equation}
+Requiring $\widetilde{u}_{x}\qty(x,z), \widetilde{u}_{y}\qty(y,z) \neq 0$ to avoid the trivial solution means the terms in parentheses must vanish.
+Since the terms in the parentheses both have the same form, we only need to find the solution for one axis coordinate with the other solution obtained by analogy.
 
-\subsection{Solving $0 = \partial_{xx}\widetilde{u}_{x} - \iu 2 k \partial_{z}\widetilde{u}_{x}$}
+\subsubsection{Solving $0 = \partial_{xx}\widetilde{u}_{x} - \iu 2 k \partial_{z}\widetilde{u}_{x}$}
 
-Using the trial solution $\widetilde{u}_{x}(x,z) = \widetilde{A}(z) \exp\left[-\iu k \frac{x^2}{2\widetilde{q}(z)}\right]$, where $\widetilde{A}(z)$ and $\widetilde{q}(z)$ can be complex, and collecting terms in powers of $x$
-\begin{align}
-	0 = -\iu \widetilde{q} \left(\widetilde{A} + 2 q \widetilde{A}^\prime\right) + k \widetilde{A} \left(\widetilde{q}^\prime - 1\right) x^2
-\end{align}
-Requiring $\widetilde{A}(z), \widetilde{q}(z) \neq 0$ means the terms in the parentheses must be zero
-\begin{align}
-	0 &= \widetilde{q}^\prime - 1 								\label{eq:q_prime}	\\
-	0 &= \widetilde{A} + 2 \widetilde{q} \widetilde{A}^\prime	\label{eq:A_prime}
-\end{align}
-With the condition $\widetilde{q}(0) = \widetilde{q}_0$, \cref{eq:q_prime} is easily solved
-\begin{align}
-	\label{eq:q_sol}
-	\frac{d\widetilde{q}}{dz} = 1 \implies \widetilde{q}\left(z\right) = z + \widetilde{q}_0
-\end{align}
-Plugging \cref{eq:q_sol} into \cref{eq:A_prime} and taking $\widetilde{A}(0) = \widetilde{A}_0$
-\begin{align}
-	\frac{d\widetilde{A}}{dz} = -\frac{\widetilde{A}}{2\widetilde{q}}
-		= -\frac{\widetilde{A}}{2\left(\widetilde{q}_0 + z\right)} \implies \widetilde{A}(z)
-		= \widetilde{A}_0 \sqrt{\frac{\widetilde{q}_0}{\widetilde{q}_0 + z}}
-		= \widetilde{A}_0 \sqrt{\frac{\widetilde{q}_0}{\widetilde{q}(z)}}
-\end{align}
+Inserting the trial solution $\widetilde{u}_{x}\qty(x,z) = \widetilde{A}\qty(z) \exp[-\iu k {x^2}/{2\widetilde{q}\qty(z)}]$, where $\widetilde{A}\qty(z)$ and $\widetilde{q}\qty(z)$ can be complex, in to \cref{eq:transverse_paraxial_wave_eq} and collecting terms in powers of $x$ leads to
+\begin{equation}
+	0	=	-\iu \widetilde{q} \qty(\widetilde{A} + 2 q \dv{\widetilde{A}}{z})
+			+ k \widetilde{A} \qty(\dv{\widetilde{q}}{z} - 1) x^2
+\end{equation}
+Requiring $\widetilde{A}\qty(z), \widetilde{q}\qty(z) \neq 0$ means the terms in the parentheses must be zero.
+Using the conditions $\widetilde{q}\qty(z_{0}) = \widetilde{q}_{0}$ and $\widetilde{A}\qty(z_{0}) = \widetilde{A}_{0}$, 
+\begin{equation}
+	\label{eq:q_prime}
+	0	=			\dv{\widetilde{q}}{z} - 1
+		\implies	\widetilde{q}\qty(z) = z - z_{0} + \widetilde{q}_{0}
+\end{equation}
+\begin{equation}
+	\label{eq:A_prime}
+	0	=			\widetilde{A} + 2 \widetilde{q} \dv{\widetilde{A}}{z}
+		\implies	\widetilde{A}\qty(z) = \widetilde{A}_{0} \sqrt{\frac{\widetilde{q}_{0}}{\widetilde{q}\qty(z)}}
+\end{equation}
 
-%\subsubsection{Complex beam parameter $\widetilde{q}(z)$}
-
-The complex beam parameter $\widetilde{q}(z)$ can be related the real-valued radius of curvature $R(z)$ and spot size $w(z)$ by the definition $\frac{1}{\widetilde{q}(z)} \equiv \frac{1}{R(z)} - \iu \frac{\lambda}{\pi w^2(z)}$.
-At the beam waist, taken to be at $z=0$, $R(0) \rightarrow \infty$ so we can relate $\widetilde{q}(0) = \widetilde{q}_0$ to $w(0) = w_0$, 
-\begin{align}
-	\frac{1}{\widetilde{q_0}} = -\iu \frac{\lambda}{\pi w_0^2} \implies \widetilde{q_0} = \iu \frac{\pi w_0^2}{\lambda} = \iu z_R
-\end{align}
-where ${z_R \equiv \frac{\pi w_0^2}{\lambda}}$ is the Rayleigh length.
+$\widetilde{q}\qty(z)$ is the complex beam parameter and can be related the (real-valued) radius of curvature $R\qty(z)$ and spot size $w\qty(z)$ by the definition $1/\widetilde{q}\qty(z) \equiv 1/R\qty(z) - \iu \lambda/\pi w^{2}\qty(z)$.
+At $z=z_{0}$, the beam is at a waist $w\qty(z_{0}) = w_0$ with $R\qty(z_{0}) \rightarrow \infty$, allowing us to relate $\widetilde{q}_{0}$ to $w_{0}$, 
+\begin{equation}
+	\frac{1}{\widetilde{q}\qty(z_{0})} = -\iu \frac{\lambda}{\pi w^{2}\qty(z_{0})} \implies \widetilde{q_0} = \iu \frac{\pi w_0^2}{\lambda} = \iu z_R
+\end{equation}
+where $z_R \equiv \pi w_{0}^{2}/\lambda$ is the Rayleigh length.
 From this, it follows 
-\begin{align}
-	\frac{1}{z + \iu z_R}
-		&= \frac{1}{R} - \iu \frac{\lambda}{\pi w^2}	\nonumber \\
-	z + \iu z_R	
-		&= \left(\frac{\pi w^2}{\lambda}\right)^2 \frac{R}{R^2 + \left(\frac{\pi w^2}{\lambda}\right)^2} 
-			+ \iu \left(\frac{\pi w^2}{\lambda}\right) \frac{R^2}{R^2 + \left(\frac{\pi w^2}{\lambda}\right)^2}
-\end{align}
+\begin{equation}
+	\frac{1}{\widetilde{q}\qty(z)}	=	\frac{1}{z - z_{0} + \iu z_{R}}	= \frac{1}{R\qty(z)} -\iu \frac{\lambda}{\pi w^{2}\qty(z)}
+\end{equation}
 Equating the real and imaginary parts gives
 \begin{align}
-	R(z)	&= z + \frac{z_R^2}{z}	\\
-	w^2(z)	&= w_0^2 \left[1+\left(\frac{z}{z_R}\right)^2\right]
+	R\qty(z)		&{}={}	\qty(z-z_{0}) \qty[1 + \frac{z_R^2}{\qty(z-z_{0})^2}]	\\
+	w^{2}\qty(z)	&{}={}	w_{0}^{2} \qty[1+\frac{\qty(z-z_0)^2}{z_R^2}]
 \end{align}
-
-%\subsubsection{The (unnormalized) solution}
 
 Putting all the parts together gives the (unnormalized) solution
 \begin{align}
-	\widetilde{u}_{x}(x,z) = \widetilde{A}_0 \frac{1}{\sqrt{1 - \iu \frac{z}{z_R}}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z)} - \iu\frac{\lambda}{\pi w^2(z)}\right)\right]
+	\widetilde{u}_{x}\qty(x,z)
+		=	\widetilde{A}_0 \frac{1}{\sqrt{1 - \iu \frac{z-z_0}{z_R}}} \exp[-\iu k \frac{x^2}{2}\qty(\frac{1}{R\qty(z)} - \iu\frac{\lambda}{\pi w^{2}\qty(z)})]
 \end{align}
-To normalize, we follow the usual procedure to find $|\widetilde{A}_0|$
-\begin{align}
-	1	&= \int_{-\infty}^{\infty} \widetilde{u}_{x}^{*}\widetilde{u}_{x} \,dx \nonumber \\
-		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \int_{-\infty}^{\infty} \exp\left[-\frac{2 x^2}{w^2(z)}\right] \,dx \nonumber \\
-		&= \abs{\widetilde{A}_0}^2 \frac{1}{\sqrt{1 + \left(\frac{z}{z_R}\right)^2}} \sqrt{\frac{\pi}{2}} w(z) \nonumber \\
-		&= \abs{\widetilde{A}_0}^2 \sqrt{\frac{\pi}{2}} w_0
-\end{align}
-Therefore the solution for the $x$-axis is
-\begin{align}
-	\abs{\widetilde{A}_0}^2 = \sqrt{\frac{2}{\pi}}\frac{1}{w_0} \implies \abs{\widetilde{A}_0} = \pm \left(\frac{2}{\pi}\right)^{1/4} \frac{1}{\sqrt{w_0}}
-\end{align}
-Taking the positive value for $\abs{\widetilde{A}_0}$ gives the normalized solution for the envelope along the $x$-axis
-\begin{align}
-	\widetilde{u}_{x}(x,z)
-		&= \left(\frac{2}{\pi}\right)^{1/4} \frac{1}{\sqrt{w_0\left(1 - \iu \frac{z}{z_R}\right)}} \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z)} - \iu\frac{\lambda}{\pi w^2(z)}\right)\right]
-\end{align}
+To normalize, we follow the usual procedure for finding $\abs{\widetilde{A}_0}^{2}$
+\begin{equation}
+	1	=	\int_{-\infty}^{\infty} \widetilde{u}_{x}^{*}\qty(x,z) \widetilde{u}_{x}\qty(x,z) \dd{x}
+		=	\abs{\widetilde{A}_0}^2 \frac{w_0}{w\qty(z)} \int_{-\infty}^{\infty} \exp[-\frac{2 x^2}{w^2\qty(z)}] \dd{x}
+		=	\abs{\widetilde{A}_0}^2 \sqrt{\frac{\pi}{2}} w_0
+\end{equation}
+With $\abs{\widetilde{A}_0}^2 = \sqrt{2/\pi}/w_0$, the solution for $\abs{\widetilde{u}_{x}\qty(x,z)}$ is
+\begin{equation}
+	\abs{\widetilde{u}_{x}\qty(x,z)}^2	=	\sqrt{\frac{2}{\pi}} \frac{1}{w\qty(z)} \exp[-\frac{2 x^2}{w^2(z)}]
+\end{equation}
 
-\subsection{Normalized solution}
+\subsubsection{Complete Solution}
 
-(**the parts below get messy and need to be worked on.)
+Since $\widetilde{u}_{x}\qty(x,z)$ and $\widetilde{u}_{y}\qty(y,z)$ are both normalized for all $z$, we can set the $x$-axis and $y$-axis beam waists independently.
+Letting $z_{x,0}$ and $z_{y,0}$ be the locations of the $x$-axis and $y$-axis waists, the complete solution can be written as
 
-A general solution $\widetilde{u}(x,y,z)$ with $x$-waist ($y$-waist) of $w_{x,0}$ ($w_{y,0}$) at $z_{x,0}$ ($z_{y,0}$)
-\begin{align}
-	\label{eq:E_sol}
-	\widetilde{u}(x,y,z)
-		=& \widetilde{u}_x(x-x_0,z) \widetilde{u}_y(y-y_0,z) \exp\left[-\iu (k z - \omega t)\right] \nonumber \\
-		=& \left(\frac{2}{\pi}\right)^{1/2}
-			\frac{1}{\sqrt{w_{x,0}\left(1 - \iu \frac{z-z_{x,0}}{z_{x,R}}\right)}} \frac{1}{\sqrt{w_{y,0}\left(1 - \iu \frac{z-z_{y,0}}{z_{y,R}}\right)}} \nonumber \\
-		& \times \exp\left[-\iu k \frac{x^2}{2}\left(\frac{1}{R(z-z_{x,0})} - \iu\frac{\lambda}{\pi w^2(z-z_{x,0})}\right)\right] \nonumber \\
-		& \times \exp\left[-\iu (k {z-z_{x,0}} - \omega t)\right] \nonumber \\
-\end{align}
+**********************
 
+**********************
 
-**************************
+**********************
 
-Interesting discussions about astigmatic Gaussian beams are discussed in \cite{Arnaud1969.AO.8.1687,Kochkina2013.AO.52.6030}.
+\begin{equation}
+	\left|\widetilde{u}\left(x,y,z\right)\right|^2
+		=	\frac{2}{\pi} \frac{1}{w_{x}(z) w_{y}(z)} \exp\left[-\frac{2x}{w_{x}(z)^2} -\frac{2y}{w_{y}(z)^2}\right]
+\end{equation}
+where $w_{i}(z) = w(z-z_{i,0})$ for $i \in \{x,y\}$.
 
 \section{Unitary transformation}
 
@@ -154,26 +140,54 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 	\hat{V}_\text{hf} \simeq \frac{a_{5s}}{2} \left(\hat{s}_{\text{in},+}\hat{I}_{-} + \hat{s}_{\text{in},-}\hat{I}_{+} + 2\hat{s}_{\text{in},z}\hat{I}_{z}\right)
 \end{equation}
 
-\subsubsection{Singly Excited Singlet and Triplet Spin States}
+\subsubsection{Singly Excited Singlet and Triplet States}
 
-Before going to the derivations, it will be helpful to know the singlet and triplet spin wave functions for two electron systems.
-Using $\ket{+}$ ($\ket{-}$) for spin-up (spin-down), the singlet and triplet wave functions are  (see e.g., \cite{Sakurai2010})
+Before going to the derivations, it will be helpful to write out the singlet and triplet spin wave functions for two electron systems.
+In the following, I use the notation $\ket{\psi_1;\psi_2}=\ket{\psi_1}\ket{\psi_2}$ for electron 1 and electron 2.
+Denoting $\ket{+}$ for a spin-up electron and $\ket{-}$ for a spin-down electron, the singlet and triplet wave functions $\ket{S,m_S}_{S}$ are (see e.g., \cite{Sakurai2010})
 \begin{align}
-	\ket{S=0,m_J=0}		&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} - \ket{-;+}\right)	\\
-	\ket{S=1,m_J=1}		&{}={}	\ket{+;+}											\\
-	\ket{S=1,m_J=0}		&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} + \ket{-;+}\right)	\\
-	\ket{S=1,m_J=-1}	&{}={}	\ket{-;-}
+	\ket{0,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} - \ket{-;+}\right)	\\
+	\ket{1,1}_{S}	&{}={}	\ket{+;+}											\\
+	\ket{1,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{+;-} + \ket{-;+}\right)	\\
+	\ket{1,-1}_{S}	&{}={}	\ket{-;-}
 \end{align}
-Note that the two electrons are labeled $\ket{s_1;s_2}$.
 
-For a singly excited Rydberg states with the ``inner'' electron in the $\ket{ms}$ state and the Rydberg electron in the $\ket{nl}$ state, the $LS$-coupled $\SLJ{$2S+1$}{L}{$J$}$ Rydberg states can be written as
+For a singly excited Rydberg states $\ket{\nSLJM{msnl}{1}{L}{$J$}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{ms}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm}=\frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}\right)$.
+Therefore the combined orbital and spin wave functions for singlet and triplet states are
 \begin{align}
-	\ket{\nSLJ{msns}{1}{L}{$J$}}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl} + \ket{nl;ms}\right) \ket{S=0,m_S=0}				\notag	\\
-									&{}={}	\frac{1}{2} \left(\ket{ms;nl} + \ket{nl;ms}\right) \left(\ket{+;-} - \ket{-;+}\right)	\\
-	\ket{\nSLJ{msns}{3}{L}{$J$}}	&{}={}
+	\ket{\nSLJM{msnl}{1}{L}{$J$}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
+											&{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
+	\ket{\nSLJM{msnl}{3}{L}{$J$}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
+											&{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
+\end{align}
+with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+
+Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}$, we can combine the $\ket{J,m_J}_{J}$ states with $\ket{I,m_I}_{I}$ to get $\ket{F,m_F}_{F}$ basis states
+\begin{align}
+	\ket{\nSLJFM{msnl}{$2S+1$}{L}{$J$}{F}{m_F}}_{F}
+		&{}={}	\sum_{m_J} \sum_{m_I} \CG{J,m_J}{I,m_I}{F,m_F} \ket{\nSLJM{msnl}{$2S+1$}{L}{$J$}{m_J}}_{J} \ket{I,m_I}_{I}	\notag	\\
+		&{}={}	\sum_{m_J} \CG{J,m_J}{I,m_I}{F,m_F} \ket{\nSLJM{msnl}{$2S+1$}{L}{$J$}{m_J}}_{J} \ket{I,m_I=m_F-m_J}_{I}
 \end{align}
 
 \subsection{Singly excited $S$ states}
+
+For singly excited $\ket{\nSLJFM{n}{1}{S}{0}{F}{m_F}}_{F}$ and $\ket{\nSLJFM{n}{3}{S}{1}{F}{m_F}}_{F}$ states, the four basis states are
+\begin{align}
+	\ket{\nSLJFM{n}{1}{S}{0}{F=I}{m_F}}_{F}
+		&{}={}	\ket{\nSLJm{n}{1}{S}{0}{0}}_{J} \ket{I,m_I=m_F-m_J}_{I}	\\
+	\ket{\nSLJm{msns}{3}{S}{1}{1}}	&{}={}	\ket{1,0}_{L-} \ket{1,1}_{S}	\\
+	\ket{\nSLJm{msns}{3}{S}{1}{0}}	&{}={}	\ket{1,0}_{L-} \ket{1,0}_{S}	\\
+	\ket{\nSLJm{msns}{3}{S}{1}{-1}}	&{}={}	\ket{1,0}_{L-} \ket{1,-1}_{S}
+\end{align}
+
+
+
+
+*******************
+
+*******************
+
+*******************
 
 Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}=\bm{S}+\bm{I}$\footnote{Since $L=0$ for $S$~states.}, we can use Clebsch–Gordan coefficients\footnote{I use the following notation for Clebsch–Gordan coefficients: $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.} to expand $\ket{F,m_F}$ into the $\ket{J,m_J}\ket{I,m_I}$ basis
 \begin{align}
