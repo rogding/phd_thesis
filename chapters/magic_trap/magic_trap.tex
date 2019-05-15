@@ -85,6 +85,13 @@ The ``cancel'' beam is generated from a slave injection locked closer to resonan
 *** Add more details? ***
 Based on our experiences with $\SI{60}{\um} \times \SI{60}{\um}$ crossed-beam \SI{1064}{\nm} ODT and the designs of other groups \cite{Stellmer2013.PRA.87.013611}, we decided to try starting with a $\SI{60}{\um} \times \SI{60}{\um}$ circular dimple propagating nearly vertically.
 This waist size is relatively easy to generate with reasonably focal length lenses allowing us to place the setup somewhere convenient. 
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=4in, height=\textheight]{magic_trap/dimple_setup/dimple_profile.svg}
+	\caption{
+		\label{fig:magic_dimple_profile}
+		The dimple is relatively well described by a nearly-circular Gaussian beam with waists $w_{0,x}=\SI{64.9+-1.6}{\um}$ and $w_{0,y}=\SI{59.5+-1.1}{\um}$ located at $z_{0,x}=\SI{27.17+-0.07}{\cm}$ and $z_{0,y}=\SI{26.98+-0.07}{\cm}$.}
+\end{figure}
 
 The ``trap'' light is generated from RS3 injection locked at \SI{-1323.44}{\MHz} from the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}, putting it about \SI{-82}{\MHz} detuned of the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{11/2}$ transition needed for the operating an \Sr{87} red MOT. 
 Since we needed an additional AOM to provide the amplitude modulation for lock-in power control, an additional \SI{-85}{\MHz} was applied, placing the final detuning of the ``trap'' beam at \SI{-1408.44}{\MHz}. 
@@ -123,13 +130,19 @@ This was accomplished by chopping the trap and cancel beams at two different fre
 
 \section{Single-Isotope Testing with \Sr{84}}
 
-With some concerns of heating due to off-resonant scattering of the \SI{689}{\nm} ``trap'' and ``stir'' beams, we first tested the dimple with just the trap beam (still being chopped at \SI{500}{\kHz}) in order to see how well we're able to evaporate with the dimple on.
+With some concerns of heating due to off-resonant scattering of the \SI{689}{\nm} ``trap'' and ``cancel'' beams, we first tested the dimple with just the ``trap'' beam (still being chopped at \SI{500}{\kHz}) in order to see how well we're able to evaporate with the dimple on.
+We decided to work with \Sr{84} because it's easy to evaporate to quantum degeneracy.
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=3in, height=\textheight]{magic_trap/dimple_84Sr/dimple-84Sr_lifetime.svg}
+	\caption{
+		\label{fig:dimple-84Sr_lifetime}
+		Lifetime of \Sr{84} in dimple varying the (time-averaged) $P_\text{trap}$.
+		Horizontal shaded region represents the lifetime of atoms in just the sheet trap.}
+\end{figure}
 
-With just these beam parameters, the hypothetical trap frequencies are xxx Hz, yyy Hz, and zzz Hz. 
-
-Blah blah blah.
-
-Blah blah blah.
+The \SI{1064}{\nm} sheet trap provides tight confinement along gravity but loose confinement transversely. 
+With xxx power in the ``trap'' beam, the transverse trap depth should be able to increase the transverse confinement to about xxx nK. 
 
 In this configuration, we were able to produce an \Sr{84} BEC in just the sheet trap as well as in the dimple following the same intensity ramp of the sheet. 
 (** Show images of evaporation in just sheet vs. evaporation in sheet + dimple **)
