@@ -119,22 +119,38 @@ Therefore $F=I$ submatrix of the block-diagonal $\hat{V}_\text{hf}$ matrix can b
 								\sqrt{I\left(I+1\right)}	& -1						\\ 
 							\end{pmatrix}
 \end{equation}
-Diagonalizing the total Hamiltonian $\hat{H}$ gives the eigenenergies
+Diagonalizing the total Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}_\text{hf}$ gives the eigenenergies
 \begin{equation}
 	E^{\pm}	=	\frac{E_{1}+E_{3}}{2} - \frac{1}{4} a_{5s} \pm \frac{1}{2} \sqrt{\qty(E_{1}-E_{3})^2 + a_{5s} \qty(E_{1}-E_{3}) + a_{5s}^{2} \qty(I + \frac{1}{2})^2}
 \end{equation}
 Taking the limit $a_{5s} \rightarrow 0$ (i.e., no hyperfine interaction), we observe $E^{+} \rightarrow E\qty(\SLJ{1}{S}{0})$ and $E^{-} \rightarrow E\qty(\SLJ{3}{S}{1})$ meaning $E^{+}$ corresponds to the energy of $\ket{\nSLJf{5sns}{1}{S}{0}{9/2}}$ and $E^{+}$ corresponds to energy of $\ket{\nSLJf{5sns}{3}{S}{1}{9/2}}$.
 
-\subsubsection{{$n$-mixing}}
+\subsubsection{$n$-mixing}
 
-At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n \pm 1$. 
-Since the radial matrix elements are only orthogonal for the same $n$, there's mixing between states of different $n$ \cite{Beigang1983.PRL.51.771}.
-For \Sr{87}, this occurs around $n=113$ (** CHECK **). 
+At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$. 
+Since the radial matrix elements are only orthogonal for the same $n$, there's mixing between states of different $n$, occurring around $n=113$ in \Sr{87} \cite{Beigang1983.PRL.51.771}.
 
-The overlap integrals between adjacent $n$ can be approximated by \cite{Beigang1983.PRL.51.771, Bhatti1981.PRA.24.161}
+Considering the orthogonality of the radial wave functions, states of the same $F$ but different $n$ are decoupled. 
+On the other hand, the $F=I$ components can experience $n$-mixing due to singlet-triplet mixing. 
+
+************************
+
+The radial overlap integrals between $n_{1}^{*} = n_{1} - \delta_{1}$ and $n_{2}^{*} = n_{2} - \delta_{2}$ can be approximated semiclassically by \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
 \begin{equation}
-	\braket{n^\star}{\left(n+1\right)^\star} = -\frac{2\left[n^\star\left(n+1\right)^\star\right]}{n^\star + \left(n+1\right)^\star} ....
+	O_{n_{1},n_{2}}
+		=	\braket{n_{1}^{*}}{n_{2}^{*}}
+		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
 \end{equation}
+Between adjacent $n_{1}$ and $n_{2} = n_{1} + 1$ and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
+\begin{equation}
+	O_{n_{1},n_{1}+1}
+		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
+		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
+\end{equation}
+Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
+Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
+
+
 
 (** SHOW FIGURE **)
 
