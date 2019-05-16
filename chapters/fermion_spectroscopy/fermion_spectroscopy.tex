@@ -86,30 +86,30 @@ In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496
 A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
 ** I need to actually do the derivation.... **
 
-Assuming there are no perturbing states, a reasonable assumption for $n \gtrsim 12$ for the both the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg series \cite{Vaillant2014.JPB.47.155001}, we start with the pure singly-excited singlet $\ket{\nSLJf{n}{1}{S}{0}{I}}$ and triplet $\ket{\nSLJf{n}{3}{S}{1}{I+1}}$, $\ket{\nSLJf{n}{3}{S}{1}{I}}$, and $\ket{\nSLJf{n}{3}{S}{1}{I-1}}$ hyperfine states.
+Assuming there are no perturbing states, a reasonable assumption for $n \gtrsim 12$ for the both the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg series \cite{Vaillant2014.JPB.47.155001}, we start with the pure singly-excited singlet $\ket{\SLJf{1}{S}{0}{I}}$ and triplet $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$ hyperfine states.
 Applying $\hat{V}_\text{hf}$ to these basis states gives
 \begin{align}
-	&	\hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I+1}}	=	\frac{1}{2}a_{5s} I \ket{\nSLJf{n}{3}{S}{1}{I+1}}	\\
-	&	\hat{V}_\text{hf} \ket{\nSLJf{n}{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)} \ket{\nSLJf{n}{3}{S}{1}{I}}	\\
-	&	\hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I}}	=	\frac{1}{2} a_{5s} \qty(\sqrt{I\qty(I+1)} \ket{\nSLJf{n}{1}{S}{0}{I}} - \ket{\nSLJf{n}{3}{S}{1}{I}})	\\
-	&	\hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \ket{\nSLJf{n}{3}{S}{1}{I-1}}
+	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \ket{\SLJf{3}{S}{1}{I+1}}	\\
+	&	\hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)} \ket{\SLJf{3}{S}{1}{I}}	\\
+	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	\frac{1}{2} a_{5s} \qty(\sqrt{I\qty(I+1)} \ket{\SLJf{1}{S}{0}{I}} - \ket{\SLJf{3}{S}{1}{I}})	\\
+	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \ket{\SLJf{3}{S}{1}{I-1}}
 \end{align}
 From the above, it's apparent that the unmixed states have energy shifts
 \begin{equation}
-	\bra{\nSLJf{n}{3}{S}{1}{I+1}} \hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I	\approx	\SI{-2.25}{\GHz}
+	\bra{\SLJf{3}{S}{1}{I+1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I			\approx	\SI{-2.25}{\GHz}
 \end{equation}
 \begin{equation}
-	\bra{\nSLJf{n}{3}{S}{1}{I-1}} \hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1)	\approx	\SI{2.75}{\GHz}
+	\bra{\SLJf{3}{S}{1}{I-1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1)	\approx	\SI{2.75}{\GHz}
 \end{equation}
 The matrix elements of the mixed $F=I$ states are
 \begin{equation}
-	\bra{\nSLJf{n}{1}{S}{0}{I}} \hat{V}_\text{hf} \ket{\nSLJf{n}{1}{S}{0}{I}}	=	0
+	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	0
 \end{equation}
 \begin{equation}
-	\bra{\nSLJf{n}{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\nSLJf{n}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s}
+	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s}
 \end{equation}
 \begin{equation}
-	\bra{\nSLJf{n}{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\nSLJf{n}{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)}
+	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)}
 \end{equation}
 Therefore $F=I$ submatrix of the block-diagonal $\hat{V}_\text{hf}$ matrix can be written as
 \begin{equation}
