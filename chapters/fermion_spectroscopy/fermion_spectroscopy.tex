@@ -80,7 +80,7 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
 Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
 
-\subsection{Singly-Excited {$S$-states}}
+\subsection{Singly Excited $S$ states}
 
 In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
 A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
@@ -156,7 +156,22 @@ Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\br
 
 As see in Fig. xx, the strongest {$n$-mixing} occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \sim \num{0.1}$ and which quickly drops off for larger $\Delta n$. 
 
-\subsection{$D$-states}
+\subsection{Singly Excited $D$ states}
+
+Even before including hyperfine interactions (i.e., in the bosons), the spin-orbit interactions leads to a breakdown of $LS$ coupling and mixes the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states and is especially strong around $n = \num{15}$ where they swap singlet and triplet character \cite{Esherick1977.PRA.15.1920, Vaillant2014.JPB.47.155001}.
+To account for this mixing, the eigenstates $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{2}$ of the $H_{0}\qty(88, m_{87})$ are expanded as
+\begin{align}
+	\ket{\nSLJ{5sns}{1}{D}{2}}	&{}={}	\cos\theta\ket{\nSLJ{n}{1}{D}{2}} + \sin\theta\ket{\nSLJ{n}{3}{D}{2}} \\
+	\ket{\nSLJ{5sns}{3}{D}{2}}	&{}={}	-\sin\theta\ket{\nSLJ{n}{1}{D}{2}} + \cos\theta\ket{\nSLJ{n}{3}{D}{2}}
+\end{align}
+where $\theta$ is the mixing angle \cite{Sun1989.JPB.22.2887} of the pure singlet $\ket{\nSLJ{n}{1}{D}{2}}$ and triplet $\ket{\nSLJ{n}{3}{D}{2}}$ states.
+*** For higher $n$, the singlet-triplet mixing of the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states becomes nearly $n$ independent as evidenced by their quantum defects \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}. **
+Calculations using a two-active-electron (TAE) model \cite{Ye2013.PRA.88.043430, Fields2018.PRA.97.013429} estimates that converges towards $\theta \sim \num{-0.16}$ for high $n$.
+** Where does $\theta \sim \num{-0.14}$ come from? **
+
+***************************
+
+The $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{J}$
 
 ** Stuff about D-states. **
 
