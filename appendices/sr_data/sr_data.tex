@@ -7,16 +7,16 @@ This appendix contains some relevant values for strontium used throughout this t
 There are four naturally occurring stable isotopes of strontium.
 
 \begin{table}[H]
-	\caption{\label{tab:sr_phys_prop}Some physical properties of four naturally occurring isotopes of strontium \cite{nist_edi, CIAAW2017.atomic_weights, Wang2017.CPC.41.030003}.}
+	\caption{\label{tab:sr_phys_prop}Some physical properties of four naturally occurring isotopes of strontium \cite{nist_edi}.}
 	\centering
 	\begin{tabular}{@{}cccc@{}}
 		\toprule
-		Isotope	& {$I$}		& Atomic mass {[\si{\amu}]}			& Abundance {[\si{\percent}]}	\\
+		Isotope	& {$I$}		& Atomic mass {[\si{\amu}]}		& Abundance {[\si{\percent}]}	\\
 		\midrule
-		\Sr{88}	& \num{0}	& \num{87.905612256+-0.000000006}	& \num{82.58(35)}				\\
-		\Sr{87}	& \num{9/2}	& \num{86.908877496+-0.000000005}	& \num{7.00(20)}				\\
-		\Sr{86}	& \num{0}	& \num{85.909260726+-0.000000006}	& \num{9.86(20)}				\\
-		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}		& \num{0.56(2)}					\\
+		\Sr{88}	& \num{0}	& \num{87.9056125+-0.0000012}	& \num{82.58(35)}				\\
+		\Sr{87}	& \num{9/2}	& \num{86.9088775+-0.0000012}	& \num{7.00(20)}				\\
+		\Sr{86}	& \num{0}	& \num{85.9092606+-0.0000012}	& \num{9.86(20)}				\\
+		\Sr{84}	& \num{0}	& \num{83.9134191+-0.0000013}	& \num{0.56(2)}					\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -133,9 +133,27 @@ In particular, the coupling of the single valence electron to the $I=9/2$ nuclea
 
 The hyperfine splitting of the $\SLJ{2}{S}{1/2}$ was measured to be \SI{5002368.363(57)}{\kHz}, meaning the magnetic hyperfine constant was determined to be $A = \SI{-1000473.673(11)}{\kHz}$. 
 
-\subsection{Mass-corrected Rydberg constant ({$R_{\text{Sr}}$})}
+\subsection{Strontium Rydberg Constant}
 
 Using the value of the Rydberg constant {$R_\infty = \SI{109737.31568508(65)}{\per\cm}$}, electron mass {$m_e = \SI{9.10938356(11)E-31}{\kg}$}, {$\si{\amu} = \SI{1.660539040(20)E-27}{\kg}$} \cite{Mohr2016.RMP.88.035009}, and the masses of the strontium atoms, the mass-corrected Rydberg constants are
+
+\begin{table}[H]
+	\caption{
+		\label{tab:sr_Rydberg_constants}
+		Calculated mass-scaled Rydberg constants for strontium. 
+		Values of the fundamental constants $R_{\infty} = \SI{109737.31568508(65)}{\per\cm}$, $m_{e} = \SI{9.10938356(11)E-31}{\kg}$, and $m_u = \SI{1.660539040(20)E-27}{\kg}$ are from \cite{Mohr2016.RMP.88.035009}.}
+	\centering
+	\begin{tabular}{@{}cc@{}}
+		\toprule
+		Isotope	& $R$ {[\si{\per\cm}]}				\\
+		\midrule
+		\Sr{88}	& \num{109736.6308675+-0.0000007}	\\
+		\Sr{87}	& \num{109736.6230135+-0.0000007}	\\
+		\Sr{86}	& \num{109736.6149538+-0.0000007}	\\
+		\Sr{84}	& \num{109736.5982874+-0.0000007}	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \subsection{Data from papers}
 

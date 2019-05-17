@@ -37,7 +37,7 @@ The value estimated using this method is **\SI{45932.19870+-0.00035}{\per\cm}**.
 		Mass-scaled $E_\text{ion}$.}
 \end{figure}
 
-\section{Rydberg States of Hyperfine Cplit cores}
+\section{Rydberg States of Hyperfine Split cores}
 
 A modern paper is \cite{Robicheaux2018.PRA.97.022508}. 
 
@@ -79,6 +79,22 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 \end{equation}
 with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
 Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
+
+The energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
+As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
+\begin{figure}[H]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=4in]{fermion_spectroscopy/calculations/n-scaling.svg}
+	\caption{
+		\label{fig:n-scaling}
+		The $n$ scaling of various splittings in \Sr{88} calculated from the most recent quantum defects \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503} and ionization energy \cite{Couturier2019.PRA.99.022503}.
+		$\abs{a_{5s}}$ is the energy scale of the hyperfine interaction energy.
+		$\Delta E^{\qty(0)}_{S}\qty(S)$ and $\Delta E^{\qty(0)}_{S}\qty(D)$ are the singlet-triplet splittings between the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states and between the $\nSLJ{5snd}{1}{D}{2}$ and $\nSLJ{5snd}{3}{D}{2}$ states, respectively.
+		$\Delta E^{\qty(0)}_{n}\qty(S)$ is the splitting between $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5s\qty(n+1)s}{3}{S}{1}$ states.
+		$\Delta E^{\qty(0)}_{J}\qty(D)$ is the splitting between $\nSLJ{5snd}{3}{D}{1}$ and $\nSLJ{5snd}{3}{D}{2}$ states.}
+\end{figure}
+One would also From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290}.
+Hyperfine mixing was also observed between the $\nSLJ{5snd}{1}{D}{2}$ and $\nSLJ{5snd}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
 \subsection{Singly Excited $S$ states}
 
@@ -169,6 +185,8 @@ where $\theta$ is the mixing angle \cite{Sun1989.JPB.22.2887} of the pure single
 Calculations using a two-active-electron (TAE) model \cite{Ye2013.PRA.88.043430, Fields2018.PRA.97.013429} estimates that converges towards $\theta \sim \num{-0.16}$ for high $n$.
 ** Where does $\theta \sim \num{-0.14}$ come from? **
 
+** See \cite{Gudde1993.PRA.47.4725} for a calculation of mixing coefficients? **
+
 ***************************
 
 The $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{J}$
@@ -184,7 +202,7 @@ To account for this mixing, the $D$ states for $I=0$ (i.e., the eigenstates of $
 	\ket{\nSLJ{5snd}{1}{D}{2}}	&{}={}	\cos\theta \ket{\nSLJ{n^{*}_{1}}{1}{D}{2}} + \sin\theta \ket{\nSLJ{n^{*}_{1}}{3}{D}{2}}	\\
 	\ket{\nSLJ{5snd}{3}{D}{2}}	&{}={}	-\sin\theta \ket{\nSLJ{n^{*}_{3}}{1}{D}{2}} + \cos\theta \ket{\nSLJ{n^{*}_{3}}{3}{D}{2}}
 \end{align}
-The singlet-triplet mixing is known to be strong around $n=15$ ** \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang982.PRL.48.290} - also check these**. 
+The singlet-triplet mixing is known to be strong around $n=15$ ** \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang1982.PRL.48.290} - also check these**. 
 For higher $n$, on the other hand, the singlet-triplet mixing becomes nearly $n$ independent and $\theta$ is estimated to converge towards $\theta \sim \num{-0.14}$.
 (The TAE calculation yields a similar value, $\theta \sim \num{-0.16}$.)
 As will be shown later, the current experimental data can be well reproduced when $\theta$ is set to \num{-0.14} and this value is used in the following calculations. 
