@@ -143,11 +143,57 @@ Taking the limit $a_{5s} \rightarrow 0$ (i.e., no hyperfine interaction), we obs
 
 \subsubsection{$n$-mixing}
 
-At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$. 
-Since the radial matrix elements are only orthogonal for the same $n$, there's mixing between states of different $n$, occurring around $n=113$ in \Sr{87} \cite{Beigang1983.PRL.51.771}.
+At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as shown in \cref{fig:n-scaling}. 
+Indeed, hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
 
-Considering the orthogonality of the radial wave functions, states of the same $F$ but different $n$ are decoupled. 
-On the other hand, the $F=I$ components can experience $n$-mixing due to singlet-triplet mixing. 
+It's not too difficult to extend the derivation above to incorporate $n$-mixing. 
+Since $\hat{V}_\text{hf}$ only couples states with the same $F$ and considering the, states with different $F$ remain uncoupled. 
+Considering the orthogonality of the radial wave functions for states of different $n$, the diagnoal matrix elements of $\hat{V}_\text{hf}$ for $\nSLJf{5sns}{3}{S}{1}{I+1}$ and $\nSLJf{5sns}{3}{S}{1}{I-1}$ are
+\begin{equation}
+	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \delta_{n,n^{\prime}}
+\end{equation}
+\begin{equation}
+	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \delta_{n,n^{\prime}}
+\end{equation}
+The off-diagonal elements vanish between these states because they remain uncoupled.
+On the other hand, because $\hat{V}_\text{hf}$ mixes the $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ states, we can write
+\begin{align}
+	\ket{\nSLJf{5sns}{1}{S}{0}{I}}	{}={}&	\ket{\nSLJf{n}{1}{S}{0}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{3}{S}{1}{I}}}	\\
+	\ket{\nSLJf{5sns}{3}{S}{1}{I}}	{}={}&	\ket{\nSLJf{n}{3}{S}{1}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{1}{S}{0}{I}}}
+\end{align}
+where $\nSLJf{n}{1}{S}{0}{I}$ and $\nSLJf{n}{3}{S}{1}{I}$ represent pure singly-excited singlet and triplet $F=I$ states (recalling that the radial wave functions are orthogonal for $n \neq n^{\prime}$ for states in the same spin multiplet).
+Calculating the matrix elements of $\hat{V}_\text{hf}$ between $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ gives
+\begin{equation}
+	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{1}{S}{0}{I}}	=	0
+\end{equation}
+\begin{equation}
+	\mel{\nSLJf{5s{n^\prime}s}{3}{S}{1}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s} \delta_{n,n^{\prime}}
+\end{equation}
+The off-diagonal elements can be expressed as
+\begin{align}
+	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}
+		{}={}&	-\frac{1}{2} a_{5s} (stuff to finish deriving)	\notag	\\
+		{}={}&	-\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} O_{n,n^{\prime}}
+\end{align}
+where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial wave functions which can be estimated semiclassically \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
+\begin{equation}
+	O_{n_{1},n_{2}}
+		=	\braket{n_{1}^{*}}{n_{2}^{*}}
+		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
+\end{equation}
+
+(** SHOW FIGURE **)
+
+Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
+\begin{equation}
+	O_{n_{1},n_{1}+1}
+		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
+		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
+\end{equation}
+Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
+Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
+
+As see in Fig. xx, the strongest {$n$-mixing} occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \sim \num{0.1}$ and which quickly drops off for larger $\Delta n$. 
 
 ************************
 \begin{align}
@@ -172,27 +218,6 @@ On the other hand, the $F=I$ components can experience $n$-mixing due to singlet
 \end{equation}
 
 ************************
-
-The radial overlap integrals between $n_{1}^{*} = n_{1} - \delta_{1}$ and $n_{2}^{*} = n_{2} - \delta_{2}$ can be approximated semiclassically by \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
-\begin{equation}
-	O_{n_{1},n_{2}}
-		=	\braket{n_{1}^{*}}{n_{2}^{*}}
-		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
-\end{equation}
-Between adjacent $n_{1}$ and $n_{2} = n_{1} + 1$ and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
-\begin{equation}
-	O_{n_{1},n_{1}+1}
-		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
-		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
-\end{equation}
-Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
-Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
-
-
-
-(** SHOW FIGURE **)
-
-As see in Fig. xx, the strongest {$n$-mixing} occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \sim \num{0.1}$ and which quickly drops off for larger $\Delta n$. 
 
 \subsection{Singly Excited $D$ states}
 
