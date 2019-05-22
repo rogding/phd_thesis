@@ -82,19 +82,17 @@ Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it 
 
 The energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
 As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=4in]{fermion_spectroscopy/calculations/n-scaling.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/calculations/n-scaling.svg}
 	\caption{
 		\label{fig:n-scaling}
-		The $n$ scaling of various splittings in \Sr{88} calculated from the most recent quantum defects \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503} and ionization energy \cite{Couturier2019.PRA.99.022503}.
-		$\abs{a_{5s}}$ is the energy scale of the hyperfine interaction energy.
-		$\Delta E^{\qty(0)}_{S}\qty(S)$ and $\Delta E^{\qty(0)}_{S}\qty(D)$ are the singlet-triplet splittings between the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states and between the $\nSLJ{5snd}{1}{D}{2}$ and $\nSLJ{5snd}{3}{D}{2}$ states, respectively.
-		$\Delta E^{\qty(0)}_{n}\qty(S)$ is the splitting between $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5s\qty(n+1)s}{3}{S}{1}$ states.
-		$\Delta E^{\qty(0)}_{J}\qty(D)$ is the splitting between $\nSLJ{5snd}{3}{D}{1}$ and $\nSLJ{5snd}{3}{D}{2}$ states.}
+		The $n$ scaling of various splittings in \Sr{88} calculated using the most recently reported quantum defects and ionization energy \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}.
+		The energy scale of the hyperfine interaction in \Sr{87} is approximately constant and is $\abs{a_{5s}} \approx \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}.
+		The splittings between various states are represented by $\Delta E^{\qty(0)}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
 \end{figure}
-One would also From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290}.
-Hyperfine mixing was also observed between the $\nSLJ{5snd}{1}{D}{2}$ and $\nSLJ{5snd}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
+From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
+Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
 \subsection{Singly Excited $S$ states}
 
@@ -182,7 +180,14 @@ where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial w
 		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
 \end{equation}
 
-(** SHOW FIGURE **)
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=5in, height=\textheight]{fermion_spectroscopy/calculations/s-states/semiclassical_overlap.svg}
+	\caption{
+		\label{fig:semiclassical_overlap}
+		** FIX FIGURE Y-AXIS LABELS **.
+		Semiclassical estimation of the radial wave function overlap \cite{Bhatti1981.PRA.24.161} between $\nSLJ{n}{1}{S}{0}$ and $\nSLJ{n^{\prime}}{3}{S}{1}$ states ($O_{n,n^{\prime}}$) for $n^{\prime}=n, n+1, n+2$.}
+\end{figure}
 
 Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
 \begin{equation}
@@ -193,7 +198,7 @@ Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta
 Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
 Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
 
-As see in Fig. xx, the strongest {$n$-mixing} occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \sim \num{0.1}$ and which quickly drops off for larger $\Delta n$. 
+As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \sim \num{0.1}$ and which quickly drops off for larger $\Delta n$. 
 
 ************************
 \begin{align}
