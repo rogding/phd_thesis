@@ -286,15 +286,70 @@ Therefore the total Hamiltonian can be written as
 					\end{pmatrix}
 \end{align}
 
-
-
-
-
-
-
 \subsection{$D$-states}
 
-Move details of derivation here?
+Move details of derivation here? 
+
+The derivations below are done for the stretched states $m_F = F$ but, due to the rotational symmetry of $\hat{V}_\text{hf}$, there should be no dependence on $m_F$.
+Working through how the $\hat{s}_{\text{in}}$ operator acts on the $\ket{J, m_J}_{J}$ states gives
+** WORK THROUGH FOR D-STATES **
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{\SLJm{1}{D}{2}{0}}^0	=	-\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}												\\
+	& \hat{s}_{\text{in},-}\ket{\SLJm{1}{D}{2}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{\SLJm{1}{D}{2}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{0}}^{0}
+\end{align}
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{\SLJm{3}{D}{1}{1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},-}\ket{\SLJm{3}{D}{1}{1}}^0	=	-\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} - \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)	\\
+	& \hat{s}_{\text{in},z}\ket{\SLJm{3}{D}{1}{1}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{1}}^{0}
+\end{align}
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{\SLJm{3}{D}{2}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}													\\
+	& \hat{s}_{\text{in},-}\ket{\SLJm{3}{D}{2}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{\SLJm{3}{D}{2}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{1}{S}{0}{0}}^{0}
+\end{align}
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{\SLJm{3}{D}{3}{-1}}^0	=	\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} + \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)		\\
+	& \hat{s}_{\text{in},-}\ket{\SLJm{3}{D}{3}{-1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},z}\ket{\SLJm{3}{D}{3}{-1}}^0	=	-\frac{1}{2} \ket{n\SLJm{3}{S}{1}{-1}}^{0}
+\end{align}
+\begin{align}
+	& \hat{s}_{\text{in},+}\ket{\SLJm{3}{D}{3}{-1}}^0	=	\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} + \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)		\\
+	& \hat{s}_{\text{in},-}\ket{\SLJm{3}{D}{3}{-1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},z}\ket{\SLJm{3}{D}{3}{-1}}^0	=	-\frac{1}{2} \ket{n\SLJm{3}{S}{1}{-1}}^{0}
+\end{align}
+** WORK THROUGH FOR D-STATES **
+
+\subsubsection{$F=I+3$}
+
+For the stretched state $\ket{F=I+3, m_F = I+3}$, there is only one state with $m_L = 2$ and $m_S = 1$ which satisfies $m_J = 3$ since $m_I = I$
+\begin{equation}
+	\ket{F=I+3, m_F = I+3}	=	\ket{\SLJm{3}{D}{3}{3}}_{J} \ket{I, I}_{I}
+\end{equation}
+Therefore
+\begin{equation}
+	\hat{V}_\text{hf} \ket{F=I+3, m_F = I+3}	=	\frac{1}{2} a_{5s} I \ket{F=I+3, m_F = I+3}
+\end{equation}
+
+\subsubsection{$F=I+2$}
+
+For $F=I+2$, there are three states which can produce the state $\ket{F = I+2, m_F = I+2}$
+\begin{align}
+	\ket{\SLJf{1}{D}{2}{m_F=I+2}}	&{}={}	\ket{\SLJm{1}{D}{2}{2}}_{J} \ket{I, I}_{I}	\\
+	\ket{\SLJf{3}{D}{2}{m_F=I+2}}	&{}={}	\ket{\SLJm{3}{D}{2}{2}}_{J} \ket{I, I}_{I}	\\
+	\ket{\SLJf{3}{D}{3}{m_F=I+2}}	&{}={}	\sum_{m_J} \ket{\SLJm{3}{D}{2}{2}}_{J} \ket{I, I}_{I}
+\end{align}
+since $\ket{\SLJ{3}{D}{1}}$ cannot produce an $m_F=I+2$ state. 
+
+
+
+\subsubsection{$F=I+1$}
+
+
+
+
+\subsubsection{$F=I$}
+
 
 
 **************************************************
