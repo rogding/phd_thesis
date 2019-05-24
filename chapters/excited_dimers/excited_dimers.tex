@@ -1,0 +1,38 @@
+\chapter{Excited Dimer Rydberg Molecules}
+
+Since we were able to show that the dimer ground state Rydberg molecules ($D_{0}$) are sensitive to spatial correlations, we wanted to see if excited state Rydberg molecules ($\nu > 0$) are also sensitive to quantum statistics. 
+
+\section{Experiment}
+
+This experiment follows a similar scheme to the one presented in ** g2 paper **. 
+In order to better control systematics, we took the excited dimer state data by interleaving polarized and unpolarized samples. 
+In order to produce cold samples of both polarized and unpolarized \Sr{87} quickly, we perform sympathetic cooling with \Sr{84} in the trap where the final temperature of \Sr{87} can be controlled by varying the amount of \Sr{84} loaded in to the ODT. 
+
+\subsection{Spin-Polarization}
+A bias field of **$\approx \SI{6}{\gauss}$** was applied to separate out the $m_F$ states for spin-polarization. 
+Performing optical pumping on the $F=9/2 \rightarrow F=9/2$ transition, we are able to produce samples with $\gtrsim \SI{90}{\percent}$ population in $m_F=9/2$. 
+
+Diagnostics was performed with counterpropgatating linear-linear \SI{689}{\nm} and \SI{320}{\nm} Rydberg spectroscopy in a low bias field of **\SI{1.}{\gauss}**.
+Varying the number of excitation pulses, we can observe the linear-linear spectroscopy causes depolarization and allows us to set a lower-bound on how polarized our initial gas is. 
+
+We are also able to demonstrate that the $\sigma^{+}$-$\pi$ Rydberg excitation scheme does not cause noticeable depolarization when we varied the number of exposures from **100 to 10000 (and probing with 1000 lin-lin spectroscopy)  **. 
+
+\subsection{Density correction term}
+
+Knowing our trap frequencies and sample temperature, we should be well above the Fermi temperature $T_F$ meaning we should not be anywhere near quantum degeneracy.
+As such, we treat the sample as thermal with a Gaussian density distribution. 
+Therefore, the correction due to the three-body density distribution is found by calculating $\int\int\int \rho^{2}\qty(R)$.
+
+** Check that this makes sense when considering interparticle separations vs. length scale of Rydberg molecule wave function? **
+
+\section{Experimental Results}
+
+The theoretical calculations were performed by Shuhei Yoshida using ** a model where the well are modeled as harmonic oscillators to make calculating the overlaps easier? **. 
+
+Our measured spectra show reasonable agreement with the theory calculations. 
+
+\section{Conclusion}
+
+Since the vibrationally-excited Rydberg molecules are more delocalized and extending towards smaller $R$, we expected them to be sensitive to be more sensitive to $g^{\qty(2)}\qty(R)$ than the $D_{0}$ states. 
+What we found was not the case, both the polarized and unpolarized $\nu=1$ states show enhanced suppression of their excitation rates for smaller $R_{n}$, the $\nu=2$ states showed an enhancement. 
+This suggests that it is indeed possible to probe spatial correlation with these delocalized vibrational states but the results are difficult to interpret since they require knowing the Rydberg molecule wave functions very well. 
