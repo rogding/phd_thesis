@@ -3,7 +3,7 @@
 
 Section intro about the Rydberg experiment.
 
-\section{Vacuum system}
+\section{Vacuum System}
 
 We follow a pretty conventional strontium laser cooling system which uses an oven to produce an atomic beam of strontium which is then slowed by a spin-flip Zeeman slower. 
 Similar setups are described in \cite{Stellmer2013.PhD, Barker2016.PhD}.
@@ -13,18 +13,26 @@ The downside is that it's much more difficult to set up optics below the vacuum 
 
 Some information about the Rydberg vacuum system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
 
-\section{Magnetic field coils}
+\subsection{Atomic Oven}
 
-\subsection{Zeeman slower}
+????
+
+** Take pictures of the one Jim made? **
+
+\section{Magnetic Field Coils}
+
+\subsection{Zeeman Slower}
 
 I included information about our Zeeman slower for completeness as Francisco had already made it by the time I joined the experiment so see \cite{Camargo2015.MS} for the gory details.
 
-\subsection{Dual MOT coils}
+\subsection{Dual MOT Coils}
 
 One of the things we did differently from the Neutral experiment is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
 This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
 
-\subsection{Trim coils}
+The blue MOT coils are hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
+
+\subsection{Trim Coils}
 
 The trim coils are used to cancel out stray magnetic fields as well as apply bias fields. 
 The two horizontal pairs of rectangular coils are oriented such that the ``X-axis'' produce a field towards or away from the MCP with the ``Y-axis'' perpendicular. 
@@ -45,9 +53,9 @@ The circular U-channels used as the forms also feature a radial slice, filled wi
 In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
 
-\section{Laser systems}
+\section{Laser Systems}
 
-\subsection{Versatile blue MOT system}
+\subsection{Versatile Blue MOT System}
 
 Section about Zeeman slower and blue cooling setup. Some details about our blue cooling system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
 After having to send back our Newport TLB-18xx for repairs, we decided to fiber couple the injection path for the Zeeman and MOT slave lasers. 
@@ -102,7 +110,7 @@ We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.0431
 		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
 \end{figure}
 
-\subsection{Multi-isotope red MOT system}
+\subsection{Multi-Isotope Red MOT System}
 
 Some details about our narrow line cooling system can be found in \cite{Ding2016.MS}.
 
@@ -151,7 +159,7 @@ Our first ODT laser was a Coherent Verdi IR - essentially a \SI{1064}{\nm} versi
 That worked ok until it died due to an electrical surge (?). 
 At which point we moved to using a Nufern NuAmp \SI{50}{\W} fiber amplifier laser.
 
-\subsection{Fiber-coupled ODTs}
+\subsection{Fiber-Coupled ODTs}
 
 Having the fiber-coulped sheet trap saved our ass as we've had to switch out the high-power laser multiple times (from the Coherent Verdi-IR, Nufern NuAmp, to IPG, back to Nufern NuAmp. 
 
@@ -204,3 +212,44 @@ Stuff about MCP.
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
 	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
 \end{figure}
+
+\section{Future Improvements}
+
+Below I cover a few upgrades we are currently working towards or plan on implementing in the near future. 
+Some of the improvements are focused around making systems we inherited from previous graduate students more stable and reliable throughout the lab (i.e., the \SI{481}{\nm} repumper and \SI{689}{\nm} system) while others are meant as strictly an upgrade to add improved capabilities to the Rydberg experiment. 
+
+\subsection{Locking the \SI{481}{\nm} with a ``Super Lock''}
+
+One of the upgrades currently underway is improving the \SI{481}{\nm} repumper lock.
+The previous setup locked to the side of a Doppler-broadened line in ** \Te{130}{2} **, which has been very sensitive to background light and environmental changes. 
+To improve the lock, we'll be implementing a scanning Fabry-Perot lock where the position of the \SI{481}{\nm} laser in a Fabry-Perot cavity is locked relative to the \SI{689}{\nm} master laser.
+Instead of implementing a proper transfer cavity lock, we'll be using a ``superlock'' where a Fabry-Perot cavity is rapidly scanned and stabilized to one laser wavelength (our \SI{689}{\nm} reference) which allows another laser (the \SI{481}{\nm} laser) to be stabilized relative to the reference laser \cite{Lindsay1991.RSI.62.1656, Tonyushkin2007.RSI.78.123103, Subhankar2019.RSI.90.043115}. 
+
+Since we should be able to lock the \SI{481}{\nm} repumper to sub-megahertz frequencies, we plan on mapping out the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition for optimum multi-isotope repumping. 
+
+\subsection{Upgrading to a ULE Cavity}
+
+The lab recently purchased an ultra-low expansion (ULE) glass cavity from Stable Laser Systems (SLS) with mirrors coated for \SI{640}{\nm}, \SI{689}{\nm}, and \SI{698}{\nm}.
+The mirrors have a specified finesse of ** $\mathcal{F} \approx \num{100000}$ ** for these wavelengths, which means we should be able to narrow our laser to ** sub-kilohertz ** levels. 
+This ULE cavity will be used to stabilize and narrow both our workhorse \SI{689}{\nm} laser and \SI{640}{\nm} Rydberg laser (pre-doubling). 
+We currently do not have a \SI{698}{\nm} clock laser but the option is available.
+We'll be implementing a system similar to \cite{Gregory2015.NJP.17.055006} where two broadband fiber EOMs will be used to provide both the PDH modulation on tunable sidebands with gigahertz separations. 
+Eventually, the ULE cavity will provide the frequency reference for the \SI{689}{\nm} instead of the atoms\footnote{Other groups have mentioned that they experienced frequency broadening when locking their \SI{689}{\nm} lasers to the atoms after using the ULE to narrow the laser.}. 
+The \SI{689}{\nm} saturated absorption cell will remain to provide a check on the absolute frequency reference as the ULE cavity settles overtime (** ULE cavities are expected to drift at about \SI{100}{\Hz} per day \cite{Barker2016.PhD, Reschovsky2017.PhD} **).
+
+\subsection{Redoing the \SI{1064}{\nm} ODT system}
+
+Since we've been borrowing Randy Hulet's \SI{1070}{\nm} laser for our ODT system, we need to eventually change back to our Nufern NuAMP \SI{50}{\W} single-mode amplifier. 
+During this process, we should take the time to revise the optical setup so that it's both simpler and has the capability of monitoring the coupling efficiency through the ODT fibers (monitoring both the input and output powers). 
+We will also be implementing a second sheet trap ** with similar dimensions as the one I built ** so that we have a ``crossed-pancake'' setup. 
+This should be advantageous since the pancake geometry modematches well with the red MOT and crossing the sheet traps should provide significantly better longitudinal confinement over our current single-beam sheet.
+The vertical dimple will remain as an option for producing tight optical trapping potentials when we need high densities (e.g., for \Sr{88} and \Sr{87}).
+Although we haven't experienced significant issues with damaging the high-power \SI{1064}{\nm} ODT fibers (** find theses where they mention damaging these fibers? **), the capability to monitor (and implement an interlock) should add an additional layer of protection.
+
+\subsection{Fiber-Coupling the Red MOT}
+
+We've found that our current setup is susceptible to beam-pointing drifts. 
+We haven't pinpointed the source of the drifts but it appears to be the slave laser housings we've been suing (Thorlabs' xxxxxxx). 
+Fiber-coupling the red MOT beams should allow much greater performance consistency although we likely have to sacrifice power (i.e., we'll need to use smaller red MOT beams). 
+
+We still haven't come across a good system for controlling the frequency of the red MOT lasers...
