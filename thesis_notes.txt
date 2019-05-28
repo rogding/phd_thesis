@@ -1,7 +1,7 @@
 Thesis notes:
 -Put in picture of our (fat? at least the most recent one I took) blue MOT.
 -Ryan Hanley has a nice Sr energy level diagram.
-	-Uses densit-matrix to derive ODT potential (like Martin Boyd (?), Andrew Ludlow(?)).
+	-Uses density-matrix to derive ODT potential (like Martin Boyd (?), Andrew Ludlow(?)).
 -Mention how we pick off a 689 nm slave beam to send to the spectrum analyzer.
 	-... and how I wouldn't recommend doing it this way since any reflections aren't isolated.
 -Ryan Hanley also shows red MOT positional stability before ULE cavity and after.
