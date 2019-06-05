@@ -5,6 +5,12 @@ This chapter describes the Rydberg apparatus used in this work.
 It provides documentation of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
 Being the third ultracold strontium at Rice, we were able to leverage lessons learned on the previous experiments (generally referred to as ``Neutral'' and ``Plasma'') and build quite a capable system.
 
+Although most of our system looks very similar to other ultracold strontium systems, what makes our system different is the inclusion of systems for creating, manipulating, and detecting charged particles. 
+In particular, we have in-vacuum electric field plates to null stray electric fields as well as ramp to ionizing fields which direct electrons or ions towards the microchannel plate (MCP) detector.
+
+Our old-school ``metal can'' setup can't compete with the optical access provided by many recently started alkaline-earth Rydberg tweezer systems using glass cells \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055, Saskin2019.PRL.122.143002}.
+There's still a place for our system which likely provides capabilities for better shielding from stray electric fields, performing SFI, and the ability to detect charged particles which, without going to significantly custom systems, are somewhat limiting on the standard glass cell setups.
+
 \section{Vacuum System}
 
 We follow a pretty conventional strontium laser cooling system which uses an oven to produce an atomic beam of strontium which is then slowed by a spin-flip Zeeman slower. 
@@ -22,10 +28,11 @@ The downside is that it's much more difficult to set up optics below the vacuum 
 		Rydberg vacuum system.}
 \end{figure}
 
-Our system maintains ultra-high vacuum pressure using two ** \SI{40}{\liter\per\second} ** ion pumps with one on the source side and the other connected to the main chamber by high conductance flanges. 
+Our system maintains ultra-high vacuum pressure using two \SI{75}{\liter\per\second} ion pumps with one on the source side\footnote{Varian VacIon Plus 75 Starcell rebuilt by Duniway Stockroom Corporation.} and the second connected to the main chamber\footnote{Gamma Vacuum 75S-CVX-6S-SC-N-N.} by high conductance flanges. 
+A non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} is also attached between the main chamber and ion pump.
 We suspect the ion pump on the source side is being choked off by the zero-length reducer which adapts the ** \SI{4.5}{\inch} ** flange on the source-side vacuum system to the ** \SI{6}{\inch} ** flange on the Varian ion pump.
 In retrospect, we should have included a titanium sublimation pump for additional pumping.
-We should have also used a double gate valve between the Zeeman sloewr and the source-side vacuum as we found this valve to be leaky when we initially pumped out the system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+We should have also used a double gate valve between the Zeeman slower and the source-side vacuum as we found this valve to be leaky when we initially pumped out the system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
 
 We also added a gate valve between the Zeeman slower window and main chamber to allow us to change the viewport once it gets coated\footnote{The lab has tried using Plasma's pulsed Nd:YAG laser to perform ablation on Neutral's coated Zeeman window with moderate levels of success.}.
 
@@ -38,20 +45,27 @@ Although our vacuum wasn't great initially with a magnetic lifetime of about \SI
 
 ** Take pictures of the one Jim made? **
 
-\section{Magnetic Field Coils}
-
 \subsection{Zeeman Slower}
 
 I included information about our Zeeman slower for completeness as Francisco had already made it by the time I joined the experiment so see \cite{Camargo2015.MS} for the gory details.
 
-\subsection{Dual MOT Coils}
+Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
+A Zeeman slower uses a spatially-varying magnetic field and circularly-polarized light to keep the atoms resonant with a counterpropagating light so that they continuiously scatter photons which slows their velocity \cite{Phillips1982.PRL.48.596}.
+Our particular design uses a spin-flip Zeeman slower where the axial magnetic field crosses zero between the ends (similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}).
+The Zeeman slower was constructed in multiple layers as the resulting field was tweaked to match the desired profile with each layer being attached to the Zeeman slower tube with thermally-conduction epoxy ** GIVE MODEL **. 
 
-One of the things we did differently from the Neutral experiment is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
-This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
+Our Zeeman slower is water-cooled. 
+We have run our Zeeman slower without water cooling without noticing significantly decreased performance but the slower does get a bit toasty. 
 
-The blue MOT coils are hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
+\subsection{Main Chamber}
 
-\subsection{Trim Coils}
+** Section about the main chamber? **
+Francisco designed the main chamber was custom made by ** COMPANY? **. 
+It features recessed top and bottom flanges which provide buckets for the MOT coils to fit around the 2-3/4 in top and bottom viewports. 
+The bottom flange also has ** 11 ** SHV/MHV? feedthroughs which are connected to the various electric field plates. 
+Around the side are ** 7 ** 2-3/4 in viewports, ** 3 ** 1-1/3 in viewports for various excitation lasers, a 2-1/4 CF for attaching the Zeeman slower, and a conical expansion to a 6 in CF flange to the main pumps. 
+
+\section{Trim Coils}
 
 The trim coils are used to cancel out stray magnetic fields as well as apply bias fields. 
 The two horizontal pairs of rectangular coils are oriented such that the ``X-axis'' produce a field towards or away from the MCP with the ``Y-axis'' perpendicular. 
@@ -72,7 +86,32 @@ The circular U-channels used as the forms also feature a radial slice, filled wi
 In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
 
-\section{Laser Systems}
+\section{Dual MOT Coils}
+
+One of the things we did differently from the Neutral experiment is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
+This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
+
+** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
+** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
+** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
+
+The blue MOT coils are hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
+We typically run the blue MOT coils with around ** 40-50 amps ** of current from a fixed power supply ** GIVE MODEL **. 
+A ** MOSFET ** is used to quickly switch off the current to the coils. 
+** We so far haven't included a flyback diode although the MOSFET we use seems to include an internal flyback diode. **
+
+The red MOT coils are constructed from ** 10 gauge ** copper wire and are epoxied to the undersides of the blue MOT coils, placing them closer to the center of the vacuum chamber. 
+We currently use a homebuilt voltage-controlled current driver\footnote{**Powered by an APEX PA12**.} but we should be able to use any current driver capable of supplying up to about ** 5 A **. 
+Our current geometry for the magnetic field coils provides about ** 1 G/cm/A ** conversion.
+
+**
+It would have been nice to have an extra MOSFET switch on the blue MOT coils so that we'd be able to apply extremely large fields along the Z-axis such as e.g. Pedro's experiment Feshbach coils.
+We're not too worried about not having this capability since ground-state strontium has no magnetic Feshbach resonances and the fact that we've observed a decrease MCP detection efficiencly we believe is due to the Lorentz force as the MCP is oriented along the X-axis.
+**
+
+\section{Laser Systems Cooling Strontium}
+
+This section covers the various laser systems used for laser cooling strontium and various spectroscopy beams.
 
 \subsection{Versatile Blue MOT System}
 
@@ -168,7 +207,7 @@ The drawbacks is that we're much more sensitive to misalignments and the ugly in
 
 **
 
-Mention SWAP cooling? \cite{Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, muniz2018.arXiv, snigirev2019.arXiv}.
+Mention SWAP cooling? \cite{Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838, Snigirev2019.arXiv.1903.06435}.
 
 **
 
