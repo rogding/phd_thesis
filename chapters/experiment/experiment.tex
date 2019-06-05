@@ -1,17 +1,36 @@
 \chapter{Strontium Rydberg Experiment}
 \label{ch:experiment}
 
-Section intro about the Rydberg experiment.
+This chapter describes the Rydberg apparatus used in this work.
+It provides documentation of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
+Being the third ultracold strontium at Rice, we were able to leverage lessons learned on the previous experiments (generally referred to as ``Neutral'' and ``Plasma'') and build quite a capable system.
 
 \section{Vacuum System}
 
 We follow a pretty conventional strontium laser cooling system which uses an oven to produce an atomic beam of strontium which is then slowed by a spin-flip Zeeman slower. 
-Similar setups are described in \cite{Stellmer2013.PhD, Barker2016.PhD}.
-The most noticeable feature is the fact that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-Keeping the working height at this height significantly reduced the need to build a rigid supporting structure to hold the vacuum system above the table as well as the necessary periscopes for the laser beams (although using fibers would mitigate this issue). 
+Some information about the Rydberg vacuum system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
+Similar setups are described elsewhere (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD, Campbell2017.PhD}).
+The most noticeable aspect of our vacuum system is that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
+Keeping the working height at this height significantly reduced the need to build a rigid supporting structure to hold the vacuum system above the table as well as various periscopes necessary for getting the laser beams to the height of an elevated (although using fibers would mitigate this issue with the tradeoff of less laser power to the atoms). 
 The downside is that it's much more difficult to set up optics below the vacuum chamber, e.g., for the vertical MOT or dipole trap beams. 
 
-Some information about the Rydberg vacuum system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
+	\caption{
+		\label{fig:vacuum_system}
+		Rydberg vacuum system.}
+\end{figure}
+
+Our system maintains ultra-high vacuum pressure using two ** \SI{40}{\liter\per\second} ** ion pumps with one on the source side and the other connected to the main chamber by high conductance flanges. 
+We suspect the ion pump on the source side is being choked off by the zero-length reducer which adapts the ** \SI{4.5}{\inch} ** flange on the source-side vacuum system to the ** \SI{6}{\inch} ** flange on the Varian ion pump.
+In retrospect, we should have included a titanium sublimation pump for additional pumping.
+We should have also used a double gate valve between the Zeeman sloewr and the source-side vacuum as we found this valve to be leaky when we initially pumped out the system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+
+We also added a gate valve between the Zeeman slower window and main chamber to allow us to change the viewport once it gets coated\footnote{The lab has tried using Plasma's pulsed Nd:YAG laser to perform ablation on Neutral's coated Zeeman window with moderate levels of success.}.
+
+Although our vacuum wasn't great initially with a magnetic lifetime of about \SI{9}{\second}, more recent measurements have found lifetime to be about \SI{18}{\second} now. 
+** Lifetime measurement figures? **
 
 \subsection{Atomic Oven}
 
@@ -40,7 +59,7 @@ The ``Z-axis'' coil pair produces a field perpendicular to the table surface.
 
 Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height. 
 
-\begin{figure}[htbp]
+\begin{figure}[h]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
 	\caption{
@@ -70,15 +89,16 @@ Fiber coupling allowed us to quickly fix injection lock issues by optimizing the
 \begin{figure}
 	\includegraphics[width=\linewidth]{experiment/blue_mot/20140829_155019.jpg}
 	\caption{\label{fig:blue_MOT_20140829}
-		An early picture of our \Sr{88} blue MOTs taken on 2014/08/29.
+		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a \SI{2.75}{\inch} viewport with the atom source and Zeeman slower are off to the right.
+		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}. 
 		A video is available at {https://youtu.be/ENDIizrlqMA}.}
 \end{figure}
 
 \subsection{Magnetic Trap and Repumping}
 
-As mentioned in the blue MOT section above, the ${\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}}$ is not completely closed with about ${1:\num{50000}}$ decays following the ${\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}}$.
-About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and can be excited again.
-The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about ** xxx s**; effectively removing them from the blue MOT. 
+As mentioned in the blue MOT section above, the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ is not completely closed with about $1:\num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
+About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
+The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about \SI{520}{\second} \cite{Yasuda2004.PRL.92.153004}\footnote{Theoretical calculations predict a lifetime of \SI{17}{\minute} \cite{Derevianko2001.PRL.87.023002}.}, effectively removing them from the blue MOT cooling cycle.
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states can become trapped in the quadrupole magnetic field of the blue MOT.
 This decay path, initially seen as a ``loss'' ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
 The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
@@ -86,15 +106,15 @@ For details of our magnetic trap, see \cite{Camargo2015.MS}.
 
 \subsection{\SI{481}{\nm} Repumping System}
 
-In order to recover atoms from the metastable reservoir, several methods have been devised which drive transitions to various excited states\footnote{
-	\begin{itemize}
+In order to recover atoms from the metastable reservoir, several repumping transitions have been explored:
+\begin{itemize}
 		\item \SI{707}{\nm} and \SI{679}{\nm} lasers to drive ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ and ${\nSLJ{5s5p}{3}{P}{0} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ transitions, respectively \cite{Barker2015.PRA.92.043418, Campbell2017.PhD} ** probably also reference multiple theses**. 
 		\item \SI{3011.8}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s4d}{3}{D}{2}}$ \cite{Mickelson2009.JPB.42.235001}.
 		\item \SI{496.93}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s5d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
 		\item \SI{403.35}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
 		\item \SI{481.323}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}}$ transition \cite{Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}.
-	\end{itemize}
-}.
+\end{itemize}
+
 Our current \SI{481}{\nm} repumper system is shown in \cref{fig:repumper_system}. 
 The \SI{481}{\nm} light is provided by a Toptica DL 100\footnote{The laser is equipped with a {LD-0488-0060-1} diode.} which outputs about ** \SI{10}{\mW} ** of power. 
 For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} which has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas}.
@@ -117,9 +137,22 @@ We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.0431
 		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
 \end{figure}
 
-\subsection{Multi-Isotope Red MOT System}
+\subsection{\SI{689}{\nm} Laser System}
 
 Some details about our narrow line cooling system can be found in \cite{Ding2016.MS}.
+The details of the narrow line \SI{689}{\nm} ``red'' MOT can be found in \cite{Stellmer2013.PhD, Boyd2007.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD}. 
+The details of the \Sr{87} red MOT is particularly well described in \cite{Stellmer2013.PhD} and will not be reproduced here. 
+
+\subsubsection{\SI{689}{\nm} Master Laser}
+
+Due to the ease of building \SI{689}{\nm} slave lasers \cite{Ding2016.MS}, we only need a single \SI{689}{\nm} stabilized master laser system to run both the Rydberg and Neutral experiments. 
+From the red master table, two fibers run to each experiment: one fiber with light at \SI{-82}{\MHz} of $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition and the other at ** \SI{-1440.440}{\MHz} ** for injection locking the \Sr{87} ``trap'' slave lasers. 
+For most of the experiments described in this thesis, the red master laser was found to have a linewidth of about \SI{30}{\kHz}.
+** More details of the \SI{689}{\nm} master laser system is provided in Jim's Ph.D. thesis. **
+
+We currently do not implement a fiber phase noise cancellation system \cite{Ma1994.OL.19.1777, Rauf2018.RSI.89.033103} so it's possible that the light at the slave lasers is broadened to ** \si{\kHz}-levels ** but it shouldn't be too difficult to implement in the future when necessary. 
+
+\subsubsection{Multi-Isotope Red MOT System}
 
 \Cref{fig:red_system} shows what the red MOT system looks like when set up for trapping any combination of isotopes. 
 In practice, we don't always have all the red MOT AOMs lined up, typically only keeping the AOMs necessary for trapping the isotope(s) for a particular experiment while the other red MOT AOMs are used to generate various other beams (e.g., spectroscopy, ``blow away'', etc.).
@@ -207,23 +240,59 @@ Depending on the seed we use, we observe linewidths of about **\SI{500}{\kHz} (\
 	\frac{1}{\SI{638}{\nm}} &= \frac{1}{\SI{1064}{\nm}} + \frac{1}{\SI{1.6}{\um}}
 \end{align}
 
-\subsection{Electric field ionization and detection}
+\subsection{Electric Field System}
 
-Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. 
+Due to the extreme ${n}^{7}$ scaling of polarizability \cite{Gallagher1988.RPP.51.143, Gallagher1994.RydbergAtoms}, Rydberg atoms are extremely sensitive to electric fields. 
+To mitigate stray electric fields at the location of the atoms as well as to provide the capability for trimming residual electric fields and perform selective field ionization (SFI), we installed in-vacuum electric field plates. 
+The electric field plate system was designed by Francisco Camargo and additional details his Ph.D. thesis \cite{Camargo2017.PhD} and the design follows similar ones in \cite{Millen2011.PhD, Low2012.JPB.45.113001} using a split-ring electrode geometry with four quadrant electrodes above and four quadrant electrodes below the center of the chamber (i.e., where the atoms are). 
+The split-ring electrodes and in vacuum wires are made from oxygen-free high conductivity (OFHC) copper with stainless steel making up the supporting scaffold, Einzel lens, and guiding plates. 
+All parts were polished by hand before being sent off to be electropolished. 
 
-** picture of the electric field plates and mcp **
+** Stuff about the scaffold and copper electric field plates. SIMION simulations? **
 
-Stuff about the scaffold and copper electric field plates. SIMION simulations?
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-CAD.svg}
+	\caption{
+		\label{fig:electric_field_system-CAD}
+		CAD renderings of the electric field plates with part of the supporting structure removed for clarity. 
+		The eight electric field plates are split in to upper and lower quadrants to provide electric field trimming and ionization. 
+		An Einzel lens and two guiding plates help steer electrons towards the MCP. 
+		Blue spheres represent the sapphire spacers used to isolate the high-voltage components from the grounded support structure.
+		(Right) Electrodes labeled according to the feedthrough they're connected to.}
+\end{figure}
 
-\subsection{Charged particle detection}
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-real.svg}
+	\caption{
+		\label{fig:electric_field_system-real}
+		(Left) Overview of the actual electric field plates, Einzel lens, and guiding plates. 
+		Fish spine beads are used to isolate the wires connecting the feedthroughs to the various electric field plates. 
+		(Right) Close up of of the Einzel lens and guiding plates.}
+\end{figure}
 
-Stuff about MCP.
+Working at high-$n$, Soumya was able to trim electric fields to better than ** xxxx V/cm ** when taking spectra at $n=160$.
+We should be able to improve our electric field zeroing a bit more if we're more careful with biases on the SFI HV switches but extremely accurate switching would likely require going to a different design (** e.g. Tilman Pfau's box **).
+For now, the electric field system is sufficient for our purposes. 
 
-\begin{figure}[htbp]
+\subsection{Charged Particle Detection}
+
+** Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. **
+
+To detect the creation of Rydberg atoms, we implemented a system which ramps the electric field plates and MCP to perform selective field ionization (SFI). 
+The MCP's output is first amplified by an SRS xxx preamplifier before being sent to an multichannel scaler (MCS). 
+
+The MCP is an Advanced Performance Detector (APD) 2 miniTOF made by Photonis. 
+This detector was selected becuse it fit inside the ** xxx in ** diameter tube off the main chamber. 
+
+\begin{figure}[h]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
 	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
 \end{figure}
+
+Over the years, we have used the MCP to detect both electrons and ions, but we primarily detect electrons as they arrive much quicker than ions. 
 
 \section{Future Improvements}
 
