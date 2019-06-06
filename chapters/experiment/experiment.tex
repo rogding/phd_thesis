@@ -17,10 +17,10 @@ We follow a pretty conventional strontium laser cooling system which uses an ove
 Some information about the Rydberg vacuum system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
 Similar setups are described elsewhere (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD, Campbell2017.PhD}).
 The most noticeable aspect of our vacuum system is that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-Keeping the working height at this height significantly reduced the need to build a rigid supporting structure to hold the vacuum system above the table as well as various periscopes necessary for getting the laser beams to the height of an elevated (although using fibers would mitigate this issue with the tradeoff of less laser power to the atoms). 
+Keeping the working height fixed at \SI{3.5}{\inch} significantly reduced the need to build a rigid supporting structure to hold the vacuum system above the table, elevated platforms for optics, as well as various periscopes necessary for getting the laser beams to the height of an elevated (although using fibers would mitigate this issue with the tradeoff of less laser power to the atoms). 
 The downside is that it's much more difficult to set up optics below the vacuum chamber, e.g., for the vertical MOT or dipole trap beams. 
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
 	\caption{
@@ -39,11 +39,39 @@ We also added a gate valve between the Zeeman slower window and main chamber to 
 Although our vacuum wasn't great initially with a magnetic lifetime of about \SI{9}{\second}, more recent measurements have found lifetime to be about \SI{18}{\second} now. 
 ** Lifetime measurement figures? **
 
-\subsection{Atomic Oven}
+\subsection{Atomic Oven and Two-Dimensional Collimator}
 
-????
+Due to the ** extremely ** low vapor pressure of strontium, an oven is needed to increase the vapor pressure enough to form an atomic beam.
+Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
+It's a simple design with a ** FireRod ** providing most of the heating to the atom oven.
+Capillary tubes are used to provide some degree of collimation, forming a nozzle, and a heater wire is wrapped around the nozzle to reduce the effects of strontium building up in the capillary tubes and clogging the oven. 
+We typically run our main ** FireRod ** oven heater around \SI{425}{\celsius} with the nozzle heater wire around \SI{390}{\celsius}. Note that the ** FireRod ** tempearture sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself (i.e., the FireRod remperature at the atoms is likely lower). 
 
-** Take pictures of the one Jim made? **
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
+	\caption{
+		\label{fig:neutral_sr_oven}
+		Neutral's new strontium oven during construction before thermocouple and nozzle heating wire have been attached. 
+		The design is very similar to our oven but is mounted oo a 2-3/4 on CF flange instead of a 3-3/8 in CF flange as on our experiment.
+		(Left) Oven without heat shield.
+		(Right) After adding heat shield.}
+\end{figure}
+
+\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the oven Neutral's setup. 
+The design is very similar to the one on our setup but it was mounted on the much smaller 2-3/4 in flange whereas ours is mounted on a 3-3/8 in flange which provides some extra room for various feed throughs without being too cramped.
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/atomic_beam.svg}
+	\caption{
+		\label{fig:atomic_beam}
+		Strontium atomic beam seen down an arm of the 2D collimator between the oven (to the right) and the Zeeman slower (to the left).}
+\end{figure}
+
+After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257} to increase the flux of atoms down the Zeeman slower. 
+When well tuned, we've seen an increase of blue MOT atoms by about ** 8 times ** when the 2D collimator is well aligned to the beam.
+The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
 
 \subsection{Zeeman Slower}
 
@@ -60,9 +88,8 @@ We have run our Zeeman slower without water cooling without noticing significant
 \subsection{Main Chamber}
 
 ** Section about the main chamber? **
-Francisco designed the main chamber was custom made by ** COMPANY? **. 
-It features recessed top and bottom flanges which provide buckets for the MOT coils to fit around the 2-3/4 in top and bottom viewports. 
-The bottom flange also has ** 11 ** SHV/MHV? feedthroughs which are connected to the various electric field plates. 
+Francisco designed the main chamber was custom made\footnote{Huntington Mechanical Labs} and features recessed top and bottom flanges which provide buckets for the MOT coils to fit around the 2-3/4 in top and bottom viewports. 
+The bottom flange also has ** 11 ** \SI{10}{\kilo\volt} SHV? feedthroughs which are connected to the various electric field plates. 
 Around the side are ** 7 ** 2-3/4 in viewports, ** 3 ** 1-1/3 in viewports for various excitation lasers, a 2-1/4 CF for attaching the Zeeman slower, and a conical expansion to a 6 in CF flange to the main pumps. 
 
 \section{Trim Coils}
@@ -73,9 +100,9 @@ The ``Z-axis'' coil pair produces a field perpendicular to the table surface.
 
 Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height. 
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/magnetic_field_coils/trim_coils/trim_coils.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/trim_coils/trim_coils.svg}
 	\caption{
 		\label{fig:trim_coils}
 		Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
@@ -91,9 +118,12 @@ We found that having bias fields along other directions (i.e., not towards/away 
 One of the things we did differently from the Neutral experiment is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
 This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
 
-** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
-** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
-** INCLUDE PICTURE/CAD DIAGRAM OF THE BLUE AND RED MOT COILS **
+\begin{figure}[htbp]
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
+	\caption{\label{fig:dual_mot_coils}
+		(Left) Picture of our assembled dual MOT coils on a test setup. 
+		(Right) CAD rendering of how they are centered around the buket windows of the main chamber.}
+\end{figure}
 
 The blue MOT coils are hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
 We typically run the blue MOT coils with around ** 40-50 amps ** of current from a fixed power supply ** GIVE MODEL **. 
@@ -125,7 +155,7 @@ Fiber coupling allowed us to quickly fix injection lock issues by optimizing the
 	\caption{\label{fig:blue_system}**Placeholder**Simplified diagram of the blue MOT system.}
 \end{sidewaysfigure}
 
-\begin{figure}
+\begin{figure}[htbp]
 	\includegraphics[width=\linewidth]{experiment/blue_system/20140829_155019.jpg}
 	\caption{\label{fig:blue_MOT_20140829}
 		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a \SI{2.75}{\inch} viewport with the atom source and Zeeman slower are off to the right.
@@ -289,7 +319,7 @@ All parts were polished by hand before being sent off to be electropolished.
 
 ** Stuff about the scaffold and copper electric field plates. SIMION simulations? **
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-CAD.svg}
 	\caption{
@@ -301,7 +331,7 @@ All parts were polished by hand before being sent off to be electropolished.
 		(Right) Electrodes labeled according to the feedthrough they're connected to.}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-real.svg}
 	\caption{
@@ -325,7 +355,7 @@ The MCP's output is first amplified by an SRS xxx preamplifier before being sent
 The MCP is an Advanced Performance Detector (APD) 2 miniTOF made by Photonis. 
 This detector was selected becuse it fit inside the ** xxx in ** diameter tube off the main chamber. 
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
 	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
