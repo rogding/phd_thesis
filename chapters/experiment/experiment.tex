@@ -163,7 +163,7 @@ It would have been nice to have an extra MOSFET switch on the blue MOT coils so 
 We're not too worried about not having this capability since ground-state strontium has no magnetic Feshbach resonances and the fact that we've observed a decrease MCP detection efficiencly we believe is due to the Lorentz force as the MCP is oriented along the X-axis.
 **
 
-\section{Laser Systems Cooling Strontium}
+\section{Laser Systems for Producing Cold and Ultracold Strontium Gases}
 
 This section covers the various laser systems used for laser cooling strontium and various spectroscopy beams.
 \Cref{fig:trapping_beams} gives an overview of the orientation of our various laser cooling and trapping beams.
@@ -195,6 +195,26 @@ Fiber coupling allowed us to quickly fix injection lock issues by optimizing the
 		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}. 
 		A video is available at {https://youtu.be/ENDIizrlqMA}.}
 \end{figure}
+
+We currently have three blue diode-based lasers which generate all the \SI{461}{\nm} power available on our experiment.
+A single external cavity diode laser (ECDL) ``master'' laser is locked to a homebuilt strontium saturated absorption cell and injection locks two slave lasers.
+
+Our current master laser is a New Focus Vortex Plus TLB-6802 which provides about ** \SI{40}{\mW} ** of output power.
+Although this laser tunes relatively well and remains single-mode when tuning between the various isotopes, we have very disappointed with output quality of the laser which has what appears to be a {Hermite-Gaussian TEM\tsub{00}} output mode **see Fig. XX). 
+** INCLUDE BEAM PROFILER FIGURE **
+Due to this poor output profile, used a D-mirror to split the beam in to two nearly-Gaussian modes and directed each half to a slave laser for injection locking.
+After using the laser for about six years, the piezo tuning element died\footnote{The laser died after powering down and keying off the laser driver...} and the laser had to be sent back to New Focus for repairs.
+During the repairs, we changed our setup so that the two slave lasers are injection locked from the output of a fiber so that we can easily change master lasers should this laser die again.
+We also noticed some weird grounding issues with the TLB-6700 drivers New Focus sent us with the lasers\footnote{Similar issues were seen by Jun Ye's group when I asked them if they have observed issues with the New Focus lasers.}.
+Overall, we were not satisfied with New Focus' ECDL and their repair process and costs so much so that they only reduced the quoted repair cost\footnote{The piezo repair was going to cost 7500 with an additional 4000 for a new diode...} after we were ready to purchase a new \SI{461}{\nm} ECDL from either Toptica or MOGLabs\footnote{We ended up purchasing a \SI{461}{\nm} ECDL from Toptica but both companies provided quotes for NEW lasers, about 21k from MOGLabs and about 25k from Toptica but with about \SI{100}{\mW} of output power.}.
+
+We have previously tried homebuilding our own \SI{461}{\nm} slave laser with can-opened blue diode\footnote{Nichia NDB4216E - a non-AR coated diode with about \SI{100}{\mW} of output power.} but found it to be unsatisfactory. 
+We ended up going with two New Focus TLB-6802-IJ\footnote{From what we can tell, these are simply their standard TLB-6802 without the grating and probably using the Nichia NDB4216E non-AR coated diode which is specified to output about \SI{100}{\mW}.} both of which output about \SI{100}{\mW} of power.
+The ``MOT'' slave is injection locked at the same frequency as the master laser and its power is split between the blue MOT, 2D collimator, and the imaging beam.
+The injection beam for the ``Zeeman'' slave is first shifted by \SI{-535}{\MHz} relative to the master laser before injection locking the laser. This allows all the power out from the slave to be used for operating the Zeeman slower instead of taking a hit going through an AOM.
+
+The entire \SI{461}{\nm} system is housed at far end of our table from the vacuum system and boxed in an opaque enclosure to contain the blue light, even a little of which can lead to heating our samples. 
+Mechanical shutters\footnote{We use hard drive shutters as we've found them to be the most reliable.} are used to provide \SI{100}{\percent} extinction.
 
 \subsection{Magnetic Trap and Repumping}
 
