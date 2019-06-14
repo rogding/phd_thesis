@@ -205,7 +205,7 @@ Although this laser tunes relatively well and remains single-mode when tuning be
 Due to this poor output profile, used a D-mirror to split the beam in to two nearly-Gaussian modes and directed each half to a slave laser for injection locking.
 After using the laser for about six years, the piezo tuning element died\footnote{The laser died after powering down and keying off the laser driver...} and the laser had to be sent back to New Focus for repairs.
 During the repairs, we changed our setup so that the two slave lasers are injection locked from the output of a fiber so that we can easily change master lasers should this laser die again.
-We also noticed some weird grounding issues with the TLB-6700 drivers New Focus sent us with the lasers\footnote{Similar issues were seen by Jun Ye's group when I asked them if they have observed issues with the New Focus lasers.}.
+We also noticed some weird grounding issues with the TLB-6700 drivers New Focus sent us with the lasers\footnote{Similar issues were noticed by Jun Ye's group when I asked them if they have observed issues with the New Focus lasers.}.
 Overall, we were not satisfied with New Focus' ECDL and their repair process and costs so much so that they only reduced the quoted repair cost\footnote{The piezo repair was going to cost 7500 with an additional 4000 for a new diode...} after we were ready to purchase a new \SI{461}{\nm} ECDL from either Toptica or MOGLabs\footnote{We ended up purchasing a \SI{461}{\nm} ECDL from Toptica but both companies provided quotes for NEW lasers, about 21k from MOGLabs and about 25k from Toptica but with about \SI{100}{\mW} of output power.}.
 
 We have previously tried homebuilding our own \SI{461}{\nm} slave laser with can-opened blue diode\footnote{Nichia NDB4216E - a non-AR coated diode with about \SI{100}{\mW} of output power.} but found it to be unsatisfactory. 
@@ -218,35 +218,42 @@ Mechanical shutters\footnote{We use hard drive shutters as we've found them to b
 
 \subsection{Magnetic Trap and Repumping}
 
-As mentioned in the blue MOT section above, the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ is not completely closed with about $1:\num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
+As mentioned in the blue MOT section above, the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ is not completely closed with about $1:50000$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
 About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
 The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about \SI{520}{\second} \cite{Yasuda2004.PRL.92.153004}\footnote{Theoretical calculations predict a lifetime of \SI{17}{\minute} \cite{Derevianko2001.PRL.87.023002}.}, effectively removing them from the blue MOT cooling cycle.
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states can become trapped in the quadrupole magnetic field of the blue MOT.
-This decay path, initially seen as a ``loss'' ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
+This decay path, initially seen as a ``loss'' from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
 The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
-For details of our magnetic trap, see \cite{Camargo2015.MS}.
+** For details of our magnetic trap, see \cite{Camargo2015.MS}. **
 
 \subsection{\SI{481}{\nm} Repumping System}
 
-In order to recover atoms from the metastable reservoir, several repumping transitions have been explored:
+Before moving on to the narrow line ``red'' MOT, the atoms in the metastable resevoir are dark to both the \SI{461}{\nm} and \SI{689}{\nm} cooling light and must be brought back to the ground state.
+Several transitions have been explored for repumping atoms out of the metastable resevoir over the years:
+** I don't know if I want to keep the list below since it's very similar to one in Simon Stellmer's thesis **
 \begin{itemize}
-		\item \SI{707}{\nm} and \SI{679}{\nm} lasers to drive ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ and ${\nSLJ{5s5p}{3}{P}{0} \rightarrow \nSLJ{5s6s}{3}{S}{1}}$ transitions, respectively \cite{Barker2015.PRA.92.043418, Campbell2017.PhD} ** probably also reference multiple theses**. 
-		\item \SI{3011.8}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s4d}{3}{D}{2}}$ \cite{Mickelson2009.JPB.42.235001}.
-		\item \SI{496.93}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s5d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
-		\item \SI{403.35}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6d}{3}{D}{2}}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
-		\item \SI{481.323}{\nm} driving the ${\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}}$ transition \cite{Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}.
+	\item {$\nSLJ{5s6s}{3}{S}{1}$}, $\lambda = \SI{707}{\nm}$ --
+		this is a popular transition and is used by a lot of past and current strontium experiments \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Norcia2018.PRX.8.041054} since it's well characterized and accessible with easily available laser diodes.
+		The drawback is that this upper state is $J=1$ meaning $\nSLJ{5s6s}{3}{S}{1}$ can decay to the metastable $\nSLJ{5s5p}{3}{P}{0}$ state as well, requiring another laser at \SI{679}{\nm} to repump out of this state. 
+	\item {$\nSLJ{5s4d}{3}{D}{2}$} --
+		at \SI{3011.84}{\nm} driving the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s4d}{3}{D}{2}$ \cite{Mickelson2009.JPB.42.235001} transition.
+		Being a $J=2$ state means a single laser can be used to clear out the $\nSLJ{5s5p}{3}{P}{2}$ reservoir but the \SI{3}{\um} wavelength is difficult to produce.
+	\item {$\nSLJ{5s5d}{3}{D}{2}$} --
+		at \SI{496.93}{\nm} driving the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s5d}{3}{D}{2}$ transition \cite{Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
+		The change of using this transition is the difficulty in producing the green repumping light.
+	\item {$\nSLJ{5s6d}{3}{D}{1,2}$} --
+		at \SI{403.35}{\nm} driving the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5s6d}{3}{D}{2}$ transition \cite{Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008}.
+		Similar attributes as using the $\nSLJ{5s5d}{3}{D}{2}$ with the added advantage of being accessible with Blu-ray laser diodes.
+	\item {$\nSLJ{5p^2}{3}{P}{1,2}$} --
+		at \SI{481.323}{\nm} driving the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition \cite{Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}.
 \end{itemize}
 
 Our current \SI{481}{\nm} repumper system is shown in \cref{fig:repumper_system}. 
 The \SI{481}{\nm} light is provided by a Toptica DL 100\footnote{The laser is equipped with a {LD-0488-0060-1} diode.} which outputs about ** \SI{10}{\mW} ** of power. 
-For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} which has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas}.
+For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} which has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas} which is close to the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at \SI{20776.087}{\per\cm} \cite{Sansonetti2010.JPCRD.39.033103}.
 Originally, when the lab was working with a single isotope, simply tuning the lock point to maximize repumping efficiency of the isotope of interest was good enough (typically \Sr{84} since it's the least abundant).
-Now that we routinely work with multiple isotopes and mixtures, a free-space electro-optic modulator (EOM) was added to to add sidebands to the \SI{481}{\nm} light in order to address multiple isotopes and the hyperfine shift of \Sr{87}.
-The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Heider1977.PRA.16.1371} and the hyperfine shift of the upper $\nSLJ{5p^2}{3}{P}{2}$ doubly-excited is expected to be small **because of the lack of an {$s$-electron}\footnote{I.e., the magnetic dipole hyperfine contribution comes from the $\delta(r)$....} CHECK **.
-
-In principle, it should be possible to lock to a hollow cathode lamp (HCL) due to collisions populating enough metastable atoms to perform spectroscopy on \cite{Norcia2016.RSI.87.023110}.
-Instead of using an HCL, we plan on using a ``super lock'' \cite{Lindsay1991.RSI.62.1656, Jaffe1993.RSI.64.2475, Zhao1998.RSI.69.3737, Subhankar2019.RSI.90.043115} (see Appendix xxxx for future upgrade plans) since we already have a stable \SI{689}{\nm} reference laser (although we could also lock to a stabilized HeNe).
-We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.043103} but ultimately decided against it as our wavemeter's accuracy is lacking, its sampling rate a bit too slow, and we needed the wavemeter for other tasks (e.g., finding Rydberg lines). 
+Now that we routinely work with multiple isotopes and mixtures, a free-space electro-optic modulator (EOM) was introducted to to add sidebands to the \SI{481}{\nm} light in order to address multiple isotopes and the hyperfine shift of \Sr{87}.
+The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Heider1977.PRA.16.1371} and cover the hyperfine shift of the upper $\nSLJ{5p^2}{3}{P}{2}$ doubly-excited is expected to be small **because of the lack of an {$s$-electron}\footnote{I.e., the magnetic dipole hyperfine contribution comes from the $\delta(r)$....} CHECK **.
 
 \begin{figure}[htbp]
 	\centering
@@ -259,49 +266,65 @@ We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.0431
 		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
 \end{figure}
 
+In principle, it should be possible to lock to a hollow cathode lamp (HCL) due to collisions populating enough metastable atoms to perform spectroscopy on \cite{Norcia2016.RSI.87.023110}.
+Instead of using an HCL, we plan on using a ``super lock'' \cite{Lindsay1991.RSI.62.1656, Jaffe1993.RSI.64.2475, Zhao1998.RSI.69.3737, Subhankar2019.RSI.90.043115} (see Appendix xxxx for future upgrade plans) since we already have a stable \SI{689}{\nm} reference laser (although we could also lock to a stabilized HeNe).
+We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.043103} but ultimately decided against it as our wavemeter's accuracy is lacking, its sampling rate a bit too slow, and we needed the wavemeter for other tasks (e.g., finding Rydberg lines). 
+
 \subsection{\SI{689}{\nm} Laser System}
 
 Some details about our narrow line cooling system can be found in \cite{Ding2016.MS}.
-The details of the narrow line \SI{689}{\nm} ``red'' MOT can be found in \cite{Stellmer2013.PhD, Boyd2007.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD}. 
-The details of the \Sr{87} red MOT is particularly well described in \cite{Stellmer2013.PhD} and will not be reproduced here. 
+The operation of the narrow line \SI{689}{\nm} ``red'' MOT can be found in \cite{Stellmer2013.PhD, Boyd2007.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD}. 
+Details of the \Sr{87} red MOT is particularly well described in \cite{Stellmer2013.PhD} and will not be reproduced here. 
 
 \subsubsection{\SI{689}{\nm} Master Laser}
 
-Due to the ease of building \SI{689}{\nm} slave lasers \cite{Ding2016.MS}, we only need a single \SI{689}{\nm} stabilized master laser system to run both the Rydberg and Neutral experiments. 
-From the red master table, two fibers run to each experiment: one fiber with light at \SI{-82}{\MHz} of $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition and the other at ** \SI{-1440.440}{\MHz} ** for injection locking the \Sr{87} ``trap'' slave lasers. 
+A single \SI{689}{\nm} Toptica DL pro ECDL serves as our master laser and is shared between the Rydberg and Neutral experiments. 
+The laser is first locked to a homebuilt high-finesse Fabry-P{\'{e}}rot (FP) cavity\footnote{$F \gtrsim \num{2040}$ . Additional details can be found in \cite{Martinez2012.PhD}.} which is then locked to a heated strontium saturated absorption cell.
+Since the $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ is very weak, the cell is relatively long to allow enough absorption to occur.
 For most of the experiments described in this thesis, the red master laser was found to have a linewidth of about \SI{30}{\kHz}.
 ** More details of the \SI{689}{\nm} master laser system is provided in Jim's Ph.D. thesis. **
+We recently purchased a ULE cavity from Stable Laser Systems (SLS). 
+Some additional details in \cref{ssec:ULE_cavity}.
 
-We currently do not implement a fiber phase noise cancellation system \cite{Ma1994.OL.19.1777, Rauf2018.RSI.89.033103} so it's possible that the light at the slave lasers is broadened to ** \si{\kHz}-levels ** but it shouldn't be too difficult to implement in the future when necessary. 
+Due to the ease of building \SI{689}{\nm} slave lasers \cite{Ding2016.MS}, we only need a single \SI{689}{\nm} stabilized master laser system to run both the Rydberg and Neutral experiments. 
+From the red master table, two fibers run to each experiment with light at the following frequencies:
+\begin{itemize}
+	\item $f_\text{master}$ --
+		This light is locked to \SI{-82}{\MHz} of the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{88}. 
+	\item $f_\text{master} - \SI{1440.440}{\MHz}$ --
+		This light is generated by passing the light directly out of the \SI{689}{\nm} master laser though a freespace gigahertz AOM before being sent to fibers to the Rydberg and Neutral experiments (instead of each experiment operating inefficient gigahertz AOMs to generate their own light for trapping \Sr{87}).
+		This light is used to injection lock slave lasers for proudicing the \Sr{87} ``trap'' red MOT light.
+\end{itemize}
 
-\subsubsection{Multi-Isotope Red MOT System}
+We currently do not implement a fiber phase noise cancellation system \cite{Ma1994.OL.19.1777, Rauf2018.RSI.89.033103} so it's possible that the light at the slave lasers is broadened to ** kilohertz-levels ** over the \SI{25}{\meter} fibers delivering master light to the Rydberg experiment but it shouldn't be too difficult to implement in the future when necessary. 
+
+\subsubsection{Rydberg Red Laser System}
+
+Once the red light arrives on the Rydberg table, typically only about \SI{1}{\mW} is available so we use the master light to injection lock slave lasers to increase the available \SI{689}{\nm} power. 
+\SI{689}{\nm} slave lasers are relatively easy to build and are detailed in \cite{Ding2016.MS}.
+We currently use a rejected beam from the slave laser isolator to monitor the mode of the slave laser. 
+In the future, I would instead use a stray reflection or beam sampler after the isolator as the current arrangement could lead to a small amount of light from the spectrum analyzer cavity getting back to the slave lasers (especially since we share the spectrum analyzer cavity with multiple slaves), possibly leading to instability issues. 
 
 \Cref{fig:red_system} shows what the red MOT system looks like when set up for trapping any combination of isotopes. 
 In practice, we don't always have all the red MOT AOMs lined up, typically only keeping the AOMs necessary for trapping the isotope(s) for a particular experiment while the other red MOT AOMs are used to generate various other beams (e.g., spectroscopy, ``blow away'', etc.).
-
 \begin{sidewaysfigure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/red_system/red_system.svg}
 	\caption{\label{fig:red_system}Simplified diagram of the red MOT system (when everything is put together) for multi-isotope trapping. The master laser frequency is referenced to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}.}
 \end{sidewaysfigure}
-
 Without using a fiber combiner, we're able to devote a lot of power to the red MOT for each isotope, enabling us to use large red MOT beams. 
 The drawbacks is that we're much more sensitive to misalignments and the ugly intensity profiles out of the diodes leads to strange red MOT shapes. 
-
-**
-
-Mention SWAP cooling? \cite{Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838, Snigirev2019.arXiv.1903.06435}.
-
-**
 
 ****
 Image of \Sr{84} and \Sr{87} red MOTs.
 ****
 
-*** NOTE ABOUT NOT USING REJECTED BEAM FOR MONITOR SLAVE MODE ***
-We currently use a rejected beam from the slave laser isolator to monitor the mode of the slave laser. 
-In the future, I would instead use a stray reflection or beam sampler after the isolator as the current arrangement could lead to a small amount of light from the spectrum analyzer cavity getting back to the slave lasers (especially since we share the spectrum analyzer cavity with multiple slaves), possibly leading to instability issues. 
-***
+Since the red MOT is only operated for a few hundred milliseconds, the zeroth-order from the red MOT AOMs also provide the light for various other purposes (e.g., spectroscopy, loss, etc.). 
+
+**
+Mention SWAP cooling? \cite{Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838, Snigirev2019.arXiv.1903.06435}.
+**
+
 
 \subsection{Optical dipole trap}
 
@@ -439,8 +462,10 @@ Instead of implementing a proper transfer cavity lock, we'll be using a ``superl
 Since we should be able to lock the \SI{481}{\nm} repumper to sub-megahertz frequencies, we plan on mapping out the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition for optimum multi-isotope repumping. 
 
 \subsection{Upgrading to a ULE Cavity}
+\label{ssec:ULE_cavity}
 
 The lab recently purchased an ultra-low expansion (ULE) glass cavity from Stable Laser Systems (SLS) with mirrors coated for \SI{640}{\nm}, \SI{689}{\nm}, and \SI{698}{\nm}.
+Based on the supplied reflectivity measurements, the cavity is expected to have a finesse of about $F \approx \num{65000}-\num{92000}$\footnote{The mirror coatings are specified to have $T_{\SI{640}{\nm}} = \SI{0.0048300}{\percent}$, $T_{\SI{689}{\nm}} = \SI{0.0034720}{\percent}$, and $T_{\SI{698}{\nm}} = \SI{0.0034054}{\percent}$ meaning we should expect **$F_{\SI{640}{\nm}} \approx \num{65000}$, $F_{\SI{689}{\nm}} \approx \num{90500}$, and $F_{\SI{698}{\nm}} \approx \num{92000}$**.}.
 The mirrors have a specified finesse of ** $\mathcal{F} \approx \num{100000}$ ** for these wavelengths, which means we should be able to narrow our laser to ** sub-kilohertz ** levels. 
 This ULE cavity will be used to stabilize and narrow both our workhorse \SI{689}{\nm} laser and \SI{640}{\nm} Rydberg laser (pre-doubling). 
 We currently do not have a \SI{698}{\nm} clock laser but the option is available.
