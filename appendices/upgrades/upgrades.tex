@@ -1,0 +1,46 @@
+\chapter{Suggested Upgrades}
+\label{ap:upgrades}
+
+This section contains some of my thoughts on potential future paths for upgrading various parts of our sytem.
+The suggestions range from currently being actively being pursued whereas others are for future considerations. 
+
+\subsection{Locking the \SI{481}{\nm} with a ``Super Lock''}
+
+One of the upgrades currently underway is improving the \SI{481}{\nm} repumper lock.
+The previous setup locked to the side of a Doppler-broadened line in ** \Te{130}{2} **, which has been very sensitive to background light and environmental changes. 
+To improve the lock, we'll be implementing a scanning Fabry-Perot lock where the position of the \SI{481}{\nm} laser in a Fabry-Perot cavity is locked relative to the \SI{689}{\nm} master laser.
+Instead of implementing a proper transfer cavity lock, we'll be using a ``superlock'' where a Fabry-Perot cavity is rapidly scanned and stabilized to one laser wavelength (our \SI{689}{\nm} reference) which allows another laser (the \SI{481}{\nm} laser) to be stabilized relative to the reference laser \cite{Lindsay1991.RSI.62.1656, Tonyushkin2007.RSI.78.123103, Subhankar2019.RSI.90.043115}. 
+
+Since we should be able to lock the \SI{481}{\nm} repumper to sub-megahertz frequencies, we plan on mapping out the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition for optimum multi-isotope repumping. 
+
+\subsection{Upgrading to a ULE Cavity}
+\label{ssec:ULE_cavity}
+
+The lab recently purchased an ultra-low expansion (ULE) glass cavity from Stable Laser Systems (SLS) with mirrors coated for \SI{640}{\nm}, \SI{689}{\nm}, and \SI{698}{\nm}.
+Based on the supplied reflectivity measurements, the cavity is expected to have a finesse of about $F \approx \num{65000}-\num{92000}$\footnote{The mirror coatings are specified to have $T_{\SI{640}{\nm}} = \SI{0.0048300}{\percent}$, $T_{\SI{689}{\nm}} = \SI{0.0034720}{\percent}$, and $T_{\SI{698}{\nm}} = \SI{0.0034054}{\percent}$ meaning we should expect **$F_{\SI{640}{\nm}} \approx \num{65000}$, $F_{\SI{689}{\nm}} \approx \num{90500}$, and $F_{\SI{698}{\nm}} \approx \num{92000}$**.}.
+The mirrors have a specified finesse of ** $\mathcal{F} \approx \num{100000}$ ** for these wavelengths, which means we should be able to narrow our laser to ** sub-kilohertz ** levels. 
+This ULE cavity will be used to stabilize and narrow both our workhorse \SI{689}{\nm} laser and \SI{640}{\nm} Rydberg laser (pre-doubling). 
+We currently do not have a \SI{698}{\nm} clock laser but the option is available.
+We'll be implementing a system similar to \cite{Gregory2015.NJP.17.055006} where two broadband fiber EOMs will be used to provide both the PDH modulation on tunable sidebands with gigahertz separations. 
+Eventually, the ULE cavity will provide the frequency reference for the \SI{689}{\nm} instead of the atoms\footnote{Other groups have mentioned that they experienced frequency broadening when locking their \SI{689}{\nm} lasers to the atoms after using the ULE to narrow the laser.}. 
+The \SI{689}{\nm} saturated absorption cell will remain to provide a check on the absolute frequency reference as the ULE cavity settles overtime (** ULE cavities are expected to drift at about \SI{100}{\Hz} per day \cite{Barker2016.PhD, Reschovsky2017.PhD} **).
+
+In our current setup, we observe positional instability in the (bosonic) red MOT final (single-frequency) position which appears to be similar to the one reported in \cite{Hanley2018.PhD}. 
+As written by \citeauthor{Hanley2018.PhD}, once they switched to lock to the ULE cavity, the noticed a significant improvement in the vertical positional stability of their red MOT which will hopefully also be the case for us. 
+
+\subsection{Redoing the \SI{1064}{\nm} ODT system}
+
+Since we've been borrowing Randy Hulet's \SI{1070}{\nm} laser for our ODT system, we need to eventually change back to our Nufern NuAMP \SI{50}{\W} single-mode amplifier. 
+During this process, we should take the time to revise the optical setup so that it's both simpler and has the capability of monitoring the coupling efficiency through the ODT fibers (monitoring both the input and output powers). 
+We will also be implementing a second sheet trap ** with similar dimensions as the one I built ** so that we have a ``crossed-pancake'' setup. 
+This should be advantageous since the pancake geometry modematches well with the red MOT and crossing the sheet traps should provide significantly better longitudinal confinement over our current single-beam sheet.
+The vertical dimple will remain as an option for producing tight optical trapping potentials when we need high densities (e.g., for \Sr{88} and \Sr{87}).
+Although we haven't experienced significant issues with damaging the high-power \SI{1064}{\nm} ODT fibers (** find theses where they mention damaging these fibers? **), the capability to monitor (and implement an interlock) should add an additional layer of protection.
+
+\subsection{Fiber-Coupling the Red MOT}
+
+We've found that our current setup is susceptible to beam-pointing drifts. 
+We haven't pinpointed the source of the drifts but it appears to be the slave laser housings we've been suing (Thorlabs' xxxxxxx). 
+Fiber-coupling the red MOT beams should allow much greater performance consistency although we likely have to sacrifice power (i.e., we'll need to use smaller red MOT beams). 
+
+We still haven't come across a good system for controlling the frequency of the red MOT lasers...

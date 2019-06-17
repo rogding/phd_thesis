@@ -22,15 +22,15 @@ An overview of our vacuum system is shown in \cref{fig:vacuum_system}.
 		Overview of the strontium Rydberg experiment vacuum system highlighting the main sections of the apparatus and various components.}
 \end{figure}
 We follow a conventional setup for producing cold and ultracold strontium gases (e.g., see \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD}) where our system can roughly be divided in to three main sections:
-\begin{description}
-	\item[Source-side vacuum system]
+\begin{itemize}
+	\item Source-side vacuum system --
 		The starting point where an oven heats solid strontium to about \SI{425}{\celsius}, producing an effusive beam of strontium atoms directed down the Zeeman slower and towards the main chamber.
 		A two-demensional (2D) collimator stage which uses transverse optical molasses to increase the flux of atoms down the Zeeman slower.
-	\item[Zeeman slower]
+	\item Zeeman slower --
 		A Zeeman slower used to reduce the atomic velocities from the oven to something capable of being captured by the blue magneto-optical trap (MOT).
-	\item[Experiment-side vacuum system]
+	\item Experiment-side vacuum system --
 		This is where most of the magic happens with atoms from the Zeeman slower being laser cooled and captured ready for experiments. 
-\end{description}
+\end{itemize}
 More detailed descriptions of each are provided in their respective sections below.
 
 Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
@@ -93,20 +93,20 @@ The experiment-side vacuum system consists of two primary sections:
 \end{description}
 
 Francisco designed the main chamber which was custom fabricated\footnote{Huntington Mechanical Labs} and features
-\begin{description}
-	\item[Recessed top and bottom flanges]
+\begin{itemize}
+	\item Recessed top and bottom flanges --
 		The recessed flanges move the top and bottom \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
 		The in vacuum electric field plates are mounted to the bottom flange which also features \num{11} \SI{10}{\kV} SHV feedthroughs.
-	\item[Six \SI{2.75}{\inch} horizontal viewports]
+	\item Six \SI{2.75}{\inch} horizontal viewports --
 		These viewports procide optical access for the various MOT and optical dipole trap beams.
-	\item[A **tube** to house the MCP]
+	\item A **tube** to house the MCP --
 		The MCP fits inside a ** xxx inch ** tube.
-	\item[Three \SI{1.33}{\inch} horizontal viewports]
+	\item Three \SI{1.33}{\inch} horizontal viewports --
 		The mini \SI{1.33}{\inch} viewports are used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular or parallel to the MCP.
-	\item[A conical expansion to a \SI{6}{\inch} flange]
+	\item A conical expansion to a \SI{6}{\inch} flange --
 		The conical expansion to a \SI{6}{\inch} flange allows for increased conductance to the pumps.
 		The Zeeman slower beam also passes through this flange. 
-\end{description}
+\end{itemize}
 ** The \SI{2.75}{\inch} viewports were antireflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} by Reynard Corporation. **
 
 Vacuum pressure is maintained by a \SI{75}{\liter\per\second} Gamma Vacuum 75S-CVX-6S-SC-N-N ion pump located at the top of the pumping tower.
@@ -146,7 +146,8 @@ This allows us to use two different current supplies without needing a controlle
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
 	\caption{\label{fig:dual_mot_coils}
 		(Left) Picture of our assembled dual MOT coils on a test setup. 
-		(Right) CAD rendering of how they are centered around the buket windows of the main chamber.}
+		(Right) CAD rendering of how they are centered around the buket windows of the main chamber.
+		** Redo with 2D CAD drawing instead of rendered image. **}
 \end{figure}
 
 The blue MOT coils are hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
@@ -174,7 +175,7 @@ This section covers the various laser systems used for laser cooling strontium a
 		Simplified schematic of the various trapping and cooling lasers and the Rydberg excitation beams.}
 \end{sidewaysfigure}
 
-\subsection{Versatile Blue MOT System}
+\subsection{\SI{461}{\nm} ``Blue'' Laser System}
 
 Section about Zeeman slower and blue cooling setup. Some details about our blue cooling system can be found in \cite{Camargo2015.MS, Ding2016.MS}. 
 After having to send back our Newport TLB-18xx for repairs, we decided to fiber couple the injection path for the Zeeman and MOT slave lasers. 
@@ -216,7 +217,7 @@ The injection beam for the ``Zeeman'' slave is first shifted by \SI{-535}{\MHz} 
 The entire \SI{461}{\nm} system is housed at far end of our table from the vacuum system and boxed in an opaque enclosure to contain the blue light, even a little of which can lead to heating our samples. 
 Mechanical shutters\footnote{We use hard drive shutters as we've found them to be the most reliable.} are used to provide \SI{100}{\percent} extinction.
 
-\subsection{Magnetic Trap and Repumping}
+\subsection{\SI{481}{\nm} Repumping System}
 
 As mentioned in the blue MOT section above, the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ is not completely closed with about $1:50000$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
 About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
@@ -225,8 +226,6 @@ Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states 
 This decay path, initially seen as a ``loss'' from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
 The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
 ** For details of our magnetic trap, see \cite{Camargo2015.MS}. **
-
-\subsection{\SI{481}{\nm} Repumping System}
 
 Before moving on to the narrow line ``red'' MOT, the atoms in the metastable resevoir are dark to both the \SI{461}{\nm} and \SI{689}{\nm} cooling light and must be brought back to the ground state.
 Several transitions have been explored for repumping atoms out of the metastable resevoir over the years:
@@ -270,7 +269,7 @@ In principle, it should be possible to lock to a hollow cathode lamp (HCL) due t
 Instead of using an HCL, we plan on using a ``super lock'' \cite{Lindsay1991.RSI.62.1656, Jaffe1993.RSI.64.2475, Zhao1998.RSI.69.3737, Subhankar2019.RSI.90.043115} (see Appendix xxxx for future upgrade plans) since we already have a stable \SI{689}{\nm} reference laser (although we could also lock to a stabilized HeNe).
 We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.043103} but ultimately decided against it as our wavemeter's accuracy is lacking, its sampling rate a bit too slow, and we needed the wavemeter for other tasks (e.g., finding Rydberg lines). 
 
-\subsection{\SI{689}{\nm} Laser System}
+\subsection{\SI{689}{\nm} ``Red'' Laser System}
 
 Some details about our narrow line cooling system can be found in \cite{Ding2016.MS}.
 The operation of the narrow line \SI{689}{\nm} ``red'' MOT can be found in \cite{Stellmer2013.PhD, Boyd2007.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD}. 
@@ -315,6 +314,9 @@ In practice, we don't always have all the red MOT AOMs lined up, typically only 
 Without using a fiber combiner, we're able to devote a lot of power to the red MOT for each isotope, enabling us to use large red MOT beams. 
 The drawbacks is that we're much more sensitive to misalignments and the ugly intensity profiles out of the diodes leads to strange red MOT shapes. 
 
+We currently have three slave lasers which amplify the light from the red master. 
+We found that fiber-coupling the injection beams made them much less sensitive to mechanical drifts and greatly increased the ease of switching the frequency of the slave laser by changing the source of the injection beam.
+
 ****
 Image of \Sr{84} and \Sr{87} red MOTs.
 ****
@@ -326,31 +328,21 @@ Mention SWAP cooling? \cite{Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.0234
 **
 
 
-\subsection{Optical dipole trap}
+\subsection{Optical Dipole Trap}
 
-Optical dipole traps work by ...... \cite{Grimm1999.arXiv.9902072}.
+Strontium in the ground $\nSLJ{5s^2}{1}{S}{0}$ state have a negligible magnetic moment meaning we cannot magnetically trap ground state atoms necessitating the use of optical traps. 
+Our current high-power \SI{1064}{\nm} laser system is powered by a Nufern NuAMP SUB-1382 which amplifies a few milliwatts of \SI{1064}{\nm} seed light to about \SI{50}{\W}.
+There are apparently ``tricks'' for making these lasers operate very quietly as used in quantum gas microscopes \cite{Mazurenko2017.PhD, Mazurenko2019.RSI.90.033101} but we have not done such modifications. 
+Due to the high IR powers, we used fused silica optics whenever possible although we still have BK7 Brewster plates in the Thorlabs IO-5-1064-VHP isolator \cite{Mazurenko2017.PhD, Mazurenko2019.RSI.90.033101}.
 
-Since the $\nSLJ{5s^2}{1}{S}{0}$ electrons are paired, it has a negligible magnetic moment meaning we cannot magnetically trap ground state strontium atoms.
-As a result, we use optical traps to confine and evaporatively cool ground state strontium atoms. 
-
-In our setup, we've used both free-space and fibered optical dipole traps but due to having to replace and realign the high-power IR lasers multiple times, we ended up sticking with the fibered systems due to them not losing alignment.
-The drawback to the fibered ODT systems is that it's difficult to couple more than about \SI{5}{\W} through continuously without thermal effects degrading the coupling efficiency.
-We get around this issue by only having the ODT on at high powers during the transfer from the red MOT before quickly moving in to the evaporation. 
+We have used both free-space and fibered optical dipole traps but due to having to replace and realign the high-power IR lasers multiple times, we ended up sticking with the fibered systems due to them not losing alignment.
+The drawback to the fibered ODT systems is that it's difficult to couple more than about \SI{10}{\W} through continuously without thermal effects degrading the coupling efficiency.
+We get around this issue by only having the ODT on at high powers during the transfer from the red MOT before quickly moving on to the evaporation stage. 
 
 We started with a free-spaced crossed-beam optical dipole trap (XODT) with waists of about $\SI{60}{\um} \times \SI{60}{\um}$. 
 This trap was a bit tight but worked well for making \num{100000} BECs of \Sr{84}. 
 We found that loading was improved if the trap was artificially widened by driving the AOM with three slightly different frequencies before turning the sideband frequencies down and evaporating \cite{Camargo2017.PhD}.
 After going through three ODT lasers, we stuck with the sheet trap and vertical crossing trap because they were fiber coupled. 
-
-
-\subsection{A tale of three lasers}
-
-Our first ODT laser was a Coherent Verdi IR - essentially a \SI{1064}{\nm} version of the more common \SI{532}{\nm} variant. 
-That worked ok until it died due to an electrical surge (?). 
-At which point we moved to using a Nufern NuAmp \SI{50}{\W} fiber amplifier laser.
-
-\subsection{Fiber-Coupled ODTs}
-
 Having the fiber-coulped sheet trap saved our ass as we've had to switch out the high-power laser multiple times (from the Coherent Verdi-IR, Nufern NuAmp, to IPG, back to Nufern NuAmp. 
 
 For the high-power \SI{1064}{\nm} fibers, we've had good experiences using PMJ-A3AHPC,A3AHPC-1064-6/125-3AS-\textit{L}-1\footnote{These fibers are air-gapped and have an endcap on the ends which allows the beam to expand before entering/exiting the fiber, reducing hte power density. The adjustable fiber tip positions allow for optimization of coupling efficiency in to the fiber.} from OZ Optics. 
@@ -446,49 +438,3 @@ This detector was selected becuse it fit inside the ** xxx in ** diameter tube o
 \end{figure}
 
 Over the years, we have used the MCP to detect both electrons and ions, but we primarily detect electrons as they arrive much quicker than ions. 
-
-\section{Future Improvements}
-
-Below I cover a few upgrades we are currently working towards or plan on implementing in the near future. 
-Some of the improvements are focused around making systems we inherited from previous graduate students more stable and reliable throughout the lab (i.e., the \SI{481}{\nm} repumper and \SI{689}{\nm} system) while others are meant as strictly an upgrade to add improved capabilities to the Rydberg experiment. 
-
-\subsection{Locking the \SI{481}{\nm} with a ``Super Lock''}
-
-One of the upgrades currently underway is improving the \SI{481}{\nm} repumper lock.
-The previous setup locked to the side of a Doppler-broadened line in ** \Te{130}{2} **, which has been very sensitive to background light and environmental changes. 
-To improve the lock, we'll be implementing a scanning Fabry-Perot lock where the position of the \SI{481}{\nm} laser in a Fabry-Perot cavity is locked relative to the \SI{689}{\nm} master laser.
-Instead of implementing a proper transfer cavity lock, we'll be using a ``superlock'' where a Fabry-Perot cavity is rapidly scanned and stabilized to one laser wavelength (our \SI{689}{\nm} reference) which allows another laser (the \SI{481}{\nm} laser) to be stabilized relative to the reference laser \cite{Lindsay1991.RSI.62.1656, Tonyushkin2007.RSI.78.123103, Subhankar2019.RSI.90.043115}. 
-
-Since we should be able to lock the \SI{481}{\nm} repumper to sub-megahertz frequencies, we plan on mapping out the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition for optimum multi-isotope repumping. 
-
-\subsection{Upgrading to a ULE Cavity}
-\label{ssec:ULE_cavity}
-
-The lab recently purchased an ultra-low expansion (ULE) glass cavity from Stable Laser Systems (SLS) with mirrors coated for \SI{640}{\nm}, \SI{689}{\nm}, and \SI{698}{\nm}.
-Based on the supplied reflectivity measurements, the cavity is expected to have a finesse of about $F \approx \num{65000}-\num{92000}$\footnote{The mirror coatings are specified to have $T_{\SI{640}{\nm}} = \SI{0.0048300}{\percent}$, $T_{\SI{689}{\nm}} = \SI{0.0034720}{\percent}$, and $T_{\SI{698}{\nm}} = \SI{0.0034054}{\percent}$ meaning we should expect **$F_{\SI{640}{\nm}} \approx \num{65000}$, $F_{\SI{689}{\nm}} \approx \num{90500}$, and $F_{\SI{698}{\nm}} \approx \num{92000}$**.}.
-The mirrors have a specified finesse of ** $\mathcal{F} \approx \num{100000}$ ** for these wavelengths, which means we should be able to narrow our laser to ** sub-kilohertz ** levels. 
-This ULE cavity will be used to stabilize and narrow both our workhorse \SI{689}{\nm} laser and \SI{640}{\nm} Rydberg laser (pre-doubling). 
-We currently do not have a \SI{698}{\nm} clock laser but the option is available.
-We'll be implementing a system similar to \cite{Gregory2015.NJP.17.055006} where two broadband fiber EOMs will be used to provide both the PDH modulation on tunable sidebands with gigahertz separations. 
-Eventually, the ULE cavity will provide the frequency reference for the \SI{689}{\nm} instead of the atoms\footnote{Other groups have mentioned that they experienced frequency broadening when locking their \SI{689}{\nm} lasers to the atoms after using the ULE to narrow the laser.}. 
-The \SI{689}{\nm} saturated absorption cell will remain to provide a check on the absolute frequency reference as the ULE cavity settles overtime (** ULE cavities are expected to drift at about \SI{100}{\Hz} per day \cite{Barker2016.PhD, Reschovsky2017.PhD} **).
-
-In our current setup, we observe positional instability in the (bosonic) red MOT final (single-frequency) position which appears to be similar to the one reported in \cite{Hanley2018.PhD}. 
-As written by \citeauthor{Hanley2018.PhD}, once they switched to lock to the ULE cavity, the noticed a significant improvement in the vertical positional stability of their red MOT which will hopefully also be the case for us. 
-
-\subsection{Redoing the \SI{1064}{\nm} ODT system}
-
-Since we've been borrowing Randy Hulet's \SI{1070}{\nm} laser for our ODT system, we need to eventually change back to our Nufern NuAMP \SI{50}{\W} single-mode amplifier. 
-During this process, we should take the time to revise the optical setup so that it's both simpler and has the capability of monitoring the coupling efficiency through the ODT fibers (monitoring both the input and output powers). 
-We will also be implementing a second sheet trap ** with similar dimensions as the one I built ** so that we have a ``crossed-pancake'' setup. 
-This should be advantageous since the pancake geometry modematches well with the red MOT and crossing the sheet traps should provide significantly better longitudinal confinement over our current single-beam sheet.
-The vertical dimple will remain as an option for producing tight optical trapping potentials when we need high densities (e.g., for \Sr{88} and \Sr{87}).
-Although we haven't experienced significant issues with damaging the high-power \SI{1064}{\nm} ODT fibers (** find theses where they mention damaging these fibers? **), the capability to monitor (and implement an interlock) should add an additional layer of protection.
-
-\subsection{Fiber-Coupling the Red MOT}
-
-We've found that our current setup is susceptible to beam-pointing drifts. 
-We haven't pinpointed the source of the drifts but it appears to be the slave laser housings we've been suing (Thorlabs' xxxxxxx). 
-Fiber-coupling the red MOT beams should allow much greater performance consistency although we likely have to sacrifice power (i.e., we'll need to use smaller red MOT beams). 
-
-We still haven't come across a good system for controlling the frequency of the red MOT lasers...

@@ -46,3 +46,33 @@ the total (transformed) Hamiltonian for the system can be written as
 where $\Delta \equiv \omega - \omega_{e}$ and the rotating wave approximation (RWA) was made ** clarify why/how the RWA is done **.
 
 For $\Delta \gg \Omega$, ..... continue deriving...
+
+********************
+
+********************
+
+********************
+
+The potential of atoms in an optical trap can be written as
+\begin{equation}
+	U	= \hbar \Delta\omega
+		= -\hbar \frac{E^{2}_{0}}{4} \frac{\abs{d}^{2}}{\hbar^{2}} \qty(\frac{1}{\omega_{0} - \omega_{L}} + \frac{1}{\omega_{0} + \omega_{L}})
+		= -\frac{E^{2}_{0}}{4 \hbar} \qty(\frac{2 \abs{d}^{2}}{\hbar} \frac{\omega_{0}}{\omega^{2}_{0}-\omega^{2}_{L}})
+\end{equation}
+where terms generally excluded by the rotating wave approximation were kept.
+The term in parenthesis is the dipole polarizability $\alpha$.
+
+A simple way of generalizing to a multi-level atom is to treat each excited level separately and sum their shift contributions together\footnote{A ``real'' way to do this calculation would be to diagnolize the full interaction matrix for all the atomic levels coupled by the laser.}. 
+Labeling the ground state $\ket{g}$ and the excited states coupled by the optical field with $\ket{e}$, the AC polarizability can be written as
+\begin{equation}
+	\alpha_{g} = \frac{2}{\hbar} \sum_{e} \abs{d}^{2}_{ge} \frac{\omega_{ge}}{\omega^{2}_{ge}-\omega^{2}_{L}}
+\end{equation}
+
+Since the energy shift depends on the square of the electric field, this is easily related to the intensity with $I = c \epsilon_{0} E^{2}_{0}/2$.
+Optical trapping occurs when there is a spatially varying intensity $I\qty(r)$.
+
+\subsection{A tale of three lasers}
+
+Our first ODT laser was a Coherent Verdi IR - essentially a \SI{1064}{\nm} version of the more common \SI{532}{\nm} variant. 
+That worked ok until it died due to an electrical surge (?). 
+At which point we moved to using a Nufern NuAmp \SI{50}{\W} fiber amplifier laser.
