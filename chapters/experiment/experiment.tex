@@ -24,24 +24,26 @@ An overview of our vacuum system is shown in \cref{fig:vacuum_system}.
 We follow a conventional setup for producing cold and ultracold strontium gases (e.g., see \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD}).
 More detailed descriptions of each are provided in their respective sections below.
 Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-Keeping the working height fixed at \SI{3.5}{\inch} significantly reduced the need to build rigid supporting structures to hold both the vacuum system above the table and various elevated platforms for optics.
+Keeping the working height fixed at \SI{3.5}{\inch} significantly reduced the need to build rigid supporting structures to support both the vacuum system above the table and various elevated platforms for optics.
 This also reduced the need for periscopes for getting the laser beams to the height of an elevated vacuum chamber.
+Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.
 
 To facilitate vertically propagating beams (e.g., MOT and dipole trap beams), a \SI{10}{\inch} hole was cut through the table under the main chamber.
-We had originally planned on mounting vertical optics directly to the main chamber but decided to mount them to the underside of the table. 
-This required tapping {1/4''-20} threads on the underside of the table so that we could mount an optical breadboard.
+We had originally planned on mounting vertical optics directly to the main chamber but decided to mount them to a single elevated platform above the main chamber and the underside of the table instead. 
+This should reduce sensitivity to vibrations as the main chamber is (alomst) ``free-floating'' from the optics on the table.
+Adding a breadboard under the table required tapping {1/4''-20} threads on the underside of the table so that we could mount an optical breadboard.
 The major disadvantage of our current setup is the long distance between the undertable breadboard and the top of the main chamber which is about \SI{12}{\inch}, i.e., the thickness of the table, which makes it difficult to design upward-propgating dipole trap beams so we prefer to send beams downward instead.
 
 \subsection{Source-side Vacuum System}
 
-This section is where strontium is converted from its solid metallic form in to a gaseous form. 
+This section is where strontium is converted from its solid metallic state in to a gaseous form. 
 Due to strontium's extremely low vapor pressure, an oven is needed to increase the vapor pressure enough to form an atomic beam.
 Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
-It's a simple design with a ** FireRod ** providing most of the heating to the atom oven.
+It's a simple design with a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} providing most of the heating to the atom oven.
 Capillary tubes are used to provide some degree of collimation, forming a nozzle, and a heater wire is wrapped around the nozzle to reduce the effects of strontium building up in the capillary tubes and clogging the oven. 
-We typically run our main ** FireRod ** oven heater around \SI{425}{\celsius} with the nozzle heater wire around \SI{390}{\celsius}. Note that the ** FireRod ** tempearture sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself (i.e., the FireRod remperature at the atoms is likely lower). 
-\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the oven Neutral's setup. 
-The design is very similar to the one on our setup but it was mounted on the much smaller 2-3/4 in flange whereas ours is mounted on a 3-3/8 in flange which provides some extra room for various feed throughs without being too cramped.
+We typically run our main FIREROD oven heater around \SI{425}{\celsius} with the nozzle heater wire around \SI{390}{\celsius}. Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself (i.e., the temperature at the atoms is likely lower). 
+\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's oven.
+The design is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
 
 \begin{figure}[htbp]
 	\centering
@@ -55,24 +57,25 @@ The design is very similar to the one on our setup but it was mounted on the muc
 \end{figure}
 
 After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257} to increase the flux of atoms down the Zeeman slower. 
-We've observed an increase in blue MOT loading rate by about ** 8 times ** when the 2D collimator is well aligned to the beam.
+We've observed an increase in blue MOT atom number by about eight times when the 2D collimator is well aligned to the beam.
 The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
 
 Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
 The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
-We suspect the ion pump on the source side is being choked off by the zero-length reducer which adapts the ** \SI{4.5}{\inch} ** flange on the source-side vacuum system to the ** \SI{6}{\inch} ** flange on the Varian ion pump.
+We suspect the ion pump on the source side is being choked off by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum system to the \SI{6}{\inch} flange on the Varian ion pump.
 
-A shutter and a gate valve is also installed between the source-side vacuum and the Zeeman slower. 
+A shutter and a gate valve was also installed between the source-side vacuum and the Zeeman slower. 
 The shutter allows us to physically block the atomic beam (as we don't have 2D deflection MOT) and extend the time between needing to change the Zeeman slower entrance window. 
-In principle, the gate valve should allow us to isolate the source-side vacuum system from the rest of the chamber but we found it to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+The gate valve, in principle, should allow us to isolate the source-side vacuum system from the rest of the chamber but we found it to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
 
 \subsection{Zeeman Slower}
 
 Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
 The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
-A Zeeman slower uses a spatially-varying magnetic field and circularly-polarized light to keep the atoms resonant with a counterpropagating light so that they continuiously scatter photons which slows their velocity \cite{Phillips1982.PRL.48.596}.
-Our particular design uses a spin-flip Zeeman slower where the axial magnetic field crosses zero between the ends (similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}).
-The Zeeman slower was constructed in multiple layers as the resulting field was tweaked to match the desired profile.
+A Zeeman slower uses a spatially-varying magnetic field and circularly-polarized light to keep the atoms resonant with a counterpropagating light so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
+Our particular design is a ``spin-flip'' Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
+Similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}.
+The Zeeman slower was constructed in multiple layers, tweaking subsequent layers so the resulting field was tweaked to match the desired profile.
 Each layer being attached to the Zeeman slower tube with thermally-conductive epoxy ** GIVE MODEL **. 
 Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
 
