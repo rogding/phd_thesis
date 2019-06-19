@@ -13,7 +13,8 @@ There's still a place for our system which likely provides capabilities for bett
 
 \section{Vacuum System}
 
-An overview of our vacuum system is shown in \cref{fig:vacuum_system}. 
+An overview of our vacuum system is shown in \cref{fig:vacuum_system} and follows a simple and straightforward setup for producing cold and ultracold strontium gases.
+Similar designs are described in \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD}.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
@@ -21,30 +22,25 @@ An overview of our vacuum system is shown in \cref{fig:vacuum_system}.
 		\label{fig:vacuum_system}
 		Overview of the strontium Rydberg apparatus highlighting the main sections of the vacuum system and various components.}
 \end{figure}
-We follow a conventional setup for producing cold and ultracold strontium gases (e.g., see \cite{Boyd2007.PhD, Stellmer2013.PhD, Barker2016.PhD}).
-More detailed descriptions of each are provided in their respective sections below.
-Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the center of the main chamber at $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-Keeping the working height fixed at \SI{3.5}{\inch} significantly reduced the need to build rigid supporting structures to support both the vacuum system above the table and various elevated platforms for optics.
-This also reduced the need for periscopes for getting the laser beams to the height of an elevated vacuum chamber.
-Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.
+Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the majority of the horizontal laser beams $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
+Keeping most of the beams at this fixed height significantly reduced the need for rigid supporting structures to elevate both the entire vacuum system as well as the various platforms for optics.
+This also diminished the need for periscopes to elevate laser beams from the table to the height of an elevated vacuum chamber\footnote{Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.}.
 
-To facilitate vertically propagating beams (e.g., MOT and dipole trap beams), a \SI{10}{\inch} hole was cut through the table under the main chamber.
-We had originally planned on mounting vertical optics directly to the main chamber but decided to mount them to a single elevated platform above the main chamber and the underside of the table instead. 
-This should reduce sensitivity to vibrations as the main chamber is (alomst) ``free-floating'' from the optics on the table.
-Adding a breadboard under the table required tapping {1/4''-20} threads on the underside of the table so that we could mount an optical breadboard.
-The major disadvantage of our current setup is the long distance between the undertable breadboard and the top of the main chamber which is about \SI{12}{\inch}, i.e., the thickness of the table, which makes it difficult to design upward-propgating dipole trap beams so we prefer to send beams downward instead.
+To facilitate vertically propagating beams, two holes were cut through the table: a semicircle for the vertical 2D collimator arm and a \SI{10}{\inch} diameter circle under the main chamber.
+We had originally planned on mounting vertical optics directly to the main chamber but decided instead to mount them to a single elevated platform above the main chamber and another platform on the underside of the table. 
+This should reduce sensitivity to vibrations as the main chamber is (almost) ``free-floating'' from the optics mounted to the table.
+Adding the breadboard under the table required tapping {1/4''-20} threads on the underside of the table.
+The major disadvantage of our current setup is the long distance between the undertable breadboard and the bottom of the main chamber which is about \SI{12}{\inch}\footnote{The thickness of the optical table.} which makes it difficult to design, install, and align sensitive vertical beams.
 
 \subsection{Source-side Vacuum System}
 
-This section is where strontium is converted from its solid metallic state in to a gaseous form. 
-Due to strontium's extremely low vapor pressure, an oven is needed to increase the vapor pressure enough to form an atomic beam.
+This section of the vacuum chamber is where strontium is converted from its solid metallic state to a gaseous form.
+Due to strontium's extremely low vapor pressure, an oven is used to increase the vapor pressure enough to form an atomic beam.
 Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
-It's a simple design with a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} providing most of the heating to the atom oven.
-Capillary tubes are used to provide some degree of collimation, forming a nozzle, and a heater wire is wrapped around the nozzle to reduce the effects of strontium building up in the capillary tubes and clogging the oven. 
-We typically run our main FIREROD oven heater around \SI{425}{\celsius} with the nozzle heater wire around \SI{390}{\celsius}. Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself (i.e., the temperature at the atoms is likely lower). 
-\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's oven.
-The design is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
-
+It's a simple design where a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} provides the majority of the heating power to the atomic oven.
+An array of capillary tubes forms a nozzle to provide some degree of collimation and resistive heater wire is wrapped around them to reduce the effects of strontium building up in the capillary tubes and clogging.
+We typically run our main FIREROD oven heater around \SI{425}{\celsius}\footnote{Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself.} with the nozzle heater wire around \SI{390}{\celsius}.
+\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's strontium oven and is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
@@ -56,70 +52,62 @@ The design is very similar to the one on our setup but it was mounted on the muc
 		(Right) After adding heat shield.}
 \end{figure}
 
-After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257} to increase the flux of atoms down the Zeeman slower. 
-We've observed an increase in blue MOT atom number by about eight times when the 2D collimator is well aligned to the beam.
+After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257, Lett1989.JOSAB.6.2084} to increase the flux of atoms down the Zeeman slower. 
 The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
 
 Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
 The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
-We suspect the ion pump on the source side is being choked off by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum system to the \SI{6}{\inch} flange on the Varian ion pump.
+We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum chamber to the \SI{6}{\inch} flange on the Varian ion pump.
 
-A shutter and a gate valve was also installed between the source-side vacuum and the Zeeman slower. 
-The shutter allows us to physically block the atomic beam (as we don't have 2D deflection MOT) and extend the time between needing to change the Zeeman slower entrance window. 
-The gate valve, in principle, should allow us to isolate the source-side vacuum system from the rest of the chamber but we found it to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
+The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
+The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vauum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
 
 \subsection{Zeeman Slower}
 
 Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
 The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
-A Zeeman slower uses a spatially-varying magnetic field and circularly-polarized light to keep the atoms resonant with a counterpropagating light so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
-Our particular design is a ``spin-flip'' Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
+Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
+Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
 Similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}.
 
-Our Zeeman slower was custom made with a double wall so that cooling water can be run between the inner wall (which separates the water from UHV) and the outer wall where the magnetic field coils are wrapped. 
-Due to space constraints, the source-side has a \SI{2.75}{\inch} CF flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} CF flange.
+Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
+Due to space constraints, the source-side welded to a \SI{2.75}{\inch} flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} flange.
 These flanges are also where cooling water enters and exits the jacket.
-It's possible to avoid water-cooling by building a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require more precise cancellation as it cannot be turned off.
+It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require shielding and/or more significant cancellation as permanent magnets cannot be turned off.
 
-The Zeeman slower was constructed in multiple layers, tweaking subsequent layers so the resulting field was tweaked to match the desired profile.
-Each layer being attached to the Zeeman slower tube with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.}.
+The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be tweaked so that the resulting field was matched the desired profile.
+Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before deciding on how to wrap the next layer of windings.
 Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
 
 \subsection{Experiment-side Vacuum System}
 
-The experiment-side vacuum system, as the name suggests, is where the experiments occur and consists of the main chamber, the ``pumping tower'', and the Zeeman slower entry viewport. 
-Francisco designed the main chamber\footnote{Fabricated by Huntington Mechanical Labs.} and features:
+The experiment-side vacuum system can be broken down in to the main chamber where experiments take place and a ``pumping tower''.
+The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} features:
 \begin{itemize}
-	\item Recessed top and bottom flanges --
-		The recessed flanges move the top and bottom \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
-		The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} SHV feedthroughs for connections.
-	\item Six \SI{2.75}{\inch} horizontal viewports --
-		These viewports procide optical access for the various MOT and optical dipole trap beams.
-	\item A **tube** to house the MCP --
-		The MCP fits inside a ** xxx inch ** tube.
-	\item Three \SI{1.33}{\inch} horizontal viewports --
-		The mini \SI{1.33}{\inch} viewports are used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular or parallel to the MCP.
-	\item A conical expansion to a \SI{6}{\inch} flange --
-		The conical expansion to a \SI{6}{\inch} flange allows for increased conductance to the pumps.
-		The Zeeman slower beam also passes through this flange. 
+	\item Recessed top and bottom flanges bring the \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
+	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} SHV feedthroughs for high-voltage connections.
+	\item Six \SI{2.75}{\inch} horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
+	\item Three \SI{1.33}{\inch} horizontal viewports used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular and parallel to the MCP.
+	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
+	\item A conical expansion to a \SI{6}{\inch} flange for increased conductance to the pumps.
 \end{itemize}
-** The \SI{2.75}{\inch} viewports were antireflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} by Reynard Corporation. **
+** The \SI{2.75}{\inch} viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} by Reynard Corporation. **
 
-Vacuum pressure is maintained by a \SI{75}{\liter\per\second} Gamma Vacuum 75S-CVX-6S-SC-N-N ion pump located at the top of the pumping tower.
+Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
 The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
 Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
 In retrospect, we should have also included a titanium sublimation pump (TSP) for additional pumping capability.
 
-We also added a gate valve between the Zeeman slower window and main chamber to allow us to change the viewport once it gets coated\footnote{The lab has tried using Plasma's pulsed Nd:YAG laser to perform ablation on Neutral's coated Zeeman window with moderate levels of success.}.
+We also added a \SI{3.375}{\inch} gate valve between the Zeeman slower window and main chamber to facilitate changing the sacraficial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
 
 \section{Magnetic Field Trim Coils}
 
-The trim coils are used to cancel out stray magnetic fields as well as apply bias fields. 
-The two horizontal pairs of rectangular coils are oriented such that the ``X-axis'' produce a field towards or away from the MCP with the ``Y-axis'' perpendicular. 
-The ``Z-axis'' coil pair produces a field perpendicular to the table surface. 
+Three pairs of Helmholtz coils are used to cancel stray magnetic fields and to apply a bias field.
+Two pairs produce fields in the horizontal plane parallel to the table surface and are oriented such that the ``X-axis'' produce a field towards or away from the MCP whereas the ``Y-axis'' produces a field perpendicular.
+The ``Z-axis'' coils produces a field along the vertical axis perpendicular to the surface of the table.
 
-Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height. 
-
+Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height which required their geometry be rectangular instead of square or circular.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/trim_coils/trim_coils.svg}
@@ -127,6 +115,9 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 		\label{fig:trim_coils}
 		Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
 \end{figure}
+
+Both the horizontal (X-axis and Y-axis) trim coils are wound on aluminum U-channel and held together with polyimide tape.
+** MORE DETAILS?? **
 
 The vertical (Z-axis) coils were would on forms around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
 The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
@@ -136,9 +127,8 @@ We found that having bias fields along other directions (i.e., not towards/away 
 \section{Dual MOT Coils}
 \label{sec:dual_mot_coils}
 
-One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils: the larger pair for the blue MOT and the smaller pair for the red MOT.
-This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the \SI{\sim 40}{\A} to generate the \SI{\sim 40}{\gauss\per\cm} field for the blue MOT while also generating the \SI{\sim 1}{\gauss\per\cm} low-noise field for the red MOT.
-
+One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair (see \cref{fig:dual_mot_coils}): the larger pair is used for the blue MOT while the smaller pair for the red MOT.
+This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the $\sim \SI{40}{\ampere}$ to generate the $\sim \SI{40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\sim \SI{1}{\gauss\per\cm}$ gradient for the red MOT.
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
 	\caption{\label{fig:dual_mot_coils}
@@ -210,11 +200,15 @@ Our system uses a high-power single-mode \SI{1064}{\nm} fiber amplifier which am
 
 \subsection{\SI{461}{\nm} ``Blue'' Laser System}
 
-We currently have three blue diode-based lasers which generate all the \SI{461}{\nm} power available for our experiment.
-A single external cavity diode laser (ECDL) ``master'' laser\footnote{New Focus TLB-6802: a Littman-Metcalf external cavity diode laser (ECDL).} outputs about \SI{40}{\mW} and is locked to a homebuilt strontium saturated absorption cell.
-Although this laser tunes relatively well and remains single-mode when tuning between the various isotopes, we have very disappointed with output quality of the laser which has what appears to be a {Hermite-Gaussian TEM\tsub{00}} output mode **see Fig. XX). 
+The experiment currently has three blue diode lasers in a master-slave configuration which provide all the \SI{461}{\nm} power available for our experiment.
+In a master-slave setup, a single (typically low-power) ``master'' external cavity diode laser (ECDL) is frequency stabilized relative to the atomic transition and is used to injection lock high-power ``slave'' lasers to amplify the laser power \cite{Shimada2013.RSI.84.063101, Hosoya2015.RSI.86.073110}.
+
+Our current ECDL master laser\footnote{New Focus TLB-6802: a Littman-Metcalf external cavity diode laser (ECDL).} outputs about \SI{40}{\mW} and is locked relative to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ in a homebuilt strontium saturated absorption cell using Doppler-free saturated absorption spectroscopy.
+The error signal is obtained by modulating the magnetic field around the saturated absorption cell and using circularly-polarized pump and probe beams.
+Although this laser tunes relatively well and generally remains single-mode when tuning between the various isotopes, we have been very disappointed with output quality of the laser which has what appears to be a {Hermite-Gaussian TEM\tsub{00}} output mode **see Fig. XX). 
 ** INCLUDE BEAM PROFILER FIGURE **
-Due to this poor output profile, used a D-mirror to split the beam in to two nearly-Gaussian modes and directed each half to a slave laser for injection locking.
+Due to this poor output mode, a D-mirror was used to split the beam in to two nearly-Gaussian beams.
+One of the beams is directed to a SMPM fiber which injection locks both our slave lasers whereas the other is currently unused.
 After using the laser for about six years, the piezo tuning element died\footnote{The laser died after powering down and keying off the laser driver...} and the laser had to be sent back to New Focus for repairs.
 During the repairs, we changed our setup so that the two slave lasers are injection locked from the output of a fiber so that we can easily change master lasers should this laser die again.
 We also noticed some weird grounding issues with the TLB-6700 drivers New Focus sent us with the lasers\footnote{Similar issues were noticed by Jun Ye's group when I asked them if they have observed issues with the New Focus lasers.}.
@@ -228,7 +222,7 @@ Overall, we were not satisfied with New Focus' ECDL and their repair process and
 		Simplified diagram of the \SI{461}{\nm} laser system.}
 \end{sidewaysfigure}
 
-To increase the amount of \SI{461}{\nm} power available, we use a master-slave\cite{Shimada2013.RSI.84.063101, Hosoya2015.RSI.86.073110} setups where the master laser injection locks two slave lasers\footnote{New Focus TLB-6802-IJ-D: a gratingless version of the TLB-6802 likely with a higher-power diode as well.}.
+Light from the master laser injection locks two slave lasers\footnote{New Focus TLB-6802-IJ-D: a gratingless version of the TLB-6802 likely with a higher-power diode as well.}.
 We have previously tried homebuilding our own \SI{461}{\nm} slave laser with can-opened blue diode\footnote{Nichia NDB4216E - a non-AR coated diode with about \SI{100}{\mW} of output power.} but found it to be unsatisfactory. 
 We ended up going with two New Focus TLB-6802-IJ\footnote{From what we can tell, these are simply their standard TLB-6802 without the grating and probably using the Nichia NDB4216E non-AR coated diode which is specified to output about \SI{100}{\mW}.} both of which output about \SI{100}{\mW} of power.
 The ``MOT'' slave is injection locked at the same frequency as the master laser and its power is split between the blue MOT, 2D collimator, and the imaging beam.
