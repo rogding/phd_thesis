@@ -86,7 +86,7 @@ The experiment-side vacuum system can be broken down in to the main chamber wher
 The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} features:
 \begin{itemize}
 	\item Recessed top and bottom flanges bring the \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
-	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} SHV feedthroughs for high-voltage connections.
+	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} safe high voltage (SHV) feedthroughs for high-voltage connections.
 	\item Six \SI{2.75}{\inch} horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
 	\item Three \SI{1.33}{\inch} horizontal viewports used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular and parallel to the MCP.
 	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
@@ -104,9 +104,10 @@ We also added a \SI{3.375}{\inch} gate valve between the Zeeman slower window an
 \section{Magnetic Field Trim Coils}
 
 Three pairs of Helmholtz coils are used to cancel stray magnetic fields and to apply a bias field.
-Two pairs produce fields in the horizontal plane parallel to the table surface and are oriented such that the ``X-axis'' produce a field towards or away from the MCP whereas the ``Y-axis'' produces a field perpendicular.
+The ``X-axis'' and ``Y-axis'' coil pairs produce fields in the horizontal plane parallel to the table surface and are oriented such that the ``X-axis'' produce a field towards or away from the MCP whereas the ``Y-axis'' produces a field perpendicular.
 The ``Z-axis'' coils produces a field along the vertical axis perpendicular to the surface of the table.
 
+Both the horizontal (X-axis and Y-axis) trim coils are constructed from {\num{17.5} AWG} wire\footnote{MWS Wire Industries 17.5 HAPT-200 (NEMA MW 35-C).} with \num{45} turns wound on aluminum U-channel and held together with polyimide tape.
 Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height which required their geometry be rectangular instead of square or circular.
 \begin{figure}[htbp]
 	\centering
@@ -116,10 +117,7 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 		Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
 \end{figure}
 
-Both the horizontal (X-axis and Y-axis) trim coils are wound on aluminum U-channel and held together with polyimide tape.
-** MORE DETAILS?? **
-
-The vertical (Z-axis) coils were would on forms around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
+The vertical (Z-axis) coils were would on circular aluminum U-channel forms and fit around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
 The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
 In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
@@ -127,7 +125,7 @@ We found that having bias fields along other directions (i.e., not towards/away 
 \section{Dual MOT Coils}
 \label{sec:dual_mot_coils}
 
-One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair (see \cref{fig:dual_mot_coils}): the larger pair is used for the blue MOT while the smaller pair for the red MOT.
+One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair (see \cref{fig:dual_mot_coils}) where the larger pair is used for the blue MOT while the smaller pair for the red MOT.
 This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the $\sim \SI{40}{\ampere}$ to generate the $\sim \SI{40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\sim \SI{1}{\gauss\per\cm}$ gradient for the red MOT.
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
@@ -147,6 +145,15 @@ The red MOT coils are constructed from square {\num{13} AWG} copper wire\footnot
 We currently use a homebuilt voltage-controlled current driver\footnote{**Powered by an APEX PA12**.} but we should be able to use any current driver capable of supplying up to about ** 5 A **. 
 Our current geometry for the red MOT coils produce a magnetic field gradient of about \SI{1}{\gauss\per\cm\per\ampere}.
 
+\begin{figure}[htbp]
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/mot_coil_fields.svg}
+	\caption{\label{fig:dual_mot_coil_fields}
+		Blue MOT coil (left) and red MOT coil (right) magnetic fields measured along the $z$-axis on the test setup shown in \cref{fig:dual_mot_coils} with $I = \SI{4}{\ampere}$.
+		The uncertainties are estimated to be $\delta_{z} = \pm \SI{2.5}{\cm}$ and $\delta_{B} = \pm \SI{0.05}{\gauss}$.
+		The non-zero measured values of $B_x$ and $B_y$ suggest that the probe was slight off the $z$-axis.
+		There also appears to be a slight systematic shift in zero-crossing of the anti-Helmholtz coils likely due to an uncertainty in determining the physical center of the coils.}
+\end{figure}
+
 **
 It would have been nice to have an extra MOSFET switch on the blue MOT coils so that we'd be able to apply extremely large fields along the Z-axis such as e.g. Pedro's experiment Feshbach coils.
 We're not too worried about not having this capability since ground-state strontium has no magnetic Feshbach resonances and the fact that we've observed a decrease MCP detection efficiencly we believe is due to the Lorentz force as the MCP is oriented along the X-axis.
@@ -154,7 +161,8 @@ We're not too worried about not having this capability since ground-state stront
 
 \section{Laser Systems for Producing Cold and Ultracold Strontium Gases}
 
-We follow the standard procedure for laser cooling strontium so the procedure will only be outlined here with more details are available from various sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Stellmer2013.PhD, Barker2016.PhD}).
+We follow the standard procedure for producing cold and ultracold gases of strontium so the process will only be outlined here.
+More details about laser cooling and trapping strontium are available from various sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Stellmer2013.PhD, Barker2016.PhD}).
 \Cref{fig:trapping_beams} gives an overview of the orientation of our various laser cooling and trapping beams.
 \begin{sidewaysfigure}[htbp]
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/trapping_beams.svg}
