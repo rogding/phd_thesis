@@ -11,6 +11,65 @@ In particular, we have in-vacuum electric field plates to cancel stray electric 
 Our old-school ``metal can'' setup can't compete with the optical access provided by many recently started alkaline-earth Rydberg tweezer systems using glass cells \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055, Saskin2019.PRL.122.143002}.
 There's still a place for our system which likely provides capabilities for better shielding from stray electric fields, performing SFI, and the ability to detect charged particles which, without going to significantly custom systems, are somewhat limiting on the standard glass cell setups.
 
+\section{Producing Cold and Ultracold Gases of Strontium}
+
+We follow the standard procedure for producing cold and ultracold gases of strontium.
+Detailed explanations of the techniques are available from various sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Stellmer2013.PhD, Barker2016.PhD}) so the process will only be outlined here for context.
+
+% Oven, 2D collimator, and Zeeman slower.
+\subsection{Pre-cooling with the \SI{461}{\nm} transition}
+
+Due to strontium's low vapor pressure, an oven is required to liberate strontiums atoms from the solid. 
+Our oven typically operates around $\SIrange[range-phrase=-]{400}{500}{\celsius}$ meaning the atoms in the beam are moving at about $\overline{v} = \SIrange[range-phrase=-]{474}{508}{\meter\per\second}$\footnote{For an atomic beam at $T = \SIrange[range-phrase=-]{400}{500}{\celsius}$: $v_{\text{mp}} = \SIrange[range-phrase=-]{437}{468}{\meter\per\second}$, $v_{\text{avg}} = \SIrange[range-phrase=-]{474}{508}{\meter\per\second}$, and $v_{\text{rms}} = \SIrange[range-phrase=-]{504}{541}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}.
+Immediately after the atoms exit the oven, they first encounter the \SI{461}{\nm} two-dimensional (2D) collimator stage which applies transverse optical molasses \cite{Lett1989.JOSAB.6.2084, Joffe1993.JOSAB.10.2257} to increase to reduce the divergence of the atomic beam although there is no effect on their longitudinal velocity.
+Instead of using circular beams, the 2D collimator beams are elliptical to increase the intensity along the atomic beam.
+
+Since the atoms are still moving too quickly to be captured by a magneto-optical trap (MOT)
+
+The atoms next enter the Zeeman slower where a spatially-varying axial magnetic field keeps the atoms in resonance as they slow so that they continuiously scatter photons \cite{Phillips1982.PRL.48.596}.
+Our Zeeman slower is a ``spin-flip''-type where the axial magnetic field crosses zero between the ends of the Zeeman slower.
+Similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}.
+Because the  magnetic field is axial, a circularly polarized \SI{461}{\nm} beam is used.
+
+% Blue MOT
+\subsection{\SI{461}{\nm} ``blue'' MOT}
+
+Once the atoms exit the Zeeman slower and enter the main chamber, a standard six-beam \SI{461}{\nm} ``blue'' magneto-optical trap (MOT) captures and cools the atoms to about $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
+The quadrupole magnetic field gradient are produced by running by the larger, water-cooled coils described in \cref{sec:dual_mot_coils}.
+The Zeeman slower beam passes through the blue MOT which leads to some distortion of the MOT shape and shifting of it's position compared to when the Zeeman slower light is extinguished.
+** MOT FREQUENCY? **
+
+% Magnetic trap
+\subsection{Magnetic Trap}
+
+The \SI{461}{\nm} transition is not completely closed with about $\num{1}\colon\num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
+About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
+The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about \SI{520}{\second} \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
+Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states can become trapped in the quadrupole magnetic field of the blue MOT.
+This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
+The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
+** For details of our magnetic trap, see \cite{Camargo2015.MS}. **
+The magnetic trap is also essential when loading multiple isotopes where we can store one isotope in the magnetic trap, move the \SI{461}{\nm} laser to trap another isotope.
+
+% Repumping
+Atoms in the magnetic trap are recovered by repumping on the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at \SI{481}{\nm}.
+
+% Red MOT
+\subsection{\SI{689}{\nm} ``red'' Trap}
+
+After repumping, we further cool the sample driving the narrow ($\Gamma/2\pi = \SI{7.5}{\kHz}$) $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in the red MOT.
+Unlike ytterbium which in which a Zeeman-slowed atomic beam is capable of being loaded directly in to a narrow line MOT \cite{Guttridge2016.JPB.49.145006}, strontium's linewidth is a bit too weak.
+As a result, the blue MOT is necessary for precooling the atoms for the red MOT.
+Due to the large isotope shifts compared to the $\SI{7.5}{\kHz}$ linewidth of the transition, multiple red MOTs can be operated simultaneously for each isotope.
+After laser cooling on the \SI{689}{\nm} transition, our sample temperatures are typically $\sim\SIrange[range-phrase=-]{1}{2}{\micro\kelvin}$ and ready for loading in to an optical dipole trap (ODT).
+
+% ODT
+\subsection{Optical Dipole Trap}
+
+The ODT rely on the light-shift produced by far-off-resonance beams and are conservative as a result.
+Being far-off-resonance means the heating rate is greatly suppressed.
+Our system uses a high-power single-mode \SI{1064}{\nm} fiber amplifier which amplifies the the power from a narrow line seed laser \footnote{We are currently borrowing the Hulet lab's multimode YLR-100-1070-LP as our laser was undergoing repair service.} which are readily available.
+
 \section{Vacuum System}
 
 An overview of our vacuum system is shown in \cref{fig:vacuum_system} and follows a simple and straightforward setup for producing cold and ultracold strontium gases.
@@ -69,7 +128,6 @@ Since an oven is required to produce enough strontium vapor for trapping, a Zeem
 The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
 Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
 Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
-Similar designs are presented in \cite{Bell2010.RSI.81.013105, Hopkins2016.RSI.87.043109}.
 
 Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
 Due to space constraints, the source-side welded to a \SI{2.75}{\inch} flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} flange.
@@ -161,50 +219,12 @@ We're not too worried about not having this capability since ground-state stront
 
 \section{Laser Systems for Producing Cold and Ultracold Strontium Gases}
 
-We follow the standard procedure for producing cold and ultracold gases of strontium so the process will only be outlined here.
-More details about laser cooling and trapping strontium are available from various sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Stellmer2013.PhD, Barker2016.PhD}).
 \Cref{fig:trapping_beams} gives an overview of the orientation of our various laser cooling and trapping beams.
 \begin{sidewaysfigure}[htbp]
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/trapping_beams.svg}
 	\caption{\label{fig:trapping_beams}
 		Simplified schematic of the various trapping and cooling lasers and the Rydberg excitation beams.}
 \end{sidewaysfigure}
-
-As mentioned above, strontium's low vapor pressure requires an oven to liberate atoms from the solid. 
-With our oven typically operating around $\SIrange[range-phrase=-]{400}{500}{\celsius}$, the atoms in the beam are moving at about $\overline{v} = \SIrange[range-phrase=-]{474}{508}{\meter\per\second}$\footnote{For an atomic beam at $T = \SIrange[range-phrase=-]{400}{500}{\celsius}$: $v_{\text{mp}} = \SIrange[range-phrase=-]{437}{468}{\meter\per\second}$, $v_{\text{avg}} = \SIrange[range-phrase=-]{474}{508}{\meter\per\second}$, and $v_{\text{rms}} = \SIrange[range-phrase=-]{504}{541}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}.
-Therefore the strong ($\Gamma/2\pi = \SI{30.5}{\MHz}$) dipole-allowed $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition at \SI{461}{\nm} is used for both the 2D collimator and Zeeman slower.
-The 2D collimator has light at $\Gamma/2$ \cite{Lett1989.JOSAB.6.2084}. 
-** ZEEMAN SLOWER FREQUENCY? **
-
-% Blue MOT
-Once the atoms reach exit the Zeeman slower and enter the main chamber, a standard six-beam \SI{461}{\nm} ``blue'' MOT captures and cools the atoms to about $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
-The quadrupole magnetic field gradient are produced by running by the larger, water-cooled coils described in \cref{sec:dual_mot_coils}.
-The Zeeman slower beam passes through the blue MOT which leads to some distortion of the MOT shape and shifting of it's position compared to when the Zeeman slower light is extinguished.
-** MOT FREQUENCY? **
-
-% Magnetic trap
-The \SI{461}{\nm} transition is not completely closed with about $\num{1}\colon\num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
-About $\flatfrac{2}{3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which then decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
-The remaining $\flatfrac{1}{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about \SI{520}{\second} \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
-Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeing ${m_J = 1,2}$ states can become trapped in the quadrupole magnetic field of the blue MOT.
-This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir \cite{Nagel2003.PRA.67.011401} at roughly the same temperature as the blue MOT. 
-The magnetic trap was an essential tool in overcoming the abysmal \SI{0.56(2)}{\percent} natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
-** For details of our magnetic trap, see \cite{Camargo2015.MS}. **
-The magnetic trap is also important when loading multiple isotopes where we can store one isotope in the magnetic trap, move the \SI{461}{\nm} laser to trap another isotope.
-
-% Repumping
-Atoms in the magnetic trap are recovered by repumping on the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at \SI{481}{\nm}.
-
-% Red MOT
-We further cool the sample driving the narrow ($\Gamma/2\pi = \SI{7.5}{\kHz}$) $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in the red MOT.
-Unlike ytterbium which in which a Zeeman-slowed atomic beam is capable of being loaded directly in to a narrow line MOT \cite{Guttridge2016.JPB.49.145006}, strontium's linewidth is a bit too weak.
-As a result, the blue MOT is necessary for precooling the atoms for the red MOT.
-After laser cooling on the \SI{689}{\nm} transition, our sample temperatures are typically $\sim\SIrange[range-phrase=-]{1}{2}{\micro\kelvin}$ and ready for loading in to an optical dipole trap (ODT).
-
-% ODT
-The ODT rely on the light-shift produced by far-off-resonance beams and are conservative as a result.
-Being far-off-resonance means the heating rate is greatly suppressed.
-Our system uses a high-power single-mode \SI{1064}{\nm} fiber amplifier which amplifies the the power from a narrow line seed laser \footnote{We are currently borrowing the Hulet lab's multimode YLR-100-1070-LP as our laser was undergoing repair service.} which are readily available.
 
 \subsection{\SI{461}{\nm} ``Blue'' Laser System}
 
