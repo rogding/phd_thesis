@@ -34,6 +34,58 @@ Because the  magnetic field is axial, a circularly polarized $\SI{461}{\nm}$ bea
 The atoms scatter about ** xxx photons ** which means they exit the Zeeman slower at about ** xxx m/s **.
 Atoms moving faster than the ** design velocity of the Zeeman slower ** remain unaffected and continue through without being slowed.
 
+***************
+
+Isotope shift of the \SI{461}{\nm} transition.
+
+\begin{table}[h]
+	\caption{
+		\label{tab:blue_isotope_shift}
+		Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition relative to \Sr{88}.
+		Due to the hyperfine structure of \Sr{87}, the isotope shift is given relative to the center-of-gravity of the upper $\nSLJ{5s5p}{1}{P}{1}$ state.
+		Transitions to a specific $\nSLJF{5s5p}{1}{P}{1}{F}$ state can be calculated with the $A$ and $B$ hyperfine constants in \cref{tab:hyperfine_coefficients_5s5p1P1}.}
+	\centering
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		Isotope						& Lower level								& Upper level								& $\nu - \nu_{88}$ [$\si{\MHz}$]	& Ref.								\\
+		\midrule
+		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$					& $\nSLJ{5s5p}{1}{P}{1}$					& $\num{0}$							&									\\
+		\midrule
+		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-46.3+-2.0}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											& 											& $\num{-49.2+-3.6}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											& 											& $\num{-44.6+-0.4}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\midrule
+		\multirow{3}{*}{\Sr{86}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-124.8+-0.3}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											&											& $\num{-124.5+-1.3}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											&											& $\num{-126.3+-0.2}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\midrule
+		\multirow{3}{*}{\Sr{84}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-270.8+-1.4}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											&											& $\num{-270.6+-2.4}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											&											& $\num{-273.2+-0.3}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{
+		\label{tab:hyperfine_coefficients_5s5p1P1}
+		\Sr{87} hyperfine $A$ and $B$ coefficients for the $\nSLJ{5s5p}{1}{P}{1}$ state and calculated shifts from the center-of-gravity.}
+	\centering
+	\begin{tabular}{@{}cccccc@{}}
+		\toprule
+		$A$ [$\si{\MHz}$]						& $B$ [$\si{\MHz}$]						& Ref. 												& Lower level												& Upper level								& $\Delta E_{HF}$ [$\si{\MHz}$]	\\
+		\midrule	
+		\multirow{3}{*}{\num{-3.4+-0.4}}		& \multirow{3}{*}{\num{39+-4}}			& \multirow{3}{*}{\cite{Kluge1974.ZP.270.295}}		& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.6+-2.9}$				\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-5.5+-2.1}$				\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-22.6+-2.7}$			\\
+		\midrule	
+		\multirow{3}{*}{\num{-3.334+-0.025}}	& \multirow{3}{*}{\num{40.29+-0.21}}	& \multirow{3}{*}{\cite{Bushaw2000.SAPB.55.1679}}	& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.80+-0.17}$			\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-4.93+-0.12}$			\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-23.53+-0.14}$			\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 \subsection{$\SI{461}{\nm}$ ``Blue'' MOT and Magnetic Trap}
 
 Now that a significant portion of the atoms have been slowed by the Zeeman slower, they enter the main chamber where they are cooled and trapped by a standard six-beam $\SI{461}{\nm}$ ``blue'' MOT.
@@ -103,10 +155,12 @@ Since the ground state has (essentially) no magnetic moment, the position-depend
 Narrow line laser cooling of \Sr{7} was first achieved by the Tokyo group where the uesd a ``trap'' laser resonant with the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{11/2}$ transition and a second ``stir'' laser resonance with $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ to quickly redistribute the population and take advantage of the Clebsch-Gordan coefficients so that, on-average, the atoms experience a restoring force \cite{Mukaiyama2003.PRL.90.113002, Stellmer2013.PhD}.
 
 **** 
-An alternative method, Saw-tooth Wave Adiabatic Passage (SWAP) cooling, was recently developed which avoids the need for the traditional broadband red MOT in favor of a carefully designed frequency ramps which adabatically move atoms between the $\SLJ{1}{S}{0}$ and $\SLJ{3}{P}{1}$ states \cite{Norcia2018.PhD, Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838}.
+An alternative method, Saw-tooth Wave Adiabatic Passage (SWAP) cooling, was recently developed which avoids the need for the traditional broadband red MOT in favor of a carefully designed frequency ramps which adiabatically move atoms between the $\SLJ{1}{S}{0}$ and $\SLJ{3}{P}{1}$ states \cite{Norcia2018.PhD, Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838}.
 The advantage of this method is particularly apparent for \Sr{87} which eliminates the need for the ``stir'' laser. 
-The drawback is that the temperatures achieved seem to be limited to about $\SI{10}{\micro\kelvin}$ due to the need maintain a efficient adiabatic transfer \cite{Norcia2018.PhD} so the current scheme is to use SWAP cooling instead of the broadband red MOT before transfering to a single-frequency red MOT to reach colder temperatures \cite{Snigirev2019.PRA.99.063421}.
+The drawback is that the temperatures achieved seem to be limited to about $\SI{10}{\micro\kelvin}$ due to the need maintain a efficient adiabatic transfer \cite{Norcia2018.PhD} so the current scheme is to use SWAP cooling instead of the broadband red MOT before transferring to a single-frequency red MOT to reach colder temperatures \cite{Snigirev2019.PRA.99.063421}.
 ***
+
+
 
 Due to the large isotope shifts compared to the $\SI{7.5}{\kHz}$ linewidth of the transition, multiple red MOTs can be operated simultaneously for each isotope.
 After laser cooling on the \SI{689}{\nm} transition, our sample temperatures are typically $\sim\SIrange[range-phrase=-]{1}{2}{\micro\kelvin}$ and ready for loading in to an optical dipole trap (ODT).
@@ -168,6 +222,8 @@ Early work towards producing quantum degenerate gases of \Sr{88} and \Sr{86} wer
 Only by going to a large-volume high-aspect ratio ODT was a BEC of \Sr{86} realized \cite{Stellmer2010.82.041602}.
 The first BEC of \Sr{88} was achieved by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
 
+Some recent work towards developing systems for trapping strontium in optical tweezer arrays showed results that an ODT around $\SIrange[range-phrase=-]{501}{520}{\celsius}$ is close to a ``magic'' wavelength\footnote{A wavelength is ``magic'' when two states experience the same shift (i.e., no differential shift) \cite{Ye2008.Science.320.1734, Ludlow2015.RMP.87.637}.} for the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055}.
+It should be noted that both our current $\SI{1064}{\nm}$ ODT and a `green'' ODT are both expected to be repulsive for Rydberg states \cite{Mukherjee2011.JPB.44.184010, Topcu2016.JPB.49.144004} for strontium Rydberg states.
 
 \section{Vacuum System}
 
@@ -463,30 +519,51 @@ Having the fiber-coulped sheet trap saved our ass as we've had to switch out the
 
 For the high-power \SI{1064}{\nm} fibers, we've had good experiences using PMJ-A3AHPC,A3AHPC-1064-6/125-3AS-\textit{L}-1\footnote{These fibers are air-gapped and have an endcap on the ends which allows the beam to expand before entering/exiting the fiber, reducing hte power density. The adjustable fiber tip positions allow for optimization of coupling efficiency in to the fiber.} from OZ Optics. 
 
+Our current main ODT is comprised of a single high-aspect ratio ``sheet'' trap with beam waists of about $\SI{28}{\um}$ (vertical) by $\SI{264}{\um}$ (horizontal), see \cref{fig:sheet_trap_profile}.
+The design of the sheet trap was limited by sticking with $\SI{1}{\inch}$ optics and the relatively long distance to the atoms.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/odt_system/sheet_trap/sheet_trap_profile/sheet_profile.pdf}
 	\caption{
 		\label{fig:sheet_trap_profile}
-		Sheet trap profile.}
+		Beam profile of the sheet trap from which we fit to obtain the beam waists.
+		For the vertical waist: $w = \SI{28.0+-1.0}{\um}$, $z_{0} = \SI{35.795+-0.009}{\cm}$, and $M^2 = \num{1.18+-0.04}$.
+		For the horizontal waist: $w = \SI{263.5+-0.9}{\um}$, $z_{0} = \SI{32.3+-0.4}{\cm}$, and $M^2 = \num{1.0}$.
+		Distances are measured from the end of the cage system assuming $\pm \SI{1}{\mm}$ uncertainty.}
 \end{figure}
+
+To increase the horizontal trap frequency, we also implemented a circular ODT beam which intersects the sheet trap at a near vertical angle.
+The measured beam profile of the vertical trap is shown in \cref{fig:vertical_trap_profile}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=4in]{experiment/odt_system/vertical_trap/vertical_trap_profile/vertical_profile.pdf}
+	\caption{
+		\label{fig:vertical_trap_profile}
+		Beam profile of the vertical trap from which we fit to obtain the beam waists.
+		An assumed $\pm \SI{1}{\mm}$ uncertainty in the measured distance and $\pm \SI{5}{\um}$ uncertainty in the measured waist size.}
+\end{figure}
+We attempted to circularly polarized the vertical ODT so that we would be able to minimize the differential shifts and enable cooling in to the ODT \cite{Ido2003.PRL.91.053001, Stellmer2013.PRA.87.013611} but we didn't observe any improvement in loading the ODT.
+This lack of improvement is probably due to our $\SI{689}{\nm}$ laser system being a bit too broad to take advantage of this.
 
 \section{Making and Detecting Rydberg Atoms}
 
-\Cref{fig:rydberg_beams} shows a diagram of the various Rydberg beams we have available.
-
-\begin{sidewaysfigure}[htbp]
-	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/rydberg_beams.svg}
-	\caption{\label{fig:rydberg_beams}
-		Diagram of the various Rydberg excitation beams.}
-\end{sidewaysfigure}
-
+Now that we have an ultracold sample of strontium, we use a $\SI{320}{\nm}$ UV laser system to excite them to Rydberg atoms via the two-photon transition from the intermediate $\nSLJ{5s5p}{3}{P}{1}$ state.
 The electric field system and charged particle detection will be detailed in Joe Whalen's upcoming Ph.D. thesis so they will only be briefly covered here. 
+
+% \begin{sidewaysfigure}[htbp]
+	% \includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/rydberg_beams.svg}
+	% \caption{\label{fig:rydberg_beams}
+		% Diagram of the various Rydberg excitation beams.}
+% \end{sidewaysfigure}
 
 \subsection{UV Laser System}
 
-This section details the laser system we use to produce \SI{319}{\nm} radiation for two-photon excitation to a Rydberg state. 
-Our system for generating the \SI{638}{\nm} radiation is similar to the one described in \cite{mie2014.OE.22.011182}.
+We produce strontium Rydberg atoms using a two-photon transtion where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives transitions from the $\nSLJ{5s^2}{1}{S}{0}$ to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ states. 
+
+***********************
+
+This section details the laser system we use to produce \SI{320}{\nm} radiation for two-photon excitation to a Rydberg state. 
+Our system for generating the \SI{640}{\nm} radiation is similar to the one described in \cite{mie2014.OE.22.011182}.
 
 Depending on the experiment, whether we want the ability to tune over multiple gigahertz with \SI{\sim 500}{\kHz} linewidth or a laser with a narrower linewidth (\SI{250}{\kHz}), we use either a Koheras Basik BMY10PztSPm or NP Photonics RFLM-50-3-1064.53-1-S-0 ``Rock''. 
 The \SI{1064}{\nm} seed is then amplified by an IPG YAR-15K-1064-LP-SF fiber amplifier to about \SI{7.5}{\W}. 
