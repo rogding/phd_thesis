@@ -576,7 +576,7 @@ The OPO section uses the $\lambda_{\text{P}} = \SI{1.064}{\um}$ pump to generate
 The SFG section then combines the $\lambda_{\text{S}} = \SI{1.6}{\um}$ with another $\lambda_{\text{P}} = \SI{1.064}{\um}$ to produce $\lambda_{\text{SFG}} = \SI{640}{\nm}$.
 
 As mentioned in \cite{DeSalvo2015.PhD}, temperature tuning of the crystal is required for efficient $\SI{640}{\nm}$ generation but the Argos system was only designed for heating.
-A workaround was developed where a water-cooling block was attached to the outside of the OPO cavity housing to lower the temperature enough to where the Argos' internal heater is capable stabilizing the temperature (see \cref{fig:argos_opo}).
+A workaround was developed where a water-cooling block was attached to the outside of the OPO cavity housing to lower the temperature enough to where the Argos' internal heater is capable stabilizing the temperature (see \cref{fig:argos_opo	}).
 With this addition, we typically get about ** \SIrange[range-phrase=-]{1}{1.5}{\watt} ** of $\SI{640}{\nm}$.
 \begin{figure}[htbp]
 	\centering
@@ -587,7 +587,25 @@ With this addition, we typically get about ** \SIrange[range-phrase=-]{1}{1.5}{\
 		The current tubing on the cooling block is a bit too stiff to bend enough to put the laser cover on.}
 \end{figure}
 
-** Locking system for the $\SI{640}{\nm}$ system **
+Stabilization of the $\SI{640}{\nm}$ laser frequency is accomplished with a transfer cavity lock \cite{Riedle1994.RSI.65.42, Bohlouli2006.RSI.77.093105, Leopold2016.APB.122.236} where the length of a tunable optical cavity is first stabilized to the $\SI{689}{\nm}$ laser (which itself is stabilized to an atomic reference) and then stabilizing the $\SI{640}{\nm}$ to the cavity.
+Some of the details of our transfer cavity are documented in \cite{Zha2013.BS}.
+Briefly, our transfer cavity is constructed from an Invar body with the cavity mirrors attached to a piezoelectric (PZT) stack on each end. 
+The PZT on one end is used to stabilize the cavity length to the $\SI{689}{\nm}$ laser while the other end provides a tunable ``offset'' which we can use to lock to different FSRs of the transfer cavity.
+Pound-Drever-Hall (PDH) \cite{Drever1983.APB.31.97, Black2001.AJP.69.79} is used to lock the cavity length to the $\SI{689}{\nm}$ reference and to lock the $\SI{640}{\nm}$ to the cavity.
+The optical layout at the transfer cavtiy is shown in \cref{fig:transfer_cavity}.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/transfer_cavity.svg}
+	\caption{
+		\label{fig:transfer_cavity}
+		Simplified diagram of our transfer cavity setup.
+		** NEED TO FINISH **.}
+\end{figure}
+Tunability is achieved with a broadband fiber EOM (fEOM) between the $\SI{640}{\nm}$ laser output and the transfer cavity. 
+The PDH error signal is fedback to the $\SI{1064}{\nm}$ seed laser.
+Although we have not done a full characterization of the linewidth of the $\SI{640}{\nm}$ laser, the narrowest Rydberg lines we have seen are about ** $\SI{150}{\kHz}$ in $\SI{640}{\nm}$** which can be considered an upper bound on the laser's short-term stability.
+Longer-term stability isn't as good where we have seen drifts of about ** $\SI{500}{\kHz}$ ** when scanning over the same Rydberg (molecule) lines.
+With the recent acquisition of a ULE cavity (see \cref{ap:upgrades}), we plan to eliminate the transfer cavity in favor of locking the $\SI{640}{\nm}$ directly to the ULE cavity with a setup similar to the one presented in \cite{Gregory2015.NJP.17.055006}.
 
 Now that we have a tunable and stabilized source of $\SI{640}{\nm}$, the output from the OPO is then coupled in to a commercial Toptica second-harmonic generation (SHG) pro system which produces doubles the $\SI{640}{\nm}$ to $\SI{320}{\nm}$.
 When well-tuned, the system is capable of outputting  ** $> \SI{500}{\milli\W}$ of power but it tends to degrade over time.
@@ -605,7 +623,7 @@ Our typical operating powers are closer to about $\SI{100}{\milli\W}$.
 
 Due to the extreme ${n}^{7}$ scaling of polarizability \cite{Gallagher1988.RPP.51.143, Gallagher1994.RydbergAtoms}, Rydberg atoms are extremely sensitive to electric fields. 
 To mitigate stray electric fields at the location of the atoms as well as to provide the capability for trimming residual electric fields and perform selective field ionization (SFI), we installed in-vacuum electric field plates. 
-The electric field plate system was designed by Francisco Camargo and additional details his Ph.D. thesis \cite{Camargo2017.PhD} and the design follows similar ones in \cite{Millen2011.PhD, Low2012.JPB.45.113001} using a split-ring electrode geometry with four quadrant electrodes above and four quadrant electrodes below the center of the chamber (i.e., where the atoms are). 
+The electric field plate system was designed by Francisco Camargo and additional details his Ph.D. thesis \cite{Camargo2017.PhD} and the design follows similar ones described in \cite{Millen2011.PhD, Low2012.JPB.45.113001} using a split-ring electrode geometry with four quadrant electrodes above and four quadrant electrodes below the center of the chamber (i.e., where the atoms are). 
 The split-ring electrodes and in vacuum wires are made from oxygen-free high conductivity (OFHC) copper with stainless steel making up the supporting scaffold, Einzel lens, and guiding plates. 
 All parts were polished by hand before being sent off to be electropolished. 
 
@@ -620,8 +638,14 @@ All parts were polished by hand before being sent off to be electropolished.
 		Blue spheres represent the sapphire spacers used to isolate the high-voltage components from the grounded support structure.
 		(Left) Top view of the eight electric field plates, Einzel lens, guiding plates, and MCP.
 		The eleven \SI{10}{\kV} SHV feedthroughs are numbered clockwise.
+		Red circles highlight the locations of the feedthroughs which are partially obstructed from view by the bottom scaffold plate.
 		(Right) The electrodes are numbered corresponding to the feedthrough on the bottm flange.}
 \end{figure}
+
+We currently have a (limited) ability to change how the electric field plates are ramped depending on whether want want to detect electrons or ions, and whether we want to perform selective field ionization (SFI). 
+Most of the work presented in this thesis involves detecting electrons and just using the integrating the SFI spectra (i.e., we simply count all the electrons). 
+When taking data, we monitor the SFI spectra to make sure that the entire Rydberg signal(s) is captured but the data analysis simply uses the total Rydberg electron counts. 
+An example SFI spectrum is shown in \cref{fig:example_mcs_signal}. 
 
 \begin{figure}[htbp]
 	\centering
@@ -639,10 +663,9 @@ For now, the electric field system is sufficient for our purposes.
 
 \subsection{Charged Particle Detection}
 
-** Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. **
-
 To detect the creation of Rydberg atoms, we implemented a system which ramps the electric field plates and MCP to perform selective field ionization (SFI). 
 The MCP's output is first amplified by an SRS xxx preamplifier before being sent to an multichannel scaler (MCS). 
+** Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. **
 
 The MCP is an Advanced Performance Detector (APD) 2 miniTOF made by Photonis. 
 This detector was selected because it fit inside the ** xxx in ** diameter tube off the main chamber. 
@@ -658,7 +681,7 @@ This detector was selected because it fit inside the ** xxx in ** diameter tube 
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/example_mcs_signal/example_mcs_signal.pdf}
 	\caption{
 		\label{fig:example_mcs_signal}
-		Example MCS signal from the $\nSLJf{5s38s}{3}{S}{1}{\flatfrac{11}{2}}$ line in \Sr{87} for a single frequency point.
+		Example MCS signal from the $\nSLJf{5s38s}{3}{S}{1}{\flatfrac{11}{2}}$ Rydberg line in \Sr{87} for a single detuning in (top) linear scale and (bottom) log scale.
 		There are $\num{200}$ $\SI{100}{\ns}$ bins with the electric field ramp starting at $t = \SI{0}{\ns}$.
 		To increase signal, we perform multiple excitation-detection sequences and sum the resulting counts bin-by-bin. 
 		Dividing by the total number of loops gives the counts per bin per loop ($\num{1000}$ loops were used in the data above).
@@ -677,5 +700,3 @@ This detector was selected because it fit inside the ** xxx in ** diameter tube 
 \end{figure}
 
 ****
-
-Over the years, we have used the MCP to detect both electrons and ions, but we primarily detect electrons as they arrive much quicker than ions. 

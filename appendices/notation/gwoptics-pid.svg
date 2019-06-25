@@ -17,7 +17,7 @@
    viewBox="0 0 8.7354898 10.086449"
    version="1.1"
    id="svg11756"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="gwoptics-pid.svg">
   <defs
      id="defs11750">
@@ -67,7 +67,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="15.839192"
-     inkscape:cx="34.313259"
+     inkscape:cx="18.119251"
      inkscape:cy="23.918836"
      inkscape:document-units="mm"
      inkscape:current-layer="g5527"
@@ -89,7 +89,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -133,23 +133,26 @@
              style="stop-color:#A0A0A0"
              offset="1" />
         </radialGradient>
-        <polygon
-           id="polygon5534"
-           points="0.375,0.649 32.266,19.062 0.375,37.472 "
-           i:knockout="Off"
-           style="fill:url(#radialGradient5570);fill-opacity:1;stroke:#000000;stroke-width:0.75"
-           transform="translate(0,0.81512802)" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
-           x="2.3946862"
-           y="23.268505"
-           id="text7267"><tspan
-             sodipodi:role="line"
-             id="tspan7265"
-             x="2.3946862"
+        <g
+           id="g4774">
+          <polygon
+             transform="translate(0,0.81512802)"
+             style="fill:url(#radialGradient5570);fill-opacity:1;stroke:#000000;stroke-width:0.75"
+             i:knockout="Off"
+             points="0.375,0.649 32.266,19.062 0.375,37.472 "
+             id="polygon5534" />
+          <text
+             id="text7267"
              y="23.268505"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333302px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start">PID</tspan></text>
+             x="2.3946862"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+             xml:space="preserve"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333302px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+               y="23.268505"
+               x="2.3946862"
+               id="tspan7265"
+               sodipodi:role="line">PID</tspan></text>
+        </g>
       </g>
     </g>
   </g>
