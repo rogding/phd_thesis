@@ -39,7 +39,7 @@ Atoms moving faster than the ** design velocity of the Zeeman slower ** remain u
 Isotope shift of the \SI{461}{\nm} transition.
 
 \begin{table}[h]
-	\caption{
+	\caption[]{
 		\label{tab:blue_isotope_shift}
 		Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition relative to \Sr{88}.
 		Due to the hyperfine structure of \Sr{87}, the isotope shift is given relative to the center-of-gravity of the upper $\nSLJ{5s5p}{1}{P}{1}$ state.
@@ -67,7 +67,7 @@ Isotope shift of the \SI{461}{\nm} transition.
 \end{table}
 
 \begin{table}[h]
-	\caption{
+	\caption[]{
 		\label{tab:hyperfine_coefficients_5s5p1P1}
 		\Sr{87} hyperfine $A$ and $B$ coefficients for the $\nSLJ{5s5p}{1}{P}{1}$ state and calculated shifts from the center-of-gravity.}
 	\centering
@@ -95,7 +95,7 @@ Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold MOT'' stage wh
 
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/blue_system/old_blue_MOT.svg}
-	\caption{\label{fig:old_blue_MOT}
+	\caption[]{\label{fig:old_blue_MOT}
 		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a \SI{2.75}{\inch} viewport with the atom source and Zeeman slower are off to the right.
 		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}. 
 		A video is available at {https://youtu.be/ENDIizrlqMA}.}
@@ -195,7 +195,7 @@ Our main trap is currently a single ``sheet'' beam with waist sizes of about ** 
 
 The specific isotope(s) being worked with also have an effect on both loading in to an ODT as well as the evaporation due to their wildly varying intra- and inter-isotope scattering lengths (see \cref{tab:sr_scattering_lengths_long}). 
 \begin{table}[h]
-	\caption{
+	\caption[]{
 		\label{tab:sr_scattering_lengths_long}
 		Measured $s$-wave scattering lengths of strontium.}
 	\centering
@@ -231,7 +231,7 @@ An overview of our vacuum system is shown in \cref{fig:vacuum_system} and follow
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
-	\caption{
+	\caption[]{
 		\label{fig:vacuum_system}
 		Overview of the strontium Rydberg apparatus highlighting the main sections of the vacuum system and various components.}
 \end{figure}
@@ -257,7 +257,7 @@ We typically run our main FIREROD oven heater around \SI{425}{\celsius}\footnote
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
-	\caption{
+	\caption[]{
 		\label{fig:neutral_sr_oven}
 		Neutral's new strontium oven during construction before thermocouple and nozzle heating wire have been attached. 
 		The design is very similar to our oven but is mounted oo a 2-3/4 on CF flange instead of a 3-3/8 in CF flange as on our experiment.
@@ -307,11 +307,11 @@ The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} fea
 Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} (see \cref{fig:viewport_ar-coating}).
 \begin{figure}[htbp]
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
-	\caption{\label{fig:viewport_ar-coating}
-		Transmission data of the Reynard Corporation anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ 7056 glass viewports from MDC Vacuum Products.
+	\caption[]{\label{fig:viewport_ar-coating}
+		Transmission data of the Reynard Corporation\protect\footnotemark anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ 7056 glass viewports from MDC Vacuum Products.
 		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
 \end{figure}
-
+\footnotetext{I would like to thank Robyn Miller at Reynard Corporation for finding and sending me the reflection and transmission data from the order we placed six years ago.}
 Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
 The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
 Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
@@ -330,7 +330,7 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/trim_coils/trim_coils.svg}
-	\caption{
+	\caption[]{
 		\label{fig:trim_coils}
 		Magnetic field trim coils around main chamber. (Blue) X-axis, (green) Y-axis, and (red) Z-axis.}
 \end{figure}
@@ -347,7 +347,7 @@ One of the things we did differently from the previous strontium experiments is 
 This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the $\sim \SI{40}{\ampere}$ to generate the $\sim \SI{40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\sim \SI{1}{\gauss\per\cm}$ gradient for the red MOT.
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
-	\caption{\label{fig:dual_mot_coils}
+	\caption[]{\label{fig:dual_mot_coils}
 		(Left) Picture of our assembled dual MOT coils on a test setup. 
 		(Right) CAD rendering of how they are centered around the buket windows of the main chamber.
 		** Redo with 2D CAD drawing instead of rendered image. **}
@@ -365,7 +365,7 @@ Our current geometry for the red MOT coils produce a magnetic field gradient of 
 
 \begin{figure}[htbp]
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/mot_coil_fields.pdf}
-	\caption{\label{fig:dual_mot_coil_fields}
+	\caption[]{\label{fig:dual_mot_coil_fields}
 		Blue MOT coil (left) and red MOT coil (right) magnetic fields measured along the $z$-axis on the test setup shown in \cref{fig:dual_mot_coils} with $I = \SI{4}{\ampere}$.
 		The uncertainties are estimated to be $\delta_{z} = \pm \SI{2.5}{\cm}$ and $\delta_{B} = \pm \SI{0.05}{\gauss}$.
 		The non-zero measured values of $B_x$ and $B_y$ suggest that the probe was slight off the $z$-axis.
@@ -382,7 +382,7 @@ We're not too worried about not having this capability since ground-state stront
 \Cref{fig:trapping_beams} gives an overview of the orientation of our various laser cooling and trapping beams.
 \begin{sidewaysfigure}[htbp]
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/trapping_beams.svg}
-	\caption{\label{fig:trapping_beams}
+	\caption[]{\label{fig:trapping_beams}
 		Simplified schematic of the various trapping and cooling lasers and the Rydberg excitation beams.}
 \end{sidewaysfigure}
 
@@ -405,7 +405,7 @@ Overall, we were not satisfied with New Focus' ECDL and their repair process and
 \begin{sidewaysfigure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/blue_system/blue_system.svg}
-	\caption{
+	\caption[]{
 		\label{fig:blue_system}
 		Simplified diagram of the \SI{461}{\nm} laser system.}
 \end{sidewaysfigure}
@@ -434,7 +434,7 @@ The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Hei
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/repumper_system/repumper_system.svg}
-	\caption{
+	\caption[]{
 		\label{fig:repumper_system}
 		Simplified diagram of our current \SI{481}{\nm} repumper laser system.
 		A portion of the light form the \SI{481}{\nm} external cavity diode laser (ECDL) is used to lock to a Doppler-broadened \Te{130}{2} line in a cell heated to about \SI{555}{\celsius}.
@@ -487,7 +487,7 @@ In practice, we don't always have all the red MOT AOMs lined up, typically only 
 \begin{sidewaysfigure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/red_system/red_system.svg}
-	\caption{\label{fig:red_system}Simplified diagram of the red MOT system (when everything is put together) for multi-isotope trapping. The master laser frequency is referenced to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}.}
+	\caption[]{\label{fig:red_system}Simplified diagram of the red MOT system (when everything is put together) for multi-isotope trapping. The master laser frequency is referenced to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}.}
 \end{sidewaysfigure}
 Without using a fiber combiner, we're able to devote a lot of power to the red MOT for each isotope, enabling us to use large red MOT beams. 
 The drawbacks is that we're much more sensitive to misalignments and the ugly intensity profiles out of the diodes leads to strange red MOT shapes. 
@@ -530,7 +530,7 @@ The design of the sheet trap was limited by sticking with $\SI{1}{\inch}$ optics
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/odt_system/sheet_trap/sheet_trap_profile/sheet_profile.pdf}
-	\caption{
+	\caption[]{
 		\label{fig:sheet_trap_profile}
 		Beam profile of the sheet trap from which we fit to obtain the beam waists.
 		For the vertical waist: $w = \SI{28.0+-1.0}{\um}$, $z_{0} = \SI{35.795+-0.009}{\cm}$, and $M^2 = \num{1.18+-0.04}$.
@@ -543,7 +543,7 @@ The measured beam profile of the vertical trap is shown in \cref{fig:vertical_tr
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/odt_system/vertical_trap/vertical_trap_profile/vertical_profile.pdf}
-	\caption{
+	\caption[]{
 		\label{fig:vertical_trap_profile}
 		Beam profile of the vertical trap from which we fit to obtain the beam waists.
 		An assumed $\pm \SI{1}{\mm}$ uncertainty in the measured distance and $\pm \SI{5}{\um}$ uncertainty in the measured waist size.}
@@ -558,7 +558,7 @@ The electric field system and charged particle detection will be detailed in Joe
 
 % \begin{sidewaysfigure}[htbp]
 	% \includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/rydberg_beams.svg}
-	% \caption{\label{fig:rydberg_beams}
+	% \caption[]{\label{fig:rydberg_beams}
 		% Diagram of the various Rydberg excitation beams.}
 % \end{sidewaysfigure}
 
@@ -587,7 +587,7 @@ With this addition, we typically get about ** \SIrange[range-phrase=-]{1}{1.5}{\
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/argos_opo/argos_opo.svg}
-	\caption{
+	\caption[]{
 		\label{fig:argos_opo}
 		Picture of the Lockheed Martin Aculight Argos Model 2400 CW OPO with the custom water-cooling block attached to the cavity housing.
 		The current tubing on the cooling block is a bit too stiff to bend enough to put the laser cover on.}
@@ -602,7 +602,7 @@ The optical layout at the transfer cavtiy is shown in \cref{fig:transfer_cavity}
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/transfer_cavity.svg}
-	\caption{
+	\caption[]{
 		\label{fig:transfer_cavity}
 		Simplified diagram of our transfer cavity setup.
 		** NEED TO FINISH **.}
@@ -619,7 +619,7 @@ Our typical operating powers are closer to about $\SI{100}{\milli\W}$.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/toptica_shg_pro/toptica_shg_pro-cavity.svg}
-	\caption{
+	\caption[]{
 		\label{fig:toptica_shg_pro-cavity}
 		Picture of the Toptica SHG pro bow tie doubling cavity. 
 		The normally-sealed SHG cavity was opened up when realigning the $\SI{640}{\nm}$ to the cavity.}
@@ -638,7 +638,7 @@ All parts were polished by hand before being sent off to be electropolished.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-CAD.svg}
-	\caption{
+	\caption[]{
 		\label{fig:electric_field_system-CAD}
 		CAD renderings of the electric field plates with most of the supporting scaffold removed.
 		Blue spheres represent the sapphire spacers used to isolate the high-voltage components from the grounded support structure.
@@ -656,7 +656,7 @@ An example SFI spectrum is shown in \cref{fig:example_mcs_signal}.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-real.svg}
-	\caption{
+	\caption[]{
 		\label{fig:electric_field_system-real}
 		(Left) Overview of the actual electric field system mounted on the bottom flange of main chamber. 
 		Connections between the feedthroughs and the electric field plates are made with OFHC wires and insulated from the grounded supporting scaffold wtih ceramic fish spine beads. 
@@ -683,7 +683,7 @@ The length of the cables from the HV switch\footnote{Willamette High Voltage PHV
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/charged_particle_detection.svg}
-	\caption{
+	\caption[]{
 		\label{fig:charged_particle_detection}
 		** PLACEHOLDER FIGURE **.
 		Charged particle detection system.}
@@ -696,7 +696,7 @@ The MCP is mounted to a $\SI{2.75}{\inch}$ flange with four HV feedthroughs with
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
-	\caption{
+	\caption[]{
 		\label{fig:mcp}
 		Pictures of the MCP mounted to a $\SI{2.75}{\inch}$ flange with high-voltage feedthroughs. 
 		Like the electric field plates, connections are made with beryllium-copper inline barrel connectors.
@@ -707,7 +707,7 @@ An example Rydberg signal from the MCS is shown in \cref{fig:example_mcs_signal}
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/example_mcs_signal/example_mcs_signal.pdf}
-	\caption{
+	\caption[]{
 		\label{fig:example_mcs_signal}
 		Example MCS signal from the $\nSLJf{5s38s}{3}{S}{1}{\flatfrac{11}{2}}$ Rydberg line in \Sr{87} for a single detuning in (top) linear scale and (bottom) log scale.
 		There are $\num{200}$ $\SI{100}{\ns}$ bins with the electric field ramp starting at $t = \SI{0}{\ns}$.
@@ -721,7 +721,7 @@ This non-linearity is important to characterize so that we know when the signal 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/mcp/mcp_saturation/20190327-Complete_data_set/mcp-counts_vs_uv_power.pdf}
-	\caption{
+	\caption[]{
 		\label{fig:mcp_saturation}
 		Peak integrated SFI spectrum per $\SI{10}{\us}$ exposure vs. UV excitation power exciting to the $\nSLJf{5s33s}{3}{S}{1}{\flatfrac{11}{2}}$ state of \Sr{87} in a $B_{x} \approx \SI{1.1}{\gauss}$ bias field (\SI{689}{\nm} power kept constant).
 		The peak counts were obtained by fitting to the Zeeman-split spectra and extracting the height of the $m_{F} = \flatfrac{11}{2}$ line.
