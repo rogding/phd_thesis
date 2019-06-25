@@ -556,37 +556,50 @@ The electric field system and charged particle detection will be detailed in Joe
 		% Diagram of the various Rydberg excitation beams.}
 % \end{sidewaysfigure}
 
-\subsection{UV Laser System}
+\subsection{$\SI{320}{\nm}$ UV Laser System}
 
-We produce strontium Rydberg atoms using a two-photon transtion where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives transitions from the $\nSLJ{5s^2}{1}{S}{0}$ to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ states. 
+Strontium Rydberg atoms are produced using a two-photon transtion where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives atoms from the $\nSLJ{5s^2}{1}{S}{0}$ ground state to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ states. 
 
-***********************
+Generation of the $\SI{320}{\nm}$ radiation starts with a tunable, narrow linewidth $\SI{1064}{\nm}$ seed laser which is amplified to about $\SI{7.5}{\watt}$ by a fiber amplifier\footnote{IPG Photonics YAR-15K-1064-LP-SF ytterbium fiber amplifier.}.
+We currently have two $\SI{1064}{\nm}$ seed lasers in the lab and choose the laser based on the experiment
+\begin{itemize}
+	\item Koheras Basik BMY10PztSPm, KOH2038 --
+		The narrowest $\SI{640}{\nm}$ lines we've seem with this seed are around ** $\SI{1}{\MHz}$ **, likely limited by the slow feedback bandwidth of the piezo element, but it's capable of tuning multiple GHz so it's preferred for experiments requiring large tuning.
+	\item NP Photonics Rock RFLM-50-3-1064.53-1-S-0 --
+		The feedback bandwidth of this laser is quite a bit better than the Koheras with ** $\SI{250}{\kHz}$ ** being the narrowest features we've observed.
+		Although the feedback bandwidth results with a narrow $\SI{640}{\nm}$ linewith, it's more difficult to continuously tune large ranges. 
+\end{itemize}
+The output of the fiber amplifier pumps a Lockheed Martin Aculight Argos Model 2400 CW optical parametric oscillator (OPO) modified with a sum frequency generation stage. 
+Similar to the setup described in \cite{Mieth2014.OE.22.11182}, OPO-SFG is achieved by replacing the standard OPO crystal with periodically poled, magnesium-oxide-doped lithium niobate crystal ({MgO:PPLN}) where the first section is poled for OPO and second section is poled for SFG.
+The cavity dichroics were also replaced.
+The OPO section uses the $\lambda_{\text{P}} = \SI{1.064}{\um}$ pump to generate $\lambda_{\text{S}} = \SI{1.6}{\um}$ and $\lambda_{\text{I}} = \SI{3.2}{\um}$ light.
+The SFG section then combines the $\lambda_{\text{S}} = \SI{1.6}{\um}$ with another $\lambda_{\text{P}} = \SI{1.064}{\um}$ to produce $\lambda_{\text{SFG}} = \SI{640}{\nm}$.
 
-This section details the laser system we use to produce \SI{320}{\nm} radiation for two-photon excitation to a Rydberg state. 
-Our system for generating the \SI{640}{\nm} radiation is similar to the one described in \cite{mie2014.OE.22.011182}.
-
-Depending on the experiment, whether we want the ability to tune over multiple gigahertz with \SI{\sim 500}{\kHz} linewidth or a laser with a narrower linewidth (\SI{250}{\kHz}), we use either a Koheras Basik BMY10PztSPm or NP Photonics RFLM-50-3-1064.53-1-S-0 ``Rock''. 
-The \SI{1064}{\nm} seed is then amplified by an IPG YAR-15K-1064-LP-SF fiber amplifier to about \SI{7.5}{\W}. 
-
-The amplified \SI{1064}{\nm} radiation pumps an Argos (now Lockheed Martin) 2400 CW optical parametric oscillator (OPO) which uses a periodically-poled lithium niobate (PPLN) crystal. 
-The crystal first converts $\lambda_\text{pump}=\SI{1064}{\nm}$ to \SI{1.6}{\um} and \SI{3.2}{\um} photons. 
-Sum frequency generation then combines a \SI{1064}{\nm} photon with a \SI{1.6}{\um} photon to produce the \SI{638}{\nm} output. 
-
+As mentioned in \cite{DeSalvo2015.PhD}, temperature tuning of the crystal is required for efficient $\SI{640}{\nm}$ generation but the Argos system was only designed for heating.
+A workaround was developed where a water-cooling block was attached to the outside of the OPO cavity housing to lower the temperature enough to where the Argos' internal heater is capable stabilizing the temperature (see \cref{fig:argos_opo}).
+With this addition, we typically get about ** \SIrange[range-phrase=-]{1}{1.5}{\watt} ** of $\SI{640}{\nm}$.
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/uv_system.svg}
-	\caption{\label{fig:uv_system}Diagram of the laser system used to produce \SI{318}{\nm} for exciting strontium Rydberg atoms. Diagram of the Argos internals based on the one in \cite{mor2013.RSI.84.013102}.}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/argos_opo/argos_opo.svg}
+	\caption{
+		\label{fig:argos_opo}
+		Picture of the Lockheed Martin Aculight Argos Model 2400 CW OPO with the custom water-cooling block attached to the cavity housing.
+		The current tubing on the cooling block is a bit too stiff to bend enough to put the laser cover on.}
 \end{figure}
 
-The \SI{7.5}{\W} of \SI{1064}{\nm} gets converted to about **\SI{1.5}{\W}** of \SI{638}{\nm}. 
-The Toptica SHG Pro frequency doubles the \SI{638}{\nm} to produce about **\SI{\sim 100}{\mW}** of \SI{319}{\nm} depending how well we optimize the doubling efficiency. 
+** Locking system for the $\SI{640}{\nm}$ system **
 
-Depending on the seed we use, we observe linewidths of about **\SI{500}{\kHz} (\SI{< 200}{\kHz})** with the Koheras (Rock).
-
-\begin{align}
-	\frac{1}{\SI{1064}{\nm}} &= \frac{1}{\SI{1.6}{\um}} + \frac{1}{\SI{3.2}{\um}} \\
-	\frac{1}{\SI{638}{\nm}} &= \frac{1}{\SI{1064}{\nm}} + \frac{1}{\SI{1.6}{\um}}
-\end{align}
+Now that we have a tunable and stabilized source of $\SI{640}{\nm}$, the output from the OPO is then coupled in to a commercial Toptica second-harmonic generation (SHG) pro system which produces doubles the $\SI{640}{\nm}$ to $\SI{320}{\nm}$.
+When well-tuned, the system is capable of outputting  ** $> \SI{500}{\milli\W}$ of power but it tends to degrade over time.
+Our typical operating powers are closer to about $\SI{100}{\milli\W}$.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/toptica_shg_pro/toptica_shg_pro-cavity.svg}
+	\caption{
+		\label{fig:toptica_shg_pro-cavity}
+		Picture of the Toptica SHG pro bow tie doubling cavity. 
+		The normally-sealed SHG cavity was opened up when realigning the $\SI{640}{\nm}$ to the cavity.}
+\end{figure}
 
 \subsection{Electric Field System}
 
