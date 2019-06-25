@@ -304,7 +304,13 @@ The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} fea
 	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
 	\item A conical expansion to a \SI{6}{\inch} flange for increased conductance to the pumps.
 \end{itemize}
-** The \SI{2.75}{\inch} viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} by Reynard Corporation. **
+Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} (see \cref{fig:viewport_ar-coating}).
+\begin{figure}[htbp]
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
+	\caption{\label{fig:viewport_ar-coating}
+		Transmission data of the Reynard Corporation anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ 7056 glass viewports from MDC Vacuum Products.
+		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
+\end{figure}
 
 Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
 The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
@@ -652,9 +658,11 @@ An example SFI spectrum is shown in \cref{fig:example_mcs_signal}.
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/electric_field_system/electric_field_system-real.svg}
 	\caption{
 		\label{fig:electric_field_system-real}
-		(Left) Overview of the actual electric field plates, Einzel lens, and guiding plates. 
-		Fish spine beads are used to isolate the wires connecting the feedthroughs to the various electric field plates. 
-		(Right) Close up of of the Einzel lens and guiding plates.}
+		(Left) Overview of the actual electric field system mounted on the bottom flange of main chamber. 
+		Connections between the feedthroughs and the electric field plates are made with OFHC wires and insulated from the grounded supporting scaffold wtih ceramic fish spine beads. 
+		Beryllium-copper inline barrel connectors with two cross-screws attach the wires to the feedthroughs.
+		(Right) Close up of the eight electric field plates, Einzel lens, and guiding plates.
+		The sapphire spheres (red or clear) which isolate the high-voltage parts from the grounded scaffold structure are also visible.}
 \end{figure}
 
 Working at high-$n$, Soumya was able to trim electric fields to better than ** xxxx V/cm ** when taking spectra at $n=160$.
@@ -663,19 +671,39 @@ For now, the electric field system is sufficient for our purposes.
 
 \subsection{Charged Particle Detection}
 
-To detect the creation of Rydberg atoms, we implemented a system which ramps the electric field plates and MCP to perform selective field ionization (SFI). 
-The MCP's output is first amplified by an SRS xxx preamplifier before being sent to an multichannel scaler (MCS). 
-** Joe will be detailing the electric field ionization and detection system in his thesis but some details are included here for completeness. **
+One of the major aspects which separates our experiment from most other neutral atom experiments is the ability to detect charged particles. 
+Some of the previous work with strontium Rydberg experiments was carried out in the Neutral appratus but since they lacked the ability to detect charged particles, they had to resort to detecting atom loss in absorption images \cite{DeSalvo2015.PRA.92.031403, DeSalvo2016.PRA.93.022709, Aman2016.PRA.93.043425}.
+Our system was designed from the beginning to be able to detect charged particles which we've found to be incredibly sensitive with teh ability to detect signals spanning several orders of magnitude \cite{Camargo2018.PRL.120.083401}.
+** Since Joe will be detailing the electric field ionization and detection system in his upcoming Ph.D. thesis, only the major detials are included here for completeness. **
 
-The MCP is an Advanced Performance Detector (APD) 2 miniTOF made by Photonis. 
-This detector was selected because it fit inside the ** xxx in ** diameter tube off the main chamber. 
+An overview of how our charted particle detection system works is shown in \cref{fig:charged_particle_detection}.
+The following procedure explains how we detect electrons as that's what we primarily work with but we have configured our system to detection ions instead.
+** CHECK !! ** After performing a Rydberg excitation on a sample, we typically apply a symmetric field ramp where the plates closer (further) from the MCP are ramped to positive (negative) high-voltage to push electrons towards the MCP. 
+The length of the cables from the HV switch\footnote{Willamette High Voltage PHVSW-005.} to each of the feedthroughs are about the same length to keep the capacitance approximately equal.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/charged_particle_detection.svg}
+	\caption{
+		\label{fig:charged_particle_detection}
+		** PLACEHOLDER FIGURE **.
+		Charged particle detection system.}
+\end{figure}
+We adjust the HV supplies for the electric field plate ramps depending on which principal quantum number ($n$) of the Rydberg state we are exciting. 
+Due to the cable capacitance, this also affects the ramp rate of the applied electric field but it doesn't significantly affect our data since we're primarily interested in the integrated SFI spectrum.
 
+Charged particles are detected with an MCP\footnote{Photonis Advanced Performance Detector (APD) 2 miniTOF. It's important to note that we purchased the version with PEEK components so care must be taken when performing a bake-out.} where the front plate is kept fixed at $\SI{200}{\V}$ while the back of the MCP is fixed at $\SI{2650}{\V}$.
+The MCP is mounted to a $\SI{2.75}{\inch}$ flange with four HV feedthroughs with ceramic insulation.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/mcp.svg}
-	\caption{\label{fig:mcp}MCP for detecting charged particles. ** Ceramic spacers were used to help keep the feedthroughs from getting too close. The entire MCP assembly is mounted on a xxxxx feedthrough.**}
+	\caption{
+		\label{fig:mcp}
+		Pictures of the MCP mounted to a $\SI{2.75}{\inch}$ flange with high-voltage feedthroughs. 
+		Like the electric field plates, connections are made with beryllium-copper inline barrel connectors.
+		Ceramic washers were placed between the screws to act as a spacer to keep the connections from touching eachother and the main vacuum chamber.}
 \end{figure}
-
+Currently, the MCP's output is first connected to a preamplifier\footnote{Stanford Research Systems SR445.} which is then fed in to an RF amplifier\footnote{ZFL-500LN.} to remove DC offsets before going to the MCS\footnote{FAST ComTec GmbH MCA-3 P7882.}. 
+An example Rydberg signal from the MCS is shown in \cref{fig:example_mcs_signal}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mcp/example_mcs_signal/example_mcs_signal.pdf}
@@ -688,15 +716,20 @@ This detector was selected because it fit inside the ** xxx in ** diameter tube 
 		The MCS detects a large ``kick'' for first several bins (shaded region) so the data in those bins (shaded region) are dropped before proceeding with the analysis.}
 \end{figure}
 
+As seen in \cref{fig:mcp_saturation}, MCPs are known to ``saturate'' and become non-linear as the count rate increases.
+This non-linearity is important to characterize so that we know when the signal is in the linear regime and when we need to start taking in to account the non-linearity in detection efficiency. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/mcp/mcp_saturation/20190327-Complete_data_set/mcp-counts_vs_uv_power.pdf}
 	\caption{
 		\label{fig:mcp_saturation}
-		Peak MCP electron counts per $\SI{10}{\us}$ exposure vs. UV excitation power exciting to the $\nSLJf{5s33s}{3}{S}{1}{\flatfrac{11}{2}}$ state of \Sr{87} in a $B_{x} \approx \SI{1.1}{\gauss}$ bias field (\SI{689}{\nm} power kept constant).
+		Peak integrated SFI spectrum per $\SI{10}{\us}$ exposure vs. UV excitation power exciting to the $\nSLJf{5s33s}{3}{S}{1}{\flatfrac{11}{2}}$ state of \Sr{87} in a $B_{x} \approx \SI{1.1}{\gauss}$ bias field (\SI{689}{\nm} power kept constant).
 		The peak counts were obtained by fitting to the Zeeman-split spectra and extracting the height of the $m_{F} = \flatfrac{11}{2}$ line.
 		Since $\num{1000}$ $\SI{10}{\us}$ exposures were used for each frequency point, the fitted peak counts was divided by $\num{1000}$ to obtain the counts per exposure.
 		Fitting to the empirical model $A \qty[1 - \exp(B x)]$ results with the coefficients $A = \num{44.0+-1.7}$ and $B = \num{-0.059+-0.005}$.}
 \end{figure}
-
-****
+Performing a fit to the empirical model
+\begin{equation}
+	y = A \qty[1-\exp(B x)]
+\end{equation}
+allows us to determine the constants $A$ and $B$ so that we can extract correct for undercounting regardless of whether our signal is in the linear-regime or not.
