@@ -10,15 +10,62 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="204.89137mm"
+   width="205.05922mm"
    height="57.652729mm"
-   viewBox="0 0 204.89138 57.652729"
+   viewBox="0 0 205.05923 57.652729"
    version="1.1"
    id="svg9889"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="charged_particle_detection.svg">
   <defs
      id="defs9883">
+    <marker
+       inkscape:stockid="DotS"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6246"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path6244"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6056"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:collect="always">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path6054"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="DotS"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DotS"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5659"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         inkscape:connector-curvature="0" />
+    </marker>
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
@@ -170,7 +217,8 @@
        refX="0"
        refY="0"
        orient="auto"
-       inkscape:stockid="DotM">
+       inkscape:stockid="DotM"
+       inkscape:collect="always">
       <path
          transform="matrix(0.4,0,0,0.4,2.96,0.4)"
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
@@ -940,15 +988,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="477.9711"
-     inkscape:cy="41.970905"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="146.74928"
+     inkscape:cy="79.504924"
      inkscape:document-units="mm"
-     inkscape:current-layer="g16765"
+     inkscape:current-layer="layer3"
      showgrid="true"
-     inkscape:window-width="2400"
-     inkscape:window-height="1271"
-     inkscape:window-x="2391"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
@@ -975,8 +1023,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid16772"
-       originx="29.236662"
-       originy="-226.08627" />
+       originx="29.404497"
+       originy="-226.08628" />
   </sodipodi:namedview>
   <metadata
      id="metadata9886">
@@ -986,7 +1034,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -995,7 +1043,7 @@
      id="layer7"
      inkscape:label="joes_figure"
      style="display:none"
-     transform="translate(3.968747,-15.390223)">
+     transform="translate(4.1365803,-15.390223)">
     <image
        transform="translate(25.267916,2.1291518)"
        y="82.327904"
@@ -1012,7 +1060,7 @@
      id="layer6"
      inkscape:label="alignment"
      style="display:none"
-     transform="translate(3.968747,-15.390223)">
+     transform="translate(4.1365803,-15.390223)">
     <path
        style="fill:none;stroke:#ff0000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 96.705418,35.471882 V 72.766781"
@@ -1080,7 +1128,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="ramp"
-     transform="translate(3.968747,-15.390223)">
+     transform="translate(4.1365803,-15.390223)">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker7594);marker-end:url(#Arrow2Mend)"
        d="M 5.42417,61.004185 H -3.836247 V 50.420859 h 2.6458337"
@@ -1088,7 +1136,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-0)"
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6056);marker-end:url(#Arrow2Mend-0)"
        d="M -3.836247,50.420859 V 29.254193 h 2.6458346"
        id="path5117-0"
        inkscape:connector-curvature="0"
@@ -1100,7 +1148,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-0-6)"
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6246);marker-end:url(#Arrow2Mend-0-6)"
        d="M 46.434586,50.420859 V 29.254193 h 2.645835"
        id="path5117-0-3"
        inkscape:connector-curvature="0"
@@ -1110,7 +1158,7 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="switch"
-     transform="translate(3.968747,-1.5608947)">
+     transform="translate(4.1365803,-1.5608946)">
     <path
        transform="translate(0,-13.829328)"
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker8014)"
@@ -1208,13 +1256,13 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="electric_field_plates"
-     transform="translate(29.236663,-13.261071)" />
+     transform="translate(29.404496,-13.261071)" />
   <g
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="atoms_and_electrons"
      style="display:inline"
-     transform="translate(3.968747,-1.5608947)">
+     transform="translate(4.1365803,-1.5608946)">
     <g
        id="g17358"
        transform="translate(25.684636,-8.5523168)">
@@ -1378,7 +1426,7 @@
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="wires"
-     transform="translate(0,-1.5608947)">
+     transform="translate(0.16783332,-1.5608946)">
     <path
        transform="translate(32.543959,-11.700174)"
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker16680)"
@@ -1402,7 +1450,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="mcp"
-     transform="translate(3.968747,-15.390223)"
+     transform="translate(4.1365803,-15.390223)"
      style="display:inline">
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Send-1)"
@@ -1694,7 +1742,7 @@
       </g>
     </g>
     <path
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Send-1-6-4)"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotS);marker-end:url(#Arrow2Send-1-6-4)"
        d="M 96.705421,68.947588 H 94.059588 V 45.129182"
        id="path20884-9-4-9"
        inkscape:connector-curvature="0"
@@ -1704,7 +1752,7 @@
      inkscape:label="computer"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(29.236663,-13.261071)">
+     transform="translate(29.404496,-13.261071)">
     <g
        style="fill:#000000;stroke:none;stroke-width:14.94338894"
        transform="matrix(-0.00236077,0,0,-0.00236077,175.65618,59.970065)"
@@ -1725,7 +1773,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="mcs"
-     transform="translate(29.236663,-13.261071)">
+     transform="translate(29.404496,-13.261071)">
     <g
        id="g16765"
        transform="matrix(2.2549543,0,0,2.2544981,-69.113183,-92.626912)"
@@ -2218,7 +2266,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="text"
-     transform="translate(29.236663,-13.261071)">
+     transform="translate(29.404496,-13.261071)">
     <g
        id="g18146">
       <rect
@@ -2653,5 +2701,6 @@
   <g
      inkscape:groupmode="layer"
      id="layer12"
-     inkscape:label="mask" />
+     inkscape:label="mask"
+     transform="translate(0.16783332)" />
 </svg>
