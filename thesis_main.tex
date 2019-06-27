@@ -42,6 +42,9 @@
 \usepackage{pgf}
 %\usepackage{subcaption}
 
+% Used for trouble shooting unicode errors. Replaces the unicode character with whatever is in { } so that it's easier to search for in the pdf.
+%\DeclareUnicodeCharacter{0301}{!?!}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Various options
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +162,8 @@
 \newcommand{\tsub}{\textsubscript}									% subscript outside math mode.
 \newcommand{\Sr}[1]{\tsup{#1}\text{Sr}}								% ^{8x}Sr outside math mode.
 \newcommand{\Srion}[2]{\Sr{#1}\tsup{#2}}							% ^{8x}Sr^{x+} outside math mode.
+\newcommand{\Yb}[1]{\tsup{#1}\text{Yb}}								% ^{8x}Yb outside math mode.
+\newcommand{\Ybion}[2]{\Yb{#1}\tsup{#2}}							% ^{8x}Yb^{x+} outside math mode.
 \newcommand{\Li}[1]{\tsup{#1}{Li}}									% ^{xx}Li outside math mode.
 \newcommand{\Rb}[1]{\tsup{#1}{Rb}}									% ^{xx}Rb outside math mode.
 \newcommand{\Te}[2]{\tsup{#1}{Te}\tsub{#2}}							% ^{xx}Te_{yy} outside math mode.
@@ -263,6 +268,7 @@ Abstract goes here.
 \include{chapters/fermion_spectroscopy/fermion_spectroscopy}
 \include{chapters/excited_dimers/excited_dimers}
 \include{chapters/g3/g3}
+\include{chapters/conclusion/conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Appendices
