@@ -1,54 +1,33 @@
 \chapter{Isotope-Dependent Optical Trapping}
 
-This project ended up being more of a technical exploration where we wanted to see if we could make \Sr{88} Bose–Einstein condensates (BECs) quickly.
-Due to the near zero {\Sr{88}-\Sr{88}} scattering length ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}), making \Sr{88} BECs typically requires sympathetic cooling with another isotope \cite{Mickelson2010.PRA.81.051601, Stellmer2013.PRA.87.013611}. 
-But due to the wide range of strontium scattering lengths, a trap optimized for one isotope is unlikely to work well for another isotope (e.g., \Sr{88} needs to be collected at high-density whereas \Sr{86} needs to be kept at low density). 
-
-This necessitates the two isotopes being trapped in two different trapping geometries. 
-Since optical trapping scales as {$\flatfrac{\Gamma}{\Delta}$}, one method for doing so is to take advantage of the {$\nSLJ{5s^2}{1}{S}{0} - \nSLJ{5s5p}{3}{P}{1}$} intercombination line which posses a narrow linewidth ({$\flatfrac{\Gamma}{2\pi} = \SI{7.5}{\kHz}$}) and large isotope shifts ({$\flatfrac{\Delta_{\text{isotope}}}{2\pi} \sim \SI{100}{\MHz}$}).
+This project ended up being a bit of a technical exploration trying to see if we could design a trap where we could tailor the trapping potential experienced by different isotopes when working with isotopic mixtures.
+In particular, we sought to exploit the large isotope shift of the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition ($\flatfrac{\Delta_{\text{isotope}}}{2 \pi} \sim \SI{100}{\MHz}$) compared to its linewidth ($\flatfrac{\Gamma_{\SI{689}{\nm}}}{2 \pi}=\SI{7.5}{\kHz}$).
+Considering that $U_{\text{dip}} \sim \flatfrac{1}{\Delta}$ and $\Gamma_{\text{sc}} \sim \flatfrac{1}{\Delta^2}$ \cite{Grimm1999.arXiv.9902072}, it should be possible to produce an attractive potential for one isotope which is repulsive for another isotope. 
+Using two lasers would allow us to provide a deep potential for one isotope whereas the potential is canceled for another isotope so that it experiences no additional trapping nor anti-trapping effects. 
 
 \section{Challenges in Producing Quantum Degenerate Gases of \Sr{88} and \Sr{87}}
 
-Although there have been some recent developments towards producing quantum degenerate gases without evaporative cooling which take advantage of narrow atomic transitions \cite{Stellmer2013.PRL.110.263003} or using Raman sideband cooling \cite{Hu2017.Science.aan5614}, the majority of the experiments predominately perform (forced) evaporative cooling to reach quantum degeneracy. 
-Evaporative cooling works by removing the hot ``tail'' of the atomic velocity distribution after which collisions between atoms rethermalize to a lower temperature. 
-Due to the requirements for collisions, the feasibility of evaporative cooling is highly dependent on the scattering length of the atoms. 
-\Cref{tab:sr_scattering_lengths_compact} gives the various scattering lengths for strontium.
+Although there have been recent developments towards producing quantum degenerate gases without evaporative cooling \cite{Stellmer2013.PRL.110.263003, Hu2017.Science.358.1078}, the methods presented have restrictive constraints. 
+\citeauthor{Stellmer2013.PRL.110.263003} took advantage of the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{84} to maintain a cold reservoir of laser-cooled atoms which are collected in a dimple shielded by a ‘‘transparency'' but still requires elastic collisions for thermalization in the dimple.
+\citeauthor{Hu2017.Science.358.1078} requires a two-dimensional optical lattice to perform cycles of Raman sideband cooling and compression in a gas of \Rb{87}.
+
+One of the most interesting isotopes for studying quantum gases is \Sr{88} due to is high natural abundance and near-zero \Sr{88}-\Sr{88} $s$-wave scattering length (see see \cref{tab:sr_scattering_lengths_long}), making it an ideal candidate for studying non-interacting BECs.
+Early work towards producing quantum degenerate gases of strontium focused on \Sr{88} \cite{Ido2000.PRA.61.061403} and \Sr{88}-\Sr{86} mixtures \cite{Poli2005.PRA.71.061403} but the tight optical traps used hindered evaporation to quantum degeneracy due to \Sr{86}'s the large three-body recombination rate \cite{Ferrari2006.PRA.73.023408}.
+Currently, the only method for demonstrated for producing \Sr{88} BECs requires sympathetic cooling with either \Sr{87} \cite{Mickelson2010.PRA.81.051601, Stellmer2013.PRA.87.013611} or \Sr{86} \cite{Stellmer2013.PRA.87.013611}.
+Neglecting the added complexity of narrow line cooling \Sr{87}, sympathetic cooling \Sr{88} with \Sr{87} has been shown to be promising with relative quick evaporations with properly tailored traps \cite{Stellmer2013.PRA.87.013611} but is potentially slowed by the modest $a_{88,87} \approx \SI{55}{\bohr}$ and Pauli blocking of collisions between \Sr{87} atoms which leads to inefficient evaporation once the fermions becomes quantum degenerate \cite{DeSalvo2010.PRL.105.030402}.
+Sympathetic cooling \Sr{88} with \Sr{86} would be ideal due to the large natural abundances of both isotopes, the simplified narrow line cooling laser system required, and the convenient $a_{88,86} \approx \SI{97}{\bohr}$ but, as noted above, \Sr{86} requires a large-volume trap to mitigate three-body loses. 
 
 Being able to quickly produce \Sr{88} BECs are nearly ``perfect'' non-interacting Bosons with no nuclear spin. 
-Early attempts at making \Sr{88} BECs failed due to the near zero {$s$-wave} scattering length and it was difficult to evaporative cool this isotope (** REFERENCES? **).
-The first BECs of \Sr{88} were obtained by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
-The {$a_{88-87} = \SI{55}{\bohr}$} is respectable but it seems like optimum evaporative cooling occurs when the scattering length is around \SI{100}{\bohr} (e.g., \Sr{84}, {\textsuperscript{87}Rb} \cite{Anderson1995.Science.269.5221.198}, etc. ** CHECK !! **)
 Considering that \Sr{88} BECs are typically very small (** ADD REFERENCE AND/OR CALCULATION **) due to the slightly negative {$s$-wave} scattering length, there's interest in studying how the Rydberg electron couples to a BEC \cite{Balewski2013.Nature.12592} and, as $n$ increase, ion-BEC interactions \cite{Kleinbach2018.PRL.120.193401} without needing electrodes for an ion trap.
 The small \Sr{88} BEC is almost non-interacting also makes it a great candidate for observing three-dimensional solitons \cite{Maucher2011.PRL.106.170401} as it should be easier to Rydberg dress the entire BEC and there's less mean field interaction energy.
 
 There's also interest in degenerate Fermi gases (DFG) of \Sr{87} due to its large nuclear spin ($I=\flatfrac{9}{2}$) for qubit registers \cite{Gorshkov2009.PRL.102.110503} and quantum simulation/{$SU\left(N\right)$} magnetism \cite{Gorshkov2010.NPhys.1535, Hazzard2012.PRA.85.041604, Pagano2014.NPhys.2878, Hofrichter2016.PRX.6.021030, Ozawa2018.PRL.121.225303} (** CHECK SOURCES/READ A FEW OF THEM **).
 
-\begin{table}[h]
-	\caption{
-		\label{tab:sr_scattering_lengths_compact}
-			{$s$-wave} scattering lengths of strontium from \cite{Stein2010.EPJD.57.171} given in \si{\bohr}.
-			See \cref{tab:sr_scattering_lengths_long} for a detailed table.}
-	\centering
-	\begin{tabular}{@{}ccccc@{}}
-		\toprule
-		Isotope	& \Sr{88}			& \Sr{87}			& \Sr{86}			& \Sr{84}			\\
-		\midrule
-		\Sr{88}	& \num{-2.00(27)}	& \num{54.819(92)}	& \num{97.374(69)}	& \num{1658(54)}	\\
-		\Sr{87}	& \num{54.819(92)}	& \num{96.198(68)}	& \num{162.25(21)}	& \num{-57.61(61)}	\\
-		\Sr{86}	& \num{97.374(69)}	& \num{162.25(21)}	& \num{798(12)}		& \num{ 31.65(14)}	\\
-		\Sr{84}	& \num{1658(54)}	& \num{-57.61(61)}	& \num{31.65(14)}	& \num{122.762(92)}	\\
-		\bottomrule
-	\end{tabular}
-\end{table}
-
-The {\Sr{88}-\Sr{88}} scattering length is approximately zero ({$a_{88-88}\SI{-1.4(6)}{\bohr}$} \cite{Mickelson2005.PRL.95.223002}) which means the atoms do not thermalize as the optical trap depth is lowered.
-
-Since \Sr{87} is a fermion, a spin-polarized gas stops colliding (and hence thermalizing) once Pauli blockade sets in (** ELABORATE ADD DETAILS **). 
-
-Early attempts at making \Sr{86} BECs were done in relatively tight optical traps (** CHECK \cite{Ferrari2006.PRA.73.023408} **).
-Bose-Einstein condensation of \Sr{86} requires evaporation to occur at low density due to the large $a_{86-86}=\SI{798(12)}{\bohr}$ {$s$-wave} scattering length \cite{Stellmer2010.82.041602, Stellmer2013.PRA.87.013611}. 
-
 \section{Isotope-Dependent Optical Trapping}
+
+
+
+***********************************
 
 As previously mentioned, making \Sr{88} BECs requires sympathetic cooling (** ADD SOURCES **) due to $a_{88-88}=\SI{-2(1)}{\bohr}$. 
 Making an \Sr{87} DFG is possible due to its ten spin states \cite{DeSalvo2010.PRL.105.030402} but producing a spin-polarized DFG also requires sympathetic cooling as identical fermions no longer collide \cite{Stellmer2013.PRA.87.013611} (** PROBABLY INCLUDE OTHER SOURCES AS WELL **).
@@ -61,7 +40,11 @@ Since the potential scales as $\flatfrac{\Gamma}{\Delta}$ whereas the off-resona
 
 \subsection{Trap Design}
 
-The trap geometry also influences how evaporative cooling proceeds due to the density dependences of the elastic and inelastic collision rates where elastic collisions redistribute the energy and results in thermalization whereas inelastic collisions lead to losses (** Add more details!! **).
+The trap geometry influences how evaporative cooling proceeds due to the density dependences of the elastic and inelastic collision rates. 
+Based on the trapping geometries presented in \cite{Stellmer2013.PRA.87.013611}, we decided to use the large-volume $\SI{1064}{\nm}$ sheet trap to support the atoms against gravity and a nearly-vertical $\SI{689}{\nm}$ beam with a circular waist of about $\SI{60}{\um}$ to provide transverse confinement. 
+
+
+***********************************
 
 In order to form BECs of \Sr{86}, evaporative was performed at low density in a large-volume trap \cite{Stellmer2010.82.041602, Stellmer2013.PRA.87.013611}.
 On the other hand, \Sr{88} BECs were achieved through sympathetic cooling with \Sr{87} in a tight trapping geometry. 
@@ -100,7 +83,26 @@ Although I didn't notice significant losses the frequencies for both the ``trap'
 
 Now the beam size and ``trap'' and ``cancel'' frequencies are chosen, we can calculate the expected trap depths based on the power of each beam.
 
-\subsubsection{Polarizability}
+\subsection{Polarizability}
+
+Working in the two-level approximation and considering only the $\ket{g} = \nSLJ{5s^2}{1}{S}{0}$ and $\ket{e} = \nSLJ{5s5p}{3}{P}{1}$ states, the AC dipole polarizability can be calculated as \cref{eq:ac_pol}
+\begin{equation}
+	\alpha	= \frac{2 \mel{g}{\va{d}}{e}^{2}}{\hbar}\frac{\omega_{0}}{\omega_{0}^{2} - \omega_{L}^{2}}
+			= 6 \pi \epsilon_{0} c^{3} \Gamma \frac{1}{\omega_{0}^{2} \qty(\omega_{0}^{2} - \omega_{L}^{2})}
+\end{equation}
+and the potential is \cref{eq:U_odt} *** CHECK EQUATIONS ***
+\begin{equation}
+	U	= -\frac{3 \pi c^{2} \Gamma}{\omega_{0}^{2} \qty(\omega_{0}^{2} - \omega_{L}^{2})}
+\end{equation}
+** FIG. XXX ** shows the potential experienced by the (bosonic) isotopes
+
+
+********************************************
+
+********************************************
+
+********************************************
+
 
 ** I'm not sure where I should put this section. **
 
@@ -132,14 +134,20 @@ This was accomplished by chopping the trap and cancel beams at two different fre
 
 With some concerns of heating due to off-resonant scattering of the \SI{689}{\nm} ``trap'' and ``cancel'' beams, we first tested the dimple with just the ``trap'' beam (still being chopped at \SI{500}{\kHz}) in order to see how well we're able to evaporate with the dimple on.
 We decided to work with \Sr{84} because it's easy to evaporate to quantum degeneracy.
+\Cref{fig:dimple-84Sr_lifetime} shows that, at low powers, we don't observe much atom loss when just the \SI{689}{\nm} trap beam is applied.
 \begin{figure}[h]
 	\centering
-	\includesvg[keepaspectratio, width=3in, height=\textheight]{magic_trap/dimple_84Sr/dimple-84Sr_lifetime.svg}
+	\includegraphics[keepaspectratio, width=4in, height=\textheight]{magic_trap/dimple_84Sr/dimple-84Sr_lifetime.pdf}
 	\caption{
 		\label{fig:dimple-84Sr_lifetime}
-		Lifetime of \Sr{84} in dimple varying the (time-averaged) $P_\text{trap}$.
-		Horizontal shaded region represents the lifetime of atoms in just the sheet trap.}
+		Lifetime of \Sr{84} atoms in just the dimple region varying the (time-averaged) $P_\text{trap}$ (no cancel beam was applied). 
+		The trap beam was detuned by $\flatfrac{\Delta_{\text{trap}}}{2\pi} = \SI{-886.51}{\MHz}$ from $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ resonance in \Sr{84} and chopped at $\SI{500}{\kHz}$ with a $\SI{50}{\percent}$ duty cycle.
+		Horizontal shaded region represents the lifetime of atoms in just the sheet trap without the $\SI{689}{\nm}$ dimple.}
 \end{figure}
+
+With the promising result that the trap beam isn't causing significant atom loss we proceeded to try evaporating the sheet trap and compare with and without the dimple. 
+
+******************************
 
 The \SI{1064}{\nm} sheet trap provides tight confinement along gravity but loose confinement transversely. 
 With xxx power in the ``trap'' beam, the transverse trap depth should be able to increase the transverse confinement to about xxx nK. 
@@ -151,9 +159,9 @@ In this configuration, we were able to produce an \Sr{84} BEC in just the sheet 
 
 \begin{figure}[h]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{magic_trap/dimple_84Sr/dimple_84Sr_BEC.svg}
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{magic_trap/dimple_84Sr/dimple_84Sr_BEC/drop_after_evaporation/sheet_dimple_comparison-drop.pdf}
 	\caption{
-		\label{fig:dimple_84Sr_BEC}
+		\label{fig:sheet_dimple_comparison-drop}
 		Production of an \Sr{84} BEC with and without the dimple in the sheet trap.
 		Absorption image taken after a \SI{40}{\ms} time-of-flight.}
 \end{figure}
@@ -201,6 +209,8 @@ Somewhat similar have been previously proposed for trapping spin-polarized \Rb{8
 \section{Preliminary Conclusions and Future Directions}
 
 We don't currently have the capability to conclusively determine whether a doubly-degenerate BEC was formed. Blah, blah, blah.
+
+Along similar lines to previous work in rubidium \cite{Corwin1999.PRL.83.1311, Corwin1999.PhD}, there's also the possibility of using a circularly polarized ODT beam to help maintain spin-polarization of gas of \Sr{87}
 
 *****************
 

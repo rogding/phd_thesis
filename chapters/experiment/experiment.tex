@@ -174,6 +174,7 @@ Strontium in the $\nSLJ{5s^2}{1}{S}{0}$ ground state has no magnetic moment mean
 Following the derivation in \cite{Ludlow2008.PhD} with more details in \cref{app:odt_derivation}, we start by considering a two-level atom with states $\ket{g}$ and $\ket{e}$ separated by energy $\hbar \omega_{0}$.
 Applying an off-resonant laser with frequency $\omega_{L}$ field couples these two states which shifts their energy levels by 
 \begin{equation}
+	\label{eq:ac_pol}
 	\Delta E	= -\frac{E^{2}_{0}}{4} \qty(\frac{2 \abs{d}^{2}}{\hbar} \frac{\omega_{0}}{\omega_{0}^{2} - \omega_{L}^{2}})
 				= -\frac{E^{2}_{0}}{4} \alpha\qty(\omega_{L})
 \end{equation}
@@ -184,8 +185,13 @@ The resulting  polarizability can be written as
 	\alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
 \end{equation}
 Here, $g$ doesn't necessarily need to be the ground state.
-
 Spatial confinement is achieved by considering $I = \flatfrac{c \epsilon_{0} E_{0}^{2}}{2}$ so by designing a spatially-varying intensity $I\qty(\va{r})$.
+*** FIX EQUATION ***
+\begin{equation}
+	\label{eq:U_odt}
+	\alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
+\end{equation}
+*** FIX EQUATION ***
 
 For strontium, the red MOT spatial distribution and the particular isotope(s) being loaded needs to be taken in to account when designing an ODT.
 While the fermionic red MOT traps atoms in an ellipsoidal volume around the quadrupole zero, the atoms in a bosonic red MOT form a thin shell below the quadrupole center \cite{Stellmer2013.PRA.87.013611, Stellmer2014.arXiv.1307.0601}. 
@@ -308,7 +314,7 @@ Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{68
 \begin{figure}[htbp]
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
 	\caption[]{\label{fig:viewport_ar-coating}
-		Transmission data of the Reynard Corporation\protect\footnotemark anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ 7056 glass viewports from MDC Vacuum Products.
+		Transmission data of the Reynard Corporation\protect\footnotemark anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ viewports from MDC Vacuum Products.
 		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
 \end{figure}
 \footnotetext{I would like to thank Robyn Miller at Reynard Corporation for finding and sending me the reflection and transmission data from the order we placed six years ago.}
