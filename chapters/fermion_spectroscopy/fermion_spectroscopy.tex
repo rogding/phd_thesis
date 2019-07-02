@@ -12,28 +12,42 @@ To save some space, the tables of measured \Sr{87} Rydberg energies are placed i
 
 \section{Ionization Limit of $\Sr{87}$}
 
-The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} is well above that of all the bosonic isotopes (see \cref{tab:ionization_limits}). 
+The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} is well above that of all the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
 \begin{figure}[h]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/calculations/Eion-mass-scaled.svg}
+	\includegraphics[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
 	\caption{
 		\label{fig:Eion-mass-scaled}
-		Mass-scaling the ionization limits ($I_S$) to estimate the ionization limit for \Sr{87}.
-		Isotopic masses from \cite{NIST_EDI} and reported $I_S$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
+		(Blue) Isotopic ionization limits ($E^{\qty(0)}_{\text{ion}}$) vs. mass.
+		A linear fit (black line) is used to mass-scale $E^{\qty(0)}_{\text{ion}}$ of the bosonic isotopes to extract the $E^{\qty(0)}_{\text{ion}}$ for an assumed $I=0$ \Sr{87} atom (red).
+		Isotopic masses from \cite{NIST_EDI} and $E^{\qty(0)}_{\text{ion}}$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
 \end{figure}
-Mass-scaling the ionization limits of the bosonic isotopes suggests that the ionization limit for an $I=0$ \Sr{87} atom should be \SI{45932.1946+-0.0005}{\per\cm}, about \SI{2.74}{\GHz} below the reported ionization energy.
-
-This discrepancy turns out to match the hyperfine shift due to the interaction between the remaining $5s$ electron and the $I = \num{9/2}$ \Srion{87}{+} core.
-Since the \Srion{87}{+} like a rubidium atom with a single valence electron outside a closed {[Kr]} shell, the hyperfine interaction splits the $\nSLJ{5s}{2}{S}{1/2}$ into $F=\num{4}$ and $F=\num{5}$ components.
-Writing the magnetic dipole interaction as
+Mass-scaling the ionization limits of the bosonic isotopes suggests that the ionization limit for an assumed $I=0$ \Sr{87} atom should be \SI{45932.1946+-0.0005}{\per\cm}, about \SI{2.74}{\GHz} below the reported ionization energy.
+%This discrepancy turns out to match the hyperfine shift due to the interaction between the remaining $5s$ electron and the $I = \flatfrac{9}{2}$ core of the \Srion{87}{+}.
+Since the \Srion{87}{+} like an alkali atom with a single valence electron outside a closed shell, the hyperfine interaction splits the $\nSLJ{5s}{2}{S}{\flatfrac{1}{2}}$ into $F=\num{4}$ and $F=\num{5}$ components.
+As a result, the hyperfine magnetic dipole interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
 \begin{equation}
-	\ev{W} = A \ev{\hat{\bm{I}} \vdot \hat{\bm{S}}} = \frac{A}{2} \qty(F\qty(F+1) - I\qty(I+1) - S\qty(S+1))
+	V_{\text{hfs}}	=	A_{\text{hfs}} \va{I} \vdot \va{J}
+					=	A_{\text{hfs}} \va{I} \vdot \va{S}
 \end{equation}
-where $\bm{F} = \bm{J} + \bm{I}$ and $S=s=1/2$.
-A measurement of the $F=4$ and $F=5$ hyperfine splitting of the \Srion{87}{+} $\nSLJ{5s}{2}{S}{1/2}$ ground state found $\Delta E = \SI{5002368.363(57)}{\kHz}$, meaning $A = \SI{-1000473.673+-0.011}{\kHz}$ \cite{Sunaoshi1993.HI.78.241}.
-Therefore, the hyperfine shift of the $F=4$ state is $\Delta E_{F=4} = \flatfrac{A}{2}(\flatfrac{-11}{2}) = \SI{2.751302601+-0.000000030}{\GHz}$, roughly matching the discrepancy noted earlier meaning that the reported ionization limit is for the $\nSLJf{5s}{2}{S}{1/2}{4}$ state.
-This makes sense since most of the earlier spectroscopic work was done through the singlet Rydberg states which are attached to the ** $F=4$ (CHECK!) **  state.
-There should be no quadrupole hyperfine interaction for $\nSLJ{ms}{2}{S}{1/2}$ states, i.e., $B=0$ ** cite? **.
+where $\va{J} = \va{L} + \va{S}$.
+Following the usual procedure of defining $\va{F} = \va{J} + \va{I}$, the energy shift is
+\begin{equation}
+	\ev{V_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev{\va{F}^2 - \va{J}^2 - \va{I}^2}
+						=	\frac{A_{\text{hfs}}}{2} \qty[F \qty(F + 1) - J \qty(J + 1) - I \qty(I + 1)]
+\end{equation}
+For the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+}, $S=s=\flatfrac{1}{2}$ and $I=\flatfrac{9}{2}$ meaning $\ev{V_{\text{hfs}}} = \qty[F \qty(F + 1) - \flatfrac{51}{2}]$ for $F=4, 5$. 
+
+\citeauthor{Sunaoshi1993.HI.78.241} determined the magnetic dipole hyperfine coefficient to be $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$ from a measurement of the ground state splitting\footnote{The hyperfine splitting of the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+} in an ion trap was found to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$ \cite{Sunaoshi1993.HI.78.241}.} of an \Srion{87}{+} in an ion trap.
+Therefore the $F=4$ and $F=5$ states are shifted from the $\nSLJ{5s}{2}{S}{1/2}$ state by
+\begin{equation}
+	\ev{V_{\text{hfs}}}	=	\begin{cases}
+								-\frac{11}{4} A_{\text{hfs}} = \SI{2.751302601+-0.000000030}{\GHz}	& F=4	\\
+								\frac{9}{4} A_{\text{hfs}} = \SI{-2.251065764+-0.000000025}{\GHz}	& F=5
+							\end{cases}
+\end{equation}
+Notice that $\ev{V_{\text{hfs}}}_{F=4}$ nearly matches the $\SI{2.74}{\GHz}$ discrepancy between the reported ionization limit of \Sr{87} and the ionization limit determined by mass-scaling. 
+This is reasonable since most of the earlier spectroscopic work was primarily to the singlet Rydberg states which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state. 
 In the analysis below, we used \SI{45932.1943+-0.0010}{\per\cm} for the ionization limit which was calculated by subtracting $\Delta E_{F=4}$ from the reported ionization limit of \Sr{87}.
 
 \section{Rydberg States of Hyperfine Split cores}
