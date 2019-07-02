@@ -18,9 +18,9 @@ The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as 
 	\includegraphics[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
 	\caption{
 		\label{fig:Eion-mass-scaled}
-		(Blue) Isotopic ionization limits ($E^{\qty(0)}_{\text{ion}}$) vs. mass.
-		A linear fit (black line) is used to mass-scale $E^{\qty(0)}_{\text{ion}}$ of the bosonic isotopes to extract the $E^{\qty(0)}_{\text{ion}}$ for an assumed $I=0$ \Sr{87} atom (red).
-		Isotopic masses from \cite{NIST_EDI} and $E^{\qty(0)}_{\text{ion}}$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
+		(Blue) Isotopic ionization limits ($E^{\pqty{0}}_{\text{ion}}$) vs. mass.
+		A linear fit (black line) is used to mass-scale $E^{\pqty{0}}_{\text{ion}}$ of the bosonic isotopes to extract the $E^{\pqty{0}}_{\text{ion}}$ for an assumed $I=0$ \Sr{87} atom (red).
+		Isotopic masses from \cite{NIST_EDI} and $E^{\pqty{0}}_{\text{ion}}$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
 \end{figure}
 Mass-scaling the ionization limits of the bosonic isotopes suggests that the ionization limit for an assumed $I=0$ \Sr{87} atom should be \SI{45932.1946+-0.0005}{\per\cm}, about \SI{2.74}{\GHz} below the reported ionization energy.
 %This discrepancy turns out to match the hyperfine shift due to the interaction between the remaining $5s$ electron and the $I = \flatfrac{9}{2}$ core of the \Srion{87}{+}.
@@ -33,10 +33,10 @@ As a result, the hyperfine magnetic dipole interaction can be written as (see, e
 where $\va{J} = \va{L} + \va{S}$.
 Following the usual procedure of defining $\va{F} = \va{J} + \va{I}$, the energy shift is
 \begin{equation}
-	\ev{V_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev{\va{F}^2 - \va{J}^2 - \va{I}^2}
-						=	\frac{A_{\text{hfs}}}{2} \qty[F \qty(F + 1) - J \qty(J + 1) - I \qty(I + 1)]
+	\ev*{V_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev*{\va{F}^2 - \va{J}^2 - \va{I}^2}
+						=	\frac{A_{\text{hfs}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
 \end{equation}
-For the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+}, $S=s=\flatfrac{1}{2}$ and $I=\flatfrac{9}{2}$ meaning $\ev{V_{\text{hfs}}} = \qty[F \qty(F + 1) - \flatfrac{51}{2}]$ for $F=4, 5$. 
+For the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+}, $S=s=\flatfrac{1}{2}$ and $I=\flatfrac{9}{2}$ meaning $\ev{V_{\text{hfs}}} = \bqty{F \pqty{F + 1} - \flatfrac{51}{2}}$ for $F=4, 5$. 
 
 \citeauthor{Sunaoshi1993.HI.78.241} determined the magnetic dipole hyperfine coefficient to be $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$ from a measurement of the ground state splitting\footnote{The hyperfine splitting of the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+} in an ion trap was found to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$ \cite{Sunaoshi1993.HI.78.241}.} of an \Srion{87}{+} in an ion trap.
 Therefore the $F=4$ and $F=5$ states are shifted from the $\nSLJ{5s}{2}{S}{1/2}$ state by
@@ -102,12 +102,16 @@ As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structu
 		\label{fig:n-scaling}
 		The $n$ scaling of various splittings in \Sr{88} calculated using the most recently reported quantum defects and ionization energy \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}.
 		The energy scale of the hyperfine interaction in \Sr{87} is approximately constant and is $\abs{a_{5s}} \approx \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}.
-		The splittings between various states are represented by $\Delta E^{\qty(0)}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
+		The splittings between various states are represented by $\Delta E^{\pqty{0}}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
 \end{figure}
 From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
 Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
 \subsection{Singly Excited $S$ states}
+
+
+
+**************************************
 
 In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
 A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
