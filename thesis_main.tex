@@ -39,7 +39,8 @@
 			backend=biber]{biblatex}
 \usepackage{caption}
 \usepackage{pdfpages}
-\usepackage{pgf}
+\usepackage{import}
+\usepackage{tikz, pgfplots}
 %\usepackage{subcaption}
 
 % Used for trouble shooting unicode errors. Replaces the unicode character with whatever is in { } so that it's easier to search for in the pdf.
@@ -150,6 +151,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inputting pgf image: https://tex.stackexchange.com/questions/127667/matplotlib-pgf-images-in-subdirectory
+% Using resizebox: https://tex.stackexchange.com/questions/328281/inserting-and-correctly-scaling-pgf-figure-made-with-matplotlib?rq=1
+\newcommand\inputpgf[2]{{
+	\let\pgfimageWithoutPath\pgfimage\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[##1]{#1/##2}}
+	\input{#1/#2}
+}}
+
 % Making a command equivalent to \adjustimage but for svg
 \newcommand{\adjustsvg}[2]{\adjustbox{#1}{\includesvg{#2}}}
 
