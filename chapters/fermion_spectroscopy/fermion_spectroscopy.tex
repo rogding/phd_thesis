@@ -50,21 +50,24 @@ Notice that $\ev{V_{\text{hfs}}}_{F=4}$ nearly matches the $\SI{2.74}{\GHz}$ dis
 This is reasonable since most of the earlier spectroscopic work was primarily to the singlet Rydberg states which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state. 
 In the analysis below, we used \SI{45932.1943+-0.0010}{\per\cm} for the ionization limit which was calculated by subtracting $\Delta E_{F=4}$ from the reported ionization limit of \Sr{87}.
 
-\section{Rydberg States of \Sr{87}}
+\section{Hyperfine Rydberg States of \Sr{87}}
 
-Multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the energy levels of multielectron atoms \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
+Accurate \textit{ab initio} calculations of the Rydberg structure of atoms more complicated than hydrogen-like atoms due to the interaction of the Rydberg electron with the ionic core electrons \cite{Gallagher1994.RydbergAtoms}.
+Multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the energy levels of these multielectron atoms \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
 ** Layman's explanation of MQDT? **
-In the approach presented below, ** a variant of MQDT ** was used where the hyperfine shifts of \Sr{87} (with $I = 0$) were added spectra of $I = 0$ isotopes. 
 
-********************
+The theoretical approach presented below was done by Shuhei Yoshida and is presented in \cite{Ding2018.PRA.98.042505}.
+In order to calculate the hyperfine structure of the \Sr{87} Rydberg states, we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771} and assume that the all isotopes of strontium share the same electron correlation and configuration interactions.
+This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ \Sr{87} atom before incorporating isotope-specific interactions.
+Since most previous studies in strontium were performed with \Sr{88}, we can write the Hamiltonian for \Sr{87} as
+\begin{equation}
+	H_{87} = H^{0}_{88} \pqty{m_{88}, m_{87}} + V_{\text{hfs}}
+\end{equation}
+where $H^{0}_{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, i.e., spectral lines, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$ and $V_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
+Corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected \cite{Ding2018.PRA.98.042505}.
 
-To calculate the effects of hyperfine interactions on the Rydberg spectra of $\Sr{87}$, we follow previous works by **cite Esherick, Beigang, K T Lu, Robicheaux?** where we mass-scale the Rydberg levels from an isotope without nuclear spin (i.e., $\Sr{88}$) and then apply the hyperfine interaction to obtain the lines for $\Sr{87}$.
-The theoretical approach presented below follows the one Shuhei Yoshida presents in \cite{Ding2018.PRA.98.042505}.
-
-\subsection{Incorporating hyperfine interaction in Rydberg levels}
-\label{sec:rydberg_hyperfine_mixing}
-
-**Work on this section about getting from 2-electron Hamiltonian to effective Rydberg Hamiltonian for 5sns states.**
+%\subsection{Incorporating hyperfine interaction in Rydberg levels}
+%\label{sec:rydberg_hyperfine_mixing}
 
 The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{Beigang1983.PRL.51.771}
 \begin{equation}
@@ -651,3 +654,8 @@ The present approach can be implemented for fermionic atoms whenever the energy 
 The method can also be applied in reverse, allowing determination of spectroscopic information, in particular quantum defects, for bosonic isotopes from the hyperfine-resolved spectrum of the fermionic isotope.
 The major limitation on the accuracy of the present analysis is the uncertainty in the hyperfine-resolved ionization threshold.
 This uncertainty can be removed by focusing on energy differences to a reference level whereupon accuracies of the order of a few megahertz can be achieved. 
+
+***************************
+
+Although the hyperfine interaction complicates the Rydberg spectra of \Sr{87}, it does offer some interesting possibilities. 
+One possibility is to access Rydberg states with either attractive ($\nSLJ{5sns}{1}{S}{0}$) or repulsive ($\nSLJ{5sns}{3}{S}{1}$) $C_{6}$ coefficients \cite{Vaillant2012.JPB.45.135004} from the $\nSLJ{5s5p}{3}{P}{1}$ intermediate due to the hyperfine mixing. 
