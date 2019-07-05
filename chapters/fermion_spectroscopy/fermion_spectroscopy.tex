@@ -12,7 +12,7 @@ To save some space, the tables of measured \Sr{87} Rydberg energies are placed i
 
 \section{Ionization Limit of $\Sr{87}$}
 
-The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit of \SI{45932.2861(10)}{\per\cm} \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} is well above that of all the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
+The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit, $E^{\text{ion}}_{87} = \SI{45932.2861(10)}{\per\cm}$ \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}, is well above that of the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
 \begin{figure}[h]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
@@ -22,21 +22,21 @@ The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as 
 		A linear fit (black line) is used to mass-scale $E^{\pqty{0}}_{\text{ion}}$ of the bosonic isotopes to extract the $E^{\pqty{0}}_{\text{ion}}$ for an assumed $I=0$ \Sr{87} atom (red).
 		Isotopic masses from \cite{NIST_EDI} and $E^{\pqty{0}}_{\text{ion}}$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
 \end{figure}
-Mass-scaling the ionization limits of the bosonic isotopes suggests that the ionization limit for an assumed $I=0$ \Sr{87} atom should be \SI{45932.1946+-0.0005}{\per\cm}, about \SI{2.74}{\GHz} below the reported ionization energy.
-%This discrepancy turns out to match the hyperfine shift due to the interaction between the remaining $5s$ electron and the $I = \flatfrac{9}{2}$ core of the \Srion{87}{+}.
-Since the \Srion{87}{+} like an alkali atom with a single valence electron outside a closed shell, the hyperfine interaction splits the $\nSLJ{5s}{2}{S}{\flatfrac{1}{2}}$ into $F=\num{4}$ and $F=\num{5}$ components.
-As a result, the hyperfine magnetic dipole interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
+Mass-scaling the ionization energies of the bosonic isotopes suggests that the ionization energy for an assumed $I=0$ \Sr{87} atom should be \SI{45932.1946+-0.0005}{\per\cm}, about \SI{2.74}{\GHz} below the reported ionization energy.
+
+The source of this discrepancy turns out to be the hyperfine interaction in the ground state of the \Srion{87}{+} which causes the $\nSLJ{5s}{2}{S}{{1}/{2}}$ to split in to $F=4$ and $F=5$ components. 
+Since the \Srion{87}{+} like an alkali atom with a single valence electron outside a closed shell, the (magnetic dipole) hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
 \begin{equation}
-	V_{\text{hfs}}	=	A_{\text{hfs}} \va{I} \vdot \va{J}
-					=	A_{\text{hfs}} \va{I} \vdot \va{S}
+	\hat{V}_{\text{hfs}}	=	A_{\text{hfs}} \hat{\va{I}} \vdot \hat{\va{J}}
+							=	A_{\text{hfs}} \hat{\va{I}} \vdot \hat{\va{S}}
 \end{equation}
-where $\va{J} = \va{L} + \va{S}$.
+where $\va{J} = \va{L} + \va{S}$ and $A_{\text{hfs}}$ is the strength of the interaction.
 Following the usual procedure of defining $\va{F} = \va{J} + \va{I}$, the energy shift is
 \begin{equation}
-	\ev*{V_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev*{\va{F}^2 - \va{J}^2 - \va{I}^2}
-						=	\frac{A_{\text{hfs}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
+	\ev*{\hat{V}_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev*{\hat{\va{F}}^2 - \hat{\va{J}}^2 - \hat{\va{I}}^2}
+								=	\frac{A_{\text{hfs}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
 \end{equation}
-For the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+}, $S=s=\flatfrac{1}{2}$ and $I=\flatfrac{9}{2}$ meaning $\ev{V_{\text{hfs}}} = \bqty{F \pqty{F + 1} - \flatfrac{51}{2}}$ for $F=4, 5$. 
+For the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+}, $S=s={1}/{2}$ and $I={9}/{2}$ meaning $\ev{V_{\text{hfs}}} = \bqty{F \pqty{F + 1} - {51}/{2}}$ for $F=4, 5$. 
 
 \citeauthor{Sunaoshi1993.HI.78.241} determined the magnetic dipole hyperfine coefficient to be $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$ from a measurement of the ground state splitting\footnote{The hyperfine splitting of the $\nSLJ{5s}{2}{S}{1/2}$ ground state of \Srion{87}{+} in an ion trap was found to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$ \cite{Sunaoshi1993.HI.78.241}.} of an \Srion{87}{+} in an ion trap.
 Therefore the $F=4$ and $F=5$ states are shifted from the $\nSLJ{5s}{2}{S}{1/2}$ state by
@@ -57,17 +57,28 @@ Multichannel quantum defect theory (MQDT) is the commonly used method for analyz
 ** Layman's explanation of MQDT? **
 
 The theoretical approach presented below was done by Shuhei Yoshida and is presented in \cite{Ding2018.PRA.98.042505}.
-In order to calculate the hyperfine structure of the \Sr{87} Rydberg states, we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771} and assume that the all isotopes of strontium share the same electron correlation and configuration interactions.
+To calculate the hyperfine structure of the \Sr{87} Rydberg states, we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771} and assume that the all isotopes of strontium share the same electron correlation and configuration interactions.
 This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ \Sr{87} atom before incorporating isotope-specific interactions.
 Since most previous studies in strontium were performed with \Sr{88}, we can write the Hamiltonian for \Sr{87} as
 \begin{equation}
 	H_{87} = H^{0}_{88} \pqty{m_{88}, m_{87}} + V_{\text{hfs}}
 \end{equation}
 where $H^{0}_{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, i.e., spectral lines, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$ and $V_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
-Corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected \cite{Ding2018.PRA.98.042505}.
+Corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
 
 %\subsection{Incorporating hyperfine interaction in Rydberg levels}
 %\label{sec:rydberg_hyperfine_mixing}
+
+The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}
+\begin{equation}
+	\hat{H} = \hat{H}^{0}_{1} + \hat{H}^{0}_{2} + \frac{e^{2}}{r_{12}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
+\end{equation}
+where $H^{0}_{i} = {\hat{\va{p}}_{i} \vdot \hat{\va{p}}}_{i}/{2 m_{e}} - {e^{2}}/{r_{i}}$ for the $i$th electron, ${e^{2}}/{r_{12}}$ is the Coulomb repulsion between the electrons, $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
+For \Sr{88} with $I = 0$, we should expect $\hat{H}^{0}_{88}$ to yield the eigenstates and eigenenergies for \Sr{88}. 
+
+************************
+
+************************
 
 The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{Beigang1983.PRL.51.771}
 \begin{equation}
