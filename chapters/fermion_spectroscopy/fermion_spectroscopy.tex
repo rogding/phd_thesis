@@ -46,7 +46,7 @@ Using $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaos
 									\end{cases}
 \end{equation}
 Notice that $\ev*{\hat{V}_{\text{hfs}}}_{F=4}$ nearly matches the $\SI{2.74}{\GHz}$ discrepancy between the reported ionization limit of \Sr{87} and the ionization limit determined by mass-scaling from the bosonic isotopes. 
-This seems reasonable since most of the earlier spectroscopic work was primarily to the singlet Rydberg states which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state of \Srion{87}{+}. 
+This seems reasonable since most of the earlier spectroscopic work on \Sr{87} primarily focused on the singlet Rydberg states of which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state of \Srion{87}{+}. 
 In the analysis below, we used $E^{\text{ion}}_{87} = \SI{45932.1943+-0.0010}{\per\cm}$ for the ionization limit which was calculated by subtracting $\Delta E_{F=4}$ from the reported ionization limit of \Sr{87}.
 
 \section{Hyperfine Rydberg States of \Sr{87}}
@@ -60,10 +60,26 @@ To calculate the hyperfine structure of the \Sr{87} Rydberg states, we follow th
 This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ \Sr{87} atom before incorporating isotope-specific interactions.
 Since most previous studies in strontium were performed with \Sr{88}, we can write the Hamiltonian for \Sr{87} as
 \begin{equation}
-	H_{87} = H^{0}_{88} \pqty{m_{88}, m_{87}} + V_{\text{hfs}}
+	H^{87} = H_{0}^{88} \pqty{m_{88}, m_{87}} + V_{\text{hfs}}
 \end{equation}
-where $H^{0}_{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, i.e., spectral lines, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$ and $V_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
+where $H_{0}^{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, i.e., spectral lines, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$ and $V_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
 Corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
+
+************************
+
+************************
+
+We describe the two-electron system with the Hamiltonian \cite{Liao1980.OC.34.2.195}
+\begin{equation}
+	\hat{H} = \hat{H}_{0} + \hat{H}_{\text{fs}} + \hat{H}_{\text{hfs}}
+\end{equation}
+where $H_{0}$ is the Hamiltonian without electron spin, $H_{\text{fs}}$ and $H_{\text{hfs}}$ for account for the fine and hyperfine structure, respectively. 
+** More explicitly work out how the approximation in the equation above leads to the one below? **
+For a singly-excited Rydberg state where the Rydberg electron is in the $\ket{n \ell}$ state while the inner electron remains in the $\ket{m s}$ state, we write the approximate Hamiltonian as \cite{Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}
+\begin{equation}
+	\hat{H} = \hat{H}_{0} + \hat{H}_{\text{fs}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
+\end{equation}
+where $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
 
 ************************
 
