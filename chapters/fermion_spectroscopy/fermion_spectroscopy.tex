@@ -471,30 +471,171 @@ Whereas our wavemeter limits the measurements of individual term energies to $\a
 \section{Results and Discussion}
 
 \Cref{tab:data-s-state} lists the measured term energies for multiple $\nSLJ{5sns}{1,3}{S}{}$ \Sr{87} Rydberg states for $30 \lesssim n \lesssim 99$.
-\Cref{fig:results-qd-1S0} and \cref{fig:results-qd-3S1} shows the quantum defects calculated from the reported term energies for \Sr{88} combined with those extracted from the presented measurements in \Sr{87} after removing the hyperfine shift.
-For \Sr{88}, the most recent value of the ionization limit was used along with the mass-scaled Rydberg constant (see \cref{sec:rydberg_properties}).
+\Cref{fig:results-qd-1S0} and \cref{fig:results-qd-3S1} shows the quantum defects calculated with the Rydberg-Ritz formula ** cite equation above? need to have equation above... ** from the reported term energies for \Sr{88} combined with those extracted from the current measurements in \Sr{87}.
+For \Sr{88}, the most recent value of the ionization limit was used along with the mass-scaled Rydberg constant\footnote{$E^{88}_{\text{ion}} = \SI{45932.20024+-0.00033}{\per\cm}$ \cite{Couturier2019.PRA.99.022503} and $R^{88}_{\text{Sr}} = \SI{109736.6308675+-0.0000007}{\per\cm}$. See \cref{sec:rydberg_properties}.}.
+The hyperfine shifts for each state was calculated by Shuhei Yoshida and were subtracted from the measured term energy to obtain the quantum defect for an effective $I = 0$ \Sr{87} atom.
+\begin{SingleSpace}
+\begin{longtable}[c]{@{}ccccccccc@{}}
+	\caption{\label{tab:data-s-state}
+		Experimentally measured and calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
+		$\Delta E_\text{expt}$ and $\Delta E_\text{theor}$ are the measured and predicted separations from the $\nSLJF{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
+		The uncertainties shown include both the statistical and systematic uncertainties in the wavemeter calibration.} \\
+	\toprule
+	Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
+	\midrule
+	\endfirsthead
+	\multicolumn{8}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page.}}	\\
+	\toprule
+	Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
+	\midrule
+	\endhead
+	\bottomrule
+	\multicolumn{8}{r}{\textit{Continued on next page.}}	\\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+	$5sns$	& $40$					& $\SLJ{1}{S}{0}$	& $9/2$		& \num{45850.8762+-0.0021}			& \num{16.35+-0.08}						& \num{45850.8702}					& \num{16.22}							\\
+			& $60$					& 					&			& \num{45898.1444+-0.0022}			& \num{7.28+-0.09}						& \num{45898.1421}					& \num{7.26}							\\
+			& $72$					& 					&			& \num{45909.0252+-0.0020}			& \num{6.10+-0.09}						& \num{45909.0240}					& \num{6.1}								\\
+			& $74$					& 					&			& \num{45910.3230+-0.0021}			& \num{5.98+-0.09}						& \num{45910.3211}					& \num{5.99}							\\
+			& $76$					& 					&			& \num{45911.5148+-0.0020}			& \num{5.91+-0.08}						& \num{45911.5127}					& \num{5.89}							\\
+			& $77$					& 					&			& \num{45912.0738+-0.0020}			& \num{5.84+-0.09}						& \num{45912.0725}					& \num{5.85}							\\
+			& $78$					& 					&			& \num{45912.6114+-0.0020}			&										& \num{45912.6100}					& \num{5.81}							\\
+			& $82$					& 					&			& \num{45914.5606+-0.0022}			& \num{5.66+-0.09}						& \num{45914.5589}					& \num{5.67}							\\
+			& $86$					& 					&			& \num{45916.2336+-0.0021}			& \num{5.56+-0.08}						& \num{45916.2321}					& \num{5.56}							\\
+			& $90$					& 					&			& \num{45917.6802+-0.0019}			& \num{5.46+-0.08}						& \num{45917.6791}					& \num{5.47}							\\
+			& $94$					& 					&			& \num{45918.9402+-0.0019}			& \num{5.40+-0.08}						& \num{45918.9388}					& \num{5.39}							\\
+			& $98$					& 					&			& \num{45920.0438+-0.0022}			& \num{5.325+-0.005}					& \num{45920.0423}					& \num{5.327}							\\
+	\midrule
+	$5sns$	& $40$					& $\SLJ{3}{S}{1}$	& $7/2$		& \num{45850.4974+-0.0021}			& \num{4.99+-0.08}						& \num{45850.4960}					& \num{5.0}								\\
+			& $60$					& 					&			& \num{45898.0688+-0.0021}			& \num{5.02+-0.08}						& \num{45898.0668}					& \num{5.0}								\\
+	\midrule
+	$5sns$	& $40$					& $\SLJ{3}{S}{1}$	& $9/2$		& \num{45850.4078+-0.0021}			& \num{2.31+-0.08}						& \num{45850.4061}					& \num{2.31}							\\
+			& $50$					& 					&			& \num{45881.7138+-0.0022}			& \num{1.88+-0.09}						& \num{45881.7119}					& \num{1.89}							\\
+			& $72$					& 					&			& \num{45908.8546+-0.0021}			& \num{0.99+-0.09}						& \num{45908.8528}					& \num{0.97}							\\
+			& $74$					& 					&			& \num{45910.1518+-0.0022}			& \num{0.85+-0.09}						& \num{45910.1516}					& \num{0.91}							\\
+			& $76$					& 					&			& \num{45911.3460+-0.0019}			& \num{0.85+-0.08}						& \num{45911.3445}					& \num{0.85}							\\
+			& $77$					& 					&			& \num{45911.9068+-0.0021}			& \num{0.83+-0.09}						& \num{45911.9049}					& \num{0.83}							\\
+			& $78$					& 					&			& \num{45912.4444+-0.0019}			&										& \num{45912.4429}					& \num{0.8}								\\
+			& $82$					& 					&			& \num{45914.3958+-0.0021}			& \num{0.72+-0.09}						& \num{45914.3935}					& \num{0.71}							\\
+			& $86$					& 					&			& \num{45916.0696+-0.0021}			& \num{0.64+-0.08}						& \num{45916.0677}					& \num{0.63}							\\
+			& $90$					& 					&			& \num{45917.5172+-0.0021}			& \num{0.57+-0.08}						& \num{45917.5155}					& \num{0.56}							\\
+			& $94$					& 					&			& \num{45918.7774+-0.0022}			& \num{0.52+-0.09}						& \num{45918.7759}					& \num{0.51}							\\
+			& $98$					& 					&			& \num{45919.8816+-0.0022}			& \num{0.46302+-0.00007}				& \num{45919.8800}					& \num{0.46164}							\\
+	\midrule
+	$5sns$	& $30$					& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45777.3637+-0.0020}			&										& \num{45777.3621}					& 										\\
+			& $31$					& 					&			& \num{45788.3644+-0.0021}			&										& \num{45788.3624}					& 										\\
+			& $32$					& 					&			& \num{45798.2325+-0.0022}			&										& \num{45798.2302}					& 										\\
+			& $33$					& 					&			& \num{45807.1179+-0.0019}			&										& \num{45807.1158}					& 										\\
+			& $34$					& 					&			& \num{45815.1469+-0.0021}			&										& \num{45815.1452}					& 										\\
+			& $35$					& 					&			& \num{45822.4253+-0.0021}			&										& \num{45822.4252}					& 										\\
+			& $36$					& 					&			& \num{45829.0469+-0.0020}			&										& \num{45829.0460}					& 										\\
+			& $37$					& 					&			& \num{45835.0865+-0.0021}			&										& \num{45835.0851}					& 										\\
+			& $38$					& 					&			& \num{45840.6098+-0.0014}			&										& \num{45840.6085}					& 										\\
+			& $39$					& 					&			& \num{45845.6759+-0.0022}			&										& \num{45845.6734}					& 										\\
+			& $40$					& 					&			& \num{45850.3308+-0.0015}			&										& \num{45850.3291}					& 										\\
+			& $42$					& 					&			& \num{45858.5807+-0.0021}			&										& \num{45858.5793}					& 										\\
+			& $43$					& 					&			& \num{45862.2455+-0.0020}			&										& \num{45862.2439}					& 										\\
+			& $44$					& 					&			& \num{45865.6435+-0.0021}			&										& \num{45865.6413}					& 										\\
+			& $45$					& 					&			& \num{45868.7988+-0.0015}			&										& \num{45868.7968}					& 										\\
+			& $49$					& 					&			& \num{45879.4140+-0.0019}			&										& \num{45879.4124}					& 										\\
+			& $50$					& 					&			& \num{45881.6510+-0.0021}			&										& \num{45881.6488}					& 										\\
+			& $55$					& 					&			& \num{45890.9526+-0.0020}			&										& \num{45890.9511}					& 										\\
+			& $60$					& 					&			& \num{45897.9014+-0.0019}			&										& \num{45897.9000}					& 										\\
+			& $65$					& 					&			& \num{45903.2294+-0.0019}			&										& \num{45903.2272}					& 										\\
+			& $72$					& 					&			& \num{45908.8216+-0.0022}			&										& \num{45908.8205}					& 										\\
+			& $74$					& 					&			& \num{45910.1236+-0.0022}			&										& \num{45910.1213}					& 										\\
+			& $76$					& 					&			& \num{45911.3178+-0.0019}			&										& \num{45911.3161}					& 										\\
+			& $77$					& 					&			& \num{45911.8790+-0.0021}			&										& \num{45911.8774}					& 										\\
+			& $82$					& 					&			& \num{45914.3718+-0.0022}			&										& \num{45914.3699}					& 										\\
+			& $86$					& 					&			& \num{45916.0482+-0.0019}			&										& \num{45916.0467}					& 										\\
+			& $90$					& 					&			& \num{45917.4982+-0.0019}			&										& \num{45917.4967}					& 										\\
+			& $94$					& 					&			& \num{45918.7600+-0.0021}			&										& \num{45918.7590}					& 										\\
+			& $98$					& 					&			& \num{45919.8662+-0.0022}			&										& \num{45919.8646}					& 										\\
+			& $99$					& 					&			& \num{45920.1210+-0.0022}			&										& \num{45920.1196}					& 										\\
+\end{longtable}
+\end{SingleSpace}
+
 \begin{figure}[htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_1S0.pgf}}
 	\caption{
 		\label{fig:results-qd-1S0}
 		Quantum defects for the $\nSLJ{5sns}{1}{S}{0}$ Rydberg series.
-		For \Sr{88}, the quantum defects were calculated from the reported term energies.
+		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Esherick1977.PRA.15.1920, Beigang1982.OC.42.19, Dai1995.JQSRT.54.1019, Philip2007.OC.279.141}.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
+
 \begin{figure}[htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_3S1.pgf}}
 	\caption{
 		\label{fig:results-qd-3S1}
 		Quantum defects for the $\nSLJ{5sns}{3}{S}{1}$ Rydberg series.
-		For \Sr{88}, the quantum defects were calculated from the reported term energies.
+		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Beigang1982.PS.26.183, Kunze1993.ZPD.27.111, Jackson2018.PhD, Couturier2019.PRA.99.022503}.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
 It's pretty clear from these figures that once the hyperfine shift is taken in to account, the \Sr{87} data matches up well with the measurements in \Sr{88}. 
 
 \Cref{fig:spectra-n50,fig:spectra-n60,fig:spectra-n98} shows the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines near $n = 50, 60, 97,\, \text{and} \, 98$ relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
 The corresponding term values are listed in \cref{tab:data-d-state}. 
+
+%\begin{landscape}
+\begin{table}[!htbp]
+	\caption{\label{tab:data-d-state}
+		Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for $n = \text{\numlist{50;60;\sim98}}$. 
+		The splittings $\Delta E_{\text{expt}}$ between those lines that could be measured during a single FSR scan of the $\SI{319}{\nm}$ laser frequency (delineated by the horizontal lines) or, for $n \sim 98$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
+		For the $n = \text{\numrange[range-phrase=-]{98}{99}}$ scan, all differences are referenced to the $\nSLJf{5sns}{3}{S}{1}{11/2}$ level.}
+	\centering
+	\begin{tabular}{@{}cccccccc@{}}
+		\toprule
+		Series	& $n$	& Term				& $F$		& $E_\text{expt}$ [\si{\per\cm}]	& $\Delta E_\text{expt}$ [\si{\MHz}]	& $E_\text{theor}$ [\si{\per\cm}]	& $\Delta E_\text{theor}$ [\si{\MHz}]	\\
+		\midrule
+		$5snd$	& $50$	& $\SLJ{3}{D}{1}$	& $7/2$		& \num{45883.1440+-0.0022}			& \num{-295.60+-0.07}					& \num{45883.1414}					& \num{-299.01}							\\
+				& $50$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45883.1538+-0.0022}			& \num{0}								& \num{45883.1514}					& \num{0}								\\
+				& $50$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45883.1685+-0.0022}			& \num{439.39+-0.07}					& \num{45883.1662}					& \num{443.71}							\\
+		\midrule
+		$5snd$	& $50$	& $\SLJ{3}{D}{2}$	& $7/2$		& \num{45883.2882+-0.0021}			& \num{0}								& \num{45883.2855}					& \num{0}								\\
+				& $50$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45883.2922+-0.0021}			& \num{118.91+-0.07}					& \num{45883.2893}					& \num{114.7}							\\
+				& $50$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45883.2972+-0.0021}			& \num{269.12+-0.07}					& \num{45883.2942}					& \num{260.55}							\\
+		\midrule
+		$5snd$	& $50$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45883.3849+-0.0022}			& \num{-890.64+-0.07}					& \num{45883.3814}					& \num{-890.22}							\\
+				& $50$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45883.4146+-0.0022}			& \num{0}								& \num{45883.4111}					& \num{0}								\\
+		\midrule
+		$5snd$	& $50$	& $\SLJ{3}{D}{3}$	& $7/2$		& \num{45883.4374+-0.0022}			&										& \num{45883.4339}					&										\\
+		\midrule
+		$5snd$	& $60$	& $\SLJ{3}{D}{1}$	& $7/2$		& \num{45898.7367+-0.0021}			& \num{-183.64+-0.07}					& \num{45898.7347}					& \num{-178.89}							\\
+				& $60$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45898.7428+-0.0021}			& \num{0}								& \num{45898.7407}					& \num{0}								\\
+				& $60$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45898.7521+-0.0021}			& \num{277.34+-0.07}					& \num{45898.7497}					& \num{270.37}							\\
+		\midrule
+		$5snd$	& $60$	& $\SLJ{3}{D}{2}$	& $7/2$		& \num{45898.8568+-0.0022}			& \num{-79.40+-0.07}					& \num{45898.8544}					& \num{-72.67}							\\
+				& $60$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45898.8594+-0.0022}			& \num{0}								& \num{45898.8569}					& \num{0}								\\
+				& $60$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45898.8618+-0.0022}			& \num{71.37+-0.07}						& \num{45898.8588}					& \num{58.8}							\\
+		\midrule
+		$5snd$	& $60$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45898.9223+-0.0022}			& \num{-626.40+-0.07}					& \num{45898.9197}					& \num{-609.77}							\\
+				& $60$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45898.9432+-0.0022}			& \num{0}								& \num{45898.9400}					& \num{0}								\\
+				& $60$	& $\SLJ{3}{D}{3}$	& $7/2$		& \num{45898.9608+-0.0022}			& \num{526.18+-0.07}					& \num{45898.9573}					& \num{517.37}							\\
+		\midrule
+		$5sns$	& $98$	& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45919.8662+-0.0022}			& \num{0}								& \num{45919.8646}					& \num{0}								\\
+				& $98$	& $\SLJ{3}{S}{1}$	& $9/2$		& \num{45919.8816+-0.0022}			& \num{463.02+-0.07}					& \num{45919.8800}					& \num{461.64}							\\
+		$5snd$	& $97$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45919.9565+-0.0022}			& \num{2707.6+-3.5}						& \num{45919.9552}					& \num{2716.6}							\\
+				& $97$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45919.9593+-0.0022}			& \num{2792.4+-3.5}						& \num{45919.9579}					& \num{2796.2}							\\
+				& $97$	& $\SLJ{1}{D}{2}$	& $9/2$		& \num{45919.9896+-0.0022}			& \num{3701+-4}							& \num{45919.9879}					& \num{3697}							\\
+				& $97$	& $\SLJ{1}{D}{2}$	& $11/2$	& \num{45919.9925+-0.0022}			& \num{3785+-4}							& \num{45919.9909}					& \num{3786}							\\
+				& $97$	& $\SLJ{1}{D}{2}$	& $13/2$	& \num{45919.9946+-0.0022}			& \num{3850+-4}							& \num{45919.9933}					& \num{3857}							\\
+		$5sns$	& $98$	& $\SLJ{1}{S}{0}$	& $9/2$		& \num{45920.0438+-0.0022}			& \num{5325+-5}							& \num{45920.0423}					& \num{5327}							\\
+		$5snd$	& $98$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45920.0474+-0.0022}			& \num{5432+-5}							& \num{45920.0460}					& \num{5439}							\\
+				& $98$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45920.0501+-0.0022}			& \num{5512+-5}							& \num{45920.0485}					& \num{5514}							\\
+				& $98$	& $\SLJ{3}{D}{2}$	& $13/2$	& \num{45920.0544+-0.0022}			& \num{5641+-5}							& \num{45920.0526}					& \num{5636}							\\
+				& $98$	& $\SLJ{3}{D}{3}$	& $13/2$	& \num{45920.0916+-0.0022}			& \num{6756+-6}							& \num{45920.0901}					& \num{6761}							\\
+				& $98$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45920.0956+-0.0022}			& \num{6877+-6}							& \num{45920.0943}					& \num{6886}							\\
+				& $98$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45920.0982+-0.0022}			& \num{6954+-6}							& \num{45920.0971}					& \num{6970}							\\
+		$5sns$	& $99$	& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45920.1210+-0.0022}			& \num{7639+-6}							& \num{45920.1196}					& \num{7643}							\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+%\end{landscape}
+
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/results/spectra/spectra-n50.svg}
@@ -620,7 +761,7 @@ In all but one case the measured and theoretical separations agree to better tha
 	}
 \end{table}
 
-\section{Summary}
+\section{Conclusion}
 
 ** Update and reword the summary from PRA !! **
 
