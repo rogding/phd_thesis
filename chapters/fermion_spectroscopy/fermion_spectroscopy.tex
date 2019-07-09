@@ -13,7 +13,7 @@ To save some space, the tables of measured \Sr{87} Rydberg energies are placed i
 \section{Ionization Limit of $\Sr{87}$}
 
 The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit, $E^{\text{ion}}_{87} = \SI{45932.2861(10)}{\per\cm}$ \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}, is well above that of the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
 	\caption{
@@ -51,66 +51,17 @@ In the analysis below, we used $E^{\text{ion}}_{87} = \SI{45932.1943+-0.0010}{\p
 
 \section{Hyperfine Rydberg States of \Sr{87}}
 
-Accurate \textit{ab initio} calculations of the Rydberg structure of atoms more complicated than hydrogen-like atoms due to the interaction of the Rydberg electron with the ionic core electrons \cite{Gallagher1994.RydbergAtoms}.
-Multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the energy levels of these multielectron atoms \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
-** Layman's explanation of MQDT? **
+Accurate \textit{ab initio} theoretical descriptions of the Rydberg structure of multielectron atoms is currently challenging due to the interaction of the Rydberg electron with the ionic core. 
+This interplay may lead to different configurations (``channels'') of the Rydberg electron and the ionic core which share the same total energy, angular momentum, and parity \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001}.
+When the ionic states are not well-separated from the Rydberg states, multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the Rydberg states of these multielectron atoms which can describe the Rydberg state in terms of a few parameters \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
 
-The theoretical approach described below was worked out by Shuhei Yoshida and is presented in \cite{Ding2018.PRA.98.042505}.
-To calculate the hyperfine structure of the \Sr{87} Rydberg states, we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771} and assume that the all isotopes of strontium share the same electron correlation and configuration interactions.
-This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ \Sr{87} atom before incorporating isotope-specific interactions.
-Since most previous studies in strontium were performed with \Sr{88}, we can write the Hamiltonian for \Sr{87} as
-\begin{equation}
-	H^{87}	=	H_{0}^{88} \pqty{m_{88}, m_{87}} + V_{\text{hfs}}
-\end{equation}
-where $H_{0}^{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, i.e., spectral lines, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$ and $V_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
-Corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
-The terms
-
-We describe the two-electron system with the Hamiltonian \cite{Liao1980.OC.34.2.195}
+Focusing on two-electron systems (e.g., {\tsup{3}\text{He}}, {\tsup{9}\text{Be}}, {\tsup{25}\text{Mg}}, {\tsup{43}\text{Ca}}, \Sr{87}, {\tsup{135}\text{Ba}}, {\tsup{137}\text{Ba}}) we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}.
+The Hamiltonian for two-electron systems can be written as \cite{Liao1980.OC.34.2.195}
 \begin{equation}
 	\hat{H} = \hat{H}_{0} + \hat{H}_{\text{fs}} + \hat{H}_{\text{hfs}}
 \end{equation}
-where $H_{0}$ is the Hamiltonian without electron spin, $H_{\text{fs}}$ and $H_{\text{hfs}}$ for account for the fine and hyperfine structure, respectively. 
+where $\hat{H}_{0}$ is the Hamiltonian without electron spin, $\hat{H}_{\text{fs}}$ accounts for the fine structure, and $\hat{H}_{\text{hfs}}$ for accounts for the hyperfine structure
 ** More explicitly work out how the approximation in the equation above leads to the one below? Maybe follow \cite{Bethe.Quantum, Cok1979.PRA.19.1830, Cok1981.PRA.24.3283}**
-For a singly-excited Rydberg state where the Rydberg electron is in the $\ket{n \ell}$ state while the inner electron remains in the $\ket{m s}$ state, the Hamiltonian can be approximated as \cite{Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}
-\begin{equation}
-	\hat{H} = \pqty{\hat{H}_{0} + \hat{H}_{\text{fs}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
-\end{equation}
-where $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
-Making the assumption that the terms $\pqty{\cdots}$ are the same for all isotopes, then the remaining hyperfine shift is simply due to the contact interaction between the remaining $ms$ electron and the ion.
-
-************************
-
-************************
-
-%\subsection{Incorporating hyperfine interaction in Rydberg levels}
-%\label{sec:rydberg_hyperfine_mixing}
-
-The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}
-\begin{equation}
-	\hat{H} = \hat{H}^{0}_{1} + \hat{H}^{0}_{2} + \frac{e^{2}}{r_{12}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
-\end{equation}
-where $H^{0}_{i} = {\hat{\va{p}}_{i} \vdot \hat{\va{p}}}_{i}/{2 m_{e}} - {e^{2}}/{r_{i}}$ for the $i$th electron, ${e^{2}}/{r_{12}}$ is the Coulomb repulsion between the electrons, $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
-For \Sr{88} with $I = 0$, we should expect $\hat{H}^{0}_{88}$ to yield the eigenstates and eigenenergies for \Sr{88}. 
-
-************************
-
-************************
-
-The Hamiltonian for a two-electron system in an $\ket{(ms)(nl)}$ Rydberg state can be written as \cite{Beigang1983.PRL.51.771}
-\begin{equation}
-	H	= H_{0,1} + H_{0,2} + \frac{1}{r_{12}} + \xi_{nl} \vec{s} \cdot \vec{l} + a_{ms} \vec{s} \cdot \vec{I}
-\end{equation}
-where $H_{0,i}$ is the Coulomb attraction for the {$i$th} electron to the \Sr{++} core, $\flatfrac{1}{r_{12}}$ is the Coulomb repulsion between the two electrons, $\xi_{nl}$ is the magnitude of the spin-orbit interaction, and $a_{ms}$ is the magnetic dipole interaction of the inner $s$ electron.
-For \Sr{88}, $I=0$ so we can write the Hamiltonian as
-\begin{equation}
-	H_{0}(88) = H
-\end{equation}
-where the appropriate mass-scaled values are used and includes the spin-orbit and spin-other-orbit interactions. 
-The hyperfine interaction for \Sr{87} can be included as
-\begin{equation}
-	H(87) = H_{0}(88,87) + V_\text{hf}
-\end{equation}
 
 For two-electron systems, the hyperfine interaction can be expressed as
 \begin{equation}
@@ -118,7 +69,7 @@ For two-electron systems, the hyperfine interaction can be expressed as
 \end{equation}
 where $\hat{\bm{s}}_{i}$ is the spin of the {$i$th} electron. 
 
-For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$** and should be negligible for high-lying states. 
+For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$ \cite{Gudde1993.PRA.47.4725}? ** and should be negligible for high-lying states. 
 We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
 Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
 \begin{equation}
@@ -128,9 +79,39 @@ Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operato
 with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
 Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
 
-The energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
+For a singly-excited Rydberg state where the Rydberg electron is in the $\ket{n \ell}$ state while the inner electron remains in the $\ket{m s}$ state, the Hamiltonian can be approximated as
+\begin{equation}
+	\hat{H} = \pqty{\hat{H}_{0} + \hat{H}_{\text{fs}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
+\end{equation}
+where $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
+Making the assumption that the terms $\pqty{\cdots}$ are the same for all isotopes, then the remaining hyperfine shift is simply due to the contact interaction between the remaining $ms$ electron and the ion.
+This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ atom before incorporating isotope-specific hyperfine interactions.
+\begin{equation}
+	\hat{H}^{I \neq 0}	=	\hat{H}_{0}^{I = 0} \pqty{m_{I = 0}, m_{I \neq 0}} + \hat{V}_{\text{hfs}}
+\end{equation}
+where $\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$. $\hat{V}_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
+
+Focusing on strontium, corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
+Under this assumption, the energies of the \Sr{87} Rydberg states should be given by
+\begin{equation}
+	\ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}} + \ev*{\hat{V}_{\text{hfs}}}
+\end{equation}
+The values of $\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}$ are easily determined from the Rydberg-Ritz formula
+\begin{equation}
+	\label{eq:rydberg-ritz}
+	\ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}
+						=	E^{87}_{\text{ion}} - \frac{R^{87}_{\text{Sr}}}{\pqty{n - \mu_{n,L,S,J}}^{2}}
+\end{equation}
+with the quantum defect given by ** \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004} cite just Gallagher and Vaillant paper? **
+\begin{equation}
+	\mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}}
+\end{equation}
+** Use footnote? There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440}. **
+
+An important consideration in determining when effects cannot be neglected is when the energy scales become comparable.
+For tstrontium, the energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
 As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/calculations/n-scaling.svg}
 	\caption{
@@ -143,10 +124,6 @@ From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur betwe
 Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
 \subsection{Singly Excited $S$ states}
-
-
-
-**************************************
 
 In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
 A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
@@ -301,6 +278,14 @@ The $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{J}$
 
 ** Following similar derivations (outlined by Shuhei Yoshida). **
 
+*** FILL OUT BELOW ***
+
+The particular matrix elements for calculating the hyperfine shifts of the $D$ states becomes quite a bit more complicated as there are *** $2(I+1)=20$ *** interacting states.
+The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cite{Lurio1962.PR.126.1758}\footnote{\cite{Sun1989.JPB.22.2887} seems to give the matrix elements of $\hat{V}_{\text{hfs}}$ for $F = I - 2$ to $F = I + 2$. There's mixing between $F = I - 3$ nor $F = I + 3$ states as those are only in $\SLJ{3}{D}{3}$.}.
+
+*** FILL OUT ABOVE ***
+
+
 Similar to the $S$-states, we find the matrix elements of $\hat{V}_\text{hf}$ starting with pure states. 
 A further complication of the $D$-states is that spin-orbit interactions lead to a breakdown of $LS$ coupling even in the bosons (with $I=0$), leading to mixing between the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states ** \cite{Esherick1977.PRA.15.1920, Sun1989.JPB.22.2887} - check that these make sense **. 
 To account for this mixing, the $D$ states for $I=0$ (i.e., the eigenstates of $H_0\left(88, m_{87}\right)$) are expanded in terms of pure states
@@ -395,7 +380,7 @@ A Monte Carlo sampling was adopted in which linear fits to points drawn at rando
 
 We also used the $\SI{689}{\nm}$ reference measurements to check for drifts in the wavemeter over time. 
 As shown in the inset in \cref{fig:wm_drift}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty. 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
 	\caption{
@@ -473,7 +458,7 @@ Whereas our wavemeter limits the measurements of individual term energies to $\a
 \Cref{tab:data-s-state} lists the measured term energies for multiple $\nSLJ{5sns}{1,3}{S}{}$ \Sr{87} Rydberg states for $30 \lesssim n \lesssim 99$.
 \Cref{fig:results-qd-1S0} and \cref{fig:results-qd-3S1} shows the quantum defects calculated with the Rydberg-Ritz formula ** cite equation above? need to have equation above... ** from the reported term energies for \Sr{88} combined with those extracted from the current measurements in \Sr{87}.
 For \Sr{88}, the most recent value of the ionization limit was used along with the mass-scaled Rydberg constant\footnote{$E^{88}_{\text{ion}} = \SI{45932.20024+-0.00033}{\per\cm}$ \cite{Couturier2019.PRA.99.022503} and $R^{88}_{\text{Sr}} = \SI{109736.6308675+-0.0000007}{\per\cm}$. See \cref{sec:rydberg_properties}.}.
-The hyperfine shifts for each state was calculated by Shuhei Yoshida and were subtracted from the measured term energy to obtain the quantum defect for an effective $I = 0$ \Sr{87} atom.
+For \Sr{87}, the hyperfine shifts for each state was calculated by Shuhei Yoshida and were subtracted from the measured term energy to obtain the quantum defect for an effective $I = 0$ \Sr{87} atom.
 \begin{SingleSpace}
 \begin{longtable}[c]{@{}ccccccccc@{}}
 	\caption{\label{tab:data-s-state}
@@ -726,7 +711,7 @@ As a further test of the present theoretical approach, ** Table II ** includes t
 ** Table II ** also includes the corresponding theoretical predictions. 
 In all but one case the measured and theoretical separations agree to better than $\pm \SI{10}{\MHz}$.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\caption{
 		\label{tab:sr_qd_list}
 		Values of the parameters $\delta_0$, $\delta_2$, and $\delta_4$ for the Rydberg-Ritz formula.}
