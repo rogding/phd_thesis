@@ -12,42 +12,47 @@ To save some space, the tables of measured \Sr{87} Rydberg energies are placed i
 
 \section{Ionization Limit of $\Sr{87}$}
 
-The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was that the reported ionization limit, $E^{\text{ion}}_{87} = \SI{45932.2861(10)}{\per\cm}$ \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}, is well above that of the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
+The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as for the bosonic isotopes was the reported ionization limit, $E_{\text{ion}}^{87} = \SI{45932.2861(10)}{\per\cm}$ \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}, being well above those of the bosonic isotopes (see \cref{fig:Eion-mass-scaled} and \cref{tab:ionization_limits}). 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=4in]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
+	\includegraphics[keepaspectratio, width=4.5in, height=\textheight]{fermion_spectroscopy/calculations/Eion-mass-scaled.pdf}
 	\caption{
 		\label{fig:Eion-mass-scaled}
-		(Blue points) Reported isotopic ionization limits ($E^{\text{ion}}$) vs. isotope mass.
-		A linear fit (black line) is used to extract the $E^{\text{ion}}_{87}$ for an assumed $I=0$ \Sr{87} atom from the ionization energies of the bosonic isotopes. 
-		Isotopic masses were taken from \cite{NIST_EDI} and $E^{\text{ion}}$ from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.}
+		(Blue points) Reported isotopic ionization limits ($E_{\text{ion}}$) vs. isotope mass.
+		A linear fit (black line) is used to estimate the $E_{\text{ion}}^{87}$ for an assumed $I=0$ \Sr{87} atom from the ionization energies of the bosonic isotopes. 
+		See \cref{ap:sr_data} for isotopic masses and ionization energies.}
 \end{figure}
 Mass-scaling the ionization energies of the bosonic isotopes suggests that the ionization energy for an assumed $I=0$ \Sr{87} atom should be $\SI{45932.1946+-0.0005}{\per\cm}$, about $\SI{2.74}{\GHz}$ below the reported ionization energy.
 
 The source of this discrepancy is likely related to the hyperfine interaction in the ground state of \Srion{87}{+}. 
-Since ground state \Srion{87}{+} has an rubidium-like structure with a single valence $s$ electron outside a filled {[Kr]} shell, the hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
+Since ground state \Srion{87}{+} has a rubidium-like structure with a single valence $s$ electron outside a filled {[Kr]} shell, the hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
 \begin{equation}
 	\hat{V}_{\text{hfs}}	=	A_{\text{hfs}} \hat{\va{I}} \vdot \hat{\va{J}}
 							=	A_{\text{hfs}} \hat{\va{I}} \vdot \hat{\va{S}}
 \end{equation}
 where $\va{J} = \va{L} + \va{S}$ and $A_{\text{hfs}}$ is the strength of the magnetic dipole hyperfine interaction.
-Notice that there are no higher order contributions (e.g., electric quadrupole) since the valence electron is in an $s$ state \cite{Arimondo1977.RMP.49.31}.
-Following the usual procedure of defining $\va{F} = \va{J} + \va{I}$, the energy shift is
+Note that there are no higher order contributions (e.g., electric quadrupole) since the valence electron is in an $s$ state (i.e., only the contact interaction is non-zero) \cite{Arimondo1977.RMP.49.31}.
+Following the usual procedure by defining $\va{F} = \va{J} + \va{I}$, the energy shift can be evaluated as
 \begin{equation}
 	\ev*{\hat{V}_{\text{hfs}}}	=	\frac{A_{\text{hfs}}}{2} \ev*{\hat{\va{F}}^2 - \hat{\va{J}}^2 - \hat{\va{I}}^2}
 								=	\frac{A_{\text{hfs}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
 \end{equation}
 In the ground state of \Srion{87}{+}, $S=s={1}/{2}$ and $I={9}/{2}$ meaning the the $\nSLJ{5s}{2}{S}{1/2}$ is split in to $F = 4$ and $F = 5$ components.
-Using $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} derived $A_{\text{hfs}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states are shifted from the $\nSLJ{5s}{2}{S}{1/2}$ by
+Using $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} derived $A_{\text{hfs}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states are shifted by
 \begin{equation}
 	\ev*{\hat{V}_{\text{hfs}}}	=	\begin{cases}
-										-\frac{11}{4} A_{\text{hfs}} = \SI{2.751302601+-0.000000030}{\GHz}	&{},{}	F=4	\\
-										\frac{9}{4} A_{\text{hfs}} = \SI{-2.251065764+-0.000000025}{\GHz}	&{},{}	F=5
+										-\frac{11}{4} A_{\text{hfs}} = \SI{2.751302601+-0.000000030}{\GHz}	,{}&{}	F=4	\\
+										\frac{9}{4} A_{\text{hfs}} = \SI{-2.251065764+-0.000000025}{\GHz}	,{}&{}	F=5
 									\end{cases}
 \end{equation}
 Notice that $\ev*{\hat{V}_{\text{hfs}}}_{F=4}$ nearly matches the $\SI{2.74}{\GHz}$ discrepancy between the reported ionization limit of \Sr{87} and the ionization limit determined by mass-scaling from the bosonic isotopes. 
 This seems reasonable since most of the earlier spectroscopic work on \Sr{87} primarily focused on the singlet Rydberg states of which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state of \Srion{87}{+}. 
-In the analysis below, we used $E^{\text{ion}}_{87} = \SI{45932.1943+-0.0010}{\per\cm}$ for the ionization limit which was calculated by subtracting $\Delta E_{F=4}$ from the reported ionization limit of \Sr{87}.
+
+****** THINK ABOUT THE TWO IONIZATION LIMITS IN PRA PAPER ******
+
+In the analysis below, we used $E_{\text{ion}}^{87} = \SI{45932.1943+-0.0010}{\per\cm}$ for the ionization limit which was calculated by subtracting $\Delta E_{F=4}$ from the reported ionization limit of \Sr{87}.
+
+****************************************************************
 
 \section{Hyperfine Rydberg States of \Sr{87}}
 
@@ -55,19 +60,40 @@ Accurate \textit{ab initio} theoretical descriptions of the Rydberg structure of
 This interplay may lead to different configurations (``channels'') of the Rydberg electron and the ionic core which share the same total energy, angular momentum, and parity \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001}.
 When the ionic states are not well-separated from the Rydberg states, multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the Rydberg states of these multielectron atoms which can describe the Rydberg state in terms of a few parameters \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
 
-Focusing on two-electron systems (e.g., {\tsup{3}\text{He}}, {\tsup{9}\text{Be}}, {\tsup{25}\text{Mg}}, {\tsup{43}\text{Ca}}, \Sr{87}, {\tsup{135}\text{Ba}}, {\tsup{137}\text{Ba}}) we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423}.
-The Hamiltonian for two-electron systems can be written as \cite{Liao1980.OC.34.2.195}
+Focusing on two-electron systems (e.g., {\tsup{3}\text{He}}, {\tsup{9}\text{Be}}, {\tsup{25}\text{Mg}}, {\tsup{43}\text{Ca}}, \Sr{87}, {\tsup{135}\text{Ba}}, {\tsup{137}\text{Ba}}), we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423} and separate the total Hamiltonian for the system in to a part which does not depend on the nuclear spin ($\hat{H}_{0}^{I = 0}$) and the hyperfine interaction ($\hat{V}_{\text{hfs}}$) which does depend on the nuclear spin
 \begin{equation}
-	\hat{H} = \hat{H}_{0} + \hat{H}_{\text{fs}} + \hat{H}_{\text{hfs}}
+	\hat{H}^{I \neq 0} = \hat{H}_{0}^{I = 0} + \hat{V}_{\text{hfs}}
 \end{equation}
-where $\hat{H}_{0}$ is the Hamiltonian without electron spin, $\hat{H}_{\text{fs}}$ accounts for the fine structure, and $\hat{H}_{\text{hfs}}$ for accounts for the hyperfine structure
-** More explicitly work out how the approximation in the equation above leads to the one below? Maybe follow \cite{Bethe.Quantum, Cok1979.PRA.19.1830, Cok1981.PRA.24.3283}**
+$\ev*{\hat{H}_{0}^{I = 0}}$ contains the effects up to the fine structure level. 
+The convenience of separating out the $\hat{H}_{0}^{I = 0}$ term becomes apparent because the eigenenergies (up to the fine structure level) can be obtained from the Rydberg-Ritz formula
+\begin{equation}
+	\label{eq:rydberg-ritz}
+	\ev*{\hat{H}_{0}^{I = 0}}	=	E_{\text{ion}} - \frac{R}{\pqty{n - \mu_{n,L,S,J}}^{2}}
+\end{equation}
+with the quantum defect given by \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004}\footnote{** There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440} **.}
+\begin{equation}
+	\mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}} + \cdots
+\end{equation}
+Therefore, we only need to evaluate $\ev*{\hat{V}_{\text{hfs}}}$ to obtain the hyperfine shifts.
 
-For two-electron systems, the hyperfine interaction can be expressed as
+The hyperfine interaction can be expressed as \cite{Woodgate.Elementary, Sobelman.Atomic, Bransden.Atoms}
 \begin{equation}
-	\hat{V}_\text{hf} = a_{ms} \left(\hat{\bm{s}}_{1} + \hat{\bm{s}}_{2}\right) \cdot \hat{\bm{I}} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}
+	\hat{V}_\text{hfs}	=	A \hat{\va{I}} \cdot \hat{\va{J}}
+						=	\sum_{i} A_{i} \hat{\va{I}} \cdot \hat{\va{j}}_{i}
+						=	\sum_{i} A_{i} \hat{\va{I}} \cdot \pqty{\hat{\va{l}}_{i} + \hat{\va{s}}_{i}}
 \end{equation}
-where $\hat{\bm{s}}_{i}$ is the spin of the {$i$th} electron. 
+for electron $i \in \Bqty{1,2}$ with the (magnetic dipole) hyperfine constant $A$.
+Therefore the contribution of each electron to the total hyperfine shift is
+\begin{equation}
+	\ev*{\hat{V}_\text{hfs}}_{i}	=	A_{i} \ev*{\hat{\va{I}} \cdot \hat{\va{j}}_{i}}
+									=	\frac{A_{i}}{2} \bqty{f_{i} \pqty{f_{i} + 1} - I \pqty{I + 1} - j_{i} \pqty{j_{i} + 1}}
+\end{equation}
+For singly-excited Rydberg states with the ``inner'' electron in the $\ket{m s}$ state (i.e., an $s$ electron in the ground state of the ion) and the ``outer'' Rydberg electron in the $\ket{n \ell}$ state, we expect the hyperfine contributions from them to be
+\begin{align}
+	asdf	&{}={}
+\end{align}
+
+**********************************
 
 For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$ \cite{Gudde1993.PRA.47.4725}? ** and should be negligible for high-lying states. 
 We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
