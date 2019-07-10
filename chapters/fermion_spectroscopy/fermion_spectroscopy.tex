@@ -88,12 +88,78 @@ Therefore the contribution of each electron to the total hyperfine shift is
 	\ev*{\hat{V}_\text{hfs}}_{i}	=	A_{i} \ev*{\hat{\va{I}} \cdot \hat{\va{j}}_{i}}
 									=	\frac{A_{i}}{2} \bqty{f_{i} \pqty{f_{i} + 1} - I \pqty{I + 1} - j_{i} \pqty{j_{i} + 1}}
 \end{equation}
-For singly-excited Rydberg states with the ``inner'' electron in the $\ket{m s}$ state (i.e., an $s$ electron in the ground state of the ion) and the ``outer'' Rydberg electron in the $\ket{n \ell}$ state, we expect the hyperfine contributions from them to be
+We now consider a singly-excited Rydberg states where the ``inner'' electron in the $\ket{m s}$ state (i.e., an $s$ electron in the ground state of the ion) and the ``outer'' Rydberg electron in a $\ket{n \ell}$ state.
+*** I don't really like this sudden transition.... ***
+Recalling that the $\ev*{\hat{V}_\text{hfs}}_{i} \sim {1}/{n^{3}}$ ** \cite{Gudde1993.PRA.47.4725, Sobelman.Atomic, Bransden.Atoms} **, it follows that for high-$n$ Rydberg states, the $\ev*{\hat{V}_\text{hfs}}_{i}$ can be approximated as
 \begin{align}
-	asdf	&{}={}
+	\ev*{\hat{V}_\text{hfs}}_{\text{inner}}	&{}={}	A_{\text{inner}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{inner}}}	\\
+	\ev*{\hat{V}_\text{hfs}}_{\text{outer}}	&{}={}	A_{\text{outer}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{outer}}}	\approx	0
+\end{align}
+Since the ``outer'' electron does not significantly contribute to $\ev*{\hat{V}_\text{hfs}}$, it follows that $\ev*{\hat{V}_\text{hfs}} \simeq \ev*{\hat{V}_\text{hfs}}_{\text{inner}}$.
+Here, $A_{\text{inner}}$ is taken to be ** ? ** as the same value as $A$ in the $\nSLJ{5s}{2}{S}{1/2}$ state of \Srion{87}{+}.
+
+Combining the above results, we can write the expected energies of the hyperfine Rydberg levels of isotopes with $I \neq 0$ as a shift from the ``unperturbed'' levels in an isotope with $I = 0$.
+
+*** I need to come up with a better derivation.... I went down a bit of a rabbit hole above... ***
+
+\subsection{Singly Excited $S$ states}
+
+The calculation for the hyperfine shifts of singly excited $S$ Rydberg states is not too difficult with most of the details worked out in \cref{sec:hyperfine_mixing_derivation}. 
+It can be shown that the four hyperfine basis states are $\ket{\SLJf{1}{S}{0}{I}}$, $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$.
+Using these basis states, we can evaluate the matrix elements of the hyperfine interaction and find that only the $F = I$ states interact with the matrix elements \cite{Beigang1982.PRA.25.1496}
+\begin{align}
+	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	0										\\
+	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
+	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
+	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	-\frac{a_{ms}}{2} 
+\end{align}
+Therefore, $\hat{H}^{I \neq 0}$ for the interacting $F = I$ states is
+\begin{equation}
+	\hat{H}^{I \neq 0}	=	\hat{H}^{I = 0} + \hat{V}_\text{hfs}
+						=	\begin{pmatrix}
+								E_{\SLJ{1}{S}{0}}	&	0					\\ 
+								0					&	E_{\SLJ{3}{S}{1}}
+							\end{pmatrix}
+						+	\frac{a_{ms}}{2}
+							\begin{pmatrix}
+								0					&	\sqrt{I \pqty{I+1}}	\\ 
+								\sqrt{I \pqty{I+1}}	&	-1
+							\end{pmatrix}
+\end{equation}
+As mentioned previously, $E_{\SLJ{1}{S}{0}}$ and $E_{\SLJ{3}{S}{1}}$ can be obtained from \cref{eq:rydberg-ritz} with the appropriate quantum defects for each series. 
+
+
+***************
+
+***************
+
+***************
+
+
+For singly excited Rydberg states $\ket{\nSLJM{5snl}{2S+1}{L}{J}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{5s}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm}=\frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}\right)$.
+Combining the orbital and spin wave functions for singlet and triplet states are
+\begin{align}
+	\ket{\nSLJM{msnl}{1}{L}{J}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
+											&{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
+	\ket{\nSLJM{msnl}{3}{L}{J}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
+											&{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
+\end{align}
+with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+
+
+
+***************
+
+For singly-excited $S$ Rydberg states in strontium with the `inner'' electron in the $\ket{5 s}$ state and the ``outer'' electron in the $\ket{n \ell}$ state, the singlet and triplet basis states can be written as
+\begin{align}
+	\ket{\nSLJm{5sns}{1}{S}{0}{0}}	&{}={}	\frac{1}{2} \pqty{\ket{5s}\ket{ns} + \ket{}} \pqty{\ket{} - \ket{}}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{1}}	&{}={}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{0}}	&{}={}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}	&{}={}
 \end{align}
 
-**********************************
+
+***************
 
 For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$ \cite{Gudde1993.PRA.47.4725}? ** and should be negligible for high-lying states. 
 We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
@@ -149,7 +215,7 @@ As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structu
 From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
 Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
-\subsection{Singly Excited $S$ states}
+%\subsection{Singly Excited $S$ states}
 
 In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
 A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
@@ -283,7 +349,7 @@ As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for 
 
 \subsection{Singly Excited $D$ states}
 
-Even before including hyperfine interactions (i.e., in the bosons), the spin-orbit interactions leads to a breakdown of $LS$ coupling and mixes the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states and is especially strong around $n = \num{15}$ where they swap singlet and triplet character \cite{Esherick1977.PRA.15.1920, Vaillant2014.JPB.47.155001}.
+Even before including hyperfine interactions, the spin-orbit interactions leads to a breakdown of $LS$ coupling and mixes the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states and is especially strong around $n = \num{15}$ where they swap singlet and triplet character \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Gudde1993.PRA.47.4725, Vaillant2014.JPB.47.155001}.
 To account for this mixing, the eigenstates $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{2}$ of the $H_{0}\qty(88, m_{87})$ are expanded as
 \begin{align}
 	\ket{\nSLJ{5sns}{1}{D}{2}}	&{}={}	\cos\theta\ket{\nSLJ{n}{1}{D}{2}} + \sin\theta\ket{\nSLJ{n}{3}{D}{2}} \\
@@ -296,33 +362,14 @@ Calculations using a two-active-electron (TAE) model \cite{Ye2013.PRA.88.043430,
 
 ** See \cite{Gudde1993.PRA.47.4725} for a calculation of mixing coefficients? **
 
-***************************
+Calculating the hyperfine matrix elements of the $D$ states is quite a bit more challenging than for the $S$ states. 
+In total, there are $\num{20}$ singly excited $D$ states ($\nSLJ{5snd}{1}{D}{2}$, $\nSLJ{5snd}{3}{D}{1}$, $\nSLJ{5snd}{3}{D}{2}$, and $\nSLJ{5snd}{3}{D}{3}$) which each have $2 I + 1 = 10$ nuclear spin states. 
+The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cite{Lurio1962.PR.126.1758, Sun1989.JPB.22.2887, Gudde1993.PRA.47.4725}.
 
-The $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{J}$
+Due to these interactions, it's not clear how to assign the different states since $S$ and $J$ are no longer good quantum numbers. 
+Instead, the state assignments were made by evaluating the overlap of the hyperfine-mixed states with the unperturbed $\nSLJ{5sns}{2S+1}{D}{J}$ state.
+** CLARIFY I need to check with Shuhei that I'm understanding this correctly **
 
-** Stuff about D-states. **
-
-** Following similar derivations (outlined by Shuhei Yoshida). **
-
-*** FILL OUT BELOW ***
-
-The particular matrix elements for calculating the hyperfine shifts of the $D$ states becomes quite a bit more complicated as there are *** $2(I+1)=20$ *** interacting states.
-The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cite{Lurio1962.PR.126.1758}\footnote{\cite{Sun1989.JPB.22.2887} seems to give the matrix elements of $\hat{V}_{\text{hfs}}$ for $F = I - 2$ to $F = I + 2$. There's mixing between $F = I - 3$ nor $F = I + 3$ states as those are only in $\SLJ{3}{D}{3}$.}.
-
-*** FILL OUT ABOVE ***
-
-
-Similar to the $S$-states, we find the matrix elements of $\hat{V}_\text{hf}$ starting with pure states. 
-A further complication of the $D$-states is that spin-orbit interactions lead to a breakdown of $LS$ coupling even in the bosons (with $I=0$), leading to mixing between the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states ** \cite{Esherick1977.PRA.15.1920, Sun1989.JPB.22.2887} - check that these make sense **. 
-To account for this mixing, the $D$ states for $I=0$ (i.e., the eigenstates of $H_0\left(88, m_{87}\right)$) are expanded in terms of pure states
-\begin{align}
-	\ket{\nSLJ{5snd}{1}{D}{2}}	&{}={}	\cos\theta \ket{\nSLJ{n^{*}_{1}}{1}{D}{2}} + \sin\theta \ket{\nSLJ{n^{*}_{1}}{3}{D}{2}}	\\
-	\ket{\nSLJ{5snd}{3}{D}{2}}	&{}={}	-\sin\theta \ket{\nSLJ{n^{*}_{3}}{1}{D}{2}} + \cos\theta \ket{\nSLJ{n^{*}_{3}}{3}{D}{2}}
-\end{align}
-The singlet-triplet mixing is known to be strong around $n=15$ ** \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang1982.PRL.48.290} - also check these**. 
-For higher $n$, on the other hand, the singlet-triplet mixing becomes nearly $n$ independent and $\theta$ is estimated to converge towards $\theta \sim \num{-0.14}$.
-(The TAE calculation yields a similar value, $\theta \sim \num{-0.16}$.)
-As will be shown later, the current experimental data can be well reproduced when $\theta$ is set to \num{-0.14} and this value is used in the following calculations. 
 
 \section{Experimental Method}
 
@@ -339,12 +386,12 @@ A schematic diagram of the present experimental arrangement is presented in \cre
 \end{figure}
 The cooling and trapping of strontium was described previously in this thesis so it will only be briefly covered here. 
 Following the standard procedure for laser cooling strontium, we start from a Zeeman slowed atomic beam with the Zeeman laser tuned to $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ resonance in \Sr{87}.
-Atoms from the Zeeman-slowed atomic beam are then captured by a blue MOT operating on the same transition which cools the atoms down to $\sim \SI{2}{\milli\kelvin}$. 
+The slowed atoms are then captured by a blue MOT operating on the same transition which cools the atoms down to $\sim \SI{2}{\milli\kelvin}$. 
 Further cooling is achieved in a narrow-line red MOT driving the $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ transition.
 Approximately $\SI{1E6}{atoms}$ at $\SI{\sim 2}{\mu\kelvin}$ are captured before turning off all trapping fields for spectroscopy measurements.
 
-Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized $\SI{689}{\nm}$ and $\SI{319}{\nm}$ excitation lasers which drive transitions to the $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg levels via the intermediate $\nSLJ{5s5p}{3}{P}{1}$ $F = 9/2$ or $F = 11/2$ states.
-These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states.
+Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized $\SI{689}{\nm}$ and $\SI{319}{\nm}$ excitation lasers which drive transitions to the $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg levels via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ or $F = 11/2$ states (see \cref{fig:spectroscopy_exp_setup}(b)).
+These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated.
 The typical detunings of the $\SI{689}{\nm}$ laser, with respect to the intermediate states, were $\Delta_{9/2} \sim \SI{36}{MHz}$ and $\Delta_{11/2} \sim \SI{12}{\MHz}$, respectively. 
 During excitation, the $\SI{319}{\nm}$ laser was kept on while the $\SI{689}{\nm}$ laser was chopped into $\SIrange[range-phrase=-]{10}{20}{\us}$-long pulses to generate temporally localized groups of Rydberg atoms. 
 The number of Rydberg atoms produced by each pulse was determined by using the electrodes in \cref{fig:spectroscopy_exp_setup} to generate a ramped electric field sufficient to ionize the Rydberg atoms with the resulting electrons directed towards, and detected by, a micro-channel plate (MCP) whose output was fed into a multichannel scalar (MCS).
@@ -395,7 +442,8 @@ All $\SI{638}{\nm}$ measurements were accompanied by a $\SI{689}{\nm}$ reference
 The values in \cref{tab:wavemeter_calibration} were used to calculate the offset $\delta = \nu_{\text{measured}} - \nu_{\text{reference}}$ between our measured and reported values and is plotted in \cref{fig:wm_fit}.
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_fit.svg}
+	%\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_fit.svg}
+	\includegraphics[keepaspectratio, width=4.5in]{fermion_spectroscopy/wavemeter_calibration/wm_fit.pdf}
 	\caption{
 		\label{fig:wm_fit}
 		Wavelength dependence of the offset $\delta$ between the measured and published transition frequencies used to calibrate the wavemeter. 
@@ -408,7 +456,8 @@ We also used the $\SI{689}{\nm}$ reference measurements to check for drifts in t
 As shown in the inset in \cref{fig:wm_drift}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty. 
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
+	%\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
+	\includegraphics[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.pdf}
 	\caption{
 		\label{fig:wm_drift}
 		Compiled measurements of the wavemeter offset of the $\SI{689}{\nm}$ transition.
