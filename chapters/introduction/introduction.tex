@@ -1,6 +1,16 @@
 \chapter{Introduction}
 \label{ch:intro}
 
+For the last
+
+**********************
+
+The ability to produce cold and ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
+From the observation of BEC-BCS crossover, to xxx, and yyyy, most of the work so far has been based on short-range, isotropic contact interactions which require the atomic wave functions to overlap.
+One way to extend these systems to more complexity and to study other phenomena ** D-wave super conductors? ** is to incorporate long-range interactions.
+Now, the atoms no longer need to have an overlap to interact.
+
+
 
 \section{Motivation}
 \label{sec:motivation}
@@ -22,18 +32,12 @@ Add in repumper spectrum.
 
 *** Need good intro to why study long-range interactions ***
 
-The ability to produce cold and ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
-From the observation of BEC-BCS crossover, to xxx, and yyyy, most of the work so far has been based on short-range, isotropic contact interactions which require the atomic wave functions to overlap.
-An ``easy'' way to extend these systems to more complexity and to study other phenomena ** D-wave super conductors? ** is to incorporate long-range interactions.
-Now, the atoms no longer need to have an overlap to interact.
+************************
 
-
-
-The three primary methods for incorporating long-range interactions in to quantum systems are currently being pursued:
+There are several methods for incorporating long-range interactions in to quantum systems are currently being pursued \cite{Lahaye2009.RPP.72.126401}: 
 \begin{description}
 	\item[Polar molecules]
-		The addition of an extra body to a single atom leads to a wealth of additional effects and complexity.
-		Using bialkali as an example, heteronuclear molecules can have large (permanent) electric dipole moments \cite{Aymar2005.JCP.122.204302}. 
+		These molecules can have large (permanent) electric dipole moments \cite{Aymar2005.JCP.122.204302}. 
 		The drawback is that the additional complexity typically makes it very difficult to produce ultracold and quantum degenerate samples.
 		Steady progress has been made in the direct laser cooling of molecules \cite{Anderegg2018.NatPhys.14.890} as well as the recent producing of a degenerate Fermi gas of {{\tsup{40}\text{K}}{\tsup{87}\text{Rb}}} \cite{DeMarco2019.Science.363.853} produced by photoassociating ultracold atoms.
 		These have the advantage of, ignoring chemical reactions for now, extremely long lifetimes. 
@@ -42,6 +46,9 @@ The three primary methods for incorporating long-range interactions in to quantu
 		Quantum degeneracy has been reached with chromium \cite{Griesmaier2005.PRL.94.160401, Naylor2015.PRA.91.011603}, erbium \cite{Aikawa2012.PRL.108.210401, Aikawa2014.PRL.112.010404}, and dysprosium \cite{Lu2011.PRL.107.190401, Lu2012.PRL.108.215301}.
 		Although simpler than molecules, their dipolar interactions are limited by the magnetic moment of atoms and typically requires tuning the short-range interactions to be weaker than the dipole interaction to observe their effects ** cite **.
 		** There's also been a recent proposal for creating ultracold dysprosium atoms which exhibit an electric dipole moment in addition to the magnetic dipole moment \cite{Lepers2018.PRL.121.063201}. **
+	\item[Coupling atoms to a high-finesse cavity]
+		An interesting way of inducing long-range interactions by placing atoms in a high-finesse optical cavity such that they couple to the cavity mode which in turn causes the atoms to experience forces based on its position \cite{Baumann2010.Nature.464.1301, Mottl2012.Science.336.1570}.
+		Although ingenious, the interactions are likely restricted to the infinitely long-range case along with the limitations posed by the cavity modes (e.g., it would likely be difficult to tune between isotropic and anisotropic interactions).
 	\item[Rydberg states]
 		Highly excited Rydberg states of atoms (and molecules) with principal quantum number $n \gg 1$ can also exhibit strong dipole interactions ** \cite{Gallagher1994.RydbergAtoms} **. 
 		** Many of the relevant scales scale with $n$. **
@@ -89,3 +96,25 @@ A lot of recent interest in Rydberg atoms (and long-range interactions in genera
 
 Our experiment has a more fundamental focus on these studies. 
 We don't use the dipole interaction, but instead use the ``orbiting'' Rydberg electron to probe correlations in quantum gases. 
+
+\subsection{Ultralong-Range Rydberg Molecules}
+
+Perhaps one of the strangest consequences of exciting a Rydberg atom in an ultracold, dense gas is the formation of objects known as ``ultralong-range Rydberg molecules''. 
+These molecules were theoretically predicted \cite{Omont1977.JPF.38.1343, Greene2000.PRL.85.2458} and first experimentally observed in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005}. 
+They arise due to the scattering of the Rydberg electron off a nearby ground-state atom which results in a potential of the form ** CITE EQUATION SOURCE \cite{DeSalvo2015.PRA.92.031403} **
+\begin{align}
+	V\pqty*{\va{r}_{1}, \va{r}_{2}, \va{R}}
+		&{}={}
+			\sum_{i=1}^{2} \frac{2 \pi \hbar^{2} A_{s}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
+			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}	\\
+		&{}\simeq{}
+			\frac{2 \pi \hbar^{2} A_{s}\bqty*{k}}{m_{e}} \psi + \frac{6 \pi \hbar^{2} A_{p}^{2}\bqty*{k}}{m_{e}} \psi
+\end{align}
+Subsequent experiments have observed them in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}.
+
+** SEE \cite{Bendkowsky2010.PhD} FOR A DERIVATION? **
+
+**************
+
+
+These molecules are formed by the interaction of the Rydberg electron with nearby (ground-state) atoms such that, if the interaction is attractive, leads to them being bound together\footnote{An alternative system which can also be described as a ``Rydberg molecule'' is when the system starts as a molecule when is then promoted to a highly-excited electronic state. In this thesis, we stick with the first definition.}.
