@@ -1,24 +1,121 @@
 \chapter{Strontium Rydberg Experiment}
 \label{ch:experiment}
 
-This chapter describes the Rydberg apparatus used in this work.
-It provides documentation of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
-Being the third ultracold strontium at Rice, we were able to leverage lessons learned on the previous experiments (generally referred to as ``Neutral'' and ``Plasma'') to build build quite a capable and flexible system.
+This chapter describes the Rydberg apparatus used in this thesis with the purpose of providing documentation of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
+Being the third ultracold strontium experiment at Rice, we were able to leverage lessons learned from the previous experiments, generally referred to as ``Neutral'' and ``Plasma'', to build quite a capable and flexible system.
 
 Although most of our system looks very similar to other ultracold strontium systems, what makes our system different is the inclusion of systems for creating, manipulating, and detecting charged particles. 
-In particular, we have in-vacuum electric field plates to cancel stray electric fields as well as ramp to ionizing fields which direct electrons or ions towards the microchannel plate (MCP) detector.
+In particular, we have in-vacuum electric field plates which we can use to both cancel stray electric fields as well as applying a field ionization ramp and direct the resulting electrons or ions towards the microchannel plate (MCP) detector.
 
 Our old-school ``metal can'' setup can't compete with the optical access provided by many recently started alkaline-earth Rydberg tweezer systems using glass cells \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055, Saskin2019.PRL.122.143002}.
 There's still a place for our system which likely provides capabilities for better shielding from stray electric fields, performing SFI, and the ability to detect charged particles which, without going to significantly custom systems, are somewhat limiting on the standard glass cell setups.
 
-\section{Producing Cold and Ultracold Gases of Strontium}
+\section{Producing Ultracold Gases of Strontium}
 
-We follow the standard laser cooling and trapping sequence for producing cold and ultracold gases of strontium.
-Detailed explanations of the techniques are available from various sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Stellmer2013.PhD, Barker2016.PhD}) so the process will only be outlined here for context.
+We follow the standard laser cooling and trapping sequence for producing ultracold gases of strontium.
+Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here for context.
 
-\subsection{Pre-cooling on the $\SI{461}{\nm}$ Transition}
+\section{Vacuum System}
 
-Due to strontium's low vapor pressure, an oven is required to sublimate strontium in to a gaseous form.
+An overview of our vacuum system is shown in \cref{fig:vacuum_system} and follows the cooling stages described above.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
+	\caption[]{
+		\label{fig:vacuum_system}
+		Overview of the strontium Rydberg apparatus highlighting the main sections of the vacuum system and various components.}
+\end{figure}
+Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the majority of the horizontal laser beams $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
+Keeping most of the beams at this fixed height significantly reduced the need for rigid supporting structures to elevate both the entire vacuum system as well as the various platforms for optics.
+This also diminished the need for periscopes to elevate laser beams from the table to the height of an elevated vacuum chamber\footnote{Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.}.
+
+To facilitate vertically propagating beams, two holes were cut through the table: a semicircle for the vertical 2D collimator arm and a \SI{10}{\inch} diameter circle under the main chamber.
+We had originally planned on mounting vertical optics directly to the main chamber but decided instead to mount them to a single elevated platform above the main chamber and another platform on the underside of the table. 
+This should reduce sensitivity to vibrations as the main chamber is (almost) ``free-floating'' from the optics mounted to the table.
+Adding the breadboard under the table required tapping {1/4''-20} threads on the underside of the table.
+The major disadvantage of our current setup is the long distance between the undertable breadboard and the bottom of the main chamber which is about \SI{12}{\inch}\footnote{The thickness of the optical table.} which makes it difficult to design, install, and align sensitive vertical beams.
+
+\subsection{Source-side Vacuum System}
+\label{ssec:source-side_vacuum}
+
+This section of the vacuum chamber is where strontium oven and 2D collimator are located.
+Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
+It's a simple design where a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} provides the majority of the heating power to the atomic oven.
+An array of capillary tubes forms a nozzle to provide some degree of collimation and resistive heater wire is wrapped around them to reduce the effects of strontium building up in the capillary tubes and clogging.
+We typically run our main FIREROD oven heater around \SI{425}{\celsius}\footnote{Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself.} with the nozzle heater wire around \SI{390}{\celsius}.
+\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's strontium oven and is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
+	\caption[]{
+		\label{fig:neutral_sr_oven}
+		Neutral's new strontium oven during construction before thermocouple and nozzle heating wire have been attached. 
+		The design is very similar to our oven but is mounted oo a 2-3/4 on CF flange instead of a 3-3/8 in CF flange as on our experiment.
+		(Left) Oven without heat shield.
+		(Right) After adding heat shield.}
+\end{figure}
+
+After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257, Lett1989.JOSAB.6.2084} to increase the flux of atoms down the Zeeman slower. 
+The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
+
+Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
+The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
+We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum chamber to the \SI{6}{\inch} flange on the Varian ion pump.
+
+A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
+The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
+The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vauum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+
+\subsection{Zeeman Slower}
+
+Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
+The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
+Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
+Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
+
+Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
+Due to space constraints, the source-side welded to a \SI{2.75}{\inch} flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} flange.
+These flanges are also where cooling water enters and exits the jacket.
+It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require shielding and/or more significant cancellation as permanent magnets cannot be turned off.
+
+The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be tweaked so that the resulting field was matched the desired profile.
+Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before deciding on how to wrap the next layer of windings.
+Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
+
+\subsection{Experiment-side Vacuum System}
+
+The experiment-side vacuum system can be broken down in to the main chamber where experiments take place and a ``pumping tower''.
+The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} features:
+\begin{itemize}
+	\item Recessed top and bottom flanges bring the \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
+	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} safe high voltage (SHV) feedthroughs for high-voltage connections.
+	\item Six \SI{2.75}{\inch} horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
+	\item Three \SI{1.33}{\inch} horizontal viewports used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular and parallel to the MCP.
+	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
+	\item A conical expansion to a \SI{6}{\inch} flange for increased conductance to the pumps.
+\end{itemize}
+Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} (see \cref{fig:viewport_ar-coating}).
+\begin{figure}[htbp]
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
+	\caption[]{\label{fig:viewport_ar-coating}
+		Transmission data of the Reynard Corporation\protect\footnotemark anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ viewports from MDC Vacuum Products.
+		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
+\end{figure}
+\footnotetext{I would like to thank Robyn Miller at Reynard Corporation for finding and sending me the reflection and transmission data from the order we placed six years ago.}
+Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
+The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
+Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
+In retrospect, we should have also included a titanium sublimation pump (TSP) for additional pumping capability.
+
+We also added a \SI{3.375}{\inch} gate valve between the Zeeman slower window and main chamber to facilitate changing the sacraficial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
+
+\section{Producing Ultracold Gases of Strontium}
+
+*** KEEP? ***
+
+\subsection{Cooling on the $\SI{461}{\nm}$ Transition}
+
+Due to strontium's low vapor pressure, an oven is required to sublimate strontium to a gaseous form.
 Our strontium oven operates at about $\SI{425}{\celsius}$ with the nozzle at about $\SI{390}{\celsius}$\footnote{Ideally the nozzle should be hotter than the oven to reduce the chances of clogging but it's likely that our actual oven temperature is a bit lower due to the temperature sensor being buried in the oven's heating element rather than in the oven itself.}.
 Other strontium experiments typically run their ovens between $\SIrange[range-phrase=-]{450}{650}{\celsius}$\footnote{$\SI{450}{\celsius}$ \cite{Schioppo2012.RSI.83.103101}, $\SI{500}{\celsius}$ \cite{Campbell2017.PhD}, $\SI{575}{\celsius}$ (body) and $\SI{850}{\celsius}$ (nozzle) \cite{Boyd2007.PhD, Ludlow2008.PhD}, $\SI{600}{\celsius}$ (reservoir) and $\SI{650}{\celsius}$ (nozzle) \cite{Barker2016.PhD, Senaratne2018.PhD}, $\SIrange[range-phrase=-]{600}{750}{\celsius}$ \cite{Stellmer2013.PhD, Stellmer2013.PRA.87.013611}.} so we have some headroom to increase the oven temperature and increase the strontium flux\footnote{Although this could possibly degrade our trap lifetime.}.
 See \cref{ssec:source-side_vacuum} for more details about our strontium oven.
@@ -97,8 +194,7 @@ Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold MOT'' stage wh
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/blue_system/old_blue_MOT.svg}
 	\caption[]{\label{fig:old_blue_MOT}
 		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a \SI{2.75}{\inch} viewport with the atom source and Zeeman slower are off to the right.
-		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}. 
-		A video is available at {https://youtu.be/ENDIizrlqMA}.}
+		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}.}
 \end{figure}
 
 Although the $\SI{461}{\nm}$ is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT}.
@@ -230,100 +326,6 @@ The first BEC of \Sr{88} was achieved by sympathetic cooling with \Sr{87} \cite{
 
 Some recent work towards developing systems for trapping strontium in optical tweezer arrays showed results that an ODT around $\SIrange[range-phrase=-]{501}{520}{\celsius}$ is close to a ``magic'' wavelength\footnote{A wavelength is ``magic'' when two states experience the same shift (i.e., no differential shift) \cite{Ye2008.Science.320.1734, Ludlow2015.RMP.87.637}.} for the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055}.
 It should be noted that both our current $\SI{1064}{\nm}$ ODT and a `green'' ODT are both expected to be repulsive for Rydberg states \cite{Mukherjee2011.JPB.44.184010, Topcu2016.JPB.49.144004} for strontium Rydberg states.
-
-\section{Vacuum System}
-
-An overview of our vacuum system is shown in \cref{fig:vacuum_system} and follows the cooling stages described above.
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
-	\caption[]{
-		\label{fig:vacuum_system}
-		Overview of the strontium Rydberg apparatus highlighting the main sections of the vacuum system and various components.}
-\end{figure}
-Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the majority of the horizontal laser beams $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-Keeping most of the beams at this fixed height significantly reduced the need for rigid supporting structures to elevate both the entire vacuum system as well as the various platforms for optics.
-This also diminished the need for periscopes to elevate laser beams from the table to the height of an elevated vacuum chamber\footnote{Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.}.
-
-To facilitate vertically propagating beams, two holes were cut through the table: a semicircle for the vertical 2D collimator arm and a \SI{10}{\inch} diameter circle under the main chamber.
-We had originally planned on mounting vertical optics directly to the main chamber but decided instead to mount them to a single elevated platform above the main chamber and another platform on the underside of the table. 
-This should reduce sensitivity to vibrations as the main chamber is (almost) ``free-floating'' from the optics mounted to the table.
-Adding the breadboard under the table required tapping {1/4''-20} threads on the underside of the table.
-The major disadvantage of our current setup is the long distance between the undertable breadboard and the bottom of the main chamber which is about \SI{12}{\inch}\footnote{The thickness of the optical table.} which makes it difficult to design, install, and align sensitive vertical beams.
-
-\subsection{Source-side Vacuum System}
-\label{ssec:source-side_vacuum}
-
-This section of the vacuum chamber is where strontium oven and 2D collimator are located.
-Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
-It's a simple design where a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} provides the majority of the heating power to the atomic oven.
-An array of capillary tubes forms a nozzle to provide some degree of collimation and resistive heater wire is wrapped around them to reduce the effects of strontium building up in the capillary tubes and clogging.
-We typically run our main FIREROD oven heater around \SI{425}{\celsius}\footnote{Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself.} with the nozzle heater wire around \SI{390}{\celsius}.
-\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's strontium oven and is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
-	\caption[]{
-		\label{fig:neutral_sr_oven}
-		Neutral's new strontium oven during construction before thermocouple and nozzle heating wire have been attached. 
-		The design is very similar to our oven but is mounted oo a 2-3/4 on CF flange instead of a 3-3/8 in CF flange as on our experiment.
-		(Left) Oven without heat shield.
-		(Right) After adding heat shield.}
-\end{figure}
-
-After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257, Lett1989.JOSAB.6.2084} to increase the flux of atoms down the Zeeman slower. 
-The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
-
-Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
-The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
-We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum chamber to the \SI{6}{\inch} flange on the Varian ion pump.
-
-A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
-The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
-The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vauum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
-
-\subsection{Zeeman Slower}
-
-Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
-The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
-Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
-Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
-
-Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
-Due to space constraints, the source-side welded to a \SI{2.75}{\inch} flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} flange.
-These flanges are also where cooling water enters and exits the jacket.
-It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require shielding and/or more significant cancellation as permanent magnets cannot be turned off.
-
-The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be tweaked so that the resulting field was matched the desired profile.
-Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before deciding on how to wrap the next layer of windings.
-Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
-
-\subsection{Experiment-side Vacuum System}
-
-The experiment-side vacuum system can be broken down in to the main chamber where experiments take place and a ``pumping tower''.
-The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} features:
-\begin{itemize}
-	\item Recessed top and bottom flanges bring the \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
-	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} safe high voltage (SHV) feedthroughs for high-voltage connections.
-	\item Six \SI{2.75}{\inch} horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
-	\item Three \SI{1.33}{\inch} horizontal viewports used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular and parallel to the MCP.
-	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
-	\item A conical expansion to a \SI{6}{\inch} flange for increased conductance to the pumps.
-\end{itemize}
-Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} (see \cref{fig:viewport_ar-coating}).
-\begin{figure}[htbp]
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
-	\caption[]{\label{fig:viewport_ar-coating}
-		Transmission data of the Reynard Corporation\protect\footnotemark anti-reflection (AR) coating on the $\SI{1.33}{\inch}$ and $\SI{2.75}{\inch}$ viewports from MDC Vacuum Products.
-		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
-\end{figure}
-\footnotetext{I would like to thank Robyn Miller at Reynard Corporation for finding and sending me the reflection and transmission data from the order we placed six years ago.}
-Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
-The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
-Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
-In retrospect, we should have also included a titanium sublimation pump (TSP) for additional pumping capability.
-
-We also added a \SI{3.375}{\inch} gate valve between the Zeeman slower window and main chamber to facilitate changing the sacraficial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
 
 \section{Magnetic Field Trim Coils}
 
