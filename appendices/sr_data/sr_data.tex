@@ -67,6 +67,54 @@ The \SI{461}{\nm} transition is used for the blue MOT and absorption imaging whi
 	% \end{tabular}
 % \end{table}
 
+\begin{table}[h]
+	\caption[]{
+		\label{tab:blue_isotope_shift_detailed}
+		Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition relative to \Sr{88}.
+		Due to the hyperfine structure of \Sr{87}, the isotope shift is given relative to the center-of-gravity of the upper $\nSLJ{5s5p}{1}{P}{1}$ state.
+		Transitions to a specific $\nSLJF{5s5p}{1}{P}{1}{F}$ state can be calculated with the $A$ and $B$ hyperfine constants in \cref{tab:hyperfine_coefficients_5s5p1P1}.}
+	\centering
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		Isotope						& Lower level								& Upper level								& $\nu - \nu_{88}$ [$\si{\MHz}$]	& Ref.								\\
+		\midrule
+		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$					& $\nSLJ{5s5p}{1}{P}{1}$					& $\num{0}$							&									\\
+		\midrule
+		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-46.3+-2.0}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											& 											& $\num{-49.2+-3.6}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											& 											& $\num{-44.6+-0.4}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\midrule
+		\multirow{3}{*}{\Sr{86}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-124.8+-0.3}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											&											& $\num{-124.5+-1.3}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											&											& $\num{-126.3+-0.2}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\midrule
+		\multirow{3}{*}{\Sr{84}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-270.8+-1.4}$				& \cite{Eliel1983.ZP.311.1}			\\
+									&											&											& $\num{-270.6+-2.4}$				& \cite{Buchinger1985.PRC.32.2058}	\\
+									&											&											& $\num{-273.2+-0.3}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption[]{
+		\label{tab:hyperfine_coefficients_5s5p1P1}
+		\Sr{87} hyperfine $A$ and $B$ coefficients for the $\nSLJ{5s5p}{1}{P}{1}$ state and calculated shifts from the center-of-gravity.}
+	\centering
+	\begin{tabular}{@{}cccccc@{}}
+		\toprule
+		$A$ [$\si{\MHz}$]						& $B$ [$\si{\MHz}$]						& Ref. 												& Lower level												& Upper level								& $\Delta E_{HF}$ [$\si{\MHz}$]	\\
+		\midrule	
+		\multirow{3}{*}{\num{-3.4+-0.4}}		& \multirow{3}{*}{\num{39+-4}}			& \multirow{3}{*}{\cite{Kluge1974.ZP.270.295}}		& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.6+-2.9}$				\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-5.5+-2.1}$				\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-22.6+-2.7}$			\\
+		\midrule	
+		\multirow{3}{*}{\num{-3.334+-0.025}}	& \multirow{3}{*}{\num{40.29+-0.21}}	& \multirow{3}{*}{\cite{Bushaw2000.SAPB.55.1679}}	& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.80+-0.17}$			\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-4.93+-0.12}$			\\
+												&										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-23.53+-0.14}$			\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 \begin{table}[H]
 	\caption{\label{tab:red_isotope_shift}Frequencies of the \SI{689}{\nm} {$\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$} transition.}
 	\centering

@@ -142,6 +142,74 @@ Working through the algebra, we obtain the transformed Hamiltonian $\widetilde{H
 where $\widetilde{H} = U H U^{\dag} - \iu \hbar U \dot{U}^{\dag} = U H U^{\dag} + \iu \hbar \dot{U} U^{\dag}$.
 The last part was obtained using $\partial_{t} \qty(U^{\dag} U) = \partial_{t} \qty(1) = 0$.
 
+\section{Optical Dipole Trap Potential}
+\label{ap:odt_derivation}
+
+The derivation presented below loosely follows that found in \cite{Steck.QuantumAtomOptics, Ludlow2008.PhD}. For a two-level atom with ground (excited) state $\ket{g}$ ($\ket{e}$) and energy $E_{g} = \hbar \omega_{g}$ ($E_{e} = \hbar \omega_{e}$), the atomic Hamiltonian $H_{A}$ can be written as
+\begin{equation}
+	H_{A}	=	\hbar
+				\begin{pmatrix}
+					\omega_{e}	&	0			\\
+					0			&	\omega_{g}
+				\end{pmatrix}
+\end{equation}
+** Somehow introduce $\vb{d}\cdot\vb{E} \rightarrow \Omega \exp(-\iu \omega_{L} t)$ **
+Introducing a laser at frequency $\omega$ which couples $\ket{g}$ and $\ket{e}$ and can be represented by
+\begin{equation}
+	H_{AF}	=	\frac{\hbar}{2}
+				\begin{pmatrix}
+					0							&	\Omega \cos(\omega t)	\\
+					\Omega^{*} \cos(\omega t)	&	0
+				\end{pmatrix}
+\end{equation}
+Using the unitary transformation
+\begin{equation}
+	U	=	\begin{pmatrix}
+				\me^{\iu \omega t}	&	0	\\
+				0					&	1
+			\end{pmatrix}
+\end{equation}
+the total (transformed) Hamiltonian for the system can be written as
+\begin{equation}
+	\widetilde{H}	=		\hbar
+							\begin{pmatrix}
+								-\Delta												&	\frac{\Omega}{2} \qty(1 + \me^{\iu 2 \omega t})	\\
+								\frac{\Omega^{*}}{2} \qty(1 + \me^{-\iu 2 \omega t})	&	\omega_{g}
+							\end{pmatrix}
+					\approx	\hbar
+							\begin{pmatrix}
+								-\Delta					&	\frac{\Omega}{2}	\\
+								\frac{\Omega^{*}}{2}	&	\omega_{g}
+							\end{pmatrix}
+\end{equation}
+where $\Delta \equiv \omega - \omega_{e}$ and the rotating wave approximation (RWA) was made ** clarify why/how the RWA is done **.
+
+For $\Delta \gg \Omega$, ..... continue deriving...
+
+********************
+
+********************
+
+********************
+
+The potential of atoms in an optical trap can be written as
+\begin{equation}
+	U	= \hbar \Delta\omega
+		= -\hbar \frac{E^{2}_{0}}{4} \frac{\abs{d}^{2}}{\hbar^{2}} \qty(\frac{1}{\omega_{0} - \omega_{L}} + \frac{1}{\omega_{0} + \omega_{L}})
+		= -\frac{E^{2}_{0}}{4 \hbar} \qty(\frac{2 \abs{d}^{2}}{\hbar} \frac{\omega_{0}}{\omega^{2}_{0}-\omega^{2}_{L}})
+\end{equation}
+where terms generally excluded by the rotating wave approximation were kept.
+The term in parenthesis is the dipole polarizability $\alpha$.
+
+A simple way of generalizing to a multi-level atom is to treat each excited level separately and sum their shift contributions together\footnote{A ``real'' way to do this calculation would be to diagnolize the full interaction matrix for all the atomic levels coupled by the laser.}. 
+Labeling the ground state $\ket{g}$ and the excited states coupled by the optical field with $\ket{e}$, the AC polarizability can be written as
+\begin{equation}
+	\alpha_{g} = \frac{2}{\hbar} \sum_{e} \abs{d}^{2}_{ge} \frac{\omega_{ge}}{\omega^{2}_{ge}-\omega^{2}_{L}}
+\end{equation}
+
+Since the energy shift depends on the square of the electric field, this is easily related to the intensity with $I = c \epsilon_{0} E^{2}_{0}/2$.
+Optical trapping occurs when there is a spatially varying intensity $I\qty(r)$.
+
 \section{Hyperfine Mixing Matrix Elements}
 \label{sec:hyperfine_mixing_derivation}
 
