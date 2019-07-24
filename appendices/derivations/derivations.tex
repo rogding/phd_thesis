@@ -152,16 +152,26 @@ The derivation presented below loosely follows that found in \cite{Steck.Quantum
 					\omega_{e}	&	0			\\
 					0			&	\omega_{g}
 				\end{pmatrix}
-\end{equation}
-** Somehow introduce $\vb{d}\cdot\vb{E} \rightarrow \Omega \exp(-\iu \omega_{L} t)$ **
-Introducing a laser at frequency $\omega$ which couples $\ket{g}$ and $\ket{e}$ and can be represented by
-\begin{equation}
-	H_{AF}	=	\frac{\hbar}{2}
+			=	\hbar
 				\begin{pmatrix}
-					0							&	\Omega \cos(\omega t)	\\
-					\Omega^{*} \cos(\omega t)	&	0
+					\omega_{e}-\omega_{g}	&	0			\\
+					0						&	0
 				\end{pmatrix}
 \end{equation}
+In the dipole approximation, an atom interacting with a field $\va{E} = E_{0} \cos(\omega_{L} t) \vu{\varepsilon} $ leads to the atom-field interaction given by $H_{\text{AF}} = -\va{d} \vdot \va{E} = e\va{r} \vdot \va{E}$.
+The matrix elements of $H_{\text{AF}}$ can be written as
+\begin{equation}
+	H_{AF}	=	\begin{pmatrix}
+					\mel{e}{e\va{r} \vdot \va{E}}{e}	&	\mel{e}{e\va{r} \vdot \va{E}}{g}	\\
+					\mel{g}{e\va{r} \vdot \va{E}}{e}	&	\mel{g}{e\va{r} \vdot \va{E}}{g}
+				\end{pmatrix}
+			=	\hbar
+				\begin{pmatrix}
+					0								&	\Omega \cos(\omega_{L} t)	\\
+					\Omega^{*} \cos(\omega_{L} t)	&	0
+				\end{pmatrix}
+\end{equation}
+where the Rabi frequency is defined as $\Omega \equiv {\mel{e}{e\va{r} \vdot \va{E}}{g}}/{\hbar} = -{\mel{e}{\va{d} \vdot \va{E}}{g}}/{\hbar}$. 
 Using the unitary transformation
 \begin{equation}
 	U	=	\begin{pmatrix}
@@ -169,22 +179,16 @@ Using the unitary transformation
 				0					&	1
 			\end{pmatrix}
 \end{equation}
-the total (transformed) Hamiltonian for the system can be written as
+the total Hamiltonian $H = H_{A} + H_{AF}$ is transformed in to
 \begin{equation}
 	\widetilde{H}	=		\hbar
 							\begin{pmatrix}
-								-\Delta												&	\frac{\Omega}{2} \qty(1 + \me^{\iu 2 \omega t})	\\
-								\frac{\Omega^{*}}{2} \qty(1 + \me^{-\iu 2 \omega t})	&	\omega_{g}
-							\end{pmatrix}
-					\approx	\hbar
-							\begin{pmatrix}
-								-\Delta					&	\frac{\Omega}{2}	\\
-								\frac{\Omega^{*}}{2}	&	\omega_{g}
+								-\Delta													&	\frac{\Omega}{2} \qty(1 + \me^{\iu 2 \omega_L t})	\\
+								\frac{\Omega^{*}}{2} \qty(1 + \me^{-\iu 2 \omega_L t})	&	0
 							\end{pmatrix}
 \end{equation}
-where $\Delta \equiv \omega - \omega_{e}$ and the rotating wave approximation (RWA) was made ** clarify why/how the RWA is done **.
+where $\Delta \equiv \omega_{L} - \pqty{\omega_{e} - \omega_{g}}$ is the laser detuning from atomic resonance. 
 
-For $\Delta \gg \Omega$, ..... continue deriving...
 
 ********************
 
