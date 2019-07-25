@@ -54,13 +54,64 @@ We had trouble producing cold gases of \Sr{87} so we loaded both \Sr{84} and \Sr
 \subsection{Spin-Polarization of \Sr{87}}
 
 In order to realize the ``ideal'' fermionic sample, we spin-polarize the \Sr{87} atoms in to the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state after loading in to the ODT. 
-Once the unpolarized atoms are loaded in to the ODT, we apply a bias magnetic field of about 
-Spin-polarization is achieved by driving the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{S}{1}{9/2}$ transition
+Once the unpolarized \Sr{87} atoms are loaded in to the ODT, we apply a bias magnetic field of about $\SI{7}{\gauss}$.
+Spin-polarization is achieved by driving the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{S}{1}{9/2}$ transition with each $m_F$ state separated by about $\SI{600}{\kHz}$. 
+Using ${\sigma}^{+}$ light, we sequentially drive ${\Delta}m_F=+1$ transitions from $m_F=-{9}/{2}$ to $m_F={7}/{2}$ with $\SI{45}{\ms}$ pulses.
+A last $\SI{500}{\ms}$ ``clean-up'' pulse driving the $m_F={7}/{2} \rightarrow m_{F}^{\prime}={9}/{2}$ helps produce a sample with better than $\SI{90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/producing_spin-polarization/mF_population_vs_duration.pdf}
+	\caption[]{
+		\label{fig:lin-lin_vs_loops}
+		Checking that linear-linear spectroscopy does not significantly alter our population.}
+\end{figure}
+
+Before performing Rydberg excitation, we reduce the bias field to about $\SI{1.2}{\gauss}$. 
+
+\subsubsection{Evaluation of Spin-Polarization}
+
+The effectiveness of spin-polarization was evaluated by performing ``linear-linear'' two-photon Rydberg spectroscopy. 
+Crossed-polarized excitation beams travel perpendicular to the bias field with the UV beam driving $\pi$-transitions. 
+In this setup, the $\SI{689}{\nm}$ drives $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ and the $\SI{320}{\nm}$ drives $\nSLJf{5s5p}{3}{P}{1}{9/2} \rightarrow \nSLJf{5sns}{3}{S}{1}{11/2}$.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/checking_spin-polarization/lin-lin_vs_loops.pdf}
+	\caption[]{
+		\label{fig:lin-lin_vs_loops}
+		Checking that linear-linear spectroscopy does not significantly alter our population.}
+\end{figure}
+
+\subsection{Rydberg Excitation}
+
+Rydberg excitation is performed with a two-photon transition 
+
+\section{Analysis}
+
+The integrated Rydberg molecule signal should scale as
+\begin{equation}
+	S_{n}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \mathcal{C} \mathcal{F}_{n}
+\end{equation}
 
 \subsection{Density Correction Term}
 
 During data taking, we record the sample temperature and atom number. 
 In additional to knowing our trap frequencies, we are able to perform a correction for the density-dependent excitation rate. 
+For a thermal gas in a 3D harmonic trap, the density distribution is given by \cite{Pethick.BEC}
+\begin{equation}
+	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
+\end{equation}
+with $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency. 
+
+For the dimers, the signal is proportional to square of the density distribution integrated over all space meaning
+\begin{equation}
+	\mathcal{N}_2	=		\int \dd[3]{r} \rho\pqty{\va{r}}
+					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
+					\propto	\frac{N^2}{T^{3/2}}
+\end{equation}
+Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to reduce the sensitivity to the sample density and temperature. 
+
 
 \section{Creation of Vibrationally-Excited Rydberg Molecules in Spin-Polarized and Unpolarized Ultracold Gases of \Sr{87}}
 

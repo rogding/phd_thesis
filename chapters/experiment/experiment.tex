@@ -13,7 +13,7 @@ There's still a place for our system which likely provides capabilities for bett
 \section{Producing Ultracold Gases of Strontium}
 
 We follow the typical laser cooling and trapping sequence for producing ultracold gases of strontium.
-Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here.
+Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here. 
 
 \subsection{Cooling on the $\SI{461}{\nm}$ Transition}
 
@@ -209,7 +209,7 @@ It should be noted that both our current $\SI{1064}{\nm}$ ODT and a `green'' ODT
 
 \section{Vacuum System}
 
-An overview of our vacuum system is shown in \cref{fig:vacuum_system}.
+An overview of our vacuum system is shown in \cref{fig:vacuum_system} with the some of the primary components labeled.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/rydberg_vacuum_system.svg}
@@ -218,57 +218,44 @@ An overview of our vacuum system is shown in \cref{fig:vacuum_system}.
 		Overview of the strontium Rydberg apparatus highlighting the main sections of the vacuum system and various components.}
 \end{figure}
 Perhaps the most noticeable aspect of our vacuum system is that it was designed to have the majority of the horizontal laser beams about $\SI{3.5}{\inch}=\SI{8.89}{\cm}$ from the surface of the optical table.
-To facilitate this, the optical table is semi-custom with two holes through the ta
+Keeping the beams at this height eliminated the need for rigid supporting structures to raise the entire vacuum system along with the associated need for raised optical platforms for getting beams in to the vacuum chamber. 
 
-This significantly reduced the need for the typical multi-tier
-
-
-
-*********************
-
-
-
-Keeping the beams at this fixed height significantly reduced the need for rigid supporting structures to elevate both the entire vacuum system as well as the various platforms for optics.
-This also diminished the need for periscopes to elevate laser beams from the table to the height of an elevated vacuum chamber\footnote{Fiber-coupling all the laser beams is a potential alternative to avoiding periscopes but that includes some unavoidable loss in power and some wavelengths (i.e., the \SI{320}{\nm} UV laser) would be difficult fiber couple at the present time.}.
-
-To facilitate vertically propagating beams, two holes were cut through the table: a semicircle for the vertical 2D collimator arm and a \SI{10}{\inch} diameter circle under the main chamber.
+To facilitate vertically propagating beams, two holes were cut through the table: a semicircle for the vertical 2D collimator arm and a $\SI{10}{\inch}$ diameter circle under the main chamber for MOT and dipole trap beams.
 We had originally planned on mounting vertical optics directly to the main chamber but decided instead to mount them to a single elevated platform above the main chamber and another platform on the underside of the table. 
-This should reduce sensitivity to vibrations as the main chamber is (almost) ``free-floating'' from the optics mounted to the table.
 Adding the breadboard under the table required tapping {1/4''-20} threads on the underside of the table.
-The major disadvantage of our current setup is the long distance between the undertable breadboard and the bottom of the main chamber which is about \SI{12}{\inch}\footnote{The thickness of the optical table.} which makes it difficult to design, install, and align sensitive vertical beams.
+The major disadvantage of our current setup is the long distance between the undertable breadboard and the bottom of the main chamber which is about $\SI{12}{\inch}$\footnote{The thickness of the optical table.}, making it difficult to design, install, and align sensitive vertical beams.
 
 \subsection{Source-side Vacuum System}
-
-***********
-** Moved from previous section, find where to put **
-
-Our strontium oven operates at about $\SI{425}{\celsius}$ with the nozzle at about $\SI{390}{\celsius}$\footnote{Ideally the nozzle should be hotter than the oven to reduce the chances of clogging but it's likely that our actual oven temperature is a bit lower due to the temperature sensor being buried in the oven's heating element rather than in the oven itself.}.
-Other strontium experiments typically run their ovens between $\SIrange[range-phrase=-]{450}{650}{\celsius}$\footnote{$\SI{450}{\celsius}$ \cite{Schioppo2012.RSI.83.103101}, $\SI{500}{\celsius}$ \cite{Campbell2017.PhD}, $\SI{575}{\celsius}$ (body) and $\SI{850}{\celsius}$ (nozzle) \cite{Boyd2007.PhD, Ludlow2008.PhD}, $\SI{600}{\celsius}$ (reservoir) and $\SI{650}{\celsius}$ (nozzle) \cite{Barker2016.PhD, Senaratne2018.PhD}, $\SIrange[range-phrase=-]{600}{750}{\celsius}$ \cite{Stellmer2013.PhD, Stellmer2013.PRA.87.013611}.} so we have some headroom to increase the oven temperature and increase the strontium flux\footnote{Although this could possibly degrade our trap lifetime.}.
-
-
-***********
-
 \label{ssec:source-side_vacuum}
 
-This section of the vacuum chamber is where strontium oven and 2D collimator are located.
-Although there are now various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems from AO Sense, we used a design which has shown success in the Killian lab. 
-It's a simple design where a Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} provides the majority of the heating power to the atomic oven.
+This section of the vacuum chamber is where strontium oven and 2D collimator are located and produces the atomic beam of strontium for cooling and trapping.
+Although there are various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems, we used a simple design which has shown success on the older strontium experiments in the lab.
+The design is simple with a single Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} providing the majority of the heating power to the atomic oven.
 An array of capillary tubes forms a nozzle to provide some degree of collimation and resistive heater wire is wrapped around them to reduce the effects of strontium building up in the capillary tubes and clogging.
-We typically run our main FIREROD oven heater around \SI{425}{\celsius}\footnote{Note that the FIREROD temperature sensor is inside the ceramic body whereas the nozzle thermocouple is attached to the nozzle itself.} with the nozzle heater wire around \SI{390}{\celsius}.
-\Cref{fig:neutral_sr_oven} shows a similar oven made to replace the Neutral's strontium oven and is very similar to the one on our setup but it was mounted on the much smaller \SI{2.75}{\inch} flange whereas ours is mounted on a \SI{3.375}{\inch} flange which provides some extra room for various feedthroughs without being too cramped.
+We typically run our main FIREROD oven heater around $\SI{425}{\celsius}$ with the nozzle heater around $\SI{390}{\celsius}$\footnote{Ideally, the nozzle should be hotter than the reservoir to reduce the likelihood of clogging the capillary tubes but it's likely that our actual oven temperature is a bit lower due to the FIREROD thermocouple sensor being buried in the cartridge heater body rather than at the location of the strontium.}.
+\Cref{fig:neutral_sr_oven} shows a recently fabricated strontium oven made to replace the one on the Neutral apparatus and is very similar to the one on our setup with the major difference being that it is mounted on the smaller $\SI{2.75}{\inch}$ flange whereas ours is mounted on a $\SI{3.375}{\inch}$ flange. 
+The larger flange provides some extra room for various feedthroughs without being too cramped.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/neutral_sr_oven.svg}
 	\caption[]{
 		\label{fig:neutral_sr_oven}
-		Neutral's new strontium oven during construction before thermocouple and nozzle heating wire have been attached. 
-		The design is very similar to our oven but is mounted oo a 2-3/4 on CF flange instead of a 3-3/8 in CF flange as on our experiment.
+		Neutral's new strontium oven during construction before nozzle thermocouple and heating wire have been attached. 
+		The design is very similar to our oven but is mounted on a $\SI{2.75}{\inch}$ flange instead of a $\SI{3.375}{\inch}$ flange as on our experiment.
 		(Left) Oven without heat shield.
 		(Right) After adding heat shield.}
 \end{figure}
 
-After atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Sheehy1990.CP.145.317, Joffe1993.JOSAB.10.2257, Lett1989.JOSAB.6.2084} to increase the flux of atoms down the Zeeman slower. 
-The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
+Immediately after the atoms exit the oven, they pass through the two-dimensional (2D) collimator stage which applies transverse optical molasses to increase the flux of atoms down the Zeeman slower. 
+To maximize the limited amount $\SI{461}{\nm}$ laser power, the beams are shaped so to be elliptical to maximize the intensity on the atoms and a single beam is passed through the The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/atomic_beam.svg}
+	\caption[]{
+		\label{fig:atomic_beam}
+		Picture of the fluorescing atomic beam as viewed down the vertical arm of the two-dimensional (2D) collimator.
+		A reflection of the atomic beam is visible off the vertical retro mirror.}
+\end{figure}
 
 Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
 The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
@@ -277,6 +264,17 @@ We suspect the ion pump on the source side is being restricted by the zero-lengt
 A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
 The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
 The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vauum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
+
+
+***********
+** Moved from previous section, find where to put **
+
+This section of the vacuum system contains our strontium oven and the 2D collimator stage.
+Our strontium oven operates at about $\SI{425}{\celsius}$ with the nozzle at about $\SI{390}{\celsius}$\footnote{Ideally the nozzle should be hotter than the oven to reduce the chances of clogging but it's likely that our actual oven temperature is a bit lower due to the temperature sensor being buried in the oven's heating element rather than in the oven itself.}.
+Other strontium experiments typically run their ovens between $\SIrange[range-phrase=-]{450}{650}{\celsius}$\footnote{$\SI{450}{\celsius}$ \cite{Schioppo2012.RSI.83.103101}, $\SI{500}{\celsius}$ \cite{Campbell2017.PhD}, $\SI{575}{\celsius}$ (body) and $\SI{850}{\celsius}$ (nozzle) \cite{Boyd2007.PhD, Ludlow2008.PhD}, $\SI{600}{\celsius}$ (reservoir) and $\SI{650}{\celsius}$ (nozzle) \cite{Barker2016.PhD, Senaratne2018.PhD}, $\SIrange[range-phrase=-]{600}{750}{\celsius}$ \cite{Stellmer2013.PhD, Stellmer2013.PRA.87.013611}.} so we have some headroom to increase the oven temperature and increase the strontium flux\footnote{Although this could possibly degrade our trap lifetime.}.
+
+
+***********
 
 \subsection{Zeeman Slower}
 
