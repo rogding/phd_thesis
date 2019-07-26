@@ -24,7 +24,7 @@ Some experiments have incorporated a 2D magneto-optical trap (MOT) which can not
 In order to maximize the efficiency of the 2D collimator, elliptical beams are used to increase the intensity along the atomic beam.
 
 Since the 2D collimator has no effect on the longitudinal velocity, they atoms are still moving at about $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
-The atoms are slowed longitudinally with a Zeeman slower where a spatially-varying magnetic field keeps the slowing atoms in resonance with a \SI{461}{\nm} beam counterpropagating their direction of travel \cite{Phillips1982.PRL.48.596}.
+The atoms are slowed longitudinally with a Zeeman slower where a spatially-varying magnetic field keeps the slowing atoms in resonance with a $\SI{461}{\nm}$ beam counterpropagating their direction of travel \cite{Phillips1982.PRL.48.596}.
 Because the  magnetic field is axial, a circularly polarized $\SI{461}{\nm}$ beam is used.
 The atoms scatter about ** xxx photons ** which means they exit the Zeeman slower at about ** xxx m/s **.
 Atoms moving faster than the ** design velocity of the Zeeman slower ** remain unaffected and continue through without being slowed.
@@ -89,8 +89,8 @@ Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold blue MOT'' sta
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/blue_system/old_blue_MOT.svg}
 	\caption[]{\label{fig:old_blue_MOT}
-		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a \SI{2.75}{\inch} viewport with the atom source and Zeeman slower are off to the right.
-		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about \SI{0.5}{\inch}.}
+		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a $\SI{2.75}{\inch}$ viewport with the atom source and Zeeman slower are off to the right.
+		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about $\SI{0.5}{\inch}$.}
 \end{figure}
 
 Although the $\SI{461}{\nm}$ is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT}.
@@ -100,8 +100,8 @@ Interestingly, as noted in \cite{Xu2003.PRL.90.193002}, cooling bosonic alkaline
 \subsection{Magnetic Trap and Repumping}
 
 The $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ transition is not completely closed with about $\num{1} \colon \num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
-About $\num{2/3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which subsequently decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the \SI{461}{\nm} cooling cycle.
-The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about \SI{520}{\second} \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
+About $\num{2/3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which subsequently decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the $\SI{461}{\nm}$ cooling cycle.
+The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about $\SI{520}{\second}$ \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeking $m_J = 1, 2$ states can become trapped in the quadrupole magnetic field of the blue MOT \cite{Nagel2003.PRA.67.011401}.
 This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir at roughly the same temperature as the blue MOT. 
 The magnetic trap was an essential tool in overcoming the abysmal $\SI{0.56(2)}{\percent}$ natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
@@ -250,61 +250,50 @@ Immediately after the atoms exit the oven, they pass through the two-dimensional
 To maximize the limited amount $\SI{461}{\nm}$ laser power, the beams are shaped so to be elliptical to maximize the intensity on the atoms and a single beam is passed through the The long arms of the 2D collimator help prevent strontium buildup on the AR coated viewports.
 \begin{figure}[htbp]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=3in]{experiment/atomic_oven/atomic_beam.svg}
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/atomic_oven/atomic_beam.svg}
 	\caption[]{
 		\label{fig:atomic_beam}
 		Picture of the fluorescing atomic beam as viewed down the vertical arm of the two-dimensional (2D) collimator.
 		A reflection of the atomic beam is visible off the vertical retro mirror.}
 \end{figure}
 
-Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a small differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
-The pressure in the source side is typically higher than the experiment side and is around \SI{7.6E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
-We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the \SI{4.5}{\inch} flange on the source-side vacuum chamber to the \SI{6}{\inch} flange on the Varian ion pump.
+Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
+The pressure in the source side is typically higher than the experiment side and is around $\SI{7.6E-9}{\Torr}$\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
+We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the $\SI{4.5}{\inch}$ flange on the source-side vacuum chamber to the $\SI{6}{\inch}$ flange on the Varian ion pump.
 
 A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
 The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
-The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vauum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
-
-
-***********
-** Moved from previous section, find where to put **
-
-This section of the vacuum system contains our strontium oven and the 2D collimator stage.
-Our strontium oven operates at about $\SI{425}{\celsius}$ with the nozzle at about $\SI{390}{\celsius}$\footnote{Ideally the nozzle should be hotter than the oven to reduce the chances of clogging but it's likely that our actual oven temperature is a bit lower due to the temperature sensor being buried in the oven's heating element rather than in the oven itself.}.
-Other strontium experiments typically run their ovens between $\SIrange[range-phrase=-]{450}{650}{\celsius}$\footnote{$\SI{450}{\celsius}$ \cite{Schioppo2012.RSI.83.103101}, $\SI{500}{\celsius}$ \cite{Campbell2017.PhD}, $\SI{575}{\celsius}$ (body) and $\SI{850}{\celsius}$ (nozzle) \cite{Boyd2007.PhD, Ludlow2008.PhD}, $\SI{600}{\celsius}$ (reservoir) and $\SI{650}{\celsius}$ (nozzle) \cite{Barker2016.PhD, Senaratne2018.PhD}, $\SIrange[range-phrase=-]{600}{750}{\celsius}$ \cite{Stellmer2013.PhD, Stellmer2013.PRA.87.013611}.} so we have some headroom to increase the oven temperature and increase the strontium flux\footnote{Although this could possibly degrade our trap lifetime.}.
-
-
-***********
+The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vacuum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
 
 \subsection{Zeeman Slower}
 
-Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is required to slow the atoms down so that they can be captured by the MOT. 
-The Zeeman slower was designed and built by Francisco Camargo and is detailed in his master's thesis \cite{Camargo2015.MS} so it will only be briefly covered here. 
-Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuiously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
+Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is needed to slow the atoms down so that they can be captured by the MOT. 
+The Zeeman slower is detailed in \cite{Camargo2015.MS} so it will only be briefly covered here. 
+Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
 Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
 
 Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
-Due to space constraints, the source-side welded to a \SI{2.75}{\inch} flange whereas it's connected to the main chamber by a \SI{2.125}{\inch} flange.
+Due to space constraints, the source-side welded to a $\SI{2.75}{\inch}$ flange whereas it's connected to the main chamber by a $\SI{2.125}{\inch}$ flange.
 These flanges are also where cooling water enters and exits the jacket.
 It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require shielding and/or more significant cancellation as permanent magnets cannot be turned off.
 
 The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be tweaked so that the resulting field was matched the desired profile.
-Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before deciding on how to wrap the next layer of windings.
+Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before wrapping the next layer of windings.
 Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
 
 \subsection{Experiment-side Vacuum System}
 
-The experiment-side vacuum system can be broken down in to the main chamber where experiments take place and a ``pumping tower''.
+The experiment-side vacuum system can be broken down in to the main chamber where experiments take place and a ``pumping tower'' which provides a high-conductance path to the ion pump.
 The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} features:
 \begin{itemize}
-	\item Recessed top and bottom flanges bring the \SI{2.75}{\inch} viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
-	The in-vacuum electric field plates are mounted to the bottom flange which has eleven \SI{10}{\kV} safe high voltage (SHV) feedthroughs for high-voltage connections.
-	\item Six \SI{2.75}{\inch} horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
-	\item Three \SI{1.33}{\inch} horizontal viewports used for the various \SI{689}{\nm} and \SI{320}{\nm} excitations beams and are oriented perpendicular and parallel to the MCP.
+	\item Recessed top and bottom flanges which bring the $\SI{2.75}{\inch}$ viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
+	The in-vacuum electric field plates are mounted to the bottom flange which has eleven $\SI{10}{\kV}$ safe high voltage (SHV) feedthroughs.
+	\item Six (6) $\SI{2.75}{\inch}$ horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
+	\item Three (3) $\SI{1.33}{\inch}$ horizontal viewports used for the various $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitations beams and are oriented perpendicular and parallel to the MCP.
 	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
-	\item A conical expansion to a \SI{6}{\inch} flange for increased conductance to the pumps.
+	\item A conical expansion to a $\SI{6}{\inch}$ flange for increased conductance to the pumps.
 \end{itemize}
-Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{689}{\nm}, and \SI{1064}{\nm} (see \cref{fig:viewport_ar-coating}).
+Most of the viewports were anti-reflection (AR) coated for $\SI{461}{\nm}$, $\SI{689}{\nm}$, and $\SI{1064}{\nm}$ (see \cref{fig:viewport_ar-coating}).
 \begin{figure}[htbp]
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/vacuum/reynard_corporation-ar_coating/viewport_ar-coating.pdf}
 	\caption[]{\label{fig:viewport_ar-coating}
@@ -312,26 +301,21 @@ Most of the viewports were anti-reflection (AR) coated for \SI{461}{\nm}, \SI{68
 		It's fortuitous that the AR coating should be very good for $\SI{698}{\nm}$ (clock transition) and reasonable for $\SI{532}{\nm}$ and $\SI{813}{\nm}$ should we ever decide to use traps at those wavelengths.}
 \end{figure}
 \footnotetext{I would like to thank Robyn Miller at Reynard Corporation for finding and sending me the reflection and transmission data from the order we placed six years ago.}
-Vacuum pressure on the experiment-side is maintained by a \SI{75}{\liter\per\second} ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
-The ion pump current suggests the vacuum on this side is about \SI{3.4E-9}{\Torr}\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
+Vacuum pressure on the experiment-side is maintained by a $\SI{75}{\liter\per\second}$ ion pump\footnote{Gamma Vacuum TiTan 75S-CVX-6S-SC-N-N.} located at the top of the pumping tower.
+The ion pump current suggests the vacuum on this side is about $\SI{3.4E-9}{\Torr}$\footnote{MiniVac ion pump controller outputting $\SI{-4.8}{\mV}=\SI{4.8E-6}{\A}$ for the Gamma Vacuum TiTan 75S on 2019/06/13.}.
 Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
 In retrospect, we should have also included a titanium sublimation pump (TSP) for additional pumping capability.
 
-We also added a \SI{3.375}{\inch} gate valve between the Zeeman slower window and main chamber to facilitate changing the sacraficial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
-
-\section{Producing Ultracold Gases of Strontium}
-
-*** KEEP? ***
-
+We also added a $\SI{3.375}{\inch}$ gate valve between the Zeeman slower window and main chamber to facilitate changing the sacrificial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
 
 \section{Magnetic Field Trim Coils}
 
 Three pairs of Helmholtz coils are used to cancel stray magnetic fields and to apply a bias field.
-The ``X-axis'' and ``Y-axis'' coil pairs produce fields in the horizontal plane parallel to the table surface and are oriented such that the ``X-axis'' produce a field towards or away from the MCP whereas the ``Y-axis'' produces a field perpendicular.
-The ``Z-axis'' coils produces a field along the vertical axis perpendicular to the surface of the table.
+The $X$-axis and $Y$-axis coil pairs produce fields in the horizontal plane parallel to the table surface and are oriented such that the $X$-axis produce a field towards or away from the MCP whereas the $Y$-axis produces a field perpendicular to this axis.
+The $Z$-axis coils produces a field along the vertical axis perpendicular to the surface of the table.
 
-Both the horizontal (X-axis and Y-axis) trim coils are constructed from {\num{17.5} AWG} wire\footnote{MWS Wire Industries 17.5 HAPT-200 (NEMA MW 35-C).} with \num{45} turns wound on aluminum U-channel and held together with polyimide tape.
-Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above the table surface, this required the horizontal (X-axis and Y-axis) trim coils to be centered at this height which required their geometry be rectangular instead of square or circular.
+Both the horizontal ($X$-axis and $Y$-axis) trim coils are constructed from {$\num{17.5}$ AWG} wire\footnote{MWS Wire Industries 17.5 HAPT-200 (NEMA MW 35-C).} with \num{45} turns wound on aluminum U-channel and held together with polyimide tape.
+Due to the choice of keeping the center of the chamber at $\SI{3.5}{\inch}$ above the table surface, this required the horizontal ($X$-axis and $Y$-axis) trim coils to be centered at this height which required their geometry be rectangular instead of square or circular.
 \begin{figure}[htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/trim_coils/trim_coils.svg}
@@ -341,33 +325,32 @@ Due to the choice of keeping the center of the chamber at \SI{3.5}{\inch} above 
 		The trim coil axes are defined relative to the MCP (equivalently, the $\SI{1.33}{\inch}$ viewports for the Rydberg excitation lasers) and gravity with the $X$-axis (blue) oriented towards the MCP, the $Z$-axis (red) perpendicular to the table surface/gravity, and the $Y$-axis (green) perpendicular to the other two axes (following the right-hand rule, of course).}
 \end{figure}
 
-The vertical (Z-axis) coils were would on circular aluminum U-channel forms and fit around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
+The vertical ($Z$-axis) coils were would on circular aluminum U-channel forms and fit around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
 The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
-In retrospect, we should made the horizontal coils beefier (especially along the X-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
+In retrospect, we should made the horizontal coils beefier (especially along the $X$-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
 
 \section{Dual MOT Coils}
 \label{sec:dual_mot_coils}
 
-One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair (see \cref{fig:dual_mot_coils}) where the larger pair is used for the blue MOT while the smaller pair for the red MOT.
-This allows us to use two different current supplies without needing a controller which is has the dynamic range to provide the $\sim \SI{40}{\ampere}$ to generate the $\sim \SI{40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\sim \SI{1}{\gauss\per\cm}$ gradient for the red MOT.
+One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair where the larger pair is used for the blue MOT while the smaller pair for the red MOT (see \cref{fig:dual_mot_coils}).
+This allows us to use two different current drivers without needing a controller which is has the dynamic range to provide the $\SI{\sim 40}{\ampere}$ to generate the $\SI{\sim 40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\SI{\sim 1}{\gauss\per\cm}$ gradient for the red MOT.
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
 	\caption[]{\label{fig:dual_mot_coils}
 		(Left) Picture of our assembled dual MOT coils on a test setup. 
-		(Right) CAD rendering of how they are centered around the buket windows of the main chamber.
-		** Redo with 2D CAD drawing instead of rendered image. **}
+		(Right) CAD rendering of how they are centered around the windows of the recessed flanges on the main chamber.}
 \end{figure}
 
 The blue MOT coils are made from xxx\footnote{S{\&}W Wire 125SQ DPG/BARE (NEMA 46-C).} hollow inside with approximately ** ** outer dimensions with a hollow ** ** through the middle for water. 
 We typically run the blue MOT coils with around ** 40-50 amps ** of current from a fixed power supply ** GIVE MODEL **. 
 A ** MOSFET ** is used to quickly switch off the current to the coils. 
 ** We so far haven't included a flyback diode although the MOSFET we use seems to include an internal flyback diode. **
-These coils produce a magnetic field gradient of about \SI{1.25}{\gauss\per\cm\per\ampere}.
+These coils produce a magnetic field gradient of about $\SI{1.25}{\gauss\per\cm\per\ampere}$.
 
-The red MOT coils are constructed from square {\num{13} AWG} copper wire\footnote{MWS Wire Industries 13 SQ HML-240 (NEMA MW 20-C).} and are epoxied to the undersides of the blue MOT coils, placing them closer to the center of the vacuum chamber. 
+The red MOT coils are constructed from square {$\num{13}$ AWG} copper wire\footnote{MWS Wire Industries 13 SQ HML-240 (NEMA MW 20-C).} and are epoxied to the undersides of the blue MOT coils, placing them closer to the center of the vacuum chamber. 
 We currently use a homebuilt voltage-controlled current driver\footnote{**Powered by an APEX PA12**.} but we should be able to use any current driver capable of supplying up to about ** 5 A **. 
-Our current geometry for the red MOT coils produce a magnetic field gradient of about \SI{1}{\gauss\per\cm\per\ampere}.
+Our current geometry for the red MOT coils produce a magnetic field gradient of about $\SI{1}{\gauss\per\cm\per\ampere}$.
 
 \begin{figure}[htbp]
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/mot_coil_fields.pdf}
@@ -395,10 +378,10 @@ We're not too worried about not having this capability since ground-state stront
 \subsection{\SI{461}{\nm} ``Blue'' Laser System}
 
 The experiment currently has three blue diode lasers in a master-slave configuration which provide all the \SI{461}{\nm} power available for our experiment.
-In a master-slave setup, a single (typically low-power) ``master'' external cavity diode laser (ECDL) is frequency stabilized relative to the atomic transition and is used to injection lock high-power ``slave'' lasers to amplify the laser power \cite{Shimada2013.RSI.84.063101, Hosoya2015.RSI.86.073110}.
+In a master-slave setup, a single (typically low-power) ``master'' external cavity diode laser (ECDL) is frequency stabilized relative to the atomic transition and is used to injection lock higher-power ``slave'' lasers to amplify the laser power \cite{Shimada2013.RSI.84.063101, Hosoya2015.RSI.86.073110}.
 
 Our current ECDL master laser\footnote{New Focus TLB-6802: a Littman-Metcalf external cavity diode laser (ECDL).} outputs about \SI{40}{\mW} and is locked relative to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ in a homebuilt strontium saturated absorption cell using Doppler-free saturated absorption spectroscopy.
-The error signal is obtained by modulating the magnetic field around the saturated absorption cell and using circularly-polarized pump and probe beams.
+The error signal is obtained by modulating the axial magnetic field around the saturated absorption cell and using circularly-polarized pump and probe beams.
 Although this laser tunes relatively well and generally remains single-mode when tuning between the various isotopes, we have been very disappointed with output quality of the laser which has what appears to be a {Hermite-Gaussian TEM\tsub{00}} output mode **see Fig. XX). 
 ** INCLUDE BEAM PROFILER FIGURE **
 Due to this poor output mode, a D-mirror was used to split the beam in to two nearly-Gaussian beams.
