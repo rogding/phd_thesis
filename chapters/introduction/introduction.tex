@@ -113,12 +113,6 @@ Isotope shift of the \SI{461}{\nm} transition.
 	\end{tabular}
 \end{table}
 
-
-\section{Rydberg Dressing}
-
-Our experiment was originally built to pursue Rydberg dressing where atomic interactions are modified by incorporating strongly interacting Rydberg states \cite{Johnson2010.PRA.82.033412, Honer2010.PRL.105.160404}.
-After work by our group \cite{Aman2016.PRA.93.043425, DeSalvo2016.PRA.93.022709, Gaul2016.PRL.116.243001}, the Pfau group \cite{Balewski2014.NJP.16.063012} ** CHECK IF CORRECT PFAU PAPER **, and the Porto group \cite{Goldschmidt2016.PRL.116.113001, Boulier2017.PRA.96.053409} found that Rydberg dressing was lossy, we moved on to other things. 
-
 \section{Long-Range Interactions}
 
 A lot of recent interest in Rydberg atoms (and long-range interactions in general) has been from quantum computing ** cite DeMille paper? ** where these can be used to entangle gates. 
@@ -128,23 +122,31 @@ We don't use the dipole interaction, but instead use the ``orbiting'' Rydberg el
 
 \subsection{Ultralong-Range Rydberg Molecules}
 
-Perhaps one of the strangest consequences of exciting a Rydberg atom in an ultracold, dense gas is the formation of objects known as ``ultralong-range Rydberg molecules''. 
-These molecules were theoretically predicted \cite{Omont1977.JPF.38.1343, Greene2000.PRL.85.2458} and first experimentally observed in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005}. 
-They arise due to the scattering of the Rydberg electron off a nearby ground-state atom which results in a potential of the form ** CITE EQUATION SOURCE \cite{DeSalvo2015.PRA.92.031403} **
-\begin{align}
+Perhaps one of the strangest consequences of exciting a Rydberg atom in a cold and dense gas is the formation of objects known as ``ultralong-range Rydberg molecules'' (ULRRMs). 
+These molecules were theoretically predicted \cite{Omont1977.JPF.38.1343, Greene2000.PRL.85.2458}
+They arise due to the scattering of the Rydberg electron off a nearby ground-state atom which can be described by the pseudopotential \cite{Fermi1934.NC.11.157, Omont1977.JPF.38.1343, DeSalvo2015.PRA.92.031403, Liebisch2016.JPB.49.182001}
+\begin{equation}
 	V\pqty*{\va{r}_{1}, \va{r}_{2}, \va{R}}
-		&{}={}
-			\sum_{i=1}^{2} \frac{2 \pi \hbar^{2} A_{s}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
-			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}	\\
-		&{}\simeq{}
-			\frac{2 \pi \hbar^{2} A_{s}\bqty*{k}}{m_{e}} \psi + \frac{6 \pi \hbar^{2} A_{p}^{2}\bqty*{k}}{m_{e}} \psi
-\end{align}
-Subsequent experiments have observed them in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}.
+		=	\sum_{i=1}^{2} \frac{2 \pi \hbar^{2} A_{s}\pqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
+			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\pqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}
+\end{equation}
+
+\begin{equation}
+	V\pqty*{\va{r}_{1}, \va{r}_{2}, \va{R}}	\simeq	\frac{2 \pi \hbar^{2} A_{s}\pqty*{k}}{m_{e}} \psi + \frac{6 \pi \hbar^{2} A_{p}^{2}\pqty*{k}}{m_{e}} \psi
+\end{equation}
+These Rydberg molecules were first experimentally observed in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}. 
+
 
 ** SEE \cite{Bendkowsky2010.PhD} FOR A DERIVATION? **
 
-**************
 
-
-These molecules are formed by the interaction of the Rydberg electron with nearby (ground-state) atoms such that, if the interaction is attractive, leads to them being bound together\footnote{An alternative system which can also be described as a ``Rydberg molecule'' is when the system starts as a molecule when is then promoted to a highly-excited electronic state. In this thesis, we stick with the first definition.}.
-
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/n34-wave_functions_and_spectra/n34-wave_functions_and_spectra.pdf}
+	\caption[]{
+		\label{fig:n34_rydberg_molecule_wave_functions_and_spectra}
+		Simplified diagram of our current \SI{481}{\nm} repumper laser system.
+		A portion of the light form the \SI{481}{\nm} external cavity diode laser (ECDL) is used to lock to a Doppler-broadened \Te{130}{2} line in a cell heated to about \SI{555}{\celsius}.
+		The rest of the light is sent through a free-space electro-optic modulator (EOM) at about \SI{565}{\MHz} which is used to apply sidebands to the light in order to address the various isotopes and hyperfine states.
+		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
+\end{figure}
