@@ -1,22 +1,9 @@
 \chapter{Introduction}
-\label{ch:intro}
 
-For the last
+***************************************************
 
-**********************
+*********** NOTES TO SELF, REMOVE LATER ***********
 
-The ability to produce cold and ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
-From the observation of BEC-BCS crossover, to xxx, and yyyy, most of the work so far has been based on short-range, isotropic contact interactions which require the atomic wave functions to overlap.
-One way to extend these systems to more complexity and to study other phenomena ** D-wave super conductors? ** is to incorporate long-range interactions.
-Now, the atoms no longer need to have an overlap to interact.
-
-
-
-\section{Motivation}
-\label{sec:motivation}
-
-
-************************
 (0) Long-range and anisotropic interactions
 
 (0a) Few-/Many-body physics
@@ -29,49 +16,76 @@ Now, the atoms no longer need to have an overlap to interact.
 
 Add in repumper spectrum.
 
+***************************************************
 
-*** Need good intro to why study long-range interactions ***
-
-A lot of recent interest in Rydberg atoms (and long-range interactions in general) has been from quantum computing ** cite DeMille paper? ** where these can be used to entangle gates. 
-
-Our experiment has a more fundamental focus on these studies. 
-We don't use the dipole interaction, but instead use the ``orbiting'' Rydberg electron to probe correlations in quantum gases. 
+***************************************************
 
 
-************************
 
-There are several methods for incorporating long-range interactions in to quantum systems are currently being pursued \cite{Lahaye2009.RPP.72.126401}: 
+The ability to produce ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
+From the observation of BEC-BCS crossover \cite{Chen2005.PR.412.1, Gurarie2007.JAOP.322.2, Bourdel2004.PRL.93.050401}, superfluid to Mott insulator transition in an optical lattice \cite{Greiner2002.Nature.415.39}, and the formation of matter-wave solitons \cite{Strecker2002.Nature.417.150, Khaykovich2002.Science.296.1290}, most of the work in these systems have been based on a short-range, isotropic contact interactions described by the pseudopotential \cite{Pethick.BEC}
+\begin{equation}
+	U\pqty{\va{r}}	=	\frac{4 \pi \hbar^2}{m} a_{s} \delta\pqty{\va{r}}
+\end{equation}
+where $a_{s}$ is the $s$-wave scattering length.
+This effective interaction requires the atomic wave functions to overlap. 
+
+An important recent trend in the field of ultracold atomic gases is the study of systems with long-range interactions which can typically be expanded as \cite{Pethick.BEC}
+\begin{equation}
+	U\pqty{\va{r}}	=	\sum^{\infty}_{k=1} \frac{C_{k} \pqty{\va{r}}}{r^{k}}
+\end{equation}
+with the ``long-range'' coming from the $U \sim {1}/{r^{k}}$ dependence. 
+Depending on the type of interaction (e.g., Coulomb $k = 1$, dipole-dipole $k = 3$, van der Waals $k = 6$), the potentials can be isotropic or anisotropic, providing additional richness to quantum systems and the opportunity to study a wide variety of phenomena including applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theories **** SOURCES? ****
+There are several methods for incorporating long-range interactions in to ultracold systems with some of the most prominent being \cite{Lahaye2009.RPP.72.126401}: 
 \begin{description}
 	\item[Polar molecules]
-		These molecules can have large (permanent) electric dipole moments \cite{Aymar2005.JCP.122.204302}. 
-		The drawback is that the additional complexity typically makes it very difficult to produce ultracold and quantum degenerate samples.
-		Steady progress has been made in the direct laser cooling of molecules \cite{Anderegg2018.NatPhys.14.890} as well as the recent producing of a degenerate Fermi gas of {{\tsup{40}\text{K}}{\tsup{87}\text{Rb}}} \cite{DeMarco2019.Science.363.853} produced by photoassociating ultracold atoms.
-		These have the advantage of, ignoring chemical reactions for now, extremely long lifetimes. 
+		These molecules can have large (permanent) electric dipole moments \cite{Aymar2005.JCP.122.204302} and can, ignoring chemical reactions, have extremely long lifetimes. 
+		The drawback is that the additional complexity typically makes it very difficult to produce ultracold and quantum degenerate samples. 
+		In spite of these challenges, a degenerate Fermi gas of {{\tsup{40}\text{K}}{\tsup{87}\text{Rb}}} was recently achieved by associating atoms from a BEC of {\tsup{87}\text{Rb}} and a degenerate Fermi gas of {\tsup{40}\text{K}} \cite{DeMarco2019.Science.363.853}. 
+		Steady progress continues to be made in the direct laser cooling of molecules as well \cite{Anderegg2018.NatPhys.14.890}.
 	\item[Magnetic atoms]
-		Atoms themselves can have permanent dipole moments which can be used to study long-range interactions. 
+		Atoms themselves can have permanent dipole moments which can be exploited to study long-range interactions. 
 		Quantum degeneracy has been reached with chromium \cite{Griesmaier2005.PRL.94.160401, Naylor2015.PRA.91.011603}, erbium \cite{Aikawa2012.PRL.108.210401, Aikawa2014.PRL.112.010404}, and dysprosium \cite{Lu2011.PRL.107.190401, Lu2012.PRL.108.215301}.
-		Although simpler than molecules, their dipolar interactions are limited by the magnetic moment of atoms and typically requires tuning the short-range interactions to be weaker than the dipole interaction to observe their effects ** cite **.
-		** There's also been a recent proposal for creating ultracold dysprosium atoms which exhibit an electric dipole moment in addition to the magnetic dipole moment \cite{Lepers2018.PRL.121.063201}. **
+		Although simpler than molecules, their dipolar interactions are limited by the magnetic moment of atoms and typically requires tuning the short-range interaction strength to be weaker than the dipole-dipole interaction to observe their effects.
+		There's also been a recent proposal for creating ultracold dysprosium atoms which exhibit an electric dipole moment in addition to the magnetic dipole moment \cite{Lepers2018.PRL.121.063201}.
 	\item[Coupling atoms to a high-finesse cavity]
-		An interesting way of inducing long-range interactions by placing atoms in a high-finesse optical cavity such that they couple to the cavity mode which in turn causes the atoms to experience forces based on its position \cite{Baumann2010.Nature.464.1301, Mottl2012.Science.336.1570}.
-		Although ingenious, the interactions are likely restricted to the infinitely long-range case along with the limitations posed by the cavity modes (e.g., it would likely be difficult to tune between isotropic and anisotropic interactions).
+		An ingenious way of inducing long-range interactions in atomic systems is by placing the atoms in a high-finesse optical cavity such that they couple to the cavity mode which in turn causes the atoms to experience position-based forces \cite{Baumann2010.Nature.464.1301, Mottl2012.Science.336.1570}.
+		Although the interactions are (essentially) infinite-range, they are likely to be restricted to only that case. 
+		They are also constrained by the geometry of the experiment which could make it difficult to tune between isotropic and anisotropic interactions.
 	\item[Rydberg states]
-		Highly excited Rydberg states of atoms (and molecules) with principal quantum number $n \gg 1$ can also exhibit strong dipole interactions ** \cite{Gallagher1994.RydbergAtoms} **. 
-		** Many of the relevant scales scale with $n$. **
-		The advantage of Rydberg atoms is that they permit the use of well-established techniques for producing quantum degenerate gases of atoms so that their interactions can be readily incorporated to existing setups. 
-		** (Justify/clarify) The Rydberg-Rydberg interactions can also be very strong, much stronger than the magnetic dipole-dipole interaction in dysprosium. 
-		The Rydberg dipole-dipole interaction also provide tunability where both the strength and sign of the interaction can be chosen based $n$.
-		The major drawbacks are the sensitivities to stray electric fields due to the high-$n$ necessary for achieving strong interactions and Rydberg lifetimes due to both blackbody and Rydberg-Rydberg interactions. 
-		Rydberg interactions can be (nearly) isotropic with $S$-states ($L = 0$) or anisotropic with $L > 0$ states ** add refs **. 
-		Rydberg excitations have even been observed in solid state systems \cite{Kazimierczuk2014.Nature.514.343}. 
+		Highly excited Rydberg states of atoms (and molecules) with principal quantum number $n \gg 1$ can also exhibit strong dipole interactions \cite{Gallagher1994.RydbergAtoms} and have even been observed in solid state systems \cite{Kazimierczuk2014.Nature.514.343}. 
+		Since many of the properties of Rydberg atoms scale with $n$, the Rydberg-Rydberg interactions can be tuned in strength and anisotropy by simply exciting different Rydberg states. 
+		Rydberg atoms can also leverage well-established techniques for producing quantum degenerate gases of atoms so that their interactions can be readily incorporated to existing setups. 
+		The major disadvantage of Rydberg systems are their sensitivities to stray electric fields and the limited Rydberg lifetimes due to both blackbody and Rydberg-Rydberg interactions. 
 \end{description}
-
-Our experiment pursues the latter by studying strontium Rydberg atoms.
-Building on the expertise at Rice for producing ultracold and quantum degenerate strontium of the Killian lab and the creation, control, and detection of Rydberg atoms in the Dunning lab, our experiment melds the expertise of both groups. 
+This thesis will be focused on the latter by studying Rydberg systems in ultracold strontium gases. 
+Most ultracold Rydberg experiments have predominantly focused on exciting alkali metal atoms (primarily rubidium and cesium with a growing interest in potassium).
+With their hydrogen-like electronic structure, there are well-established methods for both calculating their properties (e.g., see \cite{Sibalic2017.CPC.220.319}) and techniques for producing ultracold and quantum degenerate gases.
+But since the interactions are long-ranged, generally comparable to the inter-particle separation in the gas, the particular atomic species used should only affect the details of the interactions but not the overall form. 
+As will be discussed below, strontium has some properties which make it a very advantageous system for studying Rydberg physics. 
 
 \section{Strontium Rydberg Atoms}
 
-Compared to other work in ultracold and quantum degenerate Rydberg systems (primarily Rb and Cs with a growing interest in K), strontium offers some nice advantages over the alkalis. 
+Strontium offer several benefits over the alkali atoms with perhaps the most obvious, as seen in \cref{fig:sr_levels-boson}, being the singlet and triplet Rydberg series.
+Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, a two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels. 
+In addition to the anisotropies of a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
+
+Another significant advantage of strontium is the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition with linewidth ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$. 
+Not only does this transition enable us to easily produce samples below about $\SI{2}{\micro\kelvin}$, it is also serves as the first leg of a two-photon transition to a Rydberg state. 
+Considering the two-photon coupling between states in a (three-level system) $\Omega \sim {\Gamma}/{\Delta}$ and the photon scattering rate $\Gamma_{\text{sc}} \sim \pqty{{\Gamma}/{\Delta}}^2$ for a detuning $\Delta$ (e.g., see \cite{Metcalf1999.LCT, Bransden.Atoms, Foot2005.Atomic, Steck.QuantumAtomOptics, Gentile1989.PRA.40.5103}), it enables stronger coupling for comparable scattering rates. 
+Active work is also progressing towards exciting strontium Rydberg atoms using the even narrower $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{0}$ clock transition \cite{Gil2014.PRL.112.103601}. 
+Recently, a direct measurement of the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ transition was performed \cite{Onishchenko2019.PRA.99.052503} so, in principle, this state could also be used.
+
+* Nuclear spin - hyperfine (or lackthereof). 
+
+The advantages and disadvantages discussed for strontium also generally apply to other alkaline earth-like atoms (e.g., calcium, barium, ytterbium) as well.
+
+
+
+
+
+
+
 
 *********************
 
@@ -146,3 +160,8 @@ Since the binding energies are very weak and scale as $E_{b} \sim {1}/{n^6}$, th
 		(Top) Calculated molecular potential ($V$) for a $\nSLJ{5s34s}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ atom pair together with the radial vibrational wave functions for the $\nu = 0$ to $\nu = 4$ vibrational states.
 		(Bottom) Rydberg molecule spectra in unpolarized gas of \Sr{87} and highlighting various dimer vibrational states.}
 \end{figure}
+
+
+***********
+
+OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238}.
