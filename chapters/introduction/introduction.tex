@@ -64,36 +64,40 @@ With their hydrogen-like electronic structure, there are well-established method
 But since the interactions are long-ranged, generally comparable to the inter-particle separation in the gas, the particular atomic species used should only affect the details of the interactions but not the overall form. 
 As will be discussed below, strontium has some properties which make it a very advantageous system for studying Rydberg physics. 
 
-\section{Strontium Rydberg Atoms}
+\section{Rydberg Atoms}
 
-Strontium offer several benefits over the alkali atoms with perhaps the most obvious, as seen in \cref{fig:sr_levels-boson}, being the singlet and triplet Rydberg series due to the two valence electrons.
-\begin{figure}[h]
+A Rydberg atom can be loosely defined as an atom in an excited state with very large principal quantum number ($n$), i.e., $n \gg 1$. 
+
+****
+
+Talk about binding energy, Rydberg formula, etc. 
+
+****
+
+Since the principal quantum number greatly affects the atomic wave function, it also sets the energy scale for many interactions and therefore the properties of Rydberg atoms become exaggerated when $n$ becomes large.
+\Cref{tab:Rydberg_n-scaling} gives the $n$ dependence for a few Rydberg atoms properties. 
+\begin{table}[h]
 	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{introduction/sr_levels/sr_levels-boson.svg}
-	\caption{
-		\label{fig:sr_levels-boson}
-		Grotrian diagram for (bosonic) strontium (\Sr{88} in particular).
-		*** FIX FIGURE -- CHECK SOUMYA'S UPDATED CODE ***.}
-\end{figure}
-Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, a two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels.
-In addition to the anisotropies of a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated for these states and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
-The second electron does introduce additional complexity (``richness'') as well due to there being multiple Rydberg series which can interact and typically requires multichannel quantum defect theory (MQDT) \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001, Robicheaux2018.PRA.97.022508} and/or two-active electron (TAE) models \cite{Ye2013.PRA.88.043430} to described the spectra.
-There is also the opportunity to produce doubly-excited and autoionizing states \cite{Gallagher1994.RydbergAtoms} which, besides being interesting in their own right (e.g., \cite{Eichmann1992.PRL.68.21}), have proven to be a sensitive detection tool \cite{Millen2010.PRL.105.213004, Lochead2013.PRA.87.053409}. 
+	\caption[]{
+		\label{tab:Rydberg_n-scaling}
+		Some properties of Rydberg atoms \cite{Gallagher1988.RPP.51.143, Gallagher1994.RydbergAtoms, Camargo2016.PRA.93.022702, Ding2018.PRA.98.042505}.
+		*** Double check values!! ***}
+	\begin{tabular}{@{}cccc@{}}
+		\toprule
+		Property					& $n$ scaling	& {Na} : {$\nSLJ{10d}{2}{D}{}$}					& {Sr} : {$\nSLJ{5s38s}{3}{S}{1}$}	\\
+		\midrule
+		Binding energy				& $n^{-2}$		& $\SI{0.14}{\eV}$								& $\SI{0.01134}{\eV}$				\\
+		Coulomb splitting			& $n^{-3}$		& $\SI{0.023}{\eV}$								& $\SI{0.00058}{\eV}$				\\
+		Fine structure splitting	& $n^{-3}$		& $\SI{-92}{\MHz}$								& $\SI{2.56659}{\GHz}$				\\
+		Orbital radius				& $n^{2}$		& $\SI{147}{\bohr}$								& $\SI{1799}{\bohr}$				\\
+		Radiative lifetime			& $n^{3}$		& $\SI{1}{\us}$									& $\SI{21}{\us}$					\\
+		Polarizability				& $n^{7}$		& $\SI{0.21}{\MHz\per(\volt\per\cm)\squared}$	& 									\\
+		Ionization field			& $n^{??}$		&												& 									\\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
-Another significant advantage of strontium is the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition with linewidth ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$. 
-Not only does this transition enable us to easily produce samples below about $\SI{2}{\micro\kelvin}$, it is also serves as the first leg of a two-photon transition to a Rydberg state. 
-Considering the two-photon coupling between states (in a three-level system) $\Omega \sim {\Gamma}/{\Delta}$ and the photon scattering rate $\Gamma_{\text{sc}} \sim \pqty{{\Gamma}/{\Delta}}^2$ for a detuning $\Delta$ (e.g., see \cite{Metcalf1999.LCT, Bransden.Atoms, Foot2005.Atomic, Steck.QuantumAtomOptics, Gentile1989.PRA.40.5103}), it enables stronger coupling for comparable scattering rates. 
-Active research is also progressing towards exciting strontium Rydberg atoms using the even narrower $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{0}$ clock transition \cite{Gil2014.PRL.112.103601}. 
-In principle, the ultranarrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ transition could also be used to excite Rydberg states since a direct measurement of the transition frequency was recently reported \cite{Onishchenko2019.PRA.99.052503}.
-
-A third, more subtle, aspect of strontium is the range of stable isotopes available, both bosonic ($I=0$) and fermionic ($I={9}/{2}$). 
-Since all the bosonic isotopes (\Sr{88}, \Sr{86}, and \Sr{84}) have been Bose condensed \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402, Mickelson2010.PRA.81.051601, Stellmer2010.82.041602, Stellmer2013.PRA.87.013611} and a degenerate Fermi gas \Sr{87} has also been produced \cite{DeSalvo2010.PRL.105.030402, Stellmer2013.PRA.87.013611}, strontium provides a unique opportunity for incorporating Rydberg interactions in to both ultracold Bose and Fermi gases (and Bose-Bose and Bose-Fermi mixtures). 
-In the bosons, the lack of nuclear spin means there is no hyperfine structure which greatly simplifies the Rydberg spectra whereas the hyperfine structure of \Sr{87} makes the spectra significantly more complicated. 
-Overcoming the complexity introduced by the nuclear spin of \Sr{87} provides a unique opportunity for approximating an ultracold classical gas with the atomic population distributed among the $\num{10}$ spin states.
-
-Many of the advantages (and challenges) discussed above for strontium generally apply to other alkaline earth-like atoms (e.g., calcium, barium, ytterbium) as well.
-
-\subsection{Ultralong-Range Rydberg Molecules}
+\subsection{Ultralong-Range Rydberg Molecules (ULRRMS)}
 
 Perhaps one of the strangest consequences of exciting a Rydberg atom in a cold and dense gas is the formation of objects known as ``ultralong-range Rydberg molecules'' (ULRRMs). 
 These molecules were theoretically predicted \cite{Omont1977.JPF.38.1343, Greene2000.PRL.85.2458}
@@ -125,6 +129,40 @@ Since the binding energies are very weak and scale as $E_{b} \sim {1}/{n^6}$, th
 ***********
 
 OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238}.
+
+
+\section{Strontium Rydberg Atoms}
+
+Strontium offer several benefits over the alkali atoms with perhaps the most obvious, as seen in \cref{fig:sr_levels-boson}, being the singlet and triplet Rydberg series due to the two valence electrons.
+\begin{figure}[h]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{introduction/sr_levels/sr_levels-boson.svg}
+	\caption{
+		\label{fig:sr_levels-boson}
+		Grotrian diagram for (bosonic) strontium (\Sr{88} in particular).
+		*** FIX FIGURE -- CHECK SOUMYA'S UPDATED CODE ***.}
+\end{figure}
+Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, a two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels.
+In addition to the anisotropies of a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated for these states and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
+The second electron does introduce additional complexity (``richness'') as well due to there being multiple Rydberg series which can interact and typically requires multichannel quantum defect theory (MQDT) \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001, Robicheaux2018.PRA.97.022508} and/or two-active electron (TAE) models \cite{Ye2013.PRA.88.043430} to described the spectra.
+There is also the opportunity to produce doubly-excited and autoionizing states \cite{Gallagher1994.RydbergAtoms} which, besides being interesting in their own right (e.g., \cite{Eichmann1992.PRL.68.21}), have proven to be a sensitive tool for detecting Rydberg atoms \cite{Millen2010.PRL.105.213004, Lochead2013.PRA.87.053409}. 
+
+Another significant advantage of strontium is the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition with linewidth ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$. 
+Not only does this transition enable us to easily produce samples below about $\SI{2}{\micro\kelvin}$, it is also serves as the first leg of a two-photon transition to a Rydberg state. 
+Considering the two-photon coupling between states (in a three-level system) $\Omega \sim {\Gamma}/{\Delta}$ and the photon scattering rate $\Gamma_{\text{sc}} \sim \pqty{{\Gamma}/{\Delta}}^2$ for a detuning $\Delta$ (e.g., see \cite{Metcalf1999.LCT, Bransden.Atoms, Foot2005.Atomic, Steck.QuantumAtomOptics, Gentile1989.PRA.40.5103}), it enables stronger coupling for comparable scattering rates. 
+Active research is also progressing towards exciting strontium Rydberg atoms using the even narrower $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{0}$ clock transition \cite{Gil2014.PRL.112.103601}. 
+In principle, the ultranarrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ transition could also be used to excite Rydberg states since a direct measurement of the transition frequency was recently reported \cite{Onishchenko2019.PRA.99.052503}.
+
+A third, more subtle, aspect of strontium is the range of stable isotopes available, both bosonic ($I=0$) and fermionic ($I={9}/{2}$). 
+Since all the bosonic isotopes (\Sr{88}, \Sr{86}, and \Sr{84}) have been Bose condensed \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402, Mickelson2010.PRA.81.051601, Stellmer2010.82.041602, Stellmer2013.PRA.87.013611} and a degenerate Fermi gas \Sr{87} has also been produced \cite{DeSalvo2010.PRL.105.030402, Stellmer2013.PRA.87.013611}, strontium provides a unique opportunity for incorporating Rydberg interactions in to both ultracold Bose and Fermi gases (and Bose-Bose and Bose-Fermi mixtures). 
+In the bosons, the lack of nuclear spin means there is no hyperfine structure which greatly simplifies the Rydberg spectra whereas the hyperfine structure of \Sr{87} makes the spectra significantly more complicated. 
+Overcoming the complexity introduced by the nuclear spin of \Sr{87} provides a unique opportunity for approximating an ultracold classical gas with the atomic population distributed among the $\num{10}$ spin states.
+
+Many of the advantages (and challenges) discussed above for strontium generally apply to other alkaline earth-like atoms (e.g., calcium, barium, ytterbium) as well.
+
+
+
+
 
 
 \section{*** MOVE TO EXPERIMENT CHAPTER ***}
