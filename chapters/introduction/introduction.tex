@@ -67,14 +67,19 @@ As will be discussed below, strontium has some properties which make it a very a
 \section{Rydberg Atoms}
 
 A Rydberg atom can be loosely defined as an atom in an excited state with very large principal quantum number ($n$), i.e., $n \gg 1$. 
+Starting in the late {1800's}, it was observed that the wavenumbers of atomic spectra could be described by the formula
+\begin{equation}
+	\label{eq:Rydberg_formula}
+	\nu_{l} = \nu_{\infty,l} - \frac{R}{\pqty{n-\delta_{n,l}}^2}
+\end{equation}
+where $\nu_{\infty,l}$ is the series limit, $\delta_{n,l}$ is a ``quantum defect'', and $R$ is the Rydberg constant \cite{Rydberg1890.Recherches, Rydberg1890.PM.29.331, Gallagher1994.RydbergAtoms}. 
+This is the Rydberg formula.
+Conceptually, a Rydberg atom can be thought of as being comprised of a core ion and a highly-excited valence electron which spends the majority of its time far away from the core.
+As a result, the Rydberg electron rarely interacts with the core which allows its effects to be characterized by (nearly) constant parameter $\delta_{n,l}$.
+While the details of the core ion and electrons are important, which causes $\delta_{n,l}$ to vary from atom-to-atom and from orbital-to-orbital, it generally does not have a large effect on the overall properties of the Rydberg atom.
 
-****
-
-Talk about binding energy, Rydberg formula, etc. 
-
-****
-
-Since the principal quantum number greatly affects the atomic wave function, it also sets the energy scale for many interactions and therefore the properties of Rydberg atoms become exaggerated when $n$ becomes large.
+Although the details of the core are usually small, the principal quantum number does greatly affects the atomic wave function. 
+As a result, it sets the energy scale for many interactions which leads to the properties of Rydberg atoms become exaggerated when $n$ becomes large.
 \Cref{tab:Rydberg_n-scaling} gives the $n$ dependence for a few Rydberg atoms properties. 
 \begin{table}[h]
 	\centering
@@ -97,23 +102,42 @@ Since the principal quantum number greatly affects the atomic wave function, it 
 	\end{tabular}
 \end{table}
 
-\subsection{Ultralong-Range Rydberg Molecules (ULRRMS)}
+\subsection{Ultralong-Range Rydberg Molecules (ULRRMs)}
 
-Perhaps one of the strangest consequences of exciting a Rydberg atom in a cold and dense gas is the formation of objects known as ``ultralong-range Rydberg molecules'' (ULRRMs). 
-These molecules were theoretically predicted \cite{Omont1977.JPF.38.1343, Greene2000.PRL.85.2458}
-They arise due to the scattering of the Rydberg electron off a nearby ground-state atom which can be described by the pseudopotential \cite{Fermi1934.NC.11.157, Omont1977.JPF.38.1343, DeSalvo2015.PRA.92.031403, Liebisch2016.JPB.49.182001}
-\begin{equation}
-	V\pqty*{\va{r}_{1}, \va{r}_{2}, \va{R}}
-		=	\sum_{i=1}^{2} \frac{2 \pi \hbar^{2} A_{s}\pqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
-			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\pqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}
-\end{equation}
+One key aspect to focus on from \cref{tab:Rydberg_n-scaling} is that size of a Rydberg atom increases very quickly with $n$. 
+In a dense enough gas, $\ev*{r} \sim n^{2}$ can quickly become comparable to (or larger than) the interparticle separations.
+It was in this context, when an atom (or multiple atoms) could be located inside the Rydberg electron's orbit, that a density-dependent shift was first observed in the spectral lines of alkali atoms with the direction of the shift, relative to the unperturbed atomic line, also depended on the buffer gas used \cite{Amaldi1934.NC.11.145, Amaldi1934.Nature.133.141, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/orbital_radius-density_n-scaling.pdf}
+	\caption[]{
+		\label{fig:orbital_radius-density_n-scaling}
+		Orbital radius $\ev{r}$ and the corresponding density ${1}/{\ev{r}^3}$ for a strontium Rydberg atom in the $\nSLJ{5sns}{3}{S}{1}$ state.
+		The shaded region represents the range of densities typically achievable in ultracold strontium experiments with a maximum of about $\SI{1E15}{\per\cm\cubed}$ occurring in a \Sr{88} BEC \cite{Yan2013.PRL.110.123201, Stellmer2014.arXiv.1307.0601}.}
+\end{figure}
+\Cref{fig:orbital_radius-density_n-scaling} shows $\ev{r}$ and ${1}/{\ev{r}^3}$ for a strontium atom in the $\nSLJ{5sns}{3}{S}{1}$ state and the typical densities achievable in ultracold gas experiments.
+Notice that, even for modest principal quantum numbers and densities, it's easily possible to excite Rydberg atoms much larger than the interparticle separations.
 
+This shift was first explained by Fermi \cite{Fermi1934.NC.11.157}, and later generalized by Omont \cite{Omont1977.JPF.38.1343}, to be the result of low-energy scattering of the Rydberg electron off nearby neutral atoms, formulating the electron-atom interaction with the pseudopotential \cite{DeSalvo2015.PRA.92.031403, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}
 \begin{equation}
-	V\pqty*{\va{r}_{1}, \va{r}_{2}, \va{R}}	\simeq	\frac{2 \pi \hbar^{2} A_{s}\pqty*{k}}{m_{e}} \psi + \frac{6 \pi \hbar^{2} A_{p}^{2}\pqty*{k}}{m_{e}} \psi
+	V\pqty*{\va{R}}
+		=	\sum_{i} \frac{2 \pi \hbar^{2} A_{s}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
+			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}
 \end{equation}
-** SEE \cite{Bendkowsky2010.PhD} FOR A DERIVATION? **
-These Rydberg molecules were first experimentally observed in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}. 
-Since the binding energies are very weak and scale as $E_{b} \sim {1}/{n^6}$, these can only be studied in cold gases.
+where $\va{r}_{i}$ is the position of the Rydberg valence electron(s) and $\va{R}$ is the position of the ground-state atom from the Rydberg core. 
+On the right hand side, the first term is the $s$-wave contribution and the second term is the $p$-wave contribution with momentum-dependent scattering lengths $A_{s}\pqty{k}$ and $A_{p}\pqty{k}$, respectively, and the semiclassical Rydberg electron momentum given by $\hbar {k \pqty{\va{r}}} = \sqrt{2 m_{e} \bqty{{e^2}/{\pqty{4 \pi \epsilon_0 \va{r}}} - E_{b}}}$ for the unperturbed Rydberg electron binding energy $E_{b}$ \cite{DeSalvo2015.PRA.92.031403}.
+Evaluating the interaction with the Rydberg electron wave function $\Psi_{ns}$ leads to \cite{DeSalvo2015.PRA.92.031403}
+\begin{equation}
+	V\pqty*{\va{R}}
+		\simeq	\sum_{i} \frac{2 \pi \hbar^{2} A_{s}\pqty*{k}}{m_{e}} {\abs*{\Psi_{ns}\pqty*{\va{r}_{i} = \va{R}}}^2}
+				+ \frac{6 \pi \hbar^{2} A_{p}^{2}\pqty*{k}}{m_{e}} {\abs*{\grad \Psi_{ns}\pqty*{\va{r}_{i} = \va{R}}}^2}
+\end{equation}
+**** NEED TO DOUBLE CHECK THE ABOVE EQUATIONS ****
+A very nice derivation of the interaction is presented in \cite{Bendkowsky2010.PhD}\footnote{She references \cite{Balewski2009.Diploma} which has more details of Fermi's approach.}.
+
+We are particularly interested in the case when, in the low-energy scattering regime, $A_{s} < 0$ because the interaction is attractive and can lead to the formation of bound states nearby ground state atoms in the Rydberg electron wave function.
+These are known as ``ultralong-range Rydberg molecules''\footnote{Other objects can also be called ``Rydberg molecules'' (e.g., a molecule electronically excited to a high principal quantum number) but for the purposes of this thesis, a Rydberg molecule refers to the binding of neutral atoms to a Rydberg atom due to scattering.} (ULLRMs) with the binding mechanism, instead of being ionic or covalent, is due to Rydberg-electron neutral scattering and were theoretically predicted by Greene et al., in {2000} \cite{Greene2000.PRL.85.2458}. 
+The first experimental detection of ULLRMs occurred in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}. 
 
 \Cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} provides an example of the molecular potential and the resulting radial vibration wave functions along with the spectroscopic signal. 
 \begin{figure}[htbp]
@@ -126,10 +150,13 @@ Since the binding energies are very weak and scale as $E_{b} \sim {1}/{n^6}$, th
 \end{figure}
 
 
+****** 
+
+MENTION INTERACION ENERGIES AND NEEDING ULTRACOLD SAMPLES
+
 ***********
 
 OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238}.
-
 
 \section{Strontium Rydberg Atoms}
 
