@@ -309,19 +309,25 @@ by
 % Committee
 \newcommand{\setchair}[1]{\def\ricechair{#1, \emph{Chair}}} % Committee chair
 \newcommand{\setchairaffiliation}[1]{\def\ricechairaffiliation{#1}} % Committee chair
+
+\newcommand{\setchairone}[1]{\def\ricechairone{#1, \emph{Adviser}}} % Committee chair
+\newcommand{\setchaironeaffiliation}[1]{\def\ricechaironeaffiliation{#1}} % Committee chair
+
+\newcommand{\setchairtwo}[1]{\def\ricechairtwo{#1, \emph{Co-Adviser}}} % Committee chair
+\newcommand{\setchairtwoaffiliation}[1]{\def\ricechairtwoaffiliation{#1}} % Committee chair
+
 % orCo-chairs if chairs > 1 
 %\newcommand{\setchairs}[2]{\def\ricechair{#1, Co-chair \\ #2, Co-chair}} 
 \newcommand{\setmemberone}[1]{\def\ricememberone{#1\par}} % the other committee members
 \newcommand{\setmembertwo}[1]{\def\ricemembertwo{#1\par}} 
 \newcommand{\setmemberthree}[1]{\def\ricememberthree{#1\par}} 
 \newcommand{\setmemberfour}[1]{\def\ricememberfour{#1\par}}
+
 % Committee affiliations 
 \newcommand{\setmemberoneaffiliation}[1]{\def\ricememberoneaffiliation{#1\par}} 
 \newcommand{\setmembertwoaffiliation}[1]{\def\ricemembertwoaffiliation{#1\par}}
 \newcommand{\setmemberthreeaffiliation}[1]{\def\ricememberthreeaffiliation{#1\par}} 
 \newcommand{\setmemberfouraffiliation}[1]{\def\ricememberfouraffiliation{#1\par}} 
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %"Here it is!"
@@ -348,22 +354,29 @@ by
 \doctors % going for a PhD
 
 % set your freedom date
-\setgraddate{June 2019}
+\setgraddate{August 2019}
 
 % who is your chair
-\setchair{F. Barry Dunning}
-\setchairaffiliation{Sam and Helen Worden Professor of Physics}
+%\setchair{F. Barry Dunning}
+%\setchairaffiliation{Sam and Helen Worden Professor of Physics}
+\setchairone{F. Barry Dunning}
+\setchaironeaffiliation{Sam and Helen Worden Professor of Physics}
 	
 % and members
-\setmemberone{Thomas C. Killian}
+%\setmemberone{Thomas C. Killian}
+%\setmemberoneaffiliation{Professor of Physics and Astronomy}
+\setchairtwo{Thomas C. Killian}
+\setchairtwoaffiliation{Professor of Physics and Astronomy}
+
+%\setmembertwo{Han Pu}
+%\setmembertwoaffiliation{Professor of Physics and Astronomy}
+\setmemberone{Han Pu}
 \setmemberoneaffiliation{Professor of Physics and Astronomy}
 
+%\setmemberthree{Junichiro Kono}
+%\setmemberthreeaffiliation{Professor of Electrical and Computer Engineering \\ Professor of Physics and Astronomy}
 \setmembertwo{Junichiro Kono}
-\setmembertwoaffiliation{Professor of Electrical and Computer Engineering \\
-						 Professor of Physics and Astronomy}
-
-\setmemberthree{Han Pu}
-\setmemberthreeaffiliation{Professor of Physics and Astronomy}
+\setmembertwoaffiliation{Professor of Electrical and Computer Engineering \\ Professor of Physics and Astronomy}
 
 %
 
@@ -417,10 +430,15 @@ Requirements for the Degree \\
 
 	\hrule
 	\vspace*{0.08in}
-	\ricechair \par
-	\ricechairaffiliation \par
+	\ricechairone \par
+	\ricechaironeaffiliation \par
 	\vspace*{\fill}
 	
+	\hrule
+	\vspace*{0.08in}
+	\ricechairtwo \par
+	\ricechairtwoaffiliation \par
+	\vspace*{\fill}
 	
 	\hrule
 	\vspace*{0.08in}
