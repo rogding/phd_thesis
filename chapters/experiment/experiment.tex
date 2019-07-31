@@ -1,89 +1,60 @@
 \chapter{Strontium Rydberg Experiment}
 \label{ch:experiment}
 
-This chapter describes the Rydberg apparatus used in this thesis with the purpose of providing documentation of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
-Being the third ultracold strontium experiment at Rice, we were able to leverage lessons learned from the previous experiments, generally referred to as ``Neutral'' and ``Plasma'', to build quite a capable and flexible system.
+This chapter describes the Rydberg apparatus used in this thesis with the purpose of providing an overview of the current state of various systems for producing ultracold and quantum degenerate gases of strontium. 
+Being the third ultracold strontium experiment at Rice, we were able to leverage lessons from previous experiments, colloquially referred to as ``Neutral'' and ``Plasma'', to build quite a capable and flexible system\footnote{Collectively, the three experiments work with atomic strontium in all forms: from the ground state (Neutral) to the ions (Plasma), and everything in between (Rydberg).}.
 
-Although most of our system looks very similar to other ultracold strontium systems, what makes our system different is the inclusion of systems for creating, manipulating, and detecting charged particles. 
-In particular, we have in-vacuum electric field plates which we can use to both cancel stray electric fields as well as applying a field ionization ramp and direct the resulting electrons or ions towards the microchannel plate (MCP) detector.
+Although most of our system looks very similar to other ultracold strontium experiments, what makes our system uniquely suited for studying Rydberg physics is the inclusion of systems for creating, manipulating, and detecting charged particles. 
+In particular, we have in-vacuum electric field plates which we can use to both cancel stray electric fields as well as applying field ionization ramps and direct the resulting electrons (or ions) towards the microchannel plate (MCP) detector.
 
-Our old-school ``metal can'' setup can't compete with the optical access provided by many recently started alkaline-earth Rydberg tweezer systems using glass cells \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055, Saskin2019.PRL.122.143002}.
-There's still a place for our system which likely provides capabilities for better shielding from stray electric fields, performing SFI, and the ability to detect charged particles which, without going to significantly custom systems, are somewhat limiting on the standard glass cell setups.
+%Our old-school ``metal can'' setup can't compete with the optical access provided by many recently started alkaline-earth Rydberg tweezer systems using glass cells \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055, Saskin2019.PRL.122.143002}.
+%There's still a place for our system which likely provides capabilities for better shielding from stray electric fields, performing SFI, and the ability to detect charged particles which, without going to significantly custom systems, are somewhat limiting on the standard glass cell setups.
 
 \section{Producing Ultracold Gases of Strontium}
 
-We follow the typical laser cooling and trapping sequence for producing ultracold gases of strontium.
-Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., \cite{Boyd2007.PhD, Stellmer2013.PhD, Stellmer2013.PRA.87.013611, Mickelson2010.PhD, Martinez2012.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here. 
+We follow the well-established laser cooling and trapping sequence for producing ultracold gases of strontium.
+Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here. 
 
-\subsection{Cooling on the $\SI{461}{\nm}$ Transition}
+\subsection{Cooling on the $\SI{461}{\nm}$ ``Blue'' Transition}
 
-Due to strontium's low vapor pressure, an oven is required to sublimate strontium to a gaseous form meaning the atoms are moving very quickly. 
-Immediately after the atoms exit the oven, they pass through the two-dimensional (2D) collimator stage which applies transverse optical molasses \cite{Balykin1984.JETP.63.508, Balykin1985.JOSAB.2.1776, Lett1989.JOSAB.6.2084, Joffe1993.JOSAB.10.2257, Hoogerland1996.APB.62.323} to reduce the divergence of the atomic beam.
-The $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition is used because of the large $\flatfrac{\Gamma}{2\pi} = \SI{30.5}{\MHz}$ linewidth.
+At room temperature, strontium is a solid metal with negligible vapor pressure and thus requires an oven to sublimate strontium in to a gaseous form. 
+Although oven temperatures vary from setup-to-setup, they are typically around $\SIrange[range-phrase=-]{450}{750}{\celsius}$\footnote{If the setup has a nozzle heater, its temperature is generally higher than the main oven to reduce the likelihood of clogging.} \cite{Boyd2007.PhD, Ludlow2008.PhD, Schioppo2012.RSI.83.103101, Stellmer2013.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD, Senaratne2018.PhD}. 
+As a result, the first step in laser cooling and trapping strontium utilizes the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition with its broad ${\Gamma}/{2 \pi} = \SI{30.5}{\MHz}$ linewidth which enables high photon scattering rates. 
+\Cref{tab:blue_isotope_shift} gives the isotope shifts for the various transitions in strontium referenced to \Sr{88}.
+\begin{table}[h]
+	\caption[]{
+		\label{tab:blue_isotope_shift}
+		Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition, relative to \Sr{88}, calculated from the values in \cite{Bushaw2000.SAPB.55.1679}.
+		See \cref{tab:blue_isotope_shift_detailed,tab:hyperfine_coefficients_5s5p1P1} for more details.}
+	\centering
+	\begin{tabular}{@{}cccc@{}}
+		\toprule
+		Isotope						& Lower level										& Upper level					& $\nu - \nu_{88}$ [$\si{\MHz}$]	\\
+		\midrule	
+		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{0}$							\\
+		\midrule	
+		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJf{5s^{2}}{1}{S}{0}{9/2}$}	& $\nSLJf{5s5p}{1}{P}{1}{7/2}$	& $\num{-7.8+-0.4}$					\\
+									&													& $\nSLJf{5s5p}{1}{P}{1}{11/2}$	& $\num{-49.5+-0.4}$				\\
+									&													& $\nSLJf{5s5p}{1}{P}{1}{9/2}$	& $\num{-68.1+-0.4}$				\\
+		\midrule	
+		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-126.3+-0.2}$				\\
+		\midrule	
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-273.2+-0.3}$				\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Immediately after the atoms exit the oven, they pass through the two-dimensional (2D) collimator which applies transverse optical molasses \cite{Balykin1984.JETP.63.508, Balykin1985.JOSAB.2.1776, Lett1989.JOSAB.6.2084, Joffe1993.JOSAB.10.2257, Hoogerland1996.APB.62.323} to reduce the divergence of the atomic beam.
 Some experiments have incorporated a 2D magneto-optical trap (MOT) which can not only focus the atomic beam but can also deflect the atoms so that only cold atoms enter the experiment region \cite{Yang2015.EPJD.69.226}\footnote{The designs presented in \cite{Dorscher2013.RSI.84.043109, Lamporesi2013.RSI.84.063102, Nosske2017.PRA.96.053415, Nosske2018.PRA.97.039901} are probably the more ``traditional'' 2D MOT which forms a cold line of atoms which are then ``pushed'' to the main chamber.}.
 In order to maximize the efficiency of the 2D collimator, elliptical beams are used to increase the intensity along the atomic beam.
 
-Since the 2D collimator has no effect on the longitudinal velocity, they atoms are still moving at about $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
+Since the 2D collimator has no effect on the longitudinal velocity, they atoms are still moving at about $v_{\text{avg}} \approx \SI{500}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
 The atoms are slowed longitudinally with a Zeeman slower where a spatially-varying magnetic field keeps the slowing atoms in resonance with a $\SI{461}{\nm}$ beam counterpropagating their direction of travel \cite{Phillips1982.PRL.48.596}.
 Because the  magnetic field is axial, a circularly polarized $\SI{461}{\nm}$ beam is used.
-The atoms scatter about ** xxx photons ** which means they exit the Zeeman slower at about ** xxx m/s **.
-Atoms moving faster than the ** design velocity of the Zeeman slower ** remain unaffected and continue through without being slowed.
 
-% Isotope shift of the \SI{461}{\nm} transition.
-
-% \begin{table}[h]
-	% \caption[]{
-		% \label{tab:blue_isotope_shift}
-		% Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition relative to \Sr{88}.
-		% Due to the hyperfine structure of \Sr{87}, the isotope shift is given relative to the center-of-gravity of the upper $\nSLJ{5s5p}{1}{P}{1}$ state.
-		% Transitions to a specific $\nSLJF{5s5p}{1}{P}{1}{F}$ state can be calculated with the $A$ and $B$ hyperfine constants in \cref{tab:hyperfine_coefficients_5s5p1P1}.}
-	% \centering
-	% \begin{tabular}{@{}ccccc@{}}
-		% \toprule
-		% Isotope						& Lower level								& Upper level								& $\nu - \nu_{88}$ [$\si{\MHz}$]	& Ref.								\\
-		% \midrule
-		% \Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$					& $\nSLJ{5s5p}{1}{P}{1}$					& $\num{0}$							&									\\
-		% \midrule
-		% \multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-46.3+-2.0}$				& \cite{Eliel1983.ZP.311.1}			\\
-									% &											& 											& $\num{-49.2+-3.6}$				& \cite{Buchinger1985.PRC.32.2058}	\\
-									% &											& 											& $\num{-44.6+-0.4}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
-		% \midrule
-		% \multirow{3}{*}{\Sr{86}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-124.8+-0.3}$				& \cite{Eliel1983.ZP.311.1}			\\
-									% &											&											& $\num{-124.5+-1.3}$				& \cite{Buchinger1985.PRC.32.2058}	\\
-									% &											&											& $\num{-126.3+-0.2}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
-		% \midrule
-		% \multirow{3}{*}{\Sr{84}}	& \multirow{3}{*}{$\nSLJ{5s^2}{1}{S}{0}$}	& \multirow{3}{*}{$\nSLJ{5s5p}{1}{P}{1}$}	& $\num{-270.8+-1.4}$				& \cite{Eliel1983.ZP.311.1}			\\
-									% &											&											& $\num{-270.6+-2.4}$				& \cite{Buchinger1985.PRC.32.2058}	\\
-									% &											&											& $\num{-273.2+-0.3}$				& \cite{Bushaw2000.SAPB.55.1679}	\\
-		% \bottomrule
-	% \end{tabular}
-% \end{table}
-
-% \begin{table}[h]
-	% \caption[]{
-		% \label{tab:hyperfine_coefficients_5s5p1P1}
-		% \Sr{87} hyperfine $A$ and $B$ coefficients for the $\nSLJ{5s5p}{1}{P}{1}$ state and calculated shifts from the center-of-gravity.}
-	% \centering
-	% \begin{tabular}{@{}cccccc@{}}
-		% \toprule
-		% $A$ [$\si{\MHz}$]						& $B$ [$\si{\MHz}$]						& Ref. 												& Lower level												& Upper level								& $\Delta E_{HF}$ [$\si{\MHz}$]	\\
-		% \midrule	
-		% \multirow{3}{*}{\num{-3.4+-0.4}}		& \multirow{3}{*}{\num{39+-4}}			& \multirow{3}{*}{\cite{Kluge1974.ZP.270.295}}		& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.6+-2.9}$				\\
-												% &										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-5.5+-2.1}$				\\
-												% &										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-22.6+-2.7}$			\\
-		% \midrule	
-		% \multirow{3}{*}{\num{-3.334+-0.025}}	& \multirow{3}{*}{\num{40.29+-0.21}}	& \multirow{3}{*}{\cite{Bushaw2000.SAPB.55.1679}}	& \multirow{3}{*}{$\nSLJf{5s^2}{1}{S}{0}{\flatfrac{9}{2}}$}	& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{7}{2}}$	& $\num{36.80+-0.17}$			\\
-												% &										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{11}{2}}$	& $\num{-4.93+-0.12}$			\\
-												% &										&													&															& $\nSLJf{5s5p}{1}{P}{1}{\flatfrac{9}{2}}$	& $\num{-23.53+-0.14}$			\\
-		% \bottomrule
-	% \end{tabular}
-% \end{table}
-
-%\subsection{$\SI{461}{\nm}$ ``Blue'' MOT and Magnetic Trap}
-
-Now that a significant portion of the atoms have been slowed by the Zeeman slower, they enter the main chamber where they are cooled and trapped by a standard six-beam $\SI{461}{\nm}$ ``blue'' MOT.
-The MOT uses a quadrupole magnetic field and light detuned below atomic resonance to provide both position-dependent and velocity-dependent forces which captures and cools the atoms \cite{Raab1987.PRL.59.2631, Metcalf1999.LCT, Foot2005.Atomic}. 
-Our blue MOT typically produces samples of atoms around $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
+Now that a significant portion of the atoms have been slowed by the Zeeman slower, they enter the main chamber where they are cooled and trapped by a standard six-beam $\SI{461}{\nm}$ ``blue'' magneto-optical trap (MOT).
+The MOT uses a quadrupole magnetic field and light detuned below atomic resonance to provide both position-dependent and velocity-dependent forces that capture and cool the atoms \cite{Raab1987.PRL.59.2631, Metcalf1999.LCT, Foot2005.Atomic}. 
+Blue MOTs typically produces samples of atoms around $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
 Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold blue MOT'' stage where detuning, intensity, and quadrupole gradient are ramped during the repumping process to obtain colder temperatures for transfer to the red MOT but we found that our temperatures are sufficient for decent transfer.
 
 \begin{figure}[htbp]
@@ -93,18 +64,37 @@ Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold blue MOT'' sta
 		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about $\SI{0.5}{\inch}$.}
 \end{figure}
 
-Although the $\SI{461}{\nm}$ is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT}.
-Although sub-Doppler cooling is not available in the bosonic isotopes due to the lack of hyperfine structure, it has been observed in \Sr{87} where the blue MOT was measured to be about $\SI{300}{\micro\kelvin}$ \cite{Xu2003.PRL.90.193002, Xu2003.JOSAB.20.968}.
-Interestingly, as noted in \cite{Xu2003.PRL.90.193002}, cooling bosonic alkaline-earth atoms on the $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ transition always seem to end up a few times the Doppler cooling limit until the intensity is close to zero \cite{Kisters1994.APB.59.89, Xu2002.PRA.66.011401, Xu2003.JOSAB.20.968}.
+Although the $\SI{461}{\nm}$ light is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT}.
+Although sub-Doppler cooling is not available in the bosonic isotopes due to the lack of hyperfine structure, it has been observed in \Sr{87} where the blue MOT temperature was measured to be about $\SI{300}{\micro\kelvin}$ \cite{Xu2003.PRL.90.193002, Xu2003.JOSAB.20.968}.
+Interestingly, as noted in \cite{Xu2003.PRL.90.193002}, cooling bosonic alkaline-earth atoms on the $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ transition typically yields temperatures a few times the Doppler cooling limit \cite{Kisters1994.APB.59.89, Xu2002.PRA.66.011401, Xu2003.JOSAB.20.968}.
 
 \subsection{Magnetic Trap and Repumping}
 
-The $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ transition is not completely closed with about $\num{1} \colon \num{50000}$ decays following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2}$ decay path.
-About $\num{2/3}$ then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which subsequently decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the $\SI{461}{\nm}$ cooling cycle.
-The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ states with lifetimes of about $\SI{520}{\second}$ \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
+The $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition is not completely closed where $\nSLJ{5s5p}{1}{P}{1}$ atoms can leak to the $\nSLJ{5s4d}{1}{D}{2}$ state. 
+The branching ratio for this decay path was found to be ${A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{S}{0}}}/{A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{D}{2}}} \approx \num{20E3}$ \cite{Cooper2018.PRX.8.041055}.
+About $\num{2/3}$ of the $\nSLJ{5s4d}{1}{D}{2}$ atoms then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which subsequently decays to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the $\SI{461}{\nm}$ cooling cycle.
+The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ state with a lifetime of about $\SI{520}{\second}$ \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeking $m_J = 1, 2$ states can become trapped in the quadrupole magnetic field of the blue MOT \cite{Nagel2003.PRA.67.011401}.
-This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir at roughly the same temperature as the blue MOT. 
-The magnetic trap was an essential tool in overcoming the abysmal $\SI{0.56(2)}{\percent}$ natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
+This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir at roughly the same temperature as the blue MOT and was an essential tool in overcoming the $\SI{0.56(2)}{\percent}$ natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
+
+The magnetic trap are also crucial for laser cooling and trapping multiples isotopes. 
+As seen in \cref{tab:blue_isotope_shift}, the isotope shifts are comparable to the linewidth meaning a blue MOT can only efficiently trap a single isotope at a time. 
+The key to trapping multiple isotopes is to utilize the automatic accumulation of $\SLJ{3}{P}{2}$ atoms in the ma, which is dark to the $\SI{461}{\nm}$ cooling light, in the magnetic trap. 
+
+************************
+
+************************
+
+Multiple isotopes can be stored in the magnetic trap simply by operating a blue MOT for that specific isotope before changing the laser frequency to efficiently trap a different isotope. 
+
+
+
+************************
+
+************************
+
+************************
+
 
 Before moving on to the next cooling stage, atoms in the magnetic trap need to be recovered.
 Several transitions have been explored for repumping atoms out of the metastable reservoir, each of which has varying challenges and benefits \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Mickelson2009.JPB.42.235001, Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Mason2013.BS, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}\footnote{\cite{Stellmer2013.PhD} gives an excellent overview for most of the repumping transitions explored.}.
@@ -116,7 +106,7 @@ The magnetic trap and repumper system are also essential for laser cooling and t
 Multiple isotope trapping is achieved by first loading the magnetic trap with a single isotope by simply operating a blue MOT for that isotope. Before turning off the blue MOT coils, the laser frequency is changed to operate a blue MOT for a different isotope which also gets loaded in to the magnetic trap. 
 All the atoms from the magnetic trap can be recovered with a single repumper laser with frequencies appropriate for addressing the isotopes in the magnetic trap.
 
-\subsection{Cooling on the $\SI{689}{\nm}$ Transition}
+\subsection{Cooling on the $\SI{689}{\nm}$ ``Red'' Transition}
 
 After repumping, we further cool the sample by operating a MOT on the narrow ($\Gamma/2\pi = \SI{7.5}{\kHz}$) $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition at $\SI{689}{\nm}$ which has a Doppler limit of $T_{D} = \SI{180}{\nano\kelvin}$ and recoil limit of $T_{r} = \SI{229}{\nano\kelvin}$.
 Following \cite{Loftus2004.PRA.70.063413}, MOTs can be characterized by the ratio of the transition linewidth ($\Gamma$) to the single photon recoil frequency shift ($\omega_R$) with typical MOTs operating in the regime $\flatfrac{\Gamma}{\omega_R} \gg 1$ compared to narrow line MOTs where $\flatfrac{\Gamma}{\omega_R} \sim 1$.
