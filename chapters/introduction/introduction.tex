@@ -1,27 +1,5 @@
 \chapter{Introduction}
 
-***************************************************
-
-*********** NOTES TO SELF, REMOVE LATER ***********
-
-(0) Long-range and anisotropic interactions
-
-(0a) Few-/Many-body physics
-
-(0b) Ultra-long-range Rydberg molecules
-
-(1) Spectroscopy
-
-(2) Effects of quantum statistics -- use Joe's figure?
-
-Add in repumper spectrum.
-
-***************************************************
-
-***************************************************
-
-
-
 The ability to produce ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
 From the observation of BEC-BCS crossover \cite{Chen2005.PR.412.1, Gurarie2007.JAOP.322.2, Bourdel2004.PRL.93.050401}, superfluid to Mott insulator transition in an optical lattice \cite{Greiner2002.Nature.415.39}, and the formation of matter-wave solitons \cite{Strecker2002.Nature.417.150, Khaykovich2002.Science.296.1290}, most of the work in these systems have been based on a short-range, isotropic contact interactions described by the pseudopotential \cite{Pethick.BEC}
 \begin{equation}
@@ -35,7 +13,7 @@ An important recent trend in the field of ultracold atomic gases is the study of
 	U\pqty{\va{r}}	=	\sum^{\infty}_{k=1} \frac{C_{k} \pqty{\va{r}}}{r^{k}}
 \end{equation}
 with the ``long-range'' coming from the $U \sim {1}/{r^{k}}$ dependence. 
-Depending on the type of interaction (e.g., Coulomb $k = 1$, dipole-dipole $k = 3$, van der Waals $k = 6$), the potentials can be isotropic or anisotropic, providing additional richness to quantum systems and the opportunity to study a wide variety of phenomena including applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theories **** SOURCES? ****
+Depending on the type of interaction (e.g., Coulomb: $k = 1$, dipole-dipole: $k = 3$, van der Waals: $k = 6$), the potentials can be isotropic or anisotropic, providing additional richness to quantum systems and the opportunity to study a wide variety of phenomena including applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theories **** SOURCES? ****
 There are several methods for incorporating long-range interactions in to ultracold systems with some of the most prominent being \cite{Lahaye2009.RPP.72.126401}: 
 \begin{description}
 	\item[Polar molecules]
@@ -70,9 +48,11 @@ A Rydberg atom can be loosely defined as an atom in an excited state with very l
 Starting in the late {1800's}, it was observed that the wavenumbers of atomic spectra could be described by the formula
 \begin{equation}
 	\label{eq:Rydberg_formula}
-	\nu_{l} = \nu_{\infty,l} - \frac{R}{\pqty{n-\delta_{n,l}}^2}
+	\nu_{l}	=	\nu_{\infty,l} - \frac{R}{\pqty{n-\delta_{n,l}}^2}
+			=	\nu_{\infty,l} - \frac{R}{{n^\star}^2}
 \end{equation}
 where $\nu_{\infty,l}$ is the series limit, $\delta_{n,l}$ is a ``quantum defect'', and $R$ is the Rydberg constant \cite{Rydberg1890.Recherches, Rydberg1890.PM.29.331, Gallagher1994.RydbergAtoms}. 
+Oftentimes, the principal quantum number and quantum defect are lumped in to an ``effective quantum number'' ${n^\star} = n-\delta_{n,l}$. 
 This is the Rydberg formula.
 Conceptually, a Rydberg atom can be thought of as being comprised of a core ion and a highly-excited valence electron which spends the majority of its time far away from the core.
 As a result, the Rydberg electron rarely interacts with the core which allows its effects to be characterized by (nearly) constant parameter $\delta_{n,l}$.
@@ -89,20 +69,20 @@ As a result, it sets the energy scale for many interactions which leads to the p
 		*** Double check values!! ***}
 	\begin{tabular}{@{}cccc@{}}
 		\toprule
-		Property					& $n$ scaling	& {Na} : {$\nSLJ{10d}{2}{D}{}$}					& {Sr} : {$\nSLJ{5s38s}{3}{S}{1}$}	\\
+		Property					& $n^\star$ scaling	& {Na} : {$\nSLJ{10d}{2}{D}{}$}					& {Sr} : {$\nSLJ{5s38s}{3}{S}{1}$}	\\
 		\midrule
-		Binding energy				& $n^{-2}$		& $\SI{0.14}{\eV}$								& $\SI{0.01134}{\eV}$				\\
-		Coulomb splitting			& $n^{-3}$		& $\SI{0.023}{\eV}$								& $\SI{0.00058}{\eV}$				\\
-		Fine structure splitting	& $n^{-3}$		& $\SI{-92}{\MHz}$								& $\SI{2.56659}{\GHz}$				\\
-		Orbital radius				& $n^{2}$		& $\SI{147}{\bohr}$								& $\SI{1799}{\bohr}$				\\
-		Radiative lifetime			& $n^{3}$		& $\SI{1}{\us}$									& $\SI{21}{\us}$					\\
-		Polarizability				& $n^{7}$		& $\SI{0.21}{\MHz\per(\volt\per\cm)\squared}$	& 									\\
-		Ionization field			& $n^{??}$		&												& 									\\
+		Binding energy				& ${n^\star}^{-2}$	& $\SI{0.14}{\eV}$								& $\SI{0.01134}{\eV}$				\\
+		Coulomb splitting			& ${n^\star}^{-3}$	& $\SI{0.023}{\eV}$								& $\SI{0.00058}{\eV}$				\\
+		Fine structure splitting	& ${n^\star}^{-3}$	& $\SI{-92}{\MHz}$								& $\SI{2.56659}{\GHz}$				\\
+		Orbital radius				& ${n^\star}^{2}$	& $\SI{147}{\bohr}$								& $\SI{1799}{\bohr}$				\\
+		Radiative lifetime			& ${n^\star}^{3}$	& $\SI{1}{\us}$									& $\SI{21}{\us}$					\\
+		Polarizability				& ${n^\star}^{7}$	& $\SI{0.21}{\MHz\per(\volt\per\cm)\squared}$	& 									\\
+		Ionization field			& ${n^\star}^{??}$	& *** FIX ***									& *** FIX ***						\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-\subsection{Ultralong-Range Rydberg Molecules (ULRRMs)}
+\subsection{Ultra-Long-Range Rydberg Molecules (ULRRMs)}
 
 One key aspect to focus on from \cref{tab:Rydberg_n-scaling} is that size of a Rydberg atom increases very quickly with $n$. 
 In a dense enough gas, $\ev*{r} \sim n^{2}$ can quickly become comparable to (or larger than) the interparticle separations.
@@ -135,11 +115,11 @@ Evaluating the interaction with the Rydberg electron wave function $\Psi_{ns}$ l
 **** NEED TO DOUBLE CHECK THE ABOVE EQUATIONS ****
 A very nice derivation of the interaction is presented in \cite{Bendkowsky2010.PhD}\footnote{She references \cite{Balewski2009.Diploma} which has more details of Fermi's approach.}.
 
-We are particularly interested in the case when, in the low-energy scattering regime, $A_{s} < 0$ because the interaction is attractive and can lead to the formation of bound states nearby ground state atoms in the Rydberg electron wave function.
-These are known as ``ultralong-range Rydberg molecules''\footnote{Other objects can also be called ``Rydberg molecules'' (e.g., a molecule electronically excited to a high principal quantum number) but for the purposes of this thesis, a Rydberg molecule refers to the binding of neutral atoms to a Rydberg atom due to scattering.} (ULLRMs) with the binding mechanism, instead of being ionic or covalent, is due to Rydberg-electron neutral scattering and were theoretically predicted by Greene et al., in {2000} \cite{Greene2000.PRL.85.2458}. 
-The first experimental detection of ULLRMs occurred in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}. 
-
-\Cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} provides an example of the molecular potential and the resulting radial vibration wave functions along with the spectroscopic signal. 
+We are particularly interested in the case when, in the low-energy scattering regime, $A_{s} < 0$ because the interaction is attractive and can lead to the formation of bound states for nearby ground state atoms in the located in Rydberg electron wave function.
+These objects are known as ``ultra-long-range Rydberg molecules''\footnote{Other objects can also be called ``Rydberg molecules'' (e.g., a molecule electronically excited to a high principal quantum number) but for the purposes of this thesis, a Rydberg molecule refers to the binding of neutral atoms to a Rydberg atom due to scattering.} (ULRRMs) and were theoretically predicted by Greene et al., \cite{Greene2000.PRL.85.2458} in {2000}. 
+Instead of the more conventional binding mechanisms (e.g., ionic or covalent), the ground state atoms are bound to the Rydberg atom by the low-energy Rydberg electron-neutral atom scattering. 
+The first experimental detection of ULLRMs occurred in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}.
+\Cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} provides an illustrative example of the molecular potential with the resulting radial vibrational wave functions and the spectroscopic signal obtained from experiment. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/n34-wave_functions_and_spectra/n34-wave_functions_and_spectra.pdf}
@@ -148,15 +128,12 @@ The first experimental detection of ULLRMs occurred in \Rb{87} \cite{Bendkowsky2
 		(Top) Calculated molecular potential ($V$) for a $\nSLJ{5s34s}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ atom pair together with the radial vibrational wave functions for the $\nu = 0$ to $\nu = 4$ vibrational states.
 		(Bottom) Rydberg molecule spectra in unpolarized gas of \Sr{87} and highlighting various dimer vibrational states.}
 \end{figure}
+Starting from the atomic line and tuning the laser below (atomic) resonance, additional peaks appear which correspond to the various vibrational states (labeled by $\nu$) of the ULRRM. 
+Note that the binding energies are typically a few to a few-tens of megahertz, it scales as $E_{b} \sim {1}/{{n^\star}^6}$\footnote{The ``volume'' of the electron orbital scales roughly as $V \sim {n^\star}$ meaning.}, meaning the ULRRMs only be reliably created in ultracold and dense samples.
 
-
-****** 
-
-MENTION INTERACION ENERGIES AND NEEDING ULTRACOLD SAMPLES
-
-***********
-
-OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238}.
+Although \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} only shows``dimer'' data with one Rydberg atom in the $\nSLJ{5s34s}{3}{S}{1}$ state bound to a single nearby $\nSLJ{5s^2}{1}{S}{0}$ atom, this effect is generalizable to multiple bodies bound to the Rydberg atom. 
+A ``trimer'' is one (1) Rydberg atom and two (2) ground-state atoms, a ``tetramer'' is one (1) Rydberg atom and three (3) ground-state atoms, and so on (e.g., see \cite{Bendkowsky2010.PRL.105.163201}).
+Once a macroscopic occupation of the bound molecular states occurs, it makes more sense to describe the system in the quasiparticle picture with the Rydberg atom and the bound ground-state atoms forming a ``polaron'' \cite{Camargo2018.PRL.120.083401, Schmidt2018.PRA.97.022707}.
 
 \section{Strontium Rydberg Atoms}
 
@@ -167,7 +144,7 @@ Strontium offer several benefits over the alkali atoms with perhaps the most obv
 	\caption{
 		\label{fig:sr_levels-boson}
 		Grotrian diagram for (bosonic) strontium (\Sr{88} in particular).
-		*** FIX FIGURE -- CHECK SOUMYA'S UPDATED CODE ***.}
+		*** FIX FIGURE -- ASK SOUMYA ABOUT UPDATED CODE ***.}
 \end{figure}
 Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, a two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels.
 In addition to the anisotropies of a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated for these states and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
@@ -186,13 +163,27 @@ In the bosons, the lack of nuclear spin means there is no hyperfine structure wh
 Overcoming the complexity introduced by the nuclear spin of \Sr{87} provides a unique opportunity for approximating an ultracold classical gas with the atomic population distributed among the $\num{10}$ spin states.
 
 Many of the advantages (and challenges) discussed above for strontium generally apply to other alkaline earth-like atoms (e.g., calcium, barium, ytterbium) as well.
+One aspect that does depend on the details of the interaction occurs (in the context of ULRRMs) is the occurrence of a scattering resonance between the Rydberg electron and nearby perturbing atoms. 
+It was observed that the lifetimes of rubidium ULRRMs were significantly shorter than the parent Rydberg state lifetime \cite{Butscher2011.JPB.44.184004} which was attributed to a $p$-wave scattering resonance \cite{Hamilton2002.JPB.35.L199}.
+Meanwhile, strontium ULRRMs exhibited similar lifetimes as the parent Rydberg state, indicating an much weaker (or absent) $p$-wave scattering resonance \cite{Camargo2016.PRA.93.022702}.
+It should be noted that in very dense gases (i.e., in a BEC), even strontium ULRRMs exhibit reduced lifetimes with the effect being attributed to collisions between the ground-state atom and the Rydberg core ion \cite{Whalen2017.PRA.96.042702}.
+
+\section{****** NOTES TO SELF, REMOVE LATER ******}
 
 
+(0) Long-range and anisotropic interactions
 
+(0a) Few-/Many-body physics
 
+(0b) Ultra-long-range Rydberg molecules
 
+(1) Spectroscopy
 
-\section{*** MOVE TO EXPERIMENT CHAPTER ***}
+(2) Effects of quantum statistics -- use Joe's figure?
+
+Add in repumper spectrum.
+
+Mention OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238} in ``Conclusion'' chapter?
 
 ***************************************************
 
