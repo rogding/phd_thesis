@@ -88,7 +88,8 @@ Before moving on to the next cooling stage, atoms in the metastable reservoir ne
 Several transitions have been explored for repumping atoms out of the metastable reservoir, each of which has varying advantages and disadvantages \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Mickelson2009.JPB.42.235001, Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Mason2013.BS, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}\footnote{An excellent overview of the various repumping transitions is presented in \cite{Stellmer2013.PhD}.}.
 On our experiment, we drive the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at $\SI{481}{\nm}$.
 One of the key advantages of this transition is that the upper state is $\SLJ{3}{P}{2}$ meaning it only requires a single laser to clear out the magnetic trap since the $\nSLJ{5p^2}{3}{P}{2}$ can only decay to either the $\nSLJ{5s5p}{3}{P}{1}$ or $\nSLJ{5s5p}{3}{P}{2}$ states. 
-Another advantage of this transition is that the hyperfine structure in \Sr{87} of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ is expected to be small meaning the hyperfine shift should be predominantly due to the $\nSLJ{5s5p}{3}{P}{2}$ state which are known \cite{Heider1977.PRA.16.1371}. 
+Another advantage of this transition is that the hyperfine structure in \Sr{87} of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ is expected to be small meaning the hyperfine shift should be predominantly due to the $\nSLJ{5s5p}{3}{P}{2}$ state which are known \cite{Heider1977.PRA.16.1371, Onishchenko2019.PRA.99.052503}. 
+When multiple isotopes are loaded in to the magnetic trap, it will be necessary to apply the appropriate frequency shifts to the repump laser so that all isotopes are recovered. 
 
 Other uses for the magnetically trapped metastable strontium could be for magnetic transport of atoms from a ``collection'' chamber to a ``science'' chamber.
 It should also be mentioned that the magnetic trap is not always necessary nor preferred depending on the particular isotope and experiment being performed. 
@@ -125,7 +126,7 @@ With $\Gamma/2\pi = \SI{7.5}{\kHz}$, the Doppler limit $T_{D} = \SI{180}{\nano\k
 
 Following \cite{Loftus2004.PRA.70.063413}, MOTs can be characterized by the ratio of the transition linewidth ($\Gamma$) to the single photon recoil frequency shift ($\omega_R$) with typical MOTs operating in the regime $\flatfrac{\Gamma}{\omega_R} \gg 1$ compared to narrow line MOTs where $\flatfrac{\Gamma}{\omega_R} \sim 1$.
 Operating in the $\flatfrac{\Gamma}{\omega_R} \sim 1$ regime where a few photon recoils can kick an atom out of resonance with the cooling lasers leads to very different dynamics.
-The differences in dynamics are especially apparent in the shape of the bosonic red MOTs ** FIGURE? **. 
+The differences in dynamics are especially apparent in the shape of the bosonic red MOTs \cite{Stellmer2013.PhD, Stellmer2014.arXiv.1307.0601}.
 The fermionic red MOT may look similar to a $\flatfrac{\Gamma}{\omega_R} \gg 1$ MOT but it's shape is due to complications arising from hyperfine structure.
 An excellent description of how the narrow $\SI{689}{\nm}$ ``red'' MOT works for both the bosons and fermion is presented in \cite{Stellmer2013.PhD}\footnote{Generally referred to as the ``Red MOT Bible''.} with additional resources in \cite{Boyd2007.PhD, Stellmer2014.arXiv.1307.0601}.
 
@@ -136,48 +137,71 @@ Once enough atoms have been captured in the ``broadband'' red MOT, the frequency
 While the bosonic isotopes of strontium behave like an ideal $J=0 \rightarrow J=1$ MOT as described in texts (e.g., \cite{Metcalf1999.LCT, Foot2005.Atomic}) and are relatively straightforward to produces samples below $\SI{2}{\micro\kelvin}$, the hyperfine structure of \Sr{87} poses a challenge.
 Since the ground state has (essentially) no magnetic moment, the position-dependent Zeeman shift is only experienced by the $\SLJ{3}{P}{1}$ state with an $m_{J}$-dependent magnitude.
 This results in the both a restoring force for some positions and transitions and an anti-trapping force for other transitions and positions.
-Narrow line laser cooling of \Sr{87} was first achieved by the Tokyo group where a ``trap'' laser resonant with the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{11/2}$ transition and a second ``stir'' laser resonant with $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ to quickly redistribute the population and take advantage of the Clebsch-Gordan coefficients so that, on-average, the atoms experience a restoring force \cite{Mukaiyama2003.PRL.90.113002, Stellmer2013.PhD}.
+Narrow line laser cooling of \Sr{87} was first achieved by the Tokyo group through the use of a ``trap'' laser resonant with the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{11/2}$ transition and a second ``stir'' laser resonant with $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ to quickly redistribute the population and take advantage of the Clebsch-Gordan coefficients so that, on-average, the atoms experience a restoring force \cite{Mukaiyama2003.PRL.90.113002, Stellmer2013.PhD}.
 
-Due to the large isotope shifts compared to the $\SI{7.5}{\kHz}$ linewidth of the transition, multiple red MOTs can be operated simultaneously for each isotope.
-Multiple bosonic red MOTs are particularly easy since they all exhibit similar spatial profiles whereas the fermionic isotope is a bit trickier. 
-After laser cooling on the \SI{689}{\nm} transition, our sample temperatures are typically $\sim\SIrange[range-phrase=-]{1}{2}{\micro\kelvin}$ and ready for loading in to an optical dipole trap (ODT).
+Due to the large isotope shifts compared to the ${\Gamma}/{2\pi}\SI{7.5}{\kHz}$ linewidth of the transition (see \cref{tab:red_isotope_shift}), red MOTs for multiple isotopes can be operated simultaneously.
+This ability compliments the metastable reservoir exceedingly well since, when switching to the red MOT from the blue MOT, the magnetic field gradient is lowered to $\SIrange[range-phrase=-]{1}{10}{\gauss\per\cm}$ and, as a result, releases the atoms from the magnetic trap. 
+It is during the switching time that the repump light is applied so all the isotopes in the metastable reservoir are returned to the $\nSLJ{5s^2}{1}{S}{0}$ ready for the red MOT to capture and cool. 
+After laser cooling on the \SI{689}{\nm} transition, our sample temperatures are typically $\sim\SIrange[range-phrase=-]{1}{2}{\micro\kelvin}$, which is sufficient for loading into an optical dipole trap (ODT).
 
-An alternative method to the broadband red MOT is Saw-tooth Wave Adiabatic Passage (SWAP) cooling which eschews the traditional broadband red MOT in favor of carefully designed frequency ramps which adiabatically move atoms between the $\SLJ{1}{S}{0}$ and $\SLJ{3}{P}{1}$ states \cite{Norcia2018.PhD, Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838}.
+An alternative method to the broadband red MOT is Saw-tooth Wave Adiabatic Passage (SWAP) cooling which eschews the traditional broadband red MOT in favor of carefully designed frequency ramps that adiabatically transfer atoms between the $\SLJ{1}{S}{0}$ and $\SLJ{3}{P}{1}$ states \cite{Norcia2018.PhD, Norcia2018.NJP.20.023021, Bartolotta2018.PRA.98.023404, Muniz2018.arXiv.1806.00838}.
 The advantage of this method is particularly apparent for \Sr{87} which eliminates the need for the ``stir'' laser. 
 The drawback is that the temperatures achieved seem to be limited to about $\SI{10}{\micro\kelvin}$ due to the need to maintain efficient adiabatic transfer \cite{Norcia2018.PhD}.
 A promising technique is to use SWAP cooling instead of the broadband red MOT to capture atoms from the blue MOT before transferring to a single-frequency red MOT to reach colder temperatures \cite{Snigirev2019.PRA.99.063421}.
 
-\subsection{Optical Dipole Trap}
+\subsection{Optical Dipole Trap (ODT)}
 
-Strontium in the $\nSLJ{5s^2}{1}{S}{0}$ ground state has no magnetic moment meaning it cannot be magnetically trapped\footnote{There is some interest in producing quantum degenerate gases of alkaline-earth atoms in metastable states some of which are magnetically trappable (e.g., the $\nSLJ{5s5p}{3}{P}{2}$) \cite{Barker2016.PRA.93.053417}. Quantum degenerate gases of metastable atoms have been realized for helium \cite{Robert2001.Science.292.461, Santos2001.PRL.86.3459, McNamara2006.PRL.97.080404}.} and requires the use of optical dipole traps (ODTs) to perform evaporation.
-**** Work through details of this derivation! ****
-Following the derivation in \cite{Ludlow2008.PhD, Steck.QuantumAtomOptics} with more details in \cref{app:odt_derivation}, we start by considering a two-level atom with states $\ket{g}$ and $\ket{e}$ separated by energy $\hbar \omega_{0}$.
-Applying an off-resonant laser with frequency $\omega_{L}$ field couples these two states which shifts their energy levels by 
+Strontium in the $\nSLJ{5s^2}{1}{S}{0}$ ground state has no magnetic moment meaning it cannot be magnetically trapped \footnote{There is interest in producing quantum degenerate gases of alkaline-earth atoms in metastable states \cite{Barker2016.PRA.93.053417}, some of which are magnetically trappable. Quantum degenerate gases of metastable atoms have been realized for helium \cite{Robert2001.Science.292.461, Santos2001.PRL.86.3459, McNamara2006.PRL.97.080404}.} and requires the use of optical dipole traps (ODTs) and evaporative cooling to attain temperatures below $\SI{1}{\micro\kelvin}$.
+
+****************************************
+
+****** NEED TO CLEAN UP THIS PART ******
+
+Optical dipole traps work by using intense, off-resonant light to shift atomic energy levels. 
+Since the amount of shift a state experiences is dependent on the intensity, an intensity gradient leads to spatially-varying force such that, when appropriately designed, will attract atoms to the area of highest intensity (or lowest intensity for the case of blue-detuned trapping beams). 
+For a two-state atom with ground state $\ket{g}$ and excited state $\ket{e}$ separated by energy $\hbar \omega_0$ and coupled by a laser at $\omega$, the AC Stark shift can be written as (e.g., see \cite{Grimm1999.arXiv.9902072, Steck.QuantumAtomOptics})
 \begin{equation}
-	\label{eq:ac_pol}
-	\Delta E	= -\frac{E^{2}_{0}}{4} \qty(\frac{2 \abs{d}^{2}}{\hbar} \frac{\omega_{0}}{\omega_{0}^{2} - \omega_{L}^{2}})
-				= -\frac{E^{2}_{0}}{4} \alpha\qty(\omega_{L})
+	\label{eq:odt_potential}
+	{\Delta}E\pqty{\va{r}}	=	-\frac{3 \pi c^2}{2 \omega_0} \pqty{\frac{\Gamma}{\omega_0 - \omega} + \frac{\Gamma}{\omega_0 + \omega}} I\pqty{\va{r}}
+					=	-\frac{1}{2 \epsilon_0 c} \Re\bqty{\alpha\pqty{\omega}} I\pqty{\va{r}}
 \end{equation}
-where  $\alpha\qty(\omega_{L})$ is the (dipole) polarizability and $d \equiv \mel{g}{\va{d}}{e}$ is the dipole matrix element.
-A simple generalization to a multi-level atom is relatively straightforward by summing the contributions for other levels.
-The resulting  polarizability can be written as
-\begin{equation}
-	\alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
-\end{equation}
-Here, $g$ doesn't necessarily need to be the ground state.
-Spatial confinement is achieved by considering $I = \flatfrac{c \epsilon_{0} E_{0}^{2}}{2}$ so by designing a spatially-varying intensity $I\qty(\va{r})$.
-*** FIX EQUATION ***
-\begin{equation}
-	\label{eq:U_odt}
-	\alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
-\end{equation}
-*** FIX EQUATION ***
+Oftentimes, the details of the transition are collected in to a complex frequency-dependent ``polarizability'' $\alpha\pqty{\omega}$. 
+
+****************************************
+
+****************************************
+
+% Strontium in the $\nSLJ{5s^2}{1}{S}{0}$ ground state has no magnetic moment meaning it cannot be magnetically trapped\footnote{There is some interest in producing quantum degenerate gases of alkaline-earth atoms in metastable states some of which are magnetically trappable (e.g., the $\nSLJ{5s5p}{3}{P}{2}$) \cite{Barker2016.PRA.93.053417}. Quantum degenerate gases of metastable atoms have been realized for helium \cite{Robert2001.Science.292.461, Santos2001.PRL.86.3459, McNamara2006.PRL.97.080404}.} and requires the use of optical dipole traps (ODTs) to perform evaporation.
+% **** Work through details of this derivation! ****
+% Following the derivation in \cite{Ludlow2008.PhD, Steck.QuantumAtomOptics} with more details in \cref{app:odt_derivation}, we start by considering a two-level atom with states $\ket{g}$ and $\ket{e}$ separated by energy $\hbar \omega_{0}$.
+% Applying an off-resonant laser with frequency $\omega_{L}$ field couples these two states which shifts their energy levels by 
+% \begin{equation}
+	% \label{eq:ac_pol}
+	% \Delta E	= -\frac{E^{2}_{0}}{4} \qty(\frac{2 \abs{d}^{2}}{\hbar} \frac{\omega_{0}}{\omega_{0}^{2} - \omega_{L}^{2}})
+				% = -\frac{E^{2}_{0}}{4} \alpha\qty(\omega_{L})
+% \end{equation}
+% where  $\alpha\qty(\omega_{L})$ is the (dipole) polarizability and $d \equiv \mel{g}{\va{d}}{e}$ is the dipole matrix element.
+% A simple generalization to a multi-level atom is relatively straightforward by summing the contributions for other levels.
+% The resulting  polarizability can be written as
+% \begin{equation}
+	% \alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
+% \end{equation}
+% Here, $g$ doesn't necessarily need to be the ground state.
+% Spatial confinement is achieved by considering $I = \flatfrac{c \epsilon_{0} E_{0}^{2}}{2}$ so by designing a spatially-varying intensity $I\qty(\va{r})$.
+% *** FIX EQUATION ***
+% \begin{equation}
+	% \label{eq:U_odt}
+	% \alpha_{g}\qty(\omega_{L})	= \frac{2}{\hbar} \sum_{e} \abs{d_{ge}}^{2} \frac{\omega_{ge}}{\omega_{ge}^{2} - \omega_{L}^{2}}
+% \end{equation}
+% *** FIX EQUATION ***
 
 For strontium, the red MOT spatial distribution and the particular isotope(s) being loaded needs to be taken in to account when designing an ODT.
-While the fermionic red MOT traps atoms in an ellipsoidal volume around the quadrupole zero, the atoms in a bosonic red MOT form a thin shell below the quadrupole center \cite{Stellmer2013.PRA.87.013611, Stellmer2014.arXiv.1307.0601}. 
-As a result, improved loading of atoms in to an ODT can be obtained by ``mode-matching'' the trapping volume of the ODT to better match the spatial distribution of atoms in the red MOT.
+While the fermionic red MOT traps atoms in an ellipsoidal volume around the quadrupole zero, the atoms in a bosonic red MOT tend to form a thin shell below the quadrupole center \cite{Stellmer2013.PRA.87.013611, Stellmer2014.arXiv.1307.0601}. 
+As a result, improved loading of atoms into an ODT can be obtained by ``mode-matching'' the trapping volume of the ODT to better match the spatial distribution of atoms in the red MOT.
 The preferred ODT geometry appears to be a high-aspect ratio horizontal ``pancake'' or ``light sheet'' where the tight axis is along gravity as this matches well with the red MOT shape.
-Our main trap is currently a single ``sheet'' beam with waist sizes of about ** $\SI{26}{\um} \times \SI{260}{\um}$ **\footnote{Some traps used by other groups: $\SI{18}{\um} \times \SI{250}{\um}$ \cite{Stellmer2013.PRA.87.013611}; $\SI{22.8}{\um} \times \SI{228}{\um}$ and $\SI{16}{\um} \times \SI{270}{\um}$ \cite{Barker2016.PhD, Reschovsky2017.PhD}; $\SI{17}{\um} \times \SI{340}{\um}$ \cite{Oppong2015.MS, Campbell2017.PhD}.}
+Many experiments have found success by using a high aspect ratio ``sheet''-like trapping beam with a tight waist along gravity and a looser transverse waist \cite{Stellmer2013.PRA.87.013611, Stellmer2013.PhD, Barker2016.PhD, Oppong2015.MS, Campbell2017.PhD}. 
+This geometry matches the bosonic isotopes particularly well. 
+%Our main trap is currently a single ``sheet'' beam with waist sizes of about ** $\SI{26}{\um} \times \SI{260}{\um}$ **\footnote{Some traps used by other groups: $\SI{18}{\um} \times \SI{250}{\um}$ \cite{Stellmer2013.PRA.87.013611}; $\SI{22.8}{\um} \times \SI{228}{\um}$ and $\SI{16}{\um} \times \SI{270}{\um}$ \cite{Barker2016.PhD, Reschovsky2017.PhD}; $\SI{17}{\um} \times \SI{340}{\um}$ \cite{Oppong2015.MS, Campbell2017.PhD}.}
 
 The specific isotope(s) being worked with also have an effect on both loading in to an ODT as well as the evaporation due to their wildly varying intra- and inter-isotope scattering lengths (see \cref{tab:sr_scattering_lengths_long}). 
 \begin{table}[h]
@@ -202,13 +226,13 @@ The specific isotope(s) being worked with also have an effect on both loading in
 		\bottomrule
 	\end{tabular}
 \end{table}
-The first strontium BECs were achieved with \Sr{84} which has an ideal scattering length $a = \SI{123}{\bohr}$ \cite{Stein2010.EPJD.57.171} and was easily evaporated to quantum degeneracy in low-aspect ratio traps \cite{Martinez2009.PRL.103.200402, Stellmer2009.PRL.103.200401}.
+The first strontium BECs were achieved with \Sr{84}, which has an ideal scattering length $a = \SI{123}{\bohr}$ \cite{Stein2010.EPJD.57.171} and was easily evaporated to quantum degeneracy in low-aspect ratio traps \cite{Martinez2009.PRL.103.200402, Stellmer2009.PRL.103.200401}.
 An unpolarized degenerate Fermi gas of \Sr{87} was also obtained in a nearly-circular ODT \cite{DeSalvo2010.PRL.105.030402} but spin-polarized degenerate Fermi gases requires sympathetic cooling \cite{Stellmer2013.PRA.87.013611}.
 Early work towards producing quantum degenerate gases of \Sr{88} and \Sr{86} were hindered by the tight waists \cite{Poli2005.PRA.71.061403, Ferrari2006.PRA.73.023408} which leads to inelastic losses of \Sr{86}. 
 Only by going to a large-volume high-aspect ratio ODT was a BEC of \Sr{86} realized \cite{Stellmer2010.82.041602}.
 The first BEC of \Sr{88} was achieved by sympathetic cooling with \Sr{87} \cite{Mickelson2010.PRA.81.051601}.
 
-Some recent work towards developing systems for trapping strontium in optical tweezer arrays showed results that an ODT around $\SIrange[range-phrase=-]{501}{520}{\celsius}$ is close to a ``magic'' wavelength\footnote{A wavelength is ``magic'' when two states experience the same shift (i.e., no differential shift) \cite{Ye2008.Science.320.1734, Ludlow2015.RMP.87.637}.} for the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055}.
+Some recent work towards developing systems for trapping strontium in optical tweezer arrays showed results that an ODT around $\SIrange[range-phrase=-]{501}{520}{\nm}$ is close to a ``magic'' wavelength\footnote{A wavelength is ``magic'' when two (or more) states experience the same shift such that there is no differential shift between them \cite{Ye2008.Science.320.1734, Ludlow2015.RMP.87.637}.} for the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition \cite{Norcia2018.PRX.8.041054, Cooper2018.PRX.8.041055}.
 It should be noted that both our current $\SI{1064}{\nm}$ ODT and a `green'' ODT are both expected to be repulsive for Rydberg states \cite{Mukherjee2011.JPB.44.184010, Topcu2016.JPB.49.144004} for strontium Rydberg states.
 
 \section{Vacuum System}
@@ -232,8 +256,8 @@ The major disadvantage of our current setup is the long distance between the und
 \subsection{Source-side Vacuum System}
 \label{ssec:source-side_vacuum}
 
-This section of the vacuum chamber is where strontium oven and 2D collimator are located and produces the atomic beam of strontium for cooling and trapping.
-Although there are various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems, we used a simple design which has shown success on the older strontium experiments in the lab.
+This section of the vacuum chamber is where the strontium oven and 2D collimator are located and produces the atomic beam of strontium for cooling and trapping.
+Although there are various designs for strontium ovens \cite{Senaratne2015.RSI.86.023105, Schioppo2012.RSI.83.103101}, and even commercial systems, we used a simple design that has shown success on the older strontium experiments in the lab.
 The design is simple with a single Watlow FIREROD cartridge heater\footnote{These are neat little devices which come with leads for both the resistive heating element and an integrated thermocouple.} providing the majority of the heating power to the atomic oven.
 An array of capillary tubes forms a nozzle to provide some degree of collimation and resistive heater wire is wrapped around them to reduce the effects of strontium building up in the capillary tubes and clogging.
 We typically run our main FIREROD oven heater around $\SI{425}{\celsius}$ with the nozzle heater around $\SI{390}{\celsius}$\footnote{Ideally, the nozzle should be hotter than the reservoir to reduce the likelihood of clogging the capillary tubes but it's likely that our actual oven temperature is a bit lower due to the FIREROD thermocouple sensor being buried in the cartridge heater body rather than at the location of the strontium.}.
