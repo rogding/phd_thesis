@@ -20,12 +20,12 @@ Detailed explanations of the various techniques and a variety of setups are avai
 At room temperature, strontium is a solid metal with negligible vapor pressure and thus requires an oven to sublimate strontium in to a gaseous form. 
 Although oven temperatures vary from setup-to-setup, they are typically around $\SIrange[range-phrase=-]{450}{750}{\celsius}$\footnote{If the setup has a nozzle heater, its temperature is generally higher than the main oven to reduce the likelihood of clogging.} \cite{Boyd2007.PhD, Ludlow2008.PhD, Schioppo2012.RSI.83.103101, Stellmer2013.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD, Senaratne2018.PhD}. 
 As a result, the first step in laser cooling and trapping strontium utilizes the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition with its broad ${\Gamma}/{2 \pi} = \SI{30.5}{\MHz}$ linewidth which enables high photon scattering rates. 
-\Cref{tab:blue_isotope_shift} gives the isotope shifts for the various transitions in strontium referenced to \Sr{88}.
-\begin{table}[h]
+\Cref{tab:blue_isotope_shift} gives the isotope shifts of the $\SI{461}{\nm}$ transitions referenced to \Sr{88}.
+\begin{table}[htbp]
 	\caption[]{
 		\label{tab:blue_isotope_shift}
 		Isotope shifts of the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition, relative to \Sr{88}, calculated from the values in \cite{Bushaw2000.SAPB.55.1679}.
-		See \cref{tab:blue_isotope_shift_detailed,tab:hyperfine_coefficients_5s5p1P1} for more details.}
+		Calculated from the weighted averages of values in \cref{tab:blue_isotope_shift_detailed,tab:hyperfine_coefficients_5s5p1P1}.}
 	\centering
 	\begin{tabular}{@{}cccc@{}}
 		\toprule
@@ -33,13 +33,13 @@ As a result, the first step in laser cooling and trapping strontium utilizes the
 		\midrule	
 		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{0}$							\\
 		\midrule	
-		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJf{5s^{2}}{1}{S}{0}{9/2}$}	& $\nSLJf{5s5p}{1}{P}{1}{7/2}$	& $\num{-7.8+-0.4}$					\\
-									&													& $\nSLJf{5s5p}{1}{P}{1}{11/2}$	& $\num{-49.5+-0.4}$				\\
-									&													& $\nSLJf{5s5p}{1}{P}{1}{9/2}$	& $\num{-68.1+-0.4}$				\\
+		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJf{5s^{2}}{1}{S}{0}{9/2}$}	& $\nSLJf{5s5p}{1}{P}{1}{7/2}$	& $\num{-11.3+-1.6}$				\\
+									&													& $\nSLJf{5s5p}{1}{P}{1}{11/2}$	& $\num{-53.4+-1.6}$				\\
+									&													& $\nSLJf{5s5p}{1}{P}{1}{9/2}$	& $\num{-70.6+-1.6}$				\\
 		\midrule	
-		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-126.3+-0.2}$				\\
+		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-124.7+-0.6}$				\\
 		\midrule	
-		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-273.2+-0.3}$				\\
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{1}{P}{1}$		& $\num{-270.9+-0.7}$				\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -52,7 +52,7 @@ Since the 2D collimator has no effect on the longitudinal velocity, they atoms a
 The atoms are slowed longitudinally with a Zeeman slower where a spatially-varying magnetic field keeps the slowing atoms in resonance with a $\SI{461}{\nm}$ beam counterpropagating their direction of travel \cite{Phillips1982.PRL.48.596}.
 Because the  magnetic field is axial, a circularly polarized $\SI{461}{\nm}$ beam is used.
 
-Now that a significant portion of the atoms have been slowed by the Zeeman slower, they enter the main chamber where they are cooled and trapped by a standard six-beam $\SI{461}{\nm}$ ``blue'' magneto-optical trap (MOT).
+Now that a significant portion of the atoms have been slowed by the Zeeman slower, they enter the main chamber where they are cooled and trapped by a standard six-beam $\SI{461}{\nm}$ ``blue'' MOT.
 The MOT uses a quadrupole magnetic field and light detuned below atomic resonance to provide both position-dependent and velocity-dependent forces that capture and cool the atoms \cite{Raab1987.PRL.59.2631, Metcalf1999.LCT, Foot2005.Atomic}. 
 Blue MOTs typically produces samples of atoms around $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
 Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold blue MOT'' stage where detuning, intensity, and quadrupole gradient are ramped during the repumping process to obtain colder temperatures for transfer to the red MOT but we found that our temperatures are sufficient for decent transfer.
@@ -60,8 +60,9 @@ Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold blue MOT'' sta
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/blue_system/old_blue_MOT.svg}
 	\caption[]{\label{fig:old_blue_MOT}
-		An early picture of our \Sr{88} blue MOT taken on 2014/08/29 through a $\SI{2.75}{\inch}$ viewport with the atom source and Zeeman slower are off to the right.
-		Considering the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of about $\SI{0.5}{\inch}$.}
+		A picture of our \Sr{88} blue MOT taken on 2014/08/29 through one of the $\SI{2.75}{\inch}$ viewport for the imaging beam. 
+		The atom source and Zeeman slower are located off to the right.
+		With the electric field plates are separated by about \SI{1}{\inch}, this blue MOT is likely has a diameter of close to $\SI{0.5}{\inch}$.}
 \end{figure}
 
 Although the $\SI{461}{\nm}$ light is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT}.
@@ -77,38 +78,51 @@ The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeking $m_J = 1, 2$ states can become trapped in the quadrupole magnetic field of the blue MOT \cite{Nagel2003.PRA.67.011401}.
 This decay path, initially seen as a loss from the blue MOT, ends up being a powerful tool for accumulating atoms in metastable reservoir at roughly the same temperature as the blue MOT and was an essential tool in overcoming the $\SI{0.56(2)}{\percent}$ natural abundance of \Sr{84} to produce the first strontium BECs \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402}.
 
-The magnetic trap are also crucial for laser cooling and trapping multiples isotopes. 
+The magnetic trap is also crucial for laser cooling and trapping multiples isotopes. 
 As seen in \cref{tab:blue_isotope_shift}, the isotope shifts are comparable to the linewidth meaning a blue MOT can only efficiently trap a single isotope at a time. 
-The key to trapping multiple isotopes is to utilize the automatic accumulation of $\SLJ{3}{P}{2}$ atoms in the ma, which is dark to the $\SI{461}{\nm}$ cooling light, in the magnetic trap. 
+The key to trapping multiple isotopes is to utilize the automatic accumulation of $\SLJ{3}{P}{2}$ atoms, which are dark to the $\SI{461}{\nm}$ cooling light, in the magnetic trap.
+Multiple isotopes can be loaded in to the magnetic trap by simply operating a blue MOT tuned for a particular isotope and then tuning the laser to trap another isotope. 
+This sequential loading typically starts with the most abundant isotope, since those atoms will spend the most time the magnetic trap, before tuning the $\SI{461}{\nm}$ to cool subsequent isotopes. 
 
-************************
+Before moving on to the next cooling stage, atoms in the metastable reservoir need to be returned to the ground state.
+Several transitions have been explored for repumping atoms out of the metastable reservoir, each of which has varying advantages and disadvantages \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Mickelson2009.JPB.42.235001, Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Mason2013.BS, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}\footnote{An excellent overview of the various repumping transitions is presented in \cite{Stellmer2013.PhD}.}.
+On our experiment, we drive the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at $\SI{481}{\nm}$.
+One of the key advantages of this transition is that the upper state is $\SLJ{3}{P}{2}$ meaning it only requires a single laser to clear out the magnetic trap since the $\nSLJ{5p^2}{3}{P}{2}$ can only decay to either the $\nSLJ{5s5p}{3}{P}{1}$ or $\nSLJ{5s5p}{3}{P}{2}$ states. 
+Another advantage of this transition is that the hyperfine structure in \Sr{87} of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ is expected to be small meaning the hyperfine shift should be predominantly due to the $\nSLJ{5s5p}{3}{P}{2}$ state which are known \cite{Heider1977.PRA.16.1371}. 
 
-************************
-
-Multiple isotopes can be stored in the magnetic trap simply by operating a blue MOT for that specific isotope before changing the laser frequency to efficiently trap a different isotope. 
-
-
-
-************************
-
-************************
-
-************************
-
-
-Before moving on to the next cooling stage, atoms in the magnetic trap need to be recovered.
-Several transitions have been explored for repumping atoms out of the metastable reservoir, each of which has varying challenges and benefits \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Mickelson2009.JPB.42.235001, Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Mason2013.BS, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}\footnote{\cite{Stellmer2013.PhD} gives an excellent overview for most of the repumping transitions explored.}.
-On our experiment, we use the $\SI{481}{\nm}$ transition which drives $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$.
-One of the main advantages of this transition is that the upper state is $\SLJ{3}{P}{2}$ meaning it only requires a single laser to clear out the magnetic trap since the $\nSLJ{5p^2}{3}{P}{2}$ can only decay to either the $\nSLJ{5s5p}{3}{P}{1}$ or $\nSLJ{5s5p}{3}{P}{2}$ states. 
-Another advantage of this transition is that the hyperfine structure of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ is expected to be small meaning the hyperfine shift should be predominantly due to the $\nSLJ{5s5p}{3}{P}{2}$ state. 
-
-The magnetic trap and repumper system are also essential for laser cooling and trapping multiple isotopes for experiments requiring sympathetic cooling, Bose-Bose, or Bose-Fermi mixtures where it's challenging to cool and trap multiple isotopes simultaneously with the $\SI{461}{\nm}$ transition due to the isotope shift (see \cref{tab:blue_isotope_shift}) being comparable to the linewidth. 
-Multiple isotope trapping is achieved by first loading the magnetic trap with a single isotope by simply operating a blue MOT for that isotope. Before turning off the blue MOT coils, the laser frequency is changed to operate a blue MOT for a different isotope which also gets loaded in to the magnetic trap. 
-All the atoms from the magnetic trap can be recovered with a single repumper laser with frequencies appropriate for addressing the isotopes in the magnetic trap.
+Other uses for the magnetically trapped metastable strontium could be for magnetic transport of atoms from a ``collection'' chamber to a ``science'' chamber.
+It should also be mentioned that the magnetic trap is not always necessary nor preferred depending on the particular isotope and experiment being performed. 
+Keeping a repumper on can result in initially higher blue MOT loading rates by preventing accumulation of atoms in the metastable reservoir which can drastically reduce cycle times. 
+This approach may be of interest for experiments looking to have fast cycle times such as in strontium optical tweezer experiments working with \Sr{88} \cite{Cooper2018.PRX.8.041055, Norcia2018.PRX.8.041054, Hanley2018.PhD, Jackson2019.arXiv.1904.03233}.
 
 \subsection{Cooling on the $\SI{689}{\nm}$ ``Red'' Transition}
 
-After repumping, we further cool the sample by operating a MOT on the narrow ($\Gamma/2\pi = \SI{7.5}{\kHz}$) $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition at $\SI{689}{\nm}$ which has a Doppler limit of $T_{D} = \SI{180}{\nano\kelvin}$ and recoil limit of $T_{r} = \SI{229}{\nano\kelvin}$.
+After the $\SI{461}{\nm}$ cooling stage, the strontium atoms are typically around $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$ whereas efficient loading of atoms in to optical dipole traps require sample temperatures closer to $\SIrange[range-phrase=-]{1}{2}{\milli\kelvin}$.
+A ``red'' MOT operating on the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition at $\SI{689}{\nm}$ bridges this gap. 
+With $\Gamma/2\pi = \SI{7.5}{\kHz}$, the Doppler limit $T_{D} = \SI{180}{\nano\kelvin}$ is comparable to the recoil limit of $T_{r} = \SI{229}{\nano\kelvin}$.
+\begin{table}[htbp]
+	\caption[]{
+		\label{tab:red_isotope_shift}
+		Isotope shifts of the $\SI{689}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition, relative to \Sr{88}.
+		Calculated from the weighted averages of the values in \cref{tab:red_isotope_shift_detailed}.}
+	\centering
+	\begin{tabular}{@{}cccc@{}}
+		\toprule
+		Isotope						& Lower level										& Upper level					& $\nu - \nu_{88}$ [$\si{\MHz}$]	\\
+		\midrule	
+		\Sr{88}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{3}{P}{1}$		& $\num{0}$							\\
+		\midrule	
+		\multirow{3}{*}{\Sr{87}}	& \multirow{3}{*}{$\nSLJf{5s^{2}}{1}{S}{0}{9/2}$}	& $\nSLJf{5s5p}{3}{P}{1}{7/2}$	& $\num{1351.937+-0.027}$			\\
+									&													& $\nSLJf{5s5p}{3}{P}{1}{9/2}$	& $\num{221.689+-0.013}$			\\
+									&													& $\nSLJf{5s5p}{3}{P}{1}{11/2}$	& $\num{-1241.465+-0.018}$			\\
+		\midrule	
+		\Sr{86}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{3}{P}{1}$		& $\num{-163.81443+-0.00026}$		\\
+		\midrule	
+		\Sr{84}						& $\nSLJ{5s^2}{1}{S}{0}$							& $\nSLJ{5s5p}{3}{P}{1}$		& $\num{-351.59+-0.11}$				\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 Following \cite{Loftus2004.PRA.70.063413}, MOTs can be characterized by the ratio of the transition linewidth ($\Gamma$) to the single photon recoil frequency shift ($\omega_R$) with typical MOTs operating in the regime $\flatfrac{\Gamma}{\omega_R} \gg 1$ compared to narrow line MOTs where $\flatfrac{\Gamma}{\omega_R} \sim 1$.
 Operating in the $\flatfrac{\Gamma}{\omega_R} \sim 1$ regime where a few photon recoils can kick an atom out of resonance with the cooling lasers leads to very different dynamics.
 The differences in dynamics are especially apparent in the shape of the bosonic red MOTs ** FIGURE? **. 
