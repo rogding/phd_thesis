@@ -1,66 +1,68 @@
 \chapter{Introduction}
 
-The ability to produce ultracold samples paved the way towards achievement of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
-From the observation of BEC-BCS crossover \cite{Chen2005.PR.412.1, Gurarie2007.JAOP.322.2, Bourdel2004.PRL.93.050401}, superfluid to Mott insulator transition in an optical lattice \cite{Greiner2002.Nature.415.39}, and the formation of matter-wave solitons \cite{Strecker2002.Nature.417.150, Khaykovich2002.Science.296.1290}, most of the work in these systems have been based on a short-range, isotropic contact interactions described by the pseudopotential \cite{Pethick.BEC}
+Advances in laser cooling have paved the way towards the creation of quantum degenerate gases of atoms which are ideal systems for studying quantum interactions. 
+From the observation of BEC-BCS crossover \cite{Chen2005.PR.412.1, Gurarie2007.JAOP.322.2, Bourdel2004.PRL.93.050401}, the superfluid to Mott insulator transition in an optical lattice \cite{Greiner2002.Nature.415.39}, and the formation of matter-wave solitons \cite{Strecker2002.Nature.417.150, Khaykovich2002.Science.296.1290}, most of these effects arise due an isotropic, short-range contact interactions that can be described by the pseudopotential
 \begin{equation}
-	U\pqty{\va{r}}	=	\frac{4 \pi \hbar^2}{m} a_{s} \delta\pqty{\va{r}}
+	\hat{V}\pqty{\va{r}}	=	\frac{4 \pi \hbar^2}{m} a_{s} \delta\pqty{\va{r}}
 \end{equation}
-where $a_{s}$ is the $s$-wave scattering length.
+where $a_{s}$ is the $s$-wave scattering length and $\delta\pqty{\va{r}}$ is the Dirac delta function \cite{Pethick.BEC}.
 This effective interaction requires the atomic wave functions to overlap. 
 
 An important recent trend in the field of ultracold atomic gases is the study of systems with long-range interactions which can typically be expanded as \cite{Pethick.BEC}
 \begin{equation}
-	U\pqty{\va{r}}	=	\sum^{\infty}_{k=1} \frac{C_{k} \pqty{\va{r}}}{r^{k}}
+	\hat{V}\pqty{\va{r}}	=	\sum_{k} \frac{C_{k} \pqty{\va{r}}}{r^{k}}
 \end{equation}
-with the ``long-range'' coming from the $U \sim {1}/{r^{k}}$ dependence. 
-Depending on the type of interaction (e.g., Coulomb: $k = 1$, dipole-dipole: $k = 3$, van der Waals: $k = 6$), the potentials can be isotropic or anisotropic, providing additional richness to quantum systems and the opportunity to study a wide variety of phenomena including applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theories **** SOURCES? ****
-There are several methods for incorporating long-range interactions in to ultracold systems with some of the most prominent being \cite{Lahaye2009.RPP.72.126401}: 
+with the ``long-range'' coming from the $\hat{V} \sim {1}/{r^{k}}$ dependence. 
+Depending on the type of interaction (e.g., Coulomb: $k = 1$, dipole-dipole: $k = 3$, van der Waals: $k = 6$), the potentials can be isotropic or anisotropic, providing additional richness and the opportunity to study a wide variety of phenomena including those with applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theory.
+There are several methods for incorporating long-range interactions into ultracold systems with some of the most prominent being \cite{Lahaye2009.RPP.72.126401}: 
 \begin{description}
 	\item[Polar molecules]
 		These molecules can have large (permanent) electric dipole moments \cite{Aymar2005.JCP.122.204302} and can, ignoring chemical reactions, have extremely long lifetimes. 
-		The drawback is that the additional complexity typically makes it very difficult to produce ultracold and quantum degenerate samples. 
-		In spite of these challenges, a degenerate Fermi gas of {{\tsup{40}\text{K}}{\tsup{87}\text{Rb}}} was recently achieved by associating atoms from a BEC of {\tsup{87}\text{Rb}} and a degenerate Fermi gas of {\tsup{40}\text{K}} \cite{DeMarco2019.Science.363.853}. 
-		Steady progress continues to be made in the direct laser cooling of molecules as well \cite{Anderegg2018.NatPhys.14.890}.
+		The drawback is that their additional complexity typically makes it very difficult to produce ultracold and quantum degenerate samples. 
+		In spite of these challenges, a degenerate Fermi gas of {{\tsup{40}\text{K}}{\tsup{87}\text{Rb}}} was recently achieved by associating atoms from a BEC of {\tsup{87}\text{Rb}} and atoms from a degenerate Fermi gas of {\tsup{40}\text{K}} \cite{DeMarco2019.Science.363.853}. 
+		Steady progress continues to be made in the direct laser cooling of molecules as well (e.g., see \cite{McCarron2018.JPB.51.212001, Tarbutt2018.arXiv.1902.05628, Anderegg2018.NatPhys.14.890}).
 	\item[Magnetic atoms]
 		Atoms themselves can have permanent dipole moments which can be exploited to study long-range interactions. 
 		Quantum degeneracy has been reached with chromium \cite{Griesmaier2005.PRL.94.160401, Naylor2015.PRA.91.011603}, erbium \cite{Aikawa2012.PRL.108.210401, Aikawa2014.PRL.112.010404}, and dysprosium \cite{Lu2011.PRL.107.190401, Lu2012.PRL.108.215301}.
-		Although simpler than molecules, their dipolar interactions are limited by the magnetic moment of atoms and typically requires tuning the short-range interaction strength to be weaker than the dipole-dipole interaction to observe their effects.
-		There's also been a recent proposal for creating ultracold dysprosium atoms which exhibit an electric dipole moment in addition to the magnetic dipole moment \cite{Lepers2018.PRL.121.063201}.
+		Although simpler than molecules, their dipolar interactions are limited by the magnetic moment of the atoms and typically requires tuning of the short-range interaction strength to be weaker than the dipole-dipole interaction in order to observe their effects.
+		There is also a recent proposal for creating ultracold dysprosium atoms which exhibit an electric dipole moment in addition to their magnetic dipole moment \cite{Lepers2018.PRL.121.063201}.
 	\item[Coupling atoms to a high-finesse cavity]
-		An ingenious way of inducing long-range interactions in atomic systems is by placing the atoms in a high-finesse optical cavity such that they couple to the cavity mode which in turn causes the atoms to experience position-based forces \cite{Baumann2010.Nature.464.1301, Mottl2012.Science.336.1570}.
-		Although the interactions are (essentially) infinite-range, they are likely to be restricted to only that case. 
+		An ingenious way of inducing long-range interactions in atomic systems is by placing the atoms in a high-finesse optical cavity such that they couple to the cavity mode which in turn causes the atoms to experience position-dependent forces \cite{Baumann2010.Nature.464.1301, Mottl2012.Science.336.1570}.
+		Although the interactions are (essentially) infinite-range, they are likely restricted to only that case. 
 		They are also constrained by the geometry of the experiment which could make it difficult to tune between isotropic and anisotropic interactions.
 	\item[Rydberg states]
-		Highly excited Rydberg states of atoms (and molecules) with principal quantum number $n \gg 1$ can also exhibit strong dipole interactions \cite{Gallagher1994.RydbergAtoms} and have even been observed in solid state systems \cite{Kazimierczuk2014.Nature.514.343}. 
-		Since many of the properties of Rydberg atoms scale with $n$, the Rydberg-Rydberg interactions can be tuned in strength and anisotropy by simply exciting different Rydberg states. 
-		Rydberg atoms can also leverage well-established techniques for producing quantum degenerate gases of atoms so that their interactions can be readily incorporated to existing setups. 
-		The major disadvantage of Rydberg systems are their sensitivities to stray electric fields and the limited Rydberg lifetimes due to both blackbody and Rydberg-Rydberg interactions. 
+		Highly excited Rydberg states of atoms (and molecules) with principal quantum numbers $n \gg 1$ can also exhibit strong dipole-dipole interactions \cite{Gallagher1994.RydbergAtoms}. 
+		(Rydberg states have also observed in solid state systems \cite{Kazimierczuk2014.Nature.514.343}, opening another avenue for studying long-range interactions.)
+		Since many of the properties of Rydberg atoms scale with $n$, their interactions can be tuned in strength and anisotropy simply by exciting to different Rydberg states. 
+		Rydberg atoms can also leverage well-established techniques for producing quantum degenerate gases of atoms so that their interactions can be readily incorporated into existing experimental setups. 
+		The major disadvantage of Rydberg systems is their sensitivity to stray electric fields and their limited lifetime due to spontaneous decay and to both blackbody and Rydberg-Rydberg interactions. 
 \end{description}
-This thesis will be focused on the latter by studying Rydberg systems in ultracold strontium gases. 
+This thesis will be focused on the latter and the study of Rydberg systems in ultracold strontium gases. 
 Most ultracold Rydberg experiments have predominantly focused on exciting alkali metal atoms (primarily rubidium and cesium with a growing interest in potassium).
 With their hydrogen-like electronic structure, there are well-established methods for both calculating their properties (e.g., see \cite{Sibalic2017.CPC.220.319}) and techniques for producing ultracold and quantum degenerate gases.
-But since the interactions are long-ranged, generally comparable to the inter-particle separation in the gas, the particular atomic species used should only affect the details of the interactions but not the overall form. 
-As will be discussed below, strontium has some properties which make it a very advantageous system for studying Rydberg physics. 
+But since the interactions are long-ranged, generally comparable to the interparticle separation in the gas, the particular atomic species used should only affect the details of the interactions but not their overall form. 
+As will be discussed below, strontium has some properties which make it a very attractive system for studying Rydberg physics. 
 
 \section{Rydberg Atoms}
 
 A Rydberg atom can be loosely defined as an atom in an excited state with very large principal quantum number ($n$), i.e., $n \gg 1$. 
-Starting in the late {1800's}, it was observed that the wavenumbers of atomic spectra could be described by the formula
+Starting in the late {1800's}, it was observed that the wavenumbers of atomic levels could be described by the formula
 \begin{equation}
 	\label{eq:Rydberg_formula}
 	\nu_{l}	=	\nu_{\infty,l} - \frac{R}{\pqty{n-\delta_{n,l}}^2}
 			=	\nu_{\infty,l} - \frac{R}{{n^\star}^2}
 \end{equation}
 where $\nu_{\infty,l}$ is the series limit, $\delta_{n,l}$ is a ``quantum defect'', and $R$ is the Rydberg constant \cite{Rydberg1890.Recherches, Rydberg1890.PM.29.331, Gallagher1994.RydbergAtoms}. 
+The subscripts in \cref{eq:Rydberg_formula} indicate the common dependencies of values on $n$ and $l$. 
 Oftentimes, the principal quantum number and quantum defect are lumped in to an ``effective quantum number'' ${n^\star} = n-\delta_{n,l}$. 
 This is the Rydberg formula.
 Conceptually, a Rydberg atom can be thought of as being comprised of a core ion and a highly-excited valence electron which spends the majority of its time far away from the core.
-As a result, the Rydberg electron rarely interacts with the core which allows its effects to be characterized by (nearly) constant parameter $\delta_{n,l}$.
-While the details of the core ion and electrons are important, which causes $\delta_{n,l}$ to vary from atom-to-atom and from orbital-to-orbital, it generally does not have a large effect on the overall properties of the Rydberg atom.
+As a result, the Rydberg electron has only a small probability of being found near the core which allows its effects to be characterized by a (nearly) constant parameter $\delta_{n,l}$ due to it primarily experiencing the long-range Coulomb interaction of the core ion.
+While the details of the core ion and electrons are important, causing $\delta_{n,l}$ to vary from atom-to-atom and from orbital-to-orbital, interactions with the core generally do not have a large effect on the overall properties of the Rydberg atoms.
 
-Although the details of the core are usually small, the principal quantum number does greatly affects the atomic wave function. 
-As a result, it sets the energy scale for many interactions which leads to the properties of Rydberg atoms become exaggerated when $n$ becomes large.
-\Cref{tab:Rydberg_n-scaling} gives the $n$ dependence for a few Rydberg atoms properties. 
+Although the effects due to the core are usually small, the principal quantum number does greatly affect the atomic wave function. 
+As a result, $n$ sets the energy scale for many interactions and leads to the properties of Rydberg atoms becoming exaggerated when $n$ becomes large.
+\Cref{tab:Rydberg_n-scaling} gives the $n$ dependence for a few Rydberg atom properties. 
 \begin{table}[h]
 	\centering
 	\caption[]{
@@ -84,9 +86,9 @@ As a result, it sets the energy scale for many interactions which leads to the p
 
 \subsection{Ultra-Long-Range Rydberg Molecules (ULRRMs)}
 
-One key aspect to focus on from \cref{tab:Rydberg_n-scaling} is that size of a Rydberg atom increases very quickly with $n$. 
-In a dense enough gas, $\ev*{r} \sim n^{2}$ can quickly become comparable to (or larger than) the interparticle separations.
-It was in this context, when an atom (or multiple atoms) could be located inside the Rydberg electron's orbit, that a density-dependent shift was first observed in the spectral lines of alkali atoms with the direction of the shift, relative to the unperturbed atomic line, also depended on the buffer gas used \cite{Amaldi1934.NC.11.145, Amaldi1934.Nature.133.141, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}.
+One key aspect to focus on from \cref{tab:Rydberg_n-scaling} is that size of a Rydberg atom increases very quickly with $n^\star$. 
+In a dense enough gas, $\ev*{r} \sim {n^\star}^{2}$ can quickly become comparable to (or larger than) the interparticle separations.
+It was in this context, when an atom (or multiple atoms) could be located inside the Rydberg electron's orbit, that a density-dependent shift was first observed in the spectral lines of alkali atoms with the direction of the shift, relative to the unperturbed atomic line, also dependent on the buffer gas used \cite{Amaldi1934.NC.11.145, Amaldi1934.Nature.133.141, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/orbital_radius-density_n-scaling.pdf}
@@ -98,46 +100,48 @@ It was in this context, when an atom (or multiple atoms) could be located inside
 \Cref{fig:orbital_radius-density_n-scaling} shows $\ev{r}$ and ${1}/{\ev{r}^3}$ for a strontium atom in the $\nSLJ{5sns}{3}{S}{1}$ state and the typical densities achievable in ultracold gas experiments.
 Notice that, even for modest principal quantum numbers and densities, it's easily possible to excite Rydberg atoms much larger than the interparticle separations.
 
-This shift was first explained by Fermi \cite{Fermi1934.NC.11.157}, and later generalized by Omont \cite{Omont1977.JPF.38.1343}, to be the result of low-energy scattering of the Rydberg electron off nearby neutral atoms, formulating the electron-atom interaction with the pseudopotential \cite{DeSalvo2015.PRA.92.031403, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}
+This shift was first explained by Fermi \cite{Fermi1934.NC.11.157}, and later generalized by Omont \cite{Omont1977.JPF.38.1343}, to be the result of low-energy scattering of the Rydberg electron off nearby neutral atoms, allowing the electron-atom interaction to be described with the pseudopotential
 \begin{equation}
-	V\pqty*{\va{R}}
+	\hat{V}\pqty*{\va{R}}
 		=	\sum_{i} \frac{2 \pi \hbar^{2} A_{s}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \delta\pqty*{\va{r}_i - \va{R}}
 			+ \frac{6 \pi \hbar^{2} A_{p}^{3}\bqty*{k\pqty*{\va{R}}}}{m_{e}} \overleftarrow{\grad}{\delta\pqty*{\va{r}_i - \va{R}}}\overrightarrow{\grad}
 \end{equation}
-where $\va{r}_{i}$ is the position of the Rydberg valence electron(s) and $\va{R}$ is the position of the ground-state atom from the Rydberg core. 
-On the right hand side, the first term is the $s$-wave contribution and the second term is the $p$-wave contribution with momentum-dependent scattering lengths $A_{s}\pqty{k}$ and $A_{p}\pqty{k}$, respectively, and the semiclassical Rydberg electron momentum given by $\hbar {k \pqty{\va{r}}} = \sqrt{2 m_{e} \bqty{{e^2}/{\pqty{4 \pi \epsilon_0 \va{r}}} - E_{b}}}$ for the unperturbed Rydberg electron binding energy $E_{b}$ \cite{DeSalvo2015.PRA.92.031403}.
-Evaluating the interaction with the Rydberg electron wave function $\Psi_{ns}$ leads to \cite{DeSalvo2015.PRA.92.031403}
+where $\va{r}_{i}$ is the position of the Rydberg valence electron(s) and $\va{R}$ is the position of the ground-state atom relative to the Rydberg core \cite{DeSalvo2015.PRA.92.031403, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}. 
+On the right hand side, the first term is the $s$-wave contribution and the second term is the $p$-wave contribution with momentum-dependent scattering lengths $A_{s}\pqty{k}$ and $A_{p}\pqty{k}$, respectively.
+The semiclassical Rydberg electron momentum given by $\hbar {k \pqty{\va{r}}} = \sqrt{2 m_{e} \bqty{{e^2}/{\pqty{4 \pi \epsilon_0 \va{r}}} - E_{b}}}$ for an unperturbed Rydberg electron binding energy $E_{b}$ \cite{DeSalvo2015.PRA.92.031403}.
+Evaluating the interaction with the Rydberg electron wave function $\ket{\Psi_{nl}}$ leads to an effective molecular potential
 \begin{equation}
-	V\pqty*{\va{R}}
-		\simeq	\sum_{i} \frac{2 \pi \hbar^{2} A_{s}\pqty*{k}}{m_{e}} {\abs*{\Psi_{ns}\pqty*{\va{r}_{i} = \va{R}}}^2}
-				+ \frac{6 \pi \hbar^{2} A_{p}^{2}\pqty*{k}}{m_{e}} {\abs*{\grad \Psi_{ns}\pqty*{\va{r}_{i} = \va{R}}}^2}
+	\ev*{\hat{V}\pqty*{\va{R}}}
+		\simeq	\sum_{i} \frac{2 \pi \hbar^{2} A_{s}\pqty*{k}}{m_{e}} {\abs*{\Psi_{nl}\pqty*{\va{r}_{i} = \va{R}}}^2}
+				+ \frac{6 \pi \hbar^{2} A_{p}^{2}\pqty*{k}}{m_{e}} {\abs*{\grad \Psi_{nl}\pqty*{\va{r}_{i} = \va{R}}}^2}
 \end{equation}
-**** NEED TO DOUBLE CHECK THE ABOVE EQUATIONS ****
-A very nice derivation of the interaction is presented in \cite{Bendkowsky2010.PhD}\footnote{She references \cite{Balewski2009.Diploma} which has more details of Fermi's approach.} along with some review articles \cite{Shaffer2018.NatComm.9.1965, Fey2019.arXiv.1904.08372, Eiles2019.JPB.52.113001}.
+experienced by a ground-state atom \cite{DeSalvo2015.PRA.92.031403}.
+A very nice derivation of the interaction is presented in \cite{Bendkowsky2010.PhD}\footnote{She references \cite{Balewski2009.Diploma} which has more details of Fermi's approach.} along with review articles \cite{Shaffer2018.NatComm.9.1965, Fey2019.arXiv.1904.08372, Eiles2019.JPB.52.113001}.
 
-We are particularly interested in the case when, in the low-energy scattering regime, $A_{s} < 0$ because the interaction is attractive and can lead to the formation of bound states for nearby ground state atoms in the located in Rydberg electron wave function.
-These objects are known as ``ultra-long-range Rydberg molecules''\footnote{Other objects can also be called ``Rydberg molecules'' (e.g., a molecule electronically excited to a high principal quantum number) but for the purposes of this thesis, a Rydberg molecule refers to the binding of neutral atoms to a Rydberg atom due to scattering.} (ULRRMs) and were theoretically predicted by Greene et al., \cite{Greene2000.PRL.85.2458} in {2000}. 
-Instead of the more conventional binding mechanisms (e.g., ionic or covalent), the ground state atoms are bound to the Rydberg atom by the low-energy Rydberg electron-neutral atom scattering. 
+We are particularly interested in the case when, in the low-energy scattering regime, $A_{s} < 0$ because the interaction is attractive and can lead to the formation of bound states involving nearby ground state atoms located in the Rydberg electron wave function.
+These objects are known as ``ultra-long-range Rydberg molecules''\footnote{Other objects can also be called ``Rydberg molecules'' (e.g., a molecule electronically excited to a high principal quantum number) but for the purposes of this thesis, a Rydberg molecule refers to the binding of neutral atoms to a Rydberg atom due to Rydberg electron-neutral atom scattering.} (ULRRMs) and were theoretically predicted by Greene et al., \cite{Greene2000.PRL.85.2458} in {2000}. 
+Instead of the more conventional binding mechanisms (e.g., ionic or covalent), the ground state atoms are bound to the Rydberg atom by low-energy Rydberg electron-neutral atom scattering. 
 The first experimental detection of ULLRMs occurred in \Rb{87} \cite{Bendkowsky2009.Nature.458.1005} with subsequent observations in {Cs} \cite{Tallant2012.PRL.109.173202} and {Sr} \cite{DeSalvo2015.PRA.92.031403}.
-\Cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} provides an illustrative example of the molecular potential with the resulting radial vibrational wave functions and the spectroscopic signal obtained from experiment. 
+\Cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} provides an illustrative example of a molecular potential together with the resulting radial molecular vibrational wave functions and a typical ``Rydberg'' excitation spectrum seen experimentally.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/n34-wave_functions_and_spectra/n34-wave_functions_and_spectra.pdf}
 	\caption[]{
 		\label{fig:n34_rydberg_molecule_wave_functions_and_spectra}
-		(Top) Calculated molecular potential ($V$) for a $\nSLJ{5s34s}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ atom pair together with the radial vibrational wave functions for the $\nu = 0$ to $\nu = 4$ vibrational states.
-		(Bottom) Rydberg molecule spectra in unpolarized gas of \Sr{87} and highlighting various dimer vibrational states.}
+		(Top) Calculated molecular potential $\ev*{\hat{V}\pqty*{R}}$ for a $\nSLJ{5s34s}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ atom pair together with the radial vibrational wave functions for the $\nu = 0$ to $\nu = 4$ vibrational states.
+		(Bottom) Rydberg excitation signal for an unpolarized gas of \Sr{87}.
+		The various dimer vibrational states are as indicated.}
 \end{figure}
 Starting from the atomic line and tuning the laser below (atomic) resonance, additional peaks appear which correspond to the various vibrational states (labeled by $\nu$) of the ULRRM. 
-Note that the binding energies are typically a few to a few-tens of megahertz, it scales as $E_{b} \sim {1}/{{n^\star}^6}$\footnote{The ``volume'' of the electron orbital scales roughly as $V \sim {n^\star}$ meaning.}, meaning the ULRRMs only be reliably created in ultracold and dense samples.
+Note that the binding energies of ULRRMs are typically a few to a few-tens of megahertz and scale as $E_{b} \sim {1}/{{n^\star}^6}$\footnote{Since $\ev*{\hat{V}\pqty*{\va{R}}} \propto {\abs*{\Psi_{nl}\pqty*{\va{R}}}^2}$, the ${1}/{{n^\star}^6}$ scaling can be understood as the electron probability being ``spread out'' over a volume which scale as $V \sim \ev*{r}^{3} \sim {n^\star}^6$.}, meaning that ULRRMs can only be reliably created in ultracold, dense samples.
 
 Although \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra} only shows``dimer'' data with one Rydberg atom in the $\nSLJ{5s34s}{3}{S}{1}$ state bound to a single nearby $\nSLJ{5s^2}{1}{S}{0}$ atom, this effect is generalizable to multiple bodies bound to the Rydberg atom. 
-A ``trimer'' is one (1) Rydberg atom and two (2) ground-state atoms, a ``tetramer'' is one (1) Rydberg atom and three (3) ground-state atoms, and so on (e.g., see \cite{Gaj2014.NatComm.5.4546}).
+A ``trimer'' is a Rydberg atom containing two bound ground-state atoms, a ``tetramer'' is a Rydberg atom with three embedded ground-state atoms, and so on (e.g., see \cite{Gaj2014.NatComm.5.4546}).
 Once a macroscopic occupation of the bound molecular states occurs, it makes more sense to describe the system in the quasiparticle picture with the Rydberg atom and the bound ground-state atoms forming a ``polaron'' \cite{Camargo2018.PRL.120.083401, Schmidt2018.PRA.97.022707}.
 
 \section{Strontium Rydberg Atoms}
 
-Strontium offer several benefits over the alkali atoms with perhaps the most obvious, as seen in \cref{fig:sr_levels-boson}, being the singlet and triplet Rydberg series due to the two valence electrons.
+Strontium offers several benefits over the alkali atoms with perhaps the most obvious, as seen in \cref{fig:sr_levels-boson}, being the existence of singlet and triplet Rydberg series due to the presence of two valence electrons.
 \begin{figure}[h]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{introduction/sr_levels/sr_levels-boson.svg}
@@ -146,33 +150,29 @@ Strontium offer several benefits over the alkali atoms with perhaps the most obv
 		Grotrian diagram for (bosonic) strontium (\Sr{88} in particular).
 		*** FIX FIGURE -- ASK SOUMYA ABOUT UPDATED CODE ***.}
 \end{figure}
-Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, a two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels.
-In addition to the anisotropies of a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated for these states and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
-The second electron does introduce additional complexity (``richness'') as well due to there being multiple Rydberg series which can interact and typically requires multichannel quantum defect theory (MQDT) \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001, Robicheaux2018.PRA.97.022508} and/or two-active electron (TAE) models \cite{Ye2013.PRA.88.043430} to described the spectra.
-There is also the opportunity to produce doubly-excited and autoionizing states \cite{Gallagher1994.RydbergAtoms} which, besides being interesting in their own right (e.g., \cite{Eichmann1992.PRL.68.21}), have proven to be a sensitive tool for detecting Rydberg atoms \cite{Millen2010.PRL.105.213004, Millen2011.PhD, Lochead2013.PRA.87.053409, Lochead2016.PhD}. 
+Starting from the $\nSLJ{5s^2}{1}{S}{0}$ ground state, two-photon excitation can be used to access the myriad of $\SLJ{1}{S}{0}$, $\SLJ{3}{S}{1}$, $\SLJ{1}{D}{2}$, and $\SLJ{3}{D}{1,2,3}$ Rydberg levels.
+In addition to the anisotropies associated with a particular Rydberg orbital, the $C_{6}$ coefficients have been calculated for these states and exhibit both attractive ($C_{6} < 0$) and repulsive ($C_{6} > 0$) interactions \cite{Vaillant2012.JPB.45.135004}. 
+The second valence electron introduces additional complexity (``richness'') as well due to there being multiple Rydberg series which can interact and perturb each other. 
+The treatment of such perturbations typically requires multichannel quantum defect theory (MQDT) \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001, Robicheaux2018.PRA.97.022508} and/or a two-active electron (TAE) model \cite{Ye2013.PRA.88.043430}.
+There also exists the opportunity to produce doubly-excited and autoionizing states \cite{Gallagher1994.RydbergAtoms} which, besides being interesting in their own right (e.g., \cite{Eichmann1992.PRL.68.21}), have proven to be a sensitive tool for detecting Rydberg atoms \cite{Millen2010.PRL.105.213004, Millen2011.PhD, Lochead2013.PRA.87.053409, Lochead2016.PhD}. 
 
 Another significant advantage of strontium is the narrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition with linewidth ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$. 
-Not only does this transition enable us to easily produce samples below about $\SI{2}{\micro\kelvin}$, it is also serves as the first leg of a two-photon transition to a Rydberg state. 
-Considering the two-photon coupling between states (in a three-level system) $\Omega \sim {\Gamma}/{\Delta}$ and the photon scattering rate $\Gamma_{\text{sc}} \sim \pqty{{\Gamma}/{\Delta}}^2$ for a detuning $\Delta$ (e.g., see \cite{Metcalf1999.LCT, Bransden.Atoms, Foot2005.Atomic, Steck.QuantumAtomOptics, Gentile1989.PRA.40.5103}), it enables stronger coupling for comparable scattering rates. 
+Not only does this transition enable us to easily produce samples with temperatures below $\SI{2}{\micro\kelvin}$, it also provides a convenient first step for two-photon excitation to Rydberg states. 
+Considering the two-photon coupling between states (in a three-level system) $\Omega \sim {\Gamma}/{\Delta}$ and the photon scattering rate $\Gamma_{\text{sc}} \sim \pqty{{\Gamma}/{\Delta}}^2$ for a detuning $\Delta$ (e.g., see \cite{Metcalf1999.LCT, Bransden.Atoms, Foot2005.Atomic, Steck.QuantumAtomOptics, Gentile1989.PRA.40.5103}), the narrow linewidth enables stronger coupling for comparable scattering rates. 
 Active research is also progressing towards exciting strontium Rydberg atoms using the even narrower $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{0}$ clock transition \cite{Gil2014.PRL.112.103601}. 
 In principle, the ultranarrow $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ transition could also be used to excite Rydberg states since a direct measurement of the transition frequency was recently reported \cite{Onishchenko2019.PRA.99.052503}.
 
 A third, more subtle, aspect of strontium is the range of stable isotopes available, both bosonic ($I=0$) and fermionic ($I={9}/{2}$). 
-Since all the bosonic isotopes (\Sr{88}, \Sr{86}, and \Sr{84}) have been Bose condensed \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402, Mickelson2010.PRA.81.051601, Stellmer2010.82.041602, Stellmer2013.PRA.87.013611} and a degenerate Fermi gas \Sr{87} has also been produced \cite{DeSalvo2010.PRL.105.030402, Stellmer2013.PRA.87.013611}, strontium provides a unique opportunity for incorporating Rydberg interactions in to both ultracold Bose and Fermi gases (and Bose-Bose and Bose-Fermi mixtures). 
-In the bosons, the lack of nuclear spin means there is no hyperfine structure which greatly simplifies the Rydberg spectra whereas the hyperfine structure of \Sr{87} makes the spectra significantly more complicated. 
-Overcoming the complexity introduced by the nuclear spin of \Sr{87} provides a unique opportunity for approximating an ultracold classical gas with the atomic population distributed among the $\num{10}$ spin states.
+Since all the bosonic isotopes (\Sr{88}, \Sr{86}, and \Sr{84}) have been Bose condensed \cite{Stellmer2009.PRL.103.200401, Martinez2009.PRL.103.200402, Mickelson2010.PRA.81.051601, Stellmer2010.82.041602, Stellmer2013.PRA.87.013611} and a degenerate Fermi gas \Sr{87} has also been produced \cite{DeSalvo2010.PRL.105.030402, Stellmer2013.PRA.87.013611}, strontium provides a unique opportunity for incorporating Rydberg interactions into both ultracold Bose and Fermi gases (and Bose-Bose and Bose-Fermi mixtures). 
+For the bosons, the lack of nuclear spin means there is no hyperfine structure which greatly simplifies their Rydberg spectra whereas the hyperfine structure of \Sr{87} makes the spectra significantly more complicated. 
+However, \Sr{87} provides a unique opportunity for approximating an ultracold classical gas since, in an unpolarized gas of \Sr{87}, the atomic population is distributed among the $\pqty{2 I + 1} = \num{10}$ degenerate $\nSLJFM{5s^2}{1}{S}{0}{F}{m_F}$ spin states.
 
 Many of the advantages (and challenges) discussed above for strontium generally apply to other alkaline earth-like atoms (e.g., calcium, barium, ytterbium) as well.
-One aspect that does depend on the details of the interaction occurs (in the context of ULRRMs) is the occurrence of a scattering resonance between the Rydberg electron and nearby perturbing atoms. 
-It was observed that the lifetimes of rubidium ULRRMs were significantly shorter than the parent Rydberg state lifetime \cite{Butscher2011.JPB.44.184004} which was attributed to a $p$-wave scattering resonance \cite{Hamilton2002.JPB.35.L199}.
-Meanwhile, strontium ULRRMs exhibited similar lifetimes as the parent Rydberg state, indicating an much weaker (or absent) $p$-wave scattering resonance \cite{Camargo2016.PRA.93.022702}.
-It should be noted that in very dense gases (i.e., in a BEC), even strontium ULRRMs exhibit reduced lifetimes with the effect being attributed to collisions between the ground-state atom and the Rydberg core ion \cite{Whalen2017.PRA.96.042702}.
+One other advantage of strontium is the lack of a scattering resonance between the Rydberg electron and nearby perturbing atoms. 
+It was observed that the lifetimes of rubidium ULRRMs were significantly shorter than the parent Rydberg atom lifetime which was attributed to a $p$-wave scattering resonance \cite{Butscher2011.JPB.44.184004, Hamilton2002.JPB.35.L199}.
+In contrast, strontium ULRRMs exhibit similar lifetimes to the parent Rydberg atoms, indicating much weaker (or absent) $p$-wave scattering resonance \cite{Camargo2016.PRA.93.022702}.
+It should be noted that in very dense gases (i.e., in a BEC), even strontium ULRRMs exhibit reduced lifetimes with the effect being attributed to collisions between ground-state atoms and the Rydberg core ion \cite{Whalen2017.PRA.96.042702}.
 
-\section{****** NOTES TO SELF, REMOVE LATER ******}
+\section{Thesis Outline}
 
-
-(2) Effects of quantum statistics -- use Joe's figure?
-
-Add in repumper spectrum.
-
-Mention OFR with Rydberg molecules \cite{Thomas2018.NatComm.9.2238} in ``Conclusion'' chapter?
+**** QUICK THESIS OUTLINE SECTION? ****
