@@ -15,6 +15,8 @@ In particular, we have in-vacuum electric field plates which we can use to both 
 We follow the well-established laser cooling and trapping sequence for producing ultracold gases of strontium.
 Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here. 
 
+**** Quick overview to give context. Add relevant strontium level diagram figure. ****
+
 \subsection{Cooling on the $\SI{461}{\nm}$ ``Blue'' Transition}
 
 At room temperature, strontium is a solid metal with negligible vapor pressure and thus requires an oven to sublimate strontium in to a gaseous form. 
@@ -89,7 +91,12 @@ Several transitions have been explored for repumping atoms out of the metastable
 On our experiment, we drive the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at $\SI{481}{\nm}$.
 One of the key advantages of this transition is that the upper state is $\SLJ{3}{P}{2}$ meaning it only requires a single laser to clear out the magnetic trap since the $\nSLJ{5p^2}{3}{P}{2}$ can only decay to either the $\nSLJ{5s5p}{3}{P}{1}$ or $\nSLJ{5s5p}{3}{P}{2}$ states. 
 Another advantage of this transition is that the hyperfine structure in \Sr{87} of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ is expected to be small meaning the hyperfine shift should be predominantly due to the $\nSLJ{5s5p}{3}{P}{2}$ state which are known \cite{Heider1977.PRA.16.1371, Onishchenko2019.PRA.99.052503}. 
-When multiple isotopes are loaded in to the magnetic trap, it will be necessary to apply the appropriate frequency shifts to the repump laser so that all isotopes are recovered. 
+\begin{figure}[htbp]
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{experiment/repumper_system/20180327-preliminary_84Sr_87Sr_repumper_spectra/repumper_spectra.pdf}
+	\caption[]{\label{fig:repumper_spectra}
+		Repumper spectra.}
+\end{figure}
+When multiple isotopes are loaded in to the magnetic trap, it will be necessary to apply the appropriate frequency shifts to efficiently repump laser so that all isotopes are recovered. 
 
 Other uses for the magnetically trapped metastable strontium could be for magnetic transport of atoms from a ``collection'' chamber to a ``science'' chamber.
 It should also be mentioned that the magnetic trap is not always necessary nor preferred depending on the particular isotope and experiment being performed. 
@@ -285,29 +292,29 @@ To maximize the limited amount $\SI{461}{\nm}$ laser power, the beams are shaped
 		A reflection of the atomic beam is visible off the vertical retro mirror.}
 \end{figure}
 
-Before the atoms leave this section of the vacuum system and enter the Zeeman slower, the pass through a differential pumping tube ($C \approx \SI{0.85}{\liter\per\second}$) which helps maintain the pressure differential between the source and experiment sides of the system. 
+Before the atoms leave this section of the vacuum system and enter the Zeeman slower, they pass through a differential pumping tube\footnote{A cylinder of OFHC copper with a coaxial through hole approximate dimensions of $\diameter = \SI{0.3}{\inch}$ by $L = \SI{2.4650}{\inch}$.} with a conductance $C \approx \SI{0.85}{\liter\per\second}$ which helps maintain the pressure differential between the source and experiment sides of the system. 
 The pressure in the source side is typically higher than the experiment side and is around $\SI{7.6E-9}{\Torr}$\footnote{MiniVac ion pump controller outputting $\SI{7.9}{\mV}=\SI{7.9E-6}{\A}$ for the  rebuilt VacIon Plus 75 Starcell on 2019/06/13.}.
 We suspect the ion pump on the source side is being restricted by the zero-length reducer which adapts the $\SI{4.5}{\inch}$ flange on the source-side vacuum chamber to the $\SI{6}{\inch}$ flange on the Varian ion pump.
 
 A shutter and a gate valve was also installed between the source-side vacuum system and the Zeeman slower. 
-The shutter allows us to physically block the atomic beam since we don't have 2D deflection MOT and extend the time between needing to change the Zeeman slower entrance window. 
+The shutter allows us to physically block the atomic beam which should extend the time between needing to change the Zeeman slower entrance window. 
 The gate valve should, in principle, allow us to isolate the source-side vacuum system from the rest of the chamber to facilitate reloading the strontium oven without venting the entire vacuum chamber but we found this valve to be somewhat leaky when we initially pumped out our system\footnote{Something similar was noticed by the Weld group at UCSB and they used two gate valves to separate their atomic source from their UHV main chamber \cite{Senaratne2018.PhD}.}.
 
 \subsection{Zeeman Slower}
 
 Since an oven is required to produce enough strontium vapor for trapping, a Zeeman slower is needed to slow the atoms down so that they can be captured by the MOT. 
-The Zeeman slower is detailed in \cite{Camargo2015.MS} so it will only be briefly covered here. 
+Our Zeeman slower, detailed in \cite{Camargo2015.MS},  so it will only be briefly covered here. 
 Our Zeeman slower uses a spatially-varying axial magnetic field and circularly-polarized light to keep the atoms resonant with a light propagating counter to the direction of the atomic beam so that they continuously scatter photons as they slow \cite{Phillips1982.PRL.48.596}.
 Our particular design is a ``spin-flip''-type Zeeman slower where the amplitude of the axial magnetic field crosses zero between the ends.
 
-Our Zeeman slower was custom made with a double wall which acts as a water cooling jacket where the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
+Our Zeeman slower was custom made, detailed in \cite{Camargo2015.MS}, with a double wall that acts as a water cooling jacket the inner wall separates the water from UHV and the outer wall where the magnetic field coils are wrapped. 
 Due to space constraints, the source-side welded to a $\SI{2.75}{\inch}$ flange whereas it's connected to the main chamber by a $\SI{2.125}{\inch}$ flange.
 These flanges are also where cooling water enters and exits the jacket.
-It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require shielding and/or more significant cancellation as permanent magnets cannot be turned off.
+It's possible to avoid water-cooling by using a permanent magnet Zeeman slower \cite{Lebedev2014.JPB.47.155003, Cheiney2011.RSI.82.063115, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006} but the magnetic field would likely require significant shielding and/or more demanding cancellation efforts in order for it to not interfere with other aspects of the experiment. 
 
-The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be tweaked so that the resulting field was matched the desired profile.
+The Zeeman slower coil was constructed in multiple layers so that subsequent layers can be designed so that the resulting field was matched the desired profile.
 Each layer was attached to the Zeeman slower with thermally-conductive epoxy\footnote{Emerson and Cuming STYCAST 2762 or STYCAST 2762 FT with Catalyst 14, 17, or 17M-1.} and measured before wrapping the next layer of windings.
-Due to our relatively long Zeeman slower  ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
+Due to our relatively long Zeeman slower\footnote{The inner wall of the Zeeman slower is about $\diameter = \SI{0.6940}{\inch}$ by $L = \SI{18.8296}{\inch}$.} ($C \approx \SI{1.4}{\liter\per\second}$), it should provide some additional differential pumping between the source and experiment sides.
 
 \subsection{Experiment-side Vacuum System}
 
@@ -317,7 +324,8 @@ The custom main chamber \footnote{Fabricated by Huntington Mechanical Labs.} fea
 	\item Recessed top and bottom flanges which bring the $\SI{2.75}{\inch}$ viewports closer to the center of the chamber while providing room for the MOT coils to fit around the viewport.
 	The in-vacuum electric field plates are mounted to the bottom flange which has eleven $\SI{10}{\kV}$ safe high voltage (SHV) feedthroughs.
 	\item Six (6) $\SI{2.75}{\inch}$ horizontal viewports provide optical access for the various MOT and optical dipole trap beams.
-	\item Three (3) $\SI{1.33}{\inch}$ horizontal viewports used for the various $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitations beams and are oriented perpendicular and parallel to the MCP.
+	\item Three (3) $\SI{1.33}{\inch}$ horizontal viewports used for the various $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitations beams.
+	These are oriented perpendicular and parallel to the MCP, allowing us to apply bias magnetic fields along the MCP axis to reduce electrons being deflected by the Lorentz force.
 	\item Room for a Photonis miniTOF micro-channel plate (MCP) detector.
 	\item A conical expansion to a $\SI{6}{\inch}$ flange for increased conductance to the pumps.
 \end{itemize}
@@ -334,7 +342,8 @@ The ion pump current suggests the vacuum on this side is about $\SI{3.4E-9}{\Tor
 Additional pumping is provided by a non-evaporable getter (NEG)\footnote{SAES CapaciTorr D 200.} located about halfway up the pumping tower. 
 In retrospect, we should have also included a titanium sublimation pump (TSP) for additional pumping capability.
 
-We also added a $\SI{3.375}{\inch}$ gate valve between the Zeeman slower window and main chamber to facilitate changing the sacrificial Zeeman slower entry viewport once it gets coated with strontium\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
+Since we do not have a 2D deflection MOT, strontium from the atomic beam will deposit on the viewport overtime\footnote{Neutral has tried using Plasma's pulsed Nd:YAG laser to perform ablation on their coated Zeeman viewport with a moderate level of success.}.
+A $\SI{3.375}{\inch}$ gate valve separates the Zeeman slower window from the main chamber and facilitates changing the Zeeman slower entry viewport once it gets coated with strontium.
 
 \section{Magnetic Field Trim Coils}
 
@@ -353,7 +362,7 @@ Due to the choice of keeping the center of the chamber at $\SI{3.5}{\inch}$ abov
 		The trim coil axes are defined relative to the MCP (equivalently, the $\SI{1.33}{\inch}$ viewports for the Rydberg excitation lasers) and gravity with the $X$-axis (blue) oriented towards the MCP, the $Z$-axis (red) perpendicular to the table surface/gravity, and the $Y$-axis (green) perpendicular to the other two axes (following the right-hand rule, of course).}
 \end{figure}
 
-The vertical ($Z$-axis) coils were would on circular aluminum U-channel forms and fit around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
+The vertical ($Z$-axis) coils were wound on circular aluminum U-channel forms and fit around the outside of the top and bottom flanges of the main chamber which allowed us to put many turns on them. 
 The circular U-channels used as the forms also feature a radial slice, filled with epoxy, to mitigate the generation of eddy currents. 
 In retrospect, we should made the horizontal coils beefier (especially along the $X$-axis) in order generate larger bias fields along the MCP axis and increase detection efficiency. 
 We found that having bias fields along other directions (i.e., not towards/away from the MCP) reduced our detection efficiency, likely due to the Lorentz force steering electrons away from the MCP. 
@@ -362,7 +371,7 @@ We found that having bias fields along other directions (i.e., not towards/away 
 \label{sec:dual_mot_coils}
 
 One of the things we did differently from the previous strontium experiments is that we have two pairs of MOT coils instead of a single pair where the larger pair is used for the blue MOT while the smaller pair for the red MOT (see \cref{fig:dual_mot_coils}).
-This allows us to use two different current drivers without needing a controller which is has the dynamic range to provide the $\SI{\sim 40}{\ampere}$ to generate the $\SI{\sim 40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\SI{\sim 1}{\gauss\per\cm}$ gradient for the red MOT.
+This allows us to use two different current drivers without needing a controller that has the dynamic range to provide the $\SI{\sim 40}{\ampere}$ to generate the $\SI{\sim 40}{\gauss\per\cm}$ field for the blue MOT while also generating a low-noise $\SI{\sim 1}{\gauss\per\cm}$ gradient for the red MOT.
 \begin{figure}[htbp]
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/mot_coils/dual_mot_coils.svg}
 	\caption[]{\label{fig:dual_mot_coils}
@@ -405,19 +414,18 @@ We're not too worried about not having this capability since ground-state stront
 
 \subsection{\SI{461}{\nm} ``Blue'' Laser System}
 
-The experiment currently has three blue diode lasers in a master-slave configuration which provide all the \SI{461}{\nm} power available for our experiment.
+The experiment currently has three blue diode lasers in a master-slave configuration that provides all the \SI{461}{\nm} power available for our experiment.
 In a master-slave setup, a single (typically low-power) ``master'' external cavity diode laser (ECDL) is frequency stabilized relative to the atomic transition and is used to injection lock higher-power ``slave'' lasers to amplify the laser power \cite{Shimada2013.RSI.84.063101, Hosoya2015.RSI.86.073110}.
 
 Our current ECDL master laser\footnote{New Focus TLB-6802: a Littman-Metcalf external cavity diode laser (ECDL).} outputs about \SI{40}{\mW} and is locked relative to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ in a homebuilt strontium saturated absorption cell using Doppler-free saturated absorption spectroscopy.
 The error signal is obtained by modulating the axial magnetic field around the saturated absorption cell and using circularly-polarized pump and probe beams.
 Although this laser tunes relatively well and generally remains single-mode when tuning between the various isotopes, we have been very disappointed with output quality of the laser which has what appears to be a {Hermite-Gaussian TEM\tsub{00}} output mode **see Fig. XX). 
 ** INCLUDE BEAM PROFILER FIGURE **
-Due to this poor output mode, a D-mirror was used to split the beam in to two nearly-Gaussian beams.
-One of the beams is directed to a SMPM fiber which injection locks both our slave lasers whereas the other is currently unused.
-After using the laser for about six years, the piezo tuning element died\footnote{The laser died after powering down and keying off the laser driver...} and the laser had to be sent back to New Focus for repairs.
-During the repairs, we changed our setup so that the two slave lasers are injection locked from the output of a fiber so that we can easily change master lasers should this laser die again.
-We also noticed some weird grounding issues with the TLB-6700 drivers New Focus sent us with the lasers\footnote{Similar issues were noticed by Jun Ye's group when I asked them if they have observed issues with the New Focus lasers.}.
-Overall, we were not satisfied with New Focus' ECDL and their repair process and costs so much so that they only reduced the quoted repair cost\footnote{The piezo repair was going to cost 7500 with an additional 4000 for a new diode...} after we were ready to purchase a new \SI{461}{\nm} ECDL from either Toptica or MOGLabs\footnote{We ended up purchasing a \SI{461}{\nm} ECDL from Toptica but both companies provided quotes for NEW lasers, about 21k from MOGLabs and about 25k from Toptica but with about \SI{100}{\mW} of output power.}.
+Due to this poor output mode, a D-mirror was used to split the beam into two nearly-Gaussian beams, each of which were directed to a slave laser for injection locking. 
+After using the laser for about six years, the piezo tuning element died and the laser had to be sent back for repairs.
+While the laser was undergoing repairs, we changed our setup so that the two slave lasers are injection locked from the output of a single-mode polarization maintaining (PM) fiber so that we can easily change master lasers should this laser die again.
+We also noticed some weird grounding issues with the New Focus TLB-6700 drivers included with the lasers\footnote{Similar issues were mentioned by Sara Campbell in Jun Ye's group when I asked them if they had issues with the New Focus lasers.}.
+We also have concerns about the long-term cost-effectiveness and reliability of the New Focus ECDL\footnote{The piezo required installation of a new diode, even when the existing diode was fine, and the initially quoted cost was 11,500. This was significantly reduced after extended discussions with the company.}, and we have purchased a Toptica $\SI{461}{\nm}$ ECDL system\footnote{We ended up purchasing a \SI{461}{\nm} ECDL from Toptica but both companies provided quotes for NEW lasers, about 21k from MOGLabs and about 25k from Toptica but with about \SI{100}{\mW} of output power.} as a future replacement and to enable additional experiments. 
 
 \begin{sidewaysfigure}[htbp]
 	\centering
@@ -441,12 +449,12 @@ Mechanical shutters\footnote{We use hard drive shutters as we've found them to b
 
 Before moving on to the narrow line ``red'' MOT, the atoms in the metastable resevoir are dark to both the \SI{461}{\nm} and \SI{689}{\nm} cooling light and must be brought back to the ground state.
 
-Our current \SI{481}{\nm} repumper system is shown in \cref{fig:repumper_system}. 
+The current \SI{481}{\nm} repumper system is shown in \cref{fig:repumper_system}. 
 The \SI{481}{\nm} light is provided by a Toptica DL 100\footnote{The laser is equipped with a {LD-0488-0060-1} diode.} which outputs about ** \SI{10}{\mW} ** of power. 
-For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} which has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas} which is close to the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at \SI{20776.087}{\per\cm} \cite{Sansonetti2010.JPCRD.39.033103}.
+For now, this laser is stabilized to a Doppler-broadened \Te{130}{2} line \cite{Wongwaitayakornkul2013.BS} that has a transition at \SI{20776.0886}{\per\cm} \cite{Cariou1980.Te2_Atlas} which is close to the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at \SI{20776.087}{\per\cm} \cite{Sansonetti2010.JPCRD.39.033103}.
 Originally, when the lab was working with a single isotope, simply tuning the lock point to maximize repumping efficiency of the isotope of interest was good enough (typically \Sr{84} since it's the least abundant).
 Now that we routinely work with multiple isotopes and mixtures, a free-space electro-optic modulator (EOM) was introducted to to add sidebands to the \SI{481}{\nm} light in order to address multiple isotopes and the hyperfine shift of \Sr{87}.
-The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Heider1977.PRA.16.1371} and cover the hyperfine shift of the upper $\nSLJ{5p^2}{3}{P}{2}$ doubly-excited is expected to be small **because of the lack of an {$s$-electron}\footnote{I.e., the magnetic dipole hyperfine contribution comes from the $\delta(r)$....} CHECK **.
+The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Heider1977.PRA.16.1371} and cover the hyperfine shift of the upper $\nSLJ{5p^2}{3}{P}{2}$ doubly-excited state which is expected to be small **because of the lack of an $s$-electron.
 
 \begin{figure}[htbp]
 	\centering
@@ -459,7 +467,7 @@ The hyperfine shift of the lower $\nSLJ{5s5p}{3}{P}{2}$ state is known \cite{Hei
 		\SI{481}{\nm} light is delivered to the various experiments by multimode fibers.}
 \end{figure}
 
-In principle, it should be possible to lock to a hollow cathode lamp (HCL) due to collisions populating enough metastable atoms to perform spectroscopy on \cite{Norcia2016.RSI.87.023110}.
+In principle, it should be possible to lock the frequency of the $\SI{481}{\nm}$ laser using the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ absorption feature in a hollow cathode lamp (HCL) due to collisions populating enough metastable atoms to perform spectroscopy on \cite{Norcia2016.RSI.87.023110}.
 Instead of using an HCL, we plan on using a ``super lock'' \cite{Lindsay1991.RSI.62.1656, Jaffe1993.RSI.64.2475, Zhao1998.RSI.69.3737, Subhankar2019.RSI.90.043115} (see Appendix xxxx for future upgrade plans) since we already have a stable \SI{689}{\nm} reference laser (although we could also lock to a stabilized HeNe).
 We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.043103} but ultimately decided against it as our wavemeter's accuracy is lacking, its sampling rate a bit too slow, and we needed the wavemeter for other tasks (e.g., finding Rydberg lines). 
 
@@ -467,7 +475,7 @@ We also considered a lock to the wavemeter as in \cite{Couturier2018.RSI.89.0431
 
 Some details about our narrow line cooling system can be found in \cite{Ding2016.MS}.
 The operation of the narrow line \SI{689}{\nm} ``red'' MOT can be found in \cite{Stellmer2013.PhD, Boyd2007.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD}. 
-Details of the \Sr{87} red MOT is particularly well described in \cite{Stellmer2013.PhD} and will not be reproduced here. 
+The \Sr{87} red MOT is particularly well described in \cite{Stellmer2013.PhD} and will not be reproduced here. 
 
 \subsubsection{\SI{689}{\nm} Master Laser}
 
@@ -507,9 +515,9 @@ In practice, we don't always have all the red MOT AOMs lined up, typically only 
 	\caption[]{\label{fig:red_system}Simplified diagram of the red MOT system (when everything is put together) for multi-isotope trapping. The master laser frequency is referenced to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ in \Sr{88}.}
 \end{sidewaysfigure}
 Without using a fiber combiner, we're able to devote a lot of power to the red MOT for each isotope, enabling us to use large red MOT beams. 
-The drawbacks is that we're much more sensitive to misalignments and the ugly intensity profiles out of the diodes leads to strange red MOT shapes. 
+The drawbacks is that we're much more sensitive to misalignments, and the non-Gaussian intensity profiles out of the diodes lead to strange red-MOT shapes. 
 
-We currently have three slave lasers which amplify the light from the red master. 
+We currently have three slave lasers that amplify the light from the red master. 
 We found that fiber-coupling the injection beams made them much less sensitive to mechanical drifts and greatly increased the ease of switching the frequency of the slave laser by changing the source of the injection beam.
 
 ****
@@ -570,24 +578,18 @@ This lack of improvement is probably due to our $\SI{689}{\nm}$ laser system bei
 
 \section{Making and Detecting Rydberg Atoms}
 
-Now that we have an ultracold sample of strontium, we use a $\SI{320}{\nm}$ UV laser system to excite them to Rydberg atoms via the two-photon transition from the intermediate $\nSLJ{5s5p}{3}{P}{1}$ state.
+AFter creating an ultracold sample of strontium, a $\SI{320}{\nm}$ UV laser system to excite them to Rydberg atoms via the two-photon transition from the intermediate $\nSLJ{5s5p}{3}{P}{1}$ state.
 The electric field system and charged particle detection will be detailed in Joe Whalen's upcoming Ph.D. thesis so they will only be briefly covered here. 
-
-% \begin{sidewaysfigure}[htbp]
-	% \includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/rydberg_beams.svg}
-	% \caption[]{\label{fig:rydberg_beams}
-		% Diagram of the various Rydberg excitation beams.}
-% \end{sidewaysfigure}
 
 \subsection{$\SI{320}{\nm}$ UV Laser System}
 
-Strontium Rydberg atoms are produced using a two-photon transtion where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives atoms from the $\nSLJ{5s^2}{1}{S}{0}$ ground state to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ states. 
+Strontium Rydberg atoms are produced using a two-photon transition where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives atoms from the $\nSLJ{5s^2}{1}{S}{0}$ ground state to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ states. 
 
-Generation of the $\SI{320}{\nm}$ radiation starts with a tunable, narrow linewidth $\SI{1064}{\nm}$ seed laser which is amplified to about $\SI{7.5}{\watt}$ by a fiber amplifier\footnote{IPG Photonics YAR-15K-1064-LP-SF ytterbium fiber amplifier.}.
-We currently have two $\SI{1064}{\nm}$ seed lasers in the lab and choose the laser based on the experiment
+Generation of the $\SI{320}{\nm}$ radiation starts with a tunable, narrow linewidth $\SI{1064}{\nm}$ seed laser that is amplified to about $\SI{7.5}{\watt}$ by a fiber amplifier\footnote{IPG Photonics YAR-15K-1064-LP-SF ytterbium fiber amplifier.}.
+Two $\SI{1064}{\nm}$ seed lasers have been used for experiments: 
 \begin{itemize}
 	\item Koheras Basik BMY10PztSPm, KOH2038 --
-		The narrowest $\SI{640}{\nm}$ lines we've seem with this seed are around ** $\SI{1}{\MHz}$ **, likely limited by the slow feedback bandwidth of the piezo element, but it's capable of tuning multiple GHz so it's preferred for experiments requiring large tuning.
+		The narrowest $\SI{640}{\nm}$ lines observed with this seed are around ** $\SI{1}{\MHz}$ **, likely limited by the slow feedback bandwidth of the piezo element, but it's capable of tuning multiple gigahertz so it's preferred for experiments requiring large tuning.
 	\item NP Photonics Rock RFLM-50-3-1064.53-1-S-0 --
 		The feedback bandwidth of this laser is quite a bit better than the Koheras with ** $\SI{250}{\kHz}$ ** being the narrowest features we've observed.
 		Although the feedback bandwidth results with a narrow $\SI{640}{\nm}$ linewith, it's more difficult to continuously tune large ranges. 
@@ -610,7 +612,8 @@ With this addition, we typically get about ** \SIrange[range-phrase=-]{1}{1.5}{\
 		The current tubing on the cooling block is a bit too stiff to bend enough to put the laser cover on.}
 \end{figure}
 
-Stabilization of the $\SI{640}{\nm}$ laser frequency is accomplished with a transfer cavity lock \cite{Riedle1994.RSI.65.42, Bohlouli2006.RSI.77.093105, Leopold2016.APB.122.236} where the length of a tunable optical cavity is first stabilized to the $\SI{689}{\nm}$ laser (which itself is stabilized to an atomic reference) and then stabilizing the $\SI{640}{\nm}$ to the cavity.
+Stabilization of the $\SI{640}{\nm}$ laser frequency is accomplished with a transfer cavity lock \cite{Riedle1994.RSI.65.42, Bohlouli2006.RSI.77.093105, Leopold2016.APB.122.236} where the length of a tunable optical cavity is stabilized by locking a cavity resonance to the $\SI{689}{\nm}$ laser (which itself is stabilized to an atomic reference).
+The $\SI{640}{\nm}$ laser is then stabilized by locking its frequency to a resonance of the cavity. 
 Some of the details of our transfer cavity are documented in \cite{Zha2013.BS}.
 Briefly, our transfer cavity is constructed from an Invar body with the cavity mirrors attached to a piezoelectric (PZT) stack on each end. 
 The PZT on one end is used to stabilize the cavity length to the $\SI{689}{\nm}$ laser while the other end provides a tunable ``offset'' which we can use to lock to different FSRs of the transfer cavity.
@@ -625,12 +628,12 @@ The optical layout at the transfer cavtiy is shown in \cref{fig:transfer_cavity}
 		** NEED TO FINISH **.}
 \end{figure}
 Tunability is achieved with a broadband fiber EOM (fEOM) between the $\SI{640}{\nm}$ laser output and the transfer cavity. 
-The PDH error signal is fedback to the $\SI{1064}{\nm}$ seed laser.
+The PDH error signal is fed back to the $\SI{1064}{\nm}$ seed laser.
 Although we have not done a full characterization of the linewidth of the $\SI{640}{\nm}$ laser, the narrowest Rydberg lines we have seen are about ** $\SI{150}{\kHz}$ in $\SI{640}{\nm}$** which can be considered an upper bound on the laser's short-term stability.
 Longer-term stability isn't as good where we have seen drifts of about ** $\SI{500}{\kHz}$ ** when scanning over the same Rydberg (molecule) lines.
 With the recent acquisition of a ULE cavity (see \cref{ap:upgrades}), we plan to eliminate the transfer cavity in favor of locking the $\SI{640}{\nm}$ directly to the ULE cavity with a setup similar to the one presented in \cite{Gregory2015.NJP.17.055006}.
 
-Now that we have a tunable and stabilized source of $\SI{640}{\nm}$, the output from the OPO is then coupled in to a commercial Toptica second-harmonic generation (SHG) pro system which produces doubles the $\SI{640}{\nm}$ to $\SI{320}{\nm}$.
+The $\SI{640}{\nm}$ output from the OPO is coupled in to a commercial Toptica second-harmonic generation (SHG) pro system, which doubles the $\SI{640}{\nm}$ to $\SI{320}{\nm}$.
 When well-tuned, the system is capable of outputting  ** $> \SI{500}{\milli\W}$ of power but it tends to degrade over time.
 Our typical operating powers are closer to about $\SI{100}{\milli\W}$.
 \begin{figure}[htbp]
@@ -645,12 +648,10 @@ Our typical operating powers are closer to about $\SI{100}{\milli\W}$.
 \subsection{Electric Field System}
 
 Due to the extreme ${n}^{7}$ scaling of polarizability \cite{Gallagher1988.RPP.51.143, Gallagher1994.RydbergAtoms}, Rydberg atoms are extremely sensitive to electric fields. 
-To mitigate stray electric fields at the location of the atoms as well as to provide the capability for trimming residual electric fields and perform selective field ionization (SFI), we installed in-vacuum electric field plates. 
-The electric field plate system was designed by Francisco Camargo and additional details his Ph.D. thesis \cite{Camargo2017.PhD} and the design follows similar ones described in \cite{Millen2011.PhD, Low2012.JPB.45.113001} using a split-ring electrode geometry with four quadrant electrodes above and four quadrant electrodes below the center of the chamber (i.e., where the atoms are). 
+In-vacuum electric field plates were installed to mitigate stray electric fields at the location of the atoms as well as to provide the capability for trimming residual electric fields and perform selective field ionization (SFI).
+The electric field plate system was designed by Francisco Camargo and additional details are in his Ph.D. thesis \cite{Camargo2017.PhD} and the design follows similar ones described in \cite{Millen2011.PhD, Low2012.JPB.45.113001} using a split-ring electrode geometry with four quadrant electrodes above and four quadrant electrodes below the center of the chamber (i.e., where the atoms are). 
 The split-ring electrodes and in vacuum wires are made from oxygen-free high conductivity (OFHC) copper with stainless steel making up the supporting scaffold, Einzel lens, and guiding plates. 
 All parts were polished by hand before being sent off to be electropolished. 
-
-** Stuff about the scaffold and copper electric field plates. SIMION simulations? **
 
 \begin{figure}[htbp]
 	\centering
@@ -688,14 +689,14 @@ For now, the electric field system is sufficient for our purposes.
 
 \subsection{Charged Particle Detection}
 
-One of the major aspects which separates our experiment from most other neutral atom experiments is the ability to detect charged particles. 
-Some of the previous work with strontium Rydberg experiments was carried out in the Neutral appratus but since they lacked the ability to detect charged particles, they had to resort to detecting atom loss in absorption images \cite{DeSalvo2015.PRA.92.031403, DeSalvo2016.PRA.93.022709, Aman2016.PRA.93.043425}.
-Our system was designed from the beginning to be able to detect charged particles which we've found to be incredibly sensitive with teh ability to detect signals spanning several orders of magnitude \cite{Camargo2018.PRL.120.083401}.
-** Since Joe will be detailing the electric field ionization and detection system in his upcoming Ph.D. thesis, only the major detials are included here for completeness. **
+One of the major aspects which separates this experiment from most other neutral atom experiments is the ability to detect charged particles. 
+Some of the previous work with strontium Rydberg experiments was carried out in the Neutral apparatus but since it lacked the ability to detect charged particles, atom loss in absorption images were used instead \cite{DeSalvo2015.PRA.92.031403, DeSalvo2016.PRA.93.022709, Aman2016.PRA.93.043425}.
+Our system was designed from the beginning to be able to detect charged particles which we've found to be incredibly sensitive with the ability to detect signals spanning several orders of magnitude \cite{Camargo2018.PRL.120.083401}.
+** Since Joe will be detailing the electric field ionization and detection system in his upcoming Ph.D. thesis, only the major details are included here for completeness. **
 
-An overview of how our charted particle detection system works is shown in \cref{fig:charged_particle_detection}.
-The following procedure explains how we detect electrons as that's what we primarily work with but we have configured our system to detection ions instead.
-** CHECK !! ** After performing a Rydberg excitation on a sample, we typically apply a symmetric field ramp where the plates closer (further) from the MCP are ramped to positive (negative) high-voltage to push electrons towards the MCP. 
+An overview of how the charted particle detection system works is shown in \cref{fig:charged_particle_detection}.
+The following procedure explains how electrons are detected but it can be configured to detection ions instead.
+After performing a Rydberg excitation on a sample, an electric field ramp is applied where the plates closer (further) from the MCP are ramped to positive (negative) high-voltage to push electrons towards the MCP. 
 The length of the cables from the HV switch\footnote{Willamette High Voltage PHVSW-005.} to each of the feedthroughs are about the same length to keep the capacitance approximately equal.
 \begin{figure}[htbp]
 	\centering
@@ -704,10 +705,11 @@ The length of the cables from the HV switch\footnote{Willamette High Voltage PHV
 		\label{fig:charged_particle_detection}
 		 Simplified diagram of how the charged particle detection system works when set up for counting electrons.}
 \end{figure}
-We adjust the HV supplies for the electric field plate ramps depending on which principal quantum number ($n$) of the Rydberg state we are exciting. 
-Due to the cable capacitance, this also affects the ramp rate of the applied electric field but it doesn't significantly affect our data since we're primarily interested in the integrated SFI spectrum.
+The high-voltage supplies for the electric field plate ramps are adjusted depending on which principal quantum number ($n$) of the Rydberg state being excited.
+Due to the cable capacitance, this also affects the ramp rate of the applied electric field but it doesn't significantly affect the integrated SFI spectrum which is the quantity of interest.
 
-Charged particles are detected with an MCP\footnote{Photonis Advanced Performance Detector (APD) 2 miniTOF. It's important to note that we purchased the version with PEEK components so care must be taken when performing a bake-out.} where the front plate is kept fixed at $\SI{200}{\V}$ while the back of the MCP is fixed at $\SI{2650}{\V}$.
+Charged particles are detected with an MCP\footnote{Photonis Advanced Performance Detector (APD) 2 miniTOF. It's important to note that we purchased the version with PEEK components so care must be taken when performing a bake-out.}.
+For detecting electrons, the front plate is kept fixed at $\SI{200}{\V}$ while the back of the MCP is fixed at $\SI{2650}{\V}$.
 The MCP is mounted to a $\SI{2.75}{\inch}$ flange with four HV feedthroughs with ceramic insulation.
 \begin{figure}[htbp]
 	\centering
@@ -734,7 +736,7 @@ An example Rydberg signal from the MCS is shown in \cref{fig:example_mcs_signal}
 \end{figure}
 
 As seen in \cref{fig:mcp_saturation}, MCPs are known to ``saturate'' and become non-linear as the count rate increases.
-This non-linearity is important to characterize so that we know when the signal is in the linear regime and when we need to start taking in to account the non-linearity in detection efficiency. 
+This non-linearity is important to characterize to determine when the signal changes from the linear regime to a non-linear regime and requiring the non-linearity to be taken in to account. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=4in]{experiment/mcp/mcp_saturation/20190327-Complete_data_set/mcp-counts_vs_uv_power.pdf}
@@ -747,6 +749,6 @@ This non-linearity is important to characterize so that we know when the signal 
 \end{figure}
 Performing a fit to the empirical model
 \begin{equation}
-	y = A \qty[1-\exp(B x)]
+	y	=	A \qty[1 - \exp(B x)]
 \end{equation}
-allows us to determine the constants $A$ and $B$ so that we can extract correct for undercounting regardless of whether our signal is in the linear-regime or not.
+determines the constants $A$ and $B$, allowing for correction of undercounting in the non-linear regime. 
