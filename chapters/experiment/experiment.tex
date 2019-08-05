@@ -394,15 +394,15 @@ This allows us to use two different current drivers without needing a controller
 		(Left) Picture of our assembled dual MOT coils on a test setup. 
 		(Right) CAD rendering of how they are centered around the windows of the recessed flanges on the main chamber.}
 \end{figure}
+A drawing of the dual MOT coils can be found in \cref{ap:dual_MOT_coils}.
 
-The blue MOT coils are constructed from square tubular wires\footnote{S{\&}W Wire 125SQ DPG/BARE (NEMA 46-C).} which are hollow inside for cooling water.
-We typically run the blue MOT coils with around $\SIrange[range-phrase=-]{40}{50}{\ampere}$ of from a power supply\footnote{TDA-Lambda *** ADD MODEL ***} set for fixed-current output. 
-A ** MOSFET ** is used to quickly switch off the current to the coils. 
-** We so far haven't included a flyback diode although the MOSFET we use seems to include an internal flyback diode. **
+The blue MOT coils are constructed from square tubular wires\footnote{S{\&}W Wire 125SQ DPG/BARE (NEMA 46-C).} which are hollow inside for cooling water and produce a magnetic field gradient of about $\SI{1.25}{\gauss\per\cm\per\ampere}$ along the tight axis.
+The coils are typically run with around $\SIrange[range-phrase=-]{40}{50}{\ampere}$ from a power supply\footnote{TDA-Lambda Genesys 8-90-IS510-U which can supply up to $\SI{8}{\volt}$ and $\SI{90}{\ampere}$.} set for fixed-current output with a power MOSFET\footnote{An IXYS IXFN 340N07.} for quickly turning the current on and off.
+We so far haven't included a flyback diode although the MOSFET we use seems to include an internal flyback diode.
 These coils produce a magnetic field gradient of about $\SI{1.25}{\gauss\per\cm\per\ampere}$.
 
 The red MOT coils are constructed from square {$\num{13}$ AWG} copper wire\footnote{MWS Wire Industries 13 SQ HML-240 (NEMA MW 20-C).} and are epoxied to the undersides of the blue MOT coils, placing them closer to the center of the vacuum chamber. 
-We currently use a homebuilt voltage-controlled current driver\footnote{**Powered by an APEX PA12**.} but we should be able to use any current driver capable of supplying up to about ** 5 A **. 
+A homebuilt voltage-controlled current driver\footnote{Powered by an APEX PA12(A) power operational amplifier.} but we should be able to use any current driver capable of supplying up to about $\SI{5}{\ampere}$. 
 Our current geometry for the red MOT coils produce a magnetic field gradient of about $\SI{1}{\gauss\per\cm\per\ampere}$.
 
 \begin{figure}[htbp]
@@ -414,10 +414,10 @@ Our current geometry for the red MOT coils produce a magnetic field gradient of 
 		There also appears to be a slight systematic shift in zero-crossing of the anti-Helmholtz coils likely due to an uncertainty in determining the physical center of the coils.}
 \end{figure}
 
-**
-It would have been nice to have an extra MOSFET switch on the blue MOT coils so that we'd be able to apply extremely large fields along the Z-axis such as e.g. Pedro's experiment Feshbach coils.
-We're not too worried about not having this capability since ground-state strontium has no magnetic Feshbach resonances and the fact that we've observed a decrease MCP detection efficiencly we believe is due to the Lorentz force as the MCP is oriented along the X-axis.
-**
+% **
+% It would have been nice to have an extra MOSFET switch on the blue MOT coils so that we'd be able to apply extremely large fields along the Z-axis such as e.g. Pedro's experiment Feshbach coils.
+% We're not too worried about not having this capability since ground-state strontium has no magnetic Feshbach resonances and the fact that we've observed a decrease MCP detection efficiencly we believe is due to the Lorentz force as the MCP is oriented along the X-axis.
+% **
 
 \section{Laser Systems for Producing Cold and Ultracold Strontium Gases}
 
