@@ -12,25 +12,56 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="204.94389mm"
-   height="109.10844mm"
-   viewBox="0 0 204.94389 109.10844"
+   width="211.17873mm"
+   height="113.07718mm"
+   viewBox="0 0 211.17872 113.07718"
    version="1.1"
    id="svg6149"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="transfer_cavity_lock.svg">
+   sodipodi:docname="transfer_cavity.svg">
   <defs
      id="defs6143">
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5510"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10231"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path10229"
+         inkscape:connector-curvature="0" />
+    </marker>
     <marker
        inkscape:stockid="DotS"
        orient="auto"
        refY="0"
        refX="0"
-       id="DotS"
+       id="marker6111"
        style="overflow:visible"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       inkscape:collect="always">
       <path
-         id="path12421"
+         id="path6109"
          d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
          transform="matrix(0.2,0,0,0.2,1.48,0.2)"
@@ -1043,158 +1074,6 @@
     </radialGradient>
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#radialGradient5199-8"
-       id="radialGradient5238-2"
-       cx="14.549"
-       cy="14.548"
-       fx="14.549"
-       fy="14.548"
-       r="14.549"
-       gradientUnits="userSpaceOnUse" />
-    <radialGradient
-       id="radialGradient5199-8"
-       cx="14.5483"
-       cy="14.5479"
-       r="14.1733"
-       fx="14.5483"
-       fy="14.5479"
-       gradientUnits="userSpaceOnUse">
-      <stop
-         offset="0.0056"
-         style="stop-color:#A0A0A0"
-         id="stop5157-1" />
-      <stop
-         offset="0.2268"
-         style="stop-color:#A3A3A3"
-         id="stop5159-0" />
-      <stop
-         offset="0.3952"
-         style="stop-color:#ADADAD"
-         id="stop5161-0" />
-      <stop
-         offset="0.5462"
-         style="stop-color:#BDBDBD"
-         id="stop5204-9" />
-      <stop
-         offset="0.6869"
-         style="stop-color:#D4D4D4"
-         id="stop5206-9" />
-      <stop
-         offset="0.8195"
-         style="stop-color:#F1F1F1"
-         id="stop5208-3" />
-      <stop
-         offset="0.8708"
-         style="stop-color:#FFFFFF"
-         id="stop5210-7" />
-      <stop
-         offset="0.8855"
-         style="stop-color:#FAFAFA"
-         id="stop5212-1" />
-      <stop
-         offset="0.9032"
-         style="stop-color:#EBEBEC"
-         id="stop5214-0" />
-      <stop
-         offset="0.9227"
-         style="stop-color:#D3D2D4"
-         id="stop5216-5" />
-      <stop
-         offset="0.9433"
-         style="stop-color:#B2B0B3"
-         id="stop5218-6" />
-      <stop
-         offset="0.9648"
-         style="stop-color:#878489"
-         id="stop5220-4" />
-      <stop
-         offset="0.9867"
-         style="stop-color:#534F56"
-         id="stop5181-8" />
-      <stop
-         offset="1"
-         style="stop-color:#302B33"
-         id="stop5183-5" />
-      <a:midPointStop
-         offset="0.0056"
-         style="stop-color:#A0A0A0" />
-      <a:midPointStop
-         offset="0.7597"
-         style="stop-color:#A0A0A0" />
-      <a:midPointStop
-         offset="0.8708"
-         style="stop-color:#FFFFFF" />
-      <a:midPointStop
-         offset="0.6667"
-         style="stop-color:#FFFFFF" />
-      <a:midPointStop
-         offset="1"
-         style="stop-color:#302B33" />
-    </radialGradient>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#radialGradient5132"
-       id="radialGradient5147"
-       cx="12.9955"
-       cy="12.485"
-       fx="12.9955"
-       fy="12.485"
-       r="12.99525"
-       gradientTransform="matrix(1.7334766,5.011685e-8,-5.6629059e-8,1.9587255,-9.5318938,-11.969688)"
-       gradientUnits="userSpaceOnUse" />
-    <radialGradient
-       id="radialGradient5132"
-       cx="-2483.9268"
-       cy="979.77441"
-       r="87.972702"
-       fx="-2483.9268"
-       fy="979.77441"
-       gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
-       gradientUnits="userSpaceOnUse">
-      <stop
-         offset="0.0056"
-         style="stop-color:#FFFFFF"
-         id="stop5134" />
-      <stop
-         offset="0.091"
-         style="stop-color:#F7F7F7"
-         id="stop5106" />
-      <stop
-         offset="0.2225"
-         style="stop-color:#E2E2E2"
-         id="stop5108" />
-      <stop
-         offset="0.3836"
-         style="stop-color:#BEBEBE"
-         id="stop5110" />
-      <stop
-         offset="0.5681"
-         style="stop-color:#8D8D8D"
-         id="stop5112" />
-      <stop
-         offset="0.7725"
-         style="stop-color:#4F4F4F"
-         id="stop5114" />
-      <stop
-         offset="0.9905"
-         style="stop-color:#030303"
-         id="stop5116" />
-      <stop
-         offset="1"
-         style="stop-color:#000000"
-         id="stop5118" />
-      <a:midPointStop
-         offset="0.0056"
-         style="stop-color:#FFFFFF" />
-      <a:midPointStop
-         offset="0.6136"
-         style="stop-color:#FFFFFF" />
-      <a:midPointStop
-         offset="1"
-         style="stop-color:#000000" />
-    </radialGradient>
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#radialGradient5132-0"
        id="radialGradient5147-4"
        cx="12.9955"
@@ -1257,43 +1136,6 @@
     </radialGradient>
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#radialGradient5556-3"
-       id="radialGradient5570-4"
-       cx="16.320499"
-       cy="19.060499"
-       fx="16.320499"
-       fy="19.060499"
-       r="16.320499"
-       gradientTransform="matrix(1,0,0,1.1510983,0,-2.8800094)"
-       gradientUnits="userSpaceOnUse" />
-    <radialGradient
-       gradientUnits="userSpaceOnUse"
-       fy="19.060499"
-       fx="16.320299"
-       r="17.2227"
-       cy="19.060499"
-       cx="16.320299"
-       id="radialGradient5556-3">
-      <stop
-         id="stop5558-2"
-         style="stop-color:#FFFFFF"
-         offset="0" />
-      <stop
-         id="stop5532-6"
-         style="stop-color:#A0A0A0"
-         offset="1" />
-      <a:midPointStop
-         style="stop-color:#FFFFFF"
-         offset="0" />
-      <a:midPointStop
-         style="stop-color:#FFFFFF"
-         offset="0.5" />
-      <a:midPointStop
-         style="stop-color:#A0A0A0"
-         offset="1" />
-    </radialGradient>
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#radialGradient5556-0"
        id="radialGradient5570-6"
        cx="16.320499"
@@ -1329,6 +1171,271 @@
          style="stop-color:#A0A0A0"
          offset="1" />
     </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5043-7"
+       id="radialGradient5054-7"
+       cx="16.695"
+       cy="19.059999"
+       fx="16.695"
+       fy="19.059999"
+       r="16.32"
+       gradientTransform="matrix(1,0,0,1.1511029,0,-2.8800221)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-1,0,0,1,-27.6348,0)"
+       fy="19.061001"
+       fx="-44.330101"
+       r="17.2222"
+       cy="19.061001"
+       cx="-44.330101"
+       id="radialGradient5043-7">
+      <stop
+         id="stop5045-3"
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <stop
+         id="stop5047-3"
+         style="stop-color:#A0A0A0"
+         offset="1" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0.5" />
+      <a:midPointStop
+         style="stop-color:#A0A0A0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5043-7-7"
+       id="radialGradient5054-7-8"
+       cx="16.695"
+       cy="19.059999"
+       fx="16.695"
+       fy="19.059999"
+       r="16.32"
+       gradientTransform="matrix(1,0,0,1.1511029,0,-2.8800221)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-1,0,0,1,-27.6348,0)"
+       fy="19.061001"
+       fx="-44.330101"
+       r="17.2222"
+       cy="19.061001"
+       cx="-44.330101"
+       id="radialGradient5043-7-7">
+      <stop
+         id="stop5045-3-2"
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <stop
+         id="stop5047-3-4"
+         style="stop-color:#A0A0A0"
+         offset="1" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0.5" />
+      <a:midPointStop
+         style="stop-color:#A0A0A0"
+         offset="1" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5199-4"
+       id="radialGradient5238-9"
+       cx="14.549"
+       cy="14.548"
+       fx="14.549"
+       fy="14.548"
+       r="14.549"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       id="radialGradient5199-4"
+       cx="14.5483"
+       cy="14.5479"
+       r="14.1733"
+       fx="14.5483"
+       fy="14.5479"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.0056"
+         style="stop-color:#A0A0A0"
+         id="stop5157-3" />
+      <stop
+         offset="0.2268"
+         style="stop-color:#A3A3A3"
+         id="stop5159-04" />
+      <stop
+         offset="0.3952"
+         style="stop-color:#ADADAD"
+         id="stop5161-01" />
+      <stop
+         offset="0.5462"
+         style="stop-color:#BDBDBD"
+         id="stop5204-8" />
+      <stop
+         offset="0.6869"
+         style="stop-color:#D4D4D4"
+         id="stop5206-4" />
+      <stop
+         offset="0.8195"
+         style="stop-color:#F1F1F1"
+         id="stop5208-8" />
+      <stop
+         offset="0.8708"
+         style="stop-color:#FFFFFF"
+         id="stop5210-2" />
+      <stop
+         offset="0.8855"
+         style="stop-color:#FAFAFA"
+         id="stop5212-4" />
+      <stop
+         offset="0.9032"
+         style="stop-color:#EBEBEC"
+         id="stop5214-7" />
+      <stop
+         offset="0.9227"
+         style="stop-color:#D3D2D4"
+         id="stop5216-3" />
+      <stop
+         offset="0.9433"
+         style="stop-color:#B2B0B3"
+         id="stop5218-3" />
+      <stop
+         offset="0.9648"
+         style="stop-color:#878489"
+         id="stop5220-9" />
+      <stop
+         offset="0.9867"
+         style="stop-color:#534F56"
+         id="stop5181-6" />
+      <stop
+         offset="1"
+         style="stop-color:#302B33"
+         id="stop5183-2" />
+      <a:midPointStop
+         offset="0.0056"
+         style="stop-color:#A0A0A0" />
+      <a:midPointStop
+         offset="0.7597"
+         style="stop-color:#A0A0A0" />
+      <a:midPointStop
+         offset="0.8708"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="0.6667"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="1"
+         style="stop-color:#302B33" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5132-0-2"
+       id="radialGradient5147-4-0"
+       cx="12.9955"
+       cy="12.485"
+       fx="12.9955"
+       fy="12.485"
+       r="12.99525"
+       gradientTransform="matrix(1.7334766,5.011685e-8,-5.6629059e-8,1.9587255,-9.5318938,-11.969688)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       id="radialGradient5132-0-2"
+       cx="-2483.9268"
+       cy="979.77441"
+       r="87.972702"
+       fx="-2483.9268"
+       fy="979.77441"
+       gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.0056"
+         style="stop-color:#FFFFFF"
+         id="stop5134-7-6" />
+      <stop
+         offset="0.091"
+         style="stop-color:#F7F7F7"
+         id="stop5106-5-7" />
+      <stop
+         offset="0.2225"
+         style="stop-color:#E2E2E2"
+         id="stop5108-9-2" />
+      <stop
+         offset="0.3836"
+         style="stop-color:#BEBEBE"
+         id="stop5110-2-1" />
+      <stop
+         offset="0.5681"
+         style="stop-color:#8D8D8D"
+         id="stop5112-9-0" />
+      <stop
+         offset="0.7725"
+         style="stop-color:#4F4F4F"
+         id="stop5114-8-7" />
+      <stop
+         offset="0.9905"
+         style="stop-color:#030303"
+         id="stop5116-7-0" />
+      <stop
+         offset="1"
+         style="stop-color:#000000"
+         id="stop5118-0-9" />
+      <a:midPointStop
+         offset="0.0056"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="0.6136"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="1"
+         style="stop-color:#000000" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5556-0-9"
+       id="radialGradient5570-6-4"
+       cx="16.320499"
+       cy="19.060499"
+       fx="16.320499"
+       fy="19.060499"
+       r="16.320499"
+       gradientTransform="matrix(1,0,0,1.1510983,0,-2.8800094)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       fy="19.060499"
+       fx="16.320299"
+       r="17.2227"
+       cy="19.060499"
+       cx="16.320299"
+       id="radialGradient5556-0-9">
+      <stop
+         id="stop5558-7-9"
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <stop
+         id="stop5532-3-7"
+         style="stop-color:#A0A0A0"
+         offset="1" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0.5" />
+      <a:midPointStop
+         style="stop-color:#A0A0A0"
+         offset="1" />
+    </radialGradient>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1337,15 +1444,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="539.8928"
-     inkscape:cy="426.02486"
+     inkscape:zoom="1.979899"
+     inkscape:cx="323.03771"
+     inkscape:cy="284.68175"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer7"
      showgrid="true"
-     inkscape:window-width="2400"
-     inkscape:window-height="1271"
-     inkscape:window-x="2391"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      showguides="false"
@@ -1361,8 +1468,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid10626"
-       originx="-4.5688701"
-       originy="-96.95978" />
+       originx="-11.448043"
+       originy="-96.959781" />
   </sodipodi:namedview>
   <metadata
      id="metadata6146">
@@ -1381,23 +1488,17 @@
      id="layer3"
      inkscape:label="alignment"
      style="display:inline"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-6-3-5-7"
-       d="M 144.19792,167.35417 H 127"
+       d="M 137.58333,167.35417 H 127"
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
-       id="path11839-7-6-2-6-6-3-5-7-9"
-       d="m 127,167.35417 v 13.22917"
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       sodipodi:nodetypes="cc" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path11839-7-6-2-6-6-3-5-7-90"
-       d="m 121.70833,167.35417 v 17.19792"
+       id="path11839-7-6-2-6-6-3-5-7-1"
+       d="M 127,167.35417 V 177.9375"
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
   </g>
@@ -1405,21 +1506,21 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="background"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <rect
        style="opacity:0.98999999;fill:#000000;fill-opacity:0.19607843;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect14041"
        width="13.229147"
        height="39.687496"
        x="120.38541"
-       y="122.375"
+       y="118.1417"
        ry="1.3229269" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="689_beam"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-8"
@@ -1429,31 +1530,31 @@
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-8-4"
-       d="M 105.96731,131.50179 V 112.98095"
+       d="M 105.96731,131.50179 V 106.76454"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-8-4-4"
-       d="M 127,113.11458 H 105.96731"
+       d="M 127,106.76454 H 105.96731"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-8-4-4-7"
-       d="m 127,113.11458 v 71.4375"
+       d="m 127,106.76454 v 71.17297"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="132.81096"
-       y="120.92978"
+       y="114.57977"
        id="text5479-8-7-05-91"><tspan
          sodipodi:role="line"
          id="tspan5477-2-9-9-9"
          x="132.81096"
-         y="120.92978"
+         y="114.57977"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332">λ/4</tspan></text>
     <path
        inkscape:connector-curvature="0"
@@ -1464,19 +1565,19 @@
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-7-8"
-       d="m 105.83333,195.13542 h 51.59375"
+       d="m 105.83333,195.13542 h 70.11459"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-7-8-7"
-       d="M 175.93045,195.3922 V 145.12136"
+       d="m 175.94792,195.13542 v -63.5"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-8-3"
-       d="M 35.71875,131.63542 H 47.625 l 11.90625,0"
+       d="m 38.364583,131.63542 h 11.90625 l 9.260417,0"
        style="display:inline;opacity:1;fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#Arrow2Mend);enable-background:new"
        sodipodi:nodetypes="ccc" />
   </g>
@@ -1485,7 +1586,7 @@
      id="layer4"
      inkscape:label="640_beam"
      style="display:inline"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <path
        inkscape:connector-curvature="0"
        id="path11839"
@@ -1513,25 +1614,25 @@
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6"
-       d="m 105.96731,112.98095 v 18.52084"
+       d="M 105.96731,106.76454 V 128.5018"
        style="fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000001, 0.50000001;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-6"
-       d="M 127,113.11458 H 105.96731"
+       d="M 127,106.76454 H 105.96731"
        style="fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000001, 0.50000001;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-6-3"
-       d="M 127,167.35417 V 113.11458"
+       d="M 127,167.35417 V 106.76454"
        style="fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000001, 0.50000001;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-6-3-5"
-       d="M 144.19792,167.35417 H 127"
+       d="M 137.58333,167.35417 H 127"
        style="display:inline;fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
@@ -1543,13 +1644,13 @@
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-60-5"
-       d="m 105.83333,195.13542 h 51.59375"
+       d="m 105.83333,195.13542 h 70.11459"
        style="display:inline;fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000003, 0.50000003;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-60-5-8"
-       d="M 175.93045,195.3922 V 178.19428"
+       d="m 175.94792,195.13542 -0.0175,-16.94114"
        style="display:inline;fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000003, 0.50000003;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
@@ -1561,7 +1662,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path11839-7-6-2-6-60-5-8-6-5"
-       d="m 194.45128,145.12136 v 33.07292"
+       d="m 194.46875,131.63542 -0.0175,46.55886"
        style="display:inline;fill:none;stroke:#ff7f00;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
@@ -1581,7 +1682,7 @@
      inkscape:label="objects"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <g
        transform="rotate(-90,100.5006,95.349257)"
        id="g6900"
@@ -2930,7 +3031,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g3815-9"
-       transform="matrix(-0.18708867,-0.18708867,-0.18708867,0.18708867,108.75923,110.32935)">
+       transform="matrix(-0.18708867,-0.18708867,-0.18708867,0.18708867,108.75923,103.97931)">
       <g
          id="g3797-8">
         <linearGradient
@@ -2993,7 +3094,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g3815-9-0"
-       transform="matrix(0.18708867,-0.18708867,0.18708867,0.18708867,124.20808,110.46298)">
+       transform="matrix(0.18708867,-0.18708867,0.18708867,0.18708867,124.20808,104.11294)">
       <g
          id="g3797-8-6">
         <linearGradient
@@ -3056,7 +3157,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g3887"
-       transform="matrix(0,-0.26458333,0.26458333,0,123.15071,128.5226)">
+       transform="matrix(0,-0.26458333,0.26458333,0,123.15071,124.28927)">
       <g
          id="g3867">
         <linearGradient
@@ -3125,7 +3226,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g3887-8"
-       transform="matrix(0,0.26458333,0.26458333,0,123.15085,155.75642)">
+       transform="matrix(0,0.26458333,0.26458333,0,123.15084,151.67708)">
       <g
          id="g3867-3">
         <linearGradient
@@ -3194,7 +3295,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g4087"
-       transform="matrix(0,-0.26458333,0.26458333,0,123.90067,120.39089)">
+       transform="matrix(0,-0.26458333,0.26458333,0,123.90067,114.04085)">
       <linearGradient
          y2="0.375"
          x2="2.5009999"
@@ -3559,31 +3660,87 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="wires"
-     transform="translate(3.0892449e-8,17.401141)">
+     transform="translate(-6.8791732,21.369889)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DotS)"
-       d="m 134.33738,33.885823 h -3.96875"
-       id="path18870"
+       transform="translate(-4.5688697,-108.33293)"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker6111)"
+       d="m 161.39583,97.239589 h 47.625 v 34.395831"
+       id="path6045"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 156.82696,35.208742 V 23.302492"
+       id="path9910"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       transform="translate(-4.5688697,-108.33293)"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 129.64583,155.44792 h 6.61459"
+       id="path10029"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 130.36863,33.885823 v 17.197916 h -5.29167"
-       id="path19025"
+       d="m 139.89363,47.114992 h 5.02708"
+       id="path10029-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       transform="translate(-4.5688697,-108.33293)"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 157.69167,155.44792 h 3.70416 v -11.90625"
+       id="path10183"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 130.36863,33.885823 V 16.687906 h -5.29167"
-       id="path19025-3"
+       d="m 156.82696,23.302492 h 14.55209"
+       id="path9910-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.95196,-11.093341 h 15.875 v 34.395833"
+       id="path6043"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
+    <path
+       transform="translate(-4.5688697,-108.33293)"
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker10231)"
+       d="M 145.52083,97.239589 H 82.020832 v 30.427081"
+       id="path10220"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.95196,-17.707924 v 6.614583"
+       id="path10305"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 189.89988,23.302492 h 14.55209"
+       id="path9910-7-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 204.45196,47.114992 V 35.208742"
+       id="path9910-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
+       d="M 204.45196,66.958742 V 55.052492"
+       id="path9910-8-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="electronics"
-     transform="translate(-4.5688698,-90.931789)">
+     transform="translate(-11.448043,-86.963041)">
     <g
        transform="matrix(0.26458333,0,0,0.26458333,68.71335,180.50475)"
        id="g5301"
@@ -3645,7 +3802,7 @@
         <polygon
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
            i:knockout="Off"
-           points="3.078,15.965 10.23,6.412 17.382,15.965 "
+           points="17.382,15.965 3.078,15.965 10.23,6.412 "
            id="polygon5292" />
         <line
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
@@ -3658,7 +3815,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0.26458333,0,0,0.26458333,141.49123,164.39387)"
+       transform="matrix(0.26458333,0,0,0.26458333,134.85918,164.62976)"
        id="g5301-7"
        i:layer="yes"
        i:dimmedPercent="50"
@@ -3731,7 +3888,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0.26458333,0,0,0.26458333,124.02873,181.59179)"
+       transform="matrix(0.26458333,0,0,0.26458333,124.27585,175.21309)"
        id="g5301-7-3"
        i:layer="yes"
        i:dimmedPercent="50"
@@ -3791,7 +3948,7 @@
         <polygon
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
            i:knockout="Off"
-           points="10.23,6.412 17.382,15.965 3.078,15.965 "
+           points="17.382,15.965 3.078,15.965 10.23,6.412 "
            id="polygon5292-6-4" />
         <line
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
@@ -3804,7 +3961,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0.26458333,0,0,0.26458333,173.22377,142.16107)"
+       transform="matrix(0.26458333,0,0,0.26458333,173.22377,128.91101)"
        id="g5301-7-3-1"
        i:layer="yes"
        i:dimmedPercent="50"
@@ -3877,7 +4034,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0.26458333,0,0,0.26458333,191.7446,142.16107)"
+       transform="matrix(0.26458333,0,0,0.26458333,191.76206,128.67513)"
        id="g5301-7-3-1-8"
        i:layer="yes"
        i:dimmedPercent="50"
@@ -3937,7 +4094,7 @@
         <polygon
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
            i:knockout="Off"
-           points="10.23,6.412 17.382,15.965 3.078,15.965 "
+           points="17.382,15.965 3.078,15.965 10.23,6.412 "
            id="polygon5292-6-4-3-4" />
         <line
            style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"
@@ -3950,38 +4107,13 @@
       </g>
     </g>
     <g
-       transform="matrix(0.26458333,0,0,0.26458333,153.10895,136.06269)"
-       style="display:inline;enable-background:new"
-       id="g4774">
-      <polygon
-         style="fill:url(#radialGradient5570-4);fill-opacity:1;stroke:#000000;stroke-width:0.75"
-         i:knockout="Off"
-         points="0.375,37.472 0.375,0.649 32.266,19.062 "
-         id="polygon5534-9" />
-      <g
-         i:knockout="Off"
-         id="g5536">
-        <text
-           id="text7267-0"
-           y="22.453377"
-           x="1.1508713"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333302px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-           xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.33333302px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
-             y="22.453377"
-             x="1.1508713"
-             id="tspan7265-3"
-             sodipodi:role="line">PDH</tspan></text>
-      </g>
-    </g>
-    <g
        id="g18867"
-       transform="translate(-10.083004,-5.2920649)">
+       transform="translate(0.23574543,7.9371048)">
       <polygon
          transform="matrix(-0.26458333,0,0,0.26458333,157.5263,142.46733)"
          style="display:inline;fill:url(#radialGradient5570-6);fill-opacity:1;stroke:#000000;stroke-width:0.75;enable-background:new"
          i:knockout="Off"
-         points="32.266,19.062 0.375,37.472 0.375,0.649 "
+         points="0.375,0.649 32.266,19.062 0.375,37.472 "
          id="polygon5534-0" />
       <text
          id="text7267"
@@ -3995,278 +4127,131 @@
            id="tspan7265"
            sodipodi:role="line">PID</tspan></text>
     </g>
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer5"
-     inkscape:label="text"
-     transform="translate(-4.5688698,-90.931789)">
-    <text
-       id="text14000-54-1-7-9"
-       y="185.78381"
-       x="58.909595"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8177-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="185.78381"
-         x="58.909595"
-         sodipodi:role="line">640 nm</tspan><tspan
-         id="tspan8069-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="189.31158"
-         x="58.909595"
-         sodipodi:role="line">power monitor</tspan></text>
-    <text
-       id="text14000-54-1-7-9-2"
-       y="192.24371"
-       x="86.034096"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8069-4-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="192.24371"
-         x="86.034096"
-         sodipodi:role="line">SMPM fiber</tspan><tspan
-         id="tspan11888"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="195.77148"
-         x="86.034096"
-         sodipodi:role="line">from OPO</tspan></text>
-    <text
-       id="text14000-54-1-7-9-2-3"
-       y="118.73621"
-       x="59.357132"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan11888-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="118.73621"
-         x="59.357132"
-         sodipodi:role="line">Dichroic</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="122.26399"
-         x="59.357132"
-         sodipodi:role="line"
-         id="tspan13203">R: 640</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="125.79177"
-         x="59.357132"
-         sodipodi:role="line"
-         id="tspan13205">T: 689</tspan></text>
-    <text
-       id="text14000-54-1-7-9-25"
-       y="184.98003"
-       x="139.57018"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8069-4-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="184.98003"
-         x="139.57018"
-         sodipodi:role="line">689 nm</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="188.5078"
-         x="139.57018"
-         sodipodi:role="line"
-         id="tspan13950">trans. monitor</tspan></text>
-    <text
-       id="text14000-54-1-7-9-25-0"
-       y="174.58568"
-       x="141.36557"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8069-4-5-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="174.58568"
-         x="141.36557"
-         sodipodi:role="line">640 nm</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="178.11345"
-         x="141.36557"
-         sodipodi:role="line"
-         id="tspan13950-0">trans. monitor</tspan></text>
-    <text
-       id="text14000-54-1-7-9-2-3-1"
-       y="139.30711"
-       x="82.020966"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="139.30711"
-         x="82.020966"
-         sodipodi:role="line"
-         id="tspan13205-7">EOM</tspan></text>
-    <text
-       id="text14000-54-1-7-9-2-3-1-0"
-       y="118.5657"
-       x="-142.92326"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"
-       transform="rotate(-90)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="118.5657"
-         x="-142.92326"
-         sodipodi:role="line"
-         id="tspan13205-7-9">Transfer cavity</tspan></text>
-    <text
-       id="text14000-54-1-7-9-2-3-1-4"
-       y="131.36961"
-       x="20.032869"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="131.36961"
-         x="20.032869"
-         sodipodi:role="line"
-         id="tspan14671">0<tspan
-   style="font-size:64.99999762%;baseline-shift:super"
-   id="tspan14677">th</tspan> order from 689 nm</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="134.89738"
-         x="20.032869"
-         sodipodi:role="line"
-         id="tspan14675">sat. abs. pump</tspan></text>
-    <text
-       id="text14000-54-1-7-9-25-0-6"
-       y="143.28145"
-       x="204.18665"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8069-4-5-3-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="143.28145"
-         x="204.18665"
-         sodipodi:role="line">640 nm</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="146.80922"
-         x="204.18665"
-         sodipodi:role="line"
-         id="tspan13950-0-3">PDH</tspan></text>
-    <text
-       id="text14000-54-1-7-9-25-0-6-1"
-       y="142.71451"
-       x="185.00435"
-       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
-       xml:space="preserve"><tspan
-         id="tspan8069-4-5-3-5-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="142.71451"
-         x="185.00435"
-         sodipodi:role="line">689 nm</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
-         y="146.24228"
-         x="185.00435"
-         sodipodi:role="line"
-         id="tspan13950-0-3-3">PDH</tspan></text>
     <g
        style="display:inline;enable-background:new"
        i:rgbTrio="#4F008000FFFF"
        i:dimmedPercent="50"
        i:layer="yes"
-       id="g4869"
-       transform="matrix(0.26458333,0,0,0.26458333,127.11878,90.932053)">
+       id="g5039-1"
+       transform="matrix(0.26458333,0,0,0.26458333,135.7974,150.4047)">
       <g
-         id="g4829">
+         id="g5041-7">
         <radialGradient
            gradientUnits="userSpaceOnUse"
-           fy="14.5479"
-           fx="14.5483"
-           r="14.1731"
-           cy="14.5479"
-           cx="14.5483"
-           id="radialGradient10762">
+           gradientTransform="matrix(-1,0,0,1,-27.6348,0)"
+           fy="19.061001"
+           fx="-44.330101"
+           r="17.2222"
+           cy="19.061001"
+           cx="-44.330101"
+           id="radialGradient9922-8">
           <stop
-             id="stop10734"
-             style="stop-color:#A0A0A0"
-             offset="0.0056" />
-          <stop
-             id="stop10736"
-             style="stop-color:#A3A3A3"
-             offset="0.2268" />
-          <stop
-             id="stop10738"
-             style="stop-color:#ADADAD"
-             offset="0.3952" />
-          <stop
-             id="stop10740"
-             style="stop-color:#BDBDBD"
-             offset="0.5462" />
-          <stop
-             id="stop10742"
-             style="stop-color:#D4D4D4"
-             offset="0.6869" />
-          <stop
-             id="stop10744"
-             style="stop-color:#F1F1F1"
-             offset="0.8195" />
-          <stop
-             id="stop10746"
+             id="stop9918-0"
              style="stop-color:#FFFFFF"
-             offset="0.8708" />
+             offset="0" />
           <stop
-             id="stop10748"
-             style="stop-color:#FAFAFA"
-             offset="0.8855" />
-          <stop
-             id="stop10750"
-             style="stop-color:#EBEBEC"
-             offset="0.9032" />
-          <stop
-             id="stop10752"
-             style="stop-color:#D3D2D4"
-             offset="0.9227" />
-          <stop
-             id="stop10754"
-             style="stop-color:#B2B0B3"
-             offset="0.9433" />
-          <stop
-             id="stop10756"
-             style="stop-color:#878489"
-             offset="0.9648" />
-          <stop
-             id="stop10758"
-             style="stop-color:#534F56"
-             offset="0.9867" />
-          <stop
-             id="stop10760"
-             style="stop-color:#302B33"
+             id="stop9920-9"
+             style="stop-color:#A0A0A0"
              offset="1" />
           <a:midPointStop
-             style="stop-color:#A0A0A0"
-             offset="0.0056" />
-          <a:midPointStop
-             style="stop-color:#A0A0A0"
-             offset="0.7597" />
+             style="stop-color:#FFFFFF"
+             offset="0" />
           <a:midPointStop
              style="stop-color:#FFFFFF"
-             offset="0.8708" />
+             offset="0.5" />
           <a:midPointStop
-             style="stop-color:#FFFFFF"
-             offset="0.6667" />
-          <a:midPointStop
-             style="stop-color:#302B33"
+             style="stop-color:#A0A0A0"
              offset="1" />
         </radialGradient>
-        <circle
-           id="circle4860"
-           r="14.174"
-           cy="14.548"
-           cx="14.549"
+        <polygon
+           id="polygon5028-9"
+           points="0.75,19.061 32.64,37.471 32.64,0.649 "
            i:knockout="Off"
-           style="fill:url(#radialGradient4892);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path4862"
-           d="M 5.335,15.257 C 5.517,14.152 7.382,8.17 10.453,8.17 c 3.071,0 5.119,11.339 8.189,11.339 3.071,0 5.005,-5.965 5.119,-7.087"
+           style="fill:url(#radialGradient5054-7);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
+        <polyline
+           id="polyline5030-2"
+           points="19.175,27.305 26.262,15.965       20.592,18.801 24.844,8.879 "
            i:knockout="Off"
            style="fill:none;stroke:#000000;stroke-width:1.5" />
+        <polygon
+           id="polygon5032-3"
+           points="18.864,22.159 23.748,25.381 18.502,28.258 "
+           i:knockout="Off" />
       </g>
     </g>
     <g
        style="display:inline;enable-background:new"
+       id="g5101-2"
+       transform="matrix(0.26458333,0,0,0.26458333,157.95744,140.23835)">
+      <radialGradient
+         id="radialGradient10860-3"
+         cx="-2483.9268"
+         cy="979.77441"
+         r="87.972702"
+         fx="-2483.9268"
+         fy="979.77441"
+         gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
+         gradientUnits="userSpaceOnUse">
+        <stop
+           offset="0.0056"
+           style="stop-color:#FFFFFF"
+           id="stop10844-9" />
+        <stop
+           offset="0.091"
+           style="stop-color:#F7F7F7"
+           id="stop10846-3" />
+        <stop
+           offset="0.2225"
+           style="stop-color:#E2E2E2"
+           id="stop10848-3" />
+        <stop
+           offset="0.3836"
+           style="stop-color:#BEBEBE"
+           id="stop10850-3" />
+        <stop
+           offset="0.5681"
+           style="stop-color:#8D8D8D"
+           id="stop10852-4" />
+        <stop
+           offset="0.7725"
+           style="stop-color:#4F4F4F"
+           id="stop10854-4" />
+        <stop
+           offset="0.9905"
+           style="stop-color:#030303"
+           id="stop10856-5" />
+        <stop
+           offset="1"
+           style="stop-color:#000000"
+           id="stop10858-9" />
+        <a:midPointStop
+           offset="0.0056"
+           style="stop-color:#FFFFFF" />
+        <a:midPointStop
+           offset="0.6136"
+           style="stop-color:#FFFFFF" />
+        <a:midPointStop
+           offset="1"
+           style="stop-color:#000000" />
+      </radialGradient>
+      <rect
+         style="clip-rule:evenodd;fill:url(#radialGradient5147-4);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.7335"
+         x="0.36700001"
+         y="0.36700001"
+         i:knockout="Off"
+         width="25.257"
+         height="24.236"
+         id="rect5120-0" />
+      <polyline
+         style="fill:none;stroke:#000000;stroke-width:1.46700001"
+         i:knockout="Off"
+         points="4.308,6.577 9.978,6.576 17.064,19.333       22.733,19.333 "
+         id="polyline5122-8" />
+    </g>
+    <g
+       style="display:inline;enable-background:new"
        id="g5154"
-       transform="matrix(0.26458333,0,0,0.26458333,171.11101,124.19052)">
+       transform="matrix(0.26458333,0,0,0.26458333,157.54641,127.78626)">
       <radialGradient
          id="radialGradient10820"
          cx="14.5483"
@@ -4371,12 +4356,145 @@
          y2="7.461"
          id="line5189" />
     </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 129.64583,120.52292 h 6.61459"
+       id="path10029-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <g
        style="display:inline;enable-background:new"
-       id="g5154-2"
-       transform="matrix(0.26458333,0,0,0.26458333,190.60226,124.07442)">
+       i:rgbTrio="#4F008000FFFF"
+       i:dimmedPercent="50"
+       i:layer="yes"
+       id="g5039-1-5"
+       transform="matrix(0.26458333,0,0,0.26458333,135.7974,115.4797)">
+      <g
+         id="g5041-7-6">
+        <radialGradient
+           gradientUnits="userSpaceOnUse"
+           gradientTransform="matrix(-1,0,0,1,-27.6348,0)"
+           fy="19.061001"
+           fx="-44.330101"
+           r="17.2222"
+           cy="19.061001"
+           cx="-44.330101"
+           id="radialGradient9922-8-3">
+          <stop
+             id="stop9918-0-0"
+             style="stop-color:#FFFFFF"
+             offset="0" />
+          <stop
+             id="stop9920-9-3"
+             style="stop-color:#A0A0A0"
+             offset="1" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0.5" />
+          <a:midPointStop
+             style="stop-color:#A0A0A0"
+             offset="1" />
+        </radialGradient>
+        <polygon
+           id="polygon5028-9-8"
+           points="32.64,37.471 32.64,0.649 0.75,19.061 "
+           i:knockout="Off"
+           style="fill:url(#radialGradient5054-7-8);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
+        <polyline
+           id="polyline5030-2-9"
+           points="19.175,27.305 26.262,15.965       20.592,18.801 24.844,8.879 "
+           i:knockout="Off"
+           style="fill:none;stroke:#000000;stroke-width:1.5" />
+        <polygon
+           id="polygon5032-3-6"
+           points="23.748,25.381 18.502,28.258 18.864,22.159 "
+           i:knockout="Off" />
+      </g>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 209.02083,143.54168 V 131.63542"
+       id="path9910-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <g
+       style="display:inline;enable-background:new"
+       id="g5101-2-9"
+       transform="matrix(0.26458333,0,0,0.26458333,205.58244,140.23835)">
       <radialGradient
-         id="radialGradient10820-2"
+         id="radialGradient10860-3-6"
+         cx="-2483.9268"
+         cy="979.77441"
+         r="87.972702"
+         fx="-2483.9268"
+         fy="979.77441"
+         gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
+         gradientUnits="userSpaceOnUse">
+        <stop
+           offset="0.0056"
+           style="stop-color:#FFFFFF"
+           id="stop10844-9-0" />
+        <stop
+           offset="0.091"
+           style="stop-color:#F7F7F7"
+           id="stop10846-3-8" />
+        <stop
+           offset="0.2225"
+           style="stop-color:#E2E2E2"
+           id="stop10848-3-8" />
+        <stop
+           offset="0.3836"
+           style="stop-color:#BEBEBE"
+           id="stop10850-3-0" />
+        <stop
+           offset="0.5681"
+           style="stop-color:#8D8D8D"
+           id="stop10852-4-7" />
+        <stop
+           offset="0.7725"
+           style="stop-color:#4F4F4F"
+           id="stop10854-4-8" />
+        <stop
+           offset="0.9905"
+           style="stop-color:#030303"
+           id="stop10856-5-9" />
+        <stop
+           offset="1"
+           style="stop-color:#000000"
+           id="stop10858-9-9" />
+        <a:midPointStop
+           offset="0.0056"
+           style="stop-color:#FFFFFF" />
+        <a:midPointStop
+           offset="0.6136"
+           style="stop-color:#FFFFFF" />
+        <a:midPointStop
+           offset="1"
+           style="stop-color:#000000" />
+      </radialGradient>
+      <rect
+         style="clip-rule:evenodd;fill:url(#radialGradient5147-4-0);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.7335"
+         x="0.36700001"
+         y="0.36700001"
+         i:knockout="Off"
+         width="25.257"
+         height="24.236"
+         id="rect5120-0-3" />
+      <polyline
+         style="fill:none;stroke:#000000;stroke-width:1.46700001"
+         i:knockout="Off"
+         points="4.308,6.577 9.978,6.576 17.064,19.333       22.733,19.333 "
+         id="polyline5122-8-7" />
+    </g>
+    <g
+       style="display:inline;enable-background:new"
+       id="g5154-7"
+       transform="matrix(0.26458333,0,0,0.26458333,205.17141,127.78626)">
+      <radialGradient
+         id="radialGradient10820-1"
          cx="14.5483"
          cy="14.5479"
          r="14.1733"
@@ -4386,59 +4504,59 @@
         <stop
            offset="0.0056"
            style="stop-color:#A0A0A0"
-           id="stop10792-5" />
+           id="stop10792-59" />
         <stop
            offset="0.2268"
            style="stop-color:#A3A3A3"
-           id="stop10794-4" />
+           id="stop10794-5" />
         <stop
            offset="0.3952"
            style="stop-color:#ADADAD"
-           id="stop10796-5" />
+           id="stop10796-4" />
         <stop
            offset="0.5462"
            style="stop-color:#BDBDBD"
-           id="stop10798-1" />
+           id="stop10798-9" />
         <stop
            offset="0.6869"
            style="stop-color:#D4D4D4"
-           id="stop10800-1" />
+           id="stop10800-8" />
         <stop
            offset="0.8195"
            style="stop-color:#F1F1F1"
-           id="stop10802-6" />
+           id="stop10802-8" />
         <stop
            offset="0.8708"
            style="stop-color:#FFFFFF"
-           id="stop10804-7" />
+           id="stop10804-1" />
         <stop
            offset="0.8855"
            style="stop-color:#FAFAFA"
-           id="stop10806-2" />
+           id="stop10806-8" />
         <stop
            offset="0.9032"
            style="stop-color:#EBEBEC"
-           id="stop10808-5" />
+           id="stop10808-53" />
         <stop
            offset="0.9227"
            style="stop-color:#D3D2D4"
-           id="stop10810-0" />
+           id="stop10810-4" />
         <stop
            offset="0.9433"
            style="stop-color:#B2B0B3"
-           id="stop10812-8" />
+           id="stop10812-1" />
         <stop
            offset="0.9648"
            style="stop-color:#878489"
-           id="stop10814-0" />
+           id="stop10814-6" />
         <stop
            offset="0.9867"
            style="stop-color:#534F56"
-           id="stop10816-5" />
+           id="stop10816-6" />
         <stop
            offset="1"
            style="stop-color:#302B33"
-           id="stop10818-1" />
+           id="stop10818-6" />
         <a:midPointStop
            offset="0.0056"
            style="stop-color:#A0A0A0" />
@@ -4456,12 +4574,12 @@
            style="stop-color:#302B33" />
       </radialGradient>
       <circle
-         style="fill:url(#radialGradient5238-2);fill-opacity:1;stroke:#000000;stroke-width:0.75"
+         style="fill:url(#radialGradient5238-9);fill-opacity:1;stroke:#000000;stroke-width:0.75"
          i:knockout="Off"
          cx="14.549"
          cy="14.548"
          r="14.174"
-         id="circle5185-6" />
+         id="circle5185-4" />
       <line
          style="fill:none;stroke:#000000;stroke-width:1.5"
          i:knockout="Off"
@@ -4469,7 +4587,7 @@
          y1="7.461"
          x2="21.634001"
          y2="21.634001"
-         id="line5187-4" />
+         id="line5187-9" />
       <line
          style="fill:none;stroke:#000000;stroke-width:1.5"
          i:knockout="Off"
@@ -4477,145 +4595,384 @@
          y1="21.634001"
          x2="21.634001"
          y2="7.461"
-         id="line5189-4" />
+         id="line5189-0" />
     </g>
+    <text
+       id="text14000-54-1-7-9-25-0-6-1-5-5"
+       y="144.85916"
+       x="217.04942"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="144.85916"
+         x="217.04942"
+         sodipodi:role="line"
+         id="tspan9938-6-0">LPF</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0-6-1-5-9-2"
+       y="132.76163"
+       x="218.298"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="132.76163"
+         x="218.298"
+         sodipodi:role="line"
+         id="tspan9938-6-9-2">Mixer</tspan></text>
+    <g
+       id="g18867-0"
+       transform="rotate(-90,187.19271,125.6823)">
+      <polygon
+         transform="matrix(-0.26458333,0,0,0.26458333,157.5263,142.46733)"
+         style="display:inline;fill:url(#radialGradient5570-6-4);fill-opacity:1;stroke:#000000;stroke-width:0.75;enable-background:new"
+         i:knockout="Off"
+         points="32.266,19.062 0.375,37.472 0.375,0.649 "
+         id="polygon5534-0-9" />
+      <text
+         id="text7267-5"
+         y="148.40813"
+         x="151.57883"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944427px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;enable-background:new"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.46944427px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+           y="148.40813"
+           x="151.57883"
+           id="tspan7265-4"
+           sodipodi:role="line">PID</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="text"
+     transform="translate(-11.448043,-86.963041)">
+    <text
+       id="text14000-54-1-7-9"
+       y="187.03113"
+       x="61.744419"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan8177-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="187.03113"
+         x="61.744419"
+         sodipodi:role="line">640 nm</tspan><tspan
+         id="tspan8069-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="190.5589"
+         x="61.744419"
+         sodipodi:role="line">power monitor</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2"
+       y="190.65623"
+       x="87.207466"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan8069-4-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="190.65623"
+         x="87.207466"
+         sodipodi:role="line">SMPM fiber</tspan><tspan
+         id="tspan11888"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="194.18401"
+         x="87.207466"
+         sodipodi:role="line">from OPO</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2-3"
+       y="118.73621"
+       x="59.357132"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan11888-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="118.73621"
+         x="59.357132"
+         sodipodi:role="line">Dichroic</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="122.26399"
+         x="59.357132"
+         sodipodi:role="line"
+         id="tspan13203">R: 640</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="125.79177"
+         x="59.357132"
+         sodipodi:role="line"
+         id="tspan13205">T: 689</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25"
+       y="185.18048"
+       x="126.90828"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan8069-4-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="185.18048"
+         x="126.90828"
+         sodipodi:role="line">Trans.</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="188.70825"
+         x="126.90828"
+         sodipodi:role="line"
+         id="tspan13950">689 nm</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0"
+       y="174.18477"
+       x="139.29422"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan8069-4-5-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="174.18477"
+         x="139.29422"
+         sodipodi:role="line">Trans.</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="177.71254"
+         x="139.29422"
+         sodipodi:role="line"
+         id="tspan13950-0">640 nm</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2-3-1"
+       y="139.30711"
+       x="82.020966"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="139.30711"
+         x="82.020966"
+         sodipodi:role="line"
+         id="tspan13205-7">EOM</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2-3-1-0"
+       y="118.5657"
+       x="-138.68999"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="118.5657"
+         x="-138.68999"
+         sodipodi:role="line"
+         id="tspan13205-7-9">Transfer cavity</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2-3-1-4"
+       y="130.84045"
+       x="26.912043"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="130.84045"
+         x="26.912043"
+         sodipodi:role="line"
+         id="tspan14671">0<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan14677">th</tspan> order from 689 nm</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="134.36823"
+         x="26.912043"
+         sodipodi:role="line"
+         id="tspan14675">sat. abs. pump</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0-6"
+       y="122.58427"
+       x="195.45406"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         id="tspan8069-4-5-3-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="122.58427"
+         x="195.45406"
+         sodipodi:role="line">PDH</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="126.11205"
+         x="195.45406"
+         sodipodi:role="line"
+         id="tspan13950-0-3">640 nm</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0-6-1"
+       y="122.09451"
+       x="175.16048"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="122.09451"
+         x="175.16048"
+         sodipodi:role="line"
+         id="tspan13950-0-3-3">PDH</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="125.62229"
+         x="175.16048"
+         sodipodi:role="line"
+         id="tspan9938">689 nm</tspan></text>
     <g
        style="display:inline;enable-background:new"
-       id="g5101"
-       transform="matrix(0.26458333,0,0,0.26458333,171.93313,110.76347)">
-      <radialGradient
-         id="radialGradient10860"
-         cx="-2483.9268"
-         cy="979.77441"
-         r="87.972702"
-         fx="-2483.9268"
-         fy="979.77441"
-         gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
-         gradientUnits="userSpaceOnUse">
-        <stop
-           offset="0.0056"
-           style="stop-color:#FFFFFF"
-           id="stop10844" />
-        <stop
-           offset="0.091"
-           style="stop-color:#F7F7F7"
-           id="stop10846" />
-        <stop
-           offset="0.2225"
-           style="stop-color:#E2E2E2"
-           id="stop10848" />
-        <stop
-           offset="0.3836"
-           style="stop-color:#BEBEBE"
-           id="stop10850" />
-        <stop
-           offset="0.5681"
-           style="stop-color:#8D8D8D"
-           id="stop10852" />
-        <stop
-           offset="0.7725"
-           style="stop-color:#4F4F4F"
-           id="stop10854" />
-        <stop
-           offset="0.9905"
-           style="stop-color:#030303"
-           id="stop10856" />
-        <stop
-           offset="1"
-           style="stop-color:#000000"
-           id="stop10858" />
-        <a:midPointStop
-           offset="0.0056"
-           style="stop-color:#FFFFFF" />
-        <a:midPointStop
-           offset="0.6136"
-           style="stop-color:#FFFFFF" />
-        <a:midPointStop
-           offset="1"
-           style="stop-color:#000000" />
-      </radialGradient>
-      <rect
-         style="clip-rule:evenodd;fill:url(#radialGradient5147);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.7335"
-         x="0.36700001"
-         y="0.36700001"
-         i:knockout="Off"
-         width="25.257"
-         height="24.236"
-         id="rect5120" />
-      <polyline
-         style="fill:none;stroke:#000000;stroke-width:1.46700001"
-         i:knockout="Off"
-         points="4.308,6.577 9.978,6.576 17.064,19.333       22.733,19.333 "
-         id="polyline5122" />
+       i:rgbTrio="#4F008000FFFF"
+       i:dimmedPercent="50"
+       i:layer="yes"
+       id="g4869"
+       transform="matrix(0.26458333,0,0,0.26458333,141.67086,86.963305)">
+      <g
+         id="g4829">
+        <radialGradient
+           gradientUnits="userSpaceOnUse"
+           fy="14.5479"
+           fx="14.5483"
+           r="14.1731"
+           cy="14.5479"
+           cx="14.5483"
+           id="radialGradient10762">
+          <stop
+             id="stop10734"
+             style="stop-color:#A0A0A0"
+             offset="0.0056" />
+          <stop
+             id="stop10736"
+             style="stop-color:#A3A3A3"
+             offset="0.2268" />
+          <stop
+             id="stop10738"
+             style="stop-color:#ADADAD"
+             offset="0.3952" />
+          <stop
+             id="stop10740"
+             style="stop-color:#BDBDBD"
+             offset="0.5462" />
+          <stop
+             id="stop10742"
+             style="stop-color:#D4D4D4"
+             offset="0.6869" />
+          <stop
+             id="stop10744"
+             style="stop-color:#F1F1F1"
+             offset="0.8195" />
+          <stop
+             id="stop10746"
+             style="stop-color:#FFFFFF"
+             offset="0.8708" />
+          <stop
+             id="stop10748"
+             style="stop-color:#FAFAFA"
+             offset="0.8855" />
+          <stop
+             id="stop10750"
+             style="stop-color:#EBEBEC"
+             offset="0.9032" />
+          <stop
+             id="stop10752"
+             style="stop-color:#D3D2D4"
+             offset="0.9227" />
+          <stop
+             id="stop10754"
+             style="stop-color:#B2B0B3"
+             offset="0.9433" />
+          <stop
+             id="stop10756"
+             style="stop-color:#878489"
+             offset="0.9648" />
+          <stop
+             id="stop10758"
+             style="stop-color:#534F56"
+             offset="0.9867" />
+          <stop
+             id="stop10760"
+             style="stop-color:#302B33"
+             offset="1" />
+          <a:midPointStop
+             style="stop-color:#A0A0A0"
+             offset="0.0056" />
+          <a:midPointStop
+             style="stop-color:#A0A0A0"
+             offset="0.7597" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0.8708" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0.6667" />
+          <a:midPointStop
+             style="stop-color:#302B33"
+             offset="1" />
+        </radialGradient>
+        <circle
+           id="circle4860"
+           r="14.174"
+           cy="14.548"
+           cx="14.549"
+           i:knockout="Off"
+           style="fill:url(#radialGradient4892);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path4862"
+           d="M 5.335,15.257 C 5.517,14.152 7.382,8.17 10.453,8.17 c 3.071,0 5.119,11.339 8.189,11.339 3.071,0 5.005,-5.965 5.119,-7.087"
+           i:knockout="Off"
+           style="fill:none;stroke:#000000;stroke-width:1.5" />
+      </g>
     </g>
-    <g
-       style="display:inline;enable-background:new"
-       id="g5101-2"
-       transform="matrix(0.26458333,0,0,0.26458333,187.80813,112.08638)">
-      <radialGradient
-         id="radialGradient10860-3"
-         cx="-2483.9268"
-         cy="979.77441"
-         r="87.972702"
-         fx="-2483.9268"
-         fy="979.77441"
-         gradientTransform="matrix(-0.278,0,0,0.318,-677.1517,-299.0829)"
-         gradientUnits="userSpaceOnUse">
-        <stop
-           offset="0.0056"
-           style="stop-color:#FFFFFF"
-           id="stop10844-9" />
-        <stop
-           offset="0.091"
-           style="stop-color:#F7F7F7"
-           id="stop10846-3" />
-        <stop
-           offset="0.2225"
-           style="stop-color:#E2E2E2"
-           id="stop10848-3" />
-        <stop
-           offset="0.3836"
-           style="stop-color:#BEBEBE"
-           id="stop10850-3" />
-        <stop
-           offset="0.5681"
-           style="stop-color:#8D8D8D"
-           id="stop10852-4" />
-        <stop
-           offset="0.7725"
-           style="stop-color:#4F4F4F"
-           id="stop10854-4" />
-        <stop
-           offset="0.9905"
-           style="stop-color:#030303"
-           id="stop10856-5" />
-        <stop
-           offset="1"
-           style="stop-color:#000000"
-           id="stop10858-9" />
-        <a:midPointStop
-           offset="0.0056"
-           style="stop-color:#FFFFFF" />
-        <a:midPointStop
-           offset="0.6136"
-           style="stop-color:#FFFFFF" />
-        <a:midPointStop
-           offset="1"
-           style="stop-color:#000000" />
-      </radialGradient>
-      <rect
-         style="clip-rule:evenodd;fill:url(#radialGradient5147-4);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.7335"
-         x="0.36700001"
-         y="0.36700001"
-         i:knockout="Off"
-         width="25.257"
-         height="24.236"
-         id="rect5120-0" />
-      <polyline
-         style="fill:none;stroke:#000000;stroke-width:1.46700001"
-         i:knockout="Off"
-         points="4.308,6.577 9.978,6.576 17.064,19.333       22.733,19.333 "
-         id="polyline5122-8" />
-    </g>
+    <text
+       id="text14000-54-1-7-9-2-3-2"
+       y="91.568115"
+       x="134.00565"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="91.568115"
+         x="134.00565"
+         sodipodi:role="line"
+         id="tspan13205-1">20 MHz</tspan></text>
+    <text
+       id="text14000-54-1-7-9-2-3-2-3"
+       y="111.00863"
+       x="150.92569"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="111.00863"
+         x="150.92569"
+         sodipodi:role="line"
+         id="tspan13205-1-9">HV offset</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0-6-1-5"
+       y="145.14264"
+       x="153.36044"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="145.14264"
+         x="153.36044"
+         sodipodi:role="line"
+         id="tspan9938-6">LPF</tspan></text>
+    <text
+       id="text14000-54-1-7-9-25-0-6-1-5-9"
+       y="132.10016"
+       x="151.39621"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="132.10016"
+         x="151.39621"
+         sodipodi:role="line"
+         id="tspan9938-6-9">Mixer</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 144.4625,120.52292 h 6.35 v -8.73125"
+       id="path10463"
+       inkscape:connector-curvature="0" />
+    <text
+       id="text14000-54-1-7-9-2-3-2-2"
+       y="207.86763"
+       x="-184.77013"
+       style="font-style:normal;font-weight:normal;font-size:2.13679552px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.05341989"
+       xml:space="preserve"
+       transform="rotate(-90)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="207.86763"
+         x="-184.77013"
+         sodipodi:role="line"
+         id="tspan13205-1-4">To 1064 nm</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:1;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.05341989"
+         y="211.3954"
+         x="-184.77013"
+         sodipodi:role="line"
+         id="tspan10933">Seed Laser</tspan></text>
   </g>
 </svg>

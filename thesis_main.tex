@@ -214,6 +214,13 @@
 		#4 & #5 & #6 
 	\end{Bmatrix}}
 
+% Macros for colored lines in captions. Total length = 7mm
+\newcommand{\solidrule}[1][1cm]{\rule[0.3ex]{#1}{2pt}}
+\newcommand{\solidline}{\mbox{\solidrule[7mm]}}
+\newcommand{\dashedline}{\mbox{\solidrule[2mm]\hspace{1mm}\solidrule[2mm]\hspace{1mm}\solidrule[2mm]}}
+\newcommand{\dottedline}{\mbox{\solidrule[0.7mm]\hspace{1.4mm}\solidrule[0.7mm]\hspace{1.4mm}\solidrule[0.7mm]\hspace{1.4mm}\solidrule[0.7mm]}}
+\newcommand{\dotdashedline}{\mbox{\solidrule[2.25mm]\hspace{1mm}\solidrule[.5mm]\hspace{1mm}\solidrule[2.26mm]}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%	Front-matter details
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
