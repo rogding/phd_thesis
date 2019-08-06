@@ -46,11 +46,11 @@ Following the usual procedure by defining $\va{F} = \va{J} + \va{I}$, the energy
 								=	\frac{A_{\text{hf}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
 \end{equation}
 In the ground state of \Srion{87}{+}, $S=s={1}/{2}$ and $I={9}/{2}$ meaning the the $\nSLJ{5s}{2}{S}{1/2}$ is split in to $F = 4$ and $F = 5$ components.
-Using $A_{\text{hfs}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} determined $A_{\text{hfs}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states are shifted by
+Using $A_{\text{hf}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} determined $A_{\text{hf}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states are shifted by
 \begin{equation}
 	\ev*{\hat{V}_{\text{hf}}}	=	\begin{cases}
-										-\frac{11}{4} A_{\text{hfs}} = \SI{2.751302601+-0.000000030}{\GHz}	,{}&{}	F=4	\\
-										\frac{9}{4} A_{\text{hfs}} = \SI{-2.251065764+-0.000000025}{\GHz}	,{}&{}	F=5
+										-\frac{11}{4} A_{\text{hf}} = \SI{2.751302601+-0.000000030}{\GHz}	,{}&{}	F=4	\\
+										\frac{9}{4} A_{\text{hf}} = \SI{-2.251065764+-0.000000025}{\GHz}	,{}&{}	F=5
 									\end{cases}
 \end{equation}
 Notice that $\ev*{\hat{V}_{\text{hf}}\pqty*{F=4}} \approx \SI{2.75}{\GHz}$ nearly matches the $\SI{2.74}{\GHz}$ discrepancy between the reported ionization limit of \Sr{87} and the ionization limit determined by mass-scaling from the bosonic isotopes. 
@@ -80,9 +80,12 @@ R.D., S.Y. and, F.B.D. wrote the paper.
 
 \section{Additional Material}
 
-\subsection{$n$-Scaling of Various Splittings}
+\subsection{$n$ Scaling of Various Splittings}
 
-\begin{figure}[htbp]
+As mentioned above, the hyperfine interaction remains approximately independent of $n$ whereas various splittings decrease with increasing $n$. 
+This is illustrated in \cref{fig:deltaE} where the experimentally determined fine-structure, singlet-triplet, and Coulomb splitting in \Sr{88} are plotted. 
+\Cref{fig:n-scaling} shows the same information as  \cref{fig:deltaE} (plotted for $n$ instead of $n^{*}$) but with more splittings and was computed using the most recently reported ionization limit and quantum defects for \Sr{88} in \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}.
+\begin{figure}[!htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/calculations/n-scaling.svg}
 	\caption{
@@ -91,8 +94,58 @@ R.D., S.Y. and, F.B.D. wrote the paper.
 		The energy scale of the hyperfine interaction in \Sr{87} is approximately constant and is $\abs{a_{5s}} \approx \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}.
 		The splittings between various states are represented by $\Delta E^{\pqty{0}}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
 \end{figure}
+The strength of hyperfine interaction can be related to the contact interaction of the inner $5s$ electron with the \Srion{87}{+} core $\abs*{a_{5s}} \simeq \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}. 
 
-\subsection{$\SLJ{}{S}{}$ Hyperfine Mixing Matrix}
+Working in the $LS$-coupled basis (even though it is no longer a good quantum number), it is possible to estimate where hyperfine state mixing will occur by finding when the $\abs*{a_{5s}}$ becomes comparable that particular splitting in \cref{fig:n-scaling}.
+As $n \to \infty$, it's clear that the hyperfine interaction becomes the dominant energy scale and determines the states of the \Srion{87}{+} ion.
+
+\subsection{Singly Excited $\SLJ{}{S}{}$ State Hyperfine Mixing Matrix}
+
+The matrix elements for hyperfine mixing of the $\nSLJ{5sns}{1}{S}{0}$ and the $\nSLJ{5sns}{3}{S}{1}$ are not too difficult to work out.
+The derivation presented below was originally done by Shuhei Yoshida. 
+
+
+Therefore the total Hamiltonian can be written as
+\begin{align}
+	\hat{H}	{}={}&	\begin{pmatrix}
+						E\qty(\SLJf{3}{S}{1}{I+1})	&	0							&	0							&	0	\\ 
+						0							&	E\qty(\SLJf{1}{S}{0}{I})	&	0							&	0	\\ 
+						0							&	0							&	E\qty(\SLJf{3}{S}{1}{I})	&	0	\\ 
+						0							&	0							&	0							&	E\qty(\SLJf{3}{S}{1}{I-1})
+					\end{pmatrix}	\\
+			&		+ \frac{1}{2} a_{5s}
+					\begin{pmatrix}
+						0	&	0							&	0							&	0	\\ 
+						0	&	0							&	\sqrt{I\left(I+1\right)}	&	0	\\ 
+						0	&	\sqrt{I\left(I+1\right)}	&	-1							&	0	\\ 
+						0	&	0							&	0							&	0
+					\end{pmatrix}
+\end{align}
+
+********************
+
+The singlet and triplet electron wave functions $\ket{S,m_S}_{S}$ can be written as
+\begin{align}
+	\ket{0,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{+;-} - \ket{-;+}}	\\
+	\ket{1,1}_{S}	&{}={}	\ket{+;+}												\\
+	\ket{1,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{+;-} + \ket{-;+}}	\\
+	\ket{1,-1}_{S}	&{}={}	\ket{-;-}
+\end{align}
+where $\ket{\psi_1;\psi_2}=\ket{\psi_1}\ket{\psi_2}$ for electron 1 and electron 2 with $\ket{+}$ ($\ket{-}$) denoting a spin-up (spin-down) electron (see e.g., \cite{Sakurai2010}).
+
+For a singly excited Rydberg state $\ket{\nSLJM{5snl}{2S+1}{L}{J}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{5s}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm} = \pqty{\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}}/{\sqrt{2}}$.
+Combining the orbital and spin wave functions for singlet and triplet states are
+\begin{align}
+	\ket{\nSLJM{msnl}{1}{L}{J}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
+											&{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
+	\ket{\nSLJM{msnl}{3}{L}{J}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
+											&{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
+\end{align}
+with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+
+***********************
+
+Since the hyperfine interaction in \Sr{87} be approximated as $\hat{V}_{\text{hf}} \simeq a_{5s} \hat{\va{s}}_{\text{in}} \vdot \hat{\va{I}}$
 
 \subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
 
@@ -182,7 +235,9 @@ As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for 
 \end{equation}
 
 ************************
+\subsection{$\SLJ{}{D}{}$ Hyperfine Mixing Matrix}
 
+The matrix elements of hyperfine-mixed $\SLJ{}{D}{}$ states is quite a bit more difficult to calculate. 
 
 \subsection{Calibration of the EXFO WA-1500 Wavemeter}
 
