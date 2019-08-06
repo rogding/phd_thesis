@@ -1,13 +1,3 @@
-\begin{center}
-	Phys. Rev. A \textbf{98}, 042505 (2018)
-	
-	R. Ding, J. D. Whalen, S. K. Kanungo, T. C. Killian, and F. B. Dunning	\\
-	\textit{Department of Physics and Astronomy, Rice University, Houston, Texas 77005, USA}
-
-	S. Yoshida and J. Burgdörfer	\\
-	\textit{Institute for Theoretical Physics, Vienna University of Technology, A-1040 Vienna, Austria, European Union}
-\end{center}
-
 \subsection{Abstract}
 
 A combined experimental and theoretical spectroscopic study of high-$n$, $30 \lesssim n \lesssim 100$, triplet $\SLJ{}{S}{}$ and $\SLJ{}{D}{}$ Rydberg states in \Sr{87} is presented. 
@@ -104,7 +94,7 @@ The matrix elements of the reference Hamiltonian $H_0(88,m_{87})$ depend on the 
 \begin{equation}
 	\Delta E_J^{(0)} \sim 4.4 \times 10^5/n^{*\, 3.4}
 \end{equation}
-in the high-$n$ regime (see Fig.~\ref{fig:deltaE}). 
+in the high-$n$ regime (see \cref{fig:deltaE}). 
 The singlet-triplet splittings scale as (in $\si{\GHz}$)
 \begin{equation}
 	\Delta E_S^{(0)} = | E_{n,1,L,J}^{(0)} -  E_{n,0,L,J}^{(0)} | \sim 1.8 \times 10^6/n^{*\, 3}
@@ -114,13 +104,11 @@ and the Coulomb splittings scale as (in $\si{\GHz}$)
 	\Delta E_n^{(0)} = | E_{n+1,S,L,J}^{(0)} -  E_{n,S,L,J}^{(0)} | \sim 5.8 \times 10^6/n^{*\, 3}
 \end{equation}
 Therefore, as $n^*$ increases, $V_{\text{hf}}$ becomes comparable in size first to the fine structure splitting, then to the singlet-triplet splitting, and finally to the Coulomb splitting.
-This is illustrated in Fig.~\ref{fig:deltaE} and leads to strong state mixing. 
+This is illustrated in \cref{fig:deltaE} and leads to strong state mixing. 
 In consequence, \cref{eq:hamil} cannot in general be treated perturbatively but rather must be diagonalized. 
 
 \begin{figure}[!htbp]
 	\centering
-	%\includegraphics[width=8.6cm, keepaspectratio, bb=50 350 520 730]{energy_scale.pdf}
-	%\includegraphics[width=8.6cm, keepaspectratio=true]{energy_scale.eps}
 	\includegraphics[keepaspectratio, height=\textheight, width=5in]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/energy_scale.pdf}
 	\caption{\label{fig:deltaE}(Color online.)
 		({\color{black}\solidline}) The $n$ scaling of the fine structure splitting $\Delta E_J^{(0)}$, ({\color{green}	\dashedline}) the spin singlet-triplet splitting $\Delta E_{S}^{(0)}$, and ({\color{red}\dotdashedline}) the level separation $\Delta E_{n}^{(0)}$ between like states in \Sr{88} that differ in $n$ by one.
@@ -193,7 +181,16 @@ Since the radial functions belonging to different spin multiplets are not pairwi
 		=	\frac{1}{2} a_{5s} \sqrt{I(I+1)} O_{n,n'}
 \end{equation}
 where $O_{n,n'}$ is the overlap between the singlet and the triplet radial wave functions and can be estimated semiclassically \cite{Bhatti1981.PRA.24.161}. 
-For example, $O_{n,n'} \simeq 0.98$ for $n = n'$, $O_{n,n'} \simeq \num{0.1}$ for $\abs{n-n'} = 1$, and continues to rapidly decrease with increasing $\abs{n-n'}$. 
+For example, $O_{n,n'} \simeq 0.98$ for $n = n'$, $O_{n,n'} \simeq \num{0.1}$ for $\abs{n-n'} = 1$, and continues to rapidly decrease with increasing $\abs*{n-n'}$. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/hyperfine_shift_S.pdf}
+	\caption{\label{fig:shiftS}(Color online.)
+		(Solid lines) Hyperfine energy shifts of the $\nSLJ{5sns}{1,3}{S}{}$ states in \Sr{87} relative to the eigenvalues of $H_0(88,m_{87})$ [see \cref{eq:hamil}].
+		The state labels for the mixed $F = I$ sub-manifold [\cref{eq:hfs1,eq:hfs2,eq:hfs3}] indicate the state with the largest overlap.
+		(Dashed lines) Hyperfine energy shifts for $F = I$ states when mixing of adjacent $n$ levels due to the hyperfine interaction is neglected, i.e., setting $O_{n,n'} = \delta_{n,n'}$ in \cref{eq:hfs3}.}
+\end{figure}
 
 Using this hyperfine interaction matrix together with the Hamiltonian $H_0(88,m_{87})$ derived from the measured energies for $n \le 70$ $\SLJ{1}{S}{0}$ states \cite{Beigang1982.OC.42.19} and for $n \le 40$ $\SLJ{3}{S}{1}$ states \cite{Beigang1982.PS.26.183} in \Sr{88} as well as values obtained by extrapolation \cite{Vaillant2012.JPB.45.135004} to higher $n$ using the Rydberg-Ritz formula, the Hamiltonian \cref{eq:hamil} is diagonalized. 
 (Note that the Rydberg-Ritz formula is also used for low-$n$ states when the measured data show large fluctuations.) 
@@ -214,17 +211,6 @@ We note that the accuracy of the calculations is limited by the uncertainties in
 An order of magnitude estimate of the uncertainty can be obtained as follows. 
 Taking, for example, the measured data \cite{Beigang1982.PS.26.183} for $n \le 40$ with an accuracy of $\SI{0.01}{\per\cm} \simeq \SI{300}{\MHz}$, this uncertainty translates into an error of at most $\num{0.002}$ in the quantum defect. 
 For high $n$, assuming that the quantum defect can be extrapolated with the same accuracy of $\num{0.002}$, the resulting error in high Rydberg states would be ${0.002}/{n^3}$ corresponding to $\SI{\sim 35}{\MHz}$ for $n \sim 70$ and $\SI{\sim 13}{\MHz}$ for $n \sim 100$.
-
-\begin{figure}[!htbp]
-	\centering
-	%\includegraphics[width=8.6cm, keepaspectratio, bb=70 370 500 730]{hyperfine_shift_S.pdf}
-	%\includegraphics[width=8.6cm, keepaspectratio=true]{hyperfine_shift_S.eps}
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/hyperfine_shift_S.pdf}
-	\caption{\label{fig:shiftS}(Color online.)
-		(Solid lines) Hyperfine energy shifts of the $\nSLJ{5sns}{1,3}{S}{}$ states in \Sr{87} relative to the eigenvalues of $H_0(88,m_{87})$ [see \cref{eq:hamil}].
-		The state labels for the mixed $F = I$ sub-manifold [\cref{eq:hfs1,eq:hfs2,eq:hfs3}] indicate the state with the largest overlap.
-		(Dashed lines) Hyperfine energy shifts for $F = I$ states when mixing of adjacent $n$ levels due to the hyperfine interaction is neglected, i.e., setting $O_{n,n'} = \delta_{n,n'}$ in \cref{eq:hfs3}.}
-\end{figure}
 
 \subsubsection{Energy Shift of $\SLJ{}{D}{}$ States}
 
@@ -262,7 +248,7 @@ For higher $n$, on the other hand, the singlet-triplet mixing becomes nearly $n$
 As will be shown later, the current experimental data can be well reproduced when $\theta$ is set to \num{-0.14} and this value is used in the following calculations. 
 Including this admixture, the matrix elements of the hyperfine operator $V_{\text{hf}}$ in the $\SLJ{}{D}{}$ sector can be calculated (see \cref{app:d-state-eqs}). 
 
-Using the measured quantum defects for \Sr{88} \cite{Beigang1982.OC.42.19, Beigang1982.PS.26.183} and the Rydberg-Ritz formula, the hyperfine structure is calculated and plotted in terms of quantum defects (see Fig.~\ref{fig:shiftD}). 
+Using the measured quantum defects for \Sr{88} \cite{Beigang1982.OC.42.19, Beigang1982.PS.26.183} and the Rydberg-Ritz formula, the hyperfine structure is calculated and plotted in terms of quantum defects (see \cref{fig:shiftD}). 
 This quantum defect should converge to a constant value as $n \to \infty$ provided that the Rydberg series is pure, i.e., converges to a well-defined ionization threshold. 
 However, since for \Sr{87} two ionization limits $E_{\text{ion}}(F=4, 5)$ [\cref{eq:eion}] are present and the channels are strongly mixed by the hyperfine interaction, it is not straightforward to identify the proper ionization limit for each Rydberg series. 
 We illustrate this point in \cref{fig:shiftD}, where the fractional part of the quantum defect ($\mu \mod 1$) relative to just one of the two thresholds $E_{\text{ion}}(F=4)$ is plotted. 
@@ -289,8 +275,6 @@ The existence of multiple thresholds affects the extraction of proper quantum de
 
 \begin{figure}[!htbp]
 	\centering
-	%\includegraphics[width=8.6cm, keepaspectratio, bb=20 30 570 760]{hyperfine_shift_D.pdf}
-	%\includegraphics[width=8.6cm, keepaspectratio=true]{hyperfine_shift_D.eps}
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/hyperfine_shift_D.pdf}
 	\caption{\label{fig:shiftD}(Color online.)
 	(Solid lines) Fractional part of quantum defect $\mu(\nu_{F=4})$ evaluated relative to the ${F=4}$ ionization threshold [see \cref{eq:qd2}] as a function of the effective quantum number $\nu_{F=4}$ for different $F$ manifolds of Sr in the $\SLJ{}{D}{}$ sector.
@@ -304,6 +288,16 @@ The cooling and trapping of strontium is described in detail elsewhere \cite{Xu2
 Briefly, starting from a Zeeman slowed atomic beam, \Sr{87} atoms are first cooled and trapped using a ``blue'' magneto-optical trap (MOT) operating on the $\SI{461}{\nm}$ ${\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}}$ transition. 
 The atoms are then further cooled in a narrow-line ``red'' MOT utilizing the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ intercombination line at $\SI{689}{\nm}$. 
 Approximately $\SI{1e6}{\atoms}$ at $\SI{\sim2}{\micro\K}$ are captured before turning off all trapping fields for spectroscopy measurements. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/exp_setup.pdf}
+	\caption{\label{fig:exp_setup}(Color online.)
+	(a) Diagram of the experimental arrangement showing the $\SI{461}{\nm}$ cooling beams and the counter-propagating $\SI{689}{\nm}$ and $\SI{319}{\nm}$ Rydberg excitation lasers.
+	(b) Two-photon excitation scheme utilizing either the {(\romannumeral 1)} $\nSLJf{5s5p}{3}{P}{1}{11/2}$ or {(\romannumeral 2)} $\nSLJf{5s5p}{3}{P}{1}{9/2}$ intermediate states.
+	The detunings $\Delta_{11/2} \sim \SI{12}{\MHz}$ and $\Delta_{9/2} \sim \SI{36}{\MHz}$ remain fixed.
+	(c) Arrangement of the electrodes used for ionizing Rydberg atoms and guiding the electrons towards the MCP detector.}
+\end{figure}
 
 Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized $\SI{689}{\nm}$ and $\SI{319}{\nm}$ laser beams which drive transitions to the $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg levels via the intermediate {$\nSLJf{5s5p}{3}{P}{1}{9/2}$ or $11/2$} states. 
 These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated [see \cref{fig:exp_setup}b]. 
@@ -320,17 +314,6 @@ A sample of the output is sent though a broadband fiber electro-optic modulator 
 The transfer cavity was stabilized using a $\SI{689}{\nm}$ master laser locked to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{88}. 
 The linewidth of the $\SI{319}{\nm}$ laser is estimated to be $\SI[input-comparators=\lesssim]{\lesssim500}{\kHz}$ based on the narrowest observed spectroscopic features.
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/exp_setup.pdf}
-	%\includegraphics[width=8.6cm, keepaspectratio]{exp_setup.eps}
-	\caption{\label{fig:exp_setup}(Color online.)
-	(a) Diagram of the experimental arrangement showing the $\SI{461}{\nm}$ cooling beams and the counter-propagating $\SI{689}{\nm}$ and $\SI{319}{\nm}$ Rydberg excitation lasers.
-	(b) Two-photon excitation scheme utilizing either the {(\romannumeral 1)} $\nSLJf{5s5p}{3}{P}{1}{11/2}$ or {(\romannumeral 2)} $\nSLJf{5s5p}{3}{P}{1}{9/2}$ intermediate states.
-	The detunings $\Delta_{11/2} \sim \SI{12}{\MHz}$ and $\Delta_{9/2} \sim \SI{36}{\MHz}$ remain fixed.
-	(c) Arrangement of the electrodes used for ionizing Rydberg atoms and guiding the electrons towards the MCP detector.}
-\end{figure}
-
 A wavemeter (EXFO WA-1500) was used to measure the wavelength of the $\SI{638}{\nm}$ output from the OPO and hence determine the Rydberg state energies with a resolution-limited statistical uncertainty ($\sigma_\mathrm{stat}$) of about \SI{\pm 15}{\MHz} ($\SI{\pm 30}{\MHz}$) at $\SI{638}{\nm}$ ($\SI{319}{\nm}$). 
 In order to estimate systematic offsets in the wavemeter, the frequencies of lasers locked to atomic transitions in \Sr{88} ($\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ at $\SI{689}{\nm}$ \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}) and in \Li{6} ($\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{2p}{2}{P}{3/2}$ at $\SI{671}{\nm}$ and $\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{3p}{2}{P}{3/2}$ at $\SI{646}{\nm}/2=\SI{323}{\nm}$ \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901, Radziemski1995.PRA.52.4462}) were measured and then compared to the published values for the same transitions and the differences $\delta$ between the measured and published frequencies are shown in \cref{fig:wm_cal}. 
 A linear fit yields an offset of $\SI{\approx 140}{\MHz}$ at $\SI{638}{\nm}$. 
@@ -338,6 +321,14 @@ In an attempt to estimate the systematic uncertainty in this calibration factor,
 To check for drifts in the wavemeter calibration, each \SI{638}{\nm} wavelength measurement was followed by a reference measurement of the $\SI{689}{\nm}$ master laser. 
 As shown in the inset {\cref{fig:wm_cal}b}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty. 
 Whereas our wavemeter limits the measurements of individual term energies to $\SI{\sim 60}{\MHz}$, line separations can be measured to kilohertz-level accuracies when scanning within a single free spectral range (FSR) of the transfer cavity and to megahertz-level accuracies when piecing together scans over successive FSRs.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/wm_calibration.pdf}
+	\caption{\label{fig:wm_cal}(Color online.)
+		(a) Wavelength dependence of the offset ($\delta$) between the measured and published transition frequencies used to calibrate the wavemeter: (black line) linear fit used to obtain the offset at \SI{638}{\nm}, (shaded region) uncertainty in the wavemeter calibration obtained from Monte Carlo simulations (see text).
+		(b, inset) Offset of the \SI{689}{\nm} transition in \Sr{88} measured at different times.}
+\end{figure}
 
 \subsection{Results and Discussion}
 
@@ -353,6 +344,16 @@ This would correspond to an energy shift of $\SI{\sim 40}{\MHz}$.
 (We note that other sources of uncertainty such as specific isotope effects, mass polarization contributions, or stray field effects can be ruled out.)
 Due to the fluctuations in the measured quantum defects (\cref{fig:Rydberg-Ritz-S}) for high $n$, the ionization threshold can be determined only within an error of $\SI{\sim\pm 20}{\MHz}$. 
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/quantum_defect_S.pdf}
+	\caption{\label{fig:Rydberg-Ritz-S} (Color online.)
+		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5sns}{3}{S}{1}$ levels: ($\bullet$) measurements from earlier work \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183}, ({\color{red} $\blacktriangle$}) present measurements of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ states derived from the earlier ionization limit \cite{Sansonetti2010.JPCRD.39.033103}, ({\color[rgb]{0,1,1} $\blacktriangledown$}) present measurements with modified ionization limit (see text).
+		({\color{green}\dashedline}) predictions using the Rydberg-Ritz formulas from \cite{Vaillant2012.JPB.45.135004} and ({\color{blue}\solidline}) the modified Rydberg-Ritz formulas.
+		The inset shows the higher-$n$ region on an expanded scale.
+		**** NEED TO FIX FIGURE REFERENCES ****}
+\end{figure}
+
 Another feature observed in \cref{fig:Rydberg-Ritz-S} is a nearly constant shift of the measured $\mu^{(0)}_{n,S,L,J}$ from the Rydberg-Ritz prediction for low-lying states $30 < n < 40$.
 Since the quantum defects at low $n$ are insensitive to small differences in the ionization threshold, the observed shift suggests the Rydberg-Ritz formula for the $\SLJ{3}{S}{}$ states needs to be updated. 
 The combined data from the earlier measurements \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183} for \Sr{88} and the current measurements for \Sr{87} can be well fit using the Rydberg-Ritz expression
@@ -360,7 +361,7 @@ The combined data from the earlier measurements \cite{Beigang1982.OC.42.19,Beiga
 	\label{eq:Rydberg-Ritz}
 	\mu^{(0)}_{n,S,L,J}=\mu_{0} + \frac{\alpha}{(n-\mu_{0})^{2}}  + \frac{\beta}{(n-\mu_{0})^{4}}
 \end{equation}
-and the values of $\mu_{0}$, $\alpha$, and $\beta$ given in Table~\ref{tab:delta}, which also includes the corresponding values derived from the earlier measurements at lower $n$ \cite{Vaillant2012.JPB.45.135004}. 
+and the values of $\mu_{0}$, $\alpha$, and $\beta$ given in \cref{tab:delta}, which also includes the corresponding values derived from the earlier measurements at lower $n$ \cite{Vaillant2012.JPB.45.135004}. 
 The change in quantum defect is small ($\num{\sim 0.0035}$) but, when converted to energy, the difference can be non-negligible for low-$n$ states ($\SI{\sim80}{\MHz}$ for $n = 30$). 
 \Cref{tab:data-s-state} includes theoretical predictions based on diagonalization of the rescaled Hamiltonian [\cref{eq:hamil}].
 The calculations use the modified Rydberg-Ritz formula for $\mu^{(0)}_{n,S,L,J}$ together with the measured ionization threshold \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.
@@ -507,17 +508,6 @@ Therefore, in the following, we focus on relative energies in our analysis of $\
 	\end{tabular}
 \end{table}
 
-\begin{figure}[!htbp]
-	\centering
-	%\includegraphics[width=8.6cm, bb=55 360 530 770]{quantum_defect_S.pdf}
-	%\includegraphics[width=8.6cm]{quantum_defect_S.eps}
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/quantum_defect_S.pdf}
-	\caption{\label{fig:Rydberg-Ritz-S} (Color online.)
-		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5sns}{3}{S}{1}$ levels: ($\bullet$) measurements from earlier work \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183}, ({\color{red} $\blacktriangle$}) present measurements of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ states derived from the earlier ionization limit \cite{Sansonetti2010.JPCRD.39.033103}, ({\color[rgb]{0,1,1} $\blacktriangledown$}) present measurements with modified ionization limit (see text).
-		({\color{green}\dashedline}) predictions using the Rydberg-Ritz formulas from \cite{Vaillant2012.JPB.45.135004} and ({\color{blue}\solidline}) the modified Rydberg-Ritz formulas.
-		The inset shows the higher-$n$ region on an expanded scale.}
-\end{figure}
-
 \Cref{fig:spectra_D} shows the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines for $n=\text{\numlist{50;60;97;98}}$ relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
 The corresponding term values are listed in \cref{tab:data-d-state}. 
 The $n = \text{\numlist{50;60}}$ states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ state, allowing the creation of states with $F = \text{\numlist{7/2;9/2;11/2}}$. 
@@ -530,6 +520,15 @@ The measured quantum defects for the $\SLJ{3}{D}{}$ states are shown in \cref{fi
 The differences between the predicted quantum defects [\cref{eq:Rydberg-Ritz}] based on the present data for \Sr{87} and previous data for \Sr{88} \cite{Vaillant2012.JPB.45.135004} appear to be small $\num{\sim 0.02}$. 
 However, when converted to energy, this small difference translates into discrepancies of $\SI{130}{\MHz}$ for $n = 100$ and $\SI{1}{\GHz}$ for $n = 50$ well outside the uncertainty of the current experiments. 
 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/spectra_D.pdf}
+	\caption{\label{fig:spectra_D}(Color online.)
+	(Blue) Measured spectra for $\nSLJ{5snd}{3}{D}{}$ states of \Sr{87} in the vicinity of (a) ${n=50}$, (b) ${n=60}$, (c) ${n=98}$.
+	Energies are given relative to the $5s50s$, $5s60s$, and $5s98s$ $\SLJf{3}{S}{1}{11/2}$ states, respectively. Rydberg excitation was performed following scheme {(\romannumeral 2)} for (a, b) and {(\romannumeral 1)} for (c).
+	The vertical bars above the data show the calculated positions for the various hyperfine states (see text). The measured levels and splittings are given in \cref{tab:data-d-state}.}
+\end{figure}
+
 The present Rydberg-Ritz formulas can also be tested against earlier measured quantum defects for $\SLJ{}{D}{}$ states in \Sr{87} ($n > 100$) \cite{Sun1989.JPB.22.2887}. 
 The data are reproduced to within an average difference of $\SI{\sim 60}{\MHz}$. 
 When the modified ionization limit discussed above is used to evaluate the quantum defect, the average difference is reduced to \SI{\sim 25}{\MHz}. 
@@ -540,9 +539,45 @@ Due to the uncertainty in the ionization threshold, the exact energies cannot be
 Finally, the improved Rydberg-Ritz formulas for the $\SLJ{3}{D}{}$ states determined from the present data for \Sr{87} can be used to determine spectroscopic information for \Sr{88}. 
 When we compare energies for the $5s50d$ and $5s80d$ $\SLJ{3}{D}{1,2}$ states derived using the present updated Rydberg-Ritz formulas with earlier measurements \cite{Millen2011.JPB.44.184001, Bridge2016.OE.24.2281} the agreement is significantly improved over that obtained using the earlier Rydberg-Ritz parametrization, the differences between theory and experiment being reduced by several hundred megahertz. 
 
-As a further test of the present theoretical approach, Table~\ref{tab:data-d-state} includes the frequency separations between selected pairs of levels that could be measured during a single FSR scan of the \SI{319}{\nm} laser and that are known to high precision. 
-Table~\ref{tab:data-d-state} also includes the corresponding theoretical predictions. 
+As a further test of the present theoretical approach, \cref{tab:data-d-state} includes the frequency separations between selected pairs of levels that could be measured during a single FSR scan of the \SI{319}{\nm} laser and that are known to high precision. 
+\Cref{tab:data-d-state} also includes the corresponding theoretical predictions. 
 In all but one case the measured and theoretical separations agree to better than \SI{\pm 10}{\MHz}. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/Rydberg-Ritz_v2.pdf}
+	\caption{\label{fig:Rydberg-Ritz-D}(Color online.)
+		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5snd}{3}{D}{1,2,3}$ levels: ($\bullet$) measurements from earlier work \cite{beig82,beig82b}; ({\color{red} $\blacktriangle$}) present measurements, ({\color{green}\dashedline}) predictions using the Rydberg-Ritz formulas developed previously \cite{Vaillant2012.JPB.45.135004}; ({\color{blue}\solidline}) predictions based on the present updated Rydberg-Ritz formulas (see text). 
+		The insets show the high-$n$ region on an expanded scale.
+		**** NEED TO FIX FIGURE REFERENCES ****}
+\end{figure}
+
+\begin{table}[!htbp]
+	\caption{\label{tab:delta}
+		Values of the parameters $\mu_0$, $\alpha$, and $\beta$ for the Rydberg-Ritz formula obtained in this and earlier work.}
+	\centering
+	\begin{tabular}{@{}cccccc@{}}
+		\toprule
+		Series				& Term				& $\mu_0$			& $\alpha$			& $\beta$			& Reference		\\
+		\midrule
+		$\nSLJ{5sns}{}{}{}$	& $\SLJ{1}{S}{0}$	& \num{3.26896(2)}	& \num{-0.138(7)}	& \num{0.9(6)}		& \cite{Vaillant2012.JPB.45.135004}	\\
+		\midrule
+		$\nSLJ{5sns}{}{}{}$	& $\SLJ{3}{S}{1}$	& \num{3.37065}		& \num{0.443}		& \num{-0.553}		& This work		\\
+							&					& \num{3.371(2)}	& \num{0.5(2)}		& \num{-1(2)e1}		& \cite{Vaillant2012.JPB.45.135004}	\\
+		\midrule
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{1}{D}{2}$	& \num{2.3807(2)}	& \num{-39.41(6)}	& \num{-109(2)e1}	& \cite{Vaillant2012.JPB.45.135004}	\\
+		\midrule
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{1}$	& \num{2.673}		& \num{-5.4}		& \num{-8166}		& This work		\\
+							&					& \num{2.658(6)}	& \num{3(2)}		& \num{-8.8(7)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
+		\midrule
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{2}$	& \num{2.662}		& \num{-15.4}		& \num{-9804}		& This work		\\
+							&					& \num{2.636(5)}	& \num{-1(2)}		& \num{-9.8(9)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
+		\midrule
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{3}$	& \num{2.612}		& \num{-41.4}		& \num{-15363}		& This work		\\
+							&					& \num{2.63(1)}		& \num{-42.3(3)}	& \num{-18(1)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \subsection{Summary}
 
