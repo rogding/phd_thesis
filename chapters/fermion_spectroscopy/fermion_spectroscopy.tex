@@ -202,15 +202,7 @@ with the quantum defect given by ** \cite{Gentile1990.PRA.42.440, Gallagher1994.
 An important consideration in determining when effects cannot be neglected is when the energy scales become comparable.
 For tstrontium, the energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
 As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/calculations/n-scaling.svg}
-	\caption{
-		\label{fig:n-scaling}
-		The $n$ scaling of various splittings in \Sr{88} calculated using the most recently reported quantum defects and ionization energy \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}.
-		The energy scale of the hyperfine interaction in \Sr{87} is approximately constant and is $\abs{a_{5s}} \approx \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}.
-		The splittings between various states are represented by $\Delta E^{\pqty{0}}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
-\end{figure}
+*** MOVED FIGURE ***
 From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
 Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
@@ -258,93 +250,6 @@ Diagonalizing the total Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}_\text{hf}$ gi
 	E^{\pm}	=	\frac{E_{1}+E_{3}}{2} - \frac{1}{4} a_{5s} \pm \frac{1}{2} \sqrt{\qty(E_{1}-E_{3})^2 + a_{5s} \qty(E_{1}-E_{3}) + a_{5s}^{2} \qty(I + \frac{1}{2})^2}
 \end{equation}
 Taking the limit $a_{5s} \rightarrow 0$ (i.e., no hyperfine interaction), we observe $E^{+} \rightarrow E\qty(\SLJ{1}{S}{0})$ and $E^{-} \rightarrow E\qty(\SLJ{3}{S}{1})$ meaning $E^{+}$ corresponds to the energy of $\ket{\nSLJf{5sns}{1}{S}{0}{9/2}}$ and $E^{+}$ corresponds to energy of $\ket{\nSLJf{5sns}{3}{S}{1}{9/2}}$.
-
-\subsubsection{$n$-mixing}
-
-At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:n-scaling}. 
-Hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
-
-The derivation above can be extended to incorporate $n$-mixing. 
-Using the fact that $\hat{V}_\text{hf}$ only couples states with the same $F$ and the orthogonality of the radial wave functions for states of same spin multiplet but different $n$, the diagonal matrix elements of $\hat{V}_\text{hf}$ for $\nSLJf{5sns}{3}{S}{1}{I+1}$ and $\nSLJf{5sns}{3}{S}{1}{I-1}$ can be written as
-\begin{equation}
-	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \delta_{n,n^{\prime}}
-\end{equation}
-\begin{equation}
-	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \delta_{n,n^{\prime}}
-\end{equation}
-The off-diagonal elements vanish between these states because they remain uncoupled.
-
-
-****** I don't think I can do this ``expansion''... I think I want to just calculate matrix elements between n and n' states ******
-On the other hand, because $\hat{V}_\text{hf}$ mixes the $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ states, we can write
-\begin{align}
-	\ket{\nSLJf{5sns}{1}{S}{0}{I}}	{}={}&	\ket{\nSLJf{n}{1}{S}{0}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{3}{S}{1}{I}}}	\\
-	\ket{\nSLJf{5sns}{3}{S}{1}{I}}	{}={}&	\ket{\nSLJf{n}{3}{S}{1}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{1}{S}{0}{I}}}
-\end{align}
-where $\nSLJf{n}{1}{S}{0}{I}$ and $\nSLJf{n}{3}{S}{1}{I}$ represent pure singly-excited singlet and triplet $F=I$ states (recalling that the radial wave functions are orthogonal for $n \neq n^{\prime}$ for states in the same spin multiplet).
-Calculating the matrix elements of $\hat{V}_\text{hf}$ between $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ gives
-\begin{equation}
-	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{1}{S}{0}{I}}	=	0
-\end{equation}
-\begin{equation}
-	\mel{\nSLJf{5s{n^\prime}s}{3}{S}{1}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s} \delta_{n,n^{\prime}}
-\end{equation}
-The off-diagonal elements can be expressed as
-\begin{align}
-	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}
-		{}={}&	-\frac{1}{2} a_{5s} (stuff to finish deriving)	\notag	\\
-		{}={}&	-\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} O_{n,n^{\prime}}
-\end{align}
-where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial wave functions which can be estimated semiclassically \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
-\begin{equation}
-	O_{n_{1},n_{2}}
-		=	\braket{n_{1}^{*}}{n_{2}^{*}}
-		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
-\end{equation}
-
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=5in, height=\textheight]{fermion_spectroscopy/calculations/s-states/semiclassical_overlap.svg}
-	\caption{
-		\label{fig:semiclassical_overlap}
-		** FIX FIGURE Y-AXIS LABELS **.
-		Semiclassical estimation of the radial wave function overlap \cite{Bhatti1981.PRA.24.161} between $\nSLJ{n}{1}{S}{0}$ and $\nSLJ{n^{\prime}}{3}{S}{1}$ states ($O_{n,n^{\prime}}$) for $n^{\prime}=n, n+1, n+2$.}
-\end{figure}
-
-Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
-\begin{equation}
-	O_{n_{1},n_{1}+1}
-		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
-		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
-\end{equation}
-Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
-Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
-
-As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \approx \num{0.1}$ and quickly drops off for larger $\Delta n$. 
-
-************************
-\begin{align}
-	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
-		&{}={}	\qty(\bra{n^{*}_{\SLJ{1}{S}{0}}}\bra{\SLJ{1}{S}{0}}) \hat{V}_\text{hf} \qty(\ket{\SLJ{3}{S}{1}}\ket{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}})	\\
-		&{}={}	\braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \bra{\SLJ{1}{S}{0}}\hat{V}_\text{hf}\ket{\SLJ{3}{S}{1}}
-\end{align}
-
-\begin{align}
-	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
-		{}={}	&	\bra{\nSLJ{n}{1}{S}{0}} \qty[\hat{V}_\text{hf} \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
-		{}\neq{}&	\frac{1}{2} a_{5s} \bra{\nSLJ{n}{1}{S}{0}} \qty[\sqrt{I \qty(I+1)} \ket{\nSLJ{n+1}{1}{S}{0}} - \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
-		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{1}{S}{0}}	\notag	\\
-				&	- \frac{1}{2} a_{5s} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{3}{S}{1}}	\\
-		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{1}{S}{0}}} \braket{\SLJ{1}{S}{0}}{\SLJ{1}{S}{0}}		\notag	\\
-				&	- \frac{1}{2} a_{5s} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \braket{\SLJ{1}{S}{0}}{\SLJ{3}{S}{1}}	\\
-		{}={}	&	0
-\end{align}
-
-\begin{equation}
-	\bra{\nSLJ{n}{1}{S}{0}} \hat{V}_\text{hf} \qty(\sum_{n^\prime}\ket{\nSLJ{n^\prime}{3}{S}{1}})	=	...
-\end{equation}
-
-************************
 
 \subsection{Singly Excited $D$ states}
 
@@ -618,26 +523,6 @@ For \Sr{87}, along with using the appropriately mass-corrected Rydberg constant 
 % \end{longtable}
 % \end{SingleSpace}
 
-\begin{figure}[htbp]
-	\centering
-	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_1S0.pgf}}
-	\caption{
-		\label{fig:results-qd-1S0}
-		Quantum defects for the $\nSLJ{5sns}{1}{S}{0}$ Rydberg series.
-		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Esherick1977.PRA.15.1920, Beigang1982.OC.42.19, Dai1995.JQSRT.54.1019, Philip2007.OC.279.141}.
-		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_3S1.pgf}}
-	\caption{
-		\label{fig:results-qd-3S1}
-		Quantum defects for the $\nSLJ{5sns}{3}{S}{1}$ Rydberg series.
-		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Beigang1982.PS.26.183, Kunze1993.ZPD.27.111, Jackson2018.PhD, Couturier2019.PRA.99.022503}.
-		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-\end{figure}
-
 \Cref{fig:spectra-n50,fig:spectra-n60,fig:spectra-n98} show the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines near $n = \text{\numlist{50;60;97;98}}$ relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
 The corresponding term values are listed in \cref{tab:data-d-state} along with their theoretical predictions. 
 % \begin{table}[!htbp]
@@ -793,6 +678,118 @@ As a further test of the present theoretical approach, ** Table II ** includes t
 ** Table II ** also includes the corresponding theoretical predictions. 
 In all but one case the measured and theoretical separations agree to better than $\pm \SI{10}{\MHz}$.
 
+\section{Publication: Spectroscopy of \Sr{87} Triplet Rydberg States}
+
+\input{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/spectroscopy_of_87Sr_triplet_rydberg_states.tex}
+
+\section{Additional Material}
+
+\subsection{$n$-Scaling of Various Splittings}
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/calculations/n-scaling.svg}
+	\caption{
+		\label{fig:n-scaling}
+		The $n$ scaling of various splittings in \Sr{88} calculated using the most recently reported quantum defects and ionization energy \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}.
+		The energy scale of the hyperfine interaction in \Sr{87} is approximately constant and is $\abs{a_{5s}} \approx \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}.
+		The splittings between various states are represented by $\Delta E^{\pqty{0}}_{X}$ between the given states where $X=S$ is the singlet-triplet splitting, $X=J$ is the fine structure splitting, and $X=n$ is the Coulomb splitting.}
+\end{figure}
+
+\subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
+
+\subsubsection{$n$-mixing}
+
+At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:n-scaling}. 
+Hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
+
+The derivation above can be extended to incorporate $n$-mixing. 
+Using the fact that $\hat{V}_\text{hf}$ only couples states with the same $F$ and the orthogonality of the radial wave functions for states of same spin multiplet but different $n$, the diagonal matrix elements of $\hat{V}_\text{hf}$ for $\nSLJf{5sns}{3}{S}{1}{I+1}$ and $\nSLJf{5sns}{3}{S}{1}{I-1}$ can be written as
+\begin{equation}
+	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \delta_{n,n^{\prime}}
+\end{equation}
+\begin{equation}
+	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \delta_{n,n^{\prime}}
+\end{equation}
+The off-diagonal elements vanish between these states because they remain uncoupled.
+
+
+****** I don't think I can do this ``expansion''... I think I want to just calculate matrix elements between n and n' states ******
+On the other hand, because $\hat{V}_\text{hf}$ mixes the $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ states, we can write
+\begin{align}
+	\ket{\nSLJf{5sns}{1}{S}{0}{I}}	{}={}&	\ket{\nSLJf{n}{1}{S}{0}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{3}{S}{1}{I}}}	\\
+	\ket{\nSLJf{5sns}{3}{S}{1}{I}}	{}={}&	\ket{\nSLJf{n}{3}{S}{1}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{1}{S}{0}{I}}}
+\end{align}
+where $\nSLJf{n}{1}{S}{0}{I}$ and $\nSLJf{n}{3}{S}{1}{I}$ represent pure singly-excited singlet and triplet $F=I$ states (recalling that the radial wave functions are orthogonal for $n \neq n^{\prime}$ for states in the same spin multiplet).
+Calculating the matrix elements of $\hat{V}_\text{hf}$ between $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ gives
+\begin{equation}
+	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{1}{S}{0}{I}}	=	0
+\end{equation}
+\begin{equation}
+	\mel{\nSLJf{5s{n^\prime}s}{3}{S}{1}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s} \delta_{n,n^{\prime}}
+\end{equation}
+The off-diagonal elements can be expressed as
+\begin{align}
+	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}
+		{}={}&	-\frac{1}{2} a_{5s} (stuff to finish deriving)	\notag	\\
+		{}={}&	-\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} O_{n,n^{\prime}}
+\end{align}
+where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial wave functions which can be estimated semiclassically \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
+\begin{equation}
+	O_{n_{1},n_{2}}
+		=	\braket{n_{1}^{*}}{n_{2}^{*}}
+		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
+\end{equation}
+
+\begin{figure}[htbp]
+	\centering
+	\includesvg[keepaspectratio, width=5in, height=\textheight]{fermion_spectroscopy/calculations/s-states/semiclassical_overlap.svg}
+	\caption{
+		\label{fig:semiclassical_overlap}
+		** FIX FIGURE Y-AXIS LABELS **.
+		Semiclassical estimation of the radial wave function overlap \cite{Bhatti1981.PRA.24.161} between $\nSLJ{n}{1}{S}{0}$ and $\nSLJ{n^{\prime}}{3}{S}{1}$ states ($O_{n,n^{\prime}}$) for $n^{\prime}=n, n+1, n+2$.}
+\end{figure}
+
+Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
+\begin{equation}
+	O_{n_{1},n_{1}+1}
+		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
+		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
+\end{equation}
+Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
+Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
+
+As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \approx \num{0.1}$ and quickly drops off for larger $\Delta n$. 
+
+************************
+\begin{align}
+	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
+		&{}={}	\qty(\bra{n^{*}_{\SLJ{1}{S}{0}}}\bra{\SLJ{1}{S}{0}}) \hat{V}_\text{hf} \qty(\ket{\SLJ{3}{S}{1}}\ket{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}})	\\
+		&{}={}	\braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \bra{\SLJ{1}{S}{0}}\hat{V}_\text{hf}\ket{\SLJ{3}{S}{1}}
+\end{align}
+
+\begin{align}
+	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
+		{}={}	&	\bra{\nSLJ{n}{1}{S}{0}} \qty[\hat{V}_\text{hf} \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
+		{}\neq{}&	\frac{1}{2} a_{5s} \bra{\nSLJ{n}{1}{S}{0}} \qty[\sqrt{I \qty(I+1)} \ket{\nSLJ{n+1}{1}{S}{0}} - \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
+		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{1}{S}{0}}	\notag	\\
+				&	- \frac{1}{2} a_{5s} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{3}{S}{1}}	\\
+		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{1}{S}{0}}} \braket{\SLJ{1}{S}{0}}{\SLJ{1}{S}{0}}		\notag	\\
+				&	- \frac{1}{2} a_{5s} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \braket{\SLJ{1}{S}{0}}{\SLJ{3}{S}{1}}	\\
+		{}={}	&	0
+\end{align}
+
+\begin{equation}
+	\bra{\nSLJ{n}{1}{S}{0}} \hat{V}_\text{hf} \qty(\sum_{n^\prime}\ket{\nSLJ{n^\prime}{3}{S}{1}})	=	...
+\end{equation}
+
+************************
+
+
+\subsection{Calibration of the EXFO WA-1500 Wavemeter}
+
+\subsection{Comparison of Measured Quantum Defects}
+
 \begin{table}[htbp]
 	\caption{
 		\label{tab:sr_qd_list}
@@ -806,51 +803,55 @@ In all but one case the measured and theoretical separations agree to better tha
 		$5sns$	& $\SLJ{1}{S}{0}$	& \num{3.26896(2)}	& \num{-0.138(7)}	& \num{0.9(6)}			& \cite{Vaillant2012.JPB.45.135004}			\\
 		\midrule
 		$5sns$	& $\SLJ{3}{S}{1}$	& \num{3.371(2)}	& \num{0.5(2)}		& \num{-1(2)e1}			& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{3.37065}		& \num{0.443}		& \num{-0.553}			& \cite{Ding2018.PRA.98.042505} (this work)	\\
+				&					& \num{3.37065}		& \num{0.443}		& \num{-0.553}			& This work \cite{Ding2018.PRA.98.042505}	\\
 				&					& \num{3.36924(2)}	& \num{0.52(2)}		& \num{-0.1(3)}			& \cite{Jackson2018.PhD}					\\
 				&					& \num{3.370778(4)}	& \num{0.418(1)}	& \num{-0.3(1)}			& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{1}{D}{2}$	& \num{2.3807(2)}	& \num{-39.41 (6)}	& \num{-109(2)e1}		& \cite{Vaillant2012.JPB.45.135004}			\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{1}$	& \num{2.658(6)}	& \num{3(2)}		& \num{-8.8(7)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.673}		& \num{-5.4}		& \num{-8166}			& \cite{Ding2018.PRA.98.042505} (this work)	\\
+				&					& \num{2.673}		& \num{-5.4}		& \num{-8166}			& This work \cite{Ding2018.PRA.98.042505}	\\
 				&					& \num{2.664(7)}	& \num{-1(9)}		& \num{-8(2)e3}			& \cite{Jackson2018.PhD}					\\
 				&					& \num{2.67517(20)}	& \num{-13.15(26)}	& \num{-4.444(91)e3}	& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{2}$	& \num{2.636(5)}	& \num{-1(2)}		& \num{-9.8(9)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.662}		& \num{-15.4}		& \num{-9804}			& \cite{Ding2018.PRA.98.042505} (this work)	\\
+				&					& \num{2.662}		& \num{-15.4}		& \num{-9804}			& This work \cite{Ding2018.PRA.98.042505}	\\
 				&					& \num{2.66142(30)}	& \num{-16.77(38)}	& \num{-6.656(134)e3}	& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{3}$	& \num{2.63(1)}		& \num{-42.3(3)}	& \num{-18(1)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.612}		& \num{-41.4}		& \num{-15363}			& \cite{Ding2018.PRA.98.042505} (this work)	\\
+				&					& \num{2.612}		& \num{-41.4}		& \num{-15363}			& This work \cite{Ding2018.PRA.98.042505}	\\
 		\bottomrule
 	\end{tabular}
 	}
 \end{table}
 
+\begin{figure}[htbp]
+	\centering
+	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_1S0.pgf}}
+	\caption{
+		\label{fig:results-qd-1S0}
+		Quantum defects for the $\nSLJ{5sns}{1}{S}{0}$ Rydberg series.
+		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Esherick1977.PRA.15.1920, Beigang1982.OC.42.19, Dai1995.JQSRT.54.1019, Philip2007.OC.279.141}.
+		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_3S1.pgf}}
+	\caption{
+		\label{fig:results-qd-3S1}
+		Quantum defects for the $\nSLJ{5sns}{3}{S}{1}$ Rydberg series.
+		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Beigang1982.PS.26.183, Kunze1993.ZPD.27.111, Jackson2018.PhD, Couturier2019.PRA.99.022503}.
+		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
+\end{figure}
+
 \section{Conclusion}
 
-** Update and reword the summary from PRA !! **
-
-The present work demonstrates that the energies of {high-$n$} \Sr{87} Rydberg states can be accurately determined by diagonalizing an isotope-rescaled Hamiltonian.
-This Hamiltonian is constructed using spectral information for the bosonic isotope (\Sr{88}) which has vanishing nuclear spin combined with the hyperfine interaction present in \Sr{87}.
-The present approach can be implemented for fermionic atoms whenever the energy levels for an isotope with vanishing nuclear spin are available.
-The method can also be applied in reverse, allowing determination of spectroscopic information, in particular quantum defects, for bosonic isotopes from the hyperfine-resolved spectrum of the fermionic isotope.
-The major limitation on the accuracy of the present analysis is the uncertainty in the hyperfine-resolved ionization threshold.
-This uncertainty can be removed by focusing on energy differences to a reference level whereupon accuracies of the order of a few megahertz can be achieved. 
-
-***************************
+******************
 
 Although the hyperfine interaction complicates the Rydberg spectra of \Sr{87}, it does offer some interesting possibilities. 
 One possibility is to access Rydberg states with either attractive ($\nSLJ{5sns}{1}{S}{0}$) or repulsive ($\nSLJ{5sns}{3}{S}{1}$) $C_{6}$ coefficients \cite{Vaillant2012.JPB.45.135004} from the $\nSLJ{5s5p}{3}{P}{1}$ intermediate due to the hyperfine mixing. 
 
 
-\section{Publication: Spectroscopy of \Sr{87} Triplet Rydberg States}
+\section{*** TEMPORARY ***}
 
-\input{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/spectroscopy_of_87Sr_triplet_rydberg_states.tex}
-
-\section{Additional Material}
-
-\subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
-
-**** MOVE FIGURE HERE ****
