@@ -351,9 +351,12 @@ Due to the fluctuations in the measured quantum defects (\cref{fig:Rydberg-Ritz-
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/quantum_defect_S.pdf}
-	\caption{\label{fig:Rydberg-Ritz-S} (Color online.)
-		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5sns}{3}{S}{1}$ levels: ($\bullet$) measurements from earlier work \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183}, ({\color{red} $\blacktriangle$}) present measurements of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ states derived from the earlier ionization limit \cite{Sansonetti2010.JPCRD.39.033103}, ({\color[rgb]{0,1,1} $\blacktriangledown$}) present measurements with modified ionization limit (see text).
-		({\color{green}\dashedline}) predictions using the Rydberg-Ritz formulas from \cite{Vaillant2012.JPB.45.135004} and ({\color{blue}\solidline}) the modified Rydberg-Ritz formulas.
+	\caption{\label{fig:Rydberg-Ritz-S}
+		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5sns}{3}{S}{1}$ levels:
+			measurements from earlier work \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183} ($\bullet$),
+			present measurements of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ states derived from the earlier ionization limit \cite{Sansonetti2010.JPCRD.39.033103} ({\color{red} $\blacktriangle$}),
+			and present measurements with modified ionization limit (see text) ({\color[rgb]{0,1,1} $\blacktriangledown$}).
+		Also shown are the predictions using the Rydberg-Ritz formula from \cite{Vaillant2012.JPB.45.135004} ({\color{green}\dashedline}) and the modified Rydberg-Ritz formula ({\color{blue}\solidline}).
 		The inset shows the higher-$n$ region on an expanded scale.
 		**** NEED TO FIX FIGURE REFERENCES ****}
 \end{figure}
@@ -363,24 +366,20 @@ Since the quantum defects at low $n$ are insensitive to small differences in the
 The combined data from the earlier measurements \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183} for \Sr{88} and the current measurements for \Sr{87} can be well fit using the Rydberg-Ritz expression
 \begin{equation}
 	\label{eq:Rydberg-Ritz}
-	\mu^{(0)}_{n,S,L,J}=\mu_{0} + \frac{\alpha}{(n-\mu_{0})^{2}}  + \frac{\beta}{(n-\mu_{0})^{4}}
+	\mu^{(0)}_{n,S,L,J}	=	\mu_{0} + \frac{\alpha}{(n-\mu_{0})^{2}}  + \frac{\beta}{(n-\mu_{0})^{4}}
 \end{equation}
 and the values of $\mu_{0}$, $\alpha$, and $\beta$ given in \cref{tab:delta}, which also includes the corresponding values derived from the earlier measurements at lower $n$ \cite{Vaillant2012.JPB.45.135004}. 
 The change in quantum defect is small ($\num{\sim 0.0035}$) but, when converted to energy, the difference can be non-negligible for low-$n$ states ($\SI{\sim80}{\MHz}$ for $n = 30$). 
-\Cref{tab:data-s-state} includes theoretical predictions based on diagonalization of the rescaled Hamiltonian [\cref{eq:hamil}].
+\Cref{tab:data-s-state} includes theoretical predictions based on diagonalization of the rescaled Hamiltonian \cref{eq:hamil}.
 The calculations use the modified Rydberg-Ritz formula for $\mu^{(0)}_{n,S,L,J}$ together with the measured ionization threshold \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.
-On average, the present theoretical estimates lie slightly below the measured energy levels and, in the {high-$n$} limit, their differences converge to a near-constant value of $\SIrange[range-phrase = -]{40}{50}{\MHz}$. 
+On average, the present theoretical estimates lie slightly below the measured energy levels and, in the high-$n$ limit, their differences converge to a near-constant value of $\SIrange[range-phrase = -]{40}{50}{\MHz}$. 
 This provides another indication that the ionization threshold should be modified. 
-
-To remove the uncertainty in the ionization limit from the comparison between experiment and theory, we also include in \cref{tab:data-s-state} the measured energy differences between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ or the $\nSLJf{5sns}{3}{S}{1}{7/2, 9/2}$ states and the corresponding $\nSLJf{5sns}{3}{S}{1}{11/2}$ states together with the values predicted by theory.
-As seen in \cref{tab:data-s-state}, the discrepancies between these values are typically well below $\SI{0.0005}{\per\cm}$, $\SI[input-comparators=\simeq]{\simeq 15}{\MHz}$. 
-Therefore, in the following, we focus on relative energies in our analysis of $\SLJ{}{D}{}$ states.
 
 \begin{SingleSpace}
 \begin{longtable}[c]{@{}ccccccccc@{}}
 	\caption{\label{tab:data-s-state}
-		Experimentally measured and calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
-		$\Delta E_{\text{expt}}$ and $\Delta E_{\text{theor}}$ are the measured and predicted separations from the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
+		Experimentally measured and theoretically calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
+		Here $\Delta E_{\text{expt}}$ and $\Delta E_{\text{theor}}$ are the measured and predicted separations from the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
 		The uncertainties shown include both the statistical and systematic uncertainties in the wavemeter calibration.} \\
 	\toprule
 	Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
@@ -458,11 +457,15 @@ Therefore, in the following, we focus on relative energies in our analysis of $\
 \end{longtable}
 \end{SingleSpace}
 
+To remove the uncertainty in the ionization limit from the comparison between experiment and theory, we also include in \cref{tab:data-s-state} the measured energy differences between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ or the {$\nSLJf{5sns}{3}{S}{1}{7/2}$, ${9/2}$} states and the corresponding $\nSLJf{5sns}{3}{S}{1}{11/2}$ states together with the values predicted by theory.
+As seen in \cref{tab:data-s-state}, the discrepancies between these values are typically well below $\SI{0.0005}{\per\cm} \simeq \SI{15}{\MHz}$. 
+Therefore, in the following, we focus on relative energies in our analysis of $\SLJ{}{D}{}$ states.
+
 \begin{table}[!htbp]
 	\caption{\label{tab:data-d-state}
-		Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for $n = \text{\numlist{50;60;\sim98}}$. 
-		The splittings $\Delta E_{\text{expt}}$ between those lines that could be measured during a single FSR scan of the $\SI{319}{\nm}$ laser frequency (delineated by the horizontal lines) or, for $n \sim 98$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
-		For the $n = \text{\numrange[range-phrase=-]{98}{99}}$ scan, all differences are referenced to the $\nSLJf{5sns}{3}{S}{1}{11/2}$ level.}
+		Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for {$n = 50$, $60$, and $\sim 98$}.
+		The splittings $\Delta E_{\text{expt}}$ between those lines that could be measured during a single FSR scan of the $\SI{319}{\nm}$ laser frequency or, for $n \sim 98$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
+		For the $n = 98-99$ scan, all differences are referenced to the $\nSLJf{5sns}{3}{S}{1}{11/2}$ level.}
 	\centering
 	\begin{tabular}{@{}cccccccc@{}}
 		\toprule
@@ -512,25 +515,26 @@ Therefore, in the following, we focus on relative energies in our analysis of $\
 	\end{tabular}
 \end{table}
 
-\Cref{fig:spectra_D} shows the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines for $n=\text{\numlist{50;60;97;98}}$ relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
+\Cref{fig:spectra_D} shows the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines for {$n = 50$, $60$, $97$, and $98$} relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
 The corresponding term values are listed in \cref{tab:data-d-state}. 
-The $n = \text{\numlist{50;60}}$ states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ state, allowing the creation of states with $F = \text{\numlist{7/2;9/2;11/2}}$. 
-The $n = \text{\numlist{97;98}}$ states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{11/2}$ state, allowing the creation of $F = \text{\numlist{9/2;11/2;13/2}}$ states. 
+The {$n = 50$ and $60$} states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ state, allowing the creation of states with {$F = {7}/{2}$, ${9}/{2}$, and ${11}/{2}$}.
+The {$n = 97$ and $98$} states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{11/2}$ state, allowing the creation of {$F = {9}/{2}$, ${11}/{2}$, and ${13}/{2}$} states.
 \Cref{fig:spectra_D} also includes the best theoretical fit to the data that could be obtained.
 This was realized by first determining the values of the quantum defects $\mu^{(0)}_{n,S,L,J}$ that best reproduce the measured energy levels and then using these to update the Rydberg-Ritz expression \cref{eq:Rydberg-Ritz} for the $n$ dependence of the quantum defect at high $n$ (see \cref{tab:delta}).
 The predicted levels shown in \cref{fig:spectra_D} are derived using the updated Rydberg-Ritz formulas. 
 However, since the measured quantum defects of \Sr{88} $\SLJ{1}{D}{2}$ states (with $I = 0$) are available up to $n = 70$, the Rydberg-Ritz expression from \cite{Vaillant2012.JPB.45.135004} is used for these states. 
 The measured quantum defects for the $\SLJ{3}{D}{}$ states are shown in \cref{fig:Rydberg-Ritz-D} together with the values given by both the present and the earlier Rydberg-Ritz expressions. 
 The differences between the predicted quantum defects [\cref{eq:Rydberg-Ritz}] based on the present data for \Sr{87} and previous data for \Sr{88} \cite{Vaillant2012.JPB.45.135004} appear to be small $\num{\sim 0.02}$. 
-However, when converted to energy, this small difference translates into discrepancies of $\SI{130}{\MHz}$ for $n = 100$ and $\SI{1}{\GHz}$ for $n = 50$ well outside the uncertainty of the current experiments. 
+However, when converted to energy, this small difference translates into discrepancies of $\SI{130}{\MHz}$ for $n = 100$ and $\SI{1}{\GHz}$ for $n = 50$ well outside the uncertainty of the current experiment. 
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/spectra_D.pdf}
-	\caption{\label{fig:spectra_D}(Color online.)
-	(Blue) Measured spectra for $\nSLJ{5snd}{3}{D}{}$ states of \Sr{87} in the vicinity of (a) ${n=50}$, (b) ${n=60}$, (c) ${n=98}$.
-	Energies are given relative to the $5s50s$, $5s60s$, and $5s98s$ $\SLJf{3}{S}{1}{11/2}$ states, respectively. Rydberg excitation was performed following scheme {(\romannumeral 2)} for (a, b) and {(\romannumeral 1)} for (c).
-	The vertical bars above the data show the calculated positions for the various hyperfine states (see text). The measured levels and splittings are given in \cref{tab:data-d-state}.}
+	\caption{\label{fig:spectra_D}
+		Shown in blue are the measured spectra for $\nSLJ{5snd}{3}{D}{}$ states of \Sr{87} in the vicinity of (a) $n = 50$, (b) $n = 60$, and (c) $n = 98$.
+		Energies are given relative to the $5s50s$, $5s60s$, and $5s98s$ $\SLJf{3}{S}{1}{11/2}$ states, respectively. Rydberg excitation was performed following scheme {(\romannumeral 2)} in (a) and (b) and scheme {(\romannumeral 1)} in (c).
+		The vertical bars above the data show the calculated positions for the various hyperfine states (see the text). 
+		The measured levels and splittings are given in \cref{tab:data-d-state}.}
 \end{figure}
 
 The present Rydberg-Ritz formulas can also be tested against earlier measured quantum defects for $\SLJ{}{D}{}$ states in \Sr{87} ($n > 100$) \cite{Sun1989.JPB.22.2887}. 
@@ -549,9 +553,13 @@ In all but one case the measured and theoretical separations agree to better tha
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/Rydberg-Ritz_v2.pdf}
-	\caption{\label{fig:Rydberg-Ritz-D}(Color online.)
-		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5snd}{3}{D}{1,2,3}$ levels: ($\bullet$) measurements from earlier work \cite{beig82,beig82b}; ({\color{red} $\blacktriangle$}) present measurements, ({\color{green}\dashedline}) predictions using the Rydberg-Ritz formulas developed previously \cite{Vaillant2012.JPB.45.135004}; ({\color{blue}\solidline}) predictions based on the present updated Rydberg-Ritz formulas (see text). 
+	\includegraphics[keepaspectratio, width=4.5in, height=\textheight]{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/Rydberg-Ritz_v2.pdf}
+	\caption{\label{fig:Rydberg-Ritz-D}
+		Quantum defects $\mu^{(0)}_{n,S,L,J}$ for the $\nSLJ{5snd}{3}{D}{1,2,3}$ levels:
+			measurements from earlier work \cite{Beigang1982.OC.42.19,Beigang1982.PS.26.183} ($\bullet$), 
+			present measurements ({\color{red} $\blacktriangle$}), 
+			predictions using the Rydberg-Ritz formulas developed previously \cite{Vaillant2012.JPB.45.135004} ({\color{green}\dashedline}), 
+			and predictions based on the present updated Rydberg-Ritz formulas (see the text) ({\color{blue}\solidline}). 
 		The insets show the high-$n$ region on an expanded scale.
 		**** NEED TO FIX FIGURE REFERENCES ****}
 \end{figure}
@@ -566,18 +574,18 @@ In all but one case the measured and theoretical separations agree to better tha
 		\midrule
 		$\nSLJ{5sns}{}{}{}$	& $\SLJ{1}{S}{0}$	& \num{3.26896(2)}	& \num{-0.138(7)}	& \num{0.9(6)}		& \cite{Vaillant2012.JPB.45.135004}	\\
 		\midrule
-		$\nSLJ{5sns}{}{}{}$	& $\SLJ{3}{S}{1}$	& \num{3.37065}		& \num{0.443}		& \num{-0.553}		& This work		\\
+		$\nSLJ{5sns}{}{}{}$	& $\SLJ{3}{S}{1}$	& \num{3.37065}		& \num{0.443}		& \num{-0.553}		& this work		\\
 							&					& \num{3.371(2)}	& \num{0.5(2)}		& \num{-1(2)e1}		& \cite{Vaillant2012.JPB.45.135004}	\\
 		\midrule
 		$\nSLJ{5snd}{}{}{}$	& $\SLJ{1}{D}{2}$	& \num{2.3807(2)}	& \num{-39.41(6)}	& \num{-109(2)e1}	& \cite{Vaillant2012.JPB.45.135004}	\\
 		\midrule
-		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{1}$	& \num{2.673}		& \num{-5.4}		& \num{-8166}		& This work		\\
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{1}$	& \num{2.673}		& \num{-5.4}		& \num{-8166}		& this work		\\
 							&					& \num{2.658(6)}	& \num{3(2)}		& \num{-8.8(7)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
 		\midrule
-		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{2}$	& \num{2.662}		& \num{-15.4}		& \num{-9804}		& This work		\\
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{2}$	& \num{2.662}		& \num{-15.4}		& \num{-9804}		& this work		\\
 							&					& \num{2.636(5)}	& \num{-1(2)}		& \num{-9.8(9)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
 		\midrule
-		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{3}$	& \num{2.612}		& \num{-41.4}		& \num{-15363}		& This work		\\
+		$\nSLJ{5snd}{}{}{}$	& $\SLJ{3}{D}{3}$	& \num{2.612}		& \num{-41.4}		& \num{-15363}		& this work		\\
 							&					& \num{2.63(1)}		& \num{-42.3(3)}	& \num{-18(1)e3}	& \cite{Vaillant2012.JPB.45.135004}	\\
 		\bottomrule
 	\end{tabular}
@@ -605,21 +613,21 @@ The matrix elements of the hyperfine operator $V_{\text{HF}}$ can be evaluated a
 For the diagonal elements of $J = 2$ states we find
 \begin{equation}
 	\bra*{[(5sn'd) \, \SLJ{1}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{1}{D}{2}, I] F}
-		=	- a_{5s} \lambda K \cos(\theta+\xi) \sin\theta  \delta_{n,n'}
+		=	- a_{5s} \lambda K \cos(\theta+\xi) \sin\theta  \delta_{n,n'}	,
 \end{equation}
 \begin{equation}
 	\bra*{[(5sn'd) \, \SLJ{3}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{2}, I] F}
-		=	a_{5s} \lambda K \sin(\theta+\xi) \cos\theta \delta_{n,n'} 
+		=	a_{5s} \lambda K \sin(\theta+\xi) \cos\theta \delta_{n,n'}	,
 \end{equation}
 with $K = F(F+1)-J(J+1)-I(I+1)$, $\lambda = (2\ell+1)/[4\ell(\ell+1)]$, $\xi=\arcsin[1/(2\ell+1)]$, and $\ell = 2$. 
-The diagonal elements of $J = 1,3$ states are
+The diagonal elements of {$J = 1$, $3$} states are
 \begin{equation}
 	\bra*{[(5sn'd) \, \SLJ{3}{D}{1}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{1}, I] F}
-		=	- \frac{1}{4 \ell} a_{5s} K \delta_{n,n'}
+		=	- \frac{1}{4 \ell} a_{5s} K \delta_{n,n'}	,
 \end{equation}
 \begin{equation}
 	\bra*{[(5sn'd) \, \SLJ{3}{D}{3}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{3}, I] F}
-		=	\frac{1}{4 (\ell+1)} a_{5s} K \delta_{n,n'}
+		=	\frac{1}{4 (\ell+1)} a_{5s} K \delta_{n,n'}	.
 \end{equation}
 The off-diagonal elements between states with the same $J = 2$ are
 \begin{equation}
@@ -628,34 +636,34 @@ The off-diagonal elements between states with the same $J = 2$ are
 \end{equation}
 and those with different $J$ are
 \begin{equation}
-	\bra*{[(5sn'd) \, \SLJ{1}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{1}, I] F} \nonumber \\
-		=	- \frac{1}{4 \ell} a_{5s} K_- \sin(\theta-\eta) O_{n,n'} \nonumber \\
+	\bra*{[(5sn'd) \, \SLJ{1}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{1}, I] F}
+		=	- \frac{1}{4 \ell} a_{5s} K_- \sin(\theta-\eta) O_{n,n'}	,
 \end{equation}
 \begin{equation}
-	\bra*{[(5sn'd) \, \SLJ{1}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{3}, I] F} \nonumber \\
-		=	\frac{1}{4 (\ell+1)} a_{5s} K_+ \cos(\theta-\eta) O_{n,n'} \nonumber \\
+	\bra*{[(5sn'd) \, \SLJ{1}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{3}, I] F}
+		=	\frac{1}{4 (\ell+1)} a_{5s} K_+ \cos(\theta-\eta) O_{n,n'}	,
 \end{equation}
 \begin{equation}
-	\bra*{[(5sn'd) \, \SLJ{3}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{1}, I] F} \nonumber \\
-		=	\frac{1}{4 \ell} a_{5s} K_- \cos(\theta - \eta) O_{n,n'} \nonumber \\
+	\bra*{[(5sn'd) \, \SLJ{3}{D}{2}, I] F} V_{\text{hf}} \ket*{[(5snd) \, \SLJ{3}{D}{1}, I] F}
+		=	\frac{1}{4 \ell} a_{5s} K_- \cos(\theta - \eta) O_{n,n'}	,
 \end{equation}
 \begin{equation}
-	\bra{((5sn'd) \, \SLJ{3}{D}{2}, I) F} V_{\text{HF}} \ket{((5snd) \, \SLJ{3}{D}{3}, I) F} \nonumber \\
-		=	\frac{1}{4(\ell+1)} a_{5s} K_+ \sin(\theta - \eta) O_{n,n'} \nonumber \\
+	\bra{[(5sn'd) \, \SLJ{3}{D}{2}, I] F} V_{\text{hf}} \ket{[(5snd) \, \SLJ{3}{D}{3}, I] F}
+		=	\frac{1}{4(\ell+1)} a_{5s} K_+ \sin(\theta - \eta) O_{n,n'}	,
 \end{equation}
 \begin{equation}
-	\bra{((5sn'd) \, \SLJ{3}{D}{1}, I) F} V_{\text{HF}} \ket{((5snd) \, \SLJ{3}{D}{3}, I) F} \nonumber \\
-		=	0
+	\bra{[(5sn'd) \, \SLJ{3}{D}{1}, I] F} V_{\text{hf}} \ket{[(5snd) \, \SLJ{3}{D}{3}, I] F} \nonumber \\
+		=	0	,
 \end{equation}
 with
-\begin{equation}
-	\eta=\arcsin\sqrt{\ell/(2\ell+1)}
-\end{equation}
-\begin{equation}
-	K_{-} = \sqrt{[\ell^2-(F-I)^2][(F+I+1)^2-\ell^2]}
-\end{equation}
+\begin{equation*}
+	\eta=\arcsin\sqrt{\frac{\ell}{2\ell + 1}}	,
+\end{equation*}
+\begin{equation*}
+	K_{-} = \sqrt{[\ell^2-(F-I)^2][(F+I+1)^2-\ell^2]}	,
+\end{equation*}
 and
-\begin{equation}
-	K_{+} = \sqrt{[(\ell+1)^2-(F-I)^2][(F+I+1)^2-(\ell+1)^2]}
-\end{equation}
-Similar to the $\SLJ{}{S}{}$ states, the overlap integral $O_{n,n'}$ of the radial wave functions can be evaluated semiclassically \cite{Bhatti1981.PRA.24.161} and depends only on the effective quantum number, $n - \mu_{n,S,L,J}^{(0)}$. 
+\begin{equation*}
+	K_{+} = \sqrt{[(\ell+1)^2-(F-I)^2][(F+I+1)^2-(\ell+1)^2]}	.
+\end{equation*}
+Similar to the $\SLJ{}{S}{}$ states, the overlap integral $O_{n,n'}$ of the radial wave functions can be evaluated semiclassically \cite{Bhatti1981.PRA.24.161} and depends only on the effective quantum number $n - \mu_{n,S,L,J}^{(0)}$. 
