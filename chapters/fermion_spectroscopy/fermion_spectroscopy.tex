@@ -80,6 +80,8 @@ R.D., S.Y. and, F.B.D. wrote the paper.
 
 \section{Additional Material}
 
+The following section includes additional material not included in the published paper. 
+
 \subsection{$n$ Scaling of Various Splittings}
 
 As mentioned above, the hyperfine interaction remains approximately independent of $n$ whereas various splittings decrease with increasing $n$. 
@@ -96,62 +98,89 @@ This is illustrated in \cref{fig:deltaE} where the experimentally determined fin
 \end{figure}
 The strength of hyperfine interaction can be related to the contact interaction of the inner $5s$ electron with the \Srion{87}{+} core $\abs*{a_{5s}} \simeq \SI{1}{\GHz}$ \cite{Sunaoshi1993.HI.78.241}. 
 
-Working in the $LS$-coupled basis (even though it is no longer a good quantum number), it is possible to estimate where hyperfine state mixing will occur by finding when the $\abs*{a_{5s}}$ becomes comparable that particular splitting in \cref{fig:n-scaling}.
-As $n \to \infty$, it's clear that the hyperfine interaction becomes the dominant energy scale and determines the states of the \Srion{87}{+} ion.
+Working in the $LS$-coupled basis (even though it is no longer a good quantum number), it is possible to estimate where hyperfine state mixing will occur by finding when $\abs*{a_{5s}}$ becomes comparable to a particular energy splitting in \cref{fig:n-scaling}.
+For example, \cref{fig:n-scaling} suggests that hyperfine mixing should occur between the $\nSLJ{5snd}{1}{D}{2}$ and the $\nSLJ{5snd}{3}{D}{2}$ states near $n = 14$ and between the $\nSLJ{5snd}{1}{D}{2}$ and the $\nSLJ{5snd}{3}{D}{3}$ states near $n = 20$.
+Indeed, both were observed experimentally with large shifts reported in the spectra of \Sr{87} $\nSLJ{5snd}{1}{D}{2}$ hyperfine Rydberg states around $n = 16$ \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290} and $n = 19$ \cite{Beigang1982.JPB.15.L201}. 
 
 \subsection{Singly Excited $\SLJ{}{S}{}$ State Hyperfine Mixing Matrix}
 
 The matrix elements for hyperfine mixing of the $\nSLJ{5sns}{1}{S}{0}$ and the $\nSLJ{5sns}{3}{S}{1}$ are not too difficult to work out.
-The derivation presented below was originally done by Shuhei Yoshida. 
 
-
-Therefore the total Hamiltonian can be written as
+For the singly excited $\SLJ{}{S}{}$ states, there are four hyperfine basis states can be expanded in terms of the $\ket*{J, m_J}_{J}$ basis and the nuclear spin $\ket*{I, m_I}_{I}$ state
+\begin{equation}
+	\ket{\nSLJfM{5sns}{1}{S}{0}{I}{m_F}}	=	\ket{\nSLJm{5sns}{1}{S}{0}{0}} \ket{I, m_I = m_F}_{I}
+\end{equation}
 \begin{align}
-	\hat{H}	{}={}&	\begin{pmatrix}
-						E\qty(\SLJf{3}{S}{1}{I+1})	&	0							&	0							&	0	\\ 
-						0							&	E\qty(\SLJf{1}{S}{0}{I})	&	0							&	0	\\ 
-						0							&	0							&	E\qty(\SLJf{3}{S}{1}{I})	&	0	\\ 
-						0							&	0							&	0							&	E\qty(\SLJf{3}{S}{1}{I-1})
-					\end{pmatrix}	\\
-			&		+ \frac{1}{2} a_{5s}
-					\begin{pmatrix}
-						0	&	0							&	0							&	0	\\ 
-						0	&	0							&	\sqrt{I\left(I+1\right)}	&	0	\\ 
-						0	&	\sqrt{I\left(I+1\right)}	&	-1							&	0	\\ 
-						0	&	0							&	0							&	0
-					\end{pmatrix}
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I+1}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}_{I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I+1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}_{I}
+\end{align}
+\begin{align}
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}_{I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}_{I}
+\end{align}
+\begin{align}
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I-1}{m_F}}	&{}={}	\sum_{m_J} \sum_{m_I} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I}_{I}	\notag \\
+									&{}={}	\sum_{m_J} \CG{J=1,m_J}{I,m_I}{F=I-1,m_F} \ket{\SLJM{3}{S}{1}{m_J}} \ket{I,m_I=m_F-m_J}_{I}
 \end{align}
 
-********************
-
-The singlet and triplet electron wave functions $\ket{S,m_S}_{S}$ can be written as
+The hyperfine interaction operator can be expanded in terms of raising and lower operators for **** FIX ****
+\begin{equation}
+	\hat{V}_{\text{hf}}	=	\frac{1}{2} a_{5s} \pqty{\hat{s}_{\text{in,+}} \hat{I}_{-} + \hat{s}_{\text{in,-}} \hat{I}_{+} + 2 \hat{s}_{\text{in,+}} \hat{I}_{-}}
+\end{equation}
+Applying each operator to the basis states gives
 \begin{align}
-	\ket{0,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{+;-} - \ket{-;+}}	\\
-	\ket{1,1}_{S}	&{}={}	\ket{+;+}												\\
-	\ket{1,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{+;-} + \ket{-;+}}	\\
-	\ket{1,-1}_{S}	&{}={}	\ket{-;-}
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{1}{S}{0}{0}}^0	=	-\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}												\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{1}{S}{0}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{1}{S}{0}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{0}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{1}}^0	=	-\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} - \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)	\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{1}}^0	=	\frac{1}{2} \ket{n\SLJm{3}{S}{1}{1}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{1}}^{0}													\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{\sqrt{2}} \ket{n\SLJm{3}{S}{1}{-1}}^{0}												\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{0}}^0	=	\frac{1}{2} \ket{n\SLJm{1}{S}{0}{0}}^{0}														\\
+	& \hat{s}_{\text{in},+}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	\frac{1}{\sqrt{2}} \left(\ket{n\SLJm{1}{S}{0}{0}}^{0} + \ket{n\SLJm{3}{S}{1}{0}}^{0}\right)		\\
+	& \hat{s}_{\text{in},-}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	0																								\\
+	& \hat{s}_{\text{in},z}\ket{n\SLJm{3}{S}{1}{-1}}^0	=	-\frac{1}{2} \ket{n\SLJm{3}{S}{1}{-1}}^{0}
 \end{align}
-where $\ket{\psi_1;\psi_2}=\ket{\psi_1}\ket{\psi_2}$ for electron 1 and electron 2 with $\ket{+}$ ($\ket{-}$) denoting a spin-up (spin-down) electron (see e.g., \cite{Sakurai2010}).
-
-For a singly excited Rydberg state $\ket{\nSLJM{5snl}{2S+1}{L}{J}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{5s}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm} = \pqty{\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}}/{\sqrt{2}}$.
-Combining the orbital and spin wave functions for singlet and triplet states are
+For the $\hat{I}$ operators, 
 \begin{align}
-	\ket{\nSLJM{msnl}{1}{L}{J}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
-											&{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
-	\ket{\nSLJM{msnl}{3}{L}{J}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
-											&{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
+	& \hat{I}_{+} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I+1\right)} \ket{I,m_I+1}	\\
+	& \hat{I}_{-} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I-1\right)} \ket{I,m_I-1}	\\
+	& \hat{I}_{z} \ket{I,m_I}	=	m_I \ket{I,m_I}
 \end{align}
-with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+Now that we know all the relevant states, we can calculate the effect of $\hat{V}_\text{hf}$ on each state. 
+** For simplicity, we used the stretched states $\ket{I=F, m_I=F}$ (provide a better argument?) **
+\begin{align}
+	& \hat{V}_\text{hf}\ket{n\SLJm{1}{S}{0}{0}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{1}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{0}}^{0}		=	\frac{a_{5s}}{2}	\\
+	& \hat{V}_\text{hf}\ket{n\SLJm{3}{S}{1}{-1}}^{0}	=	\frac{a_{5s}}{2} 
+\end{align}
+Therefore the total hyperfine interactionHamiltonian can be written as
+\begin{equation}
+	\hat{V}_{\text{hf}}	=	\frac{1}{2} a_{5s}
+							\begin{pmatrix}
+								0	&	0							&	0							&	0	\\ 
+								0	&	0							&	\sqrt{I\left(I+1\right)}	&	0	\\ 
+								0	&	\sqrt{I\left(I+1\right)}	&	-1							&	0	\\ 
+								0	&	0							&	0							&	0
+							\end{pmatrix}
+\end{equation}
+It's clear that, for \Sr{87}, only the states with $F = I = {9}/{2}$ are mixed whereas the $F = I + 1 = {11}/{2}$ and $F = I - 1 = {7}/{2}$ states are left unperturbed. 
 
-***********************
+\subsection{Singly Excited $\SLJ{}{D}{}$ State Hyperfine Mixing Matrix}
 
-Since the hyperfine interaction in \Sr{87} be approximated as $\hat{V}_{\text{hf}} \simeq a_{5s} \hat{\va{s}}_{\text{in}} \vdot \hat{\va{I}}$
+A procedure similar to the one used to derive the $\hat{V}_{\text{hf}}$ matrix elements for singly excited $\SLJ{}{S}{}$ states can be applied to obtain $\hat{V}_{\text{hf}}$ for the singly excited $\SLJ{}{D}{}$ states but the process is quite a bit more difficult. 
+Starting from the $LS$-coupled states, there are $\num{20}$ states spread across the various $\ket*{\nSLJM{5snd}{1}{D}{2}{m_J}}$, $\ket*{\nSLJM{5snd}{3}{D}{1}{m_J}}$, $\ket*{\nSLJM{5snd}{3}{D}{2}{m_J}}$, and $\ket*{\nSLJM{5snd}{3}{D}{3}{m_J}}$ sublevels. 
+Coupling to the $2 I + 1 = 2{9}/{2} = 10$ nuclear spin states in \Sr{87} results in a total of $\num{200}$ states which can be coupled by $\hat{V}_{\text{hf}}$. 
+This is even before including mixing between the various $\SLJ{}{D}{}$ states \cite{Esherick1977.PRA.15.1920, Beigang1982.JPB.15.L201, Sun1989.JPB.22.2887}.
+Therefore, the reader is referred to \cite{Sun1989.JPB.22.2887} which provides a summary of calculating $\hat{V}_{\text{hf}}$ for the singly excited $\SLJ{}{D}{}$ states and \cite{Lurio1962.PR.126.1758} which provides analytical matrix elements of $\hat{V}_{\text{hf}}$ for two electrons in an $sl$ configuration.
 
 \subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
 
-\subsubsection{$n$-mixing}
+*********** Following the method outlined in \cite{Beigang1983.PRL.51.771}
 
-At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:n-scaling}. 
+At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:deltaE,fig:n-scaling}. 
 Hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
 
 The derivation above can be extended to incorporate $n$-mixing. 
@@ -234,21 +263,58 @@ As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for 
 	\bra{\nSLJ{n}{1}{S}{0}} \hat{V}_\text{hf} \qty(\sum_{n^\prime}\ket{\nSLJ{n^\prime}{3}{S}{1}})	=	...
 \end{equation}
 
-************************
-\subsection{$\SLJ{}{D}{}$ Hyperfine Mixing Matrix}
-
-The matrix elements of hyperfine-mixed $\SLJ{}{D}{}$ states is quite a bit more difficult to calculate. 
+***********************
 
 \subsection{Calibration of the EXFO WA-1500 Wavemeter}
 
+All light used in the calibration measurements were delivered to the EXFO WA-1500 wavemeter using single mode (SM) optical fibers\footnote{Thorlabs SM600 FC/PC single mode fiber.}.
+We had previously used a multimode fiber but found that the wavemeter readings were inconsistent, most likely due to the speckle output pattern or to slight beam pointing deviations.
+Switching to a SM fiber alleviated these issue and we were able to consistently obtain wavenumber measurements limited by the resolution of the wavenumber with a statistical uncertainty of about $\sigma_{\text{stat}} = \pm \SI{0.0005}{\per\cm} = \pm \SI{15}{MHz}$ for the wavelengths we measured. Since the $\SI{319}{\nm}$ light is generated by frequency-doubling from $\SI{638}{\nm}$, the statistical uncertainty is should be doubled as well to about $\sigma_{\text{stat}} = \pm \SI{0.001}{\per\cm} = \pm \SI{30}{MHz}$.
+
+Since the wavemeter is used to determine the absolute energy of the $\SI{638}{\nm}$ photon, potential systematic offsets also needed to be characterized. 
+We initially attempted to perform Doppler-free spectroscopy of molecular iodine ({\tsup{127}I\tsub{2}}) using the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913}, which is near the ($\SI{638}{\nm}$) wavelength required to excite the $\nSLJ{5s40s}{3}{S}{1}$ strontium Rydberg state, but were unable to observe narrow Doppler-free signals scanning the $\SI{638}{\nm}$ laser through a our iodine cell using a simple saturated absorption setup\footnote{This matches similar experiences according to Jason Nguyen and Henry Luo in the Hulet lab when they were considering using an iodine cell to lock their $\SI{646}{\nm}$ laser for a \Li{6} UV MOT \cite{Duarte2011.PRA.84.061406}.}.
+A longer cell and a more sensitive detection method may be necessary since most reported {\tsup{127}I\tsub{2}} spectroscopy setups in this wavelength range used cells longer than $\SI{30}{\cm}$ in addition implementing some sort of modulation spectroscopy to improve the signal-to-noise ratio (e.g., \cite{Sansonetti1997.JOSAB.14.1913, Huang2018.AO.57.2102, Onishchenko2019.PRA.99.052503}).
+Since the publication of our paper, the Weidem{\"{u}}ller group was able to calibrate their wavemeter with Doppler-free iodine spectroscopy for measurements of the $\nSLJ{5sns}{3}{S}{1}$, $\nSLJ{5snd}{3}{D}{1}$, and $\nSLJ{5snd}{3}{D}{2}$ Rydberg energies in \Sr{88} \cite{Couturier2019.PRA.99.022503}.
+
+Although the iodine spectroscopy didn't work out, we were able to calibrate the wavemeter by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} ($\SI{689}{\nm}$) and \Li{6} ($\SI{671}{\nm}$ and $\SI{646}{\nm}$).
+The $\SI{689}{\nm}$ reference comes from the red master laser locked to the $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ in \Sr{88}.
+Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us run a fiber\footnote{Also a Thorlabs SM600 SM fiber.} between the Killian and Hulet labs in order to measure the wavelengths of their $\SI{671}{\nm}$ and $\SI{646}{\nm}$ lasers for laser cooling \Li{6}.
+The $\SI{671}{\nm}$ is used for a standard $D_{2}$ MOT while the $\SI{646}{\nm}$ is frequency doubled to $\SI{323}{\nm}$ for a UV MOT \cite{Duarte2011.PRA.84.061406}.
+The long fiber was required so that the EXFO WA-1500 could be calibrated in-place under similar conditions as when measuring Rydberg energies. 
+In addition to keeping the wavemeter in-place, the wavelength calibratoin measurements were performed within about $\SI{2}{\hour}$ to reduce sensitivity to environmental changes.
+\begin{table}[!htbp]
+	\caption{
+		\label{tab:wavemeter_calibration}
+		Values used to calibrate the WA-1500 on a single day (2018/03/09) within about \SI{2}{\hour}. 
+		The value of the \SI{689}{\nm} transition in \Sr{88} \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}.
+		The values of the \SI{671}{\nm} and \SI{323}{\nm} (\SI{646}{\nm}) transitions in \Li{6} were taken from \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901, Radziemski1995.PRA.52.4462}.}
+	\centering
+	\makebox[\textwidth][c]{
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		$\lambda$ [\si{\nm}]	& Atom						& Transition																		& Reference [\si{\per\cm}]			& Measured [\si{\per\cm}]		\\
+		\midrule
+		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$							& \num{14504.33824159+-0.00000033}	& \num{14504.34224+-0.00035}	\\
+		\num{671}				& \Li{6}					& $\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{2p}{2}{P}{3/2}$						& \num{14903.6295242+-0.0000007}	& \num{14903.63391+-0.00033}	\\
+		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703+-0.0010}			& \num{30925.1792+-0.0010}		\\
+		(\num{646})				&							&																					& (\num{15462.5851+-0.0005})		& (\num{15462.5896+-0.0005})	\\
+		\bottomrule
+	\end{tabular}
+	}
+\end{table}
+The results, presented in \cref{tab:wavemeter_calibration}, were used to calculate the frequency offset $\delta\pqty{\nu} = \nu_{\text{measured}} - \nu_{\text{reference}}$ shown in \cref{fig:wm_cal}.
+
 \subsection{Comparison of Measured Quantum Defects}
+
+\Cref{tab:sr_qd_list} compiles a list of strontium quantum defects for the singly excited $\nSLJ{5sns}{}{S}{}$ and $\nSLJ{5snd}{}{D}{}$ states.
+Comparing the quantum defects reported in \cite{Vaillant2012.JPB.45.135004, Jackson2018.PhD, Couturier2019.PRA.99.022503}, which were obtained from measurements in \Sr{88}, to those extracted from the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ in \Sr{87} generally shows good agreement. 
 
 \begin{table}[!htbp]
 	\caption{
 		\label{tab:sr_qd_list}
-		Values of the parameters $\delta_0$, $\delta_2$, and $\delta_4$ for the Rydberg-Ritz formula.}
+		Values of the parameters $\delta_0$, $\delta_2$, and $\delta_4$ for the Rydberg-Ritz formula \cref{eq:Rydberg-Ritz}.
+		The quantum defects from \cite{Vaillant2012.JPB.45.135004, Jackson2018.PhD, Couturier2019.PRA.99.022503} were extracted from measurements in \Sr{88} whereas this work extracted quantum defects from the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ in \Sr{87}.}
 	\centering
-	\makebox[\textwidth][c]{
 	\begin{tabular}{@{}cccccc@{}}
 		\toprule
 		Series	& Term				& $\delta_0$		& $\delta_2$		& $\delta_4$			& Ref.										\\
@@ -256,27 +322,30 @@ The matrix elements of hyperfine-mixed $\SLJ{}{D}{}$ states is quite a bit more 
 		$5sns$	& $\SLJ{1}{S}{0}$	& \num{3.26896(2)}	& \num{-0.138(7)}	& \num{0.9(6)}			& \cite{Vaillant2012.JPB.45.135004}			\\
 		\midrule
 		$5sns$	& $\SLJ{3}{S}{1}$	& \num{3.371(2)}	& \num{0.5(2)}		& \num{-1(2)e1}			& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{3.37065}		& \num{0.443}		& \num{-0.553}			& This work \cite{Ding2018.PRA.98.042505}	\\
+				&					& \num{3.37065}		& \num{0.443}		& \num{-0.553}			& this work									\\
 				&					& \num{3.36924(2)}	& \num{0.52(2)}		& \num{-0.1(3)}			& \cite{Jackson2018.PhD}					\\
 				&					& \num{3.370778(4)}	& \num{0.418(1)}	& \num{-0.3(1)}			& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{1}{D}{2}$	& \num{2.3807(2)}	& \num{-39.41 (6)}	& \num{-109(2)e1}		& \cite{Vaillant2012.JPB.45.135004}			\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{1}$	& \num{2.658(6)}	& \num{3(2)}		& \num{-8.8(7)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.673}		& \num{-5.4}		& \num{-8166}			& This work \cite{Ding2018.PRA.98.042505}	\\
+				&					& \num{2.673}		& \num{-5.4}		& \num{-8166}			& this work									\\
 				&					& \num{2.664(7)}	& \num{-1(9)}		& \num{-8(2)e3}			& \cite{Jackson2018.PhD}					\\
 				&					& \num{2.67517(20)}	& \num{-13.15(26)}	& \num{-4.444(91)e3}	& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{2}$	& \num{2.636(5)}	& \num{-1(2)}		& \num{-9.8(9)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.662}		& \num{-15.4}		& \num{-9804}			& This work \cite{Ding2018.PRA.98.042505}	\\
+				&					& \num{2.662}		& \num{-15.4}		& \num{-9804}			& this work									\\
 				&					& \num{2.66142(30)}	& \num{-16.77(38)}	& \num{-6.656(134)e3}	& \cite{Couturier2019.PRA.99.022503}		\\
 		\midrule
 		$5snd$	& $\SLJ{3}{D}{3}$	& \num{2.63(1)}		& \num{-42.3(3)}	& \num{-18(1)e3}		& \cite{Vaillant2012.JPB.45.135004}			\\
-				&					& \num{2.612}		& \num{-41.4}		& \num{-15363}			& This work \cite{Ding2018.PRA.98.042505}	\\
+				&					& \num{2.612}		& \num{-41.4}		& \num{-15363}			& this work									\\
 		\bottomrule
 	\end{tabular}
-	}
 \end{table}
+
+\Cref{fig:results-qd-1S0,fig:results-qd-3S1,fig:results-qd-1D2,fig:results-qd-3D1,fig:results-qd-3D2,fig:results-qd-3D3} expand on the data presented in \cref{fig:Rydberg-Ritz-S,fig:Rydberg-Ritz-D}.
+These present a comparison between quantum defects obtained from measurements in \Sr{88} with those from all the measured hyperfine states in \Sr{87} presented above (not just the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ state). 
+Quantum defects from the \Sr{87} data were obtained by first subtracting the calculated hyperfine energy shift and then applying \cref{eq:Rydberg-Ritz} with the appropriate Rydberg constant and ionization limit for \Sr{87}. **** ADD VALUES USED IN PLOTS ****
 
 \begin{figure}[!htbp]
 	\centering
@@ -319,15 +388,15 @@ The matrix elements of hyperfine-mixed $\SLJ{}{D}{}$ states is quite a bit more 
 \end{figure}
 
 ***** NEED TO FIX 5snd 3D2.pgf FIGURE *****
-% \begin{figure}[!htbp]
-	% \centering
-	% \resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
-	% \caption{
-		% \label{fig:results-qd-3D2}
-		% Quantum defects for the $\nSLJ{5snd}{3}{D}{2}$ Rydberg series.
-		% For \Sr{88}, the quantum defects were calculated from the reported term energies.
-		% The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-% \end{figure}
+\begin{figure}[!htbp]
+	\centering
+	%\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
+	\caption{
+		\label{fig:results-qd-3D2}
+		Quantum defects for the $\nSLJ{5snd}{3}{D}{2}$ Rydberg series.
+		For \Sr{88}, the quantum defects were calculated from the reported term energies.
+		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
+\end{figure}
 
 \begin{figure}[!htbp]
 	\centering
@@ -346,8 +415,27 @@ The matrix elements of hyperfine-mixed $\SLJ{}{D}{}$ states is quite a bit more 
 Although the hyperfine interaction complicates the Rydberg spectra of \Sr{87}, it does offer some interesting possibilities. 
 One possibility is to access Rydberg states with either attractive ($\nSLJ{5sns}{1}{S}{0}$) or repulsive ($\nSLJ{5sns}{3}{S}{1}$) $C_{6}$ coefficients \cite{Vaillant2012.JPB.45.135004} from the $\nSLJ{5s5p}{3}{P}{1}$ intermediate due to the hyperfine mixing. 
 
+******************
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisl magna, vehicula id ipsum ac, rutrum viverra nibh. Vestibulum lacus dolor, placerat non erat id, lacinia dignissim purus. In eget sagittis mi. Curabitur feugiat, sapien at elementum sagittis, felis ante blandit orci, ac scelerisque sapien nisi ut arcu. Sed consequat a nibh at vestibulum. Integer sem lacus, venenatis ac efficitur quis, tempus a ante. Praesent mollis velit nec lectus pulvinar convallis. Integer aliquet placerat justo quis ornare. Vestibulum mollis volutpat ligula ut posuere. Vestibulum ornare fermentum eros sed placerat. Sed lacinia ligula elit, vitae interdum massa dignissim quis. Vestibulum nec rutrum mauris. Phasellus ac ornare odio. Pellentesque eget pellentesque nunc.
+
+Proin fringilla purus nec fermentum eleifend. Maecenas a mattis urna, non consequat lacus. Cras vitae tempor tortor. Sed laoreet lacinia tempus. Phasellus a varius felis, sed cursus felis. Ut dictum, nunc eget imperdiet pharetra, metus nunc condimentum est, eu semper nisi ipsum sed libero. Maecenas vel odio eget risus commodo aliquam quis eget ipsum. In suscipit augue eget sapien ultrices convallis. Quisque lobortis faucibus risus, sit amet aliquet est blandit vel. Aliquam id nulla tellus. Aliquam vulputate lacinia semper. Fusce eu tellus malesuada, congue tortor non, fermentum leo. Praesent nulla ante, sagittis quis mauris sed, lacinia faucibus augue. Nam tincidunt lectus non lacus porttitor, id tempus justo tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus efficitur mollis mollis.
 
 \section{*** TEMPORARY ***}
+
+******************
+
+******************
+
+******************
+
+******************
+
+******************
+
+******************
+
+**** PROBABLY DELETE STUFF BELOW HERE ****
 
 
 \section{Hyperfine Rydberg States of \Sr{87}}
@@ -570,407 +658,3 @@ The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cit
 Due to these interactions, it's not clear how to assign the different states since $S$ and $J$ are no longer good quantum numbers. 
 Instead, the state assignments were made by evaluating the overlap of the hyperfine-mixed states with the unperturbed $\nSLJ{5sns}{2S+1}{D}{J}$ state.
 ** CLARIFY I need to check with Shuhei that I'm understanding this correctly **
-
-
-\section{Experimental Method}
-
-%A schematic diagram of the present experimental arrangement is presented in \cref{fig:spectroscopy_exp_setup}.
-%\begin{figure}[htbp]
-%	\centering
-%	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/experiment/exp_setup.svg}
-%	\caption{
-%		\label{fig:spectroscopy_exp_setup}
-%		{(a)} Diagram of the experimental arrangement showing the $\SI{461}{\nm}$ cooling beams and the counterpropagating $\SI{689}{\nm}$ and $\SI{319}{\nm}$ Rydberg excitation lasers.
-%		{(b)} Two-photon excitation schemes utilizing either the {(\romannumeral 1)~${\nSLJf{5s5p}{3}{P}{1}{11/2}}$} or {(\romannumeral 2)~$\nSLJf{5s5p}{3}{P}{1}{9/2}$} intermediate states. 
-%		The detunings relative to these intermediate states are fixed at $\Delta_{11/2} \approx \SI{12}{\MHz}$ and $\Delta_{9/2} \approx \SI{36}{\MHz}$.
-%		{(c)} Arrangement of the electrodes used for ionizing Rydberg atoms and guiding the electrons towards the MCP detector.}
-%\end{figure}
-The cooling and trapping of strontium was described previously in this thesis so it will only be briefly covered here. 
-Following the standard procedure for laser cooling strontium, we start from a Zeeman slowed atomic beam with the Zeeman laser tuned to $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ resonance in \Sr{87}.
-The slowed atoms are then captured by a blue MOT operating on the same transition which traps and cools the atoms to $\sim \SI{2}{\milli\kelvin}$. 
-Further cooling is achieved in a narrow-line red MOT driving the $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ transition.
-Approximately $\SI{1E6}{atoms}$ at $\sim \SI{2}{\micro\kelvin}$ are captured and cooled before turning off all trapping fields for spectroscopy measurements.
-
-Rydberg atoms are created by two-photon excitation using counterpropagating cross-linearly polarized $\SI{689}{\nm}$ and $\SI{319}{\nm}$ excitation lasers which drive transitions to the $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg levels via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ or $F = 11/2$ states.
-These intermediate states were selected to take advantage of selection rules to aid in identifying the Rydberg hyperfine states populated.
-The typical detunings of the $\SI{689}{\nm}$ laser were fixed at $\Delta_{9/2} \approx \SI{36}{MHz}$ and $\Delta_{11/2} \approx \SI{12}{\MHz}$ relative to the intermediate states.
-During excitation, the $\SI{319}{\nm}$ laser was kept on while the $\SI{689}{\nm}$ laser was chopped into $\SIrange[range-phrase=-]{10}{20}{\us}$-long pulses to generate temporally localized groups of Rydberg atoms. 
-The number of Rydberg atoms produced by each pulse was determined by using the electrodes in \cref{fig:spectroscopy_exp_setup} to generate a ramped electric field sufficient to ionize the Rydberg atoms with the resulting electrons directed towards, and detected by, a micro-channel plate (MCP) whose output was fed into a multichannel scalar (MCS).
-Typically $\numrange[range-phrase=-]{100}{500}$ measurement cycles were performed before loading a new sample and changing the $\SI{319}{\nm}$ laser frequency. 
-Spectroscopic measurements at high~$n$ using \Sr{84} showed that the stray fields in the trapping region were less than $\SI{10}{\mV\per\cm}$ so any resultant Stark shifts should be at most a few megahertz even at $n \sim 90$.
-
-The $\SI{319}{\nm}$ radiation was generated by frequency doubling the output of a $\SI{638}{\nm}$ optical parametric oscillator (OPO). 
-A sample of the output is sent though a broadband fiber electro-optic modulator (fEOM) from which one of the tunable sidebands was locked to a transfer cavity, allowing the $\SI{319}{\nm}$ laser to be scanned over multiple gigahertz.
-The transfer cavity was stabilized using a $\SI{689}{\nm}$ laser locked to the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{88}. 
-The linewidth of the $\SI{319}{\nm}$ laser is estimated to be $\lesssim \SI{500}{\kHz}$ based on the narrowest observed spectroscopic features.
-The Rydberg state energies are determined by measuring the $\SI{638}{\nm}$ frequency with an EXFO WA-1500 wavemeter and is resolution-limited to about $\approx \SI{60}{\MHz}$. 
-Relative measurements of line splittings can be obtained to kilohertz-level accuracies when scanning within a single free spectral range (FSR) of the transfer cavity and to megahertz-level accuracies when piecing together scans over successive FSR\footnote{We have since developed a method which can provide kilohertz-level accuracies over successive FSRs without needing an accurate measurement of the FSR.}.
-% Other version using lesssim in \SI: $\SI[input-comparators=\lesssim]{\lesssim500}{\kHz}$
-
-\subsection{Calibrating the EXFO WA-1500 Wavemeter}
-
-All light used in the calibration measurements were delivered to the EXFO WA-1500 using single mode fiber\footnote{Thorlabs SM600 FC/PC single mode fiber.}.
-We had previously used a multimode fiber but found that the wavemeter readings were inconsistent, likely due to the speckle pattern or slight beam pointing deviations from output of the multimode fiber.
-Switching to a single mode fiber alleviated these issue and we were able to consistently obtain resolution-limited measurements of the wavenumber with a statistical uncertainty of about $\sigma_{\text{stat}} = \pm \SI{15}{MHz}$ for the wavelengths we measured. Since the $\SI{319}{\nm}$ light is generated by frequency-doubling from $\SI{638}{\nm}$, the statistical uncertainty is approximately doubled as well $\sigma_{\text{stat}} = \pm \SI{30}{MHz}$.
-
-Since we rely on the wavemeter to determine the absolute energy of the $\SI{638}{\nm}$ photon, we also needed to characterize potential systematics.
-We initially attempted to perform Doppler-free spectroscopy of molecular iodine ({\tsup{127}I\tsub{2}}) using the ${P65~\left(7–4\right)}$ line at \SI{15672.517398(25)}{\per\cm} \cite{Sansonetti1997.JOSAB.14.1913} which is near the wavelength required to excite the $\nSLJ{5s40s}{3}{S}{1}$ Rydberg state.
-We didn't have much luck observing narrow Doppler-free signals scanning the $\SI{638}{\nm}$ laser through a our iodine cell using a simple saturated absorption setup\footnote{This matches similar experiences according to Jason Nguyen and Henry Luo in the Hulet lab when they were looking to use an iodine cell to lock their $\SI{646}{\nm}$ laser for a \Li{6} UV MOT \cite{Duarte2011.PRA.84.061406}.}.
-A longer cell and a more sensitive detection method may be necessary since most {\tsup{127}I\tsub{2}} spectroscopy setups in this wavelength range used cells longer than $\SI{30}{\cm}$ and some sort of modulation spectroscopy (e.g., \cite{Sansonetti1997.JOSAB.14.1913, Huang2018.AO.57.2102, Onishchenko2019.PRA.99.052503}).
-
-Although the iodine spectroscopy didn't work out, we were able to calibrate the wavemeter by measuring wavelengths of lasers lock to atomic transitions in \Sr{88} ($\SI{689}{\nm}$) and \Li{6} ($\SI{671}{\nm}$ and $\SI{646}{\nm}$).
-The $\SI{689}{\nm}$ reference comes from our red master laser locked to the $\SLJ{1}{S}{0} \rightarrow \SLJ{3}{P}{1}$ in \Sr{88}.
-Ya-Ting Chang, Danyel Cavazos, and Dr. Randy Hulet were kind enough to let us run a fiber between the Killian and Hulet labs in order to measure the wavelengths of their $\SI{671}{\nm}$ and $\SI{646}{\nm}$ lasers for laser cooling \Li{6}. 
-The $\SI{671}{\nm}$ is used for a standard $D_{2}$ MOT while the $\SI{646}{\nm}$ is frequency doubled to $\SI{323}{\nm}$ for a UV MOT \cite{Duarte2011.PRA.84.061406}.
-The wavemeter measurements of those three wavelengths were performed within about $\SI{2}{\hour}$ to reduce sensitivity to environmental changes and are presented in \cref{tab:wavemeter_calibration}.
-\begin{table}[htbp]
-	\caption{
-		\label{tab:wavemeter_calibration}
-		Values used to calibrate the WA-1500 on a single day (2018/03/09) within about \SI{2}{\hour}. 
-		The value of the \SI{689}{\nm} transition in \Sr{88} \cite{Ferrari2003.PRL.91.243002, Sansonetti2010.JPCRD.39.033103}.
-		The values of the \SI{671}{\nm} and \SI{323}{\nm} (\SI{646}{\nm}) transitions in \Li{6} were taken from \cite{Sansonetti2011.PRL.107.023001, Sansonetti2012.PRL.109.259901, Radziemski1995.PRA.52.4462}.}
-	\centering
-	\makebox[\textwidth][c]{
-	\begin{tabular}{@{}ccccc@{}}
-		\toprule
-		$\lambda$ [\si{\nm}]	& Atom						& Transition																		& Reference [\si{\per\cm}]			& Measured [\si{\per\cm}]		\\
-		\midrule
-		\num{689}				& \Sr{88}					& $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$							& \num{14504.33824159+-0.00000033}	& \num{14504.34224+-0.00035}	\\
-		\num{671}				& \Li{6}					& $\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{2p}{2}{P}{3/2}$						& \num{14903.6295242+-0.0000007}	& \num{14903.63391+-0.00033}	\\
-		\num{323}				& \multirow{2}{*}{\Li{6}}	& \multirow{2}{*}{$\nSLJf{2s}{2}{S}{1/2}{3/2} \rightarrow \nSLJ{3p}{2}{P}{3/2}$}	& \num{30925.1703+-0.0010}			& \num{30925.1792+-0.0010}		\\
-		(\num{646})				&							&																					& (\num{15462.5851+-0.0005})		& (\num{15462.5896+-0.0005})	\\
-		\bottomrule
-	\end{tabular}
-	}
-\end{table}
-These measurements were used to calculate the frequency offset $\delta\pqty{\lambda} = \nu_{\text{measured}} - \nu_{\text{reference}}$ between the measured and reported values and is plotted in \cref{fig:wm_fit}.
-\begin{figure}[htbp]
-	\centering
-	%\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_fit.svg}
-	\includegraphics[keepaspectratio, width=4.5in]{fermion_spectroscopy/wavemeter_calibration/wm_fit.pdf}
-	\caption{
-		\label{fig:wm_fit}
-		Wavelength dependence of the offset between the measured and published transition frequencies used to calibrate the wavemeter $\delta\pqty{\lambda} = \nu_{\text{measured}} - \nu_{\text{reference}}$. 
-		The black line shows the linear fit used to obtain the offset at $\SI{638}{\nm}$ with the shaded region representing the uncertainty in the wavemeter calibration obtained from Monte Carlo simulations.}
-\end{figure}
-A linear fit yields a correction of $\approx \SI{140}{\MHz}$ at $\SI{638}{\nm}$. 
-In an attempt to estimate the systematic uncertainty in this calibration factor, a Monte Carlo sampling was adopted in which linear fits to points drawn at random from a Gaussian distributions appropriate to each point in the calibration were repeated, resulting in a systematic uncertainty of about $\sigma_{\text{sys}} = \pm \SI{25}{\MHz}$ ($\sigma_{\text{sys}} = \pm \SI{50}{\MHz}$) at $\SI{638}{\nm}$ ($\SI{319}{\nm}$). 
-
-To check for drifts in the wavemeter calibration, each $\SI{638}{\nm}$ wavelength measurement was followed by a reference measurement of the $\SI{689}{\nm}$ master laser.
-As shown in \cref{fig:wm_drift}, the day-to-day variations were relatively small compared to the wavemeter's systematic uncertainty which we suspect are due to changes in environmental conditions (e.g., temperature, humidity, pressure).
-\begin{figure}[htbp]
-	\centering
-	%\includesvg[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.svg}
-	\includegraphics[keepaspectratio, width=\textwidth]{fermion_spectroscopy/wavemeter_calibration/wm_drift.pdf}
-	\caption{
-		\label{fig:wm_drift}
-		Compiled measurements of the wavemeter offset of the $\SI{689}{\nm}$ transition.
-		The data comes from the $\SI{689}{\nm}$ reference measurements paired with each $\SI{638}{\nm}$ measurement.}
-\end{figure}
-These effects were mitigated by using the $\SI{689}{\nm}$ reference measurement paired with each $\SI{638}{\nm}$ measurement to remove the day-to-day wavemeter offset before using $\delta\pqty{\lambda}$ to calculate the offset at $\SI{638}{\nm}$.
-
-% \subsection{Two-photon Rydberg excitation spectrum}
-
-% While taking the Rydberg spectra, we observed spurious electron counts when the UV laser detuning compensated for the \SI{689}{\nm} detuning. 
-% Due to this coincidence, we believe these ``ghost'' lines are due to atoms in the $\nSLJF{5s5p}{3}{P}{1}{9/2,11/2}$ state which were off-resonantly excited by a \SI{689}{\nm} photon before a \SI{319}{\nm} photon excites them to a Rydberg state. 
-% To check for this effect, we use the density matrix method **Lindblad operator** to simulate the time-dependent dynamics with parameter values estimated from the measured excitation laser powers and beam waists. 
-
-% **Show example spectra with ``ghost'' on-resonance counts.**
-
-% %\begin{figure}[htbp]
-% %	\centering
-% %	\includesvg[keepaspectratio, height=2in]{fermion_spectroscopy/three-level_system.svg}
-% %	\caption{\label{fig:three-level_system}Three-level diagram representing a two-photon excitation to a Rydberg state with $\ket{g}$, $\ket{e}$, and $\ket{r}$ representing the ground, intermediate, and Rydberg states, respectively. The detunings from the intermediate (Rydberg) state is $\Delta_e$ ($\Delta_r$). Couplings between states are represented by $\Omega_1 \exp(-\iu \omega_1 t)$ ($\Omega_2 \exp(-\iu \omega_2 t)$) for the \SI{689}{\nm} (\SI{319}{\nm}) lasers.}
-% %\end{figure}
-
-% The bare atomic Hamiltonian for this system can be expressed as 
-% \begin{equation}
-	% H_\text{A}
-		% = \omega_r \dyad{r} + \hbar \omega_e \dyad{e} + \hbar \omega_g \dyad{g}
-		% = \hbar	\begin{pmatrix}
-					% \omega_r	& 0			& 0	\\
-					% 0			& \omega_e	& 0	\\
-					% 0			& 0			& \omega_g
-				% \end{pmatrix}
-% \end{equation}
-% The atom-field interaction can be written as 
-% \begin{equation}
-	% H_\text{AF}
-		% = \frac{\hbar}{2}\left(\Omega_1 \operatorname{e}^{-\iu \omega_1 t} \dyad{g}{e} + \Omega_2 \operatorname{e}^{-\iu \omega_2 t} \dyad{e}{r} \right)+ \text{h.c}
-		% =	\frac{\hbar}{2}	\begin{pmatrix}
-				% 0												& \Omega_2 \operatorname{e}^{-\iu \omega_2 t}		& 0	\\
-				% \Omega_2^\ast \operatorname{e}^{\iu \omega_2 t}	& 0													& \Omega_1 \operatorname{e}^{-\iu \omega_1 t}	\\
-				% 0												& \Omega_1^\ast \operatorname{e}^{\iu \omega_1 t}	& 0
-			% \end{pmatrix}
-% \end{equation}
-% Using the unitary (?) transformation
-% \begin{equation}
-	% U	=	\begin{pmatrix}
-				% \operatorname{e}^{-\iu (\Omega_1 + \Omega_2) t}	& 0													& 0	\\
-				% 0												& \operatorname{e}^{-\iu \Omega_1 t}					& 0	\\
-				% 0												& 0													& 1
-			% \end{pmatrix}
-% \end{equation}
-% the total Hamiltonian $H = H_\text{A} + H_\text{AF}$ can be written as
-% \begin{equation}
-	% \widetilde{H}
-		% = U^\dag H U - \iu \hbar U^\dag \dv{U}{t}
-		% = \hbar	\begin{pmatrix}
-					% -\Delta_r						& \flatfrac{\Omega_2}{2}		& 0			\\
-					% \flatfrac{\Omega_2^\ast}{2}		& -\Delta_e						& \flatfrac{\Omega_1}{2}	\\
-					% 0								& \flatfrac{\Omega_1^\ast}{2}	& \omega_g
-				% \end{pmatrix}
-% \end{equation}
-% where $\Delta_e = \omega_1 - \omega_e$ is the detuning from the intermediate state and $\Delta_r = \omega_r - (\omega_1 + \omega_2)$ is the total detuning from the Rydberg state. 
-% To simplify things, we can take $\omega_g = 0$.
-
-% **Hopefully the time-dynamics calculations explain the observed ``ghost'' lines**.
-
-% \begin{figure}[h]
-	% \centering
-	% \includesvg[keepaspectratio, width=4in]{fermion_spectroscopy/three-level_system/three-level_calculation.svg}
-	% \caption{\label{fig:three-level_calculation}Three-level system calculation.}
-% \end{figure}
-
-\section{Results and Discussion}
-
-\Cref{tab:data-s-state} lists the measured term energies for multiple $\nSLJ{5sns}{1,3}{S}{}$ Rydberg states for $30 \lesssim n \lesssim 99$ including their theoretical predictions by diagonalization of the rescaled Hamiltonian *** CITE EQUATION ***.
-\Cref{fig:results-qd-1S0,fig:results-qd-3S1} show the quantum defects calculated with the Rydberg-Ritz formula \cite{Vaillant2012.JPB.45.135004} from the measured \Sr{88} term energies together with those extracted from the current measurements in \Sr{87}.
-For \Sr{88}, the most recent value of the ionization limit was used along with the mass-scaled Rydberg constant\footnote{$E^{88}_{\text{ion}} = \SI{45932.20024+-0.00033}{\per\cm}$ \cite{Couturier2019.PRA.99.022503} and $R^{88}_{\text{Sr}} = \SI{109736.6308675+-0.0000007}{\per\cm}$. See \cref{sec:rydberg_properties}.}.
-For \Sr{87}, along with using the appropriately mass-corrected Rydberg constant and **** ionization energy ****, the hyperfine shifts for each state was calculated and subtracted from the measured term energies to obtain the quantum defect for an effective $I = 0$ atom.
-% \begin{SingleSpace}
-% \begin{longtable}[c]{@{}ccccccccc@{}}
-	% \caption{\label{tab:data-s-state}
-		% Experimentally measured and calculated energies of selected $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states in \Sr{87}. 
-		% $\Delta E_{\text{expt}}$ and $\Delta E_{\text{theor}}$ are the measured and predicted separations from the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state of the same $n$ which is used as a reference. 
-		% The uncertainties shown include both the statistical and systematic uncertainties in the wavemeter calibration.} \\
-	% \toprule
-	% Series & $n$ & Term & $F$ & $E_\text{expt}$ {[\si{\per\cm}]} & $\Delta E_\text{expt}$ {[\si{\GHz}]} & $E_\text{theor}$ {[\si{\per\cm}]} & $\Delta E_\text{theor}$ {[\si{\GHz}]}	\\
-	% \midrule
-	% \endfirsthead
-	% \multicolumn{8}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page.}}	\\
-	% \toprule
-	% Series & $n$ & Term & $F$ & $E_{\text{expt}}$ {[\si{\per\cm}]} & $\Delta E_{\text{expt}}$ {[\si{\GHz}]} & $E_{\text{theor}}$ {[\si{\per\cm}]} & $\Delta E_{\text{theor}}$ {[\si{\GHz}]}	\\
-	% \midrule
-	% \endhead
-	% \bottomrule
-	% \multicolumn{8}{r}{\textit{Continued on next page.}}	\\
-	% \endfoot
-	% \bottomrule
-	% \endlastfoot
-	% $5sns$	& $40$					& $\SLJ{1}{S}{0}$	& $9/2$		& \num{45850.8762+-0.0021}			& \num{16.35+-0.08}						& \num{45850.8702}					& \num{16.22}							\\
-			% & $60$					& 					&			& \num{45898.1444+-0.0022}			& \num{7.28+-0.09}						& \num{45898.1421}					& \num{7.26}							\\
-			% & $72$					& 					&			& \num{45909.0252+-0.0020}			& \num{6.10+-0.09}						& \num{45909.0240}					& \num{6.1}								\\
-			% & $74$					& 					&			& \num{45910.3230+-0.0021}			& \num{5.98+-0.09}						& \num{45910.3211}					& \num{5.99}							\\
-			% & $76$					& 					&			& \num{45911.5148+-0.0020}			& \num{5.91+-0.08}						& \num{45911.5127}					& \num{5.89}							\\
-			% & $77$					& 					&			& \num{45912.0738+-0.0020}			& \num{5.84+-0.09}						& \num{45912.0725}					& \num{5.85}							\\
-			% & $78$					& 					&			& \num{45912.6114+-0.0020}			&										& \num{45912.6100}					& \num{5.81}							\\
-			% & $82$					& 					&			& \num{45914.5606+-0.0022}			& \num{5.66+-0.09}						& \num{45914.5589}					& \num{5.67}							\\
-			% & $86$					& 					&			& \num{45916.2336+-0.0021}			& \num{5.56+-0.08}						& \num{45916.2321}					& \num{5.56}							\\
-			% & $90$					& 					&			& \num{45917.6802+-0.0019}			& \num{5.46+-0.08}						& \num{45917.6791}					& \num{5.47}							\\
-			% & $94$					& 					&			& \num{45918.9402+-0.0019}			& \num{5.40+-0.08}						& \num{45918.9388}					& \num{5.39}							\\
-			% & $98$					& 					&			& \num{45920.0438+-0.0022}			& \num{5.325+-0.005}					& \num{45920.0423}					& \num{5.327}							\\
-	% \midrule
-	% $5sns$	& $40$					& $\SLJ{3}{S}{1}$	& $7/2$		& \num{45850.4974+-0.0021}			& \num{4.99+-0.08}						& \num{45850.4960}					& \num{5.0}								\\
-			% & $60$					& 					&			& \num{45898.0688+-0.0021}			& \num{5.02+-0.08}						& \num{45898.0668}					& \num{5.0}								\\
-	% \midrule
-	% $5sns$	& $40$					& $\SLJ{3}{S}{1}$	& $9/2$		& \num{45850.4078+-0.0021}			& \num{2.31+-0.08}						& \num{45850.4061}					& \num{2.31}							\\
-			% & $50$					& 					&			& \num{45881.7138+-0.0022}			& \num{1.88+-0.09}						& \num{45881.7119}					& \num{1.89}							\\
-			% & $72$					& 					&			& \num{45908.8546+-0.0021}			& \num{0.99+-0.09}						& \num{45908.8528}					& \num{0.97}							\\
-			% & $74$					& 					&			& \num{45910.1518+-0.0022}			& \num{0.85+-0.09}						& \num{45910.1516}					& \num{0.91}							\\
-			% & $76$					& 					&			& \num{45911.3460+-0.0019}			& \num{0.85+-0.08}						& \num{45911.3445}					& \num{0.85}							\\
-			% & $77$					& 					&			& \num{45911.9068+-0.0021}			& \num{0.83+-0.09}						& \num{45911.9049}					& \num{0.83}							\\
-			% & $78$					& 					&			& \num{45912.4444+-0.0019}			&										& \num{45912.4429}					& \num{0.8}								\\
-			% & $82$					& 					&			& \num{45914.3958+-0.0021}			& \num{0.72+-0.09}						& \num{45914.3935}					& \num{0.71}							\\
-			% & $86$					& 					&			& \num{45916.0696+-0.0021}			& \num{0.64+-0.08}						& \num{45916.0677}					& \num{0.63}							\\
-			% & $90$					& 					&			& \num{45917.5172+-0.0021}			& \num{0.57+-0.08}						& \num{45917.5155}					& \num{0.56}							\\
-			% & $94$					& 					&			& \num{45918.7774+-0.0022}			& \num{0.52+-0.09}						& \num{45918.7759}					& \num{0.51}							\\
-			% & $98$					& 					&			& \num{45919.8816+-0.0022}			& \num{0.46302+-0.00007}				& \num{45919.8800}					& \num{0.46164}							\\
-	% \midrule
-	% $5sns$	& $30$					& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45777.3637+-0.0020}			&										& \num{45777.3621}					& 										\\
-			% & $31$					& 					&			& \num{45788.3644+-0.0021}			&										& \num{45788.3624}					& 										\\
-			% & $32$					& 					&			& \num{45798.2325+-0.0022}			&										& \num{45798.2302}					& 										\\
-			% & $33$					& 					&			& \num{45807.1179+-0.0019}			&										& \num{45807.1158}					& 										\\
-			% & $34$					& 					&			& \num{45815.1469+-0.0021}			&										& \num{45815.1452}					& 										\\
-			% & $35$					& 					&			& \num{45822.4253+-0.0021}			&										& \num{45822.4252}					& 										\\
-			% & $36$					& 					&			& \num{45829.0469+-0.0020}			&										& \num{45829.0460}					& 										\\
-			% & $37$					& 					&			& \num{45835.0865+-0.0021}			&										& \num{45835.0851}					& 										\\
-			% & $38$					& 					&			& \num{45840.6098+-0.0014}			&										& \num{45840.6085}					& 										\\
-			% & $39$					& 					&			& \num{45845.6759+-0.0022}			&										& \num{45845.6734}					& 										\\
-			% & $40$					& 					&			& \num{45850.3308+-0.0015}			&										& \num{45850.3291}					& 										\\
-			% & $42$					& 					&			& \num{45858.5807+-0.0021}			&										& \num{45858.5793}					& 										\\
-			% & $43$					& 					&			& \num{45862.2455+-0.0020}			&										& \num{45862.2439}					& 										\\
-			% & $44$					& 					&			& \num{45865.6435+-0.0021}			&										& \num{45865.6413}					& 										\\
-			% & $45$					& 					&			& \num{45868.7988+-0.0015}			&										& \num{45868.7968}					& 										\\
-			% & $49$					& 					&			& \num{45879.4140+-0.0019}			&										& \num{45879.4124}					& 										\\
-			% & $50$					& 					&			& \num{45881.6510+-0.0021}			&										& \num{45881.6488}					& 										\\
-			% & $55$					& 					&			& \num{45890.9526+-0.0020}			&										& \num{45890.9511}					& 										\\
-			% & $60$					& 					&			& \num{45897.9014+-0.0019}			&										& \num{45897.9000}					& 										\\
-			% & $65$					& 					&			& \num{45903.2294+-0.0019}			&										& \num{45903.2272}					& 										\\
-			% & $72$					& 					&			& \num{45908.8216+-0.0022}			&										& \num{45908.8205}					& 										\\
-			% & $74$					& 					&			& \num{45910.1236+-0.0022}			&										& \num{45910.1213}					& 										\\
-			% & $76$					& 					&			& \num{45911.3178+-0.0019}			&										& \num{45911.3161}					& 										\\
-			% & $77$					& 					&			& \num{45911.8790+-0.0021}			&										& \num{45911.8774}					& 										\\
-			% & $82$					& 					&			& \num{45914.3718+-0.0022}			&										& \num{45914.3699}					& 										\\
-			% & $86$					& 					&			& \num{45916.0482+-0.0019}			&										& \num{45916.0467}					& 										\\
-			% & $90$					& 					&			& \num{45917.4982+-0.0019}			&										& \num{45917.4967}					& 										\\
-			% & $94$					& 					&			& \num{45918.7600+-0.0021}			&										& \num{45918.7590}					& 										\\
-			% & $98$					& 					&			& \num{45919.8662+-0.0022}			&										& \num{45919.8646}					& 										\\
-			% & $99$					& 					&			& \num{45920.1210+-0.0022}			&										& \num{45920.1196}					& 										\\
-% \end{longtable}
-% \end{SingleSpace}
-
-\Cref{fig:spectra-n50,fig:spectra-n60,fig:spectra-n98} show the positions of the measured $\nSLJ{5snd}{3}{D}{}$ spectral lines near $n = \text{\numlist{50;60;97;98}}$ relative to the energy of the $\nSLJf{5sns}{3}{S}{1}{11/2}$ state. 
-The corresponding term values are listed in \cref{tab:data-d-state} along with their theoretical predictions. 
-% \begin{table}[!htbp]
-	% \caption{\label{tab:data-d-state}
-		% Comparison of measured and calculated positions of $\nSLJ{5snd}{3}{D}{1,2,3}$ lines for $n = \text{\numlist{50;60;\sim98}}$. 
-		% The splittings $\Delta E_{\text{expt}}$ between those lines that could be measured during a single FSR scan of the $\SI{319}{\nm}$ laser frequency (delineated by the horizontal lines) or, for $n \sim 98$, where neighboring scans could be accurately patched together are included together with the corresponding theoretical predictions. 
-		% For the $n = \text{\numrange[range-phrase=-]{98}{99}}$ scan, all differences are referenced to the $\nSLJf{5sns}{3}{S}{1}{11/2}$ level.}
-	% \centering
-	% \begin{tabular}{@{}cccccccc@{}}
-		% \toprule
-		% Series	& $n$	& Term				& $F$		& $E_{\text{expt}}$ [\si{\per\cm}]	& $\Delta E_{\text{expt}}$ [\si{\MHz}]	& $E_{\text{theor}}$ [\si{\per\cm}]	& $\Delta E_{\text{theor}}$ [\si{\MHz}]	\\
-		% \midrule
-		% $5snd$	& $50$	& $\SLJ{3}{D}{1}$	& $7/2$		& \num{45883.1440+-0.0022}			& \num{-295.60+-0.07}					& \num{45883.1414}					& \num{-299.01}							\\
-				% & $50$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45883.1538+-0.0022}			& \num{0}								& \num{45883.1514}					& \num{0}								\\
-				% & $50$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45883.1685+-0.0022}			& \num{439.39+-0.07}					& \num{45883.1662}					& \num{443.71}							\\
-		% \midrule
-		% $5snd$	& $50$	& $\SLJ{3}{D}{2}$	& $7/2$		& \num{45883.2882+-0.0021}			& \num{0}								& \num{45883.2855}					& \num{0}								\\
-				% & $50$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45883.2922+-0.0021}			& \num{118.91+-0.07}					& \num{45883.2893}					& \num{114.7}							\\
-				% & $50$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45883.2972+-0.0021}			& \num{269.12+-0.07}					& \num{45883.2942}					& \num{260.55}							\\
-		% \midrule
-		% $5snd$	& $50$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45883.3849+-0.0022}			& \num{-890.64+-0.07}					& \num{45883.3814}					& \num{-890.22}							\\
-				% & $50$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45883.4146+-0.0022}			& \num{0}								& \num{45883.4111}					& \num{0}								\\
-		% \midrule
-		% $5snd$	& $50$	& $\SLJ{3}{D}{3}$	& $7/2$		& \num{45883.4374+-0.0022}			&										& \num{45883.4339}					&										\\
-		% \midrule
-		% $5snd$	& $60$	& $\SLJ{3}{D}{1}$	& $7/2$		& \num{45898.7367+-0.0021}			& \num{-183.64+-0.07}					& \num{45898.7347}					& \num{-178.89}							\\
-				% & $60$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45898.7428+-0.0021}			& \num{0}								& \num{45898.7407}					& \num{0}								\\
-				% & $60$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45898.7521+-0.0021}			& \num{277.34+-0.07}					& \num{45898.7497}					& \num{270.37}							\\
-		% \midrule
-		% $5snd$	& $60$	& $\SLJ{3}{D}{2}$	& $7/2$		& \num{45898.8568+-0.0022}			& \num{-79.40+-0.07}					& \num{45898.8544}					& \num{-72.67}							\\
-				% & $60$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45898.8594+-0.0022}			& \num{0}								& \num{45898.8569}					& \num{0}								\\
-				% & $60$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45898.8618+-0.0022}			& \num{71.37+-0.07}						& \num{45898.8588}					& \num{58.8}							\\
-		% \midrule
-		% $5snd$	& $60$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45898.9223+-0.0022}			& \num{-626.40+-0.07}					& \num{45898.9197}					& \num{-609.77}							\\
-				% & $60$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45898.9432+-0.0022}			& \num{0}								& \num{45898.9400}					& \num{0}								\\
-				% & $60$	& $\SLJ{3}{D}{3}$	& $7/2$		& \num{45898.9608+-0.0022}			& \num{526.18+-0.07}					& \num{45898.9573}					& \num{517.37}							\\
-		% \midrule
-		% $5sns$	& $98$	& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45919.8662+-0.0022}			& \num{0}								& \num{45919.8646}					& \num{0}								\\
-				% & $98$	& $\SLJ{3}{S}{1}$	& $9/2$		& \num{45919.8816+-0.0022}			& \num{463.02+-0.07}					& \num{45919.8800}					& \num{461.64}							\\
-		% $5snd$	& $97$	& $\SLJ{3}{D}{1}$	& $11/2$	& \num{45919.9565+-0.0022}			& \num{2707.6+-3.5}						& \num{45919.9552}					& \num{2716.6}							\\
-				% & $97$	& $\SLJ{3}{D}{2}$	& $9/2$		& \num{45919.9593+-0.0022}			& \num{2792.4+-3.5}						& \num{45919.9579}					& \num{2796.2}							\\
-				% & $97$	& $\SLJ{1}{D}{2}$	& $9/2$		& \num{45919.9896+-0.0022}			& \num{3701+-4}							& \num{45919.9879}					& \num{3697}							\\
-				% & $97$	& $\SLJ{1}{D}{2}$	& $11/2$	& \num{45919.9925+-0.0022}			& \num{3785+-4}							& \num{45919.9909}					& \num{3786}							\\
-				% & $97$	& $\SLJ{1}{D}{2}$	& $13/2$	& \num{45919.9946+-0.0022}			& \num{3850+-4}							& \num{45919.9933}					& \num{3857}							\\
-		% $5sns$	& $98$	& $\SLJ{1}{S}{0}$	& $9/2$		& \num{45920.0438+-0.0022}			& \num{5325+-5}							& \num{45920.0423}					& \num{5327}							\\
-		% $5snd$	& $98$	& $\SLJ{3}{D}{1}$	& $9/2$		& \num{45920.0474+-0.0022}			& \num{5432+-5}							& \num{45920.0460}					& \num{5439}							\\
-				% & $98$	& $\SLJ{3}{D}{2}$	& $11/2$	& \num{45920.0501+-0.0022}			& \num{5512+-5}							& \num{45920.0485}					& \num{5514}							\\
-				% & $98$	& $\SLJ{3}{D}{2}$	& $13/2$	& \num{45920.0544+-0.0022}			& \num{5641+-5}							& \num{45920.0526}					& \num{5636}							\\
-				% & $98$	& $\SLJ{3}{D}{3}$	& $13/2$	& \num{45920.0916+-0.0022}			& \num{6756+-6}							& \num{45920.0901}					& \num{6761}							\\
-				% & $98$	& $\SLJ{3}{D}{3}$	& $11/2$	& \num{45920.0956+-0.0022}			& \num{6877+-6}							& \num{45920.0943}					& \num{6886}							\\
-				% & $98$	& $\SLJ{3}{D}{3}$	& $9/2$		& \num{45920.0982+-0.0022}			& \num{6954+-6}							& \num{45920.0971}					& \num{6970}							\\
-		% $5sns$	& $99$	& $\SLJ{3}{S}{1}$	& $11/2$	& \num{45920.1210+-0.0022}			& \num{7639+-6}							& \num{45920.1196}					& \num{7643}							\\
-		% \bottomrule
-	% \end{tabular}
-% \end{table}
-The $n = \text{\numlist{50;60}}$ states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{9/2}$ state (scheme {(\romannumeral 2)}), allowing the creation of $F = \text{\numlist{7/2;9/2;11/2}}$ Rydberg states.
-The $n = \text{\numlist{97;98}}$ states were excited via the intermediate $\nSLJf{5s5p}{3}{P}{1}{11/2}$ state (scheme {(\romannumeral 1)}), leading to the excitation of states with $F = \text{\numlist{9/2;11/2;13/2}}$.
-A theoretical fit to the data is also shown in \cref{fig:spectra-n50,fig:spectra-n60,fig:spectra-n98} which was determined by varying the quantum defects of the $\nSLJ{5snd}{3}{D}{1,2,3}$ series until the best agreement with the measured energies was obtained (see \cref{tab:sr_qd_list}).
-Since the measured quantum defects of the $\nSLJ{5snd}{1}{D}{2}$ series in \Sr{88} was available up to $n = 84$ \cite{Beigang1982.OC.42.19}, the quantum defects from \cite{Vaillant2012.JPB.45.135004} were used for those states. 
-
-****************
-
-****************
-
-****************
-
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/results/spectra/spectra-n50.svg}
-	\caption{
-		\label{fig:spectra-n50}
-		Experimentally measured and theoretically predicted spectra for $D$ states near $n = 50$ plotted relative to the $\nSLJf{5s50s}{3}{S}{1}{11/2}$ state.
-		The vertical bars above the data show the calculated positions for the various hyperfine states.
-		The measured energy levels and splittings are given in \cref{tab:data-d-state}.}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/results/spectra/spectra-n60.svg}
-	\caption{
-		\label{fig:spectra-n60}
-		Experimentally measured and theoretically predicted spectra for $D$ states near $n = 60$ plotted relative to the $\nSLJf{5s60s}{3}{S}{1}{11/2}$ state.
-		The $\nSLJf{5s60s}{3}{S}{1}{11/2}$ data was scaled by $\num{1/5}$.
-		The measured energy levels and splittings are given in \cref{tab:data-d-state}.}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{fermion_spectroscopy/results/spectra/spectra-n98.svg}
-	\caption{
-		\label{fig:spectra-n98}
-		Experimentally measured and theoretically predicted spectra for $D$ states near $n = 98$ plotted relative to the $\nSLJf{5s98s}{3}{S}{1}{11/2}$ state.
-		The measured energy levels and splittings are given in \cref{tab:data-d-state}.}
-\end{figure}
-These figures also includes the best theoretical fit to the data that could be obtained.
-This was realized by first determining the values of the quantum defects $\mu_{n,S,L,J}$ that best reproduce the measured energy levels and then using these to update the Rydberg-Ritz expression (** 16 **) for the $n$ dependence of the quantum defect at high $n$ (see ** Table III **).
-The predicted levels shown in ** Fig. 7 ** are derived using the updated Rydberg-Ritz formulas.
-However, since the measured quantum defects of \Sr{88} $\SLJ{1}{D}{2}$ states (with $I = 0$) are available up to $n = 70$, the Rydberg-Ritz expression from ** [18] ** is used for these states.
-The measured quantum defects for the $\SLJ{3}{D}{}$ states are shown in ** Fig. 8 ** together with the values given by both the present and the earlier Rydberg-Ritz expressions.
-The differences between the predicted quantum defects ** [Eq. (16)] ** based on the present data for \Sr{87} and previous data for \Sr{88} ** [18] ** appear to be small, $\sim \num{0.02}$. 
-However, when converted to energy, this small difference translates into discrepancies of $\SI{130}{\MHz}$ for $n = 100$ and $\SI{1}{GHz}$ for $n = 50$ well outside the uncertainty of the current experiment.
-% \begin{figure}[htbp]
-	% \centering
-	% \resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_1D2.pgf}}
-	% \caption{
-		% \label{fig:results-qd-1D2}
-		% Quantum defects for the $\nSLJ{5snd}{1}{D}{2}$ Rydberg series.
-		% For \Sr{88}, the quantum defects were calculated from the reported term energies.
-		% The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-% \end{figure}
-
-% \begin{figure}[htbp]
-	% \centering
-	% \resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D1.pgf}}
-	% \caption{
-		% \label{fig:results-qd-3D1}
-		% Quantum defects for the $\nSLJ{5snd}{3}{D}{1}$ Rydberg series.
-		% For \Sr{88}, the quantum defects were calculated from the reported term energies.
-		% The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-% \end{figure}
-
-% \begin{figure}[htbp]
-	% \centering
-	% \resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
-	% \caption{
-		% \label{fig:results-qd-3D2}
-		% Quantum defects for the $\nSLJ{5snd}{3}{D}{2}$ Rydberg series.
-		% For \Sr{88}, the quantum defects were calculated from the reported term energies.
-		% The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-% \end{figure}
-
-% \begin{figure}[htbp]
-	% \centering
-	% \resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D3.pgf}}
-	% \caption{
-		% \label{fig:results-qd-3D3}
-		% Quantum defects for the $\nSLJ{5snd}{3}{D}{3}$ Rydberg series.
-		% For \Sr{88}, the quantum defects were calculated from the reported term energies.
-		% The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
-% \end{figure}
-
-The present Rydberg-Ritz formulas can also be tested against earlier measured quantum defects for $D$ states in \Sr{87} ($n > 100$) ** [26] **. 
-The data are reproduced to within an average difference of $\sim \SI{60}{\MHz}$.
-When the modified ionization limit discussed above is used to evaluate the quantum defect, the average difference is reduced to $\sim \SI{25}{\MHz}$.
-These residual differences could be caused by stray fields present in the heat pipe used for the earlier work. 
-Additionally, the current theoretical model can predict the hyperfine structure of $D$ states around $n \simeq 280$, which can again be compared with
-the earlier measurements ** [40] **.
-Due to the uncertainty in the ionization threshold, the exact energies cannot be evaluated but the size of the hyperfine splittings is well reproduced
-within an error of $\SI{10}{\MHz}$.
-
-Finally, the improved Rydberg-Ritz formulas for the $\SLJ{3}{D}{}$ states determined from the present data for \Sr{87} can be used to determine spectroscopic information for \Sr{88}Sr.
-When we compare energies for the $5s50d$ and $5s80d$ $\SLJ{3}{D}{1,2}$ states derived using the present updated Rydberg-Ritz formulas with earlier measurements ** [50,51] ** the agreement is significantly improved over that obtained using the earlier Rydberg-Ritz parametrization, the differences between theory and experiment being reduced by several hundred megahertz.
-
-As a further test of the present theoretical approach, ** Table II ** includes the frequency separations between selected pairs of levels that could be measured during a single FSR scan of the $\SI{319}{\nm}$ laser and that are known to high precision.
-** Table II ** also includes the corresponding theoretical predictions. 
-In all but one case the measured and theoretical separations agree to better than $\pm \SI{10}{\MHz}$.
