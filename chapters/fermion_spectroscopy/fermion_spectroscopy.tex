@@ -61,6 +61,11 @@ This seems reasonable since most of the earlier spectroscopic work on \Sr{87} pr
 
 \section{Publication: Spectroscopy of \Sr{87} Triplet Rydberg States}
 
+Below is a reproduction of our work, published in \cite{Ding2018.PRA.98.042505}, which was a combined experimental and theoretical study of $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg states in \Sr{87}.
+The experimental work was undertaken at Rice University with theory collaborates at the Institute for Theoretical Physics, Vienna University of Technology. 
+R.D., J.D.W., and S.K.K. took the experimental data. R.D. compiled and analyzed the data. S.Y. developed the theoretical framework for \Sr{87} and performed the calculations. 
+The paper was written collaboratively between R.D., S.Y., and F.B.D. S.Y. wrote the theoretical section and performed extracted the quantum defects from the \Sr{87} data. R.D. wrote the experimental section and compiled the data tables. S.Y. and F.B.D. wrote the introduction, results, and conclusion sections.
+
 \begin{center}
 	Phys. Rev. A \textbf{98}, 042505 (2018)
 	
@@ -70,11 +75,6 @@ This seems reasonable since most of the earlier spectroscopic work on \Sr{87} pr
 	S. Yoshida and J. Burgd{\"{o}}rfer	\\
 	\textit{Institute for Theoretical Physics, Vienna University of Technology, A-1040 Vienna, Austria, European Union}
 \end{center}
-
-Below is a reproduction of our work, published in \cite{Ding2018.PRA.98.042505}, which was a combined experimental and theoretical study of $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg states in \Sr{87}.
-The experimental work was undertaken at Rice University with theory collaborates at the Institute for Theoretical Physics, Vienna University of Technology. 
-R.D., J.D.W., and S.K.K. took the experimental data. R.D. compiled and analyzed the data. S.Y. developed the theoretical framework for \Sr{87} and performed the calculations. 
-R.D., S.Y. and, F.B.D. wrote the paper. 
 
 \input{chapters/fermion_spectroscopy/spectroscopy_of_87Sr_triplet_rydberg_states/spectroscopy_of_87Sr_triplet_rydberg_states.tex}
 
@@ -343,9 +343,10 @@ Comparing the quantum defects reported in \cite{Vaillant2012.JPB.45.135004, Jack
 	\end{tabular}
 \end{table}
 
-\Cref{fig:results-qd-1S0,fig:results-qd-3S1,fig:results-qd-1D2,fig:results-qd-3D1,fig:results-qd-3D2,fig:results-qd-3D3} expand on the data presented in \cref{fig:Rydberg-Ritz-S,fig:Rydberg-Ritz-D}.
-These present a comparison between quantum defects obtained from measurements in \Sr{88} with those from all the measured hyperfine states in \Sr{87} presented above (not just the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ state). 
-Quantum defects from the \Sr{87} data were obtained by first subtracting the calculated hyperfine energy shift and then applying \cref{eq:Rydberg-Ritz} with the appropriate Rydberg constant and ionization limit for \Sr{87}. **** ADD VALUES USED IN PLOTS ****
+\Cref{fig:results-qd-1S0,fig:results-qd-3S1,fig:results-qd-1D2,fig:results-qd-3D1,fig:results-qd-3D2,fig:results-qd-3D3} expand on the data in \cref{fig:Rydberg-Ritz-S,fig:Rydberg-Ritz-D}, presenting a comparison of the quantum defects obtained from measurements in \Sr{88} with those extracted from the energies of the observed hyperfine states in the \Sr{87} data presented above.
+
+The \Sr{88} quantum defects were extracted from the reported Rydberg energies using the Rydberg formula \cref{eq:ene0} with the most recently reported ionization limit $E^{\pqty*{0}}_{\text{ion}} = \SI{45932.20024+-0.00033}{\per\cm}$ \cite{Couturier2019.PRA.99.022503} and the mass-scaled Rydberg constant $R\pqty*{m_{88}} = \SI{109736.6308675+-0.0000007}{\per\cm}$ (see \cref{sec:rydberg_properties}).
+Quantum defects from the \Sr{87} data were obtained by first subtracting the calculated hyperfine energy shift to obtain an $I = 0$ Rydberg state energy, and then applying \cref{eq:ene0} with the Rydberg constant $R\pqty*{m_{88}} = \SI{109736.6230135+-0.0000007}{\per\cm}$ and ionization limit $E^{\pqty*{0}}_{\text{ion}} = \SI{45932.1956}{\per\cm}$ appropriate for \Sr{87}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -387,10 +388,9 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
 
-***** NEED TO FIX 5snd 3D2.pgf FIGURE *****
 \begin{figure}[!htbp]
 	\centering
-	%\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
+	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
 	\caption{
 		\label{fig:results-qd-3D2}
 		Quantum defects for the $\nSLJ{5snd}{3}{D}{2}$ Rydberg series.
@@ -417,9 +417,6 @@ One possibility is to access Rydberg states with either attractive ($\nSLJ{5sns}
 
 ******************
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisl magna, vehicula id ipsum ac, rutrum viverra nibh. Vestibulum lacus dolor, placerat non erat id, lacinia dignissim purus. In eget sagittis mi. Curabitur feugiat, sapien at elementum sagittis, felis ante blandit orci, ac scelerisque sapien nisi ut arcu. Sed consequat a nibh at vestibulum. Integer sem lacus, venenatis ac efficitur quis, tempus a ante. Praesent mollis velit nec lectus pulvinar convallis. Integer aliquet placerat justo quis ornare. Vestibulum mollis volutpat ligula ut posuere. Vestibulum ornare fermentum eros sed placerat. Sed lacinia ligula elit, vitae interdum massa dignissim quis. Vestibulum nec rutrum mauris. Phasellus ac ornare odio. Pellentesque eget pellentesque nunc.
-
-Proin fringilla purus nec fermentum eleifend. Maecenas a mattis urna, non consequat lacus. Cras vitae tempor tortor. Sed laoreet lacinia tempus. Phasellus a varius felis, sed cursus felis. Ut dictum, nunc eget imperdiet pharetra, metus nunc condimentum est, eu semper nisi ipsum sed libero. Maecenas vel odio eget risus commodo aliquam quis eget ipsum. In suscipit augue eget sapien ultrices convallis. Quisque lobortis faucibus risus, sit amet aliquet est blandit vel. Aliquam id nulla tellus. Aliquam vulputate lacinia semper. Fusce eu tellus malesuada, congue tortor non, fermentum leo. Praesent nulla ante, sagittis quis mauris sed, lacinia faucibus augue. Nam tincidunt lectus non lacus porttitor, id tempus justo tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus efficitur mollis mollis.
 
 \section{*** TEMPORARY ***}
 
