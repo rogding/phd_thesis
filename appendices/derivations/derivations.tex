@@ -260,6 +260,91 @@ Working in the total angular momentum basis $\bm{F}=\bm{J}+\bm{I}$, we can combi
 
 \subsection{Singly excited $S$ states}
 
+
+****** 2019/08/09 ******
+
+The matrix elements for hyperfine mixing of the $\nSLJ{5sns}{1}{S}{0}$ and the $\nSLJ{5sns}{3}{S}{1}$ are not too difficult to work out and the derivation below is based on the one presented by Shuhei Yoshida.
+For a two-electron system with the ``inner'' electron in the $\ket*{5s}$ state and the ``outer'' electron in the $\ket*{ns}$  state, their combined orbital wave function $\ket*{L, m_{L}}_{L}$ can be written as
+\begin{align}
+	\ket{0,0}_{L}^{+}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} + \ket{ns ; 5s}}	\\
+	\ket{0,0}_{L}^{-}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}}
+\end{align}
+For the spin wave function $\ket*{S, m_{S}}_{S}$, the two electron spins can combine to form either singlet or triplet states (e.g., see \cite{Sakurai2010})
+\begin{align}
+	\ket{0,0}_{S}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
+	\ket{1,1}_{S}	&{}=	\ket{\uparrow;\uparrow}																\\
+	\ket{1,0}_{S}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} + \ket{\downarrow ; \uparrow}}	\\
+	\ket{1,-1}_{S}	&{}=	\ket{\downarrow ; \downarrow}
+\end{align}
+The orbital ($\va{L}$) and spin ($\va{S}$) wave functions can be combined in the $\va{J} = \va{L} + \va{S}$ basis.
+These can be identified with the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg states as
+\begin{align}
+	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	&{}=	\ket{0,0}_{L}^{+} \ket{0,0}_{S}	=	\frac{1}{2} \pqty{\ket{5s ; ns} + \ket{ns ; 5s}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,1}_{S}	=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \ket{\uparrow;\uparrow}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,0}_{S}	=	\frac{1}{2} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \pqty{\ket{\uparrow ; \downarrow} + \ket{\downarrow ; \uparrow}}	\\
+	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,-1}_{S}	=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \ket{\downarrow;\downarrow}
+\end{align}
+We can now deduce the effects of $\hat{s}_{\text{inner},+}$, $\hat{s}_{\text{inner},-}$, and $\hat{s}_{\text{inner},z}$ on the four states above\footnote{The easiest way to see this is to expand the product states and then apply the ladder operator.}
+\begin{align}
+	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	-\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}												\\
+	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}												\\
+	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}														\\
+	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	0																									\\
+	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	-\frac{1}{\sqrt{2}} \pqty{\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} - \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}}	\\
+	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}														\\
+	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}												\\
+	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}												\\
+	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}														\\
+	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	\frac{1}{\sqrt{2}} \pqty{\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} + \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}}	\\
+	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	0																									\\
+	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	-\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}
+\end{align}
+The ladder operators on the nuclear spin state $\ket*{I, m_I}_{I}$ gives the usual 
+\begin{align}
+	& \hat{I}_{+} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I+1\right)} \ket{I,m_I+1}	\\
+	& \hat{I}_{-} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I-1\right)} \ket{I,m_I-1}	\\
+	& \hat{I}_{z} \ket{I,m_I}	=	m_I \ket{I,m_I}
+\end{align}
+
+The hyperfine states $\ket*{F, m_F}_{F}$ can be expanded in terms of the uncoupled $\ket*{J, m_J}_{J}$ and $\ket*{I, m_I}_{I}$ states using Clebsch-Gordan coefficients
+\begin{align}
+	\ket{\nSLJfM{5sns}{1}{S}{0}{I}{m_F}}_{F}	{}&=	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} \ket{I,m_{I} = m_{F}}_{I}	\\
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I+1}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I+1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
+												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I+1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I} \\
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
+												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I} \\
+	\ket{\nSLJfM{5sns}{3}{S}{1}{I-1}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I-1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
+												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I-1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I}
+\end{align}
+with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+Since $\hat{V}_{\text{hf}}$ has rotational symmetry, the results should not depend on the particular $m_F = m_J + m_I$.
+For simplicity, we evaluate the case $m_F = F$ which leads to
+\begin{align}
+	\ket{\nSLJfm{5sns}{1}{S}{0}{I}{I}}_{F}		{}=&	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} \ket{I,m_{I} = I}_{I}	\\
+	\ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}	{}=&	\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_I = I}_{I}	\\
+	\ket{\nSLJfm{5sns}{3}{S}{1}{I}{I}}_{F}		{}=&	-\sqrt{\frac{I}{I+1}} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J} \ket{I, m_{I} = I}_{I}	\notag	\\
+												&		+\frac{1}{\sqrt{I+1}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_{I} = I-1}_{I}	\\
+	\ket{\nSLJfm{5sns}{3}{S}{1}{I-1}{I-1}}_{F}	{}=&	\sqrt{\frac{2 I - 1}{2 I - 1}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J} \ket{I, I}_{I}	\notag	\\
+												&		-\sqrt{\frac{2 I - 1}{I \pqty{2 I + 1}}} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J} \ket{I, I-1}_{I}	\notag	\\
+												&		+\frac{1}{\sqrt{I \pqty{2 I + 1}}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, I-2}_{I}
+\end{align}
+Applying $\hat{V}_{\text{hf}}$ to these states results with
+\begin{equation}
+	\hat{V}_{\text{hf}} \ket{\nSLJfm{5sns}{1}{S}{0}{I}{I}}_{F}	=	
+\end{equation}
+
+\begin{align}
+	\hat{V}_{\text{hf}} \ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}	&{}=	\frac{1}{2} A_{5s} I \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_I = I}_{I}	\notag	\\
+																	&{}=	\ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}
+\end{align}
+
+*****************************************
+
+*****************************************
+
+*****************************************
+
+
 For singly excited $\ket{\nSLJFM{n}{1}{S}{0}{F}{m_F}}_{F}$ and $\ket{\nSLJFM{n}{3}{S}{1}{F}{m_F}}_{F}$ states, the four basis states are
 \begin{align}
 	\ket{\nSLJFM{n}{1}{S}{0}{F=I}{m_F}}_{F}
