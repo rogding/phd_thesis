@@ -33,21 +33,21 @@ The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as 
 \end{figure}
 Mass-scaling the ionization energies of the bosonic isotopes suggests that the ionization energy for an assumed $I=0$ \Sr{87} atom should be approximately $\SI{45932.1946+-0.0005}{\per\cm}$, about $\SI{2.74}{\GHz}$ below the reported ionization energy.
 
-The source of this discrepancy is likely related to the hyperfine interaction in the ground state of \Srion{87}{+} since is has a rubidium-like structure with a single valence $s$ electron outside a filled {[Kr]} core.
+The source of this discrepancy is likely related to the hyperfine interaction in the ground state of \Srion{87}{+} since it has a rubidium-like structure with a single $s$ valence electron outside a filled {[Kr]} core.
 The hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
 \begin{equation}
 	\hat{V}_{\text{hf}}	=	A_{\text{hf}} \hat{\va{I}} \vdot \hat{\va{J}}
 						=	A_{\text{hf}} \hat{\va{I}} \vdot \hat{\va{S}}
 \end{equation}
 where $\va{J} = \va{L} + \va{S}$ and $A_{\text{hf}}$ is the strength of the magnetic dipole hyperfine interaction.
-Note that there are no higher order contributions (e.g., electric quadrupole) since the valence electron is in an $s$ state so only the contact interaction is non-zero \cite{Arimondo1977.RMP.49.31}.
+Note that there are no higher order contributions (e.g., electric quadrupole) since the valence electron is in an $s$-state so only the contact interaction is non-zero \cite{Arimondo1977.RMP.49.31}.
 Following the usual procedure by defining $\va{F} = \va{J} + \va{I}$, the energy shift can be evaluated as
 \begin{equation}
-	\ev*{\hat{V}_{\text{hf}}}	=	\frac{A_{\text{hf}}}{2} \ev*{\hat{\va{F}}^2 - \hat{\va{J}}^2 - \hat{\va{I}}^2}
-								=	\frac{A_{\text{hf}}}{2} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
+	\ev*{\hat{V}_{\text{hf}}}	=	\frac{1}{2} A_{\text{hf}} \ev*{\hat{\va{F}}^2 - \hat{\va{J}}^2 - \hat{\va{I}}^2}
+								=	\frac{1}{2} A_{\text{hf}} \bqty{F \pqty{F + 1} - J \pqty{J + 1} - I \pqty{I + 1}}
 \end{equation}
-In the ground state of \Srion{87}{+}, $S=s={1}/{2}$ and $I={9}/{2}$ meaning the the $\nSLJ{5s}{2}{S}{1/2}$ is split in to $F = 4$ and $F = 5$ components.
-Using $A_{\text{hf}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} determined $A_{\text{hf}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states are shifted by
+In the ground state of \Srion{87}{+}, $S=s={1}/{2}$ and $I={9}/{2}$ meaning the the $\nSLJ{5s}{2}{S}{1/2}$ is split in to {$F = 4$ and $5$} components.
+Using $A_{\text{hf}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaoshi1993.HI.78.241} determined $A_{\text{hf}}$ by measuring the splitting of the $\nSLJf{5s}{2}{S}{1/2}{4}$ and $\nSLJf{5s}{2}{S}{1/2}{5}$ ground state of \Srion{87}{+} in an ion trap. They measured the splitting to be $E_{F=4} - E_{F=5} = \SI{5002368.363(57)}{\kHz}$.} \cite{Sunaoshi1993.HI.78.241}, the $F=4$ and $F=5$ states in \Srion{87}{+} are shifted by
 \begin{equation}
 	\ev*{\hat{V}_{\text{hf}}}	=	\begin{cases}
 										-\frac{11}{4} A_{\text{hf}} = \SI{2.751302601+-0.000000030}{\GHz}	,{}&{}	F=4	\\
@@ -55,7 +55,7 @@ Using $A_{\text{hf}} = \SI{-1000473.673(11)}{\kHz}$\footnote{\citeauthor{Sunaosh
 									\end{cases}
 \end{equation}
 Notice that $\ev*{\hat{V}_{\text{hf}}\pqty*{F=4}} \approx \SI{2.75}{\GHz}$ nearly matches the $\SI{2.74}{\GHz}$ discrepancy between the reported ionization limit of \Sr{87} and the ionization limit determined by mass-scaling from the bosonic isotopes. 
-This seems reasonable since most of the earlier spectroscopic work on \Sr{87} primarily focused on the singlet Rydberg states of which converges to the upper $F = 4$ \cite{Beigang1982.PRA.25.1496} state of \Srion{87}{+}. 
+This seems reasonable since most of the earlier spectroscopic work on \Sr{87} primarily focused on the singlet Rydberg states which converges to the upper $F = 4$ state of \Srion{87}{+} \cite{Beigang1982.PRA.25.1496}. 
 
 % In the analysis below, we used $E_{\text{ion}}^{87} = \SI{45932.1956+-0.0007}{\per\cm}$ for the ionization limit instead of the slightly lower value $E_{\text{ion}}^{87} = \SI{45932.1943+-0.0010}{\per\cm}$ obtained by subtracting $\ev*{\hat{V}_{\text{hfs}}}_{F=4}$ from the reported \Sr{87} ionization limit in \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103}.
 % As described in \cite{Ding2018.PRA.98.042505}, it was found that the higher $E_{\text{ion}}^{87}$ resulted in the quantum defects of the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ states converging to a nearly constant value.
@@ -63,9 +63,11 @@ This seems reasonable since most of the earlier spectroscopic work on \Sr{87} pr
 \section{Publication: Spectroscopy of \Sr{87} Triplet Rydberg States}
 
 Below is a reproduction of our work, published in \cite{Ding2018.PRA.98.042505}, which was a combined experimental and theoretical study of $\nSLJ{5sns}{3}{S}{1}$ and $\nSLJ{5snd}{3}{D}{1,2,3}$ Rydberg states in \Sr{87}.
-The experimental work was undertaken at Rice University with theory collaborates at the Institute for Theoretical Physics, Vienna University of Technology. 
-R.D., J.D.W., and S.K.K. took the experimental data. R.D. compiled and analyzed the data. S.Y. developed the theoretical framework for \Sr{87} and performed the calculations. 
-The paper was written collaboratively between R.D., S.Y., and F.B.D. S.Y. wrote the theoretical section and performed extracted the quantum defects from the \Sr{87} data. R.D. wrote the experimental section and compiled the data tables. S.Y. and F.B.D. wrote the introduction, results, and conclusion sections.
+The experimental work was undertaken at Rice University with theory collaborates at the Vienna University of Technology. 
+R.D., J.D.W., and S.K.K. took the experimental data, R.D. compiled and analyzed the data, and S.Y. developed the theoretical framework for \Sr{87} and performed the calculations to extract the quantum defects from the experimental data. 
+The paper was written collaboratively between R.D., S.Y., and F.B.D. 
+S.Y. wrote the theoretical section, R.D. wrote the experimental section, and S.Y. and F.B.D. wrote the introduction, results, and conclusion sections.
+All three discussed the introduction, results, and conclusion.
 
 \begin{center}
 	Phys. Rev. A \textbf{98}, 042505 (2018)

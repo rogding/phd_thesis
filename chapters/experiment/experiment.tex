@@ -787,3 +787,26 @@ Performing a fit to the empirical model
 \end{equation}
 determines the constants $A = \num{44.0+-1.7}$ and $B = \num{-0.059+-0.005}$, allowing for correction of undercounting in the non-linear regime. 
 However, data are typically only recorded under conditions where teh departures from linearity are relatively small.
+
+\section{Absorption Imaging}
+
+Although the primary signals of interest are obtained from the charged-particle detection system, absorption imaging\footnote{Our primary absorption imaging camera is an Andor Luca-R DL-604M-OEM.} remains an important diagnostic tool for measuring the atom number and sample temperature.
+The absorption imaging process involves taking at least two images: an ``atom'' image and a ``background'' image. 
+\begin{description}
+	\item[``Atom'' image]	\hfill \\
+		The ``atom'' image is obtained by illuminating the cloud with a resonant pulse of $\SI{461}{\nm}$ light, typically about $\SI{10}{\us}$ in duration.
+		Since the light is resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition, the atoms scatter light out of the imaging beam and the resulting shadow is recorded on the camera. 
+	\item[``Background'' image]	\hfill \\
+		The ``background'' image is obtained with a pulse of $\SI{461}{\nm}$ identical in duration to the ``atom'' image. 
+		This image provides a reference intensity map of the imaging beam without atoms and is generally taken about $\SI{100}{\ms}$ after the ``atom'' image. 
+\end{description}
+Once the ``atom'' and ``background'' images are obtained, the log of their ratio can be related to the density of atoms at a particular pixel which integrated along the imaging beam path (this is generally referred to as a ``column'' density). 
+The sample temperature can be extracted by performing a ``time-of-flight'' measurement by introducing a delay between releasing the atoms from the trap and the imaging pulses \cite{Yavin2002.AJP.70.149}.
+In general, absorption imaging is done with an imaging beam that is far below the saturation intensity of the atomic transition ($s \ll 1$) but it is possible to perform absorption imaging at high intensities \cite{Reinaudi2007.OL.32.3143, Hueck2017.OE.25.8670}. 
+Some additional details of the absorption imaging process is given in \cite{Ding2016.MS} and the references therein.
+
+For ultracold gases of strontium, it's particularly important to note that the (on-resonance) absorption cross-section for \Sr{87} ($\sigma^{87}_{0}$) is different from the bosonic isotopes ($\sigma^{88}_{0}$).
+For the bosons, the Clebsch-Gordan factor for the $\nSLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ is unity so the absorption cross-section is insensitive to laser polarization.
+This is different in \Sr{87} due to hyperfine structure where different imaging beam polarizations have different coupling strengths to the upper {$\nSLJf{5s5p}{1}{P}{1}{{7}/{2}}$, ${9}/{2}$, and ${11}/{2}$} states. 
+Not only does this make absorption imaging \Sr{87} sensitive to the initial population of the various $\nSLJfM{5s^2}{1}{S}{0}{{9}/{2}}{m_F}$ substates, the $\tau = \SI{5}{\ns}$ lifetime of the $\nSLJ{5s5p}{1}{P}{1}$ state can also lead to optical pumping effects which redistributes the $m_F$ populations for an imaging pulse of a few microseconds in duration.
+Calculations using both a rate equation model and the full optical Bloch equations are presented in \cite{Mickelson2010.PhD, Barker2016.PhD} and show that, for a linearly polarized imaging beam, ${\sigma^{87}_{0}\pqty{t_{\text{imaging}} \to \infty}}/{\sigma^{88}_{0}} \to \num{0.59}$ for both spin-polarized and unpolarized samples of \Sr{87}.
