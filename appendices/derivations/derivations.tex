@@ -217,8 +217,36 @@ Optical trapping occurs when there is a spatially varying intensity $I\qty(r)$.
 \section{Hyperfine Mixing Matrix Elements}
 \label{sec:hyperfine_mixing_derivation}
 
-This section contains an extended derivation of the hyperfine mixing presented in xxx. 
-The derivation presented below was originally done by Shuhei Yoshida.
+
+\subsection{Calculating the Effect of $\hat{V}_{\text{hf}}$}
+This section contains an extended derivation of the hyperfine mixing outlined in \cref{sec:fermion_additional_materials} and was originally presented by Shuhei Yoshida for calculating the hyperfine shifts in the Rydberg states of \Sr{87}.
+We begin by constructing the spin ($\va{S}$) and orbital ($\va{L}$) wave functions which couple to produce the $\va{J} = \va{L} + \va{S}$ states. 
+The spin wave function ($\ket*{S,m_S}_{S}$) for a two-electron system can be written as
+\begin{align}
+	\ket{0,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
+	\ket{1,1}_{S}	&{}={}	\ket{\uparrow ; \uparrow}															\\
+	\ket{1,0}_{S}	&{}={}	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
+	\ket{1,-1}_{S}	&{}={}	\ket{\downarrow ; \downarrow}
+\end{align}
+which are the usual singlet and triplet states.
+Considering a singly-excited Rydberg state with the ``inner'' electron in the $\ket*{ms}$ state and the ``outer'' electron in the $\ket*{nl}$  state, their combined orbital wave function can be written as
+\begin{equation}
+	\ket{L, m_{L}}_{L}^{\pm}	=	\frac{1}{\sqrt{2}} \pqty{\ket{ms ; nl} + \ket{nl ; ms}}
+\end{equation}
+with the superscript indicating the symmetry of state. 
+Combining these wave functions gives
+\begin{align}
+	\ket{\nSLJ{msnl}{1}{L}{J}}	&{}={}	\frac{1}{\sqrt{2}} \ket{L, m_{L}}_{L}^{+} \ket{0,0}_{S}
+\end{align}
+
+
+
+
+*********************************
+
+*********************************
+
+*********************************
 
 From xxxxx, we can approximate the hyperfine interaction of singly-excited Rydberg states (where the inner electron is in the $5s$ state) as
 \begin{equation}
