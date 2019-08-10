@@ -142,100 +142,35 @@ Note that $\hat{V}_{\text{hf}}$ leaves the total angular momentum $m_F$ unchange
 
 \subsection{Singly Excited $\SLJ{}{S}{}$ State Hyperfine Mixing Matrix}
 
+**** NEED TO DOUBLE CHECK (2019/08/09) ****
+
 The matrix elements for hyperfine mixing of the $\nSLJ{5sns}{1}{S}{0}$ and the $\nSLJ{5sns}{3}{S}{1}$ are not too difficult to work out and the derivation below is based on the one presented by Shuhei Yoshida.
-For a two-electron system with the ``inner'' electron in the $\ket*{5s}$ state and the ``outer'' electron in the $\ket*{ns}$  state, their combined orbital wave function $\ket*{L, m_{L}}_{L}$ can be written as
-\begin{align}
-	\ket{0,0}_{L}^{+}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} + \ket{ns ; 5s}}	\\
-	\ket{0,0}_{L}^{-}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}}
-\end{align}
-For the spin wave function $\ket*{S, m_{S}}_{S}$, the two electron spins can combine to form either singlet or triplet states (e.g., see \cite{Sakurai2010})
-\begin{align}
-	\ket{0,0}_{S}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
-	\ket{1,1}_{S}	&{}=	\ket{\uparrow;\uparrow}																\\
-	\ket{1,0}_{S}	&{}=	\frac{1}{\sqrt{2}} \pqty{\ket{\uparrow ; \downarrow} + \ket{\downarrow ; \uparrow}}	\\
-	\ket{1,-1}_{S}	&{}=	\ket{\downarrow ; \downarrow}
-\end{align}
-The orbital ($\va{L}$) and spin ($\va{S}$) wave functions can be combined in the $\va{J} = \va{L} + \va{S}$ basis.
-These can be identified with the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg states as
-\begin{align}
-	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	&{}=	\ket{0,0}_{L}^{+} \ket{0,0}_{S}	=	\frac{1}{2} \pqty{\ket{5s ; ns} + \ket{ns ; 5s}} \pqty{\ket{\uparrow ; \downarrow} - \ket{\downarrow ; \uparrow}}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,1}_{S}	=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \ket{\uparrow;\uparrow}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,0}_{S}	=	\frac{1}{2} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \pqty{\ket{\uparrow ; \downarrow} + \ket{\downarrow ; \uparrow}}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	&{}=	\ket{0,0}_{L}^{-} \ket{1,-1}_{S}	=	\frac{1}{\sqrt{2}} \pqty{\ket{5s ; ns} - \ket{ns ; 5s}} \ket{\downarrow;\downarrow}
-\end{align}
-We can now deduce the effects of $\hat{s}_{\text{inner},+}$, $\hat{s}_{\text{inner},-}$, and $\hat{s}_{\text{inner},z}$ on the four states above\footnote{The easiest way to see this is to expand the product states and then apply the ladder operator.}
-\begin{align}
-	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	-\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}												\\
-	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}												\\
-	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}														\\
-	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	0																									\\
-	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	-\frac{1}{\sqrt{2}} \pqty{\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} - \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}}	\\
-	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}														\\
-	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J}												\\
-	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{\sqrt{2}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}												\\
-	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}	=	\frac{1}{2} \ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J}														\\
-	& \hat{s}_{\text{inner},+}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	\frac{1}{\sqrt{2}} \pqty{\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} + \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J}}	\\
-	& \hat{s}_{\text{inner},-}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	0																									\\
-	& \hat{s}_{\text{inner},z}\ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}	=	-\frac{1}{2} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J}
-\end{align}
-The ladder operators on the nuclear spin state $\ket*{I, m_I}_{I}$ gives the usual 
-\begin{align}
-	& \hat{I}_{+} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I+1\right)} \ket{I,m_I+1}	\\
-	& \hat{I}_{-} \ket{I,m_I}	=	\sqrt{I\left(I+1\right) - m_I \left(m_I-1\right)} \ket{I,m_I-1}	\\
-	& \hat{I}_{z} \ket{I,m_I}	=	m_I \ket{I,m_I}
-\end{align}
-
-The hyperfine states $\ket*{F, m_F}_{F}$ can be expanded in terms of the uncoupled $\ket*{J, m_J}_{J}$ and $\ket*{I, m_I}_{I}$ states using Clebsch-Gordan coefficients
-\begin{align}
-	\ket{\nSLJfM{5sns}{1}{S}{0}{I}{m_F}}_{F}	{}&=	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} \ket{I,m_{I} = m_{F}}_{I}	\\
-	\ket{\nSLJfM{5sns}{3}{S}{1}{I+1}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I+1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
-												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I+1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I} \\
-	\ket{\nSLJfM{5sns}{3}{S}{1}{I}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
-												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I} \\
-	\ket{\nSLJfM{5sns}{3}{S}{1}{I-1}{m_F}}_{F}	{}&=	\sum_{m_J} \sum_{m_I} \CG{1,m_J}{I,m_I}{I-1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I}}_{I}	\notag	\\
-												{}&=	\sum_{m_J} \CG{1,m_J}{I,m_F-m_J}{I-1,m_F} \ket{\nSLJM{5sns}{3}{S}{1}{m_J}}_{J}	\ket{I, m_{I} = m_{F} - m_{J}}_{I}
-\end{align}
-with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
-Since $\hat{V}_{\text{hf}}$ has rotational symmetry, the results should not depend on the particular $m_F = m_J + m_I$.
-For simplicity, we evaluate the case $m_F = F$ which leads to
-\begin{align}
-	\ket{\nSLJfm{5sns}{1}{S}{0}{I}{I}}_{F}		{}=&	\ket{\nSLJm{5sns}{1}{S}{0}{0}}_{J} \ket{I,m_{I} = I}_{I}	\\
-	\ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}	{}=&	\ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_I = I}_{I}	\\
-	\ket{\nSLJfm{5sns}{3}{S}{1}{I}{I}}_{F}		{}=&	-\sqrt{\frac{I}{I+1}} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J} \ket{I, m_{I} = I}_{I}	\notag	\\
-												&		+\frac{1}{\sqrt{I+1}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_{I} = I-1}_{I}	\\
-	\ket{\nSLJfm{5sns}{3}{S}{1}{I-1}{I-1}}_{F}	{}=&	\sqrt{\frac{2 I - 1}{2 I - 1}} \ket{\nSLJm{5sns}{3}{S}{1}{-1}}_{J} \ket{I, I}_{I}	\notag	\\
-												&		-\sqrt{\frac{2 I - 1}{I \pqty{2 I + 1}}} \ket{\nSLJm{5sns}{3}{S}{1}{0}}_{J} \ket{I, I-1}_{I}	\notag	\\
-												&		+\frac{1}{\sqrt{I \pqty{2 I + 1}}} \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, I-2}_{I}
-\end{align}
-Applying $\hat{V}_{\text{hf}}$ to these states results with
+For the singly excited $\SLJ{}{S}{}$ states, the four basis states are $\ket*{\nSLJf{5sns}{3}{S}{1}{I-1}}$, $\ket*{\nSLJf{5sns}{1}{S}{0}{I}}$, $\ket*{\nSLJf{5sns}{3}{S}{1}{I}}$, and $\ket*{\nSLJf{5sns}{3}{S}{1}{I+1}}$.
+From \cref{eq:Vhf_expanded}, it can be seen that $\hat{V}_{\text{hf}}$ does not change $m_F$ and only couples states with the same $m_F$.
+It can be shown that $\hat{V}_{\text{hf}}$ has the following effect on the states (the case of $m_F = F$ was evaluated for simplicity)
 \begin{equation}
-	\hat{V}_{\text{hf}} \ket{\nSLJfm{5sns}{1}{S}{0}{I}{I}}_{F}	=	
+	\hat{V}_{\text{hf}}	\ket{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} A_{5s} \pqty{I + 1} \ket{\nSLJf{5sns}{3}{S}{1}{I-1}}
 \end{equation}
-
-\begin{align}
-	\hat{V}_{\text{hf}} \ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}	&{}=	\frac{1}{2} A_{5s} I \ket{\nSLJm{5sns}{3}{S}{1}{1}}_{J} \ket{I, m_I = I}_{I}	\notag	\\
-																	&{}=	\ket{\nSLJfm{5sns}{3}{S}{1}{I+1}{I+1}}_{F}
-\end{align}
-
-
-
-********************************
-
-********************************
-
-********************************
-
-Therefore the total hyperfine interactionHamiltonian can be written as
 \begin{equation}
-	\hat{V}_{\text{hf}}	=	\frac{1}{2} a_{5s}
+	\hat{V}_{\text{hf}}	\ket{\nSLJf{5sns}{1}{S}{0}{I}}	=	\frac{1}{2} A_{5s} \sqrt{I \pqty{I + 1}} \hat{V}_{\text{hf}} \ket{\nSLJf{5sns}{3}{S}{1}{{9}/{2}}}
+\end{equation}
+\begin{equation}
+	\hat{V}_{\text{hf}}	\ket{\nSLJf{5sns}{3}{S}{1}{I}}	=	\frac{1}{2} A_{5s} \pqty{\sqrt{I}\pqty{I + 1} \ket{\nSLJf{5sns}{1}{S}{0}{I}} - \ket{\nSLJf{5sns}{3}{S}{1}{I}}}
+\end{equation}
+\begin{equation}
+	\hat{V}_{\text{hf}}	\ket{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} A_{5s} I \ket{\nSLJf{5sns}{3}{S}{1}{I+1}}
+\end{equation}
+Therefore the total hyperfine interaction Hamiltonian can be written as
+\begin{equation}
+	\hat{V}_{\text{hf}}	=	\frac{1}{2} A_{5s}
 							\begin{pmatrix}
-								0	&	0							&	0							&	0	\\ 
-								0	&	0							&	\sqrt{I\left(I+1\right)}	&	0	\\ 
-								0	&	\sqrt{I\left(I+1\right)}	&	-1							&	0	\\ 
-								0	&	0							&	0							&	0
+								-\pqty{I+1}	&	0							&	0							&	0	\\ 
+								0			&	0							&	\sqrt{I\left(I+1\right)}	&	0	\\ 
+								0			&	\sqrt{I\left(I+1\right)}	&	-1							&	0	\\ 
+								0			&	0							&	0							&	I
 							\end{pmatrix}
 \end{equation}
-It's clear that, for \Sr{87}, only the states with $F = I = {9}/{2}$ are mixed whereas the $F = I + 1 = {11}/{2}$ and $F = I - 1 = {7}/{2}$ states are left unperturbed. 
+
 
 \subsection{Singly Excited $\SLJ{}{D}{}$ State Hyperfine Mixing Matrix}
 
@@ -245,94 +180,97 @@ Coupling to the $2 I + 1 = 2{9}/{2} = 10$ nuclear spin states in \Sr{87} results
 This is even before including mixing between the various $\SLJ{}{D}{}$ states \cite{Esherick1977.PRA.15.1920, Beigang1982.JPB.15.L201, Sun1989.JPB.22.2887}.
 Therefore, the reader is referred to \cite{Sun1989.JPB.22.2887} which provides a summary of calculating $\hat{V}_{\text{hf}}$ for the singly excited $\SLJ{}{D}{}$ states and \cite{Lurio1962.PR.126.1758} which provides analytical matrix elements of $\hat{V}_{\text{hf}}$ for two electrons in an $sl$ configuration.
 
-\subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
-
-*********** Following the method outlined in \cite{Beigang1983.PRL.51.771}
-
-At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:deltaE,fig:n-scaling}. 
-Hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
-
-The derivation above can be extended to incorporate $n$-mixing. 
-Using the fact that $\hat{V}_\text{hf}$ only couples states with the same $F$ and the orthogonality of the radial wave functions for states of same spin multiplet but different $n$, the diagonal matrix elements of $\hat{V}_\text{hf}$ for $\nSLJf{5sns}{3}{S}{1}{I+1}$ and $\nSLJf{5sns}{3}{S}{1}{I-1}$ can be written as
-\begin{equation}
-	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \delta_{n,n^{\prime}}
-\end{equation}
-\begin{equation}
-	\mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \delta_{n,n^{\prime}}
-\end{equation}
-The off-diagonal elements vanish between these states because they remain uncoupled.
+% \subsection{Semiclassical Evaluation of Radial Wave Functions Overlap Integral ($O_{n,n'}$)}
 
 
-****** I don't think I can do this ``expansion''... I think I want to just calculate matrix elements between n and n' states ******
-On the other hand, because $\hat{V}_\text{hf}$ mixes the $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ states, we can write
-\begin{align}
-	\ket{\nSLJf{5sns}{1}{S}{0}{I}}	{}={}&	\ket{\nSLJf{n}{1}{S}{0}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{3}{S}{1}{I}}}	\\
-	\ket{\nSLJf{5sns}{3}{S}{1}{I}}	{}={}&	\ket{\nSLJf{n}{3}{S}{1}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{1}{S}{0}{I}}}
-\end{align}
-where $\nSLJf{n}{1}{S}{0}{I}$ and $\nSLJf{n}{3}{S}{1}{I}$ represent pure singly-excited singlet and triplet $F=I$ states (recalling that the radial wave functions are orthogonal for $n \neq n^{\prime}$ for states in the same spin multiplet).
-Calculating the matrix elements of $\hat{V}_\text{hf}$ between $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ gives
-\begin{equation}
-	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{1}{S}{0}{I}}	=	0
-\end{equation}
-\begin{equation}
-	\mel{\nSLJf{5s{n^\prime}s}{3}{S}{1}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s} \delta_{n,n^{\prime}}
-\end{equation}
-The off-diagonal elements can be expressed as
-\begin{align}
-	\mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}
-		{}={}&	-\frac{1}{2} a_{5s} (stuff to finish deriving)	\notag	\\
-		{}={}&	-\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} O_{n,n^{\prime}}
-\end{align}
-where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial wave functions which can be estimated semiclassically \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
-\begin{equation}
-	O_{n_{1},n_{2}}
-		=	\braket{n_{1}^{*}}{n_{2}^{*}}
-		=	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
-\end{equation}
+% *********************
 
-\begin{figure}[htbp]
-	\centering
-	\includesvg[keepaspectratio, width=5in, height=\textheight]{fermion_spectroscopy/calculations/s-states/semiclassical_overlap.svg}
-	\caption{
-		\label{fig:semiclassical_overlap}
-		** FIX FIGURE Y-AXIS LABELS **.
-		Semiclassical estimation of the radial wave function overlap \cite{Bhatti1981.PRA.24.161} between $\nSLJ{n}{1}{S}{0}$ and $\nSLJ{n^{\prime}}{3}{S}{1}$ states ($O_{n,n^{\prime}}$) for $n^{\prime}=n, n+1, n+2$.}
-\end{figure}
+% *********** Following the method outlined in \cite{Beigang1983.PRL.51.771}
 
-Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
-\begin{equation}
-	O_{n_{1},n_{1}+1}
-		=	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
-		=	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
-\end{equation}
-Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
-Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
+% At higher $n$, the hyperfine shift becomes comparable to the splitting between $n$ and $n^{\prime} = n \pm 1$ as seen in \cref{fig:deltaE,fig:n-scaling}. 
+% Hyperfine-induced $n$-mixing was experimentally observed around $n = \num{113}$ between the $\nSLJf{5sns}{1}{S}{0}{9/2}$ and $\nSLJf{5s\qty(n+1)s}{3}{S}{1}{9/2}$ states \cite{Beigang1983.PRL.51.771}.
 
-As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \approx \num{0.1}$ and quickly drops off for larger $\Delta n$. 
+% The derivation above can be extended to incorporate $n$-mixing. 
+% Using the fact that $\hat{V}_\text{hf}$ only couples states with the same $F$ and the orthogonality of the radial wave functions for states of same spin multiplet but different $n$, the diagonal matrix elements of $\hat{V}_\text{hf}$ for $\nSLJf{5sns}{3}{S}{1}{I+1}$ and $\nSLJf{5sns}{3}{S}{1}{I-1}$ can be written as
+% \begin{equation}
+	% \mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I+1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \delta_{n,n^{\prime}}
+% \end{equation}
+% \begin{equation}
+	% \mel{\nSLJf{5sn^{\prime}s}{3}{S}{1}{I-1}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \delta_{n,n^{\prime}}
+% \end{equation}
+% The off-diagonal elements vanish between these states because they remain uncoupled.
 
-************************
-\begin{align}
-	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
-		&{}={}	\qty(\bra{n^{*}_{\SLJ{1}{S}{0}}}\bra{\SLJ{1}{S}{0}}) \hat{V}_\text{hf} \qty(\ket{\SLJ{3}{S}{1}}\ket{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}})	\\
-		&{}={}	\braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \bra{\SLJ{1}{S}{0}}\hat{V}_\text{hf}\ket{\SLJ{3}{S}{1}}
-\end{align}
 
-\begin{align}
-	\mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
-		{}={}	&	\bra{\nSLJ{n}{1}{S}{0}} \qty[\hat{V}_\text{hf} \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
-		{}\neq{}&	\frac{1}{2} a_{5s} \bra{\nSLJ{n}{1}{S}{0}} \qty[\sqrt{I \qty(I+1)} \ket{\nSLJ{n+1}{1}{S}{0}} - \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
-		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{1}{S}{0}}	\notag	\\
-				&	- \frac{1}{2} a_{5s} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{3}{S}{1}}	\\
-		{}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{1}{S}{0}}} \braket{\SLJ{1}{S}{0}}{\SLJ{1}{S}{0}}		\notag	\\
-				&	- \frac{1}{2} a_{5s} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \braket{\SLJ{1}{S}{0}}{\SLJ{3}{S}{1}}	\\
-		{}={}	&	0
-\end{align}
+% ****** I don't think I can do this ``expansion''... I think I want to just calculate matrix elements between n and n' states ******
+% On the other hand, because $\hat{V}_\text{hf}$ mixes the $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ states, we can write
+% \begin{align}
+	% \ket{\nSLJf{5sns}{1}{S}{0}{I}}	{}={}&	\ket{\nSLJf{n}{1}{S}{0}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{3}{S}{1}{I}}}	\\
+	% \ket{\nSLJf{5sns}{3}{S}{1}{I}}	{}={}&	\ket{\nSLJf{n}{3}{S}{1}{I}} + \sum_{n^{\prime}}{\ket{\nSLJf{n^{\prime}}{1}{S}{0}{I}}}
+% \end{align}
+% where $\nSLJf{n}{1}{S}{0}{I}$ and $\nSLJf{n}{3}{S}{1}{I}$ represent pure singly-excited singlet and triplet $F=I$ states (recalling that the radial wave functions are orthogonal for $n \neq n^{\prime}$ for states in the same spin multiplet).
+% Calculating the matrix elements of $\hat{V}_\text{hf}$ between $\nSLJf{5sns}{1}{S}{0}{I}$ and $\nSLJf{5sns}{3}{S}{1}{I}$ gives
+% \begin{equation}
+	% \mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{1}{S}{0}{I}}	=	0
+% \end{equation}
+% \begin{equation}
+	% \mel{\nSLJf{5s{n^\prime}s}{3}{S}{1}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s} \delta_{n,n^{\prime}}
+% \end{equation}
+% The off-diagonal elements can be expressed as
+% \begin{align}
+	% \mel{\nSLJf{5s{n^\prime}s}{1}{S}{0}{I}}{\hat{V}_\text{hf}}{\nSLJf{5sns}{3}{S}{1}{I}}
+		% {}={}&	-\frac{1}{2} a_{5s} (stuff to finish deriving)	\notag	\\
+		% {}={}&	-\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} O_{n,n^{\prime}}
+% \end{align}
+% where $O_{n,n^{\prime}}$ is the overlap between the singlet and triplet radial wave functions which can be estimated semiclassically \cite{Bhatti1981.PRA.24.161, Beigang1983.PRL.51.771}
+% \begin{equation}
+	% O_{n_{1},n_{2}}
+		% =	\braket{n_{1}^{*}}{n_{2}^{*}}
+		% =	\qty(-1)^{n_{2}-n_{1}} \frac{2 \sqrt{n_{1}^{*} n_{2}^{*}}}{n_{1}^{*} + n_{2}^{*}} \frac{\sin[\pi \qty(n_{2}^{*} - n_{1}^{*})]}{\pi \qty(n_{2}^{*} - n_{1}^{*})}
+% \end{equation}
 
-\begin{equation}
-	\bra{\nSLJ{n}{1}{S}{0}} \hat{V}_\text{hf} \qty(\sum_{n^\prime}\ket{\nSLJ{n^\prime}{3}{S}{1}})	=	...
-\end{equation}
+% \begin{figure}[htbp]
+	% \centering
+	% \includesvg[keepaspectratio, width=5in, height=\textheight]{fermion_spectroscopy/calculations/s-states/semiclassical_overlap.svg}
+	% \caption{
+		% \label{fig:semiclassical_overlap}
+		% ** FIX FIGURE Y-AXIS LABELS **.
+		% Semiclassical estimation of the radial wave function overlap \cite{Bhatti1981.PRA.24.161} between $\nSLJ{n}{1}{S}{0}$ and $\nSLJ{n^{\prime}}{3}{S}{1}$ states ($O_{n,n^{\prime}}$) for $n^{\prime}=n, n+1, n+2$.}
+% \end{figure}
 
-***********************
+% Between adjacent $n$ (i.e., for $n_{2} = n_{1} + 1$) and $\delta_{2} \neq \delta_{1}$, the approximation reduces to
+% \begin{equation}
+	% O_{n_{1},n_{1}+1}
+		% =	\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}}
+		% =	-\frac{2 \sqrt{n_{1}^{*} \qty(n_{1}+1)^{*}}}{n_{1}^{*} + \qty(n_{1}+1)^{*}} \frac{\sin[\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})]}{\pi \qty(\qty(n_{1}+1)^{*} - n_{1}^{*})}
+% \end{equation}
+% Since the $\nSLJf{5sns}{1}{S}{0}{9/2}$ state is always higher in energy than the $\nSLJf{5sns}{3}{S}{1}{9/2}$, they should cross when $n_{1}$ corresponds to the singlet state and $n_{2} = n_{1} + 1$ corresponds to the triplet state. 
+% Using the quantum defects from \cite{Vaillant2012.JPB.45.135004}, we expect $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.1}$ and $\braket{n_{1}^{*}}{\qty(n_{1}+1)^{*}} \approx \num{0.05}$ so we only include $n$ and $n+1$ mixing.
+
+% As see in \cref{fig:semiclassical_overlap}, the strongest $n$-mixing occurs for $\Delta n = \pm 1$ with $O_{n,n^{\prime}} \approx \num{0.1}$ and quickly drops off for larger $\Delta n$. 
+
+% ************************
+% \begin{align}
+	% \mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
+		% &{}={}	\qty(\bra{n^{*}_{\SLJ{1}{S}{0}}}\bra{\SLJ{1}{S}{0}}) \hat{V}_\text{hf} \qty(\ket{\SLJ{3}{S}{1}}\ket{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}})	\\
+		% &{}={}	\braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \bra{\SLJ{1}{S}{0}}\hat{V}_\text{hf}\ket{\SLJ{3}{S}{1}}
+% \end{align}
+
+% \begin{align}
+	% \mel{\nSLJ{n}{1}{S}{0}}{\hat{V}_\text{hf}}{\nSLJ{n+1}{3}{S}{1}}
+		% {}={}	&	\bra{\nSLJ{n}{1}{S}{0}} \qty[\hat{V}_\text{hf} \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
+		% {}\neq{}&	\frac{1}{2} a_{5s} \bra{\nSLJ{n}{1}{S}{0}} \qty[\sqrt{I \qty(I+1)} \ket{\nSLJ{n+1}{1}{S}{0}} - \ket{\nSLJ{n+1}{3}{S}{1}}]	\\
+		% {}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{1}{S}{0}}	\notag	\\
+				% &	- \frac{1}{2} a_{5s} \braket{\nSLJ{n}{1}{S}{0}}{\nSLJ{n+1}{3}{S}{1}}	\\
+		% {}={}	&	\frac{1}{2} a_{5s} \sqrt{I \qty(I+1)} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{1}{S}{0}}} \braket{\SLJ{1}{S}{0}}{\SLJ{1}{S}{0}}		\notag	\\
+				% &	- \frac{1}{2} a_{5s} \braket{n^{*}_{\SLJ{1}{S}{0}}}{\qty(n+1)^{*}_{\SLJ{3}{S}{1}}} \braket{\SLJ{1}{S}{0}}{\SLJ{3}{S}{1}}	\\
+		% {}={}	&	0
+% \end{align}
+
+% \begin{equation}
+	% \bra{\nSLJ{n}{1}{S}{0}} \hat{V}_\text{hf} \qty(\sum_{n^\prime}\ket{\nSLJ{n^\prime}{3}{S}{1}})	=	...
+% \end{equation}
+
+% ***********************
 
 \subsection{Calibration of the EXFO WA-1500 Wavemeter}
 
@@ -412,11 +350,9 @@ Comparing the quantum defects reported in \cite{Vaillant2012.JPB.45.135004, Jack
 	\end{tabular}
 \end{table}
 
-\Cref{fig:results-qd-1S0,fig:results-qd-3S1,fig:results-qd-1D2,fig:results-qd-3D1,fig:results-qd-3D2,fig:results-qd-3D3} expand on the data in \cref{fig:Rydberg-Ritz-S,fig:Rydberg-Ritz-D}, presenting a comparison of the quantum defects obtained from measurements in \Sr{88} with those extracted from the energies of the observed hyperfine states in the \Sr{87} data presented above.
-
+\Cref{fig:results-qd-1S0,fig:results-qd-3S1,fig:results-qd-1D2,fig:results-qd-3D1,fig:results-qd-3D2,fig:results-qd-3D3} expand on \cref{fig:Rydberg-Ritz-S,fig:Rydberg-Ritz-D}, presenting a comparison of the quantum defects obtained from measurements in \Sr{88} with those extracted from the energies of the observed hyperfine states in the \Sr{87} data presented above.
 The \Sr{88} quantum defects were extracted from the reported Rydberg energies using the Rydberg formula \cref{eq:ene0} with the most recently reported ionization limit $E^{\pqty*{0}}_{\text{ion}} = \SI{45932.20024+-0.00033}{\per\cm}$ \cite{Couturier2019.PRA.99.022503} and the mass-scaled Rydberg constant $R\pqty*{m_{88}} = \SI{109736.6308675+-0.0000007}{\per\cm}$ (see \cref{sec:rydberg_properties}).
 Quantum defects from the \Sr{87} data were obtained by first subtracting the calculated hyperfine energy shift to obtain an $I = 0$ Rydberg state energy, and then applying \cref{eq:ene0} with the Rydberg constant $R\pqty*{m_{88}} = \SI{109736.6230135+-0.0000007}{\per\cm}$ and ionization limit $E^{\pqty*{0}}_{\text{ion}} = \SI{45932.1956}{\per\cm}$ appropriate for \Sr{87}.
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_1S0.pgf}}
@@ -426,7 +362,6 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Esherick1977.PRA.15.1920, Beigang1982.OC.42.19, Dai1995.JQSRT.54.1019, Philip2007.OC.279.141}.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5sns_3S1.pgf}}
@@ -436,7 +371,6 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		For \Sr{88}, the quantum defects were calculated from the term energies reported in \cite{Beigang1982.PS.26.183, Kunze1993.ZPD.27.111, Jackson2018.PhD, Couturier2019.PRA.99.022503}.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_1D2.pgf}}
@@ -446,7 +380,6 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		For \Sr{88}, the quantum defects were calculated from the reported term energies.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D1.pgf}}
@@ -456,7 +389,6 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		For \Sr{88}, the quantum defects were calculated from the reported term energies.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D2.pgf}}
@@ -466,7 +398,6 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		For \Sr{88}, the quantum defects were calculated from the reported term energies.
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
-
 \begin{figure}[!htbp]
 	\centering
 	\resizebox{\textwidth}{!}{\inputpgf{chapters/fermion_spectroscopy/results/comparison/}{5snd_3D3.pgf}}
@@ -477,250 +408,241 @@ Quantum defects from the \Sr{87} data were obtained by first subtracting the cal
 		The quantum defects from the \Sr{87} data was extracted after removing the hyperfine shift.}
 \end{figure}
 
-\section{Conclusion}
 
-******************
+% \section{*** TEMPORARY ***}
 
-Although the hyperfine interaction complicates the Rydberg spectra of \Sr{87}, it does offer some interesting possibilities. 
-One possibility is to access Rydberg states with either attractive ($\nSLJ{5sns}{1}{S}{0}$) or repulsive ($\nSLJ{5sns}{3}{S}{1}$) $C_{6}$ coefficients \cite{Vaillant2012.JPB.45.135004} from the $\nSLJ{5s5p}{3}{P}{1}$ intermediate due to the hyperfine mixing. 
+% ******************
 
-******************
+% ******************
 
+% ******************
 
-\section{*** TEMPORARY ***}
+% ******************
 
-******************
+% ******************
 
-******************
+% ******************
 
-******************
-
-******************
-
-******************
-
-******************
-
-**** PROBABLY DELETE STUFF BELOW HERE ****
+% **** PROBABLY DELETE STUFF BELOW HERE ****
 
 
-\section{Hyperfine Rydberg States of \Sr{87}}
+% \section{Hyperfine Rydberg States of \Sr{87}}
 
-Accurate \textit{ab initio} theoretical descriptions of the Rydberg structure of multielectron atoms is currently challenging due to the interaction of the Rydberg electron with the ionic core. 
-This interplay may lead to different configurations (``channels'') of the Rydberg electron and the ionic core which share the same total energy, angular momentum, and parity \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001}.
-When the ionic states are not well-separated from the Rydberg states, multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the Rydberg states of these multielectron atoms which can describe the Rydberg state in terms of a few parameters \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
+% Accurate \textit{ab initio} theoretical descriptions of the Rydberg structure of multielectron atoms is currently challenging due to the interaction of the Rydberg electron with the ionic core. 
+% This interplay may lead to different configurations (``channels'') of the Rydberg electron and the ionic core which share the same total energy, angular momentum, and parity \cite{Gallagher1994.RydbergAtoms, Vaillant2014.JPB.47.155001}.
+% When the ionic states are not well-separated from the Rydberg states, multichannel quantum defect theory (MQDT) is the commonly used method for analyzing the Rydberg states of these multielectron atoms which can describe the Rydberg state in terms of a few parameters \cite{Gallagher1994.RydbergAtoms, Aymar1996.RMP.68.1015, Robicheaux2018.PRA.97.022508}\footnote{I think \cite{Cooke1985.PRA.32.2725}, referenced and followed by \cite{Gallagher1994.RydbergAtoms}, would probably be a good paper to work through as they provide an example calculation.}. 
 
-Focusing on two-electron systems (e.g., {\tsup{3}\text{He}}, {\tsup{9}\text{Be}}, {\tsup{25}\text{Mg}}, {\tsup{43}\text{Ca}}, \Sr{87}, {\tsup{135}\text{Ba}}, {\tsup{137}\text{Ba}}), we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423} and separate the total Hamiltonian for the system in to a part which does not depend on the nuclear spin ($\hat{H}_{0}^{I = 0}$) and the hyperfine interaction ($\hat{V}_{\text{hfs}}$) which does depend on the nuclear spin
-\begin{equation}
-	\hat{H}^{I \neq 0} = \hat{H}_{0}^{I = 0} + \hat{V}_{\text{hfs}}
-\end{equation}
-$\ev*{\hat{H}_{0}^{I = 0}}$ contains the effects up to the fine structure level. 
-The convenience of separating out the $\hat{H}_{0}^{I = 0}$ term becomes apparent because the eigenenergies (up to the fine structure level) can be obtained from the Rydberg-Ritz formula
-\begin{equation}
-	\label{eq:rydberg-ritz}
-	\ev*{\hat{H}_{0}^{I = 0}}	=	E_{\text{ion}} - \frac{R}{\pqty{n - \mu_{n,L,S,J}}^{2}}
-\end{equation}
-with the quantum defect given by \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004}\footnote{** There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440} **.}
-\begin{equation}
-	\mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}} + \cdots
-\end{equation}
-Therefore, we only need to evaluate $\ev*{\hat{V}_{\text{hfs}}}$ to obtain the hyperfine shifts.
+% Focusing on two-electron systems (e.g., {\tsup{3}\text{He}}, {\tsup{9}\text{Be}}, {\tsup{25}\text{Mg}}, {\tsup{43}\text{Ca}}, \Sr{87}, {\tsup{135}\text{Ba}}, {\tsup{137}\text{Ba}}), we follow the approach adopted in \cite{Beigang1982.PRA.25.1496, Beigang1983.PRL.51.771, Beigang1988.JOSAB.5.2423} and separate the total Hamiltonian for the system in to a part which does not depend on the nuclear spin ($\hat{H}_{0}^{I = 0}$) and the hyperfine interaction ($\hat{V}_{\text{hfs}}$) which does depend on the nuclear spin
+% \begin{equation}
+	% \hat{H}^{I \neq 0} = \hat{H}_{0}^{I = 0} + \hat{V}_{\text{hfs}}
+% \end{equation}
+% $\ev*{\hat{H}_{0}^{I = 0}}$ contains the effects up to the fine structure level. 
+% The convenience of separating out the $\hat{H}_{0}^{I = 0}$ term becomes apparent because the eigenenergies (up to the fine structure level) can be obtained from the Rydberg-Ritz formula
+% \begin{equation}
+	% \label{eq:rydberg-ritz}
+	% \ev*{\hat{H}_{0}^{I = 0}}	=	E_{\text{ion}} - \frac{R}{\pqty{n - \mu_{n,L,S,J}}^{2}}
+% \end{equation}
+% with the quantum defect given by \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004}\footnote{** There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440} **.}
+% \begin{equation}
+	% \mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}} + \cdots
+% \end{equation}
+% Therefore, we only need to evaluate $\ev*{\hat{V}_{\text{hfs}}}$ to obtain the hyperfine shifts.
 
-The hyperfine interaction can be expressed as \cite{Woodgate.Elementary, Sobelman.Atomic, Bransden.Atoms}
-\begin{equation}
-	\hat{V}_\text{hfs}	=	A \hat{\va{I}} \cdot \hat{\va{J}}
-						=	\sum_{i} A_{i} \hat{\va{I}} \cdot \hat{\va{j}}_{i}
-						=	\sum_{i} A_{i} \hat{\va{I}} \cdot \pqty{\hat{\va{l}}_{i} + \hat{\va{s}}_{i}}
-\end{equation}
-for electron $i \in \Bqty{1,2}$ with the (magnetic dipole) hyperfine constant $A$.
-Therefore the contribution of each electron to the total hyperfine shift is
-\begin{equation}
-	\ev*{\hat{V}_\text{hfs}}_{i}	=	A_{i} \ev*{\hat{\va{I}} \cdot \hat{\va{j}}_{i}}
-									=	\frac{A_{i}}{2} \bqty{f_{i} \pqty{f_{i} + 1} - I \pqty{I + 1} - j_{i} \pqty{j_{i} + 1}}
-\end{equation}
-We now consider a singly-excited Rydberg states where the ``inner'' electron in the $\ket{m s}$ state (i.e., an $s$ electron in the ground state of the ion) and the ``outer'' Rydberg electron in a $\ket{n \ell}$ state.
-*** I don't really like this sudden transition.... ***
-Recalling that the $\ev*{\hat{V}_\text{hfs}}_{i} \sim {1}/{n^{3}}$ ** \cite{Gudde1993.PRA.47.4725, Sobelman.Atomic, Bransden.Atoms} **, it follows that for high-$n$ Rydberg states, the $\ev*{\hat{V}_\text{hfs}}_{i}$ can be approximated as
-\begin{align}
-	\ev*{\hat{V}_\text{hfs}}_{\text{inner}}	&{}={}	A_{\text{inner}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{inner}}}	\\
-	\ev*{\hat{V}_\text{hfs}}_{\text{outer}}	&{}={}	A_{\text{outer}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{outer}}}	\approx	0
-\end{align}
-Since the ``outer'' electron does not significantly contribute to $\ev*{\hat{V}_\text{hfs}}$, it follows that $\ev*{\hat{V}_\text{hfs}} \simeq \ev*{\hat{V}_\text{hfs}}_{\text{inner}}$.
-Here, $A_{\text{inner}}$ is taken to be ** ? ** as the same value as $A$ in the $\nSLJ{5s}{2}{S}{1/2}$ state of \Srion{87}{+}.
+% The hyperfine interaction can be expressed as \cite{Woodgate.Elementary, Sobelman.Atomic, Bransden.Atoms}
+% \begin{equation}
+	% \hat{V}_\text{hfs}	=	A \hat{\va{I}} \cdot \hat{\va{J}}
+						% =	\sum_{i} A_{i} \hat{\va{I}} \cdot \hat{\va{j}}_{i}
+						% =	\sum_{i} A_{i} \hat{\va{I}} \cdot \pqty{\hat{\va{l}}_{i} + \hat{\va{s}}_{i}}
+% \end{equation}
+% for electron $i \in \Bqty{1,2}$ with the (magnetic dipole) hyperfine constant $A$.
+% Therefore the contribution of each electron to the total hyperfine shift is
+% \begin{equation}
+	% \ev*{\hat{V}_\text{hfs}}_{i}	=	A_{i} \ev*{\hat{\va{I}} \cdot \hat{\va{j}}_{i}}
+									% =	\frac{A_{i}}{2} \bqty{f_{i} \pqty{f_{i} + 1} - I \pqty{I + 1} - j_{i} \pqty{j_{i} + 1}}
+% \end{equation}
+% We now consider a singly-excited Rydberg states where the ``inner'' electron in the $\ket{m s}$ state (i.e., an $s$ electron in the ground state of the ion) and the ``outer'' Rydberg electron in a $\ket{n \ell}$ state.
+% *** I don't really like this sudden transition.... ***
+% Recalling that the $\ev*{\hat{V}_\text{hfs}}_{i} \sim {1}/{n^{3}}$ ** \cite{Gudde1993.PRA.47.4725, Sobelman.Atomic, Bransden.Atoms} **, it follows that for high-$n$ Rydberg states, the $\ev*{\hat{V}_\text{hfs}}_{i}$ can be approximated as
+% \begin{align}
+	% \ev*{\hat{V}_\text{hfs}}_{\text{inner}}	&{}={}	A_{\text{inner}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{inner}}}	\\
+	% \ev*{\hat{V}_\text{hfs}}_{\text{outer}}	&{}={}	A_{\text{outer}} \ev*{\hat{\va{I}} \cdot \hat{\va{s}}_{\text{outer}}}	\approx	0
+% \end{align}
+% Since the ``outer'' electron does not significantly contribute to $\ev*{\hat{V}_\text{hfs}}$, it follows that $\ev*{\hat{V}_\text{hfs}} \simeq \ev*{\hat{V}_\text{hfs}}_{\text{inner}}$.
+% Here, $A_{\text{inner}}$ is taken to be ** ? ** as the same value as $A$ in the $\nSLJ{5s}{2}{S}{1/2}$ state of \Srion{87}{+}.
 
-Combining the above results, we can write the expected energies of the hyperfine Rydberg levels of isotopes with $I \neq 0$ as a shift from the ``unperturbed'' levels in an isotope with $I = 0$.
+% Combining the above results, we can write the expected energies of the hyperfine Rydberg levels of isotopes with $I \neq 0$ as a shift from the ``unperturbed'' levels in an isotope with $I = 0$.
 
-*** I need to come up with a better derivation.... I went down a bit of a rabbit hole above... ***
+% *** I need to come up with a better derivation.... I went down a bit of a rabbit hole above... ***
 
-\subsection{Singly Excited $S$ states}
+% \subsection{Singly Excited $S$ states}
 
-The calculation for the hyperfine shifts of singly excited $S$ Rydberg states is not too difficult with most of the details worked out in \cref{sec:hyperfine_mixing_derivation}. 
-It can be shown that the four hyperfine basis states are $\ket{\SLJf{1}{S}{0}{I}}$, $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$.
-Using these basis states, we can evaluate the matrix elements of the hyperfine interaction and find that only the $F = I$ states interact with the matrix elements \cite{Beigang1982.PRA.25.1496}
-\begin{align}
-	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	0										\\
-	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
-	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
-	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	-\frac{a_{ms}}{2} 
-\end{align}
-Therefore, $\hat{H}^{I \neq 0}$ for the interacting $F = I$ states is
-\begin{equation}
-	\hat{H}^{I \neq 0}	=	\hat{H}^{I = 0} + \hat{V}_\text{hfs}
-						=	\begin{pmatrix}
-								E_{\SLJ{1}{S}{0}}	&	0					\\ 
-								0					&	E_{\SLJ{3}{S}{1}}
-							\end{pmatrix}
-						+	\frac{a_{ms}}{2}
-							\begin{pmatrix}
-								0					&	\sqrt{I \pqty{I+1}}	\\ 
-								\sqrt{I \pqty{I+1}}	&	-1
-							\end{pmatrix}
-\end{equation}
-As mentioned previously, $E_{\SLJ{1}{S}{0}}$ and $E_{\SLJ{3}{S}{1}}$ can be obtained from \cref{eq:rydberg-ritz} with the appropriate quantum defects for each series. 
-
-
-***************
-
-***************
-
-***************
+% The calculation for the hyperfine shifts of singly excited $S$ Rydberg states is not too difficult with most of the details worked out in \cref{sec:hyperfine_mixing_derivation}. 
+% It can be shown that the four hyperfine basis states are $\ket{\SLJf{1}{S}{0}{I}}$, $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$.
+% Using these basis states, we can evaluate the matrix elements of the hyperfine interaction and find that only the $F = I$ states interact with the matrix elements \cite{Beigang1982.PRA.25.1496}
+% \begin{align}
+	% \bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	0										\\
+	% \bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
+	% \bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{1}{S}{0}{I}}	&{}={}	\frac{a_{ms}}{2} \sqrt{I \pqty{I+1}}	\\
+	% \bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hfs} \ket{\SLJf{3}{S}{1}{I}}	&{}={}	-\frac{a_{ms}}{2} 
+% \end{align}
+% Therefore, $\hat{H}^{I \neq 0}$ for the interacting $F = I$ states is
+% \begin{equation}
+	% \hat{H}^{I \neq 0}	=	\hat{H}^{I = 0} + \hat{V}_\text{hfs}
+						% =	\begin{pmatrix}
+								% E_{\SLJ{1}{S}{0}}	&	0					\\ 
+								% 0					&	E_{\SLJ{3}{S}{1}}
+							% \end{pmatrix}
+						% +	\frac{a_{ms}}{2}
+							% \begin{pmatrix}
+								% 0					&	\sqrt{I \pqty{I+1}}	\\ 
+								% \sqrt{I \pqty{I+1}}	&	-1
+							% \end{pmatrix}
+% \end{equation}
+% As mentioned previously, $E_{\SLJ{1}{S}{0}}$ and $E_{\SLJ{3}{S}{1}}$ can be obtained from \cref{eq:rydberg-ritz} with the appropriate quantum defects for each series. 
 
 
-For singly excited Rydberg states $\ket{\nSLJM{5snl}{2S+1}{L}{J}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{5s}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm}=\frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}\right)$.
-Combining the orbital and spin wave functions for singlet and triplet states are
-\begin{align}
-	\ket{\nSLJM{msnl}{1}{L}{J}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
-											&{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
-	\ket{\nSLJM{msnl}{3}{L}{J}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
-											&{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
-\end{align}
-with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
+% ***************
+
+% ***************
+
+% ***************
+
+
+% For singly excited Rydberg states $\ket{\nSLJM{5snl}{2S+1}{L}{J}{m_J}}_{J}$ with the ``inner'' electron in the $\ket{5s}$ state and the Rydberg electron in the $\ket{nl}$ state, the symmetric ($+$) and antisymmetric ($-$) orbital wave functions can be written as $\ket{L,m_L}_{L\pm}=\frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}\pm\ket{nl;ms,m_L}\right)$.
+% Combining the orbital and spin wave functions for singlet and triplet states are
+% \begin{align}
+	% \ket{\nSLJM{msnl}{1}{L}{J}{m_J}}_{J}	&{}={}	\frac{1}{\sqrt{2}} \left(\ket{ms;nl,m_L}+\ket{nl;ms,m_L}\right) \ket{0,0}_{S}	\notag	\\
+											% &{}={}	\ket{L,m_L=m_J}_{L+} \ket{0,0}_{S}	\\
+	% \ket{\nSLJM{msnl}{3}{L}{J}{m_J}}_{J}	&{}={}	\sum_{m_L} \sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \frac{1}{\sqrt{2}}\left(\ket{ms;nl,m_L}-\ket{nl;ms,m_L}\right) \ket{1,m_S}_{S}	\notag	\\
+											% &{}={}	\sum_{m_S} \CG{L,m_L}{1,m_S}{J,m_J} \ket{L,m_L=m_J-m_S}_{L-} \ket{1,m_S}_{S}
+% \end{align}
+% with the Clebsch–Gordan coefficients defined as $\CG{J_1,M_1}{J_2,M_2}{J,M}=\braket{J_1,M_1;J_2,M_2}{J,M}$.
 
 
 
-***************
+% ***************
 
-For singly-excited $S$ Rydberg states in strontium with the `inner'' electron in the $\ket{5 s}$ state and the ``outer'' electron in the $\ket{n \ell}$ state, the singlet and triplet basis states can be written as
-\begin{align}
-	\ket{\nSLJm{5sns}{1}{S}{0}{0}}	&{}={}	\frac{1}{2} \pqty{\ket{5s}\ket{ns} + \ket{}} \pqty{\ket{} - \ket{}}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{1}}	&{}={}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{0}}	&{}={}	\\
-	\ket{\nSLJm{5sns}{3}{S}{1}{-1}}	&{}={}
-\end{align}
+% For singly-excited $S$ Rydberg states in strontium with the `inner'' electron in the $\ket{5 s}$ state and the ``outer'' electron in the $\ket{n \ell}$ state, the singlet and triplet basis states can be written as
+% \begin{align}
+	% \ket{\nSLJm{5sns}{1}{S}{0}{0}}	&{}={}	\frac{1}{2} \pqty{\ket{5s}\ket{ns} + \ket{}} \pqty{\ket{} - \ket{}}	\\
+	% \ket{\nSLJm{5sns}{3}{S}{1}{1}}	&{}={}	\\
+	% \ket{\nSLJm{5sns}{3}{S}{1}{0}}	&{}={}	\\
+	% \ket{\nSLJm{5sns}{3}{S}{1}{-1}}	&{}={}
+% \end{align}
 
 
-***************
+% ***************
 
-For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$ \cite{Gudde1993.PRA.47.4725}? ** and should be negligible for high-lying states. 
-We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
-Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
-\begin{equation}
-	\label{eq:V_hf}
-	\hat{V}_\text{hf} \simeq \frac{a_{ms}}{2} \left(\hat{s}_{\text{in},+} \hat{I}_{-} + \hat{s}_{\text{in},-} \hat{I}_{+} + 2\hat{s}_{\text{in},z} \hat{I}_{z}\right)
-\end{equation}
-with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
-Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
+% For singly-excited states, the hyperfine interaction of the ``outer'' electron with the core should scale as **$\sim 1/n^3$ \cite{Gudde1993.PRA.47.4725}? ** and should be negligible for high-lying states. 
+% We make the assumption that $\hat{V}_\text{hf} \simeq a_{ms} \hat{\bm{s}}_{\text{in}} \cdot \hat{\bm{I}}$ for singly-excited Rydberg states with inner electron $\ket{ms}$ and Rydberg electron $\ket{nl}$.
+% Expanding $\hat{\bm{s}}_\text{in}$ and $\hat{\bm{I}}$ in terms of ladder operators gives
+% \begin{equation}
+	% \label{eq:V_hf}
+	% \hat{V}_\text{hf} \simeq \frac{a_{ms}}{2} \left(\hat{s}_{\text{in},+} \hat{I}_{-} + \hat{s}_{\text{in},-} \hat{I}_{+} + 2\hat{s}_{\text{in},z} \hat{I}_{z}\right)
+% \end{equation}
+% with the usual ladder operators $\hat{J}_{\pm}=\hat{J}_{x} \pm \hat{J}_{y}$. 
+% Note that $\hat{V}_\text{hf}$ leaves the total spin $m_F$ unchanged, meaning it couples states of the same $m_F$. 
 
-For a singly-excited Rydberg state where the Rydberg electron is in the $\ket{n \ell}$ state while the inner electron remains in the $\ket{m s}$ state, the Hamiltonian can be approximated as
-\begin{equation}
-	\hat{H} = \pqty{\hat{H}_{0} + \hat{H}_{\text{fs}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
-\end{equation}
-where $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
-Making the assumption that the terms $\pqty{\cdots}$ are the same for all isotopes, then the remaining hyperfine shift is simply due to the contact interaction between the remaining $ms$ electron and the ion.
-This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ atom before incorporating isotope-specific hyperfine interactions.
-\begin{equation}
-	\hat{H}^{I \neq 0}	=	\hat{H}_{0}^{I = 0} \pqty{m_{I = 0}, m_{I \neq 0}} + \hat{V}_{\text{hfs}}
-\end{equation}
-where $\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$. $\hat{V}_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
+% For a singly-excited Rydberg state where the Rydberg electron is in the $\ket{n \ell}$ state while the inner electron remains in the $\ket{m s}$ state, the Hamiltonian can be approximated as
+% \begin{equation}
+	% \hat{H} = \pqty{\hat{H}_{0} + \hat{H}_{\text{fs}} + \zeta_{nl} \hat{\va{s}} \vdot \hat{\va{l}}} + a_{ms} \hat{\va{s}} \vdot \hat{\va{I}}
+% \end{equation}
+% where $\zeta_{nl}$ is the magnitude of the spin-orbit interaction (of the Rydberg electron), and $a_{ms}$ is the strength of the hyperfine interaction of the inner $s$ electron. 
+% Making the assumption that the terms $\pqty{\cdots}$ are the same for all isotopes, then the remaining hyperfine shift is simply due to the contact interaction between the remaining $ms$ electron and the ion.
+% This allows us to leverage the simpler spectroscopic data of the bosonic isotopes from which we can deduce the eigenstates and eigenenergies of an assumed $I = 0$ atom before incorporating isotope-specific hyperfine interactions.
+% \begin{equation}
+	% \hat{H}^{I \neq 0}	=	\hat{H}_{0}^{I = 0} \pqty{m_{I = 0}, m_{I \neq 0}} + \hat{V}_{\text{hfs}}
+% \end{equation}
+% where $\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}$ is the unperturbed Hamiltonian that yields the eigenstates and eigenenergies, for \Sr{88} but scaled by the reduced mass $m_{87} = \flatfrac{m_{e} M_{87}}{\pqty{m_{e} + M_{87}}}$. $\hat{V}_{\text{hfs}}$ is the hyperfine interaction, $m_{e}$ the electron mass and $M_{87}$ the mass of the \Srion{87}{+} ion.
 
-Focusing on strontium, corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
-Under this assumption, the energies of the \Sr{87} Rydberg states should be given by
-\begin{equation}
-	\ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}} + \ev*{\hat{V}_{\text{hfs}}}
-\end{equation}
-The values of $\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}$ are easily determined from the Rydberg-Ritz formula
-\begin{equation}
-	\label{eq:rydberg-ritz}
-	\ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}
-						=	E^{87}_{\text{ion}} - \frac{R^{87}_{\text{Sr}}}{\pqty{n - \mu_{n,L,S,J}}^{2}}
-\end{equation}
-with the quantum defect given by ** \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004} cite just Gallagher and Vaillant paper? **
-\begin{equation}
-	\mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}}
-\end{equation}
-** Use footnote? There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440}. **
+% Focusing on strontium, corrections beyond the elementary isotope shift, in particular, the mass polarization correction, was estimated from earlier data for helium Rydberg states \cite{Cok1979.PRA.19.1830, Cok1981.PRA.24.3283, vanderVeldt1990.PRA.41.4099} and are expected to be $\lesssim \SI{1}{\MHz}$ and are neglected.
+% Under this assumption, the energies of the \Sr{87} Rydberg states should be given by
+% \begin{equation}
+	% \ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}} + \ev*{\hat{V}_{\text{hfs}}}
+% \end{equation}
+% The values of $\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}$ are easily determined from the Rydberg-Ritz formula
+% \begin{equation}
+	% \label{eq:rydberg-ritz}
+	% \ev*{\hat{H}^{87}}	=	\ev*{\hat{H}_{0}^{88} \pqty{m_{88}, m_{87}}}
+						% =	E^{87}_{\text{ion}} - \frac{R^{87}_{\text{Sr}}}{\pqty{n - \mu_{n,L,S,J}}^{2}}
+% \end{equation}
+% with the quantum defect given by ** \cite{Gentile1990.PRA.42.440, Gallagher1994.RydbergAtoms, Vaillant2012.JPB.45.135004} cite just Gallagher and Vaillant paper? **
+% \begin{equation}
+	% \mu_{n,L,S,J}	=	\mu_{0} + \frac{\mu_{2}}{\pqty{n - \mu_{0}^{2}}^{2}} + \frac{\mu_{4}}{\pqty{n - \mu_{0}^{2}}^{4}}
+% \end{equation}
+% ** Use footnote? There's an interesting discussion on how the equation for quantum defect is supposed to be recursive with $n^{*} = n - \delta\pqty{n^{*}} = n - \delta_{0} - \delta_{2}/\pqty{n - \delta}^{2} - \delta_{4}/\pqty{n - \delta}^{4} - \cdots$ \cite{Drake1991.PRA.44.5448} vs. the power-series expansion presented in \cite{Gentile1990.PRA.42.440}. **
 
-An important consideration in determining when effects cannot be neglected is when the energy scales become comparable.
-For tstrontium, the energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
-As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
-*** MOVED FIGURE ***
-From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
-Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
+% An important consideration in determining when effects cannot be neglected is when the energy scales become comparable.
+% For tstrontium, the energy scale of the hyperfine interaction is given by $a_{5s}$ and, as $n$ increases this energy scale becomes comparable.
+% As seen in \cref{fig:n-scaling}, it first becomes comparable to the fine structure splitting, then the singlet-triplet splitting, then the Coulomb splitting.
+% *** MOVED FIGURE ***
+% From \cref{fig:n-scaling}, one would also expect hyperfine mixing to occur between $n \sim 10$ and $n \sim 20$ which was indeed observed \cite{Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Vaillant2014.JPB.47.155001}.
+% Hyperfine mixing was also observed between the $\nSLJ{5s19d}{1}{D}{2}$ and $\nSLJ{5s19d}{3}{D}{3}$ states \cite{Beigang1982.JPB.15.L201}.
 
-%\subsection{Singly Excited $S$ states}
+% %\subsection{Singly Excited $S$ states}
 
-In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
-A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
-** I need to actually do the derivation.... **
+% In the below, we follow the derivation outlined in \cite{Beigang1982.PRA.25.1496,Beigang1983.PRL.51.771}.
+% A more detailed derivation is provided in \cref{sec:hyperfine_mixing_derivation} where it is shown that $\hat{V}_\text{hf}$ only mixes states of the same $F$.
+% ** I need to actually do the derivation.... **
 
-Assuming there are no perturbing states, a reasonable assumption for $n \gtrsim 12$ for the both the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg series \cite{Vaillant2014.JPB.47.155001}, we start with the pure singly-excited singlet $\ket{\SLJf{1}{S}{0}{I}}$ and triplet $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$ hyperfine states.
-Applying $\hat{V}_\text{hf}$ to these basis states gives
-\begin{align}
-	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \ket{\SLJf{3}{S}{1}{I+1}}	\\
-	&	\hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)} \ket{\SLJf{3}{S}{1}{I}}	\\
-	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	\frac{1}{2} a_{5s} \qty(\sqrt{I\qty(I+1)} \ket{\SLJf{1}{S}{0}{I}} - \ket{\SLJf{3}{S}{1}{I}})	\\
-	&	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \ket{\SLJf{3}{S}{1}{I-1}}
-\end{align}
-From the above, it's apparent that the unmixed states have energy shifts
-\begin{equation}
-	\bra{\SLJf{3}{S}{1}{I+1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I			\approx	\SI{-2.25}{\GHz}
-\end{equation}
-\begin{equation}
-	\bra{\SLJf{3}{S}{1}{I-1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1)	\approx	\SI{2.75}{\GHz}
-\end{equation}
-The matrix elements of the mixed $F=I$ states are
-\begin{equation}
-	\bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	0
-\end{equation}
-\begin{equation}
-	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s}
-\end{equation}
-\begin{equation}
-	\bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)}
-\end{equation}
-Therefore $F=I$ submatrix of the block-diagonal $\hat{V}_\text{hf}$ matrix can be written as
-\begin{equation}
-	\hat{V}_\text{hf}	=	\frac{1}{2} a_{5s}
-							\begin{pmatrix}
-								0							& \sqrt{I\left(I+1\right)}	\\ 
-								\sqrt{I\left(I+1\right)}	& -1						\\ 
-							\end{pmatrix}
-\end{equation}
-Diagonalizing the total Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}_\text{hf}$ gives the eigenenergies
-\begin{equation}
-	E^{\pm}	=	\frac{E_{1}+E_{3}}{2} - \frac{1}{4} a_{5s} \pm \frac{1}{2} \sqrt{\qty(E_{1}-E_{3})^2 + a_{5s} \qty(E_{1}-E_{3}) + a_{5s}^{2} \qty(I + \frac{1}{2})^2}
-\end{equation}
-Taking the limit $a_{5s} \rightarrow 0$ (i.e., no hyperfine interaction), we observe $E^{+} \rightarrow E\qty(\SLJ{1}{S}{0})$ and $E^{-} \rightarrow E\qty(\SLJ{3}{S}{1})$ meaning $E^{+}$ corresponds to the energy of $\ket{\nSLJf{5sns}{1}{S}{0}{9/2}}$ and $E^{+}$ corresponds to energy of $\ket{\nSLJf{5sns}{3}{S}{1}{9/2}}$.
+% Assuming there are no perturbing states, a reasonable assumption for $n \gtrsim 12$ for the both the $\nSLJ{5sns}{1}{S}{0}$ and $\nSLJ{5sns}{3}{S}{1}$ Rydberg series \cite{Vaillant2014.JPB.47.155001}, we start with the pure singly-excited singlet $\ket{\SLJf{1}{S}{0}{I}}$ and triplet $\ket{\SLJf{3}{S}{1}{I+1}}$, $\ket{\SLJf{3}{S}{1}{I}}$, and $\ket{\SLJf{3}{S}{1}{I-1}}$ hyperfine states.
+% Applying $\hat{V}_\text{hf}$ to these basis states gives
+% \begin{align}
+	% &	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I \ket{\SLJf{3}{S}{1}{I+1}}	\\
+	% &	\hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)} \ket{\SLJf{3}{S}{1}{I}}	\\
+	% &	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	\frac{1}{2} a_{5s} \qty(\sqrt{I\qty(I+1)} \ket{\SLJf{1}{S}{0}{I}} - \ket{\SLJf{3}{S}{1}{I}})	\\
+	% &	\hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1) \ket{\SLJf{3}{S}{1}{I-1}}
+% \end{align}
+% From the above, it's apparent that the unmixed states have energy shifts
+% \begin{equation}
+	% \bra{\SLJf{3}{S}{1}{I+1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I+1}}	=	\frac{1}{2} a_{5s} I			\approx	\SI{-2.25}{\GHz}
+% \end{equation}
+% \begin{equation}
+	% \bra{\SLJf{3}{S}{1}{I-1}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I-1}}	=	-\frac{1}{2} a_{5s} \qty(I+1)	\approx	\SI{2.75}{\GHz}
+% \end{equation}
+% The matrix elements of the mixed $F=I$ states are
+% \begin{equation}
+	% \bra{\SLJf{1}{S}{0}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	0
+% \end{equation}
+% \begin{equation}
+	% \bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{3}{S}{1}{I}}	=	-\frac{1}{2} a_{5s}
+% \end{equation}
+% \begin{equation}
+	% \bra{\SLJf{3}{S}{1}{I}} \hat{V}_\text{hf} \ket{\SLJf{1}{S}{0}{I}}	=	\frac{1}{2} a_{5s} \sqrt{I\qty(I+1)}
+% \end{equation}
+% Therefore $F=I$ submatrix of the block-diagonal $\hat{V}_\text{hf}$ matrix can be written as
+% \begin{equation}
+	% \hat{V}_\text{hf}	=	\frac{1}{2} a_{5s}
+							% \begin{pmatrix}
+								% 0							& \sqrt{I\left(I+1\right)}	\\ 
+								% \sqrt{I\left(I+1\right)}	& -1						\\ 
+							% \end{pmatrix}
+% \end{equation}
+% Diagonalizing the total Hamiltonian $\hat{H} = \hat{H}_0 + \hat{V}_\text{hf}$ gives the eigenenergies
+% \begin{equation}
+	% E^{\pm}	=	\frac{E_{1}+E_{3}}{2} - \frac{1}{4} a_{5s} \pm \frac{1}{2} \sqrt{\qty(E_{1}-E_{3})^2 + a_{5s} \qty(E_{1}-E_{3}) + a_{5s}^{2} \qty(I + \frac{1}{2})^2}
+% \end{equation}
+% Taking the limit $a_{5s} \rightarrow 0$ (i.e., no hyperfine interaction), we observe $E^{+} \rightarrow E\qty(\SLJ{1}{S}{0})$ and $E^{-} \rightarrow E\qty(\SLJ{3}{S}{1})$ meaning $E^{+}$ corresponds to the energy of $\ket{\nSLJf{5sns}{1}{S}{0}{9/2}}$ and $E^{+}$ corresponds to energy of $\ket{\nSLJf{5sns}{3}{S}{1}{9/2}}$.
 
-\subsection{Singly Excited $D$ states}
+% \subsection{Singly Excited $D$ states}
 
-Even before including hyperfine interactions, the spin-orbit interactions leads to a breakdown of $LS$ coupling and mixes the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states and is especially strong around $n = \num{15}$ where they swap singlet and triplet character \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Gudde1993.PRA.47.4725, Vaillant2014.JPB.47.155001}.
-To account for this mixing, the eigenstates $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{2}$ of the $H_{0}\qty(88, m_{87})$ are expanded as
-\begin{align}
-	\ket{\nSLJ{5sns}{1}{D}{2}}	&{}={}	\cos\theta\ket{\nSLJ{n}{1}{D}{2}} + \sin\theta\ket{\nSLJ{n}{3}{D}{2}} \\
-	\ket{\nSLJ{5sns}{3}{D}{2}}	&{}={}	-\sin\theta\ket{\nSLJ{n}{1}{D}{2}} + \cos\theta\ket{\nSLJ{n}{3}{D}{2}}
-\end{align}
-where $\theta$ is the mixing angle \cite{Sun1989.JPB.22.2887} of the pure singlet $\ket{\nSLJ{n}{1}{D}{2}}$ and triplet $\ket{\nSLJ{n}{3}{D}{2}}$ states.
-*** For higher $n$, the singlet-triplet mixing of the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states becomes nearly $n$ independent as evidenced by their quantum defects \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}. **
-Calculations using a two-active-electron (TAE) model \cite{Ye2013.PRA.88.043430, Fields2018.PRA.97.013429} estimates that converges towards $\theta \sim \num{-0.16}$ for high $n$.
-** Where does $\theta \sim \num{-0.14}$ come from? **
+% Even before including hyperfine interactions, the spin-orbit interactions leads to a breakdown of $LS$ coupling and mixes the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states and is especially strong around $n = \num{15}$ where they swap singlet and triplet character \cite{Esherick1977.PRA.15.1920, Beigang1981.PRL.47.326, Beigang1982.PRL.48.290, Gudde1993.PRA.47.4725, Vaillant2014.JPB.47.155001}.
+% To account for this mixing, the eigenstates $\nSLJ{5sns}{1}{D}{2}$ and $\nSLJ{5sns}{3}{D}{2}$ of the $H_{0}\qty(88, m_{87})$ are expanded as
+% \begin{align}
+	% \ket{\nSLJ{5sns}{1}{D}{2}}	&{}={}	\cos\theta\ket{\nSLJ{n}{1}{D}{2}} + \sin\theta\ket{\nSLJ{n}{3}{D}{2}} \\
+	% \ket{\nSLJ{5sns}{3}{D}{2}}	&{}={}	-\sin\theta\ket{\nSLJ{n}{1}{D}{2}} + \cos\theta\ket{\nSLJ{n}{3}{D}{2}}
+% \end{align}
+% where $\theta$ is the mixing angle \cite{Sun1989.JPB.22.2887} of the pure singlet $\ket{\nSLJ{n}{1}{D}{2}}$ and triplet $\ket{\nSLJ{n}{3}{D}{2}}$ states.
+% *** For higher $n$, the singlet-triplet mixing of the $\SLJ{1}{D}{2}$ and $\SLJ{3}{D}{2}$ states becomes nearly $n$ independent as evidenced by their quantum defects \cite{Vaillant2012.JPB.45.135004, Couturier2019.PRA.99.022503}. **
+% Calculations using a two-active-electron (TAE) model \cite{Ye2013.PRA.88.043430, Fields2018.PRA.97.013429} estimates that converges towards $\theta \sim \num{-0.16}$ for high $n$.
+% ** Where does $\theta \sim \num{-0.14}$ come from? **
 
-** See \cite{Gudde1993.PRA.47.4725} for a calculation of mixing coefficients? **
+% ** See \cite{Gudde1993.PRA.47.4725} for a calculation of mixing coefficients? **
 
-Calculating the hyperfine matrix elements of the $D$ states is quite a bit more challenging than for the $S$ states. 
-In total, there are $\num{20}$ singly excited $D$ states ($\nSLJ{5snd}{1}{D}{2}$, $\nSLJ{5snd}{3}{D}{1}$, $\nSLJ{5snd}{3}{D}{2}$, and $\nSLJ{5snd}{3}{D}{3}$) which each have $2 I + 1 = 10$ nuclear spin states. 
-The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cite{Lurio1962.PR.126.1758, Sun1989.JPB.22.2887, Gudde1993.PRA.47.4725}.
+% Calculating the hyperfine matrix elements of the $D$ states is quite a bit more challenging than for the $S$ states. 
+% In total, there are $\num{20}$ singly excited $D$ states ($\nSLJ{5snd}{1}{D}{2}$, $\nSLJ{5snd}{3}{D}{1}$, $\nSLJ{5snd}{3}{D}{2}$, and $\nSLJ{5snd}{3}{D}{3}$) which each have $2 I + 1 = 10$ nuclear spin states. 
+% The matrix elements of $\hat{V}_{\text{hfs}}$ can be evaluated analytically \cite{Lurio1962.PR.126.1758, Sun1989.JPB.22.2887, Gudde1993.PRA.47.4725}.
 
-Due to these interactions, it's not clear how to assign the different states since $S$ and $J$ are no longer good quantum numbers. 
-Instead, the state assignments were made by evaluating the overlap of the hyperfine-mixed states with the unperturbed $\nSLJ{5sns}{2S+1}{D}{J}$ state.
-** CLARIFY I need to check with Shuhei that I'm understanding this correctly **
+% Due to these interactions, it's not clear how to assign the different states since $S$ and $J$ are no longer good quantum numbers. 
+% Instead, the state assignments were made by evaluating the overlap of the hyperfine-mixed states with the unperturbed $\nSLJ{5sns}{2S+1}{D}{J}$ state.
+% ** CLARIFY I need to check with Shuhei that I'm understanding this correctly **
