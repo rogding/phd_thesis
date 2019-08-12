@@ -2,19 +2,19 @@
 \label{ch:correlations}
 
 Many interesting phenomena in quantum systems have a length scale associated with their interaction.
-Perhaps one of the most fundamental are the effects of either Bose-Einstein or Fermi-Dirac statistics leading to bunching or antibunching of particles \cite{Naraschewski1999.PRA.59.4595}.
+Perhaps one of the most fundamental are the effects of either Bose-Einstein or Fermi-Dirac statistics leading to the bunching or antibunching of particles \cite{Naraschewski1999.PRA.59.4595}.
 Another interesting phenomena is the ``fermionization'' of strongly-interacting bosons in a one-dimensional gas \cite{Kinoshita2004.Science.305.1125}.
 In these examples, the interactions affect the likelihood of finding another particle separated by a fixed distance., i.e., a spatial correlation.
-As a result, tools that provide information regarding the spatial correlation in these systems provide invaluable insights. 
+As a result, tools that provide information regarding the spatial correlation in these systems are extremely insightful.
 
 One of the most ingenious ways of probing spatial correlations due to quantum statistics was demonstrated with metastable helium atoms.
-In the experiments, the two-body and three-body pair correlation functions of quantum degenerate Bose and Fermi gases were reconstructed by dropping the atoms on to a time-resolved position-sensitive MCP detector \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
-Although powerful, this method is not \textit{in situ} and is also destructive, the samples need to be at equilibrium before the drop in order for a reconstruction to make sense, and thus hindering the possibility of mapping the temporal development of the spatial correlations. 
+By dropping quantum degenerate Bose and Fermi gases on to a time-resolved position-sensitive MCP detector, the two-body and three-body pair correlation functions of the initial sample were able to be reconstructed \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
+Although powerful, this method is neither \textit{in situ} nor nondestructive, requiring the samples need to be at equilibrium before the drop in order for a reconstruction to make sense, thus hindering the possibility of mapping the temporal development of spatial correlations. 
 
 Alternative, less destructive, \textit{in situ} techniques have also been developed and employed but these are generally restricted by the dimensionality of a system, the length scales accessible, or both.
 For the shortest length scales (i.e., $R = 0$ contact interactions), inelastic loss processes have been demonstrated to be sensitive to three-body spatial correlations \cite{Burt1997.PRL.79.337}. 
-Length scales of $R \sim R_{\text{vdW}} \lesssim \SI{10}{\nm}$, photoassociative spectroscopy can be used since these effects take place on the length scale of the van der Waals interaction \cite{Jones2006.RMP.78.483, Jones2006.RMP.78.1041}.
-If the interaction occurs on a two (or one) dimensional lattice structure, quantum gas microscopes (QGM) have the capability of directly detecting the presence or absence of atoms on a particular lattice site and, therefore, are able to directly measure spatial correlations \cite{Bakr2010.Science.329.547, Omran2015.PRL.115.263001, Mazurenko2017.Nature.545.462}.
+For length scales comparable to the sizes of molecular bonds (i.e., $R \sim R_{\text{vdW}} \lesssim \SI{10}{\nm}$), photoassociative spectroscopy (PAS) can be used since these effects take place on the length scale of the van der Waals interaction \cite{Jones2006.RMP.78.483, Jones2006.RMP.78.1041}.
+If the effect occurs on a two (or one) dimensional lattice structure, quantum gas microscopes (QGM) have the capability of directly detecting the presence or absence of atoms on a particular lattice site and, therefore, are able to directly measure spatial correlations \cite{Bakr2010.Science.329.547, Omran2015.PRL.115.263001, Mazurenko2017.Nature.545.462}.
 Since QGMs require an optical lattice, the length scales they are able to probe are restricted by the optical wavelengths used to form the lattice and typically $R \gtrsim \SI{266}{\nm}$.
 \Cref{fig:correlation_tools} illustrates some of the tools developed for probing the effects and their typical ``effective'' length scales.
 \begin{figure}[!htbp]
@@ -23,13 +23,16 @@ Since QGMs require an optical lattice, the length scales they are able to probe 
 	\caption[]{
 		\label{fig:correlation_tools}
 		**** PLACEHOLDER FIGURE ****.
-		Various tools for probing \textit{in situ} spatial correlations.}
+		Various tools for probing \textit{in situ} spatial correlations and their associated length scales.
+		Black lines and labels indicate the various length scales in typical ultracold gas experiments. 
+		Purple lines illustrate length scales for photoassociative spectroscopy (PAS) and quantum gas microscopes.
+		Orange line indicates the length scales probable with ULRRMs.}
 \end{figure}
 
-As seen in \cref{fig:correlation_tools}, there is a gap for length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{200}{\nm}$ which can be filled by ULRRMs. 
+As seen in \cref{fig:correlation_tools}, there is a gap for length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{266}{\nm}$ which can be filled by ULRRMs. 
 Analogous to how photoassociation can be used to probe correlations on the order of $R_{\text{vdW}}$, the formation rate of ULRRMs can also be used to measure spatial correlations. 
-The advantage of ULRRMs is that the ``length scale'' being probed depends on the size of the position of the Rydberg electron's outer classical turning point, i.e., the ``length scale'' can be tuned by changing $n$. 
-This tunability gives ULRRMs a huge advantage and can fill the gap between the (essentially) $R = 0$ and $R \gtrsim \SI{266}{\nm}$ length scales as seen in \cref{fig:correlation_tools}.
+The advantage of ULRRMs is that the length scale being probed depends on the size of the parent Rydberg atom, meaning varying interparticle distances can be probed by simply exciting to a different principal quantum number $n$. 
+This tunability gives ULRRMs a huge advantage and can fill the gap between the short-range PAS and the longer-range $R \gtrsim \SI{266}{\nm}$ QGM.
 
 This chapter contains work that is currently in progress.
 
@@ -37,20 +40,13 @@ This chapter contains work that is currently in progress.
 
 The work presented in \cite{Whalen2019.PRA.100.011402} was lead by Joe Whalen so the details will be covered in his upcoming thesis but the ideas are important for understanding the extensions of the work we did. 
 
-In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are classical, bosons, or fermions. 
-For the two-body case, this effect on the density distribution is typically referred to as ${g}^{\pqty{2}}\pqty{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE ***
+In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are bosonic, fermionic, or classical.
+For the two-body case, this effect on the density distribution is typically referred to as ${g}^{\pqty{2}}\pqty{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE? ***
 \begin{equation}
 	{g}^{\pqty{2}}\pqty{R}	=	1 + \epsilon {\me}^{-2 \pi R^{2}/{\lambda_{\text{dB}}}^{2}}
 \end{equation}
-where 
-\begin{equation}
-	\epsilon	=	\begin{cases}
-						+1	&	\text{boson}		\\
-						0	&	\text{classical}	\\
-						-1	&	\text{fermion}
-					\end{cases}
-\end{equation}
-For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}.
+where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical cases, respectively, and $\lambda_{\text{dB}} = {h}/{\sqrt{2 \pi m k_{B} T}}$ is the thermal de Broglie wavelength.
+For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
 
 The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident colliding scattering wave functions and the Rydberg molecular wave functions. 
 In particular, the most deeply-bound vibrational ULLRM state is well-localized and is related to the classical electron turning point of the parent Rydberg atom (see \cref{fig:vary_n-nu0}). 
@@ -67,13 +63,23 @@ Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
 
 \section{Experimental Procedure}
 
-The experimental procedure used for these experiments are all very similar with the goal of producing representative samples of bosonic, fermionic, and classical gases. 
-Our boson sample consists of \Sr{84} evaporatively cooled to about ** \SI{700}{\nano\kelvin} **. 
+The experimental procedures used for the following experiments are similar and will only be briefly covered.
+Similar to other experiments with ultracold strontium atoms, a two-stage cooling process was used where a blue MOT followed by a red MOT produced samples with $T \simeq \SI{2}{\micro\kelvin}$.
+These atoms were then loaded in to an ODT.
+
+*****************************
+
+
+For the fermions, \Sr{87} was used in both a spin-polarized and unpolarized states. 
+In the spin-polarized case, all the \Sr{87} atoms were optically pumped to the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ stretched state before performing two-photon Rydberg excitation.
+An unpolarized gas of \Sr{87} approximates a classical gas.
+In the unpolarized case, no optical pumping was performed and the \Sr{87} atoms were approximately equally distributed across the $\num{10}$ $m_F$ spin states .
+
+For bosonic gases, \Sr{84} was used because it evaporates well. 
+It's important to note that evaporation of \Sr{84} was stopped before reaching quantum degeneracy as that leads to ${g}^{\pqty{2}}_{\text{BEC}}\pqty{R} = 1$.
+
 
 The fermion sample is a gas of spin-polarized \Sr{87} atoms such that they are all in the stretched $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state.
-
-A ``classical'' gas is represented by an unpolarized gas of \Sr{87} (i.e., we did not perform spin-polarization after loading the optical dipole trap with \Sr{87}). 
-We had trouble producing cold gases of \Sr{87} so we loaded both \Sr{84} and \Sr{87} in order to enhance the evaporative cooling efficiency in the dipole trap following the methodology above for multi-isotope trapping. 
 
 
 
