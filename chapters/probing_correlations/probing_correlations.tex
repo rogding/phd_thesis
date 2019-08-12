@@ -1,29 +1,40 @@
 \chapter{Towards Probing Spatial Correlations with Rydberg Molecules}
 \label{ch:correlations}
 
-This chapter contains work that was either recently completed or are currently in progress. 
+Many interesting phenomena in quantum systems have a length scale associated with the interaction.
+Perhaps one of the most fundamental are the effects of either Bose-Einstein or Fermi-Dirac statistics leading to bunching or antibunching of particles \cite{Naraschewski1999.PRA.59.4595}.
+Another interesting phenomena is the ``fermionization'' of strongly-interacting bosons in a one-dimensional gas \cite{Kinoshita2004.Science.305.1125}.
+In these examples, the interactions affect the likelihood of finding another particle separated by a fixed distance., i.e., a spatial correlation.
 
-Several previous experiments were able to probe correlations in Bose and Fermi gases. 
-One example is the measurement of three-body recombination rates, which occurs when three atoms spatially coincide, in both a BEC and thermal gas where the BEC exhibited a slower three-body recombination rate compared to the thermal (non-condensed) sample \cite{Burt1997.PRL.79.337}. 
-Other experiments using metastable helium were able to reconstruct the three-dimensional pair separations in the cloud to determine both two-body and three-body correlations \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
+As a result, tools that provide information regarding the spatial correlation in these systems provide invaluable insights. 
+One of the most ingenious ways of probing spatial correlations due to quantum statistics was demonstrated with metastable helium atoms where the two-body and three-body pair correlation functions of quantum degenerate Bose and Fermi gases were reconstructed by dropping the atoms on to a time-resolved position-sensitive MCP detector \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
+Although powerful, this method is not \textit{in situ} and destructive, needing to be at equilibrium before the drop in order for a reconstruction to make sense, and thus hindering the possibility of mapping the temporal development of the spatial correlations. 
 
+Alternative, less destructive, \textit{in situ} have also been developed and employed but these are generally restricted by the dimensionality of a system and/or the length scales they are able to probe.
+For the shortest length scales (i.e., $R = 0$ contact interactions), inelastic loss processes require multiple atoms to be at the same place and can be used to measure the probability of finding multiple atoms at the same\cite{Burt1997.PRL.79.337}. 
+Length scales of $R \sim R_{vdW} \lesssim \SI{10}{\nm}$, photoassociative spectroscopy can be used since these effects take place on the length scale of the van der Waals interaction ($R_{vdW}$) \cite{Jones2006.RMP.78.483, Jones2006.RMP.78.1041}.
+If the interaction occurs on a two (or one) dimensional lattice structure, quantum gas microscopes (QGM) have the capability of directly detecting the presence or absence of atoms on a particular lattice site and, therefore, are able to directly measure spatial correlations \cite{Bakr2010.Science.329.547, Omran2015.PRL.115.263001, Mazurenko2017.Nature.545.462}.
+Since QGMs require an optical lattice, the length scales they are able to probe are restricted by the optical wavelengths used to form the lattice with typical $R \gtrsim \SI{266}{\nm}$.
+\Cref{fig:correlation_tools} illustrates some of the tools developed for probing the effects and their typical ``effective'' length scales.
+\begin{figure}[!htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlation_tools/probing_correlations.svg}
+	\caption[]{
+		\label{fig:correlation_tools}
+		**** PLACEHOLDER FIGURE ****.
+		Various tools for probing \textit{in situ} spatial correlations.}
+\end{figure}
 
-\section{Rydberg Molecules as an \textit{In Situ} Probe of Spatial Correlations}
+As seen in \cref{fig:correlation_tools}, there is a gap for length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{200}{\nm}$ which can be filled by ULRRMs. 
+Analogous to how photoassociation can be used to probe correlations on the order of $R_{vdW}$, the formation rate of ULRRMs can also be used to measure spatial correlations. 
+The advantage of ULRRMs is that the ``length scale'' being probed depends on the size of the position of the Rydberg electron's outer classical turning point, i.e., the ``length scale'' can be tuned by changing $n$. 
+This tunability gives ULRRMs a huge advantage and can fill the gap between the (essentially) $R = 0$ and $R \gtrsim \SI{266}{\nm}$ length scales as seen in \cref{fig:correlation_tools}.
+
+This chapter contains work that is currently in progress.
+
+\section{Probing of Spatial Correlations with ULRRMs}
 
 The work presented in \cite{Whalen2019.PRA.100.011402} was lead by Joe Whalen so the details will be covered in his upcoming thesis but the ideas are important for understanding the extensions of the work we did. 
-
-The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident colliding scattering wave functions and the Rydberg molecular wave functions. 
-
-**********
-
-
-
-
-**********
-
-For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}.
-
-
 
 In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are classical, bosons, or fermions. 
 For the two-body case, this effect on the density distribution is typically referred to as ${g}^{\pqty{2}}\pqty{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE ***
@@ -38,16 +49,20 @@ where
 						-1	&	\text{fermion}
 					\end{cases}
 \end{equation}
+For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}.
 
-
-\begin{figure}[htbp]
+The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident colliding scattering wave functions and the Rydberg molecular wave functions. 
+In particular, the most deeply-bound vibrational ULLRM state is well-localized and is related to the classical electron turning point of the parent Rydberg atom (see \cref{fig:vary_n-nu0}). 
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlations/vary_n/vary_n-nu0.pdf}
 	\caption[]{
 		\label{fig:vary_n-nu0}
-		Calculated molecular potentials and $\nu = 0$ radial vibrational wave functions for $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ Rydberg molecules.
-		The position of the well-localized $\nu = 0$ state depends on $n$.}
+		Calculated Rydberg molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULLRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
+		The position of the well-localized $\nu = 0$ vibrational state depends on $n$.}
 \end{figure}
+By varying $n$ of the parent Rydberg atom, different interparticle separations can be probed, i.e. $R \sim {n^*}^{2}$. 
+Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
 
 \section{Experimental Procedure}
 
@@ -69,7 +84,7 @@ Spin-polarization is achieved by driving the $\nSLJf{5s^2}{1}{S}{0}{9/2} \righta
 Using ${\sigma}^{+}$ light, we sequentially drive ${\Delta}m_F=+1$ transitions from $m_F=-{9}/{2}$ to $m_F={7}/{2}$ with $\SI{45}{\ms}$ pulses.
 A last $\SI{500}{\ms}$ ``clean-up'' pulse driving the $m_F={7}/{2} \rightarrow m_{F}^{\prime}={9}/{2}$ helps produce a sample with better than $\SI{90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state. 
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/producing_spin-polarization/mF_population_vs_duration.pdf}
 	\caption[]{
@@ -85,7 +100,7 @@ The effectiveness of spin-polarization was evaluated by performing ``linear-line
 Crossed-polarized excitation beams travel perpendicular to the bias field with the UV beam driving $\pi$-transitions. 
 In this setup, the $\SI{689}{\nm}$ drives $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ and the $\SI{320}{\nm}$ drives $\nSLJf{5s5p}{3}{P}{1}{9/2} \rightarrow \nSLJf{5sns}{3}{S}{1}{11/2}$.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/checking_spin-polarization/lin-lin_vs_loops.pdf}
 	\caption[]{
@@ -125,6 +140,20 @@ Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to red
 
 \section{Creation of Vibrationally-Excited Rydberg Molecules in Spin-Polarized and Unpolarized Ultracold Gases of \Sr{87}}
 
+The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULLRMs to $g^{\pqty*{0}}\pqty*{R}$.
+An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
+As seen in \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}, the $\nu > 0$ states are delocalized and extend towards smaller $R$ than the $\nu = 0$ state and should make them sensitive more sensitive to $g^{\pqty*{0}}\pqty*{R}$. 
+
+
+***** ADD MIDDLE *****
+
+Although the results qualitative agreement between theory and experiment, showing that it is possible to extract information about $g^{\pqty*{0}}\pqty*{R}$ from the $\nu > 0$ vibrational states, it was found that the results are very sensitive to initial wave functions. 
+
+
 \section{Progress Towards Measuring ${g}^{\pqty{3}}\pqty{R}$}
 
 Building on the work presented in \cite{Whalen2019.PRA.100.011402}, we are currently making progress towards measuring non-local three-body correlations with the trimer Rydberg molecules. 
+
+\section{Conclusion}
+
+We have shown ....
