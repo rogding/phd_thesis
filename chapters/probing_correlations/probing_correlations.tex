@@ -49,7 +49,7 @@ where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical cases
 For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
 
 The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident colliding scattering wave functions and the Rydberg molecular wave functions. 
-In particular, the most deeply-bound vibrational ULLRM state is well-localized and is related to the classical electron turning point of the parent Rydberg atom (see \cref{fig:vary_n-nu0}). 
+In particular, the most deeply-bound vibrational ULRRM state is well-localized and is related to the classical electron turning point of the parent Rydberg atom (see \cref{fig:vary_n-nu0}). 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlations/vary_n/vary_n-nu0.pdf}
@@ -63,24 +63,26 @@ Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
 
 \section{Experimental Procedure}
 
-The experimental procedures used for the following experiments are similar and will only be briefly covered.
-Similar to other experiments with ultracold strontium atoms, a two-stage cooling process was used where a blue MOT followed by a red MOT produced samples with $T \simeq \SI{2}{\micro\kelvin}$.
-These atoms were then loaded in to an ODT.
+The experimental procedures used for the following experiments are all similar with only minor adjustments depending on the particular isotope(s) being laser cooled and so will only be briefly covered.
+For bosonic samples, only \Sr{84} is laser cooled and trapped following the usual blue MOT and red MOT laser cooling stages that results in samples of about $\SI{2}{\micro\kelvin}$ loaded in to the ODT.
+After loading, all laser cooling light is extinguished and the atoms are held for a short period of time to allow free-evaporation to occur before forced evaporation is performed by lowering the power of the ODT until the desired temperature is reached.
+We confirm that the sample is still thermal and not quantum degenerate by absorption images after a short time-of-flight drop.
 
-*****************************
+Fermionic and classical samples are represented by spin-polarized and unpolarized gases of \Sr{87}, respectively. 
+In both cases, we sequentially load both \Sr{87} and \Sr{84} in to the magnetic trap, as described in \cref{ssec:magnetic_trap_and_repumping}, in preparation for sympathetic cooling.
+Once both isotopes are loaded, the $\SI{461}{\nm}$ light is extinguished and the $\SI{481}{\nm}$ repumping process returns both isotopes to the ground state. 
+Dual red MOTs are then operated to laser cool both \Sr{87} and \Sr{84} isotopes simultaneously, achieving temperatures of about $\SI{2}{\micro\kelvin}$ for loading in to the ODT.
+For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ bias magnetic field along the $x$-axis is applied to provide a quantization axis.
+Spin-polarization is achieved by optically pumping, sequentially driving ${\Delta}m_{F} = +1$ transitions on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$.
+This results in *** $\SI{>90}{\percent}$ *** of the atoms populating the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state stretched state.
+For the unpolarized sample, no bias magnetic field is applied and no optical pumping occurs. 
+At this point, both the spin-polarized and unpolarized samples undergo a short hold before forced evaporation commences which continues until the the desired temperature is achieved.
+Before moving on to spectroscopy, the \Sr{84} atoms in the ODT are removed with a pulse of light resonant on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
 
-
-For the fermions, \Sr{87} was used in both a spin-polarized and unpolarized states. 
-In the spin-polarized case, all the \Sr{87} atoms were optically pumped to the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ stretched state before performing two-photon Rydberg excitation.
-An unpolarized gas of \Sr{87} approximates a classical gas.
-In the unpolarized case, no optical pumping was performed and the \Sr{87} atoms were approximately equally distributed across the $\num{10}$ $m_F$ spin states .
-
-For bosonic gases, \Sr{84} was used because it evaporates well. 
-It's important to note that evaporation of \Sr{84} was stopped before reaching quantum degeneracy as that leads to ${g}^{\pqty{2}}_{\text{BEC}}\pqty{R} = 1$.
-
-
-The fermion sample is a gas of spin-polarized \Sr{87} atoms such that they are all in the stretched $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state.
-
+For all samples, a two-photon transition is used to produce ULRRMs.
+For bosonic samples, the first photon is $\SI{689}{\nm}$ detuned from the intermediate $\nSLJ{5s5p}{3}{P}{1}$ by **** Xxx MHz **** and the second $\SI{320}{\nm}$ photon is resonant with a particular Rydberg molecular state. 
+For the fermionic and classical samples, the first leg is a $\SI{689}{\nm}$ photon detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by **** XXX MHz ****. 
+The second $\SI{320}{\nm}$ photon then drives states to the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state. 
 
 
 \subsection{Spin-Polarization of \Sr{87}}
@@ -128,9 +130,9 @@ The integrated Rydberg molecule signal should scale as
 
 \subsection{Density Correction Term}
 
-During data taking, we record the sample temperature and atom number. 
+During data taking, we record both the sample temperature and atom number. 
 In additional to knowing our trap frequencies, we are able to perform a correction for the density-dependent excitation rate. 
-For a thermal gas in a 3D harmonic trap, the density distribution is given by \cite{Pethick.BEC}
+For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by \cite{Pethick.BEC}
 \begin{equation}
 	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
 \end{equation}
@@ -143,14 +145,14 @@ For the dimers, the signal is proportional to square of the density distribution
 					\propto	\frac{N^2}{T^{3/2}}
 \end{equation}
 Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to reduce the sensitivity to the sample density and temperature. 
-
+This correction is applied to all the dimer vibrational excited state data.
 
 \section{Creation of Vibrationally-Excited Rydberg Molecules in Spin-Polarized and Unpolarized Ultracold Gases of \Sr{87}}
 
-The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULLRMs to $g^{\pqty*{0}}\pqty*{R}$.
+The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULRRMs to $g^{\pqty*{2}}\pqty*{R}$.
 An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
-As seen in \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}, the $\nu > 0$ states are delocalized and extend towards smaller $R$ than the $\nu = 0$ state and should make them sensitive more sensitive to $g^{\pqty*{0}}\pqty*{R}$. 
-
+As seen in \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}, the $\nu > 0$ states are delocalized and extend towards smaller $R$ than the $\nu = 0$ state and should make them sensitive more sensitive to $g^{\pqty*{2}}\pqty*{R}$. 
+Towards this goal, we explored the excitation rates of the $\nu = 1, 2$ states of ULRRMs in spin-polarized and unpolarized samples of \Sr{87}. 
 
 ***** ADD MIDDLE *****
 
