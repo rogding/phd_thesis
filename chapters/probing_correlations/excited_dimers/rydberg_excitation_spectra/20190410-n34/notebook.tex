@@ -1,0 +1,1544 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{analyze-20190410-n34}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} 2019/04/08}
+        \PY{c+c1}{\PYZsh{} Code to analyze 20190410\PYZhy{}n34}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{from} \PY{n+nn}{uncertainties} \PY{k}{import} \PY{n}{unumpy}\PY{p}{,} \PY{n}{ufloat}
+        
+        \PY{k+kn}{import} \PY{n+nn}{os}
+        \PY{k+kn}{import} \PY{n+nn}{glob}
+        
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{pandas}\PY{n+nn}{.}\PY{n+nn}{plotting} \PY{k}{import} \PY{n}{register\PYZus{}matplotlib\PYZus{}converters}
+        \PY{n}{register\PYZus{}matplotlib\PYZus{}converters}\PY{p}{(}\PY{p}{)}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+        
+        \PY{k+kn}{from} \PY{n+nn}{lmfit}\PY{n+nn}{.}\PY{n+nn}{models} \PY{k}{import} \PY{n}{Model}\PY{p}{,} \PY{n}{ConstantModel}\PY{p}{,} \PY{n}{PolynomialModel}\PY{p}{,} \PY{n}{GaussianModel}\PY{p}{,} \PY{n}{VoigtModel}\PY{p}{,} \PY{n}{LorentzianModel}\PY{p}{,} \PY{n}{PseudoVoigtModel}
+        
+        \PY{n}{sns}\PY{o}{.}\PY{n}{set\PYZus{}context}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{talk}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{some-constant-variables}{%
+\section{Some constant variables}\label{some-constant-variables}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} List of files to glob}
+        \PY{n}{POL\PYZus{}LIST} \PY{o}{=} \PY{n}{glob}\PY{o}{.}\PY{n}{glob}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n34\PYZus{}all\PYZus{}dimers\PYZhy{}interleaved\PYZhy{}Pol*\PYZus{}out.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{UNPOL\PYZus{}LIST} \PY{o}{=} \PY{n}{glob}\PY{o}{.}\PY{n}{glob}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n34\PYZus{}all\PYZus{}dimers\PYZhy{}interleaved\PYZhy{}Unpol*\PYZus{}out.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{SET\PYZus{}NAME} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{20190410\PYZhy{}n34}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{POL\PYZus{}NAME} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{20190410\PYZhy{}n34p}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{UNPOL\PYZus{}NAME} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{20190410\PYZhy{}n34u}\PY{l+s+s1}{\PYZsq{}}
+        
+        \PY{n}{ATOMIC} \PY{o}{=} \PY{l+m+mf}{1401.71}
+        \PY{n}{ZEEMAN} \PY{o}{=} \PY{l+m+mf}{1.60839}
+        \PY{n}{ORDER} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}
+        
+        \PY{n}{SATURATION\PYZus{}A} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{l+m+mf}{44.0442405}\PY{p}{,} \PY{l+m+mf}{1.65366925}\PY{p}{)}
+        \PY{n}{SATURATION\PYZus{}B} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.05852900}\PY{p}{,} \PY{l+m+mf}{0.00456716}\PY{p}{)}
+        \PY{n}{NUM\PYZus{}EXPOSURES} \PY{o}{=} \PY{l+m+mi}{1000} \PY{c+c1}{\PYZsh{} Number of excitation loops}
+\end{Verbatim}
+
+
+    \hypertarget{retrieve-files-and-do-some-preprocessing}{%
+\section{Retrieve files and do some
+preprocessing}\label{retrieve-files-and-do-some-preprocessing}}
+
+    \hypertarget{retrieve-all-the-data-files-and-put-in-to-a-single-dataframe}{%
+\subsubsection{Retrieve all the data files and put in to a single
+DataFrame}\label{retrieve-all-the-data-files-and-put-in-to-a-single-dataframe}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Last modified 2019/04/05}
+        \PY{c+c1}{\PYZsh{} Goes through all listed .csv files and returns data in a single DataFrame}
+        \PY{k}{def} \PY{n+nf}{gather\PYZus{}data}\PY{p}{(}\PY{n}{file\PYZus{}list}\PY{p}{)}\PY{p}{:}
+            
+            \PY{c+c1}{\PYZsh{} Read in .csv files in to single DataFrame}
+            \PY{n}{out} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+            \PY{k}{for} \PY{n}{file\PYZus{}name} \PY{o+ow}{in} \PY{n}{file\PYZus{}list}\PY{p}{:}
+                \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{file\PYZus{}name}\PY{p}{)}
+                \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Scan}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{basename}\PY{p}{(}\PY{n}{file\PYZus{}name}\PY{p}{)}
+                \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                
+                \PY{n}{out} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{out}\PY{p}{,} \PY{n}{df}\PY{p}{]}\PY{p}{,} \PY{n}{join}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{outer}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{out}
+        
+        \PY{n}{pol\PYZus{}data} \PY{o}{=} \PY{n}{gather\PYZus{}data}\PY{p}{(}\PY{n}{POL\PYZus{}LIST}\PY{p}{)}
+        \PY{n}{unpol\PYZus{}data} \PY{o}{=} \PY{n}{gather\PYZus{}data}\PY{p}{(}\PY{n}{UNPOL\PYZus{}LIST}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{reduce-the-data-by-removing-bad-points}{%
+\subsubsection{Reduce the data by removing bad
+points}\label{reduce-the-data-by-removing-bad-points}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} First pass at removing bad data points}
+        \PY{k}{def} \PY{n+nf}{reduce\PYZus{}data}\PY{p}{(}\PY{n}{df\PYZus{}data}\PY{p}{,} \PY{n}{name}\PY{p}{,} \PY{n}{show\PYZus{}plots}\PY{p}{)}\PY{p}{:}
+            
+            \PY{c+c1}{\PYZsh{} Remove data where UV laser was not locked based on \PYZsq{}DigiLock\PYZus{}PID1\PYZus{}locked\PYZsq{} column}
+            \PY{n}{df\PYZus{}reduced} \PY{o}{=} \PY{n}{df\PYZus{}data}\PY{p}{[}\PY{n}{df\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DigiLock\PYZus{}PID1\PYZus{}locked}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{l+m+mf}{4.9}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Remove data where 640 nm wavemeter reading was more than 0.001 /cm from 15655.424 /cm (the location of the line)}
+            \PY{n}{df\PYZus{}reduced} \PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{p}{(}\PY{l+m+mf}{15655.423} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{wavemeterAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{wavemeterAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{15655.425}\PY{p}{)}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Remove data where atom number was above/below cutoff}
+            \PY{n}{df\PYZus{}reduced} \PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{p}{(}\PY{l+m+mf}{100e3} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{400e3}\PY{p}{)}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Remove data where tempYAtom was above/below cutoff}
+            \PY{n}{df\PYZus{}reduced} \PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{p}{(}\PY{l+m+mf}{500E\PYZhy{}9} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df\PYZus{}reduced}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{1.2E\PYZhy{}6}\PY{p}{)}\PY{p}{]}
+            
+            \PY{c+c1}{\PYZsh{} Plotting original and reduced data sets}
+            \PY{n}{df\PYZus{}orig} \PY{o}{=} \PY{n}{df\PYZus{}data}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{n}{df\PYZus{}redu} \PY{o}{=} \PY{n}{df\PYZus{}reduced}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            
+            \PY{k}{if} \PY{n}{show\PYZus{}plots}\PY{p}{:}
+                \PY{p}{[}\PY{n}{fig}\PY{p}{,} \PY{n}{ax}\PY{p}{]}\PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{6}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+                \PY{n}{fig}\PY{o}{.}\PY{n}{suptitle}\PY{p}{(}\PY{n}{name}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DigiLock\PYZus{}PID1\PYZus{}locked}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DigiLock\PYZus{}PID1\PYZus{}locked}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{DigiLock\PYZus{}PID1\PYZus{}locked}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{4.9}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{avg} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{n}{avg}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{,} \PY{n}{avg}\PY{o}{+}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{avg} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{n}{avg}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{,} \PY{n}{avg}\PY{o}{+}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{avg} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{n}{avg}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{,} \PY{n}{avg}\PY{o}{+}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power [V]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{avg} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{n}{avg}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{,} \PY{n}{avg}\PY{o}{+}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power [V]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}orig}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{avg} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{df\PYZus{}redu}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                \PY{n}{ax}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{p}{(}\PY{n}{avg}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{,} \PY{n}{avg}\PY{o}{+}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{std}\PY{p}{)}\PY{p}{)}
+        
+                \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+                \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+            
+            \PY{c+c1}{\PYZsh{} Drop unused data columns}
+            \PY{n}{df\PYZus{}reduced}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AI3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AI4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AI5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AI6}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AI7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{df\PYZus{}reduced}
+        
+        \PY{n}{pol\PYZus{}reduced} \PY{o}{=} \PY{n}{reduce\PYZus{}data}\PY{p}{(}\PY{n}{pol\PYZus{}data}\PY{p}{,} \PY{n}{POL\PYZus{}NAME}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{unpol\PYZus{}reduced} \PY{o}{=} \PY{n}{reduce\PYZus{}data}\PY{p}{(}\PY{n}{unpol\PYZus{}data}\PY{p}{,} \PY{n}{UNPOL\PYZus{}NAME}\PY{p}{,} \PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{aggregrate-data}{%
+\subsubsection{Aggregrate data}\label{aggregrate-data}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{aggregrate\PYZus{}data}\PY{p}{(}\PY{n}{df\PYZus{}data}\PY{p}{,} \PY{n}{indVar}\PY{p}{)}\PY{p}{:}
+            \PY{n}{df\PYZus{}grouped} \PY{o}{=} \PY{n}{df\PYZus{}data}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{n}{indVar}\PY{p}{,} \PY{n}{as\PYZus{}index}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{sort}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+            
+            \PY{c+c1}{\PYZsh{}df\PYZus{}out = df\PYZus{}grouped.agg([np.mean, np.std])}
+            \PY{n}{df\PYZus{}out} \PY{o}{=} \PY{n}{df\PYZus{}grouped}\PY{o}{.}\PY{n}{agg}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}
+                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}
+                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}
+                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}
+                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}  \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}
+                                     \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}  \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{]}\PY{p}{,}\PY{p}{\PYZcb{}}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{df\PYZus{}out}
+        
+        \PY{n}{indVar} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{imagevcoAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{n}{pol\PYZus{}out} \PY{o}{=} \PY{n}{aggregrate\PYZus{}data}\PY{p}{(}\PY{n}{pol\PYZus{}reduced}\PY{p}{,} \PY{n}{indVar}\PY{p}{)}
+        \PY{n}{unpol\PYZus{}out} \PY{o}{=} \PY{n}{aggregrate\PYZus{}data}\PY{p}{(}\PY{n}{unpol\PYZus{}reduced}\PY{p}{,} \PY{n}{indVar}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{adjust-counts-due-to-mcp-saturation}{%
+\subsubsection{Adjust counts due to MCP
+saturation}\label{adjust-counts-due-to-mcp-saturation}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} Using the MCP saturation curve taken on 2019/03/27 by varying the UV power, we can account for the non\PYZhy{}linear detection.}
+        
+        \PY{k}{def} \PY{n+nf}{mcp\PYZus{}saturation}\PY{p}{(}\PY{n}{df}\PY{p}{)}\PY{p}{:}
+            \PY{n}{df\PYZus{}temp} \PY{o}{=} \PY{n}{df}
+            \PY{n}{observed\PYZus{}counts} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{n}{observed\PYZus{}counts} \PY{o}{=} \PY{n}{observed\PYZus{}counts}\PY{o}{/}\PY{n}{NUM\PYZus{}EXPOSURES}
+            
+            \PY{n}{corrected\PYZus{}counts} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{SATURATION\PYZus{}A}\PY{o}{*}\PY{n}{unumpy}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{observed\PYZus{}counts}\PY{o}{/}\PY{n}{SATURATION\PYZus{}A}\PY{p}{)}
+            \PY{n}{corrected\PYZus{}counts} \PY{o}{=} \PY{n}{NUM\PYZus{}EXPOSURES}\PY{o}{*}\PY{n}{corrected\PYZus{}counts}
+            
+            \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{nominal\PYZus{}values}\PY{p}{(}\PY{n}{corrected\PYZus{}counts}\PY{p}{)}
+            \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{std\PYZus{}devs}\PY{p}{(}\PY{n}{corrected\PYZus{}counts}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{df\PYZus{}temp}
+        
+        \PY{n}{pol\PYZus{}out} \PY{o}{=} \PY{n}{mcp\PYZus{}saturation}\PY{p}{(}\PY{n}{pol\PYZus{}out}\PY{p}{)}
+        \PY{n}{unpol\PYZus{}out} \PY{o}{=} \PY{n}{mcp\PYZus{}saturation}\PY{p}{(}\PY{n}{unpol\PYZus{}out}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{calculate-detunings}{%
+\subsubsection{Calculate detunings}\label{calculate-detunings}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k}{def} \PY{n+nf}{calc\PYZus{}detuning}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{atomic}\PY{p}{,} \PY{n}{zeeman}\PY{p}{,} \PY{n}{order}\PY{p}{)}\PY{p}{:}
+            \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{order}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{imagevcoAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{p}{(}\PY{n}{atomic} \PY{o}{+} \PY{n}{order}\PY{o}{*}\PY{n}{zeeman}\PY{p}{)}\PY{p}{)}
+            
+            \PY{k}{return} \PY{n}{df}
+        
+        \PY{n}{pol\PYZus{}out} \PY{o}{=} \PY{n}{calc\PYZus{}detuning}\PY{p}{(}\PY{n}{pol\PYZus{}out}\PY{p}{,} \PY{n}{ATOMIC}\PY{p}{,} \PY{n}{ZEEMAN}\PY{p}{,} \PY{n}{ORDER}\PY{p}{)}
+        \PY{n}{unpol\PYZus{}out} \PY{o}{=} \PY{n}{calc\PYZus{}detuning}\PY{p}{(}\PY{n}{unpol\PYZus{}out}\PY{p}{,} \PY{n}{ATOMIC}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{ORDER}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{pol\PYZus{}out}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{pol\PYZus{}out}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{unpol\PYZus{}out}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{unpol\PYZus{}out}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{SET\PYZus{}NAME}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Total MCS counts}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{analyzing-the-data}{%
+\section{Analyzing the data}\label{analyzing-the-data}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{pol\PYZus{}data} \PY{o}{=} \PY{n}{pol\PYZus{}out}
+         \PY{n}{unpol\PYZus{}data} \PY{o}{=} \PY{n}{unpol\PYZus{}out}
+\end{Verbatim}
+
+
+    \hypertarget{adjust-counts-based-on-689-nm-and-uv-intensities}{%
+\subsubsection{Adjust counts based on 689 nm and UV
+intensities}\label{adjust-counts-based-on-689-nm-and-uv-intensities}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{def} \PY{n+nf}{adjust\PYZus{}for\PYZus{}intensities}\PY{p}{(}\PY{n}{df}\PY{p}{)}\PY{p}{:}
+             \PY{n}{df\PYZus{}temp} \PY{o}{=} \PY{n}{df}
+             
+             \PY{n}{raw\PYZus{}sfiIntegral} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}linearized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+             \PY{n}{raw\PYZus{}UV\PYZus{}Power} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+             \PY{n}{raw\PYZus{}Spec\PYZus{}Power} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{uarray}\PY{p}{(}\PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+             
+             \PY{n}{adjusted\PYZus{}sfiIntegral} \PY{o}{=} \PY{n}{raw\PYZus{}sfiIntegral}\PY{o}{/}\PY{n}{raw\PYZus{}UV\PYZus{}Power}\PY{o}{/}\PY{n}{raw\PYZus{}Spec\PYZus{}Power}
+             
+             \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{nominal\PYZus{}values}\PY{p}{(}\PY{n}{adjusted\PYZus{}sfiIntegral}\PY{p}{)}
+             \PY{n}{df\PYZus{}temp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{unumpy}\PY{o}{.}\PY{n}{std\PYZus{}devs}\PY{p}{(}\PY{n}{adjusted\PYZus{}sfiIntegral}\PY{p}{)}
+             
+             \PY{k}{return} \PY{n}{df\PYZus{}temp}
+         
+         \PY{c+c1}{\PYZsh{} Correcting for 320 nm and 689 nm intensities point\PYZhy{}by\PYZhy{}point}
+         
+         \PY{n}{pol\PYZus{}data} \PY{o}{=} \PY{n}{adjust\PYZus{}for\PYZus{}intensities}\PY{p}{(}\PY{n}{pol\PYZus{}data}\PY{p}{)}
+         \PY{n}{unpol\PYZus{}data} \PY{o}{=} \PY{n}{adjust\PYZus{}for\PYZus{}intensities}\PY{p}{(}\PY{n}{unpol\PYZus{}data}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{c+c1}{\PYZsh{} Plotting results after adjusting for 320 nm and 689 nm powers}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{pol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{pol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} 
+                      \PY{n}{yerr}\PY{o}{=}\PY{n}{pol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                      \PY{n}{fmt}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Polarized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{unpol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{unpol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} 
+                      \PY{n}{yerr}\PY{o}{=}\PY{n}{unpol\PYZus{}data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+                      \PY{n}{fmt}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Unpolarized}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{set\PYZus{}yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{SET\PYZus{}NAME}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Adjusted counts}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_20_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{fitting-the-data}{%
+\subsection{Fitting the data}\label{fitting-the-data}}
+
+    \hypertarget{n34-polarized-sample}{%
+\subsubsection{n=34, polarized sample}\label{n34-polarized-sample}}
+
+    \hypertarget{n34-polarized-dimer-ground-state}{%
+\paragraph{n=34, polarized, dimer, ground
+state}\label{n34-polarized-dimer-ground-state}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{data} \PY{o}{=} \PY{n}{pol\PYZus{}data}
+         \PY{n}{plot\PYZus{}components} \PY{o}{=} \PY{k+kc}{True}
+         \PY{n}{plot\PYZus{}initial\PYZus{}guess} \PY{o}{=} \PY{k+kc}{False}
+         
+         \PY{c+c1}{\PYZsh{} Choosing a range to fit over}
+         \PY{n}{xmin} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{23}
+         \PY{n}{xmax} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{18}
+         
+         \PY{n}{xdata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata\PYZus{}unc} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} Specify fit model}
+         \PY{n}{bg} \PY{o}{=} \PY{n}{PolynomialModel}\PY{p}{(}\PY{n}{degree}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d0} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{dx} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}model} \PY{o}{=} \PY{n}{bg} \PY{o}{+} \PY{n}{d0} \PY{o}{+} \PY{n}{dx}
+         \PY{n}{fit\PYZus{}params} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{make\PYZus{}params}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}c0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{ydata}\PY{p}{)}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c1\PYZsq{}].set(0, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c2\PYZsq{}].set(0, vary=True)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{20.5}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{1768}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{19.5}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{43}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Initial guess}
+         \PY{n}{xfit} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{endpoint}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{yinit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Fitting}
+         \PY{n}{fit\PYZus{}result} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{ydata}\PY{p}{,} \PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{dely} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}uncertainty}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{yfit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{fit\PYZus{}report}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Plotting output}
+         \PY{p}{[}\PY{n}{fig}\PY{p}{,} \PY{n}{axs}\PY{p}{]} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (linear)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (log)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{bottom}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}components}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} generate components}
+             \PY{n}{fit\PYZus{}comps} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}components}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n}{fit\PYZus{}comps}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                     \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{fit\PYZus{}comps}\PY{p}{[}\PY{n}{key}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}initial\PYZus{}guess}\PY{p}{:}
+             \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yinit}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{init}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[Model]]
+    ((Model(polynomial, prefix='bg\_') + Model(pvoigt, prefix='d0\_')) + Model(pvoigt, prefix='dx\_'))
+[[Fit Statistics]]
+    \# fitting method   = leastsq
+    \# function evals   = 280
+    \# data points      = 45
+    \# variables        = 9
+    chi-square         = 143872.004
+    reduced chi-square = 3996.44456
+    Akaike info crit   = 381.150757
+    Bayesian info crit = 397.410720
+[[Variables]]
+    bg\_c0:         46.2584433 +/- 14.5066261 (31.36\%) (init = 37.42806)
+    d0\_fraction:   0.17957237 +/- 0.06748532 (37.58\%) (init = 0.5)
+    d0\_sigma:      0.15239226 +/- 0.00183646 (1.21\%) (init = 0.1)
+    d0\_center:    -20.1537356 +/- 0.00128112 (0.01\%) (init = -20.5)
+    d0\_amplitude:  2206.38341 +/- 55.9643536 (2.54\%) (init = 1768)
+    dx\_fraction:   1.00000000 +/- 0.09838259 (9.84\%) (init = 0.5)
+    dx\_sigma:      0.20686940 +/- 0.09797545 (47.36\%) (init = 0.1)
+    dx\_center:    -19.4364040 +/- 0.05077697 (0.26\%) (init = -19.5)
+    dx\_amplitude:  142.570503 +/- 67.0216639 (47.01\%) (init = 43)
+    d0\_fwhm:       0.30478453 +/- 0.00367291 (1.21\%) == '2.0000000*d0\_sigma'
+    d0\_height:     6407.08663 +/- 63.8579910 (1.00\%) == '(((1-d0\_fraction)*d0\_amplitude)/(d0\_sigma*sqrt(pi/log(2)))+(d0\_fraction*d0\_amplitude)/(pi*d0\_sigma))'
+    dx\_fwhm:       0.41373879 +/- 0.19595090 (47.36\%) == '2.0000000*dx\_sigma'
+    dx\_height:     219.373196 +/- 129.750904 (59.15\%) == '(((1-dx\_fraction)*dx\_amplitude)/(dx\_sigma*sqrt(pi/log(2)))+(dx\_fraction*dx\_amplitude)/(pi*dx\_sigma))'
+[[Correlations]] (unreported correlations are < 0.100)
+    C(d0\_fraction, d0\_amplitude)  =  0.912
+    C(dx\_fraction, dx\_amplitude)  =  0.709
+    C(dx\_fraction, dx\_sigma)      = -0.543
+    C(d0\_amplitude, dx\_amplitude) = -0.500
+    C(d0\_fraction, d0\_sigma)      = -0.451
+    C(bg\_c0, dx\_amplitude)        = -0.402
+    C(d0\_amplitude, dx\_center)    =  0.385
+    C(d0\_fraction, dx\_amplitude)  = -0.372
+    C(bg\_c0, d0\_fraction)         = -0.360
+    C(bg\_c0, d0\_amplitude)        = -0.352
+    C(d0\_fraction, dx\_center)     =  0.349
+    C(d0\_center, dx\_amplitude)    = -0.302
+    C(d0\_amplitude, dx\_fraction)  = -0.291
+    C(bg\_c0, dx\_fraction)         = -0.284
+    C(d0\_center, dx\_fraction)     = -0.251
+    C(d0\_sigma, dx\_fraction)      = -0.218
+    C(dx\_center, dx\_amplitude)    = -0.210
+    C(d0\_fraction, dx\_sigma)      = -0.184
+    C(d0\_center, d0\_amplitude)    =  0.168
+    C(d0\_sigma, d0\_amplitude)     = -0.159
+    C(bg\_c0, d0\_sigma)            =  0.142
+    C(d0\_amplitude, dx\_sigma)     = -0.131
+    C(dx\_fraction, dx\_center)     = -0.126
+    C(d0\_center, dx\_center)       =  0.126
+    C(d0\_fraction, d0\_center)     =  0.121
+    C(d0\_fraction, dx\_fraction)   = -0.117
+    C(d0\_sigma, dx\_sigma)         =  0.115
+    C(bg\_c0, dx\_center)           = -0.114
+    C(bg\_c0, d0\_center)           =  0.104
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_24_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{c+c1}{\PYZsh{} Extracting the fitted parameters}
+         
+         \PY{n}{labview\PYZus{}params} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmin [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmax [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{labview\PYZus{}params}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(mean):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(std):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Saving to variables}
+         \PY{n}{d0\PYZus{}pol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d0\PYZus{}pol\PYZus{}N} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                           \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d0\PYZus{}pol\PYZus{}Ty} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                            \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Xmin [MHz]:	-22.996779999999944
+Xmax [MHz]:	-18.446780000000217
+numberAtom(mean):	222852.07840220924
+numberAtom(std):	4910.8097333028645
+tempXAtom(mean):	8.005078487277451e-07
+tempXAtom(std):	8.052822786347305e-09
+tempYAtom(mean):	7.635074229441199e-07
+tempYAtom(std):	6.604149380095595e-09
+UV\_Power(mean):	0.5943318968854066
+UV\_Power(std):	0.0043005941096333775
+Spec\_Power(mean):	0.4641277278629969
+Spec\_Power(std):	0.00044846885641721903
+
+    \end{Verbatim}
+
+    \hypertarget{n34-polarized-dimer-1st-and-2nd-excited-states}{%
+\paragraph{n=34, polarized, dimer, 1st and 2nd excited
+states}\label{n34-polarized-dimer-1st-and-2nd-excited-states}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{data} \PY{o}{=} \PY{n}{pol\PYZus{}data}
+         \PY{n}{plot\PYZus{}components} \PY{o}{=} \PY{k+kc}{True}
+         \PY{n}{plot\PYZus{}initial\PYZus{}guess} \PY{o}{=} \PY{k+kc}{False}
+         
+         \PY{c+c1}{\PYZsh{} Choosing a range to fit over}
+         \PY{n}{xmin} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{11}
+         \PY{n}{xmax} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}
+         
+         \PY{n}{xdata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata\PYZus{}unc} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} Specify fit model}
+         \PY{n}{bg} \PY{o}{=} \PY{n}{PolynomialModel}\PY{p}{(}\PY{n}{degree}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{a} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d1} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d2} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d3} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d4} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d4\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}dx = PseudoVoigtModel(prefix=\PYZsq{}dx\PYZus{}\PYZsq{})}
+         
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}model = bg + a + d1 + d2 + d3 + d4 + dx}
+         \PY{n}{fit\PYZus{}model} \PY{o}{=} \PY{n}{bg} \PY{o}{+} \PY{n}{a} \PY{o}{+} \PY{n}{d1} \PY{o}{+} \PY{n}{d2} \PY{o}{+} \PY{n}{d3} \PY{o}{+} \PY{n}{dx}
+         \PY{n}{fit\PYZus{}params} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{make\PYZus{}params}\PY{p}{(}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c0\PYZsq{}].set(min(ydata), max=100, vary=True)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}c0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{,} \PY{n+nb}{max}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c1\PYZsq{}].set(2, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c2\PYZsq{}].set(0, vary=True)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{120226}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{8.76}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{1120}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{7.3}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{24}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{6.2}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{1172}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{5.25}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{70}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}d4\PYZus{}center\PYZsq{}].set(\PYZhy{}4.5, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}d4\PYZus{}amplitude\PYZsq{}].set(140, min=0, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}d4\PYZus{}sigma\PYZsq{}].set(0.1, min=0, vary=True)}
+         
+         \PY{c+c1}{\PYZsh{} Initial guess}
+         \PY{n}{xfit} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{endpoint}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{yinit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Fitting}
+         \PY{n}{fit\PYZus{}result} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{ydata}\PY{p}{,} \PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{dely} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}uncertainty}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{yfit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{fit\PYZus{}report}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Plotting output}
+         \PY{p}{[}\PY{n}{fig}\PY{p}{,} \PY{n}{axs}\PY{p}{]} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (linear)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (log)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{bottom}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}components}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} generate components}
+             \PY{n}{fit\PYZus{}comps} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}components}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n}{fit\PYZus{}comps}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                     \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{fit\PYZus{}comps}\PY{p}{[}\PY{n}{key}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}initial\PYZus{}guess}\PY{p}{:}
+             \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yinit}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{init}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+C:\textbackslash{}Users\textbackslash{}reyalp\textbackslash{}Anaconda3\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}lmfit\textbackslash{}lineshapes.py:31: RuntimeWarning: divide by zero encountered in double\_scalars
+  return (amplitude/(s2pi*sigma)) * exp(-(1.0*x-center)**2 / (2*sigma**2))
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[Model]]
+    (((((Model(polynomial, prefix='bg\_') + Model(pvoigt, prefix='a\_')) + Model(pvoigt, prefix='d1\_')) + Model(pvoigt, prefix='d2\_')) + Model(pvoigt, prefix='d3\_')) + Model(pvoigt, prefix='dx\_'))
+[[Fit Statistics]]
+    \# fitting method   = leastsq
+    \# function evals   = 354
+    \# data points      = 65
+    \# variables        = 19
+    chi-square         = 244853.665
+    reduced chi-square = 5322.90577
+    Akaike info crit   = 573.211869
+    Bayesian info crit = 614.525227
+[[Variables]]
+    bg\_c0:         50 (fixed)
+    a\_fraction:    0.43112702 +/- 317823.458 (73719215.85\%) (init = 0.5)
+    a\_sigma:       0.15469622 +/- 83.0989130 (53717.48\%) (init = 0.1)
+    a\_center:      0 (fixed)
+    a\_amplitude:   111648.189 +/- 8.2291e+10 (73705975.85\%) (init = 120226)
+    d1\_fraction:   0.08812922 +/- 0.12729473 (144.44\%) (init = 0.5)
+    d1\_sigma:      0.15148784 +/- 0.00298369 (1.97\%) (init = 0.1)
+    d1\_center:    -8.76221652 +/- 0.00280515 (0.03\%) (init = -8.76)
+    d1\_amplitude:  1382.91623 +/- 61.0363346 (4.41\%) (init = 1120)
+    d2\_fraction:   0.48066024 +/- 0.11228989 (23.36\%) (init = 0.5)
+    d2\_sigma:      0.13236206 +/- 0.00699451 (5.28\%) (init = 0.1)
+    d2\_center:    -6.22134799 +/- 0.00192651 (0.03\%) (init = -6.2)
+    d2\_amplitude:  1606.73915 +/- 74.1577386 (4.62\%) (init = 1172)
+    d3\_fraction:   1.0085e-07 +/- 5.33470781 (5289619366.92\%) (init = 0.5)
+    d3\_sigma:      0.13688336 +/- 0.03636437 (26.57\%) (init = 0.1)
+    d3\_center:    -5.28645224 +/- 0.02568972 (0.49\%) (init = -5.25)
+    d3\_amplitude:  96.3347220 +/- 73.7328484 (76.54\%) (init = 70)
+    dx\_fraction:   0.77034052 +/- 3.37808051 (438.52\%) (init = 0.5)
+    dx\_sigma:      0.17844152 +/- 0.22756052 (127.53\%) (init = 0.1)
+    dx\_center:    -7.30087585 +/- 0.12448998 (1.71\%) (init = -7.3)
+    dx\_amplitude:  43.0513162 +/- 69.7640404 (162.05\%) (init = 24)
+    a\_fwhm:        0.30939244 +/- 47.3562204 (15306.20\%) == '2.0000000*a\_sigma'
+    a\_height:      291896.223 +/- 2.4984e+11 (85590849.79\%) == '(((1-a\_fraction)*a\_amplitude)/(a\_sigma*sqrt(pi/log(2)))+(a\_fraction*a\_amplitude)/(pi*a\_sigma))'
+    d1\_fwhm:       0.30297568 +/- 0.00596947 (1.97\%) == '2.0000000*d1\_sigma'
+    d1\_height:     4166.19936 +/- 86.8839449 (2.09\%) == '(((1-d1\_fraction)*d1\_amplitude)/(d1\_sigma*sqrt(pi/log(2)))+(d1\_fraction*d1\_amplitude)/(pi*d1\_sigma))'
+    d2\_fwhm:       0.26472412 +/- 0.01398980 (5.28\%) == '2.0000000*d2\_sigma'
+    d2\_height:     4818.47293 +/- 252.988155 (5.25\%) == '(((1-d2\_fraction)*d2\_amplitude)/(d2\_sigma*sqrt(pi/log(2)))+(d2\_fraction*d2\_amplitude)/(pi*d2\_sigma))'
+    d3\_fwhm:       0.27376673 +/- 0.07281603 (26.60\%) == '2.0000000*d3\_sigma'
+    d3\_height:     330.574965 +/- 885.876694 (267.98\%) == '(((1-d3\_fraction)*d3\_amplitude)/(d3\_sigma*sqrt(pi/log(2)))+(d3\_fraction*d3\_amplitude)/(pi*d3\_sigma))'
+    dx\_fwhm:       0.35688304 +/- 0.45558834 (127.66\%) == '2.0000000*dx\_sigma'
+    dx\_height:     85.1856654 +/- 74.8379023 (87.85\%) == '(((1-dx\_fraction)*dx\_amplitude)/(dx\_sigma*sqrt(pi/log(2)))+(dx\_fraction*dx\_amplitude)/(pi*dx\_sigma))'
+[[Correlations]] (unreported correlations are < 0.100)
+    C(a\_fraction, a\_amplitude)    = -1.000
+    C(d3\_fraction, d3\_amplitude)  = -0.950
+    C(d2\_fraction, d2\_amplitude)  =  0.921
+    C(a\_amplitude, d2\_sigma)      =  0.910
+    C(a\_fraction, d2\_sigma)       = -0.910
+    C(d1\_fraction, d1\_amplitude)  =  0.886
+    C(dx\_fraction, dx\_amplitude)  =  0.783
+    C(d2\_fraction, d2\_sigma)      = -0.758
+    C(a\_fraction, d2\_fraction)    =  0.669
+    C(a\_amplitude, d2\_fraction)   = -0.669
+    C(a\_fraction, d2\_amplitude)   =  0.657
+    C(a\_amplitude, d2\_amplitude)  = -0.657
+    C(a\_sigma, d1\_amplitude)      = -0.650
+    C(a\_amplitude, d1\_center)     = -0.650
+    C(a\_fraction, d1\_center)      =  0.650
+    C(d2\_sigma, d2\_amplitude)     = -0.629
+    C(a\_sigma, d1\_fraction)       = -0.611
+    C(d1\_center, d2\_sigma)        = -0.592
+    C(a\_sigma, dx\_amplitude)      = -0.562
+    C(a\_sigma, d2\_amplitude)      = -0.524
+    C(d1\_fraction, d2\_amplitude)  =  0.521
+    C(dx\_fraction, dx\_sigma)      = -0.511
+    C(d1\_center, d2\_fraction)     =  0.437
+    C(d3\_fraction, d3\_sigma)      =  0.430
+    C(d1\_center, d2\_amplitude)    =  0.428
+    C(d1\_fraction, d1\_sigma)      = -0.427
+    C(d1\_fraction, d2\_fraction)   =  0.423
+    C(d3\_amplitude, dx\_amplitude) =  0.411
+    C(a\_sigma, d2\_fraction)       = -0.408
+    C(d1\_amplitude, d2\_amplitude) =  0.390
+    C(d1\_amplitude, dx\_amplitude) =  0.387
+    C(d3\_fraction, dx\_amplitude)  = -0.340
+    C(a\_fraction, d1\_fraction)    =  0.336
+    C(a\_amplitude, d1\_fraction)   = -0.336
+    C(a\_fraction, d2\_center)      =  0.323
+    C(a\_amplitude, d2\_center)     = -0.323
+    C(d1\_amplitude, d3\_amplitude) =  0.318
+    C(a\_sigma, dx\_fraction)       = -0.316
+    C(d2\_sigma, d2\_center)        = -0.315
+    C(d1\_fraction, dx\_amplitude)  =  0.298
+    C(d1\_fraction, d2\_sigma)      = -0.283
+    C(d3\_amplitude, dx\_fraction)  =  0.278
+    C(d1\_amplitude, d2\_fraction)  =  0.265
+    C(d2\_fraction, d2\_center)     =  0.262
+    C(d2\_center, d2\_amplitude)    =  0.248
+    C(a\_fraction, a\_sigma)        = -0.248
+    C(a\_sigma, a\_amplitude)       =  0.248
+    C(d1\_amplitude, d3\_fraction)  = -0.244
+    C(d3\_fraction, dx\_fraction)   = -0.236
+    C(d1\_fraction, d3\_amplitude)  =  0.234
+    C(d3\_sigma, d3\_amplitude)     = -0.221
+    C(d1\_fraction, d1\_center)     =  0.216
+    C(d1\_center, d2\_center)       =  0.209
+    C(d2\_amplitude, d3\_sigma)     =  0.204
+    C(a\_sigma, d2\_sigma)          =  0.202
+    C(d1\_sigma, d1\_amplitude)     = -0.183
+    C(d2\_fraction, d3\_sigma)      =  0.181
+    C(d1\_fraction, d3\_fraction)   = -0.174
+    C(d1\_amplitude, dx\_fraction)  =  0.162
+    C(a\_sigma, d1\_center)         = -0.155
+    C(d2\_amplitude, dx\_sigma)     =  0.154
+    C(d2\_fraction, d3\_fraction)   =  0.148
+    C(d2\_amplitude, dx\_amplitude) =  0.146
+    C(d1\_fraction, dx\_sigma)      =  0.138
+    C(d1\_amplitude, dx\_sigma)     =  0.136
+    C(d2\_sigma, d3\_amplitude)     =  0.136
+    C(a\_sigma, d3\_sigma)          = -0.134
+    C(a\_fraction, d3\_sigma)       =  0.134
+    C(a\_amplitude, d3\_sigma)      = -0.134
+    C(a\_amplitude, d3\_center)     = -0.130
+    C(a\_fraction, d3\_center)      =  0.129
+    C(d2\_sigma, d3\_center)        = -0.129
+    C(d2\_sigma, d3\_fraction)      = -0.125
+    C(d2\_fraction, dx\_fraction)   = -0.123
+    C(d2\_fraction, d3\_center)     =  0.123
+    C(d2\_sigma, d3\_sigma)         = -0.121
+    C(d2\_fraction, dx\_sigma)      =  0.121
+    C(a\_sigma, dx\_sigma)          = -0.117
+    C(d1\_fraction, d2\_center)     =  0.116
+    C(d2\_sigma, dx\_fraction)      =  0.115
+    C(d2\_amplitude, d3\_center)    =  0.113
+    C(d2\_fraction, d3\_amplitude)  = -0.111
+    C(a\_sigma, d2\_center)         = -0.108
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{c+c1}{\PYZsh{} Extracting the fitted parameters}
+         
+         \PY{n}{labview\PYZus{}params} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmin [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmax [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{labview\PYZus{}params}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(mean):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(std):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Saving to variables}
+         \PY{n}{d1\PYZus{}pol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d1\PYZus{}pol\PYZus{}N} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                           \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d1\PYZus{}pol\PYZus{}Ty} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                            \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{d2\PYZus{}pol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d2\PYZus{}pol\PYZus{}N} \PY{o}{=} \PY{n}{d1\PYZus{}pol\PYZus{}N}
+         \PY{n}{d2\PYZus{}pol\PYZus{}Ty} \PY{o}{=} \PY{n}{d1\PYZus{}pol\PYZus{}Ty}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Xmin [MHz]:	-10.946780000000217
+Xmax [MHz]:	-4.446780000000217
+numberAtom(mean):	226915.8359798106
+numberAtom(std):	4416.462317862592
+tempXAtom(mean):	8.077427827451479e-07
+tempXAtom(std):	7.3935631747091145e-09
+tempYAtom(mean):	7.686944671179947e-07
+tempYAtom(std):	6.3229563743003826e-09
+UV\_Power(mean):	0.5936544150475147
+UV\_Power(std):	0.006073829806840086
+Spec\_Power(mean):	0.46401475269643505
+Spec\_Power(std):	0.0007276679065127743
+
+    \end{Verbatim}
+
+    \hypertarget{n34-unpolarized-sample}{%
+\subsubsection{n=34, unpolarized sample}\label{n34-unpolarized-sample}}
+
+    \hypertarget{n34-unpolarized-dimer-ground-state}{%
+\paragraph{n=34, unpolarized, dimer, ground
+state}\label{n34-unpolarized-dimer-ground-state}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{data} \PY{o}{=} \PY{n}{unpol\PYZus{}data}
+         \PY{n}{plot\PYZus{}components} \PY{o}{=} \PY{k+kc}{True}
+         \PY{n}{plot\PYZus{}initial\PYZus{}guess} \PY{o}{=} \PY{k+kc}{False}
+         
+         \PY{c+c1}{\PYZsh{} Choosing a range to fit over}
+         \PY{n}{xmin} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{23}
+         \PY{n}{xmax} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{18}
+         
+         \PY{n}{xdata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata\PYZus{}unc} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} Specify fit model}
+         \PY{n}{bg} \PY{o}{=} \PY{n}{PolynomialModel}\PY{p}{(}\PY{n}{degree}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d0} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{dx} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}model} \PY{o}{=} \PY{n}{bg} \PY{o}{+} \PY{n}{d0} \PY{o}{+} \PY{n}{dx}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}model = bg + d0}
+         \PY{n}{fit\PYZus{}params} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{make\PYZus{}params}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}c0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{ydata}\PY{p}{)}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c1\PYZsq{}].set(0, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c2\PYZsq{}].set(0, vary=True)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{537}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{19.4}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{19.5}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{43}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dx\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{max}\PY{o}{=}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Initial guess}
+         \PY{n}{xfit} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{endpoint}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{yinit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Fitting}
+         \PY{n}{fit\PYZus{}result} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{ydata}\PY{p}{,} \PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{dely} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}uncertainty}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{yfit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{fit\PYZus{}report}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Plotting output}
+         \PY{p}{[}\PY{n}{fig}\PY{p}{,} \PY{n}{axs}\PY{p}{]} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (linear)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (log)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{bottom}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}components}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} generate components}
+             \PY{n}{fit\PYZus{}comps} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}components}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n}{fit\PYZus{}comps}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                     \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{fit\PYZus{}comps}\PY{p}{[}\PY{n}{key}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}initial\PYZus{}guess}\PY{p}{:}
+             \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yinit}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{init}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[Model]]
+    ((Model(polynomial, prefix='bg\_') + Model(pvoigt, prefix='d0\_')) + Model(pvoigt, prefix='dx\_'))
+[[Fit Statistics]]
+    \# fitting method   = leastsq
+    \# function evals   = 252
+    \# data points      = 28
+    \# variables        = 8
+    chi-square         = 19085.8707
+    reduced chi-square = 954.293536
+    Akaike info crit   = 198.685974
+    Bayesian info crit = 209.343610
+[[Variables]]
+    bg\_c0:         4.78700942 +/- 14.4617543 (302.10\%) (init = 10.86863)
+    d0\_fraction:   0.38658603 +/- 0.20577537 (53.23\%) (init = 0.5)
+    d0\_sigma:      0.16043326 +/- 0.00730130 (4.55\%) (init = 0.1)
+    d0\_center:    -20.0413188 +/- 0.00490891 (0.02\%) (init = -20)
+    d0\_amplitude:  350.965880 +/- 28.0151823 (7.98\%) (init = 537)
+    dx\_fraction:   0.99999920 +/- 3.94146732 (394.15\%) (init = 0.5)
+    dx\_sigma:      0.19999999 +/- 0.33650444 (168.25\%) (init = 0.1)
+    dx\_center:    -19.4 (fixed)
+    dx\_amplitude:  19.3285369 +/- 43.4197120 (224.64\%) (init = 43)
+    d0\_fwhm:       0.32086651 +/- 0.01460259 (4.55\%) == '2.0000000*d0\_sigma'
+    d0\_height:     899.516129 +/- 31.1839557 (3.47\%) == '(((1-d0\_fraction)*d0\_amplitude)/(d0\_sigma*sqrt(pi/log(2)))+(d0\_fraction*d0\_amplitude)/(pi*d0\_sigma))'
+    dx\_fwhm:       0.39999999 +/- 0.67300889 (168.25\%) == '2.0000000*dx\_sigma'
+    dx\_height:     30.7623346 +/- 31.7254785 (103.13\%) == '(((1-dx\_fraction)*dx\_amplitude)/(dx\_sigma*sqrt(pi/log(2)))+(dx\_fraction*dx\_amplitude)/(pi*dx\_sigma))'
+[[Correlations]] (unreported correlations are < 0.100)
+    C(d0\_fraction, d0\_amplitude)  =  0.881
+    C(dx\_fraction, dx\_amplitude)  =  0.787
+    C(bg\_c0, dx\_amplitude)        = -0.750
+    C(bg\_c0, dx\_fraction)         = -0.616
+    C(d0\_fraction, d0\_sigma)      = -0.519
+    C(bg\_c0, d0\_fraction)         = -0.452
+    C(bg\_c0, d0\_amplitude)        = -0.424
+    C(d0\_center, dx\_amplitude)    = -0.419
+    C(dx\_fraction, dx\_sigma)      = -0.417
+    C(d0\_center, dx\_fraction)     = -0.334
+    C(bg\_c0, d0\_center)           =  0.309
+    C(d0\_sigma, dx\_fraction)      = -0.284
+    C(d0\_fraction, dx\_fraction)   =  0.231
+    C(d0\_sigma, dx\_amplitude)     = -0.205
+    C(bg\_c0, d0\_sigma)            =  0.201
+    C(d0\_fraction, dx\_sigma)      = -0.194
+    C(d0\_sigma, d0\_amplitude)     = -0.173
+    C(d0\_amplitude, dx\_sigma)     = -0.165
+    C(dx\_sigma, dx\_amplitude)     =  0.142
+    C(d0\_amplitude, dx\_amplitude) = -0.115
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_31_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} Extracting the fitted parameters}
+         
+         \PY{n}{labview\PYZus{}params} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmin [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmax [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{labview\PYZus{}params}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(mean):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(std):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Saving to variables}
+         \PY{n}{d0\PYZus{}unpol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d0\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d0\PYZus{}unpol\PYZus{}N} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                             \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d0\PYZus{}unpol\PYZus{}Ty} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                              \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Xmin [MHz]:	-20.779999999999745
+Xmax [MHz]:	-18.079999999999927
+numberAtom(mean):	215125.35114108803
+numberAtom(std):	4001.7504395278065
+tempXAtom(mean):	9.964611509343212e-07
+tempXAtom(std):	1.0749130571111205e-08
+tempYAtom(mean):	8.600807191563468e-07
+tempYAtom(std):	5.064645397669494e-09
+UV\_Power(mean):	0.5962146969592345
+UV\_Power(std):	0.004079752694828221
+Spec\_Power(mean):	0.465497392454489
+Spec\_Power(std):	0.0006175933501823958
+
+    \end{Verbatim}
+
+    \hypertarget{n34-unpolarized-dimer-1st-and-2nd-excited-states}{%
+\paragraph{n=34, unpolarized, dimer, 1st and 2nd excited
+states}\label{n34-unpolarized-dimer-1st-and-2nd-excited-states}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{data} \PY{o}{=} \PY{n}{unpol\PYZus{}data}
+         \PY{n}{plot\PYZus{}components} \PY{o}{=} \PY{k+kc}{True}
+         \PY{n}{plot\PYZus{}initial\PYZus{}guess} \PY{o}{=} \PY{k+kc}{False}
+         
+         \PY{c+c1}{\PYZsh{} Choosing a range to fit over}
+         \PY{n}{xmin} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{11}
+         \PY{n}{xmax} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}
+         
+         \PY{n}{xdata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{ydata\PYZus{}unc} \PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sfiIntegral\PYZus{}adjusted}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{std}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         
+         \PY{c+c1}{\PYZsh{} Specify fit model}
+         \PY{n}{bg} \PY{o}{=} \PY{n}{PolynomialModel}\PY{p}{(}\PY{n}{degree}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{a} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d1} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d2} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d3} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{d4} \PY{o}{=} \PY{n}{PseudoVoigtModel}\PY{p}{(}\PY{n}{prefix}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d4\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}model} \PY{o}{=} \PY{n}{bg} \PY{o}{+} \PY{n}{a} \PY{o}{+} \PY{n}{d1} \PY{o}{+} \PY{n}{d2} \PY{o}{+} \PY{n}{d3} \PY{o}{+} \PY{n}{d4}
+         \PY{n}{fit\PYZus{}params} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{make\PYZus{}params}\PY{p}{(}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c0\PYZsq{}].set(min(ydata), max=100, vary=True)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bg\PYZus{}c0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{,} \PY{n+nb}{max}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c1\PYZsq{}].set(2, vary=True)}
+         \PY{c+c1}{\PYZsh{}fit\PYZus{}params[\PYZsq{}bg\PYZus{}c2\PYZsq{}].set(0, vary=True)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{120226}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{8.76}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{1120}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{6.22}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{1172}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{5.28}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{70}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d3\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d4\PYZus{}center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d4\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mi}{140}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{fit\PYZus{}params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d4\PYZus{}sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n+nb}{min}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vary}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Initial guess}
+         \PY{n}{xfit} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{,} \PY{n}{endpoint}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{yinit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Fitting}
+         \PY{n}{fit\PYZus{}result} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{ydata}\PY{p}{,} \PY{n}{fit\PYZus{}params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{dely} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}uncertainty}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xdata}\PY{p}{)}
+         \PY{n}{yfit} \PY{o}{=} \PY{n}{fit\PYZus{}model}\PY{o}{.}\PY{n}{eval}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{,} \PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{fit\PYZus{}report}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Plotting output}
+         \PY{p}{[}\PY{n}{fig}\PY{p}{,} \PY{n}{axs}\PY{p}{]} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{nrows}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{ncols}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{sharex}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{sharey}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (linear)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{top}\PY{o}{=}\PY{l+m+mi}{1000}\PY{p}{)}
+         
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}yscale}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{errorbar}\PY{p}{(}\PY{n}{xdata}\PY{p}{,} \PY{n}{ydata}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{ydata\PYZus{}unc}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yfit}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Detuning [MHz]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Counts (log)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{n}{bottom}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}components}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} generate components}
+             \PY{n}{fit\PYZus{}comps} \PY{o}{=} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{eval\PYZus{}components}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{xfit}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n}{fit\PYZus{}comps}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                     \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{fit\PYZus{}comps}\PY{p}{[}\PY{n}{key}\PY{p}{]}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{k}{if} \PY{n}{plot\PYZus{}initial\PYZus{}guess}\PY{p}{:}
+             \PY{k}{for} \PY{n}{ax} \PY{o+ow}{in} \PY{n}{axs}\PY{p}{:}
+                 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xfit}\PY{p}{,} \PY{n}{yinit}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{init}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[Model]]
+    (((((Model(polynomial, prefix='bg\_') + Model(pvoigt, prefix='a\_')) + Model(pvoigt, prefix='d1\_')) + Model(pvoigt, prefix='d2\_')) + Model(pvoigt, prefix='d3\_')) + Model(pvoigt, prefix='d4\_'))
+[[Fit Statistics]]
+    \# fitting method   = leastsq
+    \# function evals   = 942
+    \# data points      = 80
+    \# variables        = 20
+    chi-square         = 8218.63476
+    reduced chi-square = 136.977246
+    Akaike info crit   = 410.570620
+    Bayesian info crit = 458.211153
+[[Variables]]
+    bg\_c0:         10.9611890 +/- 4.71913267 (43.05\%) (init = 50)
+    a\_fraction:    0.31331169 +/- 613352.366 (195764279.74\%) (init = 0.5)
+    a\_sigma:       0.03124596 +/- 40.1717626 (128566.26\%) (init = 0.1)
+    a\_center:      0 (fixed)
+    a\_amplitude:   74421.5276 +/- 1.4550e+11 (195503712.40\%) (init = 120226)
+    d1\_fraction:   0.30705551 +/- 0.10472818 (34.11\%) (init = 0.5)
+    d1\_sigma:      0.15517768 +/- 0.00347834 (2.24\%) (init = 0.1)
+    d1\_center:    -8.79624497 +/- 0.00245290 (0.03\%) (init = -8.76)
+    d1\_amplitude:  248.041226 +/- 10.7143400 (4.32\%) (init = 1120)
+    d2\_fraction:   0.34277275 +/- 0.10931939 (31.89\%) (init = 0.5)
+    d2\_sigma:      0.15149363 +/- 0.00328517 (2.17\%) (init = 0.1)
+    d2\_center:    -6.19995692 +/- 0.00358845 (0.06\%) (init = -6.22)
+    d2\_amplitude:  257.084689 +/- 12.5938694 (4.90\%) (init = 1172)
+    d3\_fraction:   0.26323294 +/- 2.00428662 (761.41\%) (init = 0.5)
+    d3\_sigma:      0.39382721 +/- 0.08861785 (22.50\%) (init = 0.1)
+    d3\_center:    -5.07909762 +/- 0.06034816 (1.19\%) (init = -5.28)
+    d3\_amplitude:  38.4002723 +/- 29.6357668 (77.18\%) (init = 70)
+    d4\_fraction:   0.99306020 +/- 0.50427657 (50.78\%) (init = 0.5)
+    d4\_sigma:      0.16322022 +/- 0.03853311 (23.61\%) (init = 0.1)
+    d4\_center:    -3.75549154 +/- 0.01945830 (0.52\%) (init = -4)
+    d4\_amplitude:  46.4109205 +/- 14.4949870 (31.23\%) (init = 140)
+    a\_fwhm:        0.06249192 +/- 80.3438489 (128566.78\%) == '2.0000000*a\_sigma'
+    a\_height:      1005786.35 +/- 2.1876e+12 (217503343.14\%) == '(((1-a\_fraction)*a\_amplitude)/(a\_sigma*sqrt(pi/log(2)))+(a\_fraction*a\_amplitude)/(pi*a\_sigma))'
+    d1\_fwhm:       0.31035537 +/- 0.00695668 (2.24\%) == '2.0000000*d1\_sigma'
+    d1\_height:     676.501459 +/- 17.4198308 (2.57\%) == '(((1-d1\_fraction)*d1\_amplitude)/(d1\_sigma*sqrt(pi/log(2)))+(d1\_fraction*d1\_amplitude)/(pi*d1\_sigma))'
+    d2\_fwhm:       0.30298726 +/- 0.00657033 (2.17\%) == '2.0000000*d2\_sigma'
+    d2\_height:     709.040265 +/- 13.7156401 (1.93\%) == '(((1-d2\_fraction)*d2\_amplitude)/(d2\_sigma*sqrt(pi/log(2)))+(d2\_fraction*d2\_amplitude)/(pi*d2\_sigma))'
+    d3\_fwhm:       0.78765442 +/- 0.17723571 (22.50\%) == '2.0000000*d3\_sigma'
+    d3\_height:     41.9139426 +/- 8.79926407 (20.99\%) == '(((1-d3\_fraction)*d3\_amplitude)/(d3\_sigma*sqrt(pi/log(2)))+(d3\_fraction*d3\_amplitude)/(pi*d3\_sigma))'
+    d4\_fwhm:       0.32644045 +/- 0.07706623 (23.61\%) == '2.0000000*d4\_sigma'
+    d4\_height:     90.8087281 +/- 13.7301729 (15.12\%) == '(((1-d4\_fraction)*d4\_amplitude)/(d4\_sigma*sqrt(pi/log(2)))+(d4\_fraction*d4\_amplitude)/(pi*d4\_sigma))'
+[[Correlations]] (unreported correlations are < 0.100)
+    C(a\_fraction, a\_amplitude)    = -1.000
+    C(d3\_fraction, d3\_amplitude)  =  0.968
+    C(d2\_fraction, d2\_amplitude)  =  0.905
+    C(d1\_fraction, d1\_amplitude)  =  0.881
+    C(a\_fraction, d2\_center)      =  0.801
+    C(a\_amplitude, d2\_center)     = -0.801
+    C(d4\_fraction, d4\_amplitude)  =  0.764
+    C(bg\_c0, d1\_amplitude)        = -0.708
+    C(d2\_amplitude, d3\_fraction)  = -0.667
+    C(d2\_amplitude, d3\_amplitude) = -0.654
+    C(bg\_c0, d1\_fraction)         = -0.647
+    C(d3\_fraction, d4\_amplitude)  = -0.611
+    C(d2\_amplitude, d4\_amplitude) =  0.567
+    C(d3\_amplitude, d4\_amplitude) = -0.564
+    C(a\_sigma, d4\_amplitude)      = -0.523
+    C(bg\_c0, a\_sigma)             = -0.521
+    C(d2\_fraction, d3\_amplitude)  = -0.488
+    C(d2\_fraction, d3\_fraction)   = -0.475
+    C(d1\_fraction, d1\_sigma)      = -0.459
+    C(a\_fraction, d1\_center)      =  0.454
+    C(a\_amplitude, d1\_center)     = -0.454
+    C(d3\_fraction, d3\_sigma)      = -0.435
+    C(d2\_fraction, d4\_amplitude)  =  0.432
+    C(d3\_fraction, d4\_fraction)   = -0.415
+    C(d4\_fraction, d4\_sigma)      = -0.405
+    C(d3\_amplitude, d4\_fraction)  = -0.403
+    C(d2\_amplitude, d4\_fraction)  =  0.386
+    C(a\_sigma, d4\_fraction)       = -0.372
+    C(d1\_center, d2\_center)       =  0.365
+    C(d2\_fraction, d2\_sigma)      = -0.353
+    C(a\_amplitude, d1\_sigma)      =  0.336
+    C(a\_fraction, d1\_sigma)       = -0.336
+    C(a\_amplitude, d1\_amplitude)  = -0.308
+    C(a\_fraction, d1\_amplitude)   =  0.308
+    C(bg\_c0, d3\_amplitude)        = -0.299
+    C(d2\_fraction, d4\_fraction)   =  0.296
+    C(d3\_amplitude, d4\_center)    =  0.278
+    C(d3\_fraction, d4\_center)     =  0.270
+    C(d1\_sigma, d2\_center)        = -0.268
+    C(d1\_sigma, d1\_amplitude)     = -0.266
+    C(d3\_sigma, d3\_amplitude)     = -0.265
+    C(d2\_fraction, d3\_center)     =  0.263
+    C(bg\_c0, d3\_fraction)         = -0.253
+    C(d2\_amplitude, d3\_center)    =  0.243
+    C(bg\_c0, d2\_fraction)         = -0.230
+    C(d1\_amplitude, d2\_center)    =  0.223
+    C(d1\_amplitude, d2\_amplitude) =  0.218
+    C(d3\_sigma, d4\_amplitude)     =  0.215
+    C(d1\_fraction, d2\_amplitude)  =  0.208
+    C(a\_sigma, d1\_amplitude)      =  0.207
+    C(a\_fraction, d2\_sigma)       =  0.203
+    C(a\_amplitude, d2\_sigma)      = -0.203
+    C(bg\_c0, d4\_amplitude)        =  0.202
+    C(bg\_c0, d2\_amplitude)        = -0.200
+    C(d2\_amplitude, d4\_center)    = -0.193
+    C(d1\_fraction, d2\_fraction)   =  0.193
+    C(d1\_amplitude, d2\_fraction)  =  0.192
+    C(d2\_sigma, d3\_fraction)      = -0.191
+    C(d4\_sigma, d4\_amplitude)     =  0.188
+    C(d2\_center, d3\_amplitude)    = -0.184
+    C(d2\_center, d3\_fraction)     = -0.176
+    C(d2\_sigma, d2\_center)        =  0.173
+    C(a\_sigma, d1\_fraction)       =  0.172
+    C(d1\_sigma, d1\_center)        = -0.160
+    C(bg\_c0, d4\_fraction)         =  0.157
+    C(d2\_sigma, d3\_amplitude)     = -0.157
+    C(d2\_center, d3\_center)       =  0.150
+    C(d1\_amplitude, d3\_amplitude) =  0.149
+    C(d3\_fraction, d4\_sigma)      = -0.149
+    C(d2\_amplitude, d3\_sigma)     =  0.149
+    C(d2\_fraction, d4\_center)     = -0.144
+    C(d1\_center, d1\_amplitude)    =  0.142
+    C(d1\_fraction, d3\_amplitude)  =  0.141
+    C(d2\_amplitude, d4\_sigma)     =  0.140
+    C(d2\_sigma, d3\_sigma)         =  0.137
+    C(d4\_center, d4\_amplitude)    = -0.134
+    C(a\_fraction, d3\_center)      =  0.130
+    C(a\_amplitude, d3\_center)     = -0.130
+    C(d3\_amplitude, d4\_sigma)     = -0.123
+    C(d4\_fraction, d4\_center)     = -0.123
+    C(a\_sigma, d4\_sigma)          = -0.121
+    C(d2\_sigma, d4\_amplitude)     =  0.116
+    C(d2\_fraction, d4\_sigma)      =  0.109
+    C(d3\_sigma, d4\_sigma)         =  0.108
+    C(a\_amplitude, d2\_fraction)   =  0.104
+    C(a\_fraction, d2\_fraction)    = -0.104
+    C(d2\_center, d4\_amplitude)    =  0.101
+
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{} Extracting the fitted parameters}
+         
+         \PY{n}{labview\PYZus{}params} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempXAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{UV\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Spec\PYZus{}Power}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmin [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Xmax [MHz]:}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{max}\PY{p}{(}\PY{n}{xdata}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{labview\PYZus{}params}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(mean):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{p}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{(std):}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{n}{p}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Saving to variables}
+         \PY{n}{d1\PYZus{}unpol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d1\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d1\PYZus{}unpol\PYZus{}N} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                           \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numberAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d1\PYZus{}unpol\PYZus{}Ty} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                            \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{p}{(}\PY{n}{xmin} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{detuning}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{xmax}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tempYAtom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{d2\PYZus{}unpol\PYZus{}int} \PY{o}{=} \PY{n}{ufloat}\PY{p}{(}\PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value}\PY{p}{,} \PY{n}{fit\PYZus{}result}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{d2\PYZus{}amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{stderr}\PY{p}{)}
+         \PY{n}{d2\PYZus{}unpol\PYZus{}N} \PY{o}{=} \PY{n}{d1\PYZus{}pol\PYZus{}N}
+         \PY{n}{d2\PYZus{}unpol\PYZus{}Ty} \PY{o}{=} \PY{n}{d1\PYZus{}pol\PYZus{}Ty}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Xmin [MHz]:	-10.730000000000018
+Xmax [MHz]:	-2.0299999999997453
+numberAtom(mean):	219344.8153837234
+numberAtom(std):	3563.010406184859
+tempXAtom(mean):	9.94576884697456e-07
+tempXAtom(std):	9.584410477617168e-09
+tempYAtom(mean):	8.592819219318295e-07
+tempYAtom(std):	6.066941993710516e-09
+UV\_Power(mean):	0.5962370472187819
+UV\_Power(std):	0.0044642111618143614
+Spec\_Power(mean):	0.46486171260038434
+Spec\_Power(std):	0.0007115894139212488
+
+    \end{Verbatim}
+
+    \hypertarget{some-uncertainty-calculations}{%
+\section{Some uncertainty
+calculations}\label{some-uncertainty-calculations}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{d0\PYZus{}pol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d0\PYZus{}pol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d0\PYZus{}pol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d0\PYZus{}pol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d1\PYZus{}pol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d1\PYZus{}pol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d1\PYZus{}pol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d1\PYZus{}pol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d2\PYZus{}pol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d2\PYZus{}pol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d2\PYZus{}pol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d2\PYZus{}pol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{d0\PYZus{}unpol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d0\PYZus{}unpol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d0\PYZus{}unpol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d0\PYZus{}unpol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d1\PYZus{}unpol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d1\PYZus{}unpol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d1\PYZus{}unpol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d1\PYZus{}unpol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{d2\PYZus{}unpol\PYZus{}int\PYZus{}corr} \PY{o}{=} \PY{n}{d2\PYZus{}unpol\PYZus{}int}\PY{o}{/}\PY{p}{(}\PY{n}{d2\PYZus{}unpol\PYZus{}N}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{/}\PY{n}{d2\PYZus{}unpol\PYZus{}Ty}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{d1\PYZus{}pol\PYZus{}int\PYZus{}corr}\PY{o}{/}\PY{n}{d0\PYZus{}pol\PYZus{}int\PYZus{}corr}
+         \PY{n}{d2\PYZus{}pol\PYZus{}int\PYZus{}corr}\PY{o}{/}\PY{n}{d0\PYZus{}pol\PYZus{}int\PYZus{}corr}
+         
+         \PY{n}{d1\PYZus{}unpol\PYZus{}int\PYZus{}corr}\PY{o}{/}\PY{n}{d0\PYZus{}unpol\PYZus{}int\PYZus{}corr}
+         \PY{n}{d2\PYZus{}unpol\PYZus{}int\PYZus{}corr}\PY{o}{/}\PY{n}{d0\PYZus{}unpol\PYZus{}int\PYZus{}corr}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}22}]:} 0.5562713620917226+/-0.06068482924854132
+\end{Verbatim}
+            
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

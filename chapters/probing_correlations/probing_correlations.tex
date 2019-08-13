@@ -1,4 +1,4 @@
-\chapter{Towards Probing Spatial Correlations with Rydberg Molecules}
+\chapter{Vibrationally-Excited Rydberg Molecules in Cold Gases of \Sr{87}}
 \label{ch:correlations}
 
 Many interesting phenomena in quantum systems have a length scale associated with their interaction.
@@ -9,14 +9,15 @@ As a result, tools that provide information regarding the spatial correlation in
 
 One of the most ingenious ways of probing spatial correlations due to quantum statistics was demonstrated with metastable helium atoms.
 By dropping quantum degenerate Bose and Fermi gases on to a time-resolved position-sensitive MCP detector, the two-body and three-body pair correlation functions of the initial sample were able to be reconstructed \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
-Although powerful, this method is neither \textit{in situ} nor nondestructive, requiring the samples need to be at equilibrium before the drop in order for a reconstruction to make sense, thus hindering the possibility of mapping the temporal development of spatial correlations. 
+Although powerful, this method is neither \textit{in situ} nor nondestructive, requiring the samples to be at equilibrium prior to dropping in order for the reconstruction to make sense, thus hindering the possibility of mapping the temporal development of spatial correlations. 
 
-Alternative, less destructive, \textit{in situ} techniques have also been developed and employed but these are generally restricted by the dimensionality of a system, the length scales accessible, or both.
-For the shortest length scales (i.e., $R = 0$ contact interactions), inelastic loss processes have been demonstrated to be sensitive to three-body spatial correlations \cite{Burt1997.PRL.79.337}. 
-For length scales comparable to the sizes of molecular bonds (i.e., $R \sim R_{\text{vdW}} \lesssim \SI{10}{\nm}$), photoassociative spectroscopy (PAS) can be used since these effects take place on the length scale of the van der Waals interaction \cite{Jones2006.RMP.78.483, Jones2006.RMP.78.1041}.
-If the effect occurs on a two (or one) dimensional lattice structure, quantum gas microscopes (QGM) have the capability of directly detecting the presence or absence of atoms on a particular lattice site and, therefore, are able to directly measure spatial correlations \cite{Bakr2010.Science.329.547, Omran2015.PRL.115.263001, Mazurenko2017.Nature.545.462}.
-Since QGMs require an optical lattice, the length scales they are able to probe are restricted by the optical wavelengths used to form the lattice and typically $R \gtrsim \SI{266}{\nm}$.
-\Cref{fig:correlation_tools} illustrates some of the tools developed for probing the effects and their typical ``effective'' length scales.
+Alternative, less destructive, \textit{in situ} techniques have also been developed and employed but these are generally restricted by the dimensionality of a system or the length scales accessible.
+For the shortest length scales (i.e., $R = 0$ contact interactions), inelastic loss due to three-body recombination has been shown to be sensitive to the effects of $g^{\pqty*{3}}\pqty*{R}$ as evidenced by different loss rates observed in a nondegenerate compared to a degenerate Bose gases \cite{Burt1997.PRL.79.337}. 
+For length scales comparable to the sizes of molecular bonds (i.e., $R \sim R_{\text{vdW}} \lesssim \SI{10}{\nm}$), photoassociative spectroscopy (PAS) can be used 
+since efficient photoassociation requires the constituent atoms to have a separation distance comparable to the molecular bond length ($\sim R_{\text{vdW}}$) \cite{Jones2006.RMP.78.483, Jones2006.RMP.78.1041}.
+If the effect can be observed in a two (or one) dimensional lattice structure, quantum gas microscopes (QGM) have the capability of directly detecting the presence or absence of atoms on a particular lattice site and, therefore, are able to directly measure spatial correlations \cite{Bakr2010.Science.329.547, Omran2015.PRL.115.263001, Mazurenko2017.Nature.545.462}.
+Since QGMs require an optical lattice, their accessible length scales are restricted by the optical wavelengths used to form the lattice and typically $R \gtrsim \SI{266}{\nm}$.
+\Cref{fig:correlation_tools} illustrates some of the tools developed for probing the effects and their typical effective length scales.
 \begin{figure}[!htbp]
 	\centering
 	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlation_tools/probing_correlations.svg}
@@ -30,26 +31,26 @@ Since QGMs require an optical lattice, the length scales they are able to probe 
 \end{figure}
 
 As seen in \cref{fig:correlation_tools}, there is a gap for length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{266}{\nm}$ which can be filled by ULRRMs. 
-Analogous to how photoassociation can be used to probe correlations on the order of $R_{\text{vdW}}$, the formation rate of ULRRMs can also be used to measure spatial correlations. 
-The advantage of ULRRMs is that the length scale being probed depends on the size of the parent Rydberg atom, meaning varying interparticle distances can be probed by simply exciting to a different principal quantum number $n$. 
+Analogous to how PAS can be used to probe correlations on the order of $R_{\text{vdW}}$, the formation rate of ULRRMs can also be used to measure spatial correlations. 
+The advantage of ULRRMs is that the length scale being probed depends on the size of the parent Rydberg atom, meaning varying interparticle distances can be probed by simply exciting to a different principal quantum number ($n$). 
 This tunability gives ULRRMs a huge advantage and can fill the gap between the short-range PAS and the longer-range $R \gtrsim \SI{266}{\nm}$ QGM.
 
-This chapter contains work that is currently in progress.
+%This chapter contains work that is currently in progress.
 
 \section{Probing of Spatial Correlations with ULRRMs}
 
-The work presented in \cite{Whalen2019.PRA.100.011402} was lead by Joe Whalen so the details will be covered in his upcoming thesis but the ideas are important for understanding the extensions of the work we did. 
+The work presented in \cite{Whalen2019.PRA.100.011402} was lead by Joe Whalen so the details will be covered in his upcoming thesis but the ideas are important for understanding the extensions of that work.
 
 In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are bosonic, fermionic, or classical.
-For the two-body case, this effect on the density distribution is typically referred to as ${g}^{\pqty{2}}\pqty{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE? ***
+For the two-body case, this effect on the density distribution is typically referred to as the spatial correlation function ${g}^{\pqty*{2}}\pqty*{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE? ***
 \begin{equation}
 	{g}^{\pqty{2}}\pqty{R}	=	1 + \epsilon {\me}^{-2 \pi R^{2}/{\lambda_{\text{dB}}}^{2}}
 \end{equation}
 where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical cases, respectively, and $\lambda_{\text{dB}} = {h}/{\sqrt{2 \pi m k_{B} T}}$ is the thermal de Broglie wavelength.
 For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
 
-The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident colliding scattering wave functions and the Rydberg molecular wave functions. 
-In particular, the most deeply-bound vibrational ULRRM state is well-localized and is related to the classical electron turning point of the parent Rydberg atom (see \cref{fig:vary_n-nu0}). 
+The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident (atomic) scattering wave functions and the Rydberg molecular wave functions. 
+In particular, the most deeply-bound vibrational ULRRM state ($\nu = 0$) is well-localized with a location that can be related to the classical electron turning point of the parent Rydberg atom.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlations/vary_n/vary_n-nu0.pdf}
@@ -58,15 +59,16 @@ In particular, the most deeply-bound vibrational ULRRM state is well-localized a
 		Calculated Rydberg molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULLRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
 		The position of the well-localized $\nu = 0$ vibrational state depends on $n$.}
 \end{figure}
-By varying $n$ of the parent Rydberg atom, different interparticle separations can be probed, i.e. $R \sim {n^*}^{2}$. 
+As seen in  \cref{fig:vary_n-nu0}, different interparticle separations can be probed by varying $n$ of the parent Rydberg atom.
 Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
 
 \section{Experimental Procedure}
 
-The experimental procedures used for the following experiments are all similar with only minor adjustments depending on the particular isotope(s) being laser cooled and so will only be briefly covered.
+The experimental procedures used for the following experiments are all similar with minor adjustments depending on the particular isotope(s) being laser cooled and so will only be briefly covered.
 For bosonic samples, only \Sr{84} is laser cooled and trapped following the usual blue MOT and red MOT laser cooling stages that results in samples of about $\SI{2}{\micro\kelvin}$ loaded in to the ODT.
-After loading, all laser cooling light is extinguished and the atoms are held for a short period of time to allow free-evaporation to occur before forced evaporation is performed by lowering the power of the ODT until the desired temperature is reached.
-We confirm that the sample is still thermal and not quantum degenerate by absorption images after a short time-of-flight drop.
+After loading, all laser cooling light is extinguished and the atoms are held for a short period of time to allow free-evaporation to occur before forced evaporation is performed by lowering the power of the ODT.
+Forced evaporation continues until the desired temperature is reached.
+We confirm that the sample is still thermal and not quantum degenerate by performing a short time-of-flight drop before resonant absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
 
 Fermionic and classical samples are represented by spin-polarized and unpolarized gases of \Sr{87}, respectively. 
 In both cases, we sequentially load both \Sr{87} and \Sr{84} in to the magnetic trap, as described in \cref{ssec:magnetic_trap_and_repumping}, in preparation for sympathetic cooling.
@@ -74,9 +76,10 @@ Once both isotopes are loaded, the $\SI{461}{\nm}$ light is extinguished and the
 Dual red MOTs are then operated to laser cool both \Sr{87} and \Sr{84} isotopes simultaneously, achieving temperatures of about $\SI{2}{\micro\kelvin}$ for loading in to the ODT.
 For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ bias magnetic field along the $x$-axis is applied to provide a quantization axis.
 Spin-polarization is achieved by optically pumping, sequentially driving ${\Delta}m_{F} = +1$ transitions on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$.
-This results in *** $\SI{>90}{\percent}$ *** of the atoms populating the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state stretched state.
+This results in $\SI{>90}{\percent}$ of the atoms populating the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state stretched state.
 For the unpolarized sample, no bias magnetic field is applied and no optical pumping occurs. 
 At this point, both the spin-polarized and unpolarized samples undergo a short hold before forced evaporation commences which continues until the the desired temperature is achieved.
+The magnetic field is also lowered to $\SI{\approx 1}{\gauss}$.
 Before moving on to spectroscopy, the \Sr{84} atoms in the ODT are removed with a pulse of light resonant on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
 
 For all samples, a two-photon transition is used to produce ULRRMs.
@@ -119,35 +122,66 @@ In this setup, the $\SI{689}{\nm}$ drives $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarro
 
 \subsection{Rydberg Excitation}
 
-Rydberg excitation is performed with a two-photon transition 
+
+
+
+
+With the exception of the $\SI{\approx 1}{\gauss}$ magnetic bias field to maintain spin-polarization, both the polarized and unpolarized gases follow the same two-photon excitation scheme.
+The first photon is a $\SI{689}{\nm}$ with $\sigma^{+}$-polarization propagating along the direction of the bias magnetic field and is blue-detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by about *** $\SI{14.8}{\MHz}$ ***.
+The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to excite the ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ state.
+
+\section{Spectroscopy of Vibrationally Excited ULRRMs in \Sr{87}}
+
+Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimers/rydberg_excitation_spectra/Fig7.pdf}
+	\caption[]{
+		\label{fig:excited_ULRRM_spectra}
+		**** PLACEHOLDER FIGURE ****.
+		Excited ULRRM spectra figure.}
+\end{figure}
 
 \section{Analysis}
 
 The integrated Rydberg molecule signal should scale as
 \begin{equation}
-	S_{n}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \mathcal{C} \mathcal{F}_{n}
+	S_{n,\nu}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \beta_{n} \mathcal{C} \mathcal{F}_{n,\nu}
 \end{equation}
+where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers, $\mathcal{N}$ is a density-dependent term, $\beta_{n}$ is the two-photon transition matrix element, $\mathcal{C}$ is a Clebsch-Gordan factor, and $\mathcal{F}_{n,\nu}$ is the effective Franck-Condon factor.
 
 \subsection{Density Correction Term}
 
-During data taking, we record both the sample temperature and atom number. 
-In additional to knowing our trap frequencies, we are able to perform a correction for the density-dependent excitation rate. 
-For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by \cite{Pethick.BEC}
+During data collecting, both the atom number and sample temperature are recorded with resonant absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
+All the samples use the same final trapping parameters prior to Rydberg excitation with a vertical trap frequency of $f_{z} \approx \SI{300}{\Hz}$ and radial trap frequency of $f_{r} \approx \SI{130}{\Hz}$.
+Knowing these parameters, we can apply a density-dependent correction to the ULRRM signals.
+
+For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by
 \begin{equation}
 	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
 \end{equation}
-with $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency. 
-
-For the dimers, the signal is proportional to square of the density distribution integrated over all space meaning
+where $N$ is the total atom number and $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency \cite{Pethick.BEC}. 
+For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\va{r}}}^{2}$ integrated over all space.
+Performing the integration yields
 \begin{equation}
 	\mathcal{N}_2	=		\int \dd[3]{r} \rho\pqty{\va{r}}
 					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
 					\propto	\frac{N^2}{T^{3/2}}
 \end{equation}
-Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to reduce the sensitivity to the sample density and temperature. 
+Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to account for the signal dependence on atom number and temperature. 
 This correction is applied to all the dimer vibrational excited state data.
 
+\subsection{Extraction of Ratios}
+
+**** Details about how the ratios were extracted ****
+
 \section{Creation of Vibrationally-Excited Rydberg Molecules in Spin-Polarized and Unpolarized Ultracold Gases of \Sr{87}}
+
+
+
+**********************************
+
 
 The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULRRMs to $g^{\pqty*{2}}\pqty*{R}$.
 An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
