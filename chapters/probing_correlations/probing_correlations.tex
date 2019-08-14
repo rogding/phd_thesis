@@ -7,8 +7,8 @@ Another interesting phenomena is the ``fermionization'' of strongly-interacting 
 In these examples, the interactions affect the likelihood of finding another particle within a fixed distance., i.e., a spatial correlation.
 As a result, tools that provide information regarding the spatial correlation in these systems are extremely insightful.
 
-One of the most ingenious ways of probing spatial correlations due to quantum statistics was demonstrated with metastable helium atoms.
-By dropping quantum degenerate Bose and Fermi gases on to a time-resolved position-sensitive MCP detector, the two-body and three-body pair correlation functions of the initial sample were able to be reconstructed \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
+Perhaps one of the most ingenious ways of probing spatial correlations due to quantum statistics was demonstrated with metastable helium atoms.
+By dropping both cold (but non-degenerate) and quantum degenerate Bose and Fermi gases on to a time-resolved position-sensitive MCP detector, the two-body and three-body pair correlation functions of the initial sample were able to be reconstructed \cite{Schellekens2005.Science.310.648, Jeltes2007.Nature.445.402, Hodgman2011.Science.331.1046}.
 Although powerful, this method is neither \textit{in situ} nor nondestructive, requiring the samples to be at equilibrium prior to dropping in order for the reconstruction to make sense, thus hindering the possibility of mapping the temporal development of spatial correlations. 
 
 Alternative, less destructive, \textit{in situ} techniques have also been developed and employed but these are generally restricted by the dimensionality of a system or the length scales accessible.
@@ -45,7 +45,7 @@ For the two-body case, this effect on the density distribution is typically refe
 where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical cases, respectively, and $\lambda_{\text{dB}} = {h}/{\sqrt{2 \pi m k_{B} T}}$ is the thermal de Broglie wavelength.
 For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
 
-It was shown in \cite{Whalen2019.PRA.100.011402} that the excitation rate of ULRRMs is sensitive to spatial correlations on length scales of the Rydberg electron orbital radius, i.e., $R \sim R_{n} \approx 2 {n^*}^2$. 
+It was shown in \cite{Whalen2019.PRA.100.011402} that the excitation rate of ULRRMs is sensitive to spatial correlations on length scales of the Rydberg electron orbital radius, i.e., $R \sim R_{n} \approx 2 \pqty*{n-\delta}^2$. 
 In particular, the work was performed with the most deeply-bound vibrational ($\nu = 0$) dimer state which is spatially well-localized in the outer lobe of the Rydberg wave function as seen in \cref{fig:vary_n-nu0}.
 \begin{figure}[!htbp]
 	\centering
@@ -55,9 +55,39 @@ In particular, the work was performed with the most deeply-bound vibrational ($\
 		Calculated Rydberg molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULRRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
 		The position of the well-localized $\nu = 0$ vibrational state depends on $n$.}
 \end{figure}
-By tuning $n$, the location of the $\nu = 0$ state is given by $R_{n} \approx 1.87 {n^*}^{2}$.
 
-The excitation probability of exciting to the $\nu = 0$ ULRRM state can be modeled as an effective Franck-Condon factor of two colliding atoms.
+The excitation probability of exciting a Rydberg molecule from an ultracold gas can be modeled similarly to photoassociation processes.
+Shematic of the excitation process is shown in \cref{fig:ulrrm_photoassociation}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=4.5in, height=\textheight]{probing_correlations/ulrrm_photoassociation/g2_cartoon_wfn.pdf}
+	\caption[]{
+		\label{fig:ulrrm_photoassociation}
+		**** FIX FIGURE ****
+		Schematic illustration of the excitation process of two free atoms to a vibrational ULRRM state.
+		Two colliding free atoms in the $\SLJ{1}{S}{0}-\SLJ{1}{S}{0}$ interaction potential (blue) have the energy-dependent scattering wave function $\ket*{\chi^{E}_{0}}$ (black) with free particle wave vector $k = \sqrt{{2 \mu E}/{\hbar^2}}$ for collision energy $E$ (a thermal average of the initial colliding wave functions is represented by the different $\ket*{\chi^{E}_{0}}$ curves).
+		ULRRM potentials for $\SLJ{1}{S}{0} + \nSLJ{5sns}{3}{S}{1}$ states are shown for $n = n, n^{\prime}$ (orange) along with their most deeply-bound $\nu = 0$ wave functions $\ket*{\Psi_{n}^{\nu}}$ (green) spatially-localized at $R_{n}^{\nu = 0}$.
+		Figure adapted from \cite{Whalen2019.PRA.100.011402}.}
+\end{figure}
+Starting from a pair of colliding atoms, their scattering wave function can be written as $\ket*{\chi^{E}_{0}}$ where, well-outside the interatomic potential, can be described by free-particle state with $k = \sqrt{{2 \mu E}/{\hbar^2}}$.
+(It is this scattering wave function which contains information about the symmetry of the initial states.)
+Photoexcitation to a particular ULRRM state, with wave function $\ket*{\Psi_{n}^{\nu}}$, requires $\abs*{\bra*{\chi^{E}_{0}}\ket*{\Psi_{n}^{\nu}}}^{2}$ which can be thought of as a Franck-Condon factor.
+Taking a thermal average over the collision energies of the initial two-particle states ($\ev*{\cdots}_{E}$) leads to
+\begin{equation}
+	\mathcal{F}_{n}^{\nu}	=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\Psi_{n}^{\nu}}}^{2}}_{E}
+						=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \Psi_{n}^{\nu}\pqty{R}}^2}_{E}
+\end{equation}
+
+As described in \cite{Whalen2019.PRA.100.011402}, due to the $\nu = 0$ state being well-localized around $R_{n}$, it can be approximated as $\Psi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}{g^{\pqty*{2}}\pqty*{R}}$.
+Therefore
+\begin{equation}
+	\mathcal{F}_{n}^{\nu}	\approx	\ev{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \Psi_{n,\nu}\pqty{R}}_{E}
+\end{equation}
+
+The excitation probability of exciting to the $\nu = 0$ ULRRM state from two colliding atoms can be modeled as a scattering interaction where
+
+ can be modeled as an 
+effective Franck-Condon factor of two colliding atoms.
 For two free colliding atoms, their wave function can be written as 
 
 *****************
