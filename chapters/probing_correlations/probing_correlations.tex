@@ -37,8 +37,6 @@ This tunability gives ULRRMs a huge advantage and can fill the gap between the s
 
 \section{Probing of Spatial Correlations with ULRRMs}
 
-The work presented in \cite{Whalen2019.PRA.100.011402} was lead by Joe Whalen so the details will be covered in his upcoming thesis but the ideas are important for understanding the extensions of that work.
-
 In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are bosonic, fermionic, or classical.
 For the two-body case, this effect on the density distribution is typically referred to as the spatial correlation function ${g}^{\pqty*{2}}\pqty*{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE? ***
 \begin{equation}
@@ -47,88 +45,98 @@ For the two-body case, this effect on the density distribution is typically refe
 where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical cases, respectively, and $\lambda_{\text{dB}} = {h}/{\sqrt{2 \pi m k_{B} T}}$ is the thermal de Broglie wavelength.
 For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
 
-The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident (atomic) scattering wave functions and the Rydberg molecular wave functions. 
-In particular, the most deeply-bound vibrational ULRRM state ($\nu = 0$) is well-localized with a location that can be related to the classical electron turning point of the parent Rydberg atom.
+It was shown in \cite{Whalen2019.PRA.100.011402} that the excitation rate of ULRRMs is sensitive to spatial correlations on length scales of the Rydberg electron orbital radius, i.e., $R \sim R_{n} \approx 2 {n^*}^2$. 
+In particular, the work was performed with the most deeply-bound vibrational ($\nu = 0$) dimer state which is spatially well-localized in the outer lobe of the Rydberg wave function as seen in \cref{fig:vary_n-nu0}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/correlations/vary_n/vary_n-nu0.pdf}
 	\caption[]{
 		\label{fig:vary_n-nu0}
-		Calculated Rydberg molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULLRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
+		Calculated Rydberg molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULRRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
 		The position of the well-localized $\nu = 0$ vibrational state depends on $n$.}
 \end{figure}
+By tuning $n$, the location of the $\nu = 0$ state is given by $R_{n} \approx 1.87 {n^*}^{2}$.
+
+The excitation probability of exciting to the $\nu = 0$ ULRRM state can be modeled as an effective Franck-Condon factor of two colliding atoms.
+For two free colliding atoms, their wave function can be written as 
+
+*****************
+
+*****************
+
+*****************
+
+
+The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident (atomic) scattering wave functions and the Rydberg molecular wave functions. 
+In particular, the most deeply-bound vibrational ULRRM state ($\nu = 0$) is well-localized with a location that can be related to the classical electron turning point of the parent Rydberg atom.
+
 As seen in  \cref{fig:vary_n-nu0}, different interparticle separations can be probed by varying $n$ of the parent Rydberg atom.
 Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
 
 \section{Experimental Procedure}
 
-The experimental procedures used for the following experiments are all similar with minor adjustments depending on the particular isotope(s) being laser cooled and so will only be briefly covered.
-For bosonic samples, only \Sr{84} is laser cooled and trapped following the usual blue MOT and red MOT laser cooling stages that results in samples of about $\SI{2}{\micro\kelvin}$ loaded in to the ODT.
-After loading, all laser cooling light is extinguished and the atoms are held for a short period of time to allow free-evaporation to occur before forced evaporation is performed by lowering the power of the ODT.
-Forced evaporation continues until the desired temperature is reached.
-We confirm that the sample is still thermal and not quantum degenerate by performing a short time-of-flight drop before resonant absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
+The experimental procedures used for the following experiments are similar to the one presented in \cite{Whalen2019.PRA.100.011402} and so will only be briefly covered.
+The production of cold gases of both spin-polarized and unpolarized \Sr{87} begins by loading both \Sr{87} and \Sr{84} in to the magnetic trap by sequentially operating a blue MOT for one isotope before changing to the second isotope, as described in \cref{ssec:magnetic_trap_and_repumping}.
+After the atoms are collected in the metastable reservoir, both isotopes are repumped with a pulse of $\SI{481}{\nm}$ light and laser cooling continues with a simultaneous red MOTs for each isotope.
+After red MOT cooling, both isotopes are loaded in to the ODT with a temperature of about $\SI{2}{\micro\kelvin}$ at which point the cooling light is extinguished.
+At this stage, the cooling sequence for the spin-polarized and unpolarized samples differ slightly.
 
-Fermionic and classical samples are represented by spin-polarized and unpolarized gases of \Sr{87}, respectively. 
-In both cases, we sequentially load both \Sr{87} and \Sr{84} in to the magnetic trap, as described in \cref{ssec:magnetic_trap_and_repumping}, in preparation for sympathetic cooling.
-Once both isotopes are loaded, the $\SI{461}{\nm}$ light is extinguished and the $\SI{481}{\nm}$ repumping process returns both isotopes to the ground state. 
-Dual red MOTs are then operated to laser cool both \Sr{87} and \Sr{84} isotopes simultaneously, achieving temperatures of about $\SI{2}{\micro\kelvin}$ for loading in to the ODT.
-For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ bias magnetic field along the $x$-axis is applied to provide a quantization axis.
-Spin-polarization is achieved by optically pumping, sequentially driving ${\Delta}m_{F} = +1$ transitions on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$.
-This results in $\SI{>90}{\percent}$ of the atoms populating the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state stretched state.
-For the unpolarized sample, no bias magnetic field is applied and no optical pumping occurs. 
-At this point, both the spin-polarized and unpolarized samples undergo a short hold before forced evaporation commences which continues until the the desired temperature is achieved.
-The magnetic field is also lowered to $\SI{\approx 1}{\gauss}$.
-Before moving on to spectroscopy, the \Sr{84} atoms in the ODT are removed with a pulse of light resonant on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
-
-For all samples, a two-photon transition is used to produce ULRRMs.
-For bosonic samples, the first photon is $\SI{689}{\nm}$ detuned from the intermediate $\nSLJ{5s5p}{3}{P}{1}$ by **** Xxx MHz **** and the second $\SI{320}{\nm}$ photon is resonant with a particular Rydberg molecular state. 
-For the fermionic and classical samples, the first leg is a $\SI{689}{\nm}$ photon detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by **** XXX MHz ****. 
-The second $\SI{320}{\nm}$ photon then drives states to the $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state. 
-
-
-\subsection{Spin-Polarization of \Sr{87}}
-
-In order to realize a fermionic sample, we spin-polarize the \Sr{87} atoms in to the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state after loading in to the ODT. 
-Once the unpolarized \Sr{87} atoms are loaded in to the ODT, we apply a bias magnetic field of about $\SI{7}{\gauss}$.
-Spin-polarization is achieved by driving the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{S}{1}{9/2}$ transition with each $m_F$ state separated by about $\SI{600}{\kHz}$. 
-Using ${\sigma}^{+}$ light, we sequentially drive ${\Delta}m_F=+1$ transitions from $m_F=-{9}/{2}$ to $m_F={7}/{2}$ with $\SI{45}{\ms}$ pulses.
-A last $\SI{500}{\ms}$ ``clean-up'' pulse driving the $m_F={7}/{2} \rightarrow m_{F}^{\prime}={9}/{2}$ helps produce a sample with better than $\SI{90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state. 
-
+For the unpolarized sample, the atoms are held in the ODT for a short period of time to allow for free-evaporation before starting forced evaporation.
+The spin-polarized sample deviates where, after free-evaporation, a bias magnetic field of about $\SI{7}{\gauss}$ is applied.
+Spin-polarization is achieved by optically pumping on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ transition, individually driving each ${\Delta}m_{F} = +1$ with $\sigma^{+}$-polarized $\SI{689}{\nm}$ light. 
+As seen in \cref{fig:pol_vs_unpol_spectra}, we achieve $\SI{> 90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/producing_spin-polarization/mF_population_vs_duration.pdf}
 	\caption[]{
-		\label{fig:lin-lin_vs_loops}
+		\label{fig:pol_vs_unpol_spectra}
+		**** CHANGE FIGURE TO SHOW UNPOLARIZED VS. POLARIEZD ****
 		Checking that linear-linear spectroscopy does not significantly alter our population.}
 \end{figure}
+Forced evaporation is performed after spin-polarization and the bias magnetic field is ramped down to about $\SI{1}{\gauss}$. 
+Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{84} is applied to remove the bosonic isotope from the ODT.
 
-Before performing Rydberg excitation, we reduce the bias field to about $\SI{1.2}{\gauss}$. 
+% \subsection{Spin-Polarization of \Sr{87}}
 
-\subsubsection{Evaluation of Spin-Polarization}
+% In order to realize a fermionic sample, we spin-polarize the \Sr{87} atoms in to the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state after loading in to the ODT. 
+% Once the unpolarized \Sr{87} atoms are loaded in to the ODT, we apply a bias magnetic field of about $\SI{7}{\gauss}$.
+% Spin-polarization is achieved by driving the $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{S}{1}{9/2}$ transition with each $m_F$ state separated by about $\SI{600}{\kHz}$. 
+% Using ${\sigma}^{+}$ light, we sequentially drive ${\Delta}m_F=+1$ transitions from $m_F=-{9}/{2}$ to $m_F={7}/{2}$ with $\SI{45}{\ms}$ pulses.
+% A last $\SI{500}{\ms}$ ``clean-up'' pulse driving the $m_F={7}/{2} \rightarrow m_{F}^{\prime}={9}/{2}$ helps produce a sample with better than $\SI{90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{9/2}{9/2}$ state. 
 
-The effectiveness of spin-polarization was evaluated by performing ``linear-linear'' two-photon Rydberg spectroscopy. 
-Crossed-polarized excitation beams travel perpendicular to the bias field with the UV beam driving $\pi$-transitions. 
-In this setup, the $\SI{689}{\nm}$ drives $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ and the $\SI{320}{\nm}$ drives $\nSLJf{5s5p}{3}{P}{1}{9/2} \rightarrow \nSLJf{5sns}{3}{S}{1}{11/2}$.
+% \begin{figure}[!htbp]
+	% \centering
+	% \includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/producing_spin-polarization/mF_population_vs_duration.pdf}
+	% \caption[]{
+		% \label{fig:lin-lin_vs_loops}
+		% Checking that linear-linear spectroscopy does not significantly alter our population.}
+% \end{figure}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/checking_spin-polarization/lin-lin_vs_loops.pdf}
-	\caption[]{
-		\label{fig:lin-lin_vs_loops}
-		Checking that linear-linear spectroscopy does not significantly alter our population.}
-\end{figure}
+% Before performing Rydberg excitation, we reduce the bias field to about $\SI{1.2}{\gauss}$. 
 
-\subsection{Rydberg Excitation}
+% \subsubsection{Evaluation of Spin-Polarization}
 
+% The effectiveness of spin-polarization was evaluated by performing ``linear-linear'' two-photon Rydberg spectroscopy. 
+% Crossed-polarized excitation beams travel perpendicular to the bias field with the UV beam driving $\pi$-transitions. 
+% In this setup, the $\SI{689}{\nm}$ drives $\nSLJf{5s^2}{1}{S}{0}{9/2} \rightarrow \nSLJf{5s5p}{3}{P}{1}{9/2}$ and the $\SI{320}{\nm}$ drives $\nSLJf{5s5p}{3}{P}{1}{9/2} \rightarrow \nSLJf{5sns}{3}{S}{1}{11/2}$.
 
+% \begin{figure}[!htbp]
+	% \centering
+	% \includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/checking_spin-polarization/lin-lin_vs_loops.pdf}
+	% \caption[]{
+		% \label{fig:lin-lin_vs_loops}
+		% Checking that linear-linear spectroscopy does not significantly alter our population.}
+% \end{figure}
 
+With the exception of the $\SI{\approx 1}{\gauss}$ magnetic bias field to maintain spin-polarization (no bias field is applied to the unpolarized sample), both the polarized and unpolarized gases follow the same two-photon Rydberg excitation scheme.
+The first photon is at $\SI{689}{\nm}$ with $\sigma^{+}$-polarization and is blue-detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by about $\SI{14.8}{\MHz}$.
+The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to excite the ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state.
+After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum electric field plates to ionize any Rydberg atoms/molecules formed and directs them towards the MCP and MCS system for detection and counting. 
+During Rydberg excitation, the ODT is turned off to eliminate AC Stark shifts before being turned back on after the field ionization and detection.
+We keep our excitation rates low to avoid saturating the MCP.
+This excitation-detection procedure is performed $\num{1000}$ times to increase signal-to-noise before a new sample is prepared and the frequency of the $\SI{320}{\nm}$ laser changed.
 
-
-With the exception of the $\SI{\approx 1}{\gauss}$ magnetic bias field to maintain spin-polarization, both the polarized and unpolarized gases follow the same two-photon excitation scheme.
-The first photon is a $\SI{689}{\nm}$ with $\sigma^{+}$-polarization propagating along the direction of the bias magnetic field and is blue-detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by about *** $\SI{14.8}{\MHz}$ ***.
-The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to excite the ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ state.
-
-\section{Spectroscopy of Vibrationally Excited ULRRMs in \Sr{87}}
+\section{Extracting the Excitation Rate of $\nu=1$ and $\nu = 2$ ULRRM states}
 
 Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
 
@@ -140,8 +148,6 @@ Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
 		**** PLACEHOLDER FIGURE ****.
 		Excited ULRRM spectra figure.}
 \end{figure}
-
-\section{Analysis}
 
 The integrated Rydberg molecule signal should scale as
 \begin{equation}
@@ -172,9 +178,9 @@ This correction is applied to all the dimer vibrational excited state data.
 
 \subsection{Extraction of Ratios}
 
-**** Details about how the ratios were extracted ****
+To remove sensitivity to systematics, we examined the ratios of the integral of the {$\nu = 1$ and $2$} ULRRM spectra compared to the $\nu = 0$ state, i.e., $S = \frac{P_{\nu}}{P_{\nu=0}}$.
 
-\section{Creation of Vibrationally-Excited Rydberg Molecules in Spin-Polarized and Unpolarized Ultracold Gases of \Sr{87}}
+
 
 
 
@@ -190,11 +196,19 @@ Towards this goal, we explored the excitation rates of the $\nu = 1, 2$ states o
 
 Although the results qualitative agreement between theory and experiment, showing that it is possible to extract information about $g^{\pqty*{0}}\pqty*{R}$ from the $\nu > 0$ vibrational states, it was found that the results are very sensitive to initial wave functions. 
 
-
-\section{Progress Towards Measuring ${g}^{\pqty{3}}\pqty{R}$}
-
-Building on the work presented in \cite{Whalen2019.PRA.100.011402}, we are currently making progress towards measuring non-local three-body correlations with the trimer Rydberg molecules. 
-
 \section{Conclusion}
 
-We have shown ....
+We have measured the photoexcitation rates of the dimer $\nu = 1$ and $\nu = 2$ vibrationally-excited ULRRM states and have shown that they are sensitive to spatial correlations arising from quantum statistics.
+In general, there is reasonable agreement between the experimental measurements and theoretical predictions with the spin-polarized data consistently showing weaker excitation compared to the unpolarized gas.
+Although weak, there is a small systematic difference between $S_{n} = P_{n,\nu=1,2}/P_{n,\nu=0}$ of the spin-polarized and unpolarized gases.
+The presented measurements were very challenging due to long-term drifts in the $\SI{320}{\nm}$ Rydberg laser frequency and to a previously unnoticed beam pointing changes when changing $n$. 
+Theoretical calculations are also challenging, as evidenced in \cref{fig:excited_ULRRM_spectra}, where the experimental and theoretical locations of the $\nu = 1$ and $\nu = 2$ ULRRMs lines are slightly shifted.
+This suggests that the wave functions of the vibrationally excited state could also be improved.
+
+Knowing these challenges, future work towards stabilizing both the frequency and beam pointing of the Rydberg laser can result in a more accurate spectroscopy.
+The updated data can then be passed to theorists so that they can revise the models to more accurately reflect the observed spectra.
+Future work should have promising results since it can not only provide a test of theory, but it can also provide a tool for probing spatial correlations on length scales inaccessible with the $\nu = 0$ ULRRM states.
+
+\subsection{Acknowledgments}
+
+We thank Dr. R. G. Hulet for loan of the ODT laser. 
