@@ -70,21 +70,23 @@ Shematic of the excitation process is shown in \cref{fig:ulrrm_photoassociation}
 \end{figure}
 Starting from a pair of colliding atoms, their scattering wave function can be written as $\ket*{\chi^{E}_{0}}$ where, well-outside the interatomic potential, can be described by free-particle state with $k = \sqrt{{2 \mu E}/{\hbar^2}}$.
 (It is this scattering wave function which contains information about the symmetry of the initial states.)
-Photoexcitation to a particular ULRRM state, with wave function $\ket*{\chi_{n}^{\nu}}$, requires $\abs*{\bra*{\chi^{E}_{0}}\ket*{\chi_{n}^{\nu}}}^{2}$ which can be thought of as a Franck-Condon factor.
+Photoexcitation to a particular ULRRM state with wave function $\ket*{\chi_{n}^{\nu}}$ requires $\mathcal{F}_{n}^{\nu} = \bra*{\chi^{E}_{0}}\ket*{\chi_{n}^{\nu}}$ which can be thought of as a Franck-Condon factor.
 Taking a thermal average over the collision energies of the initial two-particle states ($\ev*{\cdots}_{E}$) leads to
 \begin{equation}
 	\label{eq:effective_fc}
-	\mathcal{F}_{n}^{\nu}	=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\chi_{n}^{\nu}}}^{2}}_{E}
-						=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu}\pqty{R}}^2}_{E}
+	\ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
+		=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\chi_{n}^{\nu}}}^{2}}_{E}
+		=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu}\pqty{R}}^2}_{E}
 \end{equation}
 
 As described in \cite{Whalen2019.PRA.100.011402}, due to the $\nu = 0$ state being well-localized around $R_{n}$, it can be approximated as $\chi_{n}^{\nu=0}\pqty*{R} \approx \delta\pqty*{R - R_n}$.
 Evaluating \cref{eq:effective_fc} under this approximation gives\footnote{When evaluating \cref{eq:effective_fc_nu0}, it helps to notice that $\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} A \delta\pqty*{R - R_n} = {R_n^2} \chi^{E}_{0}\pqty*{R_n} A = \chi^{E}_{0}\pqty*{R_n} \int_{0}^{\infty} \dd{R} {R^2} A \delta\pqty*{R-R_n}$.}
 \begin{align}
 	\label{eq:effective_fc_nu0}
-	\mathcal{F}_{n}^{\nu}	{}&=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu=0}\pqty{R}}^2}_{E}
-							\approx	\ev{\abs{\chi^{E}_{0}\pqty{R_n}}^{2}}_{E} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2	\notag	\\
-							{}&=	{g^{\pqty{2}}\pqty{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2
+	\ev{\abs{\mathcal{F}_{n}^{\nu=0}}^2}_{E}
+		{}&=		\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu=0}\pqty{R}}^2}_{E}	\notag	\\
+		{}&\approx	\ev{\abs{\chi^{E}_{0}\pqty{R_n}}^{2}}_{E} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2	\notag	\\
+		{}&=		{g^{\pqty{2}}\pqty{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2
 \end{align}
 where, in the last line, the relation $\ev*{\abs*{\chi^{E}_{0}\pqty*{R_n}}^{2}}_{E} = g^{\pqty*{2}}\pqty*{R_n}$ with $g^{\pqty*{2}}\pqty*{R_n}$ the pair-correlation function for separation $R_{n}$ was used. 
 For the delocalized vibrational states ($\nu > 0$), the approximation $\chi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}$ cannot be made and \cref{eq:effective_fc} must be evaluated with the full $\ket*{\chi_{n}^{\nu}}$ wave function.
@@ -157,7 +159,30 @@ After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum 
 
 \section{Spectroscopy of the $\nu=1$ and $\nu = 2$ ULRRM states}
 
-Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
+Spectroscopy was performed by exciting $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ ULRRMs for $n = \numrange[range-phrase=-]{31}{41}$.
+The spectra of spin-polarized and unpolarized $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ Rydberg molecules is shown in \cref{fig:processing_ULRRM_signal} as an example.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimer_signals/excited_dimer-n34-raw_signal.png}
+	\caption[]{
+		\label{fig:processing_ULRRM_signal}
+		**** PLACEHOLDER FIGURE ****.
+		**** Show ``raw'' and ``processed'' signals ready for fitting. ****}
+\end{figure}
+
+In the experiment, the photoexcitation signal of the ULRRM dimers can be modeled as
+\begin{equation}
+	\mathcal{S}_{n}^{\nu}\pqty{f}	=	\alpha\pqty{B} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E} L\pqty{f}
+\end{equation}
+where $\alpha\pqty*{B}$ is the bias-field dependent detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty{f}$ is a normalized lineshape factor.
+To eliminate dependencies on the specific lineshape, the quantity of interest is the integrals of the observed excitation signal
+\begin{equation}
+	\mathcal{S}_{n}^{\nu}
+		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty{f}
+		=	\alpha\pqty{B} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
+\end{equation}
+
+
 
 *** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
 
@@ -165,7 +190,7 @@ Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimers/rydberg_excitation_spectra/Fig7.pdf}
 	\caption[]{
-		\label{fig:excited_ULRRM_spectra}
+		\label{fig:normalized_ulrrm}
 		**** PLACEHOLDER FIGURE ****.
 		Excited ULRRM spectra figure.}
 \end{figure}
