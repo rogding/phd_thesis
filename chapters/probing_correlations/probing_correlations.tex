@@ -63,56 +63,44 @@ Shematic of the excitation process is shown in \cref{fig:ulrrm_photoassociation}
 	\includegraphics[keepaspectratio, width=4.5in, height=\textheight]{probing_correlations/ulrrm_photoassociation/g2_cartoon_wfn.pdf}
 	\caption[]{
 		\label{fig:ulrrm_photoassociation}
-		**** FIX FIGURE ****
 		Schematic illustration of the excitation process of two free atoms to a vibrational ULRRM state.
 		Two colliding free atoms in the $\SLJ{1}{S}{0}-\SLJ{1}{S}{0}$ interaction potential (blue) have the energy-dependent scattering wave function $\ket*{\chi^{E}_{0}}$ (black) with free particle wave vector $k = \sqrt{{2 \mu E}/{\hbar^2}}$ for collision energy $E$ (a thermal average of the initial colliding wave functions is represented by the different $\ket*{\chi^{E}_{0}}$ curves).
-		ULRRM potentials for $\SLJ{1}{S}{0} + \nSLJ{5sns}{3}{S}{1}$ states are shown for $n = n, n^{\prime}$ (orange) along with their most deeply-bound $\nu = 0$ wave functions $\ket*{\Psi_{n}^{\nu}}$ (green) spatially-localized at $R_{n}^{\nu = 0}$.
+		ULRRM potentials for $\SLJ{1}{S}{0} + \nSLJ{5sns}{3}{S}{1}$ states are shown for $n = n, n^{\prime}$ (orange) along with their most deeply-bound $\nu = 0$ wave functions $\ket*{\chi_{n}^{\nu}}$ (green) spatially-localized at $R_{n}^{\nu = 0}$.
 		Figure adapted from \cite{Whalen2019.PRA.100.011402}.}
 \end{figure}
 Starting from a pair of colliding atoms, their scattering wave function can be written as $\ket*{\chi^{E}_{0}}$ where, well-outside the interatomic potential, can be described by free-particle state with $k = \sqrt{{2 \mu E}/{\hbar^2}}$.
 (It is this scattering wave function which contains information about the symmetry of the initial states.)
-Photoexcitation to a particular ULRRM state, with wave function $\ket*{\Psi_{n}^{\nu}}$, requires $\abs*{\bra*{\chi^{E}_{0}}\ket*{\Psi_{n}^{\nu}}}^{2}$ which can be thought of as a Franck-Condon factor.
+Photoexcitation to a particular ULRRM state, with wave function $\ket*{\chi_{n}^{\nu}}$, requires $\abs*{\bra*{\chi^{E}_{0}}\ket*{\chi_{n}^{\nu}}}^{2}$ which can be thought of as a Franck-Condon factor.
 Taking a thermal average over the collision energies of the initial two-particle states ($\ev*{\cdots}_{E}$) leads to
 \begin{equation}
-	\mathcal{F}_{n}^{\nu}	=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\Psi_{n}^{\nu}}}^{2}}_{E}
-						=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \Psi_{n}^{\nu}\pqty{R}}^2}_{E}
+	\label{eq:effective_fc}
+	\mathcal{F}_{n}^{\nu}	=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\chi_{n}^{\nu}}}^{2}}_{E}
+						=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu}\pqty{R}}^2}_{E}
 \end{equation}
 
-As described in \cite{Whalen2019.PRA.100.011402}, due to the $\nu = 0$ state being well-localized around $R_{n}$, it can be approximated as $\Psi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}{g^{\pqty*{2}}\pqty*{R}}$.
-Therefore
-\begin{equation}
-	\mathcal{F}_{n}^{\nu}	\approx	\ev{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \Psi_{n,\nu}\pqty{R}}_{E}
-\end{equation}
-
-The excitation probability of exciting to the $\nu = 0$ ULRRM state from two colliding atoms can be modeled as a scattering interaction where
-
- can be modeled as an 
-effective Franck-Condon factor of two colliding atoms.
-For two free colliding atoms, their wave function can be written as 
-
-*****************
-
-*****************
-
-*****************
-
-
-The main idea is that the excitation rate of Rydberg molecules depends on an ``effective'' Franck-Condon overlap between the incident (atomic) scattering wave functions and the Rydberg molecular wave functions. 
-In particular, the most deeply-bound vibrational ULRRM state ($\nu = 0$) is well-localized with a location that can be related to the classical electron turning point of the parent Rydberg atom.
-
-As seen in  \cref{fig:vary_n-nu0}, different interparticle separations can be probed by varying $n$ of the parent Rydberg atom.
-Also, for $\SLJ{}{S}{}$ states, the wave function is spherically symmetric.
+As described in \cite{Whalen2019.PRA.100.011402}, due to the $\nu = 0$ state being well-localized around $R_{n}$, it can be approximated as $\chi_{n}^{\nu=0}\pqty*{R} \approx \delta\pqty*{R - R_n}$.
+Evaluating \cref{eq:effective_fc} under this approximation gives\footnote{When evaluating \cref{eq:effective_fc_nu0}, it helps to notice that $\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} A \delta\pqty*{R - R_n} = {R_n^2} \chi^{E}_{0}\pqty*{R_n} A = \chi^{E}_{0}\pqty*{R_n} \int_{0}^{\infty} \dd{R} {R^2} A \delta\pqty*{R-R_n}$.}
+\begin{align}
+	\label{eq:effective_fc_nu0}
+	\mathcal{F}_{n}^{\nu}	{}&=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu=0}\pqty{R}}^2}_{E}
+							\approx	\ev{\abs{\chi^{E}_{0}\pqty{R_n}}^{2}}_{E} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2	\notag	\\
+							{}&=	{g^{\pqty{2}}\pqty{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2
+\end{align}
+where, in the last line, the relation $\ev*{\abs*{\chi^{E}_{0}\pqty*{R_n}}^{2}}_{E} = g^{\pqty*{2}}\pqty*{R_n}$ with $g^{\pqty*{2}}\pqty*{R_n}$ the pair-correlation function for separation $R_{n}$ was used. 
+For the delocalized vibrational states ($\nu > 0$), the approximation $\chi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}$ cannot be made and \cref{eq:effective_fc} must be evaluated with the full $\ket*{\chi_{n}^{\nu}}$ wave function.
 
 \section{Experimental Procedure}
 
 The experimental procedures used for the following experiments are similar to the one presented in \cite{Whalen2019.PRA.100.011402} and so will only be briefly covered.
-The production of cold gases of both spin-polarized and unpolarized \Sr{87} begins by loading both \Sr{87} and \Sr{84} in to the magnetic trap by sequentially operating a blue MOT for one isotope before changing to the second isotope, as described in \cref{ssec:magnetic_trap_and_repumping}.
-After the atoms are collected in the metastable reservoir, both isotopes are repumped with a pulse of $\SI{481}{\nm}$ light and laser cooling continues with a simultaneous red MOTs for each isotope.
-After red MOT cooling, both isotopes are loaded in to the ODT with a temperature of about $\SI{2}{\micro\kelvin}$ at which point the cooling light is extinguished.
-At this stage, the cooling sequence for the spin-polarized and unpolarized samples differ slightly.
+The production of cold gases of both spin-polarized and unpolarized \Sr{87} begins by loading \Sr{87} and \Sr{84} in to the magnetic trap.
+As described in \cref{ssec:magnetic_trap_and_repumping}, both isotopes are loaded by sequentially operating a blue MOT on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition at $\SI{461}{\nm}$ for one isotope before changing to the second isotope.
+The magnetic trap is populated with atoms following the weak $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ decay path.
+After the atoms are collected in the metastable reservoir, both isotopes are repumped with a pulse of $\SI{481}{\nm}$ light resonant with the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition and second-stage narrow line laser cooling proceeds simultaneously for both isotopes on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition at $\SI{689}{\nm}$.
+After narrow line cooling, both isotopes are loaded in to the ODT with a temperature of about $\SI{2}{\micro\kelvin}$ at which point the cooling light is extinguished.
 
+After laser cooling and ODT loading, sample preparation for the spin-polarized and unpolarized gases differ slightly.
 For the unpolarized sample, the atoms are held in the ODT for a short period of time to allow for free-evaporation before starting forced evaporation.
-The spin-polarized sample deviates where, after free-evaporation, a bias magnetic field of about $\SI{7}{\gauss}$ is applied.
+For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ magnetic bias field is ramped on during the free-evaporation hold, providing both a quantization axis and Zeeman splitting the $\nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ states by approximately $\SI{600}{\kHz}$ per $m_F$. 
 Spin-polarization is achieved by optically pumping on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ transition, individually driving each ${\Delta}m_{F} = +1$ with $\sigma^{+}$-polarized $\SI{689}{\nm}$ light. 
 As seen in \cref{fig:pol_vs_unpol_spectra}, we achieve $\SI{> 90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
 \begin{figure}[!htbp]
@@ -124,7 +112,8 @@ As seen in \cref{fig:pol_vs_unpol_spectra}, we achieve $\SI{> 90}{\percent}$ pop
 		Checking that linear-linear spectroscopy does not significantly alter our population.}
 \end{figure}
 Forced evaporation is performed after spin-polarization and the bias magnetic field is ramped down to about $\SI{1}{\gauss}$. 
-Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{84} is applied to remove the bosonic isotope from the ODT.
+After evaporation, both the spin-polarized and unpolarized samples are at about $\SI{900}{\nano\kelvin}$.
+Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{84} is applied to remove the isotope from the ODT.
 
 % \subsection{Spin-Polarization of \Sr{87}}
 
@@ -160,15 +149,17 @@ Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the 
 
 With the exception of the $\SI{\approx 1}{\gauss}$ magnetic bias field to maintain spin-polarization (no bias field is applied to the unpolarized sample), both the polarized and unpolarized gases follow the same two-photon Rydberg excitation scheme.
 The first photon is at $\SI{689}{\nm}$ with $\sigma^{+}$-polarization and is blue-detuned from the intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state by about $\SI{14.8}{\MHz}$.
-The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to excite the ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state.
-After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum electric field plates to ionize any Rydberg atoms/molecules formed and directs them towards the MCP and MCS system for detection and counting. 
+The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to excite ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state.
+Excitation powers were kept low to avoid saturating the MCP so signal-to-noise was increased by performing $\num{1000}$ excitation and detection cycles on a sample before a new sample is prepared and the frequency of the $\SI{320}{\nm}$ laser changed.
 During Rydberg excitation, the ODT is turned off to eliminate AC Stark shifts before being turned back on after the field ionization and detection.
 We keep our excitation rates low to avoid saturating the MCP.
-This excitation-detection procedure is performed $\num{1000}$ times to increase signal-to-noise before a new sample is prepared and the frequency of the $\SI{320}{\nm}$ laser changed.
+After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum electric field plates to ionize any Rydberg atoms/molecules formed and directs them towards the MCP and MCS system for detection and counting. 
 
-\section{Extracting the Excitation Rate of $\nu=1$ and $\nu = 2$ ULRRM states}
+\section{Spectroscopy of the $\nu=1$ and $\nu = 2$ ULRRM states}
 
 Spectroscopy was performed for $n = \numrange[range-phrase=-]{31}{41}$.
+
+*** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
 
 \begin{figure}[!htbp]
 	\centering
@@ -210,8 +201,14 @@ This correction is applied to all the dimer vibrational excited state data.
 
 To remove sensitivity to systematics, we examined the ratios of the integral of the {$\nu = 1$ and $2$} ULRRM spectra compared to the $\nu = 0$ state, i.e., $S = \frac{P_{\nu}}{P_{\nu=0}}$.
 
-
-
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig6.pdf}
+	\caption[]{
+		\label{fig:excited_dimer_ratios}
+		**** PLACEHOLDER FIGURE ****.
+		Dimer ratio plot.}
+\end{figure}
 
 
 **********************************
@@ -225,6 +222,15 @@ Towards this goal, we explored the excitation rates of the $\nu = 1, 2$ states o
 ***** ADD MIDDLE *****
 
 Although the results qualitative agreement between theory and experiment, showing that it is possible to extract information about $g^{\pqty*{0}}\pqty*{R}$ from the $\nu > 0$ vibrational states, it was found that the results are very sensitive to initial wave functions. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig9-temp_range.pdf}
+	\caption[]{
+		\label{fig:excited_dimer_theory_comparison}
+		**** PLACEHOLDER FIGURE ****.
+		Comparison with Shuhei's theory.}
+\end{figure}
 
 \section{Conclusion}
 
