@@ -155,36 +155,46 @@ The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to 
 Excitation powers were kept low to avoid saturating the MCP so signal-to-noise was increased by performing $\num{1000}$ excitation and detection cycles on a sample before a new sample is prepared and the frequency of the $\SI{320}{\nm}$ laser changed.
 During Rydberg excitation, the ODT is turned off to eliminate AC Stark shifts before being turned back on after the field ionization and detection.
 We keep our excitation rates low to avoid saturating the MCP.
-After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum electric field plates to ionize any Rydberg atoms/molecules formed and directs them towards the MCP and MCS system for detection and counting. 
+After the Rydberg excitation pulses, a voltage ramp is applied to the in-vacuum electric field plates to ionize any Rydberg atoms or molecules formed and directs them towards the MCP and MCS system for detection and counting. 
 
 \section{Spectroscopy of the $\nu=1$ and $\nu = 2$ ULRRM states}
 
 Spectroscopy was performed by exciting $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ ULRRMs for $n = \numrange[range-phrase=-]{31}{41}$.
-The spectra of spin-polarized and unpolarized $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ Rydberg molecules is shown in \cref{fig:processing_ULRRM_signal} as an example.
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimer_signals/excited_dimer-n34-raw_signal.png}
-	\caption[]{
-		\label{fig:processing_ULRRM_signal}
-		**** PLACEHOLDER FIGURE ****.
-		**** Show ``raw'' and ``processed'' signals ready for fitting. ****}
-\end{figure}
-
 In the experiment, the photoexcitation signal of the ULRRM dimers can be modeled as
 \begin{equation}
-	\mathcal{S}_{n}^{\nu}\pqty{f}	=	\alpha\pqty{B} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E} L\pqty{f}
+	\mathcal{S}_{n}^{\nu}\pqty{f}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E} L\pqty{f}
 \end{equation}
-where $\alpha\pqty*{B}$ is the bias-field dependent detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty{f}$ is a normalized lineshape factor.
+where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\beta_n$ is proportional to the square of the reduced two-photon electronic-transition matrix element, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty{f}$ is a normalized lineshape factor as a function of frequency $f$.
 To eliminate dependencies on the specific lineshape, the quantity of interest is the integrals of the observed excitation signal
 \begin{equation}
 	\label{eq:ulrrm_signal}
 	\mathcal{S}_{n}^{\nu}
 		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty{f}
-		=	\alpha\pqty{B} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
+		=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
 \end{equation}
+By monitoring the atom number, temperature, $I_{\SI{689}{\nm}}$, and $I_{\SI{320}{\nm}}$, some corrections can be applied to the observed signal to reduce potential systematics.
 
+The first corrections applied to the raw signal involves accounting for any undercounting due to MCP saturation using the model in \cref{ssec:charged_particle_detection}).
+Slow changes in the two-photon excitation rate are easily removed by dividing the signal by the $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ recorded on a DAQ\footnote{We actually record voltages $V_{\SI{689}{\nm}}$ and $V_{\SI{320}{\nm}}$ from monitor photodiodes which are proportional to $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$, respectively.} for each measurement.
+An example two-photon excitation spectra to the $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ parent Rydberg state of both a spin-polarized and an unpolarized \Sr{87} sample is shown in \cref{fig:processing_ULRRM_signal}, demonstrating the effects of removing dependencies on $I_{\SI{689}{\nm}}$, $I_{\SI{320}{\nm}}$, and MCP saturation.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimer_signals/20190123-n34/n34-excited_dimer_signal.pdf}
+	\caption[]{
+		\label{fig:processing_ULRRM_signal}
+		Upper figure shows the signals obtained directly from the MCP accumulated from $\num{1000}$ excitation and detection cycles when scanning the $\SI{640}{\nm}$ fiber EOM frequency.
+		Lower figure shows the scaled signals after removing the Zeeman shift and accounting for MCP saturation as well as both $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$.
+		\Sr{87} atom number was approximately the same for both the spin-polarized and unpolarized samples.
+		Data shown is for excitation to the $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ parent state with the various vibration dimer states $\nu$ (lower figure).}
+\end{figure}
+Fitting is performed on the scaled MCP signals to obtain the integrals of the particular ULRRM line of interest (represented by $\mathcal{S}_{n}^{\nu}$ in \cref{eq:ulrrm_signal}). 
 
 *** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
+
+If we examine the ratios of polarized signal to polarized signal (and unpolarized signal to unpolarized signal), we can eliminate common factors.
+\begin{equation}
+	\frac{\mathcal{S}_{n}^{\nu=1}}{\mathcal{S}_{n}^{\nu=0}}	=
+\end{equation}
 
 \begin{figure}[!htbp]
 	\centering
@@ -197,15 +207,15 @@ To eliminate dependencies on the specific lineshape, the quantity of interest is
 
 The integrated Rydberg molecule signal should scale as
 \begin{equation}
-	S_{n,\nu}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \beta_{n} \mathcal{C} \mathcal{F}_{n,\nu}
+	S_{n}^{\nu}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \beta_{n} \mathcal{C} \mathcal{F}_{n,\nu}
 \end{equation}
 where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers, $\mathcal{N}$ is a density-dependent term, $\beta_{n}$ is the two-photon transition matrix element, $\mathcal{C}$ is a Clebsch-Gordan factor, and $\mathcal{F}_{n,\nu}$ is the effective Franck-Condon factor.
 
 \subsection{Electron Detection Efficiency Factor $\alpha$}
 
 It is expected that the $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field needed to maintain the quantization of the spin-polarized sample does have a small effect on the electron detection efficiency compared to the unpolarized samples excited in zero magnetic field ($B_{\text{unpol}} = \SI{0}{\gauss}$).
-This difference in detection efficiency is represented by the $\alpha\pqty*{B}$ term in \cref{eq:ulrrm_signal}.
-To determine the $\alpha\pqty*{B}$ factor, a separate study was conducted with \Sr{84} due to its simpler electronic structure. 
+This difference in detection efficiency is represented by the $\alpha$ term in \cref{eq:ulrrm_signal}.
+To determine the $\alpha$ factor, a separate study was conducted with \Sr{84} due to its simpler electronic structure. 
 
 Using \Sr{84}, two-photon excitation following the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1} \rightarrow \nSLJ{5s37s}{3}{S}{1}$ path was used.
 $n = 37$ was chosen since it is approximately in the middle of the range of principal quantum numbers explored in this study. 
@@ -232,8 +242,9 @@ Knowing $B_{\text{pol}}$, the Zeeman shift of the intermediate $\nSLJ{5s5p}{3}{P
 Since the scattering rate scales as ${1}/{\Delta^2}$, it follows that $\Gamma_{\text{sc,pol}}/\Gamma_{\text{sc,unpol}} = \num{1.44+-0.04}$ meaning the $B_{\text{pol}}$ signal is expected to be larger than the $B_{\text{unpol}}$ by about $\num{1.44}$.
 
 A possible source of systematic error in the determination of this ratio could include poor polarization of either (or both) the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers. 
-This seems unlikely as ..... **** FINISH LATER ****
-
+This seems unlikely as there is very little signal at $\Delta = 0$ when the the magnetic field is applied, suggesting that the polarizations are likely reasonably aligned to the quantization axis. 
+This also matches our previous measurements checking spin-polarization which found the $\sigma^+$ beam path to have relatively good circular polarization.
+The $\SI{320}{\nm}$ path passes through a *** Glan-Taylor calcite *** polarizer which also helps to clean up the polarization.
 
 \subsection{Density Correction Term}
 
@@ -249,12 +260,12 @@ where $N$ is the total atom number and $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ wher
 For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\va{r}}}^{2}$ integrated over all space.
 Performing the integration yields
 \begin{equation}
-	\mathcal{N}_2	=		\int \dd[3]{r} \rho\pqty{\va{r}}
+	\mathcal{N}_2	=		\int \dd[3]{r} {\rho\pqty{\va{r}}}^2
 					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
 					\propto	\frac{N^2}{T^{3/2}}
 \end{equation}
 Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to account for the signal dependence on atom number and temperature. 
-This correction is applied to all the dimer vibrational excited state data.
+This correction is applied to all the dimer data.
 
 \subsection{Extraction of Ratios}
 
