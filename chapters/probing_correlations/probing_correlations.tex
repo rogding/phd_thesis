@@ -177,11 +177,11 @@ In the experiment, the photoexcitation signal of the ULRRM dimers can be modeled
 where $\alpha\pqty*{B}$ is the bias-field dependent detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty{f}$ is a normalized lineshape factor.
 To eliminate dependencies on the specific lineshape, the quantity of interest is the integrals of the observed excitation signal
 \begin{equation}
+	\label{eq:ulrrm_signal}
 	\mathcal{S}_{n}^{\nu}
 		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty{f}
 		=	\alpha\pqty{B} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
 \end{equation}
-
 
 
 *** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
@@ -200,6 +200,40 @@ The integrated Rydberg molecule signal should scale as
 	S_{n,\nu}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \beta_{n} \mathcal{C} \mathcal{F}_{n,\nu}
 \end{equation}
 where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers, $\mathcal{N}$ is a density-dependent term, $\beta_{n}$ is the two-photon transition matrix element, $\mathcal{C}$ is a Clebsch-Gordan factor, and $\mathcal{F}_{n,\nu}$ is the effective Franck-Condon factor.
+
+\subsection{Electron Detection Efficiency Factor $\alpha$}
+
+It is expected that the $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field needed to maintain the quantization of the spin-polarized sample does have a small effect on the electron detection efficiency compared to the unpolarized samples excited in zero magnetic field ($B_{\text{unpol}} = \SI{0}{\gauss}$).
+This difference in detection efficiency is represented by the $\alpha\pqty*{B}$ term in \cref{eq:ulrrm_signal}.
+To determine the $\alpha\pqty*{B}$ factor, a separate study was conducted with \Sr{84} due to its simpler electronic structure. 
+
+Using \Sr{84}, two-photon excitation following the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1} \rightarrow \nSLJ{5s37s}{3}{S}{1}$ path was used.
+$n = 37$ was chosen since it is approximately in the middle of the range of principal quantum numbers explored in this study. 
+The same excitation geometry was used as for the \Sr{87} measurements with a $\sigma^+$-polarized $\SI{689}{\nm}$ beam propagating along the quantization axis and a $\pi$-polarized $\SI{320}{\nm}$ beam propagating perpendicular.
+With the $\SI{689}{\nm}$ laser was blue-detuned from the intermediate state by about $\SI{15}{\MHz}$, the $\SI{320}{\nm}$ is laser scanned over the atomic Rydberg line and the resulting spectra is shown in \cref{fig:detection_efficiency_vs_B}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/detection_efficiency_vs_B/B-field-set_points/detection_efficiency_vs_B.pdf}
+	\caption[]{
+		\label{fig:detection_efficiency_vs_B}
+		The \Sr{84} $\nSLJ{5s37s}{3}{S}{1}$ atomic Rydberg line with $B = B_{\text{pol}} \approx \SI{1}{\gauss}$ (red circles) and $B = B_{\text{unpol}} \approx \SI{0}{\gauss}$ (blue squares) bias magnetic fields. 
+		The MCP signal was scaled accounting for both the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ powers while the atom number was constant for all the measurements.
+		Gaussian fits (lines) were used to extract the integrals, resulting with $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ (red shaded region) and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$ (blue shaded region).}
+\end{figure}
+The spectra shows the signal with the $B = B_{\text{pol}} \approx \SI{1}{\gauss}$ bias field is slightly larger than the $B = B_{\text{unpol}} \approx \SI{0}{\gauss}$ signal by a factor of ${\mathcal{S}\pqty*{B_{\text{pol}}}}/{\mathcal{S}\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
+
+Before reporting a detection efficiency difference for the $B = B_{\text{pol}}$ and $B = B_{\text{unpol}}$ conditions, there are still a few things to check and consider.
+First, note that the Zeeman shift of $\nSLJ{5s37s}{3}{S}{1}$ state with and without the bias magnetic field is $\SI{3.326+-0.006}{\MHz}$. 
+Since the $\nSLJ{5s37s}{3}{S}{1}$ state should have $g_J = 2$, this would means $B_{\text{pol}} = \SI{1.1882+-0.0020}{\gauss}$, which agrees with previous calibration measurements using the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
+
+We now consider the scattering rate off the intermediate $\nSLJ{5s5p}{3}{P}{1}$ state.
+In the $B_{\text{unpol}}$ case, the detuning is about $\SI{14.9+-1.0}{\MHz}$. 
+Knowing $B_{\text{pol}}$, the Zeeman shift of the intermediate $\nSLJ{5s5p}{3}{P}{1}$ is $\SI{2.495+-0.004}{\MHz}$ meaning the detuning is reduced to about $\SI{12.4+-1.0}{\MHz}$.
+Since the scattering rate scales as ${1}/{\Delta^2}$, it follows that $\Gamma_{\text{sc,pol}}/\Gamma_{\text{sc,unpol}} = \num{1.44+-0.04}$ meaning the $B_{\text{pol}}$ signal is expected to be larger than the $B_{\text{unpol}}$ by about $\num{1.44}$.
+
+A possible source of systematic error in the determination of this ratio could include poor polarization of either (or both) the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers. 
+This seems unlikely as ..... **** FINISH LATER ****
+
 
 \subsection{Density Correction Term}
 
