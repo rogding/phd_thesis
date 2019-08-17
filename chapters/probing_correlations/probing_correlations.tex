@@ -33,7 +33,8 @@ Analogous to how PAS can be used to probe correlations on the order of $R_{\text
 The advantage of ULRRMs is that the length scale being probed depends on the size of the parent Rydberg atom, meaning varying interparticle distances can be probed by simply exciting to a different principal quantum number ($n$). 
 This tunability gives ULRRMs a huge advantage and can fill the gap between the short-range PAS and the longer-range $R \gtrsim \SI{266}{\nm}$ QGM.
 
-%This chapter contains work that is currently in progress.
+This chapter contains work that is currently in progress. 
+******* ADD MORE ??? *******
 
 \section{Probing of Spatial Correlations with ULRRMs}
 
@@ -267,7 +268,22 @@ Since the the value of ${\Delta_{\text{unpol}}}/{\Delta_{\text{pol}}}$ is close 
 NEED TO CALCULATE INTERMEDIATE STATE DETUNINGS IN \Sr{87} to see if they're about the same as done in \cref{fig:detection_efficiency_vs_B} otherwise additional corrections need to be taken in to account...
 
 
-\subsection{Extraction of Ratios}
+\subsection{Examining Polarized-Polarized and Unpolarized-Unpolarized Ratios}
+
+In order to eliminate any dependency of $\mathcal{S}_{n}^{\nu}$ on the detection efficiency, the ratios of the measurements were compared within polarized-polarized and unpolarized-unpolarized samples.
+The signals shown in \cite{fig:excited_dimer_ratios} are
+\begin{equation}
+	\frac{\mathcal{S}_{n,x}^{\nu=1}}{\mathcal{S}_{n,x}^{\nu=0}}
+\end{equation}
+where $x$ represented spin-polarized ($\mathcal{S}_{n,\text{pol}}^{\nu=1}$) or unpolarized ($\mathcal{S}_{n,\text{unpol}}^{\nu=1}$).
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig6.pdf}
+	\caption[]{
+		\label{fig:excited_dimer_ratios}
+		**** PLACEHOLDER FIGURE ****.
+		Dimer ratio plot.}
+\end{figure}
 
 *****************************************************************
 
@@ -277,7 +293,7 @@ NEED TO CALCULATE INTERMEDIATE STATE DETUNINGS IN \Sr{87} to see if they're abou
 
 If we examine the ratios of polarized signal to polarized signal (and unpolarized signal to unpolarized signal), we can eliminate common factors.
 \begin{equation}
-	\frac{\mathcal{S}_{n}^{\nu=1}}{\mathcal{S}_{n}^{\nu=0}}	=
+	\frac{\mathcal{S}_{n}^{\nu=1}}{\mathcal{S}_{n}^{\nu=0}}	= (EQUATION WHERE FACTORS GO AWAY)
 \end{equation}
 
 \begin{figure}[!htbp]
@@ -298,15 +314,6 @@ where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}
 ****************************************
 
 To remove sensitivity to systematics, we examined the ratios of the integral of the {$\nu = 1$ and $2$} ULRRM spectra compared to the $\nu = 0$ state, i.e., $S = \frac{P_{\nu}}{P_{\nu=0}}$.
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig6.pdf}
-	\caption[]{
-		\label{fig:excited_dimer_ratios}
-		**** PLACEHOLDER FIGURE ****.
-		Dimer ratio plot.}
-\end{figure}
 
 
 **********************************
