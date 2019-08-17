@@ -172,6 +172,7 @@ To eliminate dependencies on the specific lineshape, the quantity of interest is
 		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty{f}
 		=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
 \end{equation}
+For a particular $n$, $\beta_{n}$ should remain the same for spin-polarized and unpolarized samples and the Clebsch-Gordan factor $\mathcal{C}$ can be calculated.
 By monitoring the atom number, temperature, $I_{\SI{689}{\nm}}$, and $I_{\SI{320}{\nm}}$, some corrections can be applied to the observed signal to reduce potential systematics.
 
 The first corrections applied to the raw signal involves accounting for any undercounting due to MCP saturation using the model in \cref{ssec:charged_particle_detection}).
@@ -197,6 +198,80 @@ Fitting the spectra in \cref{fig:processing_ULRRM_signal} is shown in \cref{fig:
 		Fitting of the example spin-polarized and unpolarized $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ spectra shown in \cref{fig:processing_ULRRM_signal}.
 		Solid lines show the fit results and the shaded regions represent the integrals used to extract $\mathcal{S}_{n}^{\nu}$.}
 \end{figure}
+Before extracting the ratios, we can still determine the the density-dependent correction term $\mathcal{N}_{2}$ to reduce the effects of atom number and temperature variations for the different samples.
+To make a comparison between spin-polarized and unpolarized signals, it would also be beneficial to determine the ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$.
+
+\subsection{Density Correction Term}
+
+During data collecting, both the atom number and sample temperature are recorded with resonant absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
+All the samples use the same final trapping parameters prior to Rydberg excitation with a vertical trap frequency of $f_{z} \approx \SI{300}{\Hz}$ and radial trap frequency of $f_{r} \approx \SI{130}{\Hz}$.
+Knowing these parameters, we can apply a density-dependent correction to the ULRRM signals.
+
+For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by
+\begin{equation}
+	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
+\end{equation}
+where $N$ is the total atom number and $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency \cite{Pethick.BEC}. 
+For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\va{r}}}^{2}$ integrated over all space.
+Performing the integration yields
+\begin{equation}
+	\mathcal{N}_2	=		\int \dd[3]{r} {\rho\pqty{\va{r}}}^2
+					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
+					\propto	\frac{N^2}{T^{3/2}}
+\end{equation}
+Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to account for the signal dependence on atom number and temperature. 
+This correction is applied to all the dimer data.
+
+\subsection{Electron Detection Efficiency Ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$}
+
+The ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ accounts for the differences in detection efficiency between the spin-polarized sample and unpolarized samples with the former measurements taken in a $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field oriented towards the MCP (to maintain spin-polarization) and the latter in no bias field ($B_{\text{unpol}} = \SI{0}{\gauss}$). 
+Na{\"{i}}vely, after accounting for Clebsch-Gordan factors in the two-photon excitation, we expected the spin-polarized samples to exhibit a larger signal than the unpolarized sample simply due to the Lorentz force of the magnetic field, oriented towards the MCP, helping guide the electrons towards the detector.
+Towards this end, we measured the two-photon excitation signals with \Sr{84} due to its simpler electronic structure in both $B_{\text{pol}}$ and $B_{\text{unpol}}$ configurations.
+
+The measurements with \Sr{84} used the same beam paths and geometry as the measurements in \Sr{87}.
+A two-photon excitation following two-photon excitation following the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1} \rightarrow \nSLJ{5s37s}{3}{S}{1}$ path was used.
+The first photon is at $\SI{689}{\nm}$ with $\sigma^+$-polarization and is blue-detuned from the intermediate state by $\SI{14.9+-1}{\MHz}$.
+The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned such that the two-photon energy is resonant with the Rydberg atom or molecule state.
+\Cref{fig:detection_efficiency_vs_B} shows the spectra obtained with and without the bias magnetic field when $\SI{689}{\nm}$ is held fixed while the $\SI{320}{\nm}$ frequency is scanned. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/detection_efficiency_vs_B/B-field-set_points/detection_efficiency_vs_B.pdf}
+	\caption[]{
+		\label{fig:detection_efficiency_vs_B}
+		The \Sr{84} $\nSLJ{5s37s}{3}{S}{1}$ atomic Rydberg line with $B_{\text{pol}} \approx \SI{1}{\gauss}$ (red circles) and $B_{\text{unpol}} \approx \SI{0}{\gauss}$ (blue squares) bias magnetic fields. 
+		The MCP signal was scaled accounting for both the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ powers while the atom number was constant for all the measurements.
+		Gaussian fits (lines) were used to extract the integrals, resulting with $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ (red shaded region) and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$ (blue shaded region).}
+\end{figure}
+As shown in the figure, $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$, their ratio gives ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
+
+Before reporting a detection efficiency difference for the $B_{\text{pol}}$ and $ B_{\text{unpol}}$ conditions, there are still a few things to check and consider.
+A possible source of systematic error in this determination of the ratio could be due to poor polarization of either (or both) the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers. 
+This seems unlikely as there is very little signal at $\Delta = 0$ when the the magnetic field is applied, suggesting that the polarizations are likely reasonably aligned to the quantization axis. 
+This also matches our previous measurements checking spin-polarization which found the $\sigma^+$ beam path to have relatively good circular polarization.
+The $\SI{320}{\nm}$ path passes through a high-extinction ratio calcite polarizer\footnote{Thorlabs' GLB10 Glan-Laser alpha-BBO calcite polarizer.} that cleans up the polarization.
+
+Another thing to consider is that the Zeeman effect could change the intermediate detuning with the effect scaling as $\Gamma_{\text{sc}} \sim {1}/{\Delta^2}$.
+From \cref{fig:detection_efficiency_vs_B}, the observed shift of the $\nSLJ{5s37s}{3}{S}{1}$ state with and without the magnetic field is $\SI{3.326+-0.006}{\MHz}$.
+Since the $\nSLJ{5s37s}{3}{S}{1}$ state has $g_J = 2$, this corresponds to $B_{\text{pol}} = \SI{1.1882+-0.0020}{\gauss}$, which agrees with previous calibration measurements using the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
+Considering the unpolarized intermediate state detuning $\Delta_{\text{unpol}} = \SI{14.9+-1}{\MHz}$, the polarized intermediate state detuning (from the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJm{5s5p}{3}{P}{1}{1}$) is expected to be reduced to $\Delta_{\text{pol}} = \SI{12.4+-1}{\MHz}$. 
+Therefore, the signal in $B_{\text{pol}}$ is expected to be about a factor of ${\Delta_{\text{unpol}}}/{\Delta_{\text{pol}}} = \num{1.44+-0.04}$ larger than the signal in $B_{\text{unpol}}$.
+
+Since the the value of ${\Delta_{\text{unpol}}}/{\Delta_{\text{pol}}}$ is close to the value ${\mathcal{S}\pqty*{B_{\text{pol}}}}/{\mathcal{S}\pqty*{B_{\text{unpol}}}}$, this would suggest that the ``enhanced'' signal in the bias magnetic field is due to the Zeeman shift changing the intermediate state detunings instead of due to the Lorentz force guiding more electrons to the MCP.
+
+*****************************
+
+*****************************
+
+*********** TO DO ***********
+
+NEED TO CALCULATE INTERMEDIATE STATE DETUNINGS IN \Sr{87} to see if they're about the same as done in \cref{fig:detection_efficiency_vs_B} otherwise additional corrections need to be taken in to account...
+
+
+\subsection{Extraction of Ratios}
+
+*****************************************************************
+
+*****************************************************************
 
 *** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
 
@@ -220,63 +295,7 @@ The integrated Rydberg molecule signal should scale as
 \end{equation}
 where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers, $\mathcal{N}$ is a density-dependent term, $\beta_{n}$ is the two-photon transition matrix element, $\mathcal{C}$ is a Clebsch-Gordan factor, and $\mathcal{F}_{n,\nu}$ is the effective Franck-Condon factor.
 
-\subsection{Electron Detection Efficiency Factor $\alpha$}
-
-It is expected that the $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field needed to maintain the quantization of the spin-polarized sample does have a small effect on the electron detection efficiency compared to the unpolarized samples excited in zero magnetic field ($B_{\text{unpol}} = \SI{0}{\gauss}$).
-This difference in detection efficiency is represented by the $\alpha$ term in \cref{eq:ulrrm_signal}.
-To determine the $\alpha$ factor, a separate study was conducted with \Sr{84} due to its simpler electronic structure. 
-
-Using \Sr{84}, two-photon excitation following the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1} \rightarrow \nSLJ{5s37s}{3}{S}{1}$ path was used.
-$n = 37$ was chosen since it is approximately in the middle of the range of principal quantum numbers explored in this study. 
-The same excitation geometry was used as for the \Sr{87} measurements with a $\sigma^+$-polarized $\SI{689}{\nm}$ beam propagating along the quantization axis and a $\pi$-polarized $\SI{320}{\nm}$ beam propagating perpendicular.
-With the $\SI{689}{\nm}$ laser was blue-detuned from the intermediate state by about $\SI{15}{\MHz}$, the $\SI{320}{\nm}$ is laser scanned over the atomic Rydberg line and the resulting spectra is shown in \cref{fig:detection_efficiency_vs_B}.
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/detection_efficiency_vs_B/B-field-set_points/detection_efficiency_vs_B.pdf}
-	\caption[]{
-		\label{fig:detection_efficiency_vs_B}
-		The \Sr{84} $\nSLJ{5s37s}{3}{S}{1}$ atomic Rydberg line with $B = B_{\text{pol}} \approx \SI{1}{\gauss}$ (red circles) and $B = B_{\text{unpol}} \approx \SI{0}{\gauss}$ (blue squares) bias magnetic fields. 
-		The MCP signal was scaled accounting for both the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ powers while the atom number was constant for all the measurements.
-		Gaussian fits (lines) were used to extract the integrals, resulting with $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ (red shaded region) and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$ (blue shaded region).}
-\end{figure}
-The spectra shows the signal with the $B = B_{\text{pol}} \approx \SI{1}{\gauss}$ bias field is slightly larger than the $B = B_{\text{unpol}} \approx \SI{0}{\gauss}$ signal by a factor of ${\mathcal{S}\pqty*{B_{\text{pol}}}}/{\mathcal{S}\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
-
-Before reporting a detection efficiency difference for the $B = B_{\text{pol}}$ and $B = B_{\text{unpol}}$ conditions, there are still a few things to check and consider.
-First, note that the Zeeman shift of $\nSLJ{5s37s}{3}{S}{1}$ state with and without the bias magnetic field is $\SI{3.326+-0.006}{\MHz}$. 
-Since the $\nSLJ{5s37s}{3}{S}{1}$ state should have $g_J = 2$, this would means $B_{\text{pol}} = \SI{1.1882+-0.0020}{\gauss}$, which agrees with previous calibration measurements using the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
-
-We now consider the scattering rate off the intermediate $\nSLJ{5s5p}{3}{P}{1}$ state.
-In the $B_{\text{unpol}}$ case, the detuning is about $\SI{14.9+-1.0}{\MHz}$. 
-Knowing $B_{\text{pol}}$, the Zeeman shift of the intermediate $\nSLJ{5s5p}{3}{P}{1}$ is $\SI{2.495+-0.004}{\MHz}$ meaning the detuning is reduced to about $\SI{12.4+-1.0}{\MHz}$.
-Since the scattering rate scales as ${1}/{\Delta^2}$, it follows that $\Gamma_{\text{sc,pol}}/\Gamma_{\text{sc,unpol}} = \num{1.44+-0.04}$ meaning the $B_{\text{pol}}$ signal is expected to be larger than the $B_{\text{unpol}}$ by about $\num{1.44}$.
-
-A possible source of systematic error in the determination of this ratio could include poor polarization of either (or both) the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers. 
-This seems unlikely as there is very little signal at $\Delta = 0$ when the the magnetic field is applied, suggesting that the polarizations are likely reasonably aligned to the quantization axis. 
-This also matches our previous measurements checking spin-polarization which found the $\sigma^+$ beam path to have relatively good circular polarization.
-The $\SI{320}{\nm}$ path passes through a *** Glan-Taylor calcite *** polarizer which also helps to clean up the polarization.
-
-\subsection{Density Correction Term}
-
-During data collecting, both the atom number and sample temperature are recorded with resonant absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
-All the samples use the same final trapping parameters prior to Rydberg excitation with a vertical trap frequency of $f_{z} \approx \SI{300}{\Hz}$ and radial trap frequency of $f_{r} \approx \SI{130}{\Hz}$.
-Knowing these parameters, we can apply a density-dependent correction to the ULRRM signals.
-
-For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by
-\begin{equation}
-	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
-\end{equation}
-where $N$ is the total atom number and $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency \cite{Pethick.BEC}. 
-For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\va{r}}}^{2}$ integrated over all space.
-Performing the integration yields
-\begin{equation}
-	\mathcal{N}_2	=		\int \dd[3]{r} {\rho\pqty{\va{r}}}^2
-					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
-					\propto	\frac{N^2}{T^{3/2}}
-\end{equation}
-Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to account for the signal dependence on atom number and temperature. 
-This correction is applied to all the dimer data.
-
-\subsection{Extraction of Ratios}
+****************************************
 
 To remove sensitivity to systematics, we examined the ratios of the integral of the {$\nu = 1$ and $2$} ULRRM spectra compared to the $\nu = 0$ state, i.e., $S = \frac{P_{\nu}}{P_{\nu=0}}$.
 
@@ -292,6 +311,8 @@ To remove sensitivity to systematics, we examined the ratios of the integral of 
 
 **********************************
 
+
+\subsection{Looking at ${\mathcal{S}^{\nu}_{n,\text{pol}}}/{\mathcal{S}^{\nu}_{n,\text{unpol}}}$}
 
 The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULRRMs to $g^{\pqty*{2}}\pqty*{R}$.
 An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
