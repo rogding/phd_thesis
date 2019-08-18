@@ -270,74 +270,54 @@ NEED TO CALCULATE INTERMEDIATE STATE DETUNINGS IN \Sr{87} to see if they're abou
 
 \subsection{Examining Polarized-Polarized and Unpolarized-Unpolarized Ratios}
 
-In order to eliminate any dependency of $\mathcal{S}_{n}^{\nu}$ on the detection efficiency, the ratios of the measurements were compared within polarized-polarized and unpolarized-unpolarized samples.
-The signals shown in \cite{fig:excited_dimer_ratios} are
+In order to eliminate any dependency of $\mathcal{S}_{n}^{\nu}$ on the detection efficiency, polarized signals were compared to polarized signals and unpolarized signals were compared to unpolarized signals within a principal quantum number.
+In particular, the ratios of the $\nu = 1,2$ states were compared to the $\nu = 0$ with the ratio defined as
 \begin{equation}
-	\frac{\mathcal{S}_{n,x}^{\nu=1}}{\mathcal{S}_{n,x}^{\nu=0}}
+	\label{eq:excited_dimer_ratios}
+	\frac{\mathcal{S}_{n,x}^{\nu}}{\mathcal{S}_{n,x}^{\nu=0}}
+		=	\frac{\alpha_{x} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}}{\alpha_{x} I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu=0}}^2}_{E}}
+		=	\frac{I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}}{I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \ev{\abs{\mathcal{F}_{n}^{\nu=0}}^2}_{E}}
 \end{equation}
-where $x$ represented spin-polarized ($\mathcal{S}_{n,\text{pol}}^{\nu=1}$) or unpolarized ($\mathcal{S}_{n,\text{unpol}}^{\nu=1}$).
+where $x$ represents the spin-polarized ($\mathcal{S}_{n,\text{pol}}^{\nu}$) or unpolarized ($\mathcal{S}_{n,\text{unpol}}^{\nu}$) signal.
+The dependence on $\alpha_{x}$ is eliminated because the data comes from either polarized or unpolarized samples only.
+Monitoring the intensities $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ allows those factors to be scaled out of a particular measurement. 
+The recorded atom number and temperature are used to calculate $\mathcal{N}_2$.
+Therefore, the ${\ev*{\abs*{\mathcal{F}_{n}^{\nu}}^2}_{E}}/{\ev*{\abs*{\mathcal{F}_{n}^{\nu=0}}^2}_{E}}$ must be the dominant contributing factor to ${\mathcal{S}_{n,x}^{\nu}}{\mathcal{S}_{n,x}^{\nu=0}}$.
+
+The measured ratios when varying the principal quantum number over $n = \numrange[range-phrase=-]{31}{41}$ is shown in \cref{fig:excited_dimer_ratios}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig6.pdf}
 	\caption[]{
 		\label{fig:excited_dimer_ratios}
-		**** PLACEHOLDER FIGURE ****.
-		Dimer ratio plot.}
+		Experimentally measured (data points) and theoretically calculated (lines) ratios of the $\nu = 1$ (upper panel) and $\nu = 2$ (lower panel) vibrational states compared to the $\nu = 0$ state of the same $n$ for both spin-polarized (red) and unpolarized (black) samples.}
 \end{figure}
+The ratios of the $\nu = 1$ vibrational state compared to the $\nu = 0$ state follow the na{\"{i}}ve expectation that they should exhibit additional suppression due to extending towards smaller $n$ that corresponds to smaller interparticle separations. 
+The $\nu = 2$ to $\nu = 0$ ratio is counterintuitive and suggests that it is easier to excite the delocalized $\nu = 2$ state at smaller $n$ (i.e., smaller interparticle separations) compared to at larger $n$. 
 
-*****************************************************************
+When comparing the spin-polarized to unpolarized measurements, the noisy data makes it difficult to extract quantitative information. 
+Qualitatively, the spin-polarized ratios are generally smaller than the unpolarized samples. 
+This suggests that quantum statistics could be having an effect on the production of vibrationally excited ULRRM states in addition to the effects on the $\nu = 0$ state.
 
-*****************************************************************
+% \subsection{Looking at ${\mathcal{S}^{\nu}_{n,\text{pol}}}/{\mathcal{S}^{\nu}_{n,\text{unpol}}}$}
 
-*** TALK ABOUT WHY WE LOOKED AT RATIOS INSTEAD OF PURE SIGNAL ***
+% The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULRRMs to $g^{\pqty*{2}}\pqty*{R}$.
+% An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
+% As seen in \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}, the $\nu > 0$ states are delocalized and extend towards smaller $R$ than the $\nu = 0$ state and should make them sensitive more sensitive to $g^{\pqty*{2}}\pqty*{R}$. 
+% Towards this goal, we explored the excitation rates of the $\nu = 1, 2$ states of ULRRMs in spin-polarized and unpolarized samples of \Sr{87}. 
 
-If we examine the ratios of polarized signal to polarized signal (and unpolarized signal to unpolarized signal), we can eliminate common factors.
-\begin{equation}
-	\frac{\mathcal{S}_{n}^{\nu=1}}{\mathcal{S}_{n}^{\nu=0}}	= (EQUATION WHERE FACTORS GO AWAY)
-\end{equation}
+% ***** ADD MIDDLE *****
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimers/rydberg_excitation_spectra/Fig7.pdf}
-	\caption[]{
-		\label{fig:normalized_ulrrm}
-		**** PLACEHOLDER FIGURE ****.
-		Excited ULRRM spectra figure.}
-\end{figure}
+% Although the results qualitative agreement between theory and experiment, showing that it is possible to extract information about $g^{\pqty*{0}}\pqty*{R}$ from the $\nu > 0$ vibrational states, it was found that the results are very sensitive to initial wave functions. 
 
-The integrated Rydberg molecule signal should scale as
-\begin{equation}
-	S_{n}^{\nu}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N} \beta_{n} \mathcal{C} \mathcal{F}_{n,\nu}
-\end{equation}
-where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers, $\mathcal{N}$ is a density-dependent term, $\beta_{n}$ is the two-photon transition matrix element, $\mathcal{C}$ is a Clebsch-Gordan factor, and $\mathcal{F}_{n,\nu}$ is the effective Franck-Condon factor.
-
-****************************************
-
-To remove sensitivity to systematics, we examined the ratios of the integral of the {$\nu = 1$ and $2$} ULRRM spectra compared to the $\nu = 0$ state, i.e., $S = \frac{P_{\nu}}{P_{\nu=0}}$.
-
-
-**********************************
-
-
-\subsection{Looking at ${\mathcal{S}^{\nu}_{n,\text{pol}}}/{\mathcal{S}^{\nu}_{n,\text{unpol}}}$}
-
-The work presented in \cite{Whalen2019.PRA.100.011402} demonstrated the sensitivity of the excitation rate of dimer $\nu = 0$ vibrational ground-state ULRRMs to $g^{\pqty*{2}}\pqty*{R}$.
-An extension of the work is to explore the effects of quantum statistics on the $\nu > 0$ vibrationally excited states.
-As seen in \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}, the $\nu > 0$ states are delocalized and extend towards smaller $R$ than the $\nu = 0$ state and should make them sensitive more sensitive to $g^{\pqty*{2}}\pqty*{R}$. 
-Towards this goal, we explored the excitation rates of the $\nu = 1, 2$ states of ULRRMs in spin-polarized and unpolarized samples of \Sr{87}. 
-
-***** ADD MIDDLE *****
-
-Although the results qualitative agreement between theory and experiment, showing that it is possible to extract information about $g^{\pqty*{0}}\pqty*{R}$ from the $\nu > 0$ vibrational states, it was found that the results are very sensitive to initial wave functions. 
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig9-temp_range.pdf}
-	\caption[]{
-		\label{fig:excited_dimer_theory_comparison}
-		**** PLACEHOLDER FIGURE ****.
-		Comparison with Shuhei's theory.}
-\end{figure}
+% \begin{figure}[!htbp]
+	% \centering
+	% \includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig9-temp_range.pdf}
+	% \caption[]{
+		% \label{fig:excited_dimer_theory_comparison}
+		% **** PLACEHOLDER FIGURE ****.
+		% Comparison with Shuhei's theory.}
+% \end{figure}
 
 \section{Conclusion}
 
