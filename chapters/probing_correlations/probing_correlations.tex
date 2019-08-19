@@ -105,16 +105,27 @@ After laser cooling and ODT loading, sample preparation for the spin-polarized a
 For the unpolarized sample, the atoms are held in the ODT for a short period of time to allow for free-evaporation before starting forced evaporation.
 For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ magnetic bias field is ramped on during the free-evaporation hold, providing both a quantization axis and Zeeman splitting the $\nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ states by approximately $\SI{600}{\kHz}$ per $m_F$. 
 Spin-polarization is achieved by optically pumping on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ transition, individually driving each ${\Delta}m_{F} = +1$ with $\sigma^{+}$-polarized $\SI{689}{\nm}$ light. 
-As seen in \cref{fig:pol_vs_unpol_spectra}, we achieve $\SI{> 90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
+
+The effectiveness of spin-polarization is evaluated spectroscopically by exciting to a $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state in a $B = B_{\text{pol}} \approx\SI{1}{\gauss}$ bias magnetic field.
+For this setup, excitation is performed with counterpropagating $\SI{689}{\nm}$ and $\SI{320}{\nm}$ beams both with $\pi$-polarization to drive ${\Delta}m_F = 0$ transitions. 
+The $\SI{689}{\nm}$ photon is blue-detuned of intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state.
+In order to increase signal, $\pi-\pi$ measurements are performed $\num{1000}$ times before before a new sample is loaded.
+A comparison of excitation in an unpolarized and spin-polarized sample is shown in \cref{fig:n33-check_spin-polarization}.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/spin-polarization/producing_spin-polarization/mF_population_vs_duration.pdf}
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/spin-polarization/checking_spin-polarization/n33-check_spin-polarization.pdf}
 	\caption[]{
-		\label{fig:pol_vs_unpol_spectra}
-		**** CHANGE FIGURE TO SHOW UNPOLARIZED VS. POLARIEZD ****
-		Checking that linear-linear spectroscopy does not significantly alter our population.}
+		\label{fig:n33-check_spin-polarization}
+		Experimental spectra and fit of excitation to the $\nSLJf{5s33s}{3}{S}{1}{{11}/{2}}$ state from both an unpolarized (green) and a spin-polarized (blue) samples.
+		A bias magnetic field $B = B_{\text{pol}} \approx\SI{1}{\gauss}$ Zeeman splits the Rydberg state.
+		Excitation is performed with $\pi$-polarized counterpropagating $\SI{689}{\nm}$ and $\SI{320}{\nm}$ beams.
+		Ideally, only ${\Delta}m_{F} = 0$ transitions are driven with the $\pi$-$\pi$ excitation scheme so only $\num{10}$ peaks should be visible in the unpolarized spectra.
+		The small features on the extreme left and right are likely due to imperfect polarization of the first photon.}
 \end{figure}
-Forced evaporation is performed after spin-polarization and the bias magnetic field is ramped down to about $\SI{1}{\gauss}$. 
+From the fitted amplitudes, the spin-polarization scheme achieves $\SI{> 90}{\percent}$ population in the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
+The repeated $\pi-\pi$ excitations does cause some redistribution of the population among the $\nSLJfM{5s^2}{1}{S}{0}{{9}/{2}}{m_F}$ states so it places a lower bound on the effectiveness of spin-polarization to the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
+
+After spin-polarization, forced evaporation is performed and the bias magnetic field is ramped down to about $\SI{1}{\gauss}$. 
 After evaporation, both the spin-polarized and unpolarized samples are at about $\SI{900}{\nano\kelvin}$.
 Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{84} is applied to remove the isotope from the ODT.
 
