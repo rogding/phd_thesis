@@ -270,9 +270,9 @@ This suggests that quantum statistics could be having an effect on the productio
 \subsection{Electron Detection Efficiency Ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$}
 
 In order to compare the spin-polarized data to the unpolarized data, the electron detection efficiency $\alpha$ needs to be determined.
-Although it would be extremely useful to know the exact value of the electron detection efficiency $\alpha$, only the ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ is needed since we are interested in comparing signals spin-polarized and unpolarized samples.
+Although it would be extremely useful to know the exact value of the electron detection efficiency $\alpha$, only the ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ is needed since we are interested in how the spin-polarized samples differ from the unpolarized samples.
 The ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ accounts for the differences in detection efficiency between the spin-polarized sample and unpolarized samples with the former measurements taken in a $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field oriented towards the MCP (to maintain spin-polarization) and the latter in no bias field ($B_{\text{unpol}} = \SI{0}{\gauss}$). 
-Na{\"{i}}vely, after accounting for Clebsch-Gordan factors in the two-photon excitation, we expected the spin-polarized samples to exhibit a larger signal than the unpolarized sample simply due to the Lorentz force of the magnetic field, oriented towards the MCP, helping guide the electrons towards the detector.
+Na{\"{i}}vely, the spin-polarized samples are expected to exhibit a larger signal than the unpolarized sample simply due to the Lorentz force of the magnetic field, oriented towards the MCP, helping guide the electrons towards the detector.
 Towards this end, we measured the two-photon excitation signals with \Sr{84} due to its simpler electronic structure in both $B_{\text{pol}}$ and $B_{\text{unpol}}$ configurations.
 
 The measurements with \Sr{84} used the same beam paths and geometry as the measurements in \Sr{87}.
@@ -308,29 +308,48 @@ Fortuitously, the experimental parameters used to determine ${\alpha_{\text{pol}
 In both measurements, the $\SI{689}{\nm}$ laser was blue-detuned from the intermediate state by approximately $\SI{14.9}{\MHz}$ in no magnetic field (i.e., ${\Delta_{\text{unpol}}}/{2\pi} \approx \SI{14.9}{\MHz}$).
 Since the Zeeman shifts of the intermediate states are the same with ${g_J}{m_J} = {3}/{2}$ for the $\nSLJm{5s5p}{3}{P}{1}{1}$ state in \Sr{84} and ${g_F}{m_F} = {3}/{2}$ for the $\nSLJfm{5s5p}{3}{P}{1}{{11}/{2}}{{11}/{2}}$ state in \Sr{87}, we can reasonably expect that the enhancement of spin-polarized signal (with $B = B_{\text{pol}}$) compared to the unpolarized signal (with $B = B_{\text{unpol}}$) to also be given by ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
 
-\subsection{Comparison of $\mathcal{S}_{n}^{\nu}$ to $\mathcal{S}_{n}^{\nu}$}
+\subsection{Preliminary Comparison of $\mathcal{S}_{n,\text{pol}}^{\nu}$ to $\mathcal{S}_{n,\text{unpol}}^{\nu}$}
 
-**** BETTER SECTION TITLE ****
+A preliminary comparison of the spin-polarized to unpolarized ratios ${\mathcal{S}_{n,\text{pol}}^{\nu}}/{\mathcal{S}_{n,\text{unpol}}^{\nu}}$ for the {$\nu = 0$, $1$, and $2$} vibrational states is shown in \cref{fig:vibrational_pol_unpol_ratio}.
+The spin-polarized to unpolarized ratios in the figure include the ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ factor and the difference in Clebsch-Gordan coupling strength to the Rydberg state.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/pol_unpol_ratio.pdf}
+	\caption[]{
+		\label{fig:vibrational_pol_unpol_ratio}
+		Comparison of the ratio ${\mathcal{S}_{n,\text{pol}}^{\nu}}/{\mathcal{S}_{n,\text{unpol}}^{\nu}}$ for {$\nu = 0$, $1$, and $2$} across multiple principal quantum numbers ($n$).
+		The spin-polarized to unpolarized ratio is reduced by ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ and by the differences in the Clebsch-Gordan couplings.}
+\end{figure}
+With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios indicate that the spin-polarized samples exhibit a suppression of the excitation rates compared to the unpolarized samples. 
+The $\nu = 2$ ratios do not appear to show a significant deviation and the ratio remains nearly constant. 
 
-Out of curiosity, we quickly looked at the....
+From \cite{Whalen2019.PRA.100.011402}, we would expect the $n = 31$ ratio to be further suppressed than for the higher values of $n$ and it is not obvious why this data point does not follow the expected trend.
 
 \section{Conclusion}
 
-We have measured the photoexcitation rates of the dimer $\nu = 1$ and $\nu = 2$ vibrationally-excited ULRRM states and have shown that they are sensitive to spatial correlations arising from quantum statistics.
-In general, there is reasonable agreement between the experimental measurements and theoretical predictions with the spin-polarized data consistently showing weaker excitation compared to the unpolarized gas.
-Although weak, there is a small systematic difference between $S_{n} = P_{n,\nu=1,2}/P_{n,\nu=0}$ of the spin-polarized and unpolarized gases.
-The presented measurements were very challenging due to long-term drifts in the $\SI{320}{\nm}$ Rydberg laser frequency and to a previously unnoticed beam pointing changes when changing $n$. 
-Theoretical calculations are also challenging, as evidenced in \cref{fig:excited_ULRRM_spectra}, where the experimental and theoretical locations of the $\nu = 1$ and $\nu = 2$ ULRRMs lines are slightly shifted.
-This suggests that the wave functions of the vibrationally excited state could also be improved.
+We have presented preliminary measurements of the photoexcitation rates of the dimer $\nu = 1$ and $\nu = 2$ vibrationally-excited ULRRM states.
+When examining the ratios $\mathcal{S}_{n,\text{pol}}^{\nu}/\mathcal{S}_{n,\text{pol}}^{\nu=0}$ and $\mathcal{S}_{n,\text{unpol}}^{\nu}/\mathcal{S}_{n,\text{unpol}}^{\nu=0}$ shown in \cref{fig:excited_dimer_ratios}, it was observed that there is a weak but consistent systematic reduction of the $\nu=1$ to $\nu=0$ ratio in the spin-polarized sample compared to the unpolarized sample.
+This is in agreement with intuition that the less-localized $\nu=1$ vibrational wave function explores smaller interparticle separations which should lead to a suppressed formation rate. 
+Conversely, the $\nu=2$ to $\nu=0$ ratio decreases as $n$ increases.
 
-Knowing these challenges, future work towards stabilizing both the frequency and beam pointing of the Rydberg laser can result in a more accurate spectroscopy.
-The updated data can then be passed to theorists so that they can revise the models to more accurately reflect the observed spectra.
-Future work should have promising results since it can not only provide a test of theory, but it can also provide a tool for probing spatial correlations on length scales inaccessible with the $\nu = 0$ ULRRM states.
+Comparisons between spin-polarized and unpolarized samples is more difficult.
+The measurement requires more accurate knowledge of and is sensitive to experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
+\Cref{fig:vibrational_pol_unpol_ratio} does indicate that the $\nu = 1$ polarized-unpolarized ratio follows the general trend of the $\nu = 0$ ratios but slightly reduced, again, in agreement with intuition of the $\nu = 1$ state experiencing additional suppression.
+The delocalized $\nu = 2$ state does not appear to show much of a consistent trend.
 
-\subsection{Considerations for Future Experiments}
+The presented measurements were very challenging due to long-term drifts in the $\SI{320}{\nm}$ Rydberg laser frequency and to a previously unnoticed changes in beam pointing when tuning to different $n$.
+Additional work exploring the vibrational states ULRRM states is worthwhile since they do exhibit more complicated dependencies compared to the $\nu = 0$ state.
+Once experimental challenges are overcome, these states can be used to test theoretical calculations of both the ULRRM radial vibrational wave functions and how the effects of quantum statistics affects their production rate. 
 
-**** We could check spin-polarization with 5s5p 3P1 F=9/2 state instead maybe to check photon polarizations.
 
-\subsection{Acknowledgments}
+% Knowing these challenges, future work towards stabilizing both the frequency and beam pointing of the Rydberg laser can result in a more accurate spectroscopy.
+% The updated data can then be passed to theorists so that they can revise the models to more accurately reflect the observed spectra.
+% Future work should have promising results since it can not only provide a test of theory, but it can also provide a tool for probing spatial correlations on length scales inaccessible with the $\nu = 0$ ULRRM states.
 
-We thank Dr. R. G. Hulet for loan of the ODT laser. 
+% \subsection{Considerations for Future Experiments}
+
+% **** We could check spin-polarization with 5s5p 3P1 F=9/2 state instead maybe to check photon polarizations.
+
+% \subsection{Acknowledgments}
+
+% We thank Dr. R. G. Hulet for loan of the ODT laser. 
