@@ -77,12 +77,12 @@ As a result, $n$ sets the energy scale for many interactions and leads to the pr
 		Unless otherwise noted, the rubidium and strontium values in the table are calculated from the ionization energies, Rydberg constants, and quantum defects presented in \cite{Lorenzen1983.PS.27.300} and \cite{Couturier2019.PRA.99.022503}, respectively.}
 	\begin{tabular}{@{}cccc@{}}
 		\toprule
-		Property			& $n^*$ scaling			& {Rb}: {$\nSLJ{38s}{2}{S}{}$}								& {Sr}: {$\nSLJ{5s38s}{3}{S}{1}$}						\\
+		Property											& $n^*$ scaling			& {Rb}: {$\nSLJ{38s}{2}{S}{}$}								& {Sr}: {$\nSLJ{5s38s}{3}{S}{1}$}						\\
 		\midrule
-		Binding energy		& $\pqty*{n^*}^{-2}$	& $\SI{11.19}{\meV}$										& $\SI{11.35}{\meV}$									\\
-		Coulomb splitting	& $\pqty*{n^*}^{-3}$	& $\SI{148.77}{\GHz}$										& $\SI{151.84}{\GHz}$									\\
-		Orbital radius		& $\pqty*{n^*}^{2}$		& $\SI{1823.74}{\bohr}$										& $\SI{1798.74}{\bohr}$									\\
-		Radiative lifetime	& $\pqty*{n^*}^{3}$		& $\SI{28.6+-1.1}{\us}$ \cite{Branden2009.JPB.43.015002}	& $\SI{21+-1}{\us}$ \cite{Camargo2016.PRA.93.022702}	\\
+		Binding energy ($E_{n^*}$)							& $\pqty*{n^*}^{-2}$	& $\SI{11.19}{\meV}$										& $\SI{11.35}{\meV}$									\\
+		Coulomb splitting ($E_{n^*} - E_{\pqty*{n+1}^*}$)	& $\pqty*{n^*}^{-3}$	& $\SI{148.77}{\GHz}$										& $\SI{151.84}{\GHz}$									\\
+		Orbital radius ($\ev*{r}$)							& $\pqty*{n^*}^{2}$		& $\SI{1823.74}{\bohr}$										& $\SI{1798.74}{\bohr}$									\\
+		Lifetime ($\tau$)									& $\pqty*{n^*}^{3}$		& $\SI{28.6+-1.1}{\us}$ \cite{Branden2009.JPB.43.015002}	& $\SI{21+-1}{\us}$ \cite{Camargo2016.PRA.93.022702}	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -90,14 +90,14 @@ As a result, $n$ sets the energy scale for many interactions and leads to the pr
 \subsection{Ultra-Long-Range Rydberg Molecules (ULRRMs)}
 
 One key aspect to focus on from \cref{tab:Rydberg_n-scaling} is that size of a Rydberg atom increases very rapidly with $n^*$. 
-In a dense enough gas, the $\sim \pqty*{n^*}^{2}$ scaling means the Rydberg orbital radius can quickly become comparable to or larger than the interparticle separations.
+In a dense enough gas, the $\ev*{r} \sim \pqty*{n^*}^{2}$ scaling means the Rydberg orbital radius can quickly become comparable to or larger than the interparticle separations.
 It was in this context, when an atom (or multiple atoms) could be located inside the Rydberg electron's orbit, that a density-dependent shift was first observed in the spectral lines of alkali atoms with the direction of the shift, relative to the unperturbed atomic line, also dependent on the buffer gas used \cite{Amaldi1934.NC.11.145, Amaldi1934.Nature.133.141, Liebisch2016.JPB.49.182001, Shaffer2018.NatComm.9.1965}.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{introduction/rydberg_molecules/orbital_radius-density_n-scaling.pdf}
+	\includegraphics[keepaspectratio, width=5in, height=\textheight]{introduction/rydberg_molecules/orbital_radius-density_n-scaling.pdf}
 	\caption[]{
 		\label{fig:orbital_radius-density_n-scaling}
-		Orbital radius $\ev{r}$ and the corresponding density ${1}/{\ev{r}^3}$ for a strontium Rydberg atom in the $\nSLJ{5sns}{3}{S}{1}$ state.
+		Orbital radius $\ev{r}$ for a strontium Rydberg atom in the $\nSLJ{5sns}{3}{S}{1}$ state and the corresponding density ${1}/{\ev{r}^3}$.
 		The shaded region represents the range of densities typically achievable in ultracold strontium gas experiments with a maximum of about $\SI{1E15}{\per\cm\cubed}$ occurring in a \Sr{88} BEC \cite{Yan2013.PRL.110.123201, Stellmer2014.arXiv.1307.0601}.}
 \end{figure}
 \Cref{fig:orbital_radius-density_n-scaling} shows $\ev{r}$ and ${1}/{\ev{r}^3}$ for a strontium atom in the $\nSLJ{5sns}{3}{S}{1}$ state and the typical densities achievable in ultracold gas experiments.
