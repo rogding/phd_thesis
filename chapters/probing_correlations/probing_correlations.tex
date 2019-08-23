@@ -29,24 +29,26 @@ Since QGMs require an optical lattice, their accessible length scales are genera
 		The blue line indicates the length scales accessible with ULRRMs at different values of principal quantum numbers ($n$).}
 \end{figure}
 
-As seen in \cref{fig:correlation_tools}, the techniques described above cannot probe length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{266}{\nm}$.
+As seen in \cref{fig:correlation_tools}, the techniques mentioned above cannot probe length scales $\SI{10}{\nm} \lesssim R \lesssim \SI{266}{\nm}$.
 Such length scales, however, can be explored with ULRRMs. 
-Analogous to how PAS can be used to probe correlations on the order of $R_{\text{vdW}}$, the formation rate of ULRRMs can be used to probe spatial correlations. 
-The advantage of ULRRMs is that the length scale being probed depends on the size of the parent Rydberg atom, meaning different interparticle separations can be explored by simply exciting to a different principal quantum number ($n$). 
+Analogous to how PAS can be used to probe correlations on the order of the molecular potential $R_{\text{vdW}}$, the formation rate of ULRRMs can be applied to probe spatial correlations on the length scale of the ULRRM molecular potential. 
+The advantage of ULRRMs is that the ULRRM molecular potential is related to the size of the parent Rydberg atom, allowing many different interparticle separations to be explored by simply varying the principal quantum number.
 This tunability gives ULRRMs a huge advantage, allowing them to probe particle correlations on length scales previously inaccessible using alternate techniques. 
 
-This chapter contains work that is currently in progress. 
-******* ADD MORE ??? *******
+This chapter contains work that is currently in progress.
+As such, the presented data, analysis, and results should be considered preliminary.
+
+%******* ADD MORE ??? *******
 
 \section{Probing of Spatial Correlations with ULRRMs}
 
 In an ideal noninteracting gas, the atoms are expected to exhibit quantum statistical effects in their density distributions depending on whether they are bosonic, fermionic, or classical.
-For the two-body case, this effect on the density distribution is typically characterized by the pair correlation function ${g}^{\pqty*{2}}\pqty*{R}$ and can be written (for the ideal noninteracting case) as *** SOURCE? ***
+For the two-body case, this effect on the density distribution is typically characterized by the pair correlation function ${g}^{\pqty*{2}}\pqty*{R}$ and can be written (for the ideal noninteracting case) as
 \begin{equation}
 	{g}^{\pqty{2}}\pqty{R}	=	1 + \epsilon {\me}^{-2 \pi R^{2}/{\lambda_{\text{dB}}}^{2}}
 \end{equation}
 where {$\epsilon = +1$, $-1$, and $0$} for bosons, fermions, and classical gases, respectively, and $\lambda_{\text{dB}} = {h}/{\sqrt{2 \pi m k_{B} T}}$ is the thermal de Broglie wavelength.
-For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}. **** OTHER REFERENCES? ****
+For a more detailed discussion, see \cite{Naraschewski1999.PRA.59.4595}\footnote{I found the derivations in \cite{Schellekens2007.PhD, Jeltes2008.PhD, Krachmalnicof2009.PhD} to be helpful.}.
 
 It was shown in \cite{Whalen2019.PRA.100.011402} that the excitation rate of ULRRMs is sensitive to spatial correlations on length scales of the Rydberg electron orbital radius, i.e., $R \sim R_{n} \approx 2 \pqty*{n-\delta}^2$. 
 In particular, these studies were performed using the most deeply-bound vibrational ($\nu = 0$) dimer state which is spatially well-localized in the outer lobe of the Rydberg electron wave function as seen in \cref{fig:vary_n-nu0}.
@@ -56,9 +58,11 @@ In particular, these studies were performed using the most deeply-bound vibratio
 	\caption[]{
 		\label{fig:vary_n-nu0}
 		Calculated radial molecular potentials of a $\nSLJ{5sns}{3}{S}{1}+\nSLJ{5s^2}{1}{S}{0}$ ULRRM and the $\nu = 0$ radial vibrational wave functions for {$n = 30$, $35$, and $45$}.
-		As seen in the figure, the position of the well-localized $\nu = 0$ vibrational state depends on $n$.}
+		As seen in the figure, the position of the well-localized $\nu = 0$ vibrational state depends on $n$.
+		The binding energy of the $\nu = 0$ states is also shown with the ${\pqty*{n^*}^{-6}}$ scaling (dotted line).}
 \end{figure}
-This spatial localization of the $\nu=0$ vibrational state that was exploited to examine the initial spatial correlations in the gas.
+Since the state is radially well-localized, by varying $n$ (and therefore $R_n$) the optimum interatomic pair separation between atoms for formation of $\nu = 0$ ULRRMs can be tuned.
+Therefore, differences in the initial spatial correlations between bosonic, fermionic, and classical gases can be observed as changes in the ULRRM excitation rates.
 
 The probability of exciting a Rydberg molecule in an ultracold gas can be modeled similarly to photoassociation processes and a schematic is outlined in \cref{fig:ulrrm_photoassociation}.
 \begin{figure}[!htbp]
@@ -71,49 +75,55 @@ The probability of exciting a Rydberg molecule in an ultracold gas can be modele
 		ULRRM potentials for $\nSLJ{5s^2}{1}{S}{0} + \nSLJ{5sns}{3}{S}{1}$ states are shown for $n$ and $n^{\prime}$ (orange) along with the wave functions for the most deeply-bound $\nu = 0$ states $\ket*{\chi_{n}^{\nu}}$ (green) which are spatially-localized at $R_{n}^{\nu = 0}$.
 		Figure adapted from \cite{Whalen2019.PRA.100.011402}.}
 \end{figure}
-Starting from a pair of colliding atoms, their scattering wave function can be written as $\ket*{\chi^{E}_{0}}$ where, well-outside the interatomic potential, it can be described by a free-particle state with wave vector $k = \sqrt{{2 \mu E}/{\hbar^2}}$ in the center-of-mass frame.
-(It is this scattering wave function which contains information about the symmetry of the initial states.)
-The probability of photoexcitation to a particular ULRRM state with wave function $\ket*{\chi_{n}^{\nu}}$ can be thought of in terms of an effective Franck-Condon factor $\mathcal{F}_{n}^{\nu} = \bra*{\chi^{E}_{0}}\ket*{\chi_{n}^{\nu}}$. 
-Taking a thermal average over the collision energies of the initial two-particle states ($\ev*{\cdots}_{E}$) leads to
+Starting from a pair of colliding atoms, their scattering wave function can be written as $\ket*{\chi^{E}_{0}}$ where, well-outside the interatomic potential, they can be described by free-particle wave functions wave vector $k = \sqrt{{2 \mu E}/{\hbar^2}}$ separated by $2R$ in the center-of-mass frame.
+It is this scattering wave function which contains information about the symmetry of the initial states.
+The probability of photoexcitation to a particular ULRRM state with wave function $\ket*{\chi_{n}^{\nu}}$ can be thought of in terms of an effective Franck-Condon factor $\mathcal{F}_{n}^{\nu} = \bra*{\chi^{E}_{0}}\ket*{\chi_{n}^{\nu}}$
 \begin{equation}
 	\label{eq:effective_fc}
+	\abs{\mathcal{F}_{n}^{\nu}}^{2}
+		=	\abs{\bra{\chi^{E}_{0}}\ket{\chi_{n}^{\nu}}}^{2}
+		=	\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} \chi_{n}^{\nu}\pqty*{R}}^2
+\end{equation}
+Taking a thermal average over the initial collision energies of the two-particle states ($\ev*{\cdots}_{E}$) leads to
+\begin{equation}
+	\label{eq:effective_fc_th}
 	\ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
 		=	\ev{\abs{\bra{\chi^{E}_{0}}\ket{\chi_{n}^{\nu}}}^{2}}_{E}
-		=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu}\pqty{R}}^2}_{E}
+		=	\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} \chi_{n}^{\nu}\pqty*{R}}^2}_{E}
 \end{equation}
 
 As described in \cite{Whalen2019.PRA.100.011402}, due to the $\nu = 0$ state being well-localized around $R_{n}$, it can be approximated as $\chi_{n}^{\nu=0}\pqty*{R} \approx \delta\pqty*{R - R_n}$.
-Evaluating \cref{eq:effective_fc} under this approximation gives\footnote{When evaluating \cref{eq:effective_fc_nu0}, it helps to notice that $\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} A \delta\pqty*{R - R_n} = {R_n^2} \chi^{E}_{0}\pqty*{R_n} A = \chi^{E}_{0}\pqty*{R_n} \int_{0}^{\infty} \dd{R} {R^2} A \delta\pqty*{R-R_n}$.}
+Evaluating \cref{eq:effective_fc_th} under this approximation gives\footnote{When evaluating \cref{eq:effective_fc_nu0}, it helps to notice that $\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} A \delta\pqty*{R - R_n} = {R_n^2} \chi^{E}_{0}\pqty*{R_n} A = \chi^{E}_{0}\pqty*{R_n} \int_{0}^{\infty} \dd{R} {R^2} A \delta\pqty*{R-R_n}$.}
 \begin{align}
 	\label{eq:effective_fc_nu0}
 	\ev{\abs{\mathcal{F}_{n}^{\nu=0}}^2}_{E}
-		{}&=		\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty{R} \chi_{n}^{\nu=0}\pqty{R}}^2}_{E}	\notag	\\
-		{}&\approx	\ev{\abs{\chi^{E}_{0}\pqty{R_n}}^{2}}_{E} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2	\notag	\\
-		{}&=		{g^{\pqty{2}}\pqty{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty{R}}^2
+		{}&=		\ev{\abs{\int_{0}^{\infty} \dd{R} {R^2} \chi^{E}_{0}\pqty*{R} \chi_{n}^{\nu=0}\pqty*{R}}^2}_{E}	\notag	\\
+		{}&\approx	\ev{\abs{\chi^{E}_{0}\pqty*{R_n}}^{2}}_{E} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty*{R}}^2	\notag	\\
+		{}&=		{g^{\pqty*{2}}\pqty*{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty*{R}}^2
 \end{align}
 where, in the last line, the relation $\ev*{\abs*{\chi^{E}_{0}\pqty*{R_n}}^{2}}_{E} = g^{\pqty*{2}}\pqty*{R_n}$, with $g^{\pqty*{2}}\pqty*{R_n}$ the pair-correlation function for separation $R_{n}$, was used. 
-For the higher delocalized vibrational states ($\nu > 0$), the approximation $\chi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}$ cannot be made and \cref{eq:effective_fc} must be evaluated with the full $\ket*{\chi_{n}^{\nu}}$ ULRRM wave function.
+For the higher vibrational states $\nu > 0$, the approximation $\chi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}$ cannot be made since they are delocalized and, therefore, \cref{eq:effective_fc_th} must be evaluated with the full $\ket*{\chi_{n}^{\nu}}$ ULRRM wave function.
 
 \section{Experimental Procedure}
 
 The experimental procedures used for studies of vibrationally-excited ULRRMs are similar to those presented in \cite{Whalen2019.PRA.100.011402} and so will only be briefly covered.
 The production of cold gases of both spin-polarized and unpolarized \Sr{87} begins by loading a mixture of \Sr{87} and \Sr{84} in to the magnetic trap.
-As described in \cref{ssec:magnetic_trap_and_repumping}, both isotopes are loaded by tuning a blue MOT operating on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition at $\SI{461}{\nm}$ to first trap one isotope and then, by tuning the laser frequency, to trap the second isotope.
+As described in \cref{ssec:magnetic_trap_and_repumping}, both isotopes are loaded by operating a blue $\SI{461}{\nm}$ MOT on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition tuned to the first isotope and then changing the laser frequency to trap the second isotope.
 Laser cooling on the $\SI{461}{\nm}$ transition populates the magnetic trap with atoms following the weak $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ decay path.
 After the atoms are collected in the magnetic trap, both isotopes are repumped with a pulse of $\SI{481}{\nm}$ light resonant with the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition and second-stage narrow line laser cooling proceeds simultaneously for both isotopes on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition at $\SI{689}{\nm}$.
-After narrow line cooling, both isotopes are loaded in to the ODT with a temperature of about $\SI{2}{\micro\kelvin}$ at which point all cooling light is extinguished.
+Narrow line cooling produces samples at temperatures of about $\SI{2}{\micro\kelvin}$ which are then loaded in to the ODT before all laser cooling light is extinguished.
 
 Once loaded in to the ODT, sample preparation for the spin-polarized and unpolarized gases differ slightly.
 For the unpolarized sample, the atoms are held in the ODT for a short period of time to allow for free-evaporation before starting forced evaporation.
 For the spin-polarized sample, an approximately $\SI{7}{\gauss}$ magnetic bias field is ramped on during the free-evaporation hold, providing both a quantization axis and Zeeman splitting the $\nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ states by approximately $\SI{600}{\kHz}$ between adjacent $m_F$ levels. 
 Spin-polarization is achieved by optically pumping on the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}} \rightarrow \nSLJf{5s5p}{3}{P}{1}{{9}/{2}}$ transition, individually addressing each ${\Delta}m_{F} = +1$ transition with $\sigma^{+}$-polarized $\SI{689}{\nm}$ light. 
-After spin-polarization, the bias magnetic field is ramped down to $B = B_{\text{pol}} \approx\SI{1}{\gauss}$ to maintain a quantization axis and forced evaporation is performed.
+After spin-polarization, the bias magnetic field is ramped down to $B_{\text{pol}} \approx\SI{1}{\gauss}$ to maintain a quantization axis and forced evaporation is performed.
 
-The effectiveness of spin-polarization is evaluated spectroscopically by exciting trapped atoms to a $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state in a $B = B_{\text{pol}} \approx\SI{1}{\gauss}$ bias magnetic field.
+The effectiveness of spin-polarization is evaluated spectroscopically by exciting trapped atoms to a $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state in the $B_{\text{pol}} \approx\SI{1}{\gauss}$ bias magnetic field.
 For this setup, excitation is performed with counterpropagating $\SI{689}{\nm}$ and $\SI{320}{\nm}$ beams both with $\pi$-polarization to drive ${\Delta}m_F = 0$ transitions. 
 The $\SI{689}{\nm}$ photon is ${\Delta}/{2\pi} = \SI{14.85+-1}{\MHz}$ blue-detuned of intermediate $\nSLJf{5s5p}{3}{P}{1}{{11}/{2}}$ state and the frequency of the $\SI{320}{\nm}$ laser is scanned.
 During excitation, the ODT was turned off to eliminate AC Stark shifts and turned back on to recapture the remaining ground-state atoms after any Rydberg atoms produced are field ionized and detected with the MCP.
-In order to increase signal, $\pi-\pi$ excitation and measurement cycles are performed $\num{1000}$ times before before a new sample is loaded.
+In order to increase signal, the $\pi$-$\pi$ excitation and measurement cycles are performed $\num{1000}$ times before before a new sample is loaded and the $\SI{320}{\nm}$ laser frequency changed.
 A comparison of excitation in an unpolarized and spin-polarized sample is shown in \cref{fig:n33-check_spin-polarization}.
 \begin{figure}[!htbp]
 	\centering
@@ -121,13 +131,13 @@ A comparison of excitation in an unpolarized and spin-polarized sample is shown 
 	\caption[]{
 		\label{fig:n33-check_spin-polarization}
 		Experimental spectra and fit of excitation to the $\nSLJf{5s33s}{3}{S}{1}{{11}/{2}}$ state from both an unpolarized (green) and a spin-polarized (blue) samples.
-		A bias magnetic field $B = B_{\text{pol}} \approx\SI{1}{\gauss}$ Zeeman splits the Rydberg state.
+		A bias magnetic field $B_{\text{pol}} \approx\SI{1}{\gauss}$ Zeeman splits the Rydberg state.
 		Excitation is performed with $\pi$-polarized counterpropagating $\SI{689}{\nm}$ and $\SI{320}{\nm}$ beams.
 		Ideally, only ${\Delta}m_{F} = 0$ transitions are driven with the $\pi$-$\pi$ excitation scheme so only $\num{10}$ peaks should be visible in the unpolarized spectra.
-		The small features on the extreme left and right are likely due to imperfect polarization.}
+		The small features on the extreme left and right ($m_F = \pm {11}/{2}$) are likely due to imperfect polarization.}
 \end{figure}
 Model fits to the data show that the optical pumping transfers $\SI{> 90}{\percent}$ of the population into the $\nSLJfm{5s^2}{1}{S}{0}{{9}/{2}}{{9}/{2}}$ state.
-It should be noted that the repeated $\pi-\pi$ excitations do cause some population redistribution among the $\nSLJfM{5s^2}{1}{S}{0}{{9}/{2}}{m_F}$ states so the fit values place a lower bound on the effectiveness of optical pumping.
+It should be noted that the repeated $\pi$-$\pi$ excitations do cause some population redistribution among the $m_F$ states so the fit values place a lower bound on the effectiveness of optical pumping.
 
 After forced evaporation, both spin-polarized and unpolarized samples are at about $\SI{900}{\nano\kelvin}$.
 Prior to Rydberg excitation, a pulse of $\SI{689}{\nm}$ light resonant with the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition in \Sr{84} is applied to remove the isotope from the ODT.
@@ -171,19 +181,19 @@ The second photon is at $\SI{320}{\nm}$ with $\pi$-polarization and is tuned to 
 Excitation powers were kept low to avoid saturating the MCP so the signal-to-noise ratio was increased by performing $\num{1000}$ excitation and detection cycles on a sample before a new sample is prepared and the frequency of the $\SI{320}{\nm}$ laser changed.
 Again, the ODT is turned off during Rydberg excitation to eliminate AC Stark shifts before being turned back on after the field ionization and detection to recapture remaining ground-state atoms.
 
-\section{Spectroscopy of the $\nu=1$ and $\nu = 2$ ULRRM states}
+\section{Spectroscopy of $\nu=1$ and $\nu = 2$ ULRRMs}
 
 Spectroscopy was performed by exciting ULRRMs of the parent $\nSLJf{5sns}{3}{S}{1}{{11}/{2}}$ Rydberg state for $n = \numrange[range-phrase=-]{31}{41}$.
 In the experiment, the photoexcitation signal of the ULRRM dimers can be modeled as
 \begin{equation}
-	\mathcal{S}_{n}^{\nu}\pqty{f}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E} L\pqty{f}
+	\mathcal{S}_{n}^{\nu}\pqty*{f}	=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E} L\pqty*{f}
 \end{equation}
-where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\beta_n$ is proportional to the square of the reduced two-photon electronic-transition matrix element, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty{f}$ is a normalized lineshape function.
+where $\alpha$ is the detection efficiency, $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ are the intensities of the two-photon excitation lasers, $\beta_n$ is proportional to the square of the reduced two-photon electronic-transition matrix element, $\mathcal{N}_2 \equiv \int \dd[3]{r} \rho\pqty*{R}^2$ is the volume integral of the square of the density distribution, $\mathcal{C}$ is a Clebsch-Gordan factor, and $L\pqty*{f}$ is a normalized lineshape function.
 To eliminate dependences on the specific lineshape, the quantity of interest is the integrals of the observed excitation signal
 \begin{equation}
 	\label{eq:ulrrm_signal}
 	\mathcal{S}_{n}^{\nu}
-		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty{f}
+		=	\int \dd{f} \mathcal{S}_{n}^{\nu}\pqty*{f}
 		=	\alpha I_{\SI{689}{\nm}} I_{\SI{320}{\nm}} \mathcal{N}_2 \beta_{n} \mathcal{C} \ev{\abs{\mathcal{F}_{n}^{\nu}}^2}_{E}
 \end{equation}
 For a particular $n$, $\beta_{n}$ should remain the same for both spin-polarized and unpolarized samples and the Clebsch-Gordan factor $\mathcal{C}$ can be calculated.
@@ -192,7 +202,7 @@ By monitoring the atom number, temperature, $I_{\SI{689}{\nm}}$, and $I_{\SI{320
 The first corrections applied to the ``raw'' MCP signal involves accounting for any undercounting due to MCP saturation using the model described in \cref{ssec:charged_particle_detection}.
 Slow changes in the two-photon excitation rate are easily removed by dividing the signal by $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$ recorded on a DAQ\footnote{We actually record voltages $V_{\SI{689}{\nm}}$ and $V_{\SI{320}{\nm}}$ from monitor photodiodes which are proportional to $I_{\SI{689}{\nm}}$ and $I_{\SI{320}{\nm}}$, respectively.}.
 Applying these corrections results in a ``scaled'' MCP signal.
-An example two-photon excitation spectra to the $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ parent Rydberg state in both a spin-polarized and an unpolarized \Sr{87} sample is shown in \cref{fig:processing_ULRRM_signal}, demonstrating the effects of removing dependences on $I_{\SI{689}{\nm}}$, $I_{\SI{320}{\nm}}$, and MCP saturation.
+An example two-photon excitation spectra to the $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ parent Rydberg state from both a spin-polarized and an unpolarized \Sr{87} sample is shown in \cref{fig:processing_ULRRM_signal}, demonstrating the effects of removing dependences on $I_{\SI{689}{\nm}}$, $I_{\SI{320}{\nm}}$, and MCP saturation.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/excited_dimer_signals/20190123-n34/n34-excited_dimer_signal.pdf}
@@ -214,13 +224,14 @@ Fits to the spectra in \cref{fig:processing_ULRRM_signal} are shown in \cref{fig
 		Fits to the spin-polarized (upper panel) and unpolarized (lower panel) $\nSLJf{5s34s}{3}{S}{1}{{11}/{2}}$ spectra shown in \cref{fig:processing_ULRRM_signal}.
 		Solid lines show the fit results and the shaded regions represent the integrals used to extract $\mathcal{S}_{n=34}^{\nu}$.}
 \end{figure}
-Before extracting the ratios, we must still determine the two-body density-dependent correction term $\mathcal{N}_{2}$ to reduce the effects of atom number and temperature variations for the different samples.
+
+Before extracting a value for the integral, we must still determine the two-body density-dependent correction term $\mathcal{N}_{2}$ to reduce the effects of atom number and temperature variations for the different samples.
 To make a comparison between spin-polarized and unpolarized signals, it is also necessary to determine the ratio of their detection efficiencies ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$.
 
-\subsection{Density Correction Term}
+\subsection{Two-Body Density Correction: $\mathcal{N}_2$}
 
 During data collection, both the atom number and sample temperature are recorded with absorption imaging on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition.
-All the samples use the same final ODT trapping parameters prior to Rydberg excitation.
+All the samples have the same final ODT trapping parameters prior to Rydberg excitation.
 The vertical trap frequency was measured to be $f_{z} \approx \SI{300}{\Hz}$ and radial trap frequency is about $f_{r} \approx \SI{130}{\Hz}$.
 Knowing these parameters, the density-dependent $\mathcal{N}_{2}$ factor can be calculated and applied to the ULRRM signals. 
 
@@ -237,13 +248,13 @@ Performing this integration yields
 					\propto	\frac{N^2}{T^{3/2}}
 \end{equation}
 Therefore, we can scale the measured signal by ${N^2}/{T^{3/2}}$ in order to account for the signal dependence on atom number and temperature. 
-Note that, since the same trap was used for both the spin-polarized and unpolarized samples, the dependences on the trap frequencies drop out.
+Recall that the same trapping parameters was used for both the spin-polarized and unpolarized samples and therefore the dependences on the trap frequencies drop out.
 This correction is applied to all the dimer data.
 
 \subsection{Examining Polarized-Polarized and Unpolarized-Unpolarized Ratios}
 
 In order to eliminate any dependency of $\mathcal{S}_{n}^{\nu}$ on the detection efficiency $\alpha$, spin-polarized signals were compared to spin-polarized signals and unpolarized signals were compared to unpolarized signals within a principal quantum number.
-In particular, the ratios of the $\nu = 1,2$ states were compared to the $\nu = 0$ with the ratio defined as
+In particular, the ratios of the {$\nu = 1$ and $2$} states were compared to the $\nu = 0$ with the ratio defined as
 \begin{equation}
 	\label{eq:excited_dimer_ratios}
 	\frac{\mathcal{S}_{n,x}^{\nu}}{\mathcal{S}_{n,x}^{\nu=0}}
@@ -262,7 +273,7 @@ The measured ratios when varying the principal quantum number over $n = \numrang
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/Fig6.pdf}
 	\caption[]{
 		\label{fig:excited_dimer_ratios}
-		Experimentally measured (data points) and theoretically calculated (lines) ratios of the $\nu = 1$ (upper panel) and $\nu = 2$ (lower panel) vibrational states compared to the $\nu = 0$ state of the same $n$ for both spin-polarized (red) and unpolarized (black) samples.}
+		Experimentally measured ratios of the $\nu = 1$ (upper panel) and $\nu = 2$ (lower panel) vibrational states compared to the $\nu = 0$ state of the same $n$ for both spin-polarized (blue circles) and unpolarized (green squares) samples.}
 \end{figure}
 The ratios of the $\nu = 1$ vibrational state compared to the $\nu = 0$ state follow the na{\"{i}}ve expectation that they should exhibit additional suppression at lower $n$ due to their wave functions extending towards smaller interparticle separations $R$.
 
@@ -273,18 +284,18 @@ When comparing the spin-polarized to unpolarized measurements, the noisy data ma
 Qualitatively, the spin-polarized ratios are generally smaller than the unpolarized samples. 
 This suggests that quantum statistics have an effect on the production of vibrationally-excited ULRRMs as is the case for the $\nu = 0$ states.
 
-\subsection{Electron Detection Efficiency Ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$}
+\subsection{Electron Detection Efficiency Ratio: ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$}
 
 In order to compare the spin-polarized data to the unpolarized data, the electron detection efficiency $\alpha$ needs to be determined.
-Although it would be extremely useful to know the exact value of the electron detection efficiency $\alpha$, only the ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ is needed since we are interested in how the spin-polarized samples differ from the unpolarized samples.
+Although it would be extremely useful to know the exact value of $\alpha$, only the ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ is needed since we are interested in how the spin-polarized samples differ from the unpolarized samples.
 The ratio ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ accounts for the differences in detection efficiency between the spin-polarized sample and unpolarized samples with the former measurements taken in a $B_{\text{pol}} \approx \SI{1}{\gauss}$ bias magnetic field oriented towards the MCP (to maintain spin-polarization) and the latter in no bias field ($B_{\text{unpol}} = \SI{0}{\gauss}$). 
 Na{\"{i}}vely, the spin-polarized samples are expected to exhibit a larger signal than the unpolarized sample simply due to the Lorentz force of the magnetic field, oriented towards the MCP, helping guide the electrons towards the detector.
 Towards this end, we measured the two-photon excitation signals with \Sr{84} due to its simpler electronic structure in both $B_{\text{pol}}$ and $B_{\text{unpol}}$ configurations.
 
-The measurements with \Sr{84} used the same beam paths and geometry as the measurements in \Sr{87}.
+The measurements with \Sr{84} used the same beam paths and geometry as the ULRRM measurements in \Sr{87}.
 Two-photon excitation following the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1} \rightarrow \nSLJ{5s37s}{3}{S}{1}$ path was used.
 The first $\SI{689}{\nm}$ photon has $\sigma^+$-polarization and is blue-detuned from the intermediate state by ${\Delta}/{2 \pi} = \SI{14.93+-1}{\MHz}$.
-The second $\SI{320}{\nm}$ photon has $\pi$-polarization .
+The second $\SI{320}{\nm}$ photon has $\pi$-polarization.
 \Cref{fig:detection_efficiency_vs_B} shows spectra obtained with and without the bias magnetic field when $\SI{689}{\nm}$ is held fixed while the $\SI{320}{\nm}$ frequency is scanned across the Rydberg atomic line. 
 \begin{figure}[!htbp]
 	\centering
@@ -295,24 +306,25 @@ The second $\SI{320}{\nm}$ photon has $\pi$-polarization .
 		The MCP signal was scaled accounting for both the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ powers while the atom number was constant for all the measurements.
 		Gaussian fits (lines) were used to extract the integrals, resulting with $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ (blue shaded region) and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$ (green shaded region).}
 \end{figure}
-As shown in the figure, $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$, meaning their ratio gives ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
+From the data shown in the figure, the values $\mathcal{S}\pqty*{B_{\text{pol}}} = \num{369+-9}$ and $\mathcal{S}\pqty*{B_{\text{unpol}}} = \num{278+-7}$ were extracted for fits to the Rydberg line.
+Taking their ratio gives ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
 
 Before reporting a detection efficiency difference for the $B_{\text{pol}}$ and $ B_{\text{unpol}}$ conditions, there are still a few things to check and consider.
 A possible source of systematic error in this determination of the ratio could be due to poor polarization of either (or both) the $\SI{689}{\nm}$ and $\SI{320}{\nm}$ excitation lasers. 
-This seems unlikely as there is very little signal at ${\Delta}/{2 \pi} = \SI{0}{\MHz}$ when the the magnetic field is applied, suggesting that the polarizations are likely reasonably aligned to the quantization axis. 
+This seems unlikely as there is very little signal at ${\Delta}/{2 \pi} = \SI{0}{\MHz}$ when the the magnetic field is applied (blue circles), suggesting that the polarizations are likely reasonably well-aligned to the quantization axis. 
 This also matches our previous spin-polarization tests which found the $\sigma^+$ beam path to have relatively good circular polarization.
 The $\SI{320}{\nm}$ path passes through a high-extinction ratio calcite polarizer\footnote{Thorlabs' GLB10 Glan-Laser alpha-BBO calcite polarizer.} that cleans up its polarization.
 
 Another thing to consider is that the Zeeman effect could change the intermediate detuning with the effect scaling as $\Gamma_{\text{sc}} \sim {1}/{\Delta^2}$.
 From \cref{fig:detection_efficiency_vs_B}, the observed shift of the $\nSLJm{5s37s}{3}{S}{1}{1}$ state with and without the magnetic field is $\SI{3.326+-0.006}{\MHz}$.
-Since the $\nSLJ{5s37s}{3}{S}{1}$ state has $g_J = 2$, this corresponds to $B_{\text{pol}} = \SI{1.1882+-0.0020}{\gauss}$, which agrees with previous calibration measurements using the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
-Considering the unpolarized intermediate state detuning $\Delta_{\text{unpol}} = \SI{14.9+-1}{\MHz}$, the polarized intermediate state detuning from the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJm{5s5p}{3}{P}{1}{1}$ is expected to be reduced to $\Delta_{\text{pol}} = \SI{12.4+-1}{\MHz}$. 
-Therefore, the $\mathcal{S}\pqty*{B_{\text{pol}}}$ is expected to be about a factor of ${\Delta_{\text{unpol}}^2}/{\Delta_{\text{pol}}^2} = \num{1.44+-0.04}$ larger than $\mathcal{S}\pqty*{B_{\text{unpol}}}$.
+Since the $\nSLJ{5s37s}{3}{S}{1}$ state has $g_J = 2$, this corresponds to $B_{\text{pol}} = \SI{1.1882+-0.0020}{\gauss}$, which agrees with previous calibration measurements obtained by performing spectroscopy on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition.
+Considering the detuning ${\Delta_{\text{unpol}}}/{2 \pi} = \SI{14.9+-1}{\MHz}$ in the $B_{\text{unpol}}$ case, the intermediate state detuning from the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJm{5s5p}{3}{P}{1}{1}$ is expected to be reduced to ${\Delta_{\text{pol}}}/{2 \pi} = \SI{12.4+-1}{\MHz}$ in the $B_{\text{pol}}$ case. 
+Therefore, the $\mathcal{S}\pqty*{B_{\text{pol}}}$ is expected to be about a factor of ${\Delta_{\text{unpol}}^2}/{\Delta_{\text{pol}}^2} = \num{1.44+-0.04}$ larger than $\mathcal{S}\pqty*{B_{\text{unpol}}}$ due to the reduced detuning.
 
-Since the the value of ${\Delta_{\text{unpol}}^2}/{\Delta_{\text{pol}}^2}$ is close to the measured value ${\mathcal{S}\pqty*{B_{\text{pol}}}}/{\mathcal{S}\pqty*{B_{\text{unpol}}}}$, this would suggest that the enhancement of the signal obtained in the bias magnetic field is due to the Zeeman shift reducing the intermediate state detuning instead of due to the Lorentz force guiding more electrons to the MCP.
-Fortuitously, the experimental parameters used to determine ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ in \Sr{84} are very similar to the parameters used for the ULRRM measurements in \Sr{87}.
+Since the the value of ${\Delta_{\text{unpol}}^2}/{\Delta_{\text{pol}}^2}$ is close to the measured value ${\mathcal{S}\pqty*{B_{\text{pol}}}}/{\mathcal{S}\pqty*{B_{\text{unpol}}}}$, this would suggest that the enhancement of the signal obtained in $B_{\text{pol}}$ is due to the Zeeman shift reducing the intermediate state detuning instead of due to the Lorentz force guiding more electrons to the MCP.
+Fortuitously, the experimental parameters used to determine ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$ in \Sr{84} are almost identical to the conditions used for the ULRRM measurements in \Sr{87}.
 In both measurements, the $\SI{689}{\nm}$ laser was blue-detuned from the intermediate state by approximately $\SI{14.9}{\MHz}$ in no magnetic field (i.e., ${\Delta_{\text{unpol}}}/{2\pi} \approx \SI{14.9}{\MHz}$).
-With the Zeeman shifts of the intermediate states being the same, with ${g_J}{m_J} = {3}/{2}$ for the $\nSLJm{5s5p}{3}{P}{1}{1}$ state in \Sr{84} and ${g_F}{m_F} = {3}/{2}$ for the $\nSLJfm{5s5p}{3}{P}{1}{{11}/{2}}{{11}/{2}}$ state in \Sr{87}, we can reasonably expect that the enhancement of spin-polarized signal (with $B = B_{\text{pol}}$) compared to the unpolarized signal (with $B = B_{\text{unpol}}$) to also be given by ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
+With the Zeeman shifts of the intermediate states being the same, ${g_J}{m_J} = {3}/{2}$ for the $\nSLJm{5s5p}{3}{P}{1}{1}$ state in \Sr{84} and ${g_F}{m_F} = {3}/{2}$ for the $\nSLJfm{5s5p}{3}{P}{1}{{11}/{2}}{{11}/{2}}$ state in \Sr{87}, we can reasonably expect that the enhancement of spin-polarized signal (with $B = B_{\text{pol}}$) compared to the unpolarized signal (with $B = B_{\text{unpol}}$) to also be given by ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$.
 
 \subsection{Preliminary Comparison of $\mathcal{S}_{n,\text{pol}}^{\nu}$ to $\mathcal{S}_{n,\text{unpol}}^{\nu}$}
 
@@ -339,13 +351,13 @@ This is in agreement with intuition that the less-localized $\nu=1$ vibrational 
 Conversely, the $\nu=2$ to $\nu=0$ ratio decreases as $n$ increases.
 
 Comparisons between spin-polarized and unpolarized samples is more difficult.
-The measurement requires more accurate knowledge of and is sensitive to experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
+The measurement requires more accurate knowledge of, and is sensitive to, experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
 \Cref{fig:vibrational_pol_unpol_ratio} does indicate that the $\nu = 1$ polarized-unpolarized ratio follows the general trend of the $\nu = 0$ ratios but slightly reduced, again, in agreement with intuition of the $\nu = 1$ state experiencing additional suppression.
 The delocalized $\nu = 2$ state does not appear to show much of a consistent trend.
 
 The presented measurements were very challenging due to long-term drifts in the $\SI{320}{\nm}$ Rydberg laser frequency and to a previously unnoticed changes in beam pointing when tuning to different $n$.
 Additional work exploring the vibrational states ULRRM states is worthwhile since they do exhibit more complicated dependencies compared to the $\nu = 0$ state.
-Once experimental challenges are overcome, these states can be used to test theoretical calculations of both the ULRRM radial vibrational wave functions and how the effects of quantum statistics affects their production rate. 
+Once experimental challenges are overcome, these states can be used to test theoretical calculations of both the ULRRM radial vibrational wave functions and how the effects of quantum statistics affect their production rate. 
 
 
 % Knowing these challenges, future work towards stabilizing both the frequency and beam pointing of the Rydberg laser can result in a more accurate spectroscopy.
