@@ -6,18 +6,18 @@ Compared to many other systems where the challenge is separating the influences 
 So far, from the observation of the BEC-BCS crossover \cite{Chen2005.PR.412.1, Gurarie2007.JAOP.322.2, Bourdel2004.PRL.93.050401} to the superfluid-Mott insulator transition in an optical lattice \cite{Greiner2002.Nature.415.39} to the formation of matter-wave solitons \cite{Strecker2002.Nature.417.150, Khaykovich2002.Science.296.1290}, most of these effects arise from an isotropic, two-body short-range contact interaction that can be described by the pseudopotential
 \begin{equation}
 	\label{eq:contact_interactions}
-	\hat{V}\pqty*{\vb{r}, \vb{r}^\prime}	=	\frac{4 \pi \hbar^2}{m} a_{s} \delta\pqty*{\vb{r} - \vb{r}^\prime}
+	\hat{V}\pqty*{\vb{r}}  \psi\pqty*{\vb{r}}	=	\bqty{g \delta\pqty*{\vb{r}} \pdv{r}r}\psi\pqty*{\vb{r}}
 \end{equation}
-where $\vb{r}$ and $\vb{r}^\prime$ are the positions of the two particles, $a_{s}$ is the $s$-wave scattering length, and $\delta\pqty*{\vb{r}}$ is the Dirac delta function \cite{Pethick.BEC}.
+where $\vb{r}$ is the relative distance between two colliding particles, $g$ is the interaction strength\footnote{The effective interaction for two particles of equal mass is $g = {4 \pi \hbar^2 a_{s}}/{m}$ with $a_{s}$ is the $s$-wave scattering length \cite{Pethick.BEC}.}, and $\delta\pqty*{\vb{r}}$ is the Dirac delta function \cite{Pethick.BEC, Dalibard1998.Collisions}.
 Due to the $\delta\pqty*{\vb{r}}$ term, this requires the particle wave functions to overlap for interactions to occur.
 
 An recent trend in the field of ultracold gases has been the introduction of long-range interactions into systems that have been generally well-described by \cref{eq:contact_interactions}.
 These long-range interactions can typically be expanded as
 \begin{equation}
 	\label{eq:long-range_interactions}
-	\hat{V}\pqty*{\vb{r},\vb{r}^\prime}	=	\sum_{k} \frac{C_{k} \pqty*{\vb{r},\vb{r}^\prime}}{\abs*{\vb{r} - \vb{r}^\prime}^{k}}
+	\hat{V}\pqty*{\vb{r}} \psi\pqty*{\vb{r}}	=	\bqty{\sum_{k} \frac{C_{k} \pqty*{\vb{r}}}{\abs*{\vb{r}}^{k}}} \psi\pqty*{\vb{r}}
 \end{equation}
-with interaction strength $C_{k}\pqty*{\vb{r},\vb{r}^\prime}$ and the ``long-range'' coming from the $\hat{V} \sim {1}/{\abs*{\vb{r} - \vb{r}^\prime}^{k}}$ dependence \cite{Pethick.BEC}.
+with interaction strength $C_{k}\pqty*{\vb{r}}$ and the ``long-range'' coming from the $\hat{V} \sim {1}/{\abs*{\vb{r}}^{k}}$ dependence \cite{Pethick.BEC}.
 Some common interactions are $k = 1$ for Coulomb, $k = 3$ for dipole-dipole, and $k = 6$ for van der Waals.
 These can also have an angular dependence as well, which leads to isotropic and anisotropic interactions that adds additional ``richness'' to the system. 
 The provides the opportunity to study a wide variety of phenomena including those with applications towards quantum computing \cite{Jaksch2000.PRL.85.2208, DeMille2002.88.067901}, quantum simulation \cite{deLeseleuc2018.PRL.120.113602, Schauss2018.QST.3.023001}, and tests of theory.
