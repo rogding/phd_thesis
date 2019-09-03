@@ -41,7 +41,7 @@
 			backend=biber]{biblatex}
 \usepackage{csquotes}
 \usepackage{caption}
-\usepackage{pdfpages}
+\usepackage{eso-pic, atbegshi,  ifthen, calc, pdfpages}
 \usepackage{import}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -244,6 +244,8 @@
 
 \maxtocdepth{subsection}	% put everything into the ToC
 \pagestyle{plain}			% pagestyle for the prelims
+
+\includepdf[pages={1}, fitpaper=true]{PhD-Signed_Thesis_Coversheet-20190830.pdf}
 
 \frontmatter
 \thetitlepage
