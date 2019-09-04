@@ -329,17 +329,33 @@ With the Zeeman shifts of the intermediate states being the same, ${g_J}{m_J} = 
 \subsection{Preliminary Comparison of $\mathcal{S}_{n,\text{pol}}^{\nu}$ to $\mathcal{S}_{n,\text{unpol}}^{\nu}$}
 
 A preliminary comparison of the spin-polarized to unpolarized ratios ${\mathcal{S}_{n,\text{pol}}^{\nu}}/{\mathcal{S}_{n,\text{unpol}}^{\nu}}$ for the {$\nu = 0$, $1$, and $2$} vibrational states is shown in \cref{fig:vibrational_pol_unpol_ratio}.
-The spin-polarized to unpolarized ratios in the figure include the ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ factor and the difference in Clebsch-Gordan coupling strength to the Rydberg state\footnote{$\mathcal{C}_{\text{pol}} = {11}/{13}$ and $\mathcal{C}_{\text{unpol}} = {46}/{275}$.}.
+The spin-polarized to unpolarized ratios in the figure account for the ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ factor and the difference in Clebsch-Gordan coupling strength to the Rydberg state\footnote{$\mathcal{C}_{\text{pol}} = {11}/{13}$ and $\mathcal{C}_{\text{unpol}} = {46}/{275}$.}.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=5in, height=\textheight]{probing_correlations/dimer_ratios/pol_unpol_ratio.pdf}
+	\includegraphics[keepaspectratio, width=5.25in, height=\textheight]{probing_correlations/dimer_ratios/pol_unpol_ratio.pdf}
 	\caption[]{
 		\label{fig:vibrational_pol_unpol_ratio}
 		Comparison of the ratio ${\mathcal{S}_{n,\text{pol}}^{\nu}}/{\mathcal{S}_{n,\text{unpol}}^{\nu}}$ for {$\nu = 0$, $1$, and $2$} across multiple principal quantum numbers ($n$).
-		The spin-polarized to unpolarized ratio is reduced by ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ and by the differences in the Clebsch-Gordan couplings.}
+		The extracted spin-polarized to unpolarized ratios accounts for both ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ and for differences in the Clebsch-Gordan couplings.
+		For the $\nu = 0$ ratios, $g^{\pqty*{2}}\pqty*{R}$ (solid line) and $0.8 g^{\pqty*{2}}\pqty*{R}$ (dotted line) for fermions is shown where $R_{n} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$ and $T = \SI{850 +- 100}{\nano\kelvin}$.}
 \end{figure}
-With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios indicate that the spin-polarized samples exhibit a suppression of the excitation rates compared to the unpolarized samples. 
+With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios exhibit a pronounced decrease in their values at smaller $n$ (i.e., smaller interparticle separations $R$) which is evidence of antibunching. 
+\Cref{fig:vibrational_pol_unpol_ratio} also shows the expected $g^{\pqty*{2}}\pqty*{R}$ for fermions at $T = \SI{850 +- 100}{\nano\kelvin}$ with $R_{n}^{\nu=0} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$\footnote{This scaling is obtained from fitting the theoretically calculated ULRRM wave functions.}.
+For comparison, $0.8 g^{\pqty*{2}}\pqty*{R}$ is also shown which has qualitatively better agreement with the observations. 
+Currently, it is unclear why the $\nu = 0$ ratio appears to converge $\num{\approx 0.8}$ as $n$ increases instead of $\num{1}$ expected from $g^{\pqty*{2}}\pqty*{R}$.
+
+Some insights can be gained by examining the radial vibrational wave functions for the ULRRM states (e.g., see \cref{fig:n34_rydberg_molecule_wave_functions_and_spectra}).
+For the $\nu = 0$ state, the contribution to $\mathcal{F}_{n}^{\nu = 0}$ comes exclusively from the well-localized wave function centered around $R_{n}^{\nu=0}$ (i.e., the outermost lobe of the Rydberg electron wave function).
+Notice that the higher vibrational states have a node near in the outermost well meaning the contribution to $\mathcal{F}_{n}^{\nu = 0}$ near $R_{n}^{\nu=0}$ is reduced. 
+The $\nu = 1$ state can be almost be thought of as being located in the second outermost well. *** FINISH ***
+
+**************************
+
+
+
 The $\nu = 2$ ratios do not appear to show a significant deviation and the ratio remains nearly constant. 
+
+*********
 
 From \cite{Whalen2019.PRA.100.011402}, we would expect the $n = 31$ ratio to be further suppressed than for the higher values of $n$ and it is not obvious why this data point does not follow the expected trend.
 
