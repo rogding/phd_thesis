@@ -237,13 +237,13 @@ Knowing these parameters, the density-dependent $\mathcal{N}_{2}$ factor can be 
 
 For a thermal gas in a three-dimensional harmonic trap, the density distribution is given by
 \begin{equation}
-	\rho\pqty{\va{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
+	\rho\pqty{\vb{r}}	=	\frac{N}{{\pi}^{3/2} R_{x} R_{y} R_{z}} {\me}^{-{x^2}/{R_x^2}} {\me}^{-{y^2}/{R_y^2}} {\me}^{-{z^2}/{R_z^2}}
 \end{equation}
 where $N$ is the total atom number and $R_i^2 = {2 k_{B} T}/{m \omega_i^2}$ where $f_{i} = {\omega_i}/{2 \pi}$ is the trap frequency \cite{Pethick.BEC}. 
-For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\va{r}}}^{2}$ integrated over all space.
+For the dimers, the total signal should be proportional to $\bqty*{\rho\pqty*{\vb{r}}}^{2}$ integrated over all space.
 Performing this integration yields
 \begin{equation}
-	\mathcal{N}_2	=		\int \dd[3]{r} {\rho\pqty{\va{r}}}^2
+	\mathcal{N}_2	=		\int \dd[3]{r} {\rho\pqty{\vb{r}}}^2
 					=		\frac{N^2}{{\pqty{2 \pi}^{3/2}} R_x R_y R_z}
 					\propto	\frac{N^2}{T^{3/2}}
 \end{equation}
@@ -339,25 +339,26 @@ The spin-polarized to unpolarized ratios in the figure account for the ${\alpha\
 		The extracted spin-polarized to unpolarized ratios accounts for both ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ and for differences in the Clebsch-Gordan couplings.
 		For the $\nu = 0$ ratios, $g^{\pqty*{2}}\pqty*{R}$ (solid line) and $0.8 g^{\pqty*{2}}\pqty*{R}$ (dotted line) for fermions is shown where $R_{n} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$ and $T = \SI{850 +- 100}{\nano\kelvin}$.}
 \end{figure}
-With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios exhibit a pronounced decrease in their values at smaller $n$ (i.e., smaller interparticle separations $R$) which is evidence of antibunching. 
+With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios exhibit a pronounced decrease in their values at smaller $n$ (i.e., smaller interparticle separations $R$), which is evidence of antibunching. 
 \Cref{fig:vibrational_pol_unpol_ratio} also shows the expected $g^{\pqty*{2}}\pqty*{R}$ for fermions at $T = \SI{850 +- 100}{\nano\kelvin}$ with $R_{n}^{\nu=0} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$\footnote{This scaling is obtained from fitting the theoretically calculated ULRRM radial vibrational wave functions.}.
 For comparison, $0.8 g^{\pqty*{2}}\pqty*{R}$ is also shown which has qualitatively better agreement with the observations. 
 Currently, it is unclear why the $\nu = 0$ ratio appears to converge $\num{\approx 0.8}$ as $n$ increases instead of $\num{1}$ expected from $g^{\pqty*{2}}\pqty*{R}$.
 
 Some insights can be gained by examining the shapes of the ULLRM radial vibrational wave functions.
-\Cref{fig:ulrrm_wave_functions_vs_n} shows the {$\nu=0$, $1$, and $2$} wave functions for a range of $n$ to provide an illustrative example of how they change with $n$.
+\Cref{fig:ulrrm_wave_functions_vs_n} shows the {$\nu=0$, $1$, and $2$} wave functions to provide an illustrative example of how they change with $n$.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[keepaspectratio, width=5.25in, height=\textheight]{probing_correlations/ulrrm_wave_functions/ulrrm_wave_functions_vs_n.pdf}
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/ulrrm_wave_functions/ulrrm_wave_functions_vs_n.pdf}
 	\caption[]{
 		\label{fig:ulrrm_wave_functions_vs_n}
 		Illustrative ULRRM potentials ($V$) radial vibrational wave functions for {$\nu = 0$, $1$, and $2$} for a $\nSLJ{5sns}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ dimer.
 		Notice that the binding energies span different ranges in the three figures.}
 \end{figure}
+It is clear from this figure that, \textit{a priori}, the $\nu = 1$ and $\nu = 2$ should not be expected to follow the simple scaling with $n$ that the $\nu = 0$ state does due to the additional structure. 
 For the $\nu = 0$ state, the contribution to $\mathcal{F}_{n}^{\nu = 0}$ comes exclusively from the well-localized wave function centered around $R_{n}^{\nu=0}$ (i.e., the outermost lobe of the Rydberg electron wave function).
-Notice that the higher vibrational states ($\nu = 1$ and $2$) have a node near in the outermost well meaning the contribution to $\mathcal{F}_{n}^{\nu = 0}$ near $R_{n}^{\nu=0}$ is reduced. 
+Notice that the higher vibrational states ($\nu = 1$ and $2$) have a node near the outermost well meaning the contribution to $\mathcal{F}_{n}^{\nu = 0}$ near $R_{n}^{\nu=0}$ is reduced. 
 Although the $\nu = 1$ state is delocalized, it can almost be considered as being (somewhat) localized in the second outermost potential well(s) which should contribute the most to $\mathcal{F}_{n}^{\nu = 1}$.
-This ``intuition'' likely cannot be easily applied to the $\nu = 2$ ULRRM state as it is far more delocalized.
+This ``intuition'' cannot be easily applied to the $\nu = 2$ ULRRM state as it is far more delocalized.
 
 \section{Conclusion}
 
@@ -369,7 +370,7 @@ Conversely, the $\nu=2$ to $\nu=0$ ratio decreases as $n$ increases.
 Comparisons between spin-polarized and unpolarized samples is more difficult.
 The measurement requires more accurate knowledge of, and is sensitive to, experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
 \Cref{fig:vibrational_pol_unpol_ratio} does indicate that the $\nu = 1$ polarized-unpolarized ratio follows the general trend of the $\nu = 0$ ratios but slightly reduced, again, in agreement with intuition of the $\nu = 1$ state experiencing additional suppression.
-The delocalized $\nu = 2$ state does not appear to show much of a consistent trend.
+The delocalized $\nu = 2$ state does not appear to show much of a consistent trend, likely resulting from the structure exhibited by the wave function. 
 
 The presented measurements were very challenging due to long-term drifts in the $\SI{320}{\nm}$ Rydberg laser frequency and to a previously unnoticed changes in beam pointing when tuning to different $n$.
 Additional work exploring the vibrational states ULRRM states is worthwhile since they do exhibit more complicated dependencies compared to the $\nu = 0$ state.
