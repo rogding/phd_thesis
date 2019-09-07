@@ -426,10 +426,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="413.79508"
-     inkscape:cy="805.9268"
+     inkscape:cx="542.08445"
+     inkscape:cy="725.1146"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer12"
+     inkscape:current-layer="layer8"
      showgrid="false"
      inkscape:window-width="2400"
      inkscape:window-height="1271"
@@ -456,7 +456,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1101,20 +1101,31 @@
            id="tspan11820"
            x="85.239983"
            y="127.5868"
-           style="font-size:4.93888903px;stroke-width:0.26458332">~1:20x10<tspan
+           style="font-size:4.93888903px;stroke-width:0.26458332">~1:20×10<tspan
    style="font-size:64.99999762%;baseline-shift:super"
    id="tspan11824">3</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         x="151.96283"
-         y="142.81056"
+         x="153.29918"
+         y="142.54329"
          id="text11822-8"><tspan
            sodipodi:role="line"
            id="tspan11820-5"
-           x="151.96283"
-           y="142.81056"
-           style="font-size:4.93888903px;stroke-width:0.26458332">1:2</tspan></text>
+           x="153.29918"
+           y="142.54329"
+           style="font-size:4.93888903px;stroke-width:0.26458332">1:3</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="143.82443"
+         y="155.8237"
+         id="text11822-8-6"><tspan
+           sodipodi:role="line"
+           id="tspan11820-5-3"
+           x="143.82443"
+           y="155.8237"
+           style="font-size:4.93888903px;stroke-width:0.26458332">2:3</tspan></text>
     </g>
     <path
        style="fill:none;stroke:#747474;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.75000001, 0.75000001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10326-6-0-2)"
@@ -1186,7 +1197,7 @@
            x="103.03004"
            y="231.26698"
            style="font-size:6.3499999px;line-height:125%;text-align:start;text-anchor:start;stroke-width:0.26458332"
-           id="tspan12040">4.7 x 10<tspan
+           id="tspan12040">4.7×10<tspan
    style="font-size:64.99999762%;baseline-shift:super"
    id="tspan12082">4</tspan> s<tspan
    style="font-size:64.99999762%;baseline-shift:super"
@@ -1206,7 +1217,7 @@
            x="30.871286"
            y="184.44316"
            style="font-size:6.3499999px;line-height:125%;text-align:start;text-anchor:start;stroke-width:0.26458332"
-           id="tspan12040-0">2.0 x 10<tspan
+           id="tspan12040-0">2.0×10<tspan
    style="font-size:64.99999762%;baseline-shift:super"
    id="tspan12078">8</tspan> s<tspan
    style="font-size:64.99999762%;baseline-shift:super"
@@ -1220,19 +1231,19 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         x="249.73962"
+         x="251.3271"
          y="61.794811"
          id="text7217-6-8-8"><tspan
            sodipodi:role="line"
-           x="249.73962"
+           x="251.3271"
            y="61.794811"
            style="font-size:6.3499999px;line-height:125%;text-align:start;text-anchor:start;stroke-width:0.26458332"
            id="tspan12034-5-7">481 nm</tspan><tspan
            sodipodi:role="line"
-           x="249.73962"
+           x="251.3271"
            y="69.732307"
            style="font-size:6.3499999px;line-height:125%;text-align:start;text-anchor:start;stroke-width:0.26458332"
-           id="tspan12040-0-5">9.0 x 10<tspan
+           id="tspan12040-0-5">9.0×10<tspan
    style="font-size:4.12749958px;baseline-shift:super;stroke-width:0.26458332"
    id="tspan12078-1">7</tspan> s<tspan
    style="font-size:4.12749958px;baseline-shift:super;stroke-width:0.26458332"

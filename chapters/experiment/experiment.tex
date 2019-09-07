@@ -1,34 +1,15 @@
 \chapter{Strontium Rydberg Experiment}
 \label{ch:experiment}
 
-This chapter describes the Rydberg apparatus used in this thesis with the purpose of providing an overview of the current state of various systems for producing ultracold and quantum degenerate gases of strontium as well as providing references which may be helpful for future upgrades. 
-Being the third ultracold strontium experiment at Rice, we leveraged lessons learned from the other experiments, colloquially referred to as ``Neutral'' and ``Plasma'', to build quite a capable and flexible system\footnote{Collectively, the three experiments work with ultracold atomic strontium in all forms: from the ground state (Neutral) to the ions (Plasma), and everything in between (Rydberg). There is also the strontium atomic beam experiment which produces some of highest $n$ Rydberg atoms ever reported.}.
+This chapter describes the Rydberg apparatus used in this thesis with the purpose of providing an overview of the current state of various systems for producing ultracold and quantum degenerate gases of strontium as well as providing references that may be helpful for future upgrades. 
+Being the third ultracold strontium experiment at Rice, we leveraged lessons learned from the other experiments, colloquially referred to as ``Neutral'' and ``Plasma'', to build a capable and flexible system\footnote{Collectively, the three experiments work with ultracold atomic strontium in all forms: from the ground state (Neutral) to the ions (Plasma), and everything in between (Rydberg). There is also the strontium atomic beam experiment, which produces some of highest $n$ Rydberg atoms ever reported.}.
 
-Although our system looks very similar to other ultracold strontium experiments, what makes our system uniquely suited for studying Rydberg physics is the inclusion of systems for creating, manipulating, and detecting charged particles. 
-In particular, we have in-vacuum electric field plates which we can use to both cancel stray electric fields as well as to apply field ionization ramps and direct the resulting electrons (or ions) towards a microchannel plate (MCP) detector.
+Although the Rydberg system looks very similar to other ultracold strontium experiments, what makes it uniquely suited for studying Rydberg physics is the inclusion of systems for creating, manipulating, and detecting charged particles. 
+In particular, in-vacuum electric field plates can both cancel stray electric fields as well as apply field ionization ramps and direct the resulting electrons (or ions) towards a microchannel plate (MCP) detector.
 
 \section{Producing Ultracold Gases of Strontium}
 
 We follow the well-established laser cooling and trapping sequence for producing ultracold gases of strontium.
-Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}) so the process will only be outlined here. 
-Briefly, laser cooling and trapping of strontium gases proceeds in the following steps:
-\begin{description}
-	\item[Cooling and trapping on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition] \hfill \\
-		This broad ${\Gamma}/{2\pi} = \SI{30.5}{\MHz}$ transition at $\SI{461}{\nm}$ is used for the first stage of cooling due its ability to scatter many photons very rapidly, exerting large radiative forces on the atoms. 
-		A ``blue'' magneto-optical trap (MOT) driving this transition typically produces samples with temperatures of about $\SIrange[range-phrase=-]{1}{2}{\milli\K}$.
-		The blue MOT also loads the magnetic trap, formed by the MOT quadrupole field, with atoms in the metastable $\nSLJ{5s5p}{3}{P}{2}$ state due a small leak ($\approx \numrange[range-phrase=\colon]{1}{20000}$) of atoms following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ decay path.
-		The trapped $\nSLJ{5s5p}{3}{P}{2}$ atoms are returned to the ground state by repumping at $\SI{481}{\nm}$
-	\item[Cooling and trapping on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition] \hfill \\
-		Second-stage cooling is achieved by a MOT driving the narrow ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$ transition at $\SI{689}{\nm}$.
-		Due to the narrower linewidth, the $\SI{689}{\nm}$ transition scatters far fewer photons than the $\SI{461}{\nm}$ transition, making it unsuitable for capturing large numbers of atoms from a thermal source.
-		However, it is well-suited for bridging between the millikelvin temperatures of the blue MOT and the microkelvin trap depths of optical traps.
-		A $\SI{689}{\nm}$ ``red'' MOT easily produces samples with temperatures around $\SIrange[range-phrase=-]{1}{2}{\micro\K}$, ideal for efficient loading into optical traps.
-	\item[Optical trapping and evaporative cooling] \hfill \\
-		Further cooling requires optical dipole traps (ODTs) because ground-state strontium atoms have no magnetic moment and, therefore, cannot be magnetically trapped. 
-		Optical dipole traps work by inducing energy shifts of atomic sates via off-resonantly coupling and, therefore, require high powers to achieve sufficient trap depths. 
-		As a result, lasers at $\SI{532}{\nm}$ or $\SI{1064}{\nm}$ are commonly employed.
-		Once cold atoms from the red MOT are loaded in to an ODT, evaporative cooling can be used to produce ultracold and quantum degenerate gases with temperatures below $\SI{1}{\micro\K}$.
-\end{description}
 An energy level diagram for (bosonic) strontium primarily focused on the transitions relevant for laser cooling and trapping is provided in \cref{fig:sr_level_diagram_simple}.
 \begin{figure}[!htbp]
 	\centering
@@ -38,12 +19,32 @@ An energy level diagram for (bosonic) strontium primarily focused on the transit
 		A simplified level diagram of (bosonic) strontium focusing on the transitions relevant for laser cooling and trapping. 
 		Solid and dashed arrows representing driven transitions and decays, respectively.}
 \end{figure}
+Briefly, laser cooling and trapping of strontium gases proceeds in the following steps:
+\begin{description}
+	\item[Cooling and trapping on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition] \hfill \\
+		The broad ${\Gamma}/{2\pi} = \SI{30.5}{\MHz}$ transition at $\SI{461}{\nm}$ is used for the first stage of cooling due to its ability to scatter many photons very rapidly, exerting large radiative forces on the atoms. 
+		A ``blue'' magneto-optical trap (MOT) driving this transition typically produces samples with temperatures of about $\SIrange[range-phrase=-]{1}{2}{\milli\K}$.
+		The blue MOT also loads the magnetic trap, formed by the MOT quadrupole field, with atoms in the metastable $\nSLJ{5s5p}{3}{P}{2}$ state due a small leak ($\approx \numrange[range-phrase=\colon]{1}{20000}$) of atoms following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ decay path.
+		The trapped $\nSLJ{5s5p}{3}{P}{2}$ atoms are returned to the ground state by repumping at $\SI{481}{\nm}$
+	\item[Cooling and trapping on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition] \hfill \\
+		Second-stage cooling is achieved by a MOT driving the narrow ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$ transition at $\SI{689}{\nm}$.
+		Due to the narrower linewidth, the $\SI{689}{\nm}$ transition scatters photons much more slowly than the $\SI{461}{\nm}$ transition, making it unsuitable for capturing large numbers of atoms from the strontium oven.
+		However, it is well-suited for bridging between the millikelvin temperatures of the blue MOT and the microkelvin trap depths of optical traps.
+		A $\SI{689}{\nm}$ ``red'' MOT easily produces samples with temperatures around $\SIrange[range-phrase=-]{1}{2}{\micro\K}$, ideal for efficient loading into optical traps.
+	\item[Optical trapping and evaporative cooling] \hfill \\
+		Further cooling requires evaporative cooling in a conservative trap.
+		Optical dipole traps (ODTs) are used to create a conservative potential for strontium because ground-state strontium atoms have no magnetic moment and, therefore, cannot be magnetically trapped. 
+		Optical dipole traps work by inducing energy shifts of atomic sates via off-resonantly coupling and, therefore, require high powers to achieve sufficient trap depths. 
+		As a result, lasers at $\SI{532}{\nm}$ or $\SI{1064}{\nm}$ are commonly employed.
+		Once cold atoms from the red MOT are loaded in to an ODT, evaporative cooling can be used to produce ultracold and quantum degenerate gases with temperatures below $\SI{1}{\micro\K}$.
+\end{description}
+Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}).
 
 \subsection{Cooling on the $\SI{461}{\nm}$ ``Blue'' Transition}
 
 At room temperature, strontium is a solid metal with negligible vapor pressure and thus requires an oven to sublimate strontium into a gaseous form. 
 Although oven temperatures vary from setup-to-setup, they are typically around $\SIrange[range-phrase=-]{450}{750}{\celsius}$\footnote{If the setup has a nozzle heater, its temperature is generally higher than the main oven to reduce the likelihood of clogging.} \cite{Boyd2007.PhD, Ludlow2008.PhD, Schioppo2012.RSI.83.103101, Stellmer2013.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD, Senaratne2018.PhD}. 
-As a result, the first step in laser cooling and trapping strontium utilizes the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition with its broad ${\Gamma}/{2 \pi} = \SI{30.5}{\MHz}$ linewidth which enables high photon scattering rates. 
+As a result, the first step in laser cooling and trapping strontium utilizes the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition with its broad ${\Gamma}/{2 \pi} = \SI{30.5}{\MHz}$ linewidth, which enables high photon scattering rates. 
 \Cref{tab:blue_isotope_shift} gives the isotope shifts of the $\SI{461}{\nm}$ transitions referenced to \Sr{88}.
 \begin{table}[!htbp]
 	\caption[]{
@@ -70,7 +71,7 @@ As a result, the first step in laser cooling and trapping strontium utilizes the
 \end{table}
 
 Immediately after the atoms exit the oven, they pass through a two-dimensional (2D) collimator which applies transverse optical molasses \cite{Balykin1984.JETP.63.508, Balykin1985.JOSAB.2.1776, Lett1989.JOSAB.6.2084, Joffe1993.JOSAB.10.2257, Hoogerland1996.APB.62.323} to reduce the divergence of the atomic beam.
-Some experiments have incorporated a 2D magneto-optical trap (MOT) which can not only focus the atomic beam but can also deflect the atoms so that only cold atoms enter the experiment region \cite{Yang2015.EPJD.69.226}\footnote{The designs presented in \cite{Dorscher2013.RSI.84.043109, Lamporesi2013.RSI.84.063102, Nosske2017.PRA.96.053415, Nosske2018.PRA.97.039901} are probably the more ``traditional'' 2D MOT which forms a cold line of atoms that are then ``pushed'' to the main chamber.}.
+Some experiments have incorporated a 2D magneto-optical trap (MOT) that can not only focus the atomic beam but can also deflect the atoms so that only cold atoms enter the experiment region \cite{Yang2015.EPJD.69.226}\footnote{The designs presented in \cite{Dorscher2013.RSI.84.043109, Lamporesi2013.RSI.84.063102, Nosske2017.PRA.96.053415, Nosske2018.PRA.97.039901} are probably the more ``traditional'' 2D MOT which forms a cold line of atoms that are then ``pushed'' to the main chamber.}.
 In order to maximize the efficiency of the 2D collimator, elliptical beams are used to increase the intensity along the atomic beam.
 
 Since the 2D collimator has no effect on the longitudinal velocity, they atoms are still moving at about $v_{\text{avg}} \approx \SI{500}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
@@ -243,27 +244,21 @@ For strontium, the preferred ODT geometry appears to be a high-aspect ratio hori
 Single-beam traps typically provide very weak confinement along the beam so secondary vertical or horizontal ODT beams are generally added to increase confinement along weak axes. 
 
 The specific isotope(s) being trapped also have an effect on both loading into an ODT as well as on their evaporation due to their wildly varying intra- and inter-isotope scattering lengths.
-\Cref{tab:sr_scattering_lengths_long} lists the $s$-wave scattering lengths for various combinations of isotopes. 
+\Cref{tab:sr_scattering_lengths_short} lists the $s$-wave scattering lengths for various combinations of isotopes. 
 \begin{table}[!htbp]
-	\caption[]{
-		\label{tab:sr_scattering_lengths_long}
-		Measured $s$-wave scattering lengths ($a_s$) of strontium for various pairs of isotopes. 
-		Scattering lengths are given in [$\si{\bohr}$].}
 	\centering
-	\begin{tabular}{@{}cccc@{}}
+	\caption[]{
+		\label{tab:sr_scattering_lengths_short}.
+		Measured $s$-wave scattering lengths ($a_s$) of strontium for various pairs of isotopes given in $\si{\bohr}$ from \cite{Stein2010.EPJD.57.171}.
+		An extended version is given in \cref{tab:sr_scattering_lengths_long}.}
+	\begin{tabular}{@{}ccccc@{}}
 		\toprule
-		Isotope pair		& $a_s$ \cite{Martinez2008.PRA.78.062708}	& $a_s$ \cite{Stein2010.EPJD.57.171}	& $a_s$ \cite{Aman2018.PRA.98.053441}		\\
+				& \Sr{84}			& \Sr{86}			& \Sr{87}			& \Sr{88}			\\
 		\midrule
-		{\Sr{88}-\Sr{88}}	& \num{-1.4(6)}								& \num{-2.00(27)}						& 											\\
-		{\Sr{87}-\Sr{87}}	& \num{96.2(1)}								& \num{96.198(68)}						& 											\\
-		{\Sr{86}-\Sr{86}}	& \num{823(24)}								& \num{798(12)}							& \num[parse-numbers=false]{810.6(3)(9)}	\\
-		{\Sr{84}-\Sr{84}}	& \num{122.7(3)}							& \num{122.762(92)}						& 											\\
-		{\Sr{88}-\Sr{87}}	& \num{55.0(2)}								& \num{54.819(92)}						& 											\\
-		{\Sr{88}-\Sr{86}}	& \num{97.4(1)}								& \num{97.374(69)}						& 											\\
-		{\Sr{88}-\Sr{84}}	& \num{1790(130)}							& \num{1658(54)}						& 											\\
-		{\Sr{87}-\Sr{86}}	& \num{162.5+-0.5}							& \num{162.25(21)}						& 											\\
-		{\Sr{87}-\Sr{84}}	& \num{-56(1)}								& \num{-57.61(61)}						& 											\\
-		{\Sr{86}-\Sr{84}}	& \num{31.9(3)}								& \num{31.65(14)}						& 											\\
+		\Sr{84}	& \num{122.762(92)}	& \num{31.65(14)}	& \num{-57.61(61)}	& \num{1658(54)}	\\
+		\Sr{86}	& \num{31.65(14)}	& \num{798(12)}		& \num{162.25(21)}	& \num{97.374(69)}	\\
+		\Sr{87}	& \num{-57.61(61)}	& \num{162.25(21)}	& \num{96.198(68)}	& \num{54.819(92)}	\\
+		\Sr{88}	& \num{1658(54)}	& \num{97.374(69)}	& \num{54.819(92)}	& \num{-2.00(27)}	\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -455,7 +450,8 @@ The red MOT coils produce a magnetic field gradient of about $\SI{1}{\gauss\per\
 	\includesvg[keepaspectratio, width=\paperwidth, height=\paperheight]{experiment/laser_beams/trapping_beams.svg}
 	\caption[]{
 		\label{fig:trapping_beams}
-		Cross-section of the vacuum system (viewed from above) and a simplified diagram of the various laser beams.}
+		Cross-section of the vacuum system (viewed from above) and a simplified diagram of the various laser beams.
+		*** FIX SMALL BUG ***}
 \end{sidewaysfigure}
 
 \subsection{$\SI{461}{\nm}$ ``Blue'' Laser System}

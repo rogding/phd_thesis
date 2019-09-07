@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+   xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8.73522mm"
+   height="10.086454mm"
+   viewBox="0 0 8.73522 10.086454"
+   version="1.1"
+   id="svg9926"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="gwoptics-hv_amplifier.svg">
+  <defs
+     id="defs9920">
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5085"
+       id="radialGradient5094"
+       cx="16.32"
+       cy="19.060499"
+       fx="16.32"
+       fy="19.060499"
+       r="16.32"
+       gradientTransform="matrix(1,0,0,1.1511336,0,-2.8806816)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       fy="19.060101"
+       fx="16.320299"
+       r="17.222"
+       cy="19.060101"
+       cx="16.320299"
+       id="radialGradient5085">
+      <stop
+         id="stop5066"
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <stop
+         id="stop5068"
+         style="stop-color:#A0A0A0"
+         offset="1" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0" />
+      <a:midPointStop
+         style="stop-color:#FFFFFF"
+         offset="0.5" />
+      <a:midPointStop
+         style="stop-color:#A0A0A0"
+         offset="1" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-627.77821"
+     inkscape:cy="-83.796143"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2400"
+     inkscape:window-height="1271"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata9923">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-78.031199,-116.57582)">
+    <g
+       style="display:inline;enable-background:new"
+       i:rgbTrio="#4F008000FFFF"
+       i:dimmedPercent="50"
+       i:layer="yes"
+       id="g5081"
+       transform="matrix(0.26458333,0,0,0.26458333,78.031199,116.57596)">
+      <g
+         id="g5061">
+        <g
+           id="g5063">
+          <radialGradient
+             gradientUnits="userSpaceOnUse"
+             fy="19.060101"
+             fx="16.320299"
+             r="17.222"
+             cy="19.060101"
+             cx="16.320299"
+             id="radialGradient9912">
+            <stop
+               id="stop9908"
+               style="stop-color:#FFFFFF"
+               offset="0" />
+            <stop
+               id="stop9910"
+               style="stop-color:#A0A0A0"
+               offset="1" />
+            <a:midPointStop
+               style="stop-color:#FFFFFF"
+               offset="0" />
+            <a:midPointStop
+               style="stop-color:#FFFFFF"
+               offset="0.5" />
+            <a:midPointStop
+               style="stop-color:#A0A0A0"
+               offset="1" />
+          </radialGradient>
+          <polygon
+             id="polygon5070"
+             points="0.375,0.649 32.265,19.062 0.375,37.472 "
+             i:knockout="Off"
+             style="fill:url(#radialGradient5094);fill-opacity:1;stroke:#000000;stroke-width:0.75" />
+          <polyline
+             id="polyline5072"
+             points="6.008,28.968 13.096,17.628 7.426,20.464        11.678,10.542 "
+             i:knockout="Off"
+             style="fill:none;stroke:#000000;stroke-width:1.5" />
+        </g>
+        <polygon
+           id="polygon5074"
+           points="5.335,29.921 5.698,23.822 10.582,27.044 "
+           i:knockout="Off" />
+      </g>
+    </g>
+  </g>
+</svg>

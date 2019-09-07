@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+   xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="10.347133mm"
+   height="9.9370718mm"
+   viewBox="0 0 10.347133 9.9370718"
+   version="1.1"
+   id="svg7318"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="gwoptics-lia.svg">
+  <defs
+     id="defs7312">
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#radialGradient5001-6"
+       id="radialGradient5014-4"
+       cx="13.106"
+       cy="12.5915"
+       fx="13.106"
+       fy="12.5915"
+       r="13.10575"
+       gradientTransform="matrix(1.8226749,9.3577483e-8,-9.0949839e-8,1.7714944,-10.781977,-9.7142738)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       id="radialGradient5001-6"
+       cx="1485.4951"
+       cy="979.29883"
+       r="88.740303"
+       fx="1485.4951"
+       fy="979.29883"
+       gradientTransform="matrix(0.278,0,0,0.318,-400.2501,-298.8252)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.0056"
+         style="stop-color:#FFFFFF"
+         id="stop4975-7" />
+      <stop
+         offset="0.0904"
+         style="stop-color:#F7F7F7"
+         id="stop4977-2" />
+      <stop
+         offset="0.2242"
+         style="stop-color:#E0E0E0"
+         id="stop4979-1" />
+      <stop
+         offset="0.3903"
+         style="stop-color:#BBBBBB"
+         id="stop4981-5" />
+      <stop
+         offset="0.582"
+         style="stop-color:#888888"
+         id="stop4983-1" />
+      <stop
+         offset="0.7926"
+         style="stop-color:#474747"
+         id="stop4985-8" />
+      <stop
+         offset="1"
+         style="stop-color:#000000"
+         id="stop4987-9" />
+      <a:midPointStop
+         offset="0.0056"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="0.608"
+         style="stop-color:#FFFFFF" />
+      <a:midPointStop
+         offset="1"
+         style="stop-color:#000000" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="-55.367779"
+     inkscape:cy="61.298894"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2400"
+     inkscape:window-height="1271"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7315">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-96.880008,-76.585031)">
+    <g
+       id="g15610-9"
+       transform="matrix(1.5061532,0,0,1.5061532,-303.8592,129.76578)"
+       style="display:inline;stroke-width:0.66394311">
+      <g
+         transform="matrix(0.26458333,0,0,0.26458333,266.03535,-35.341666)"
+         id="g4972-9"
+         style="display:inline;stroke-width:0.66394311;enable-background:new">
+        <radialGradient
+           gradientUnits="userSpaceOnUse"
+           gradientTransform="matrix(0.278,0,0,0.318,-400.2501,-298.8252)"
+           fy="979.29883"
+           fx="1485.4951"
+           r="88.740303"
+           cy="979.29883"
+           cx="1485.4951"
+           id="radialGradient10312-4">
+          <stop
+             id="stop10298-1"
+             style="stop-color:#FFFFFF"
+             offset="0.0056" />
+          <stop
+             id="stop10300-0"
+             style="stop-color:#F7F7F7"
+             offset="0.0904" />
+          <stop
+             id="stop10302-5"
+             style="stop-color:#E0E0E0"
+             offset="0.2242" />
+          <stop
+             id="stop10304-6"
+             style="stop-color:#BBBBBB"
+             offset="0.3903" />
+          <stop
+             id="stop10306-1"
+             style="stop-color:#888888"
+             offset="0.582" />
+          <stop
+             id="stop10308-2"
+             style="stop-color:#474747"
+             offset="0.7926" />
+          <stop
+             id="stop10310-2"
+             style="stop-color:#000000"
+             offset="1" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0.0056" />
+          <a:midPointStop
+             style="stop-color:#FFFFFF"
+             offset="0.608" />
+          <a:midPointStop
+             style="stop-color:#000000"
+             offset="1" />
+        </radialGradient>
+        <rect
+           id="rect4989-0"
+           height="24.448999"
+           width="25.478001"
+           i:knockout="Off"
+           y="0.36700001"
+           x="0.36700001"
+           style="clip-rule:evenodd;fill:url(#radialGradient5014-4);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.48700228" />
+      </g>
+      <g
+         i:knockout="Off"
+         id="g5544-6-2"
+         style="display:inline;stroke-width:0.66394311;enable-background:new"
+         transform="matrix(0.26458333,0,0,0.26458333,265.24182,-34.800227)">
+        <text
+           id="text15560-49"
+           y="12.938077"
+           x="16.080946"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.66394311"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.08205986px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.66394311"
+             y="12.938077"
+             x="16.080946"
+             id="tspan15558-1"
+             sodipodi:role="line">LIA</tspan></text>
+      </g>
+      <g
+         i:knockout="Off"
+         id="g5544-6-5-7"
+         style="display:inline;stroke-width:0.66394311;enable-background:new"
+         transform="matrix(0.26458333,0,0,0.26458333,257.53209,-31.359903)">
+        <g
+           id="g15691-0">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.66394311"
+             x="3.5385509"
+             y="-34.112885"
+             id="text15560-4-99"
+             transform="rotate(90)"><tspan
+               sodipodi:role="line"
+               id="tspan15558-0-7"
+               x="3.5385509"
+               y="-34.112885"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.54102993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.66394311">SIG</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.66394311;enable-background:new"
+             x="-8.5075207"
+             y="-34.112885"
+             id="text15560-4-9-6"
+             transform="rotate(90)"><tspan
+               sodipodi:role="line"
+               id="tspan15558-0-6-6"
+               x="-8.5075207"
+               y="-34.112885"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.54102993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.66394311">REF</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.66394311;enable-background:new"
+             x="2.454227"
+             y="56.365074"
+             id="text15560-4-9-0-5"
+             transform="rotate(-90)"><tspan
+               sodipodi:role="line"
+               id="tspan15558-0-6-1-6"
+               x="2.454227"
+               y="56.365074"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.54102993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.66394311">OUT</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

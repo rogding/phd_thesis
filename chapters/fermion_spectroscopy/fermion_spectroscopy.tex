@@ -6,7 +6,7 @@ In these samples, quantum statistics are expected to affect the excitation rate 
 The large nuclear spin of \Sr{87} also provides an approximation to a classical gas, where the states are distributed among the $2I+1 = 10$ $m_F$ sublevels of the $\nSLJf{5s^2}{1}{S}{0}{{9}/{2}}$ ground state, as comparison. 
 In order to produce ULRRMs in ultracold strontium gases, it is first necessary to locate and identify the parent Rydberg levels. 
 
-An ultracold bosonic gas is represented by \Sr{84} due to the ease of evaporation but, in principle, any of the bosonic isotopes can be used\footnote{An ``ideal'' bosonic gas would be better represented with \Sr{88} as $a_{s} \approx \SI{0}{\bohr}$ but this isotope difficult to evaporate.}.
+An ultracold bosonic gas is represented by \Sr{84} due to the ease of evaporation but, in principle, any of the bosonic isotopes can be used\footnote{An ``ideal'' bosonic gas would be better represented with \Sr{88} as $a_{s} \approx \SI{0}{\bohr}$ but this isotope is difficult to evaporate.}.
 Most spectroscopic studies of strontium Rydberg systems have focused on the most abundant isotope (\Sr{88}) which has $I = 0$.
 Not only is there a wealth of experimental measurements available for this isotope, the absence of nuclear spin leads to an excitation spectrum that is relatively well understood \cite{Esherick1977.PRA.15.1920, Beigang1982.OC.42.19, Beigang1982.PS.26.183, Kunze1993.ZPD.27.111, Dai1995.JQSRT.54.1019, Dai1995.PRA.52.4416, Philip2007.OC.279.141, Jackson2018.PhD, Couturier2019.PRA.99.022503}.
 Since the other bosonic isotopes also have $I = 0$, it is straightforward to locate Rydberg states in \Sr{84} upon appropriate rescaling of the Rydberg constant and using the appropriate ionization limit. 
@@ -29,18 +29,18 @@ The first indication that the Rydberg levels of $\Sr{87}$ were not as simple as 
 		\label{fig:Eion-mass-scaled}
 		Reported isotope ionization limits $E_{\text{ion}}$ vs. mass (blue points).
 		A linear fit (black line) is used to estimate the $E_{\text{ion}}^{87}$ for an assumed $I=0$ \Sr{87} atom from the ionization energies of the bosonic isotopes. 
-		Ionization energies from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} and atomic masses from \cite{NIST_EDI} (see \cref{ap:sr_data} for additional information).}
+		Ionization energies from \cite{Beigang1982.OC.42.19, Sansonetti2010.JPCRD.39.033103} and atomic masses from \cite{NIST_EDI} (see \cref{tab:ionization_limits} for additional information).}
 \end{figure}
 Mass-scaling the ionization energies of the bosonic isotopes suggests that the ionization energy for an assumed $I = 0$ \Sr{87} atom should be approximately $\SI{45932.1946+-0.0005}{\per\cm}$.
 This value is about $\SI{2.74}{\GHz}$ below the reported ionization energy.
 
 The source of this discrepancy is likely related to the hyperfine interaction in the ground state of \Srion{87}{+}.
-Since it has a rubidium-like structure with a single $s$ valence electron outside a filled {[Kr]} core, the hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics})
+Since it has a rubidium-like structure with a single $s$ valence electron outside a filled {[Kr]} core, the hyperfine interaction can be written as (see, e.g., \cite{Steck.QuantumAtomOptics, Woodgate.Elementary})
 \begin{equation}
 	\hat{V}_{\text{hf}}	=	A_{\text{hf}} \hat{\vb{I}} \vdot \hat{\vb{J}}
 						=	A_{\text{hf}} \hat{\vb{I}} \vdot \hat{\vb{S}}
 \end{equation}
-where $\vb{J} = \vb{L} + \vb{S}$ and $A_{\text{hf}}$ is the strength of the magnetic dipole hyperfine interaction.
+where $\vb{J} = \vb{L} + \vb{S}$ and $A_{\text{hf}}$ is the strength of the magnetic dipole hyperfine interaction with $\vb{L}$, $\vb{S}$, and $\vb{J}$ referring to the ground-state of \Srion{87}{+} (singly-ionized \Sr{87}).
 Note that there are no higher order contributions (e.g., electric quadrupole) since the valence electron is in an $s$-state so only the contact interaction is non-zero \cite{Arimondo1977.RMP.49.31}.
 Following the usual procedure by defining $\vb{F} = \vb{J} + \vb{I}$, the energy shift can be evaluated as
 \begin{equation}
