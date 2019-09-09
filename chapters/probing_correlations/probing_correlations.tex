@@ -102,6 +102,7 @@ Evaluating \cref{eq:effective_fc_th} under this approximation gives\footnote{Whe
 		{}&=		{g^{\pqty*{2}}\pqty*{R_n}} \abs{\int_{0}^{\infty} \dd{R} {R^2} \chi_{n}^{\nu=0}\pqty*{R}}^2
 \end{align}
 where, in the last line, the relation $\ev*{\abs*{\chi^{E}_{0}\pqty*{R_n}}^{2}}_{E} = g^{\pqty*{2}}\pqty*{R_n}$, with $g^{\pqty*{2}}\pqty*{R_n}$ the pair-correlation function for separation $R_{n}$, was used. 
+This replacement is nontrivial but can be made when the sample is thermal and $\chi_{n}^{\nu=0}\pqty*{R}$ is well-localized on the scale of the initial collisional state $\chi^{E}_{0}\pqty*{R}$ \cite{Whalen2019.PRA.100.011402}.
 For the higher vibrational states $\nu > 0$, the approximation $\chi_{n}^{\nu=0}\pqty{R} \approx \delta\pqty*{R_n}$ cannot be made since they are delocalized and, therefore, \cref{eq:effective_fc_th} must be evaluated with the full $\ket*{\chi_{n}^{\nu}}$ ULRRM wave function.
 
 \section{Experimental Procedure}
@@ -275,14 +276,30 @@ The measured ratios when varying the principal quantum number over $n = \numrang
 		\label{fig:excited_dimer_ratios}
 		Experimentally measured ratios of the $\nu = 1$ (upper panel) and $\nu = 2$ (lower panel) vibrational states compared to the $\nu = 0$ state of the same $n$ for both spin-polarized (blue circles) and unpolarized (green squares) samples.}
 \end{figure}
-The ratios of the $\nu = 1$ vibrational state compared to the $\nu = 0$ state follow the na{\"{i}}ve expectation that they should exhibit additional suppression at lower $n$ due to their wave functions extending towards smaller interparticle separations $R$.
+The $\mathcal{S}_{n,x}^{\nu=1}/\mathcal{S}_{n,x}^{\nu=0}$ and $\mathcal{S}_{n,x}^{\nu=2}/\mathcal{S}_{n,x}^{\nu=0}$ ratios exhibit very different $n$-dependencies common to both the spin-polarized and unpolarized samples.
+While the $\mathcal{S}_{n,x}^{\nu=1}/\mathcal{S}_{n,x}^{\nu=0}$ ratio exhibits the expected excitation reduction for lower $n$, the $\mathcal{S}_{n,x}^{\nu=2}/\mathcal{S}_{n,x}^{\nu=0}$ ratio is counterintuitive and was found to be enhanced for lower $n$. 
 
-The $\nu = 2$ to $\nu = 0$ ratio is counterintuitive and suggests that it is easier to excite the delocalized $\nu = 2$ state at lower $n$ (i.e., smaller interparticle separations) compared to at higher $n$. 
-A possible explanation for this counterintuitive ratio could be the suppression (or lackthereof) of the $\nu = 0$ state whereas the $\nu = 2$ state may be less sensitive to changes in $n$.
+This $n$-scaling of the ratios common to both the spin-polarized and unpolarized samples can be qualitatively understood by examining the radial vibrational wave functions\footnote{In analogy with standard photoassociation where varying the vibrational state $\nu$ provides information about both the initial free-free scattering state and the molecular state.}.
+\Cref{fig:ulrrm_wave_functions_vs_n} shows ULRRM potentials and the {$\nu = 0$, $1$, and $2$} radial vibrational wave functions for a representative selection of $n$. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/ulrrm_wave_functions/ulrrm_wave_functions_vs_n.pdf}
+	\caption[]{
+		\label{fig:ulrrm_wave_functions_vs_n}
+		Illustrative ULRRM potentials ($V$) radial vibrational wave functions for {$\nu = 0$, $1$, and $2$} for a $\nSLJ{5sns}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ dimer.
+		Notice that the binding energies span different ranges in the three figures.}
+\end{figure}
+The $\nu = 0$ state is localized in the outermost well of the ULRRM potential near $R_{n}^{\nu=0} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$\footnote{This scaling is obtained from fitting the theoretically calculated ULRRM radial vibrational wave functions.} meaning the contribution to $\ev*{\abs*{\mathcal{F}_{n,x}^{\nu = 0}}^2}_{E}$ comes exclusively from the region around $R_{n}^{\nu=0}$. 
+As a result of this relatively simple $n$-dependence, it is straightforward to interpret the effects of the initial spatial distribution of atoms on the excitation rate to the $\nu = 0$ ULRRM state across different $n$.
 
-When comparing the spin-polarized to unpolarized measurements, the noisy data makes it difficult to extract quantitative information. 
-Qualitatively, the spin-polarized ratios are generally smaller than the unpolarized samples. 
-This suggests that quantum statistics have an effect on the production of vibrationally-excited ULRRMs as is the case for the $\nu = 0$ states.
+This simple interpretation for the $\mathcal{S}_{n,x}^{\nu=1}/\mathcal{S}_{n,x}^{\nu=0}$ and $\mathcal{S}_{n,x}^{\nu=2}/\mathcal{S}_{n,x}^{\nu=0}$ ratios is not as easy due to the delocalized nature of the $\nu = 1$ and $\nu = 2$ wave functions. 
+It can be seen in \cref{fig:ulrrm_wave_functions_vs_n} that the $\nu = 1$ state can be considered somewhat localized around a particular (or a few adjacent) well(s) of the ULRRM potential and therefore $\ev*{\abs*{\mathcal{F}_{n,x}^{\nu = 1}}^2}_{E}$ can be expected (and was observed) to follow a similar $n$-scaling behavior as the $\nu = 0$ state (i.e., decreasing $\mathcal{S}_{n,x}^{\nu=1}/\mathcal{S}_{n,x}^{\nu=0}$ at lower $n$). 
+The $\nu = 2$ state is much more delocalized with no obvious $n$-dependence so the ``simple'' picture used to understand the $\mathcal{S}_{n,x}^{\nu=1}/\mathcal{S}_{n,x}^{\nu=0}$ ratio is not applicable for the $\mathcal{S}_{n,x}^{\nu=2}/\mathcal{S}_{n,x}^{\nu=0}$ ratio.
+It should be noted that both the $\nu = 1$ and $\nu = 2$ wave functions have a node around $R_{n}^{\nu=0}$ meaning the contribution to $\ev*{\abs*{\mathcal{F}_{n,x}^{\nu = 1}}^2}_{E}$ and $\ev*{\abs*{\mathcal{F}_{n,x}^{\nu = 2}}^2}_{E}$ at this position is reduced. 
+
+While the $n$-dependence of the ratios that are common to both the spin-polarized and unpolarized samples provides information about the initial colliding atomic wave function and the ULRRM wave function, the differences in $\mathcal{S}_{n,\text{pol}}^{\nu}/\mathcal{S}_{n,\text{pol}}^{\nu=0}$ and $\mathcal{S}_{n,\text{unpol}}^{\nu}/\mathcal{S}_{n,\text{unpol}}^{\nu=0}$ provides information regarding the effects of correlations. 
+Most notably, it can be seen in \cref{fig:excited_dimer_ratios} that there is a weak but consistent systematic reduction of the polarized ratios compared to the unpolarized ratios in both $\mathcal{S}_{n}^{\nu=1}/\mathcal{S}_{n}^{\nu=0}$ and $\mathcal{S}_{n,x}^{\nu=2}/\mathcal{S}_{n,x}^{\nu=0}$ ratios across the range of $n$ explored. 
+This is evidence suggesting that the spin-polarized sample is experiencing stronger effects of antibunching compared to the unpolarized sample.
 
 \subsection{Electron Detection Efficiency Ratio: ${\alpha_{\text{pol}}}/{\alpha_{\text{unpol}}}$}
 
@@ -337,38 +354,37 @@ The spin-polarized to unpolarized ratios in the figure account for the ${\alpha\
 		\label{fig:vibrational_pol_unpol_ratio}
 		Comparison of the ratio ${\mathcal{S}_{n,\text{pol}}^{\nu}}/{\mathcal{S}_{n,\text{unpol}}^{\nu}}$ for {$\nu = 0$, $1$, and $2$} across multiple principal quantum numbers ($n$).
 		The extracted spin-polarized to unpolarized ratios accounts for both ${\alpha\pqty*{B_{\text{pol}}}}/{\alpha\pqty*{B_{\text{unpol}}}} = \num{1.33+-0.05}$ and for differences in the Clebsch-Gordan couplings.
-		For the $\nu = 0$ ratios, $g^{\pqty*{2}}\pqty*{R}$ (solid line) and $0.8 g^{\pqty*{2}}\pqty*{R}$ (dotted line) for fermions is shown where $R_{n} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$ and $T = \SI{850 +- 100}{\nano\kelvin}$.}
+		For the $\nu = 0$ ratios, $g^{\pqty*{2}}\pqty*{R}$ (solid line) and $0.8 g^{\pqty*{2}}\pqty*{R}$ (dotted line) for fermions is shown where $R_{n} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$ and $T = \SI{850 +- 100}{\nano\kelvin}$ (the shaded region corresponds to the expected uncertainty).}
 \end{figure}
-With the exception of the data taken at $n = 31$, both the $\nu = 0$ and $\nu = 1$ ratios exhibit a pronounced decrease in their values at smaller $n$ (i.e., smaller interparticle separations $R$), which is evidence of antibunching. 
-\Cref{fig:vibrational_pol_unpol_ratio} also shows the expected $g^{\pqty*{2}}\pqty*{R}$ for fermions at $T = \SI{850 +- 100}{\nano\kelvin}$ with $R_{n}^{\nu=0} \simeq 1.87 \pqty*{n-\delta}^{2} \si{\bohr}$\footnote{This scaling is obtained from fitting the theoretically calculated ULRRM radial vibrational wave functions.}.
+
+With the exception of the data taken at $n = 31$, both the ${\mathcal{S}_{n,\text{pol}}^{\nu=0}}/{\mathcal{S}_{n,\text{unpol}}^{\nu=0}}$ and the ${\mathcal{S}_{n,\text{pol}}^{\nu=1}}/{\mathcal{S}_{n,\text{unpol}}^{\nu=1}}$ ratios exhibit a pronounced decrease in their values at smaller $n$ (i.e., smaller interparticle separations $R$), which is additional evidence of antibunching. 
+\Cref{fig:vibrational_pol_unpol_ratio} also shows the expected $g^{\pqty*{2}}\pqty*{R}$ for fermions at $T = \SI{850 +- 100}{\nano\kelvin}$ with $R_{n}^{\nu=0}$ given previously for the $\nu = 0$ state.
 For comparison, $0.8 g^{\pqty*{2}}\pqty*{R}$ is also shown which has qualitatively better agreement with the observations. 
 Currently, it is unclear why the $\nu = 0$ ratio appears to converge $\num{\approx 0.8}$ as $n$ increases instead of $\num{1}$ expected from $g^{\pqty*{2}}\pqty*{R}$.
 
-Some insights can be gained by examining the shapes of the ULLRM radial vibrational wave functions.
-\Cref{fig:ulrrm_wave_functions_vs_n} shows the {$\nu=0$, $1$, and $2$} wave functions to provide an illustrative example of how they change with $n$.
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/ulrrm_wave_functions/ulrrm_wave_functions_vs_n.pdf}
-	\caption[]{
-		\label{fig:ulrrm_wave_functions_vs_n}
-		Illustrative ULRRM potentials ($V$) radial vibrational wave functions for {$\nu = 0$, $1$, and $2$} for a $\nSLJ{5sns}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ dimer.
-		Notice that the binding energies span different ranges in the three figures.}
-\end{figure}
-It is clear from this figure that, \textit{a priori}, the $\nu = 1$ and $\nu = 2$ should not be expected to follow the simple scaling with $n$ that the $\nu = 0$ state does due to the additional structure. 
-For the $\nu = 0$ state, the contribution to $\mathcal{F}_{n}^{\nu = 0}$ comes exclusively from the well-localized wave function centered around $R_{n}^{\nu=0}$ (i.e., the outermost lobe of the Rydberg electron wave function).
-Notice that the higher vibrational states ($\nu = 1$ and $2$) have a node near the outermost well meaning the contribution to $\mathcal{F}_{n}^{\nu = 0}$ near $R_{n}^{\nu=0}$ is reduced. 
-Although the $\nu = 1$ state is delocalized, it can almost be considered as being (somewhat) localized in the second outermost potential well(s) which should contribute the most to $\mathcal{F}_{n}^{\nu = 1}$.
-This ``intuition'' cannot be easily applied to the $\nu = 2$ ULRRM state as it is far more delocalized.
+% Again, insights can be gained by examining the shapes of the ULLRM radial vibrational wave functions shown in \cref{fig:ulrrm_wave_functions_vs_n}.
+% \begin{figure}[!htbp]
+	% \centering
+	% \includegraphics[keepaspectratio, width=\textwidth, height=\textheight]{probing_correlations/ulrrm_wave_functions/ulrrm_wave_functions_vs_n.pdf}
+	% \caption[]{
+		% %\label{fig:ulrrm_wave_functions_vs_n}
+		% Illustrative ULRRM potentials ($V$) radial vibrational wave functions for {$\nu = 0$, $1$, and $2$} for a $\nSLJ{5sns}{3}{S}{1} + \nSLJ{5s^2}{1}{S}{0}$ dimer.
+		% Notice that the binding energies span different ranges in the three figures.}
+% \end{figure}
+% It is clear from this figure that, \textit{a priori}, the $\nu = 1$ and $\nu = 2$ should not be expected to follow the simple scaling with $n$ that the well-localized $\nu = 0$ state does due to their additional structure. 
+% For the $\nu = 0$ state, the contribution to $\mathcal{F}_{n}^{\nu = 0}$ comes exclusively from the well-localized wave function centered around $R_{n}^{\nu=0}$ (i.e., the outermost lobe of the Rydberg electron wave function).
+% Notice that the {$\nu = 1$ and $2$} vibrational states have a node near the outermost well meaning the contribution to $\mathcal{F}_{n}^{\nu}$ near $R_{n}^{\nu=0}$ is reduced. 
+% Although the $\nu = 1$ state is delocalized, it can almost be considered as being (somewhat) localized in a particular (or a few adjacent) potential well(s) that should contribute the most to $\mathcal{F}_{n}^{\nu = 1}$.
+% This ``intuition'' cannot be easily applied to the $\nu = 2$ ULRRM state as it is far more delocalized.
 
 \section{Conclusion}
 
 We have presented preliminary measurements of the photoexcitation rates of the dimer $\nu = 1$ and $\nu = 2$ vibrationally-excited ULRRM states.
-When examining the ratios $\mathcal{S}_{n,\text{pol}}^{\nu}/\mathcal{S}_{n,\text{pol}}^{\nu=0}$ and $\mathcal{S}_{n,\text{unpol}}^{\nu}/\mathcal{S}_{n,\text{unpol}}^{\nu=0}$ shown in \cref{fig:excited_dimer_ratios}, it was observed that there is a weak but consistent systematic reduction of the $\nu=1$ to $\nu=0$ ratio in the spin-polarized sample compared to the unpolarized sample.
-This is in agreement with intuition that the less-localized $\nu=1$ vibrational wave function explores smaller interparticle separations which should lead to a suppressed formation rate. 
-Conversely, the $\nu=2$ to $\nu=0$ ratio decreases as $n$ increases.
+By comparing ratios instead of signals, sensitivities to common factors can be reduced or eliminated.
+Comparison of spin-polarized to spin-polarized samples and unpolarized to unpolarized samples, shown in \cref{fig:excited_dimer_ratios}, highlights common $n$-dependencies of the ULRRM excitation rate of a particular vibrational state in both spin-polarized and unpolarized samples. 
+It also provided the first evidence of antibunching with the systematically lower spin-polarized ratios compared to the unpolarized ratios across $n$. 
 
-Comparisons between spin-polarized and unpolarized samples is more difficult.
-The measurement requires more accurate knowledge of, and is sensitive to, experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
+Comparison spin-polarized to unpolarized signals is more difficult as the measurement requires more accurate knowledge of, and is sensitive to, experimental factors which are not common between the conditions under which data is obtained for the spin-polarized and unpolarized samples. 
 \Cref{fig:vibrational_pol_unpol_ratio} does indicate that the $\nu = 1$ polarized-unpolarized ratio follows the general trend of the $\nu = 0$ ratios but slightly reduced, again, in agreement with intuition of the $\nu = 1$ state experiencing additional suppression.
 The delocalized $\nu = 2$ state does not appear to show much of a consistent trend, likely resulting from the structure exhibited by the wave function. 
 
