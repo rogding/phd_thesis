@@ -626,6 +626,20 @@ Once the Rydberg atoms are created, they are detected by applying an electric fi
 \subsection{$\SI{320}{\nm}$ UV Laser System}
 
 Strontium Rydberg atoms are produced using a two-photon transition where a $\SI{689}{\nm}$ and a $\SI{320}{\nm}$ photon drives atoms from the $\nSLJ{5s^2}{1}{S}{0}$ ground state to either a $\nSLJ{5sns}{3}{S}{1}$ or $\nSLJ{5snd}{3}{D}{J}$ Rydberg state. 
+A schematic of the $\SI{320}{\nm}$ UV laser system is shown in \cref{fig:uv_laser_system}.
+\begin{figure}[!htbp]
+	\centering
+	\includesvg[keepaspectratio, width=\textwidth, height=\textheight]{experiment/uv_system/uv_system.svg}
+	\caption[]{
+		\label{fig:uv_laser_system}
+		Outline of the system for generating $\SI{320}{\nm}$ radiation.
+		Starting with a narrow linewidth $\SI{1064}{\nm}$ seed laser, a fiber amplifier boosts the power to several watts.
+		The $\SI{1064}{\nm}$ light then pumps an optical parametric oscillator (OPO) modified with a sum frequency generation (SFG) stage to produce $\SI{640}{\nm}$ light.
+		Most of the $\SI{640}{\nm}$ output power goes to a commercial second harmonic generation (SHG) system that frequency doubles the light to $\SI{320}{\nm}$.
+		A small portion of the $\SI{640}{\nm}$ output is split between the wavemeter for determining the $\SI{320}{\nm}$ photon energy and the transfer cavity laser stabilization system.
+		A fiber electro-optic modulator (EOM) applies tunable sidebands to the $\SI{640}{\nm}$ light before being sent to the transfer cavity. 
+		Diagram of the Aculight Argos Model 2400 CW based on figures in \cite{Mieth2014.OE.22.11182, Morrison2013.RSI.84.013102}.}
+\end{figure}
 Generation of the $\SI{320}{\nm}$ radiation starts with a tunable, narrow linewidth $\SI{1064}{\nm}$ seed laser that is amplified to about $\SI{7.5}{\watt}$ by a fiber amplifier\footnote{IPG Photonics YAR-15K-1064-LP-SF ytterbium fiber amplifier.}.
 Two $\SI{1064}{\nm}$ seed lasers have been used for experiments: 
 \begin{description}
@@ -650,8 +664,7 @@ With this addition, we typically get about $\SIrange[range-phrase=-]{1}{1.5}{\wa
 	\caption[]{
 		\label{fig:argos_opo}
 		Picture of the Lockheed Martin Aculight Argos Model 2400 CW OPO with the custom water-cooling block attached to the cavity housing.
-		The current tubing on the cooling block is too stiff to bend so the laser cover is left off.
-		*** ADD OPTICAL LAYOUT IF I HAVE TIME ***}
+		The current tubing on the cooling block is too stiff to bend so the laser cover is left off.}
 \end{figure}
 
 Stabilization of the $\SI{640}{\nm}$ laser frequency is accomplished with a transfer cavity lock \cite{Riedle1994.RSI.65.42, Bohlouli2006.RSI.77.093105, Leopold2016.APB.122.236} where the length of a tunable optical cavity is stabilized by locking a cavity resonance to the $\SI{689}{\nm}$ laser (which itself is stabilized to an atomic reference).
@@ -685,7 +698,7 @@ Our typical operating powers are closer to about $\SI{100}{\milli\W}$ and varies
 	\caption[]{
 		\label{fig:toptica_shg_pro-cavity}
 		Picture of the Toptica second harmonic generation (SHG) pro bow tie doubling cavity. 
-		The normally-sealed SHG cavity was opened up for realigning the $\SI{640}{\nm}$ to the SHG cavity.}
+		The normally sealed SHG cavity was opened up for realigning the $\SI{640}{\nm}$ to the cavity.}
 \end{figure}
 
 \subsection{Electric Field System}
