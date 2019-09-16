@@ -25,7 +25,7 @@ Briefly, laser cooling and trapping of strontium gases proceeds in the following
 		The broad ${\Gamma}/{2\pi} = \SI{30.5}{\MHz}$ transition at $\SI{461}{\nm}$ is used for the first stage of cooling due to its ability to scatter many photons very rapidly, exerting large radiative forces on the atoms. 
 		A ``blue'' magneto-optical trap (MOT) driving this transition typically produces samples with temperatures of about $\SIrange[range-phrase=-]{1}{2}{\milli\K}$.
 		The blue MOT also loads the magnetic trap, formed by the MOT quadrupole field, with atoms in the metastable $\nSLJ{5s5p}{3}{P}{2}$ state due a small leak ($\approx \numrange[range-phrase=\colon]{1}{20000}$) of atoms following the $\nSLJ{5s5p}{1}{P}{1} \rightarrow \nSLJ{5s4d}{1}{D}{2} \rightarrow \nSLJ{5s5p}{3}{P}{2}$ decay path.
-		The trapped $\nSLJ{5s5p}{3}{P}{2}$ atoms are returned to the ground state by repumping at $\SI{481}{\nm}$
+		The trapped $\nSLJ{5s5p}{3}{P}{2}$ atoms are returned to the ground state by repumping at $\SI{481}{\nm}$.
 	\item[Cooling and trapping on the $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{3}{P}{1}$ transition] \hfill \\
 		Second-stage cooling is achieved by a MOT driving the narrow ${\Gamma}/{2 \pi} = \SI{7.5}{\kHz}$ transition at $\SI{689}{\nm}$.
 		Due to the narrower linewidth, the $\SI{689}{\nm}$ transition scatters photons much more slowly than the $\SI{461}{\nm}$ transition, making it unsuitable for capturing large numbers of atoms from the strontium oven.
@@ -34,18 +34,18 @@ Briefly, laser cooling and trapping of strontium gases proceeds in the following
 	\item[Optical trapping and evaporative cooling] \hfill \\
 		Further cooling requires evaporative cooling in a conservative trap.
 		Optical dipole traps (ODTs) are used to create a conservative potential for strontium because ground-state strontium atoms have no magnetic moment and, therefore, cannot be magnetically trapped. 
-		Optical dipole traps work by inducing energy shifts of atomic sates via off-resonantly coupling and, therefore, require high powers to achieve sufficient trap depths. 
+		Optical dipole traps work by inducing energy shifts of atomic states via off-resonantly coupling and, therefore, require high powers to achieve sufficient trap depths. 
 		As a result, lasers at $\SI{532}{\nm}$ or $\SI{1064}{\nm}$ are commonly employed.
-		Once cold atoms from the red MOT are loaded in to an ODT, evaporative cooling can be used to produce ultracold and quantum degenerate gases with temperatures below $\SI{1}{\micro\K}$.
+		Once cold atoms from the red MOT are loaded in to an ODT, evaporative cooling can be employed to produce ultracold and quantum degenerate gases with temperatures well below $\SI{1}{\micro\K}$.
 \end{description}
-Detailed explanations of the various techniques and a variety of setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}).
+Detailed explanations of the various techniques and a variety of experimental setups are available from numerous sources (e.g., see \cite{Boyd2007.PhD, Mickelson2010.PhD, Martinez2012.PhD, Millen2011.PhD, Stellmer2013.PhD, Boddy2014.PhD, Barker2016.PhD, Campbell2017.PhD}).
 
 \subsection{Cooling on the $\SI{461}{\nm}$ ``Blue'' Transition}
 
 At room temperature, strontium is a solid metal with negligible vapor pressure and thus requires an oven to sublimate strontium into a gaseous form. 
-Although oven temperatures vary from setup-to-setup, they are typically around $\SIrange[range-phrase=-]{450}{750}{\celsius}$\footnote{If the setup has a nozzle heater, its temperature is generally higher than the main oven to reduce the likelihood of clogging.} \cite{Boyd2007.PhD, Ludlow2008.PhD, Schioppo2012.RSI.83.103101, Stellmer2013.PhD, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD, Senaratne2018.PhD}. 
+Although oven temperatures vary from setup-to-setup, they are typically around $\SIrange[range-phrase=-]{450}{750}{\celsius}$\footnote{If the setup has a nozzle heater, its temperature is generally higher than the main oven to reduce the likelihood of clogging.} \cite{Boyd2007.PhD, Ludlow2008.PhD, Schioppo2012.RSI.83.103101, Stellmer2013.PhD, Camargo2015.MS, Ding2016.MS, Barker2016.PhD, Campbell2017.PhD, Senaratne2018.PhD}. 
 As a result, the first step in laser cooling and trapping strontium utilizes the $\SI{461}{\nm}$ $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition with its broad ${\Gamma}/{2 \pi} = \SI{30.5}{\MHz}$ linewidth, which enables high photon scattering rates. 
-\Cref{tab:blue_isotope_shift} gives the isotope shifts of the $\SI{461}{\nm}$ transitions referenced to \Sr{88}.
+\Cref{tab:blue_isotope_shift} gives the isotope shifts of the $\SI{461}{\nm}$ transitions referenced to \Sr{88}\footnote{As the most abundant isotope, \Sr{88} generally produces the largest signals for laser stabilization purposes.}.
 \begin{table}[!htbp]
 	\caption[]{
 		\label{tab:blue_isotope_shift}
@@ -74,7 +74,7 @@ Immediately after the atoms exit the oven, they pass through a two-dimensional (
 Some experiments have incorporated a 2D magneto-optical trap (MOT) that can not only focus the atomic beam but can also deflect the atoms so that only cold atoms enter the experiment region \cite{Yang2015.EPJD.69.226}\footnote{The designs presented in \cite{Dorscher2013.RSI.84.043109, Lamporesi2013.RSI.84.063102, Nosske2017.PRA.96.053415, Nosske2018.PRA.97.039901} are probably the more ``traditional'' 2D MOT which forms a cold line of atoms that are then ``pushed'' to the main chamber.}.
 In order to maximize the efficiency of the 2D collimator, elliptical beams are used to increase the intensity along the atomic beam.
 
-Since the 2D collimator has no effect on the longitudinal velocity, they atoms are still moving at about $v_{\text{avg}} \approx \SI{500}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
+Since the 2D collimator has no effect on the longitudinal velocity, the atoms are still moving at about $v_{\text{avg}} \approx \SI{500}{\meter\per\second}$\footnote{Assuming the atomic beam leaves the oven at $T = \SI{425}{\celsius}$: $v_{\text{mp}} \approx \SI{445}{\meter\per\second}$, $v_{\text{avg}} \approx \SI{483}{\meter\per\second}$, and $v_{\text{rms}} \approx \SI{514}{\meter\per\second}$ \cite{Metcalf1999.LCT}.}, much too quickly to be trapped by a MOT operating on the $\SI{461}{\nm}$ transition which has a capture velocity of about $v_C \approx \SI{14}{\meter\per\second}$\footnote{The capture velocity defined as $v_C \equiv \flatfrac{\Gamma}{k}$ where $\Gamma$ is the transition linewidth and $k$ is the transition wavevector \cite{Metcalf1999.LCT}.} \cite{Camargo2015.MS, Metcalf1999.LCT}.
 The atoms are slowed longitudinally with a Zeeman slower where a spatially-varying magnetic field keeps the slowing atoms in resonance with a $\SI{461}{\nm}$ beam counterpropagating to their direction of travel \cite{Phillips1982.PRL.48.596}.
 Because the  magnetic field is axial, a circularly polarized $\SI{461}{\nm}$ beam is used.
 Several ideas and considerations for Zeeman slowing an atomic beam can be found in \cite{Dedman2004.RSI.75.5136, Bell2010.RSI.81.013105, Reinaudi2012.JOSAB.29.729, Hill2014.JPB.47.075006, Lebedev2014.JPB.47.155003, Krzyzewski2014.RSI.85.103104, Ohayon2015.RSI.86.103110, Hopkins2016.RSI.87.043109}.
@@ -89,20 +89,20 @@ Blue MOTs typically produce samples of atoms around $\SIrange[range-phrase=-]{1}
 		\label{fig:old_blue_MOT}
 		A picture of the \Sr{88} blue MOT taken on 2014/08/29 through the $\SI{2.75}{\inch}$ absorption imaging viewport.
 		The strontium oven and Zeeman slower are located off to the right.
-		With the electric field plates separated by about $\SI{1}{\inch}$, this blue MOT likely has a vertical height close to $\SI{0.5}{\inch}$.}
+		Considering the top and bottom electric field plates separated by about $\SI{1}{\inch}$, this blue MOT likely has a vertical height close to $\SI{0.5}{\inch}$.}
 \end{figure}
 Some experiments (e.g., \cite{Barker2016.PhD}) implement a ``cold'' blue MOT stage where the detuning, intensity, and quadrupole gradient are ramped to obtain colder temperatures for improved transfer efficiency to the red MOT. 
 No such stage is implemented on our current setup as we found the blue MOT temperatures sufficient for decent transfer.
 
-Although the $\SI{461}{\nm}$ light is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$, $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$.} \cite{Metcalf1999.LCT} with typical temperatures closer to $\SI{1}{\milli\K}$.
-While sub-Doppler cooling is not available in the bosonic isotopes, it has been observed in \Sr{87} where the blue MOT temperature was measured to be about $\SI{300}{\micro\kelvin}$ \cite{Xu2003.PRL.90.193002, Xu2003.JOSAB.20.968}.
+Although the $\SI{461}{\nm}$ light is capable of scattering many photons per second, the Doppler limit of this transition is about $T_{D} = \SI{732}{\micro\kelvin}$\footnote{For the $\SI{461}{\nm}$ transition: $k_{B} T_{D} \equiv \flatfrac{\hbar \Gamma}{2} = \SI{732}{\micro\kelvin}$ (Doppler limit), $k_{B} T_{r} \equiv \flatfrac{\hbar^2 k^2}{2 M} = \SI{512}{\nano\kelvin}$ (recoil limit).} \cite{Metcalf1999.LCT} with typical temperatures achieved in experiments closer to $\SI{1}{\milli\K}$.
+While sub-Doppler cooling is not available in the bosonic isotopes, it has been observed in the fermionic isotope \Sr{87} where blue MOT temperatures of about $\SI{300}{\micro\kelvin}$ were achieved \cite{Xu2003.PRL.90.193002, Xu2003.JOSAB.20.968}.
 Interestingly, as noted in \cite{Xu2003.PRL.90.193002}, cooling bosonic alkaline-earth atoms on the $\SLJ{1}{S}{0} \rightarrow \SLJ{1}{P}{1}$ transition typically yields temperatures a few times the Doppler cooling limit \cite{Kisters1994.APB.59.89, Xu2002.PRA.66.011401, Xu2003.JOSAB.20.968}.
 
 \subsection{Magnetic Trap and Repumping}
 \label{ssec:magnetic_trap_and_repumping}
 
 The $\nSLJ{5s^2}{1}{S}{0} \rightarrow \nSLJ{5s5p}{1}{P}{1}$ transition is not completely closed where $\nSLJ{5s5p}{1}{P}{1}$ atoms can leak to the $\nSLJ{5s4d}{1}{D}{2}$ state. 
-The branching ratio for this decay path was found to be ${A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{S}{0}}}/{A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{D}{2}}} \approx \num{20E3}$ \cite{Cooper2018.PRX.8.041055}\footnote{Previous measurements suggested that this branching ratio was about $\numrange[range-phrase=\colon]{1}{50000}$ \cite{Hunter1986.PRL.56.823}}.
+The branching ratio for this decay path was found to be ${A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{S}{0}}}/{A\pqty{\SLJ{1}{P}{1} \rightarrow \SLJ{1}{D}{2}}} \approx \num{20E3}$ \cite{Cooper2018.PRX.8.041055}\footnote{Previous measurements suggested that this branching ratio was about $\numrange[range-phrase=\colon]{1}{50000}$ \cite{Hunter1986.PRL.56.823}.}.
 About $\num{2/3}$ of the $\nSLJ{5s4d}{1}{D}{2}$ atoms then decay to the $\nSLJ{5s5p}{3}{P}{1}$ which subsequently decay to the $\nSLJ{5s^2}{1}{S}{0}$ and return to the $\SI{461}{\nm}$ cooling cycle.
 The remaining ${1}/{3}$ decay to the long-lived metastable $\nSLJ{5s5p}{3}{P}{2}$ state with a lifetime of about $\SI{520}{\second}$ \cite{Yasuda2004.PRL.92.153004}, effectively removing them from the blue MOT cooling cycle.
 Of the $\nSLJ{5s5p}{3}{P}{2}$ states, the low-field seeking $m_J = 1, 2$ states can become trapped in the quadrupole magnetic field of the blue MOT \cite{Loftus2002.PRA.66.013411, Nagel2003.PRA.67.011401}.
@@ -119,7 +119,7 @@ Before moving on to the next cooling stage, atoms in the metastable reservoir ne
 Several transitions have been explored for repumping atoms out of the metastable reservoir, each of which has varying advantages and disadvantages \cite{Courtillot2005.EPJD.33.161, Boyd2007.PhD, Ludlow2008.PhD, Barker2015.PRA.92.043418, Campbell2017.PhD, Cooper2018.PRX.8.041055, Mickelson2009.JPB.42.235001, Stellmer2013.PhD, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Mason2013.BS, Stellmer2014.PRA.90.022512, Moriya2018.JPC.2.125008, Wongwaitayakornkul2013.BS, Camargo2015.MS, Ding2016.MS, Couturier2018.RSI.89.043103, Hu2019.PRA.99.033422}\footnote{An excellent overview of the various strontium repumping transitions is presented in \cite{Stellmer2013.PhD}.}.
 On our experiment, we drive the $\nSLJ{5s5p}{3}{P}{2} \rightarrow \nSLJ{5p^2}{3}{P}{2}$ transition at $\SI{481}{\nm}$.
 One of the key advantages of this transition is that the upper state is $\SLJ{3}{P}{2}$ so it only requires a single laser to clear out the magnetic trap because the $\nSLJ{5p^2}{3}{P}{2}$ atoms can only decay to either the $\nSLJ{5s5p}{3}{P}{1}$ or $\nSLJ{5s5p}{3}{P}{2}$ states. 
-Another advantage of this transition is that the \Sr{87} hyperfine structure of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ state is expected to be small meaning the shifts of the $\SI{481}{\nm}$ transition should be predominantly due to the hyperfine structure of the $\nSLJ{5s5p}{3}{P}{2}$ state which are known \cite{Heider1977.PRA.16.1371, Onishchenko2019.PRA.99.052503}. 
+Another advantage of this transition is that the \Sr{87} hyperfine structure of the doubly-excited $\nSLJ{5p^2}{3}{P}{2}$ state is expected to be small meaning the shifts of the $\SI{481}{\nm}$ transition should be predominantly due to the hyperfine structure of the $\nSLJ{5s5p}{3}{P}{2}$ state which is known \cite{Heider1977.PRA.16.1371, Onishchenko2019.PRA.99.052503}. 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[keepaspectratio, width=5in, height=\textheight]{experiment/repumper_system/20180327-preliminary_84Sr_87Sr_repumper_spectra/repumper_spectra.pdf}
