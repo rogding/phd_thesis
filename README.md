@@ -5,17 +5,25 @@ Locations of the official document:
 * TBD
 
 #### Title
-TBD
+Spectroscopy of <sup>87</sup>Sr Rydberg Atoms and Molecules
+
 #### Author
 Roger Ding
-#### Date
-TBD
+
+#### Defense Date
+August 30, 2019
+
 #### Advisor(s)
-F. Barry Dunning, Thomas C. Killian
+- Dr. F. Barry Dunning (adviser)
+- Dr. Thomas C. Killian (co-adviser)
+- Dr. Han Pu
+
 #### Degree
-Doctor of Philosophy
+Doctor of Philosophy in Applied Physics/Physics
+
 #### Abstract
 TBD
+
 #### Citation
 TBD
 
